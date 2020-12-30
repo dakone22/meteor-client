@@ -7,10 +7,7 @@ package minegame159.meteorclient.events;
 
 import minegame159.meteorclient.events.entity.*;
 import minegame159.meteorclient.events.entity.player.*;
-import minegame159.meteorclient.events.game.GameJoinedEvent;
-import minegame159.meteorclient.events.game.GameLeftEvent;
-import minegame159.meteorclient.events.game.GetTooltipEvent;
-import minegame159.meteorclient.events.game.OpenScreenEvent;
+import minegame159.meteorclient.events.game.*;
 import minegame159.meteorclient.events.meteor.*;
 import minegame159.meteorclient.events.packets.*;
 import minegame159.meteorclient.events.render.DrawSideEvent;
@@ -97,6 +94,7 @@ public class EventStore {
     private static final ClipAtLedgeEvent clipAtLedgeEvent = new ClipAtLedgeEvent();
     private static final ChunkOcclusionEvent chunkOcclusionEvent = new ChunkOcclusionEvent();
     private static final PacketSentEvent packetSentEvent = new PacketSentEvent();
+    private static final LanguageChangedEvent languageChangedEvent = new LanguageChangedEvent();
 
     public static PlaySoundPacketEvent playSoundPacketEvent(PlaySoundS2CPacket packet) {
         playSoundPacketEvent.packet = packet;
@@ -369,5 +367,9 @@ public class EventStore {
     public static PacketSentEvent packetSentEvent(Packet<?> packet) {
         packetSentEvent.packet = packet;
         return packetSentEvent;
+    }
+
+    public static LanguageChangedEvent languageChangedEvent() {
+        return languageChangedEvent;
     }
 }

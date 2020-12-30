@@ -62,6 +62,7 @@
     "KeyBindingMixin",
     "KeyboardInputMixin",
     "KeyboardMixin",
+    "LanguageManagerMixin",
     "LightmapTextureManagerMixin",
     "LivingEntityMixin",
     "LivingEntityRendererMixin",

@@ -72,6 +72,8 @@ public class MeteorClient implements ClientModInitializer, Listenable {
         Capes.init();
         BlockIterator.init();
 
+        Translation.INSTANCE = new Translation();
+
         load();
         Ignore.load();
         Waypoints.loadIcons();
