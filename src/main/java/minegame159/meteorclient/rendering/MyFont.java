@@ -10,6 +10,7 @@ import minegame159.meteorclient.utils.Color;
 import minegame159.meteorclient.utils.Utils;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.texture.AbstractTexture;
+import net.minecraft.util.Pair;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.stb.STBTTFontinfo;
 import org.lwjgl.stb.STBTTPackContext;
@@ -21,8 +22,21 @@ import java.io.File;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class MyFont {
+    private static final String CHARS = sorted(" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~" + "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяЁё");
+    private static String sorted(String s) {
+        char[] chars = s.toCharArray();
+        Arrays.sort(chars);
+        return new String(chars);
+    }
+
+    private static final char DEFAULT_CHAR = CHARS.charAt(0);
+    private static final int BITMAP_W = 768, BITMAP_H = 768;
     private static final Color SHADOW_COLOR = new Color(60, 60, 60, 180);
 
     private final MeshBuilder mb = new MeshBuilder(16384);
@@ -32,7 +46,7 @@ public class MyFont {
     private final int height;
     private final float scale;
     private final float ascent;
-    private final CharData[] charData;
+    private final HashMap<Character, CharData> charData;
 
     private double mScale;
 
@@ -49,19 +63,49 @@ public class MyFont {
         STBTruetype.stbtt_InitFont(fontInfo, buffer);
 
         // Allocate STBTTPackedchar buffer
-        charData = new CharData[128];
-        STBTTPackedchar.Buffer cdata = STBTTPackedchar.create(charData.length);
-        ByteBuffer bitmap = BufferUtils.createByteBuffer(768 * 768);
+        charData = new HashMap<>();
+        STBTTPackedchar.Buffer cdata = STBTTPackedchar.create(CHARS.length());
+        ByteBuffer bitmap = BufferUtils.createByteBuffer(BITMAP_W * BITMAP_H);
 
         // Create font texture
         STBTTPackContext packContext = STBTTPackContext.create();
-        STBTruetype.stbtt_PackBegin(packContext, bitmap, 768, 768, 0, 1);
+        STBTruetype.stbtt_PackBegin(packContext, bitmap, BITMAP_W, BITMAP_H, 0, 1);
         STBTruetype.stbtt_PackSetOversampling(packContext, 2, 2);
-        STBTruetype.stbtt_PackFontRange(packContext, buffer, 0, height, 32, cdata);
+
+        //// Getting char ranges
+        char[] chars = CHARS.toCharArray();
+
+        List<Pair<Integer, Integer>> ranges = new ArrayList<>();
+        int start = 0, end = 0;
+        for (int i = 1; i < chars.length; ++i)
+            if (chars[i - 1] == chars[i] - 1) {
+                end++;
+            } else {
+                ranges.add(new Pair<>(start, end));
+                start = i;
+                end = i;
+            }
+        ranges.add(new Pair<>(start, end));
+
+        //// https://github.com/LWJGL/lwjgl3/blob/3c92f417252da6f2b6cbfba75db9e4c62bc28a9e/modules/samples/src/test/java/org/lwjgl/demo/stb/TruetypeOversample.java#L98
+        int nextPos = 0;
+        for (Pair<Integer, Integer> range : ranges) {
+            start = range.getLeft();
+            end = range.getRight();
+
+            cdata.limit(nextPos + (end - start));
+            cdata.position(nextPos);
+            STBTruetype.stbtt_PackFontRange(packContext, buffer, 0, height, CHARS.charAt(start), cdata);
+
+            nextPos = nextPos + (end - start) + 1;
+        }
+        cdata.limit(CHARS.length());
+        //// ---
+
         STBTruetype.stbtt_PackEnd(packContext);
 
         // Create texture object and get font scale
-        texture = new ByteTexture(768, 768, bitmap, true);
+        texture = new ByteTexture(BITMAP_W, BITMAP_H, bitmap, true);
         scale = STBTruetype.stbtt_ScaleForPixelHeight(fontInfo, height);
 
         // Get font vertical ascent
@@ -72,13 +116,13 @@ public class MyFont {
         }
 
         // Populate charData array
-        for (int i = 0; i < charData.length; i++) {
+        for (int i = 0; i < CHARS.length(); i++) {
             STBTTPackedchar packedChar = cdata.get(i);
 
-            float ipw = 1f / 768;
-            float iph = 1f / 768;
+            float ipw = 1f / BITMAP_W;
+            float iph = 1f / BITMAP_H;
 
-            charData[i] = new CharData(
+            charData.put(CHARS.charAt(i), new CharData(
                     packedChar.xoff(),
                     packedChar.yoff(),
                     packedChar.xoff2(),
@@ -88,25 +132,28 @@ public class MyFont {
                     packedChar.x1() * ipw,
                     packedChar.y1() * iph,
                     packedChar.xadvance()
-            );
+            ));
         }
 
         mb.texture = true;
+    }
+
+    private CharData getCharData(char cp) {
+        if (!charData.containsKey(cp)) cp = DEFAULT_CHAR;
+        return charData.get(cp);
     }
 
     public double getWidth(String string, int length) {
         double width = 0;
 
         for (int i = 0; i < length; i++) {
-            int cp = string.charAt(i);
-            if (cp < 32 || cp > 128) cp = 32;
-            CharData c = charData[cp - 32];
-
+            CharData c = getCharData(string.charAt(i));
             width += c.xAdvance;
         }
 
         return width;
     }
+
     public double getWidth(String string) {
         return getWidth(string, string.length());
     }
@@ -120,6 +167,7 @@ public class MyFont {
 
         mb.begin(null, DrawMode.Triangles, VertexFormats.POSITION_COLOR_TEXTURE);
     }
+
     public void begin() {
         begin(1);
     }
@@ -140,9 +188,7 @@ public class MyFont {
         y += ascent * scale * mScale;
 
         for (int i = 0; i < string.length(); i++) {
-            int cp = string.charAt(i);
-            if (cp < 32 || cp > 128) cp = 32;
-            CharData c = charData[cp - 32];
+            CharData c = getCharData(string.charAt(i));
 
             mb.pos(x + c.x0 * mScale, y + c.y0 * mScale, 0).color(color).texture(c.u0, c.v0).endVertex();
             mb.pos(x + c.x1 * mScale, y + c.y0 * mScale, 0).color(color).texture(c.u1, c.v0).endVertex();
@@ -178,6 +224,10 @@ public class MyFont {
             this.u1 = u1;
             this.v1 = v1;
             this.xAdvance = xAdvance;
+        }
+
+        public String toString() {
+            return String.format("CharData(x0=%f, y0=%f, x1=%f, y1=%f, u0=%f, v0=%f, u1=%f, v1=%f, xA=%f)", x0, y0, x1, y1, u0, v0, u1, v1, xAdvance);
         }
     }
 }
