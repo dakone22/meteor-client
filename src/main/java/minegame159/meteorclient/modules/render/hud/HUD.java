@@ -32,12 +32,12 @@ public class HUD extends ToggleModule {
     private static final HudRenderer RENDERER = new HudRenderer();
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgActiveModules = settings.createGroup("Active Modules");
-    private final SettingGroup sgInvViewer = settings.createGroup("Inventory Viewer");
-    private final SettingGroup sgPlayerModel = settings.createGroup("Player Model");
-    private final SettingGroup sgArmor = settings.createGroup("Armor");
-    private final SettingGroup sgModuleInfo = settings.createGroup("Module Info");
-    private final SettingGroup sgCompass = settings.createGroup("Compass");
+    private final SettingGroup sgActiveModules = settings.createGroup("minegame159.meteorclient.modules.render.hud.HUD.sgActiveModules");
+    private final SettingGroup sgInvViewer = settings.createGroup("minegame159.meteorclient.modules.render.hud.HUD.sgInvViewer");
+    private final SettingGroup sgPlayerModel = settings.createGroup("minegame159.meteorclient.modules.render.hud.HUD.sgPlayerModel");
+    private final SettingGroup sgArmor = settings.createGroup("minegame159.meteorclient.modules.render.hud.HUD.sgArmor");
+    private final SettingGroup sgModuleInfo = settings.createGroup("minegame159.meteorclient.modules.render.hud.HUD.sgModuleInfo");
+    private final SettingGroup sgCompass = settings.createGroup("minegame159.meteorclient.modules.render.hud.HUD.sgCompass");
 
 
     private final ActiveModulesHud activeModulesHud = new ActiveModulesHud(this);
@@ -46,7 +46,7 @@ public class HUD extends ToggleModule {
     // General
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .description("Scale of the HUD.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgGeneral.scale")
             .defaultValue(1)
             .min(1)
             .max(3)
@@ -57,21 +57,21 @@ public class HUD extends ToggleModule {
 
     private final Setting<Color> primaryColor = sgGeneral.add(new ColorSetting.Builder()
             .name("primary-color")
-            .description("Primary color of text.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgGeneral.primaryColor.description")
             .defaultValue(new Color(255, 255, 255))
             .build()
     );
 
     private final Setting<Color> secondaryColor = sgGeneral.add(new ColorSetting.Builder()
             .name("secondary-color")
-            .description("Secondary color of text.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgGeneral.secondaryColor.description")
             .defaultValue(new Color(175, 175, 175))
             .build()
     );
 
     private final Setting<Color> welcomeColor = sgGeneral.add(new ColorSetting.Builder()
             .name("welcome-color")
-            .description("Color of welcome text.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgGeneral.welcomeColor.description")
             .defaultValue(new Color(120, 43, 153))
             .build()
     );
@@ -79,7 +79,7 @@ public class HUD extends ToggleModule {
     // Active Modules
     private final Setting<ActiveModulesHud.Sort> activeModulesSort = sgActiveModules.add(new EnumSetting.Builder<ActiveModulesHud.Sort>()
             .name("active-modules-sort")
-            .description("How to sort active modules.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgActiveModules.activeModulesSort.description")
             .defaultValue(ActiveModulesHud.Sort.ByBiggest)
             .onChanged(sort -> activeModulesHud.recalculate())
             .build()
@@ -88,21 +88,21 @@ public class HUD extends ToggleModule {
     // Inventory Viewer
     private final Setting<InventoryViewerHud.Background> invViewerBackground = sgInvViewer.add(new EnumSetting.Builder<InventoryViewerHud.Background>()
             .name("inventory-viewer-background")
-            .description("Background of inventory viewer.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgInvViewer.invViewerBackground.description")
             .defaultValue(InventoryViewerHud.Background.Light)
             .build()
     );
 
     private final Setting<Color> invViewerColor = sgInvViewer.add(new ColorSetting.Builder()
             .name("flat-mode-color")
-            .description("Color of background on Flat mode.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgInvViewer.invViewerColor.description")
             .defaultValue(new Color(0, 0, 0, 64))
             .build()
     );
 
     private final Setting<Double> invViewerScale = sgInvViewer.add(new DoubleSetting.Builder()
             .name("inventory-viewer-scale")
-            .description("Scale of inventory viewer.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgInvViewer.invViewerScale.description")
             .defaultValue(2)
             .min(1)
             .max(4)
@@ -114,21 +114,21 @@ public class HUD extends ToggleModule {
     // Player Model
     private final Setting<Boolean> playerModelBackground = sgPlayerModel.add(new BoolSetting.Builder()
             .name("player-model-background")
-            .description("Displays a background behind the player model.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgPlayerModel.playerModelBackground.description")
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Color> playerModelColor = sgPlayerModel.add(new ColorSetting.Builder()
             .name("player-model-background-color")
-            .description("Color of background.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgPlayerModel.playerModelColor.description")
             .defaultValue(new Color(0, 0, 0, 64))
             .build()
     );
 
     private final Setting<Double> playerModelScale = sgPlayerModel.add(new DoubleSetting.Builder()
             .name("player-model-scale")
-            .description("Scale of player model.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgPlayerModel.playerModelScale.description")
             .defaultValue(2)
             .min(1)
             .max(4)
@@ -140,21 +140,21 @@ public class HUD extends ToggleModule {
     // Armor
     private final Setting<Boolean> armorFlip = sgArmor.add(new BoolSetting.Builder()
             .name("armor-flip-order")
-            .description("Flips the order of armor items.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgArmor.armorFlip.description")
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ArmorHud.Durability> armorDurability = sgArmor.add(new EnumSetting.Builder<ArmorHud.Durability>()
             .name("armor-durability")
-            .description("How to display armor durability.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgArmor.armorDurability.description")
             .defaultValue(ArmorHud.Durability.Default)
             .build()
     );
 
     private final Setting<Double> armorScale = sgArmor.add(new DoubleSetting.Builder()
             .name("armor-scale")
-            .description("Scale of armor.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgArmor.armorScale.description")
             .defaultValue(2)
             .min(2)
             .max(4)
@@ -166,7 +166,7 @@ public class HUD extends ToggleModule {
     // Module Info
     private final Setting<List<ToggleModule>> moduleInfoModules = sgModuleInfo.add(new ModuleListSetting.Builder()
             .name("module-info-modules")
-            .description("Which modules to display")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgModuleInfo.moduleInfoModules.description")
             .defaultValue(moduleInfoModulesDefaultValue())
             .onChanged(toggleModules -> moduleInfoHud.recalculate())
             .build()
@@ -174,14 +174,14 @@ public class HUD extends ToggleModule {
 
     private final Setting<Color> moduleInfoOnColor = sgModuleInfo.add(new ColorSetting.Builder()
             .name("module-info-on-color")
-            .description("Color when module is on.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgModuleInfo.moduleInfoOnColor.description")
             .defaultValue(new Color(25, 225, 25))
             .build()
     );
 
     private final Setting<Color> moduleInfoOffColor = sgModuleInfo.add(new ColorSetting.Builder()
             .name("module-info-off-color")
-            .description("Color when module is off.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgModuleInfo.moduleInfoOffColor.description")
             .defaultValue(new Color(225, 25, 25))
             .build()
     );
@@ -190,14 +190,14 @@ public class HUD extends ToggleModule {
 
     private final Setting<CompassHud.Mode> compassMode = sgCompass.add(new EnumSetting.Builder<CompassHud.Mode>()
             .name("inventory-viewer-background")
-            .description("Background of inventory viewer.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgCompass.compassMode.description")
             .defaultValue(CompassHud.Mode.Pole)
             .build()
     );
 
     private final Setting<Double> compassScale = sgCompass.add(new DoubleSetting.Builder()
             .name("compass-scale")
-            .description("Scale of compass.")
+            .description("minegame159.meteorclient.modules.render.hud.HUD.sgCompass.compassScale.description")
             .defaultValue(1)
             .sliderMin(2)
             .sliderMax(4)
@@ -207,7 +207,7 @@ public class HUD extends ToggleModule {
     public final List<HudModule> modules = new ArrayList<>();
 
     public HUD() {
-        super(Category.Render, "HUD", "In game overlay.");
+        super(Category.Render, "HUD", "minegame159.meteorclient.modules.render.hud.HUD.description");
 
         init();
     }
@@ -287,14 +287,14 @@ public class HUD extends ToggleModule {
     public WWidget getWidget() {
         WTable table = new WTable();
 
-        WButton reset = table.add(new WButton("Reset")).getWidget();
+        WButton reset = table.add(new WButton("minegame159.meteorclient.modules.render.hud.HUD.buttons.reset")).getWidget();
         reset.action = this::init;
-        table.add(new WLabel("Resets positions (do this after changing scale)."));
+        table.add(new WLabel("minegame159.meteorclient.modules.render.hud.HUD.buttons.reset.description"));
         table.row();
 
-        WButton editor = table.add(new WButton("Editor")).getWidget();
+        WButton editor = table.add(new WButton("minegame159.meteorclient.modules.render.hud.HUD.buttons.editor")).getWidget();
         editor.action = () -> mc.openScreen(new HudEditorScreen());
-        table.add(new WLabel("Right click elements to toggle."));
+        table.add(new WLabel("minegame159.meteorclient.modules.render.hud.HUD.buttons.editor.description"));
 
         return table;
     }

@@ -60,12 +60,12 @@ public class ModuleScreen extends WindowScreen {
             // Bind
             WTable bindList = add(new WTable()).fillX().expandX().getWidget();
             bindLabel = bindList.add(new WLabel(getBindLabelText())).getWidget();
-            bindList.add(new WButton("Set bind")).getWidget().action = () -> {
+            bindList.add(new WButton("minegame159.meteorclient.gui.screens.ModuleScreen.bind_set")).getWidget().action = () -> {
                 ModuleManager.INSTANCE.setModuleToBind(module);
                 canResetBind = false;
-                bindLabel.setText("Bind: press any key");
+                bindLabel.setText("minegame159.meteorclient.gui.screens.ModuleScreen.bind_set.active");
             };
-            bindList.add(new WButton("Reset bind")).getWidget().action = () -> {
+            bindList.add(new WButton("minegame159.meteorclient.gui.screens.ModuleScreen.bind_set.reset")).getWidget().action = () -> {
                 if (canResetBind) {
                     module.setKey(-1);
                     bindLabel.setText(getBindLabelText());
@@ -75,7 +75,7 @@ public class ModuleScreen extends WindowScreen {
 
             // Toggle on key release
             WTable tokrTable = add(new WTable()).fillX().expandX().getWidget();
-            tokrTable.add(new WLabel("Toggle on key release:"));
+            tokrTable.add(new WLabel("minegame159.meteorclient.gui.screens.ModuleScreen.toggle_on_key_release"));
             WCheckbox toggleOnKeyRelease = tokrTable.add(new WCheckbox(module.toggleOnKeyRelease)).getWidget();
             toggleOnKeyRelease.action = () -> {
                 module.toggleOnKeyRelease = toggleOnKeyRelease.checked;
@@ -89,16 +89,16 @@ public class ModuleScreen extends WindowScreen {
             WTable bottomTable = add(new WTable()).fillX().expandX().getWidget();
 
             //   Active
-            bottomTable.add(new WLabel("Active:"));
+            bottomTable.add(new WLabel("minegame159.meteorclient.gui.screens.ModuleScreen.active"));
             WCheckbox active = bottomTable.add(new WCheckbox(((ToggleModule) module).isActive())).getWidget();
             active.action = () -> {
                 if (((ToggleModule) module).isActive() != active.checked) ((ToggleModule) module).toggle(MinecraftClient.getInstance().world != null);
             };
 
             //   Visible
-            bottomTable.add(new WLabel("Visible: ")).fillX().right().getWidget().tooltip = "Visible in HUD.";
+            bottomTable.add(new WLabel("minegame159.meteorclient.gui.screens.ModuleScreen.visible")).fillX().right().getWidget().tooltip = "minegame159.meteorclient.gui.screens.ModuleScreen.visible.description";
             WCheckbox visibleCheckbox = bottomTable.add(new WCheckbox(((ToggleModule) module).isVisible())).getWidget();
-            visibleCheckbox.tooltip = "Visible in HUD.";
+            visibleCheckbox.tooltip = "minegame159.meteorclient.gui.screens.ModuleScreen.visible.description";
             visibleCheckbox.action = () -> {
                 if (((ToggleModule) module).isVisible() != visibleCheckbox.checked) ((ToggleModule) module).setVisible(visibleCheckbox.checked);
             };

@@ -43,7 +43,7 @@ public class Settings implements ISerializable<Settings>, Iterable<SettingGroup>
     }
 
     public SettingGroup getDefaultGroup() {
-        if (defaultGroup == null) defaultGroup = createGroup("General");
+        if (defaultGroup == null) defaultGroup = createGroup("minegame159.meteorclient.settings.Settings.defaultGroup");
         return defaultGroup;
     }
 

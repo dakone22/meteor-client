@@ -26,9 +26,9 @@ public class TopBarModules extends TopBarScreen {
         // Help text
         WTable bottomLeft = add(new WTable()).bottom().left().getWidget();
         bottomLeft.pad(4);
-        bottomLeft.add(new WLabel("Left click - activate/deactivate module", true));
+        bottomLeft.add(new WLabel("minegame159.meteorclient.gui.screens.topbar.TopBarModules.left_click", true));
         bottomLeft.row();
-        bottomLeft.add(new WLabel("Right click - open module settings", true));
+        bottomLeft.add(new WLabel("minegame159.meteorclient.gui.screens.topbar.TopBarModules.right_click", true));
     }
 
     private static class WWindowController extends WWidget {

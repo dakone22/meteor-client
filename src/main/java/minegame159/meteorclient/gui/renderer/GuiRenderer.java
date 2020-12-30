@@ -15,6 +15,7 @@ import minegame159.meteorclient.rendering.MeshBuilder;
 import minegame159.meteorclient.rendering.MyFont;
 import minegame159.meteorclient.utils.Color;
 import minegame159.meteorclient.utils.Pool;
+import minegame159.meteorclient.utils.Translation;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.texture.AbstractTexture;
@@ -211,9 +212,11 @@ public class GuiRenderer {
         texts.add(textPool.get().set(text, x, y, shadow, color, false));
     }
     public double textWidth(String text, int length) {
+        text = Translation.INSTANCE.get(text);
         return Fonts.get().getWidth(text, length) * GuiConfig.INSTANCE.guiScale;
     }
     public double textWidth(String text) {
+        text = Translation.INSTANCE.get(text);
         return Fonts.get().getWidth(text) * GuiConfig.INSTANCE.guiScale;
     }
     public double textHeight() {
@@ -290,7 +293,7 @@ public class GuiRenderer {
         private boolean title;
 
         public Text set(String text, double x, double y, boolean shadow, Color color, boolean title) {
-            this.text = text;
+            this.text = Translation.INSTANCE.get(text);
             this.x = x;
             this.y = y;
             this.shadow = shadow;

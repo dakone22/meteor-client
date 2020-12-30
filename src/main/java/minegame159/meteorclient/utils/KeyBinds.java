@@ -13,8 +13,8 @@ import org.lwjgl.glfw.GLFW;
 public class KeyBinds {
     private static final String CATEGORY = "Meteor Client";
 
-    public static KeyBinding OPEN_CLICK_GUI = new KeyBinding("key.meteor-client.open-click-gui", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_RIGHT_SHIFT, CATEGORY);
-    public static KeyBinding SHULKER_PEEK = new KeyBinding("key.meteor-client.shulker-peek", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_LEFT_ALT, CATEGORY);
+    public static KeyBinding OPEN_CLICK_GUI = new KeyBinding("key.meteorclient.open-click-gui", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_RIGHT_SHIFT, CATEGORY);
+    public static KeyBinding SHULKER_PEEK = new KeyBinding("key.meteorclient.shulker-peek", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_LEFT_ALT, CATEGORY);
 
     public static void Register() {
         KeyBindingHelper.registerKeyBinding(OPEN_CLICK_GUI);
