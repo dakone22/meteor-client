@@ -93,13 +93,12 @@ public class MyFont {
             start = range.getLeft();
             end = range.getRight();
 
-            cdata.limit(nextPos + (end - start));
+            cdata.limit(nextPos + (end - start) + 1);
             cdata.position(nextPos);
             STBTruetype.stbtt_PackFontRange(packContext, buffer, 0, height, CHARS.charAt(start), cdata);
 
             nextPos = nextPos + (end - start) + 1;
         }
-        cdata.limit(CHARS.length());
         //// ---
 
         STBTruetype.stbtt_PackEnd(packContext);
