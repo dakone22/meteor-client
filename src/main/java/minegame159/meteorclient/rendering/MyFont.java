@@ -5,6 +5,8 @@
 
 package minegame159.meteorclient.rendering;
 
+import it.unimi.dsi.fastutil.chars.Char2CharArrayMap;
+import it.unimi.dsi.fastutil.chars.Char2CharMap;
 import minegame159.meteorclient.utils.ByteTexture;
 import minegame159.meteorclient.utils.Color;
 import minegame159.meteorclient.utils.Utils;
@@ -28,14 +30,16 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MyFont {
-    private static final String CHARS = sorted(" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~" + "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяЁё");
-    private static String sorted(String s) {
-        char[] chars = s.toCharArray();
+    private static final String CHARS;
+    static {
+        char[] chars = (" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~" +
+                        "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяЁё")
+                .toCharArray();
         Arrays.sort(chars);
-        return new String(chars);
+        CHARS = new String(chars);
     }
-
     private static final char DEFAULT_CHAR = CHARS.charAt(0);
+
     private static final int BITMAP_W = 768, BITMAP_H = 768;
     private static final Color SHADOW_COLOR = new Color(60, 60, 60, 180);
 
