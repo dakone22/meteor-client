@@ -5,8 +5,6 @@
 
 package minegame159.meteorclient.rendering;
 
-import it.unimi.dsi.fastutil.chars.Char2CharArrayMap;
-import it.unimi.dsi.fastutil.chars.Char2CharMap;
 import minegame159.meteorclient.utils.ByteTexture;
 import minegame159.meteorclient.utils.Color;
 import minegame159.meteorclient.utils.Utils;
