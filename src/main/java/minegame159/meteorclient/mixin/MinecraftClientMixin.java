@@ -12,9 +12,6 @@ import minegame159.meteorclient.events.world.TickEvent;
 import minegame159.meteorclient.gui.GuiKeyEvents;
 import minegame159.meteorclient.gui.WidgetScreen;
 import minegame159.meteorclient.mixininterface.IMinecraftClient;
-import minegame159.meteorclient.modules.ModuleManager;
-import minegame159.meteorclient.modules.player.AutoEat;
-import minegame159.meteorclient.modules.player.AutoGap;
 import minegame159.meteorclient.utils.network.OnlinePlayers;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.Mouse;
@@ -22,14 +19,12 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Session;
 import net.minecraft.client.util.Window;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.profiler.Profiler;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import javax.annotation.Nullable;
@@ -103,11 +98,11 @@ public abstract class MinecraftClientMixin implements IMinecraftClient {
         GuiKeyEvents.resetPostKeyEvents();
     }
 
-    @Redirect(method = "doItemUse", at = @At(value = "FIELD", target = "Lnet/minecraft/client/MinecraftClient;crosshairTarget:Lnet/minecraft/util/hit/HitResult;", ordinal = 1))
-    private HitResult doItemUseMinecraftClientCrosshairTargetProxy(MinecraftClient client) {
-        if (ModuleManager.INSTANCE.get(AutoEat.class).rightClickThings() && ModuleManager.INSTANCE.get(AutoGap.class).rightClickThings()) return client.crosshairTarget;
-        return null;
-    }
+//    @Redirect(method = "doItemUse", at = @At(value = "FIELD", target = "Lnet/minecraft/client/MinecraftClient;crosshairTarget:Lnet/minecraft/util/hit/HitResult;", ordinal = 1))
+//    private HitResult doItemUseMinecraftClientCrosshairTargetProxy(MinecraftClient client) {
+//        if (ModuleManager.INSTANCE.get(AutoEat.class).rightClickThings() && ModuleManager.INSTANCE.get(AutoGap.class).rightClickThings()) return client.crosshairTarget;
+//        return null;
+//    }
 
     @Override
     public void leftClick() {

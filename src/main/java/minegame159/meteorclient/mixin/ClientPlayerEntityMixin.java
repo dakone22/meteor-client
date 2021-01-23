@@ -11,13 +11,7 @@ import minegame159.meteorclient.Config;
 import minegame159.meteorclient.MeteorClient;
 import minegame159.meteorclient.commands.CommandManager;
 import minegame159.meteorclient.events.entity.player.SendMessageEvent;
-import minegame159.meteorclient.modules.ModuleManager;
-import minegame159.meteorclient.modules.movement.NoSlow;
-import minegame159.meteorclient.modules.movement.Scaffold;
-import minegame159.meteorclient.modules.player.Portals;
 import minegame159.meteorclient.utils.player.ChatUtils;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Final;
@@ -25,9 +19,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ClientPlayerEntity.class)
 public abstract class ClientPlayerEntityMixin {
@@ -64,7 +56,7 @@ public abstract class ClientPlayerEntityMixin {
             info.cancel();
         }
     }
-
+/*
     @Redirect(method = "updateNausea", at = @At(value = "FIELD", target = "Lnet/minecraft/client/MinecraftClient;currentScreen:Lnet/minecraft/client/gui/screen/Screen;"))
     private Screen updateNauseaGetCurrentScreenProxy(MinecraftClient client) {
         if (ModuleManager.INSTANCE.isActive(Portals.class)) return null;
@@ -80,5 +72,5 @@ public abstract class ClientPlayerEntityMixin {
     @Inject(method = "isSneaking", at = @At("HEAD"), cancellable = true)
     private void onIsSneaking(CallbackInfoReturnable<Boolean> info) {
         if (ModuleManager.INSTANCE.isActive(Scaffold.class)) info.setReturnValue(false);
-    }
+    }*/
 }
