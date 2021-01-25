@@ -46,6 +46,7 @@ public class CommandManager {
         addCommand(new Reload());
         addCommand(new Reset());
         addCommand(new Say());
+        addCommand(new Settings());
         addCommand(new SwarmModuleToggle());
         addCommand(new SwarmQueen());
         addCommand(new SwarmSlave());

@@ -25,6 +25,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.util.Formatting;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Module implements Listenable, ISerializable<Module> {
@@ -184,5 +187,22 @@ public abstract class Module implements Listenable, ISerializable<Module> {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    public Setting<?> getSetting(String name) {
+        for (SettingGroup sg : settings) {
+            Setting<?> s = sg.get(name);
+            if (s != null) return s;
+        }
+        return null;
+    }
+
+    public Collection<Setting<?>> getAllSettings() {
+        List<Setting<?>> settingList = new ArrayList<>();
+        for (SettingGroup sg : settings)
+            for (Setting<?> s : sg)
+                settingList.add(s);
+
+        return settingList;
     }
 }
