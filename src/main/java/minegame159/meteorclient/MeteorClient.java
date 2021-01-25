@@ -14,6 +14,7 @@ import minegame159.meteorclient.accounts.AccountManager;
 import minegame159.meteorclient.commands.CommandManager;
 import minegame159.meteorclient.commands.commands.Ignore;
 import minegame159.meteorclient.events.game.GameLeftEvent;
+import minegame159.meteorclient.events.game.LanguageChangedEvent;
 import minegame159.meteorclient.events.meteor.ClientInitialisedEvent;
 import minegame159.meteorclient.events.meteor.KeyEvent;
 import minegame159.meteorclient.events.world.TickEvent;
@@ -106,6 +107,14 @@ public class MeteorClient implements ClientModInitializer, Listenable {
         EVENT_BUS.post(new ClientInitialisedEvent());
     }
 
+    public void reInit() {
+        // TODO: I think that should remake client initialization.
+        //  I18n.translate just returns String. So need to reinitialize all client (recreate all objects) for apply translation.
+        //  And now client initialize twice in a row on start (because first time it initialize before language resources loaded, i guess).
+        save();
+        onInitializeClient();
+    }
+
     public void load() {
         LOG.info("Loading");
 
@@ -163,6 +172,9 @@ public class MeteorClient implements ClientModInitializer, Listenable {
         KeyBinding shulkerPeek = KeyBinds.SHULKER_PEEK;
         ((IKeyBinding) shulkerPeek).setPressed(shulkerPeek.matchesKey(event.key, 0) && event.action != KeyAction.Release);
     });
+
+    @EventHandler
+    private final Listener<LanguageChangedEvent> onLanguageChanged = new Listener<>(event -> reInit());
 
     public static <T> T postEvent(T event) {
         EVENT_BUS.post(event);

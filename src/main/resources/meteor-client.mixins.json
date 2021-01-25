@@ -35,6 +35,7 @@
     "ChunkSkyLightProviderMixin",
     "ClientChunkProvideBaritoneSodiumComapMixin",
     "ClientConnectionMixin",
+    "ClientPlayerEntityAccessor",
     "ClientPlayerEntityMixin",
     "ClientPlayerInteractionManagerMixin",
     "ClientPlayNetworkHandlerMixin",
@@ -68,6 +69,7 @@
     "KeyBindingMixin",
     "KeyboardInputMixin",
     "KeyboardMixin",
+    "LanguageManagerMixin",
     "LightmapTextureManagerMixin",
     "LivingEntityMixin",
     "LivingEntityRendererMixin",
@@ -101,8 +103,7 @@
     "TitleScreenMixin",
     "Vec3dMixin",
     "WorldRendererAccessor",
-    "WorldRendererMixin",
-    "ClientPlayerEntityAccessor"
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,11 +1,11 @@
 {
-  "key.meteor-client.open-click-gui": "Open ClickGUI",
+  "key.meteor-client.open-click-gui": "Открыть ClickGUI",
   "key.meteor-client.shulker-peek": "Shulker Peek",
 
   "minegame159.meteorclient.modules.render.hud.HUD.description": "In game overlay.",
 
 
-  "HUD.description": "In game overlay!",
+  "HUD.description": "In game overlay!", // Внутреигровой интерфейс.
   // ----------------------------------
   //              Accounts
   // ----------------------------------
@@ -21,12 +21,12 @@
 
   // -- AddCrackedAccountScreen
   "AddCrackedAccountScreen.title": "Add Cracked Account",
-  "AddCrackedAccountScreen.labels.Name": "Name:",
+  "AddCrackedAccountScreen.labels.Name": "Имя:",
 
   // -- AddPremiumAccountScreen
-  "AddPremiumAccountScreen.title": "Add Premium Account",
-  "AddPremiumAccountScreen.labels.Email": "Email:",
-  "AddPremiumAccountScreen.labels.Password": "Password:",
+  "AddPremiumAccountScreen.title": "Добавить Премиум Аккаунт",
+  "AddPremiumAccountScreen.labels.Email": "Электронная почта:",
+  "AddPremiumAccountScreen.labels.Password": "Пароль:",
 
   // -- AddTheAlteningAccountScreen
   "AddTheAlteningAccountScreen.title": "Add The Altening Account",
@@ -73,11 +73,11 @@
 
   // TopBarModules
 
-  "TopBarModules.LeftClick": "Left click - activate/deactivate module",
-  "TopBarModules.RightClick": "Right click - open module settings",
+  "TopBarModules.LeftClick": "Левая Кнопка Мыши - включить/выключить модуль",
+  "TopBarModules.RightClick": "Правая Кнопка Мыши - открыть настройки модуля",
 
 
-  // "AccountsScreen.title": "In game overlay.",
+  // "AccountsScreen.title": "Accounts",
 //  "Accounts.AccountsScreen.cmd.description": "In game overlay."
   "_": "Just last entry without comma"
 }
