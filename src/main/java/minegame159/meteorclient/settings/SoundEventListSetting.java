@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class SoundEventListSetting extends Setting<List<SoundEvent>> {
-    public SoundEventListSetting(String name, String description, List<SoundEvent> defaultValue, Consumer<List<SoundEvent>> onChanged, Consumer<Setting<List<SoundEvent>>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public SoundEventListSetting(String name, String title, String description, List<SoundEvent> defaultValue, Consumer<List<SoundEvent>> onChanged, Consumer<Setting<List<SoundEvent>>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         value = new ArrayList<>(defaultValue);
 
@@ -97,13 +97,18 @@ public class SoundEventListSetting extends Setting<List<SoundEvent>> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private List<SoundEvent> defaultValue;
         private Consumer<List<SoundEvent>> onChanged;
         private Consumer<Setting<List<SoundEvent>>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -128,7 +133,7 @@ public class SoundEventListSetting extends Setting<List<SoundEvent>> {
         }
 
         public SoundEventListSetting build() {
-            return new SoundEventListSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new SoundEventListSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

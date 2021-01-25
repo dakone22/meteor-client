@@ -18,8 +18,8 @@ import java.util.function.Consumer;
 
 public class ParticleEffectListSetting extends Setting<List<ParticleEffect>> {
 
-    public ParticleEffectListSetting(String name, String description, List<ParticleEffect> defaultValue, Consumer<List<ParticleEffect>> onChanged, Consumer<Setting<List<ParticleEffect>>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public ParticleEffectListSetting(String name, String title, String description, List<ParticleEffect> defaultValue, Consumer<List<ParticleEffect>> onChanged, Consumer<Setting<List<ParticleEffect>>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         value = new ArrayList<>(defaultValue);
 
@@ -98,7 +98,7 @@ public class ParticleEffectListSetting extends Setting<List<ParticleEffect>> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private List<ParticleEffect> defaultValue;
         private Consumer<List<ParticleEffect>> onChanged;
         private Consumer<Setting<List<ParticleEffect>>> onModuleActivated;
@@ -129,7 +129,7 @@ public class ParticleEffectListSetting extends Setting<List<ParticleEffect>> {
         }
 
         public ParticleEffectListSetting build() {
-            return new ParticleEffectListSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new ParticleEffectListSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

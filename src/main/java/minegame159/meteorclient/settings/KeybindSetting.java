@@ -10,8 +10,8 @@ import net.minecraft.nbt.CompoundTag;
 import java.util.function.Consumer;
 
 public class KeybindSetting extends Setting<Integer> {
-    public KeybindSetting(String name, String description, Integer defaultValue, Consumer<Integer> onChanged, Consumer<Setting<Integer>> onModuleActivated, Runnable action) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public KeybindSetting(String name, String title, String description, Integer defaultValue, Consumer<Integer> onChanged, Consumer<Setting<Integer>> onModuleActivated, Runnable action) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         widget = new WKeybind(get());
         ((WKeybind) widget).action = () -> set(((WKeybind) widget).get());
@@ -58,7 +58,7 @@ public class KeybindSetting extends Setting<Integer> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private Integer defaultValue = -1;
         private Consumer<Integer> onChanged;
         private Consumer<Setting<Integer>> onModuleActivated;
@@ -66,6 +66,11 @@ public class KeybindSetting extends Setting<Integer> {
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -95,7 +100,7 @@ public class KeybindSetting extends Setting<Integer> {
         }
 
         public KeybindSetting build() {
-            return new KeybindSetting(name, description, defaultValue, onChanged, onModuleActivated, action);
+            return new KeybindSetting(name, title, description, defaultValue, onChanged, onModuleActivated, action);
         }
     }
 }

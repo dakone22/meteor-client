@@ -24,8 +24,8 @@ import java.util.function.Consumer;
 public class EntityTypeListSetting extends Setting<Object2BooleanMap<EntityType<?>>> {
     public final boolean onlyAttackable;
 
-    public EntityTypeListSetting(String name, String description, Object2BooleanMap<EntityType<?>> defaultValue, Consumer<Object2BooleanMap<EntityType<?>>> onChanged, Consumer<Setting<Object2BooleanMap<EntityType<?>>>> onModuleActivated, boolean onlyAttackable) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public EntityTypeListSetting(String name, String title, String description, Object2BooleanMap<EntityType<?>> defaultValue, Consumer<Object2BooleanMap<EntityType<?>>> onChanged, Consumer<Setting<Object2BooleanMap<EntityType<?>>>> onModuleActivated, boolean onlyAttackable) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         this.onlyAttackable = onlyAttackable;
         value = new Object2BooleanOpenHashMap<>(defaultValue);
@@ -94,7 +94,7 @@ public class EntityTypeListSetting extends Setting<Object2BooleanMap<EntityType<
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private Object2BooleanMap<EntityType<?>> defaultValue;
         private Consumer<Object2BooleanMap<EntityType<?>>> onChanged;
         private Consumer<Setting<Object2BooleanMap<EntityType<?>>>> onModuleActivated;
@@ -102,6 +102,11 @@ public class EntityTypeListSetting extends Setting<Object2BooleanMap<EntityType<
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -131,7 +136,7 @@ public class EntityTypeListSetting extends Setting<Object2BooleanMap<EntityType<
         }
 
         public EntityTypeListSetting build() {
-            return new EntityTypeListSetting(name, description, defaultValue, onChanged, onModuleActivated, onlyAttackable);
+            return new EntityTypeListSetting(name, title, description, defaultValue, onChanged, onModuleActivated, onlyAttackable);
         }
     }
 }

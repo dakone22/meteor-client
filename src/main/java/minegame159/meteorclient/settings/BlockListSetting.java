@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class BlockListSetting extends Setting<List<Block>> {
-    public BlockListSetting(String name, String description, List<Block> defaultValue, Consumer<List<Block>> onChanged, Consumer<Setting<List<Block>>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public BlockListSetting(String name, String title, String description, List<Block> defaultValue, Consumer<List<Block>> onChanged, Consumer<Setting<List<Block>>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         value = new ArrayList<>(defaultValue);
 
@@ -99,13 +99,18 @@ public class BlockListSetting extends Setting<List<Block>> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private List<Block> defaultValue;
         private Consumer<List<Block>> onChanged;
         private Consumer<Setting<List<Block>>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -130,7 +135,7 @@ public class BlockListSetting extends Setting<List<Block>> {
         }
 
         public BlockListSetting build() {
-            return new BlockListSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new BlockListSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

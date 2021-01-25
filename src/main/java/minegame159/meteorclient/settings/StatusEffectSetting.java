@@ -19,8 +19,8 @@ import net.minecraft.util.registry.Registry;
 import java.util.function.Consumer;
 
 public class StatusEffectSetting extends Setting<Object2IntMap<StatusEffect>> {
-    public StatusEffectSetting(String name, String description, Object2IntMap<StatusEffect> defaultValue, Consumer<Object2IntMap<StatusEffect>> onChanged, Consumer<Setting<Object2IntMap<StatusEffect>>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public StatusEffectSetting(String name, String title, String description, Object2IntMap<StatusEffect> defaultValue, Consumer<Object2IntMap<StatusEffect>> onChanged, Consumer<Setting<Object2IntMap<StatusEffect>>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         widget = new WButton("Select");
         ((WButton) widget).action = () -> MinecraftClient.getInstance().openScreen(new StatusEffectSettingScreen(this));
@@ -86,13 +86,18 @@ public class StatusEffectSetting extends Setting<Object2IntMap<StatusEffect>> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private Object2IntMap<StatusEffect> defaultValue;
         private Consumer<Object2IntMap<StatusEffect>> onChanged;
         private Consumer<Setting<Object2IntMap<StatusEffect>>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -117,7 +122,7 @@ public class StatusEffectSetting extends Setting<Object2IntMap<StatusEffect>> {
         }
 
         public StatusEffectSetting build() {
-            return new StatusEffectSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new StatusEffectSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

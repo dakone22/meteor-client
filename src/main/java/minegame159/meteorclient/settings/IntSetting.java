@@ -14,8 +14,8 @@ public class IntSetting extends Setting<Integer> {
     private final Integer min, max;
     private final Integer sliderMin, sliderMax;
 
-    private IntSetting(String name, String description, Integer defaultValue, Consumer<Integer> onChanged, Consumer<Setting<Integer>> onModuleActivated, Integer min, Integer max, Integer sliderMin, Integer sliderMax) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    private IntSetting(String name, String title, String description, Integer defaultValue, Consumer<Integer> onChanged, Consumer<Setting<Integer>> onModuleActivated, Integer min, Integer max, Integer sliderMin, Integer sliderMax) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
         this.min = min;
         this.max = max;
         this.sliderMin = sliderMin;
@@ -76,7 +76,7 @@ public class IntSetting extends Setting<Integer> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private Integer defaultValue;
         private Consumer<Integer> onChanged;
         private Consumer<Setting<Integer>> onModuleActivated;
@@ -85,6 +85,11 @@ public class IntSetting extends Setting<Integer> {
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -129,7 +134,7 @@ public class IntSetting extends Setting<Integer> {
         }
 
         public IntSetting build() {
-            return new IntSetting(name, description, defaultValue, onChanged, onModuleActivated, min, max, sliderMin, sliderMax);
+            return new IntSetting(name, title, description, defaultValue, onChanged, onModuleActivated, min, max, sliderMin, sliderMax);
         }
     }
 }

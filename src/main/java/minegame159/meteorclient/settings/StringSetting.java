@@ -11,8 +11,8 @@ import net.minecraft.nbt.CompoundTag;
 import java.util.function.Consumer;
 
 public class StringSetting extends Setting<String> {
-    public StringSetting(String name, String description, String defaultValue, Consumer<String> onChanged, Consumer<Setting<String>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public StringSetting(String name, String title, String description, String defaultValue, Consumer<String> onChanged, Consumer<Setting<String>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         value = defaultValue;
 
@@ -66,13 +66,18 @@ public class StringSetting extends Setting<String> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private String defaultValue;
         private Consumer<String> onChanged;
         private Consumer<Setting<String>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -97,7 +102,7 @@ public class StringSetting extends Setting<String> {
         }
 
         public StringSetting build() {
-            return new StringSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new StringSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

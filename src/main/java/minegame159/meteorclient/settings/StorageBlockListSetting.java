@@ -24,8 +24,8 @@ public class StorageBlockListSetting extends Setting<List<BlockEntityType<?>>> {
     public static final BlockEntityType<?>[] STORAGE_BLOCKS = { BlockEntityType.FURNACE, BlockEntityType.CHEST, BlockEntityType.TRAPPED_CHEST, BlockEntityType.ENDER_CHEST, BlockEntityType.DISPENSER, BlockEntityType.DROPPER, BlockEntityType.HOPPER, BlockEntityType.SHULKER_BOX, BlockEntityType.BARREL, BlockEntityType.SMOKER, BlockEntityType.BLAST_FURNACE };
     public static final String[] STORAGE_BLOCK_NAMES = { "Furnace", "Chest", "Trapped Chest", "Ender Chest", "Dispenser", "Dropper", "Hopper", "Shulker Box", "Barrel", "Smoker", "Blast Furnace" };
 
-    public StorageBlockListSetting(String name, String description, List<BlockEntityType<?>> defaultValue, Consumer<List<BlockEntityType<?>>> onChanged, Consumer<Setting<List<BlockEntityType<?>>>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public StorageBlockListSetting(String name, String title, String description, List<BlockEntityType<?>> defaultValue, Consumer<List<BlockEntityType<?>>> onChanged, Consumer<Setting<List<BlockEntityType<?>>>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         value = new ArrayList<>(defaultValue);
 
@@ -104,13 +104,18 @@ public class StorageBlockListSetting extends Setting<List<BlockEntityType<?>>> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private List<BlockEntityType<?>> defaultValue;
         private Consumer<List<BlockEntityType<?>>> onChanged;
         private Consumer<Setting<List<BlockEntityType<?>>>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -135,7 +140,7 @@ public class StorageBlockListSetting extends Setting<List<BlockEntityType<?>>> {
         }
 
         public StorageBlockListSetting build() {
-            return new StorageBlockListSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new StorageBlockListSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

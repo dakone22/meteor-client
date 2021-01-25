@@ -13,8 +13,8 @@ import java.util.function.Consumer;
 public class DoubleSetting extends Setting<Double> {
     private final Double min, max;
 
-    private DoubleSetting(String name, String description, Double defaultValue, Consumer<Double> onChanged, Consumer<Setting<Double>> onModuleActivated, Double min, Double max, Double sliderMin, Double sliderMax, boolean noSlider, int decimalPlaces) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    private DoubleSetting(String name, String title, String description, Double defaultValue, Consumer<Double> onChanged, Consumer<Setting<Double>> onModuleActivated, Double min, Double max, Double sliderMin, Double sliderMax, boolean noSlider, int decimalPlaces) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
         this.min = min;
         this.max = max;
 
@@ -73,7 +73,7 @@ public class DoubleSetting extends Setting<Double> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private Double defaultValue;
         private Consumer<Double> onChanged;
         private Consumer<Setting<Double>> onModuleActivated;
@@ -84,6 +84,11 @@ public class DoubleSetting extends Setting<Double> {
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -138,7 +143,7 @@ public class DoubleSetting extends Setting<Double> {
         }
 
         public DoubleSetting build() {
-            return new DoubleSetting(name, description, defaultValue, onChanged, onModuleActivated, min, max, sliderMin, sliderMax, noSlider, decimalPlaces);
+            return new DoubleSetting(name, title, description, defaultValue, onChanged, onModuleActivated, min, max, sliderMin, sliderMax, noSlider, decimalPlaces);
         }
     }
 }

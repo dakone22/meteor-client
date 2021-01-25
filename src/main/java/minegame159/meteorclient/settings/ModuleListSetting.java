@@ -20,8 +20,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModuleListSetting extends Setting<List<Module>> {
-    public ModuleListSetting(String name, String description, List<Module> defaultValue, Consumer<List<Module>> onChanged, Consumer<Setting<List<Module>>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public ModuleListSetting(String name, String title, String description, List<Module> defaultValue, Consumer<List<Module>> onChanged, Consumer<Setting<List<Module>>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         value = new ArrayList<>(defaultValue);
 
@@ -94,13 +94,18 @@ public class ModuleListSetting extends Setting<List<Module>> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private List<Module> defaultValue;
         private Consumer<List<Module>> onChanged;
         private Consumer<Setting<List<Module>>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -125,7 +130,7 @@ public class ModuleListSetting extends Setting<List<Module>> {
         }
 
         public ModuleListSetting build() {
-            return new ModuleListSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new ModuleListSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

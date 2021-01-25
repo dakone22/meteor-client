@@ -20,8 +20,8 @@ import java.util.function.Consumer;
 public class BlockSetting extends Setting<Block> {
     private final WItem itemWidget;
 
-    public BlockSetting(String name, String description, Block defaultValue, Consumer<Block> onChanged, Consumer<Setting<Block>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public BlockSetting(String name, String title, String description, Block defaultValue, Consumer<Block> onChanged, Consumer<Setting<Block>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         WTable table = new WTable();
         itemWidget = table.add(new WItem(get().asItem().getDefaultStack())).getWidget();
@@ -72,13 +72,18 @@ public class BlockSetting extends Setting<Block> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private Block defaultValue;
         private Consumer<Block> onChanged;
         private Consumer<Setting<Block>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -103,7 +108,7 @@ public class BlockSetting extends Setting<Block> {
         }
 
         public BlockSetting build() {
-            return new BlockSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new BlockSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

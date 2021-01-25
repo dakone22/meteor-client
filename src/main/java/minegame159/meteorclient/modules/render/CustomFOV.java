@@ -18,7 +18,8 @@ public class CustomFOV extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Integer> fov = sgGeneral.add(new IntSetting.Builder()
-            .name("fOV") // not typo, just makes it show FOV instead of Fov moment.
+            .name("fov")
+            .displayName("FOV")
             .description("Your custom FOV.")
             .defaultValue(100)
             .sliderMin(1)

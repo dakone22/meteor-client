@@ -29,14 +29,18 @@ public abstract class Setting<T> implements ISerializable<T> {
 
     public Module module;
 
-    public Setting(String name, String description, T defaultValue, Consumer<T> onChanged, Consumer<Setting<T>> onModuleActivated) {
+    public Setting(String name, String title, String description, T defaultValue, Consumer<T> onChanged, Consumer<Setting<T>> onModuleActivated) {
         this.name = name;
-        this.title = Arrays.stream(name.split("-")).map(StringUtils::capitalize).collect(Collectors.joining(" "));
+        this.title = (title != null && !title.isEmpty()) ? title : getDefaultTitle(name);
         this.description = description;
         this.defaultValue = defaultValue;
         reset(false);
         this.onChanged = onChanged;
         this.onModuleActivated = onModuleActivated;
+    }
+
+    private String getDefaultTitle(String name) {
+        return Arrays.stream(name.split("-")).map(StringUtils::capitalize).collect(Collectors.joining(" "));
     }
 
     public T get() {
@@ -58,6 +62,7 @@ public abstract class Setting<T> implements ISerializable<T> {
             changed();
         }
     }
+
     public void reset() {
         reset(true);
     }

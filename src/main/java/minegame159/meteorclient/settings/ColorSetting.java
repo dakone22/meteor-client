@@ -18,8 +18,8 @@ import java.util.function.Consumer;
 public class ColorSetting extends Setting<SettingColor> {
     private final WQuad quad;
 
-    public ColorSetting(String name, String description, SettingColor defaultValue, Consumer<SettingColor> onChanged, Consumer<Setting<SettingColor>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public ColorSetting(String name, String title, String description, SettingColor defaultValue, Consumer<SettingColor> onChanged, Consumer<Setting<SettingColor>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         widget = new WTable();
         quad = widget.add(new WQuad(get())).getWidget();
@@ -30,6 +30,10 @@ public class ColorSetting extends Setting<SettingColor> {
             colorSettingScreen.action = () -> quad.color = get();
             MinecraftClient.getInstance().openScreen(colorSettingScreen);
         };
+    }
+
+    public ColorSetting(String name, String description, SettingColor defaultValue, Consumer<SettingColor> onChanged, Consumer<Setting<SettingColor>> onModuleActivated) {
+        this(name, "", description, defaultValue, onChanged, onModuleActivated);
     }
 
     @Override
@@ -83,13 +87,18 @@ public class ColorSetting extends Setting<SettingColor> {
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private SettingColor defaultValue;
         private Consumer<SettingColor> onChanged;
         private Consumer<Setting<SettingColor>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -114,7 +123,7 @@ public class ColorSetting extends Setting<SettingColor> {
         }
 
         public ColorSetting build() {
-            return new ColorSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new ColorSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

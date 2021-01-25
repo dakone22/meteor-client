@@ -17,8 +17,8 @@ import net.minecraft.network.Packet;
 import java.util.function.Consumer;
 
 public class PacketBoolSetting extends Setting<Object2BooleanMap<Class<? extends Packet<?>>>> {
-    public PacketBoolSetting(String name, String description, Object2BooleanMap<Class<? extends Packet<?>>> defaultValue, Consumer<Object2BooleanMap<Class<? extends Packet<?>>>> onChanged, Consumer<Setting<Object2BooleanMap<Class<? extends Packet<?>>>>> onModuleActivated) {
-        super(name, description, defaultValue, onChanged, onModuleActivated);
+    public PacketBoolSetting(String name, String title, String description, Object2BooleanMap<Class<? extends Packet<?>>> defaultValue, Consumer<Object2BooleanMap<Class<? extends Packet<?>>>> onChanged, Consumer<Setting<Object2BooleanMap<Class<? extends Packet<?>>>>> onModuleActivated) {
+        super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         value = new Object2BooleanArrayMap<>(defaultValue);
 
@@ -85,13 +85,18 @@ public class PacketBoolSetting extends Setting<Object2BooleanMap<Class<? extends
     }
 
     public static class Builder {
-        private String name = "undefined", description = "";
+        private String name = "undefined", title = "", description = "";
         private Object2BooleanMap<Class<? extends Packet<?>>> defaultValue;
         private Consumer<Object2BooleanMap<Class<? extends Packet<?>>>> onChanged;
         private Consumer<Setting<Object2BooleanMap<Class<? extends Packet<?>>>>> onModuleActivated;
 
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder displayName(String title) {
+            this.title = title;
             return this;
         }
 
@@ -116,7 +121,7 @@ public class PacketBoolSetting extends Setting<Object2BooleanMap<Class<? extends
         }
 
         public PacketBoolSetting build() {
-            return new PacketBoolSetting(name, description, defaultValue, onChanged, onModuleActivated);
+            return new PacketBoolSetting(name, title, description, defaultValue, onChanged, onModuleActivated);
         }
     }
 }
