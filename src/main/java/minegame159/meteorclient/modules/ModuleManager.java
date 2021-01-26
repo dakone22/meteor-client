@@ -66,6 +66,16 @@ public class ModuleManager extends Savable<ModuleManager> implements Listenable 
 
         INSTANCE = this;
 
+        reset();
+
+        MeteorClient.EVENT_BUS.subscribe(this);
+    }
+
+    public void reset() {
+        if (!modules.isEmpty()) save();
+        modules.clear();
+        groups.clear();
+
         initCombat();
         initPlayer();
         initMovement();
@@ -75,8 +85,6 @@ public class ModuleManager extends Savable<ModuleManager> implements Listenable 
         for (List<Module> modules : groups.values()) {
             modules.sort(Comparator.comparing(o -> o.title));
         }
-
-        MeteorClient.EVENT_BUS.subscribe(this);
     }
 
     public <T extends Module> T get(Class<T> klass) {

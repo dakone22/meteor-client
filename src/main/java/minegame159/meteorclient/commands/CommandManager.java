@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 public class CommandManager {
-    private static final CommandDispatcher<CommandSource> DISPATCHER = new CommandDispatcher<>();
+    private static CommandDispatcher<CommandSource> DISPATCHER = new CommandDispatcher<>();
     private static final CommandSource COMMAND_SOURCE = new ChatCommandSource(MinecraftClient.getInstance());
     private static final List<Command> commands = new ArrayList<>();
     private static final Map<Class<? extends Command>, Command> commandInstances = new HashMap<>();
@@ -59,6 +59,13 @@ public class CommandManager {
         addCommand(new SwarmStop());
         addCommand(new SwarmCloseConnections());
         addCommand(new Toggle());
+    }
+
+    public static void reset() {
+        DISPATCHER = new CommandDispatcher<>();
+        commands.clear();
+        commandInstances.clear();
+        init();
     }
 
     public static void dispatch(String message) throws CommandSyntaxException {

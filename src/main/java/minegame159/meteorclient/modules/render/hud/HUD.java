@@ -22,6 +22,7 @@ import minegame159.meteorclient.utils.render.AlignmentX;
 import minegame159.meteorclient.utils.render.AlignmentY;
 import minegame159.meteorclient.utils.render.color.Color;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -296,7 +297,7 @@ public class HUD extends Module {
     public final List<HudModule> modules = new ArrayList<>();
 
     public HUD() {
-        super(Category.Render, "HUD", "In game overlay.");
+        super(Category.Render, "HUD", I18n.translate("HUD.description"));
 
         init();
     }

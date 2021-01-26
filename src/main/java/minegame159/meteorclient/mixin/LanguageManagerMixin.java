@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class LanguageManagerMixin {
     @Inject(method = "apply(Lnet/minecraft/resource/ResourceManager;)V", at = @At("TAIL"))
     private void onLanguageChange(ResourceManager manager, CallbackInfo info) {
-        MeteorClient.LOG.info("LANGUAGE CHANGED EVENT");  // TODO: DEBUG
         MeteorClient.EVENT_BUS.post(LanguageChangedEvent.get(Language.getInstance()));
     }
 }

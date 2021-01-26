@@ -107,14 +107,6 @@ public class MeteorClient implements ClientModInitializer, Listenable {
         EVENT_BUS.post(new ClientInitialisedEvent());
     }
 
-    public void reInit() {
-        // TODO: I think that should remake client initialization.
-        //  I18n.translate just returns String. So need to reinitialize all client (recreate all objects) for apply translation.
-        //  And now client initialize twice in a row on start (because first time it initialize before language resources loaded, i guess).
-        save();
-        onInitializeClient();
-    }
-
     public void load() {
         LOG.info("Loading");
 
@@ -174,7 +166,10 @@ public class MeteorClient implements ClientModInitializer, Listenable {
     });
 
     @EventHandler
-    private final Listener<LanguageChangedEvent> onLanguageChanged = new Listener<>(event -> reInit());
+    private final Listener<LanguageChangedEvent> onLanguageChanged = new Listener<>(event -> {
+        ModuleManager.INSTANCE.reset();
+        CommandManager.reset();
+    });
 
     public static <T> T postEvent(T event) {
         EVENT_BUS.post(event);

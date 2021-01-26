@@ -5,7 +5,7 @@
   "minegame159.meteorclient.modules.render.hud.HUD.description": "In game overlay.",
 
 
-  "HUD.description": "In game overlay!", // Внутреигровой интерфейс.
+  "HUD.description": "Внутреигровой интерфейс.", // Внутреигровой интерфейс.
   // ----------------------------------
   //              Accounts
   // ----------------------------------
