@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class EnumSetting<T extends Enum<?>> extends Setting<T> {
     private T[] values;
 
-    public EnumSetting(String name, String title, String description, T defaultValue, Consumer<T> onChanged, Consumer<Setting<T>> onModuleActivated) {
+    public EnumSetting(String name, String title, String description, String[] displayTexts, T defaultValue, Consumer<T> onChanged, Consumer<Setting<T>> onModuleActivated) {
         super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
         try {
@@ -23,7 +23,7 @@ public class EnumSetting<T extends Enum<?>> extends Setting<T> {
             e.printStackTrace();
         }
 
-        widget = new WDropbox<>(get());
+        widget = new WDropbox<>(get(), displayTexts);
         ((WDropbox<T>) widget).action = () -> set(((WDropbox<T>) widget).getValue());
     }
 
@@ -74,6 +74,7 @@ public class EnumSetting<T extends Enum<?>> extends Setting<T> {
 
     public static class Builder<T extends Enum<?>> {
         protected String name = "undefined", title = "", description = "";
+        protected String[] displayNames = {};
         protected T defaultValue;
         protected Consumer<T> onChanged;
         protected Consumer<Setting<T>> onModuleActivated;
@@ -85,6 +86,11 @@ public class EnumSetting<T extends Enum<?>> extends Setting<T> {
 
         public Builder<T> description(String description) {
             this.description = description;
+            return this;
+        }
+
+        public Builder<T> displayValues(String[] displayNames) {
+            this.displayNames = displayNames;
             return this;
         }
 
@@ -104,7 +110,7 @@ public class EnumSetting<T extends Enum<?>> extends Setting<T> {
         }
 
         public EnumSetting<T> build() {
-            return new EnumSetting<>(name, title, description, defaultValue, onChanged, onModuleActivated);
+            return new EnumSetting<>(name, title, description, displayNames, defaultValue, onChanged, onModuleActivated);
         }
     }
 }

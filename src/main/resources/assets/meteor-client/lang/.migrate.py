@@ -1,11 +1,20 @@
 #!/usr/bin/python3
 """
 Use this script manually to apply all changes from `en_us.json` for files of other languages.
+
+For main language (currently `en_US`):
+Just edit main lang file as you like (and you can use comments if you want as well).
+You just should launch this script after you finish your work.
+
+For non-en languages:
 No need to manually updating entries from EN file to your language file. Just run this script and it will apply
-all changes from `en_us.json` to files of other languages.
+all changes from main language file to files of other languages.
+
 
 `.migrate.prev` file is used for this script. Please, update it and do not delete it. (If you delete if then
 script won't understand what has been changed and just rewrite all entries changes as new entries)
+---
+If you can rewrite this better or redo it for Java, go ahead.
 """
 
 try:

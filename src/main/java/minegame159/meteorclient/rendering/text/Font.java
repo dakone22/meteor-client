@@ -133,8 +133,7 @@ public class Font {
     }
 
     private CharData getCharData(char cp) {
-        if (!charData.containsKey(cp)) cp = DEFAULT_CHAR;
-        return charData.get(cp);
+        return charData.getOrDefault(cp, charData.get(DEFAULT_CHAR));
     }
 
     public double getWidth(String string, int length) {

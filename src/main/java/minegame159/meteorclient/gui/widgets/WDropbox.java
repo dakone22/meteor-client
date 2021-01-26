@@ -12,6 +12,8 @@ import minegame159.meteorclient.utils.misc.CursorStyle;
 import minegame159.meteorclient.utils.render.color.Color;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class WDropbox<T extends Enum<?>> extends WWidget {
     private static final GuiRenderer RENDERER = new GuiRenderer();
@@ -19,22 +21,26 @@ public class WDropbox<T extends Enum<?>> extends WWidget {
     public Runnable action;
 
     private T value;
+    private Map<T, String> valueNames;
     private String valueName;
     private double valueNameWidth;
 
     private WTableRoot root;
     private boolean open;
 
-    public WDropbox(T value) {
+    public WDropbox(T value, String[] displayValues) {
         try {
             Class<?> klass = value.getClass();
             T[] values = (T[]) klass.getDeclaredMethod("values").invoke(null);
 
+            valueNames = new HashMap<>();
             root = new WTableRoot();
             root.pad(0);
             root.defaultCell.space(0);
+            int i = 0;
             for (T v : values) {
-                root.add(new WOption(v)).expandX();
+                if (displayValues != null && i < displayValues.length) valueNames.put(v, displayValues[i++]);
+                root.add(new WOption(v, valueNames.get(v))).expandX();
                 root.row();
             }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
@@ -44,9 +50,13 @@ public class WDropbox<T extends Enum<?>> extends WWidget {
         setValue(value);
     }
 
+    public WDropbox(T value) {
+        this(value, null);
+    }
+
     public void setValue(T value) {
         this.value = value;
-        this.valueName = value.toString();
+        this.valueName = valueNames.getOrDefault(value, value.toString());
         this.valueNameWidth = -1;
     }
 
@@ -159,9 +169,9 @@ public class WDropbox<T extends Enum<?>> extends WWidget {
         private final String text;
         private double a;
 
-        public WOption(T value) {
+        public WOption(T value, String text) {
             this.value = value;
-            this.text = value.toString();
+            this.text = (text != null && !text.isEmpty()) ? text : value.toString();
         }
 
         @Override

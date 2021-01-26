@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 
 public class PotionSetting extends EnumSetting<MyPotion> {
     public PotionSetting(String name, String title, String description, MyPotion defaultValue, Consumer<MyPotion> onChanged, Consumer<Setting<MyPotion>> onModuleActivated) {
-        super(name, title, description, defaultValue, onChanged, onModuleActivated);
+        super(name, title, description, null, defaultValue, onChanged, onModuleActivated);
 
         widget = new WItemWithLabel(get().potion);
         widget.add(new WButton("Select")).getWidget().action = () -> MinecraftClient.getInstance().openScreen(new PotionSettingScreen(this));
