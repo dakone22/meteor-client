@@ -23,14 +23,14 @@ public class CustomTextRenderer implements TextRenderer {
     private boolean scaleOnly;
     private double scale;
 
-    public CustomTextRenderer(File file) {
+    public CustomTextRenderer(File file, char[] supportedChars) {
         byte[] bytes = Utils.readBytes(file);
         ByteBuffer buffer = BufferUtils.createByteBuffer(bytes.length).put(bytes);
 
         fonts = new Font[5];
         for (int i = 0; i < fonts.length; i++) {
             ((Buffer) buffer).flip();
-            fonts[i] = new Font(buffer, (int) Math.round(18 * ((i * 0.5) + 1)));
+            fonts[i] = new Font(supportedChars, buffer, (int) Math.round(18 * ((i * 0.5) + 1)));
         }
 
         mb.texture = true;
