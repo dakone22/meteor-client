@@ -8,7 +8,6 @@ package minegame159.meteorclient.rendering;
 import minegame159.meteorclient.MeteorClient;
 import minegame159.meteorclient.rendering.text.CustomTextRenderer;
 
-import java.awt.*;
 import java.io.*;
 
 public class Fonts {
@@ -54,26 +53,9 @@ public class Fonts {
             }
         }
 
-        char[] supportedChars = {};
-        try {  // getting all supported chars
-            Font font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(fontFile));
-            MeteorClient.LOG.info(String.format("font: %s", font));
-
-            StringBuilder str = new StringBuilder();
-            for (char c = 0x0000; c < Character.MAX_VALUE; c++)
-                if (font.canDisplay(c))
-                    str.append(c);
-            supportedChars = str.toString().toCharArray();
-
-        } catch (FontFormatException | IOException e) {
-            e.printStackTrace();
-        }
-
-        MeteorClient.LOG.info(String.format("supportedChars.length: %d", supportedChars.length));
-
         long startTime = System.currentTimeMillis();
-        MeteorClient.FONT = new CustomTextRenderer(fontFile, supportedChars);
+        MeteorClient.FONT = new CustomTextRenderer(fontFile);
         long endTime = System.currentTimeMillis();
-        MeteorClient.LOG.info("Total execution time: " + (endTime-startTime) + "ms");
+        MeteorClient.LOG.info("Font rendering time: " + (endTime-startTime) + "ms");  // TODO: DEBUG
     }
 }

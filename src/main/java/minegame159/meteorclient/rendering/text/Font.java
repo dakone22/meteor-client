@@ -38,7 +38,7 @@ public class Font {
         int bitmap_w = k;
         int bitmap_h = k;
 
-        MeteorClient.LOG.info(String.format("Size = %d; Buffer = %d", height, k));
+        MeteorClient.LOG.info(String.format("Size = %d; Buffer = %d", height, k));  // TODO: DEBUG
 
         // Initialize font
         STBTTFontinfo fontInfo = STBTTFontinfo.create();

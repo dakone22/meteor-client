@@ -1,5 +1,6 @@
 package minegame159.meteorclient.rendering.text;
 
+import minegame159.meteorclient.MeteorClient;
 import minegame159.meteorclient.rendering.DrawMode;
 import minegame159.meteorclient.rendering.MeshBuilder;
 import minegame159.meteorclient.utils.Utils;
@@ -7,7 +8,10 @@ import minegame159.meteorclient.utils.render.color.Color;
 import net.minecraft.client.render.VertexFormats;
 import org.lwjgl.BufferUtils;
 
+import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 
@@ -23,7 +27,29 @@ public class CustomTextRenderer implements TextRenderer {
     private boolean scaleOnly;
     private double scale;
 
-    public CustomTextRenderer(File file, char[] supportedChars) {
+    private static char[] getSupportedChars(File fontFile) {
+        char[] supportedChars = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~".toCharArray();
+        try {  // getting all supported chars
+            java.awt.Font font = java.awt.Font.createFont(java.awt.Font.TRUETYPE_FONT, new FileInputStream(fontFile));
+
+            StringBuilder str = new StringBuilder();
+            for (char c = 0x0000; c < Character.MAX_VALUE; ++c) {
+                if (font.canDisplay(c)) str.append(c);
+            }
+
+            supportedChars = str.toString().toCharArray();
+
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return supportedChars;
+    }
+
+    public CustomTextRenderer(File file) {
+        char[] supportedChars = getSupportedChars(file);
+        MeteorClient.LOG.info(String.format("supportedChars.length: %d", supportedChars.length));  // TODO: DEBUG
+
         byte[] bytes = Utils.readBytes(file);
         ByteBuffer buffer = BufferUtils.createByteBuffer(bytes.length).put(bytes);
 
