@@ -18,6 +18,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.HorseBaseEntity;
 
@@ -26,13 +27,14 @@ public class EntityControl extends Module {
 
     private final Setting<Boolean> maxJump = sgGeneral.add(new BoolSetting.Builder()
             .name("max-jump")
-            .description("Sets jump power to maximum.")
+            .displayName(I18n.translate("Modules.EntityControl.setting.maxJump.displayName"))
+            .description(I18n.translate("Modules.EntityControl.setting.maxJump.description"))
             .defaultValue(true)
             .build()
     );
 
     public EntityControl() {
-        super(Category.Movement, "entity-control", "Lets you control rideable entities without a saddle.");
+        super(Category.Movement, "entity-control", I18n.translate("Modules.EntityControl.description"));
     }
 
     @Override

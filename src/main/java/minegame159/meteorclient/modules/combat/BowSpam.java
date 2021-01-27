@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.IntSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Items;
 
 public class BowSpam extends Module {
@@ -23,7 +24,8 @@ public class BowSpam extends Module {
 
     private final Setting<Integer> charge = sgGeneral.add(new IntSetting.Builder()
             .name("charge")
-            .description("How long to charge the bow before releasing in ticks.")
+            .displayName(I18n.translate("Modules.BowSpam.setting.charge.displayName"))
+            .description(I18n.translate("Modules.BowSpam.setting.charge.description"))
             .defaultValue(5)
             .min(5)
             .max(20)
@@ -34,7 +36,8 @@ public class BowSpam extends Module {
 
     private final Setting<Boolean> onlyWhenHoldingRightClick = sgGeneral.add(new BoolSetting.Builder()
             .name("only-when-holding-right-click")
-            .description("Works only when holding right click.")
+            .displayName(I18n.translate("Modules.BowSpam.setting.onlyWhenHoldingRightClick.displayName"))
+            .description(I18n.translate("Modules.BowSpam.setting.onlyWhenHoldingRightClick.description"))
             .defaultValue(false)
             .build()
     );
@@ -43,7 +46,7 @@ public class BowSpam extends Module {
     private boolean wasHoldingRightClick = false;
 
     public BowSpam() {
-        super(Category.Combat, "bow-spam", "Spams arrows.");
+        super(Category.Combat, "bow-spam", I18n.translate("Modules.BowSpam.description"));
     }
 
     @Override

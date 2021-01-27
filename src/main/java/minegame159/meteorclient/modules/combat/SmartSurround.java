@@ -17,7 +17,11 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
-import minegame159.meteorclient.utils.player.*;
+import minegame159.meteorclient.utils.player.ChatUtils;
+import minegame159.meteorclient.utils.player.DamageCalcUtils;
+import minegame159.meteorclient.utils.player.PlayerUtils;
+import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -32,21 +36,24 @@ public class SmartSurround extends Module {
 
     private final Setting<Boolean> onlyObsidian = sgGeneral.add(new BoolSetting.Builder()
             .name("only-obsidian")
-            .description("Only whitelists obsidian to be used.")
+            .displayName(I18n.translate("Modules.SmartSurround.setting.onlyObsidian.displayName"))
+            .description(I18n.translate("Modules.SmartSurround.setting.onlyObsidian.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> minDamage = sgGeneral.add(new DoubleSetting.Builder()
             .name("min-damage")
-            .description("The minimum damage before this activates.")
+            .displayName(I18n.translate("Modules.SmartSurround.setting.minDamage.displayName"))
+            .description(I18n.translate("Modules.SmartSurround.setting.minDamage.description"))
             .defaultValue(5.5)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Forces you to rotate towards the block being placed.")
+            .displayName(I18n.translate("Modules.SmartSurround.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.SmartSurround.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -62,7 +69,7 @@ public class SmartSurround extends Module {
     private Entity crystal;
 
     public SmartSurround(){
-        super(Category.Combat, "smart-surround", "Attempts to save you from crystals automatically.");
+        super(Category.Combat, "smart-surround", I18n.translate("Modules.SmartSurround.description"));
     }
 
     @EventHandler

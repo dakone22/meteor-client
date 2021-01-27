@@ -20,9 +20,9 @@ import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.misc.input.KeyBinds;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
@@ -49,28 +49,31 @@ public class ShulkerPeek extends Module {
     }
 
     public ShulkerPeek(){
-        super(Category.Render, "shulker-peek", "Allows you to see what is inside Shulker Boxes without placing them.");
+        super(Category.Render, "shulker-peek", I18n.translate("Modules.ShulkerPeek.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     public final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The way to display the shulker info.")
+            .displayName(I18n.translate("Modules.ShulkerPeek.setting.mode.displayName"))
+            .description(I18n.translate("Modules.ShulkerPeek.setting.mode.description"))
             .defaultValue(Mode.Always)
             .build()
     );
 
     public final Setting<BackgroundMode> bgMode = sgGeneral.add(new EnumSetting.Builder<BackgroundMode>()
             .name("background-mode")
-            .description("The background of the tooltip.")
+            .displayName(I18n.translate("Modules.ShulkerPeek.setting.bgMode.displayName"))
+            .description(I18n.translate("Modules.ShulkerPeek.setting.bgMode.description"))
             .defaultValue(BackgroundMode.Light)
             .build()
     );
 
     private final Setting<Integer> lines = sgGeneral.add(new IntSetting.Builder()
             .name("lines")
-            .description("The number of lines to show in the tooltip mode.")
+            .displayName(I18n.translate("Modules.ShulkerPeek.setting.lines.displayName"))
+            .description(I18n.translate("Modules.ShulkerPeek.setting.lines.description"))
             .defaultValue(8)
             .min(0)
             .build()

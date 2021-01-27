@@ -23,6 +23,7 @@ import minegame159.meteorclient.utils.player.RotationUtils;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -45,27 +46,30 @@ public class AutoTrap extends Module {
 
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.AutoTrap.group.sgRender"));
 
     // General
 
     private final Setting<TopMode> topPlacement = sgGeneral.add(new EnumSetting.Builder<TopMode>()
             .name("top-mode")
-            .description("Which blocks to place on the top half of the target.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.topPlacement.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.topPlacement.description"))
             .defaultValue(TopMode.Full)
             .build()
     );
 
     private final Setting<BottomMode> bottomPlacement = sgGeneral.add(new EnumSetting.Builder<BottomMode>()
             .name("bottom-mode")
-            .description("Which blocks to place on the bottom half of the target.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.bottomPlacement.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.bottomPlacement.description"))
             .defaultValue(BottomMode.Platform)
             .build()
     );
 
     private final Setting<Integer> range = sgGeneral.add(new IntSetting.Builder()
             .name("range")
-            .description("The radius players can be in to be targeted.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.range.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.range.description"))
             .defaultValue(5)
             .sliderMin(0)
             .sliderMax(10)
@@ -74,7 +78,8 @@ public class AutoTrap extends Module {
 
     private final Setting<Integer> delaySetting = sgGeneral.add(new IntSetting.Builder()
             .name("place-delay")
-            .description("How many ticks between block placements.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.delaySetting.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.delaySetting.description"))
             .defaultValue(1)
             .sliderMin(0)
             .sliderMax(10)
@@ -83,14 +88,16 @@ public class AutoTrap extends Module {
 
     private final Setting<Boolean> turnOff = sgGeneral.add(new BoolSetting.Builder()
             .name("turn-off")
-            .description("Turns off after placing.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.turnOff.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.turnOff.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Sends rotation packets to the server when placing.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -99,28 +106,32 @@ public class AutoTrap extends Module {
 
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .description("Renders a block overlay where the obsidian will be placed.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.render.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The color of the sides of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The color of the lines of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.AutoTrap.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.AutoTrap.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );
@@ -131,7 +142,7 @@ public class AutoTrap extends Module {
     private int delay;
 
     public AutoTrap(){
-        super(Category.Combat, "auto-trap", "Traps people in an obsidian box to prevent them from moving.");
+        super(Category.Combat, "auto-trap", I18n.translate("Modules.AutoTrap.description"));
     }
 
     @Override

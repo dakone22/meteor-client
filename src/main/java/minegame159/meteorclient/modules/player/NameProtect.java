@@ -10,6 +10,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.StringSetting;
+import net.minecraft.client.resource.language.I18n;
 
 public class NameProtect extends Module {
 
@@ -17,13 +18,14 @@ public class NameProtect extends Module {
 
     private final Setting<String> name = sgGeneral.add(new StringSetting.Builder()
             .name("name")
-            .description("Name to be replaced with.")
+            .displayName(I18n.translate("Modules.NameProtect.setting.name.displayName"))
+            .description(I18n.translate("Modules.NameProtect.setting.name.description"))
             .defaultValue("squidoodly")
             .build()
     );
 
     public NameProtect() {
-        super(Category.Player, "name-protect", "Hides your name client-side.");
+        super(Category.Player, "name-protect", I18n.translate("Modules.NameProtect.description"));
     }
 
     private String username = "If you see this, something is wrong.";

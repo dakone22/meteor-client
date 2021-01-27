@@ -17,6 +17,7 @@ import minegame159.meteorclient.utils.player.RotationUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -44,35 +45,40 @@ public class Nuker extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The way the blocks are broken.")
+            .displayName(I18n.translate("Modules.Nuker.setting.mode.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.mode.description"))
             .defaultValue(Mode.All)
             .build()
     );
 
     private final Setting<Boolean> packetMine = sgGeneral.add(new BoolSetting.Builder()
             .name("packet-mine")
-            .description("Mines blocks using packet spamming.")
+            .displayName(I18n.translate("Modules.Nuker.setting.packetMine.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.packetMine.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<List<Block>> selectedBlocks = sgGeneral.add(new BlockListSetting.Builder()
             .name("selected-blocks")
-            .description("The certain type of blocks you want to mine.")
+            .displayName(I18n.translate("Modules.Nuker.setting.selectedBlocks.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.selectedBlocks.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     private final Setting<Boolean> onlySelected = sgGeneral.add(new BoolSetting.Builder()
             .name("only-selected")
-            .description("Only mines your selected blocks.")
+            .displayName(I18n.translate("Modules.Nuker.setting.onlySelected.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.onlySelected.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .description("The break range.")
+            .displayName(I18n.translate("Modules.Nuker.setting.range.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.range.description"))
             .defaultValue(5)
             .min(0)
             .build()
@@ -80,21 +86,24 @@ public class Nuker extends Module {
 
     private final Setting<SortMode> sortMode = sgGeneral.add(new EnumSetting.Builder<SortMode>()
             .name("sort-mode")
-            .description("The blocks you want to mine first.")
+            .displayName(I18n.translate("Modules.Nuker.setting.sortMode.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.sortMode.description"))
             .defaultValue(SortMode.Closest)
             .build()
     );
 
     private final Setting<Boolean> noParticles = sgGeneral.add(new BoolSetting.Builder()
             .name("no-particles")
-            .description("Disables all block breaking particles.")
+            .displayName(I18n.translate("Modules.Nuker.setting.noParticles.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.noParticles.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Automatically faces the blocks being mined.")
+            .displayName(I18n.translate("Modules.Nuker.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.Nuker.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -106,7 +115,7 @@ public class Nuker extends Module {
     private boolean hasLastBlockPos;
 
     public Nuker() {
-        super(Category.Misc, "nuker", "Breaks a large amount of specified blocks around you.");
+        super(Category.Misc, "nuker", I18n.translate("Modules.Nuker.description"));
     }
 
     @Override

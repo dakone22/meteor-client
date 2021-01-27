@@ -32,6 +32,7 @@ import minegame159.meteorclient.utils.network.MeteorExecutor;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 
 import javax.annotation.Nonnull;
 import java.io.*;
@@ -48,7 +49,7 @@ import java.util.List;
 
 public class Swarm extends Module {
     public Swarm() {
-        super(Category.Combat, "Swarm", "I Am... The Swarm.");
+        super(Category.Combat, "Swarm", I18n.translate("Modules.Swarm.description"));
     }
 
     public enum Mode {
@@ -62,13 +63,14 @@ public class Swarm extends Module {
     private final Setting<String> ipAddress = sgGeneral.add(new StringSetting.Builder()
             .name("ip-address")
             .displayName("IP-address")
-            .description("The IP address of the Queen.")
+            .description(I18n.translate("Modules.Swarm.setting.ipAddress.description"))
             .defaultValue("localhost")
             .build());
 
     private final Setting<Integer> serverPort = sgGeneral.add(new IntSetting.Builder()
             .name("port")
-            .description("The port used for connections.")
+            .displayName(I18n.translate("Modules.Swarm.setting.serverPort.displayName"))
+            .description(I18n.translate("Modules.Swarm.setting.serverPort.description"))
             .defaultValue(7777)
             .sliderMin(1)
             .sliderMax(65535)

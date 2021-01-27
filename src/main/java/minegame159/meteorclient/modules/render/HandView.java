@@ -10,6 +10,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class HandView extends Module {
 
@@ -17,7 +18,8 @@ public class HandView extends Module {
 
     private final Setting<Double> rotationX = sgDefault.add(new DoubleSetting.Builder()
             .name("rotation-x")
-            .description("The X rotation of your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.rotationX.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.rotationX.description"))
             .defaultValue(0.00)
             .sliderMin(-0.2)
             .sliderMax(0.2)
@@ -26,7 +28,8 @@ public class HandView extends Module {
 
     private final Setting<Double> rotationY = sgDefault.add(new DoubleSetting.Builder()
             .name("rotation-y")
-            .description("The Y rotation of your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.rotationY.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.rotationY.description"))
             .defaultValue(0.00)
             .sliderMin(-0.2)
             .sliderMax(0.2)
@@ -35,7 +38,8 @@ public class HandView extends Module {
 
     private final Setting<Double> rotationZ = sgDefault.add(new DoubleSetting.Builder()
             .name("rotation-z")
-            .description("The Z rotation of your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.rotationZ.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.rotationZ.description"))
             .defaultValue(0.00)
             .sliderMin(-0.25)
             .sliderMax(0.25)
@@ -44,7 +48,8 @@ public class HandView extends Module {
 
     private final Setting<Double> ScaleX = sgDefault.add(new DoubleSetting.Builder()
             .name("scale-x")
-            .description("The X scale of the items rendered in your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.ScaleX.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.ScaleX.description"))
             .defaultValue(0.75)
             .sliderMin(0)
             .sliderMax(1.5)
@@ -53,7 +58,8 @@ public class HandView extends Module {
 
     private final Setting<Double> ScaleY = sgDefault.add(new DoubleSetting.Builder()
             .name("scale-y")
-            .description("The Y scale of the items rendered in your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.ScaleY.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.ScaleY.description"))
             .defaultValue(0.60)
             .sliderMin(0)
             .sliderMax(2)
@@ -62,7 +68,8 @@ public class HandView extends Module {
 
     private final Setting<Double> ScaleZ = sgDefault.add(new DoubleSetting.Builder()
             .name("scale-z")
-            .description("The Z scale of the items rendered in your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.ScaleZ.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.ScaleZ.description"))
             .defaultValue(1.00)
             .sliderMin(0)
             .sliderMax(5)
@@ -71,7 +78,8 @@ public class HandView extends Module {
 
     private final Setting<Double> PosX = sgDefault.add(new DoubleSetting.Builder()
             .name("pos-x")
-            .description("The X offset of your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.PosX.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.PosX.description"))
             .defaultValue(0.00)
             .sliderMin(-3)
             .sliderMax(3)
@@ -80,7 +88,8 @@ public class HandView extends Module {
 
     private final Setting<Double> PosY = sgDefault.add(new DoubleSetting.Builder()
             .name("pos-y")
-            .description("The Y offset of your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.PosY.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.PosY.description"))
             .defaultValue(0.00)
             .sliderMin(-3)
             .sliderMax(3)
@@ -89,7 +98,8 @@ public class HandView extends Module {
 
     private final Setting<Double> PosZ = sgDefault.add(new DoubleSetting.Builder()
             .name("pos-z")
-            .description("The Z offset of your hands.")
+            .displayName(I18n.translate("Modules.HandView.setting.PosZ.displayName"))
+            .description(I18n.translate("Modules.HandView.setting.PosZ.description"))
             .defaultValue(-0.10)
             .sliderMin(-3)
             .sliderMax(3)
@@ -98,7 +108,7 @@ public class HandView extends Module {
 
 
     public HandView() {
-        super(Category.Render, "hand-view", "Alters the way items are rendered in your hands.");
+        super(Category.Render, "hand-view", I18n.translate("Modules.HandView.description"));
     }
 
     public float rotationX() {

@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,13 +24,14 @@ public class Trigger extends Module {
     
     private final Setting<Boolean> whenHoldingLeftClick = sgGeneral.add(new BoolSetting.Builder()
             .name("when-holding-left-click")
-            .description("Attacks only when you are holding left click.")
+            .displayName(I18n.translate("Modules.Trigger.setting.whenHoldingLeftClick.displayName"))
+            .description(I18n.translate("Modules.Trigger.setting.whenHoldingLeftClick.description"))
             .defaultValue(false)
             .build()
     );
 
     public Trigger() {
-        super(Category.Combat, "trigger", "Automatically swings when you look at entities.");
+        super(Category.Combat, "trigger", I18n.translate("Modules.Trigger.description"));
     }
 
     private Entity target;

@@ -10,40 +10,45 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class NoSlow extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Boolean> items = sgGeneral.add(new BoolSetting.Builder()
             .name("items")
-            .description("Whether or not using items will slow you.")
+            .displayName(I18n.translate("Modules.NoSlow.setting.items.displayName"))
+            .description(I18n.translate("Modules.NoSlow.setting.items.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> web = sgGeneral.add(new BoolSetting.Builder()
             .name("web")
-            .description("Whether or not cobwebs will slow you.")
+            .displayName(I18n.translate("Modules.NoSlow.setting.web.displayName"))
+            .description(I18n.translate("Modules.NoSlow.setting.web.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> soulSand = sgGeneral.add(new BoolSetting.Builder()
             .name("soul-sand")
-            .description("Whether or not Soul Sand will slow you.")
+            .displayName(I18n.translate("Modules.NoSlow.setting.soulSand.displayName"))
+            .description(I18n.translate("Modules.NoSlow.setting.soulSand.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> slimeBlock = sgGeneral.add(new BoolSetting.Builder()
             .name("slime-block")
-            .description("Whether or not slime blocks will slow you.")
+            .displayName(I18n.translate("Modules.NoSlow.setting.slimeBlock.displayName"))
+            .description(I18n.translate("Modules.NoSlow.setting.slimeBlock.description"))
             .defaultValue(true)
             .build()
     );
 
     public NoSlow() {
-        super(Category.Movement, "no-slow", "Allows you to move normally when using objects that will slow you.");
+        super(Category.Movement, "no-slow", I18n.translate("Modules.NoSlow.description"));
     }
 
     public boolean items() {

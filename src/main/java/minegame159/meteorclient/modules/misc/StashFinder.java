@@ -23,6 +23,7 @@ import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import net.minecraft.block.entity.*;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.client.util.math.MatrixStack;
@@ -45,14 +46,16 @@ public class StashFinder extends Module {
 
     private final Setting<List<BlockEntityType<?>>> storageBlocks = sgGeneral.add(new StorageBlockListSetting.Builder()
             .name("storage-blocks")
-            .description("Select the storage blocks to search for.")
+            .displayName(I18n.translate("Modules.StashFinder.setting.storageBlocks.displayName"))
+            .description(I18n.translate("Modules.StashFinder.setting.storageBlocks.description"))
             .defaultValue(Arrays.asList(StorageBlockListSetting.STORAGE_BLOCKS))
             .build()
     );
 
     private final Setting<Integer> minimumStorageCount = sgGeneral.add(new IntSetting.Builder()
             .name("minimum-storage-cont")
-            .description("The minimum amount of storage blocks in a chunk to record the chunk.")
+            .displayName(I18n.translate("Modules.StashFinder.setting.minimumStorageCount.displayName"))
+            .description(I18n.translate("Modules.StashFinder.setting.minimumStorageCount.description"))
             .defaultValue(4)
             .min(1)
             .build()
@@ -60,7 +63,8 @@ public class StashFinder extends Module {
     
     private final Setting<Integer> minimumDistance = sgGeneral.add(new IntSetting.Builder()
             .name("minimum-distance")
-            .description("The minimum distance you must be from spawn to record a certain chunk.")
+            .displayName(I18n.translate("Modules.StashFinder.setting.minimumDistance.displayName"))
+            .description(I18n.translate("Modules.StashFinder.setting.minimumDistance.description"))
             .defaultValue(0)
             .min(0)
             .sliderMax(10000)
@@ -69,14 +73,16 @@ public class StashFinder extends Module {
 
     private final Setting<Boolean> sendNotifications = sgGeneral.add(new BoolSetting.Builder()
             .name("send-notifications")
-            .description("Sends Minecraft notifications when new stashes are found.")
+            .displayName(I18n.translate("Modules.StashFinder.setting.sendNotifications.displayName"))
+            .description(I18n.translate("Modules.StashFinder.setting.sendNotifications.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<StashFinder.Mode> mode = sgGeneral.add(new EnumSetting.Builder<StashFinder.Mode>()
             .name("notification-mode")
-            .description("The mode to use for notifications.")
+            .displayName(I18n.translate("Modules.StashFinder.setting.mode.displayName"))
+            .description(I18n.translate("Modules.StashFinder.setting.mode.description"))
             .defaultValue(Mode.Toast)
             .build()
     );
@@ -84,7 +90,7 @@ public class StashFinder extends Module {
     public List<Chunk> chunks = new ArrayList<>();
 
     public StashFinder() {
-        super(Category.Misc, "stash-finder", "Searches loaded chunks for storage blocks. Saves to <your minecraft folder>/meteor-client");
+        super(Category.Misc, "stash-finder", I18n.translate("Modules.StashFinder.description"));
     }
 
     @Override

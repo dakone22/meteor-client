@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.ParticleEffectListSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.particle.ParticleEffect;
 
 import java.util.ArrayList;
@@ -24,13 +25,14 @@ public class ParticleBlocker extends Module {
 
     private final Setting<List<ParticleEffect>> particles = sgGeneral.add(new ParticleEffectListSetting.Builder()
             .name("particles")
-            .description("Particles to block.")
+            .displayName(I18n.translate("Modules.ParticleBlocker.setting.particles.displayName"))
+            .description(I18n.translate("Modules.ParticleBlocker.setting.particles.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     public ParticleBlocker() {
-        super(Category.Render, "particle-blocker", "Stops specified particles from rendering.");
+        super(Category.Render, "particle-blocker", I18n.translate("Modules.ParticleBlocker.description"));
     }
 
     @EventHandler

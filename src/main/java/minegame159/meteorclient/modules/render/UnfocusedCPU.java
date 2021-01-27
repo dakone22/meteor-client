@@ -7,9 +7,10 @@ package minegame159.meteorclient.modules.render;
 
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 
 public class UnfocusedCPU extends Module {
     public UnfocusedCPU() {
-        super(Category.Render, "unfocused-cpu", "Will not render anything when your Minecraft window is not focused.");
+        super(Category.Render, "unfocused-cpu", I18n.translate("Modules.UnfocusedCPU.description"));
     }
 }

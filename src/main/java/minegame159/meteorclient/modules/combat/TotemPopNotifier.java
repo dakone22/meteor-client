@@ -20,6 +20,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.StringSetting;
 import minegame159.meteorclient.utils.player.ChatUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.s2c.play.EntityStatusS2CPacket;
@@ -32,35 +33,40 @@ public class TotemPopNotifier extends Module {
 
     private final Setting<Boolean> announce = sgGeneral.add(new BoolSetting.Builder()
             .name("announce-in-chat")
-            .description("Sends a chat message for everyone to see instead of a client-side alert.")
+            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.announce.displayName"))
+            .description(I18n.translate("Modules.TotemPopNotifier.setting.announce.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> ignoreOwn = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-own")
-            .description("Doesn't announce your own totem pops.")
+            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.ignoreOwn.displayName"))
+            .description(I18n.translate("Modules.TotemPopNotifier.setting.ignoreOwn.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> ignoreFriend = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-friend")
-            .description("Doesn't announce your friend's totem pops.")
+            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.ignoreFriend.displayName"))
+            .description(I18n.translate("Modules.TotemPopNotifier.setting.ignoreFriend.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<String> popMessage = sgGeneral.add(new StringSetting.Builder()
             .name("pop-message")
-            .description("Chat alert to send when a player pops.")
+            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.popMessage.displayName"))
+            .description(I18n.translate("Modules.TotemPopNotifier.setting.popMessage.description"))
             .defaultValue("EZ pops. {player} just popped {pops} {totems}. Meteor on Crack!")
             .build()
     );
 
     private final Setting<String> deathMessage = sgGeneral.add(new StringSetting.Builder()
             .name("death-message")
-            .description("Chat alert to send on a player's death.")
+            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.deathMessage.displayName"))
+            .description(I18n.translate("Modules.TotemPopNotifier.setting.deathMessage.description"))
             .defaultValue("EZZZ. {player} just died after popping {pops} {totems}. Meteor on Crack!")
             .build()
     );
@@ -71,7 +77,7 @@ public class TotemPopNotifier extends Module {
     private final Random random = new Random();
 
     public TotemPopNotifier() {
-        super(Category.Combat, "totem-pop-notifier", "Sends a chat message when a player either pops a totem or dies.");
+        super(Category.Combat, "totem-pop-notifier", I18n.translate("Modules.TotemPopNotifier.description"));
     }
 
     @Override

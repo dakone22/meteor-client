@@ -18,6 +18,7 @@ import minegame159.meteorclient.settings.EntityTypeListSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.ChatUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 
@@ -26,27 +27,30 @@ public class EntityLogger extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entites")
-            .description("Select specific entities.")
+            .displayName(I18n.translate("Modules.EntityLogger.setting.entities.displayName"))
+            .description(I18n.translate("Modules.EntityLogger.setting.entities.description"))
             .defaultValue(new Object2BooleanOpenHashMap<>(0))
             .build()
     );
 
     private final Setting<Boolean> playerNames = sgGeneral.add(new BoolSetting.Builder()
             .name("player-names")
-            .description("Shows the player's name.")
+            .displayName(I18n.translate("Modules.EntityLogger.setting.playerNames.displayName"))
+            .description(I18n.translate("Modules.EntityLogger.setting.playerNames.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> friends = sgGeneral.add(new BoolSetting.Builder()
             .name("friends")
-            .description("Logs friends.")
+            .displayName(I18n.translate("Modules.EntityLogger.setting.friends.displayName"))
+            .description(I18n.translate("Modules.EntityLogger.setting.friends.description"))
             .defaultValue(true)
             .build()
     );
 
     public EntityLogger() {
-        super(Category.Misc, "entity-logger", "Sends a client-side chat alert if a specified entity appears in render distance.");
+        super(Category.Misc, "entity-logger", I18n.translate("Modules.EntityLogger.description"));
     }
 
     @EventHandler

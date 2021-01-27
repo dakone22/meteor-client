@@ -15,6 +15,7 @@ import minegame159.meteorclient.rendering.ShapeMode;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -25,34 +26,38 @@ public class BlockSelection extends Module {
 
     private final Setting<Boolean> advanced = sgGeneral.add(new BoolSetting.Builder()
             .name("advanced")
-            .description("Shows a more advanced outline on different types of shape blocks.")
+            .displayName(I18n.translate("Modules.BlockSelection.setting.advanced.displayName"))
+            .description(I18n.translate("Modules.BlockSelection.setting.advanced.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.BlockSelection.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.BlockSelection.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Lines)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgGeneral.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The side color.")
+            .displayName(I18n.translate("Modules.BlockSelection.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.BlockSelection.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 255, 255, 50))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgGeneral.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The line color.")
+            .displayName(I18n.translate("Modules.BlockSelection.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.BlockSelection.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 255, 255, 255))
             .build()
     );
 
     public BlockSelection() {
-        super(Category.Render, "block-selection", "Modifies how your block selection is rendered.");
+        super(Category.Render, "block-selection", I18n.translate("Modules.BlockSelection.description"));
     }
 
     @EventHandler

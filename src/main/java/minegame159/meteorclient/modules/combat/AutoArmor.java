@@ -20,6 +20,7 @@ import minegame159.meteorclient.utils.player.InvUtils;
 import net.minecraft.block.entity.BedBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -50,37 +51,41 @@ public class AutoArmor extends Module {
         }
     }
 
-    public AutoArmor(){super(Category.Combat, "auto-armor", "Automatically manages and equips your armor for you.");}
+    public AutoArmor(){super(Category.Combat, "auto-armor", I18n.translate("Modules.AutoArmor.description"));}
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgDelay = settings.createGroup("Delay");
+    private final SettingGroup sgDelay = settings.createGroup(I18n.translate("Modules.AutoArmor.group.sgDelay"));
 
     // General
 
     private final Setting<Prot> mode = sgGeneral.add(new EnumSetting.Builder<Prot>()
             .name("prioritize")
-            .description("Which type of protection to prioritize.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.mode.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.mode.description"))
             .defaultValue(Prot.Protection)
             .build()
     );
 
     private final Setting<Boolean> bProtLegs = sgGeneral.add(new BoolSetting.Builder()
             .name("blast-protection-leggings")
-            .description("Prioritizes blast protection on your leggings. Useful for fights with End Crystals.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.bProtLegs.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.bProtLegs.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> preferMending = sgGeneral.add(new BoolSetting.Builder()
             .name("prefer-mending")
-            .description("Prefers to equip mending over non-mending armor pieces.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.preferMending.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.preferMending.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> weight = sgGeneral.add(new IntSetting.Builder()
             .name("weight")
-            .description("How much mending is preferred.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.weight.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.weight.description"))
             .defaultValue(2)
             .min(1)
             .max(10)
@@ -90,28 +95,32 @@ public class AutoArmor extends Module {
 
     private final Setting<List<Enchantment>> avoidEnch = sgGeneral.add(new EnchListSetting.Builder()
             .name("avoided-enchantments")
-            .description("Enchantments that should be avoided unless it's a last resort.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.avoidEnch.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.avoidEnch.description"))
             .defaultValue(setDefaultValue())
             .build()
     );
 
     private final Setting<Boolean> banBinding = sgGeneral.add(new BoolSetting.Builder()
             .name("ban-binding")
-            .description("Stops you from equipping any armor with the enchant Curse of Binding.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.banBinding.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.banBinding.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-break")
-            .description("Attempts to stop your armor from being broken.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.antiBreak.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.antiBreak.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> breakDurability = sgGeneral.add(new IntSetting.Builder()
             .name("break-durability")
-            .description("The durability damaged armor is swapped.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.breakDurability.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.breakDurability.description"))
             .defaultValue(10)
             .max(50)
             .min(2)
@@ -121,14 +130,16 @@ public class AutoArmor extends Module {
 
     private final Setting<Boolean> boomSwitch = sgGeneral.add(new BoolSetting.Builder()
             .name("switch-for-explosion")
-            .description("Switches to Blast Protection automatically if you're going to get hit by an explosion.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.boomSwitch.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.boomSwitch.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> boomDamage = sgGeneral.add(new IntSetting.Builder()
             .name("max-explosion-damage")
-            .description("The maximum damage you intake before switching to Blast Protection.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.boomDamage.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.boomDamage.description"))
             .defaultValue(5)
             .min(1)
             .max(18)
@@ -138,7 +149,8 @@ public class AutoArmor extends Module {
 
     private final Setting<Boolean> ignoreElytra = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-elytra")
-            .description("Will not replace your elytra if you have it equipped.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.ignoreElytra.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.ignoreElytra.description"))
             .defaultValue(false)
             .build()
     );
@@ -147,7 +159,8 @@ public class AutoArmor extends Module {
 
     private final Setting<Integer> delay = sgDelay.add(new IntSetting.Builder()
             .name("delay")
-            .description("Delay between pieces being equipped to prevent desync.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.delay.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.delay.description"))
             .defaultValue(1)
             .min(0)
             .max(20)
@@ -156,7 +169,8 @@ public class AutoArmor extends Module {
     );
 
     private final Setting<Integer> switchCooldown = sgDelay.add(new IntSetting.Builder().name("switch-cooldown")
-            .description("The cooldown between swapping from your current type of Protection to your preferred type of Protection.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.switchCooldown.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.switchCooldown.description"))
             .defaultValue(20)
             .min(0)
             .max(60)
@@ -166,14 +180,16 @@ public class AutoArmor extends Module {
 
     private final Setting<Boolean> pauseInInventory = sgDelay.add(new BoolSetting.Builder()
             .name("pause-in-inventory")
-            .description("Stops managing armor when you are in your inventory.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.pauseInInventory.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.pauseInInventory.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pause = sgDelay.add(new BoolSetting.Builder()
             .name("pause-between-pieces")
-            .description("Pauses between equipping each individual piece to prevent desync.")
+            .displayName(I18n.translate("Modules.AutoArmor.setting.pause.displayName"))
+            .description(I18n.translate("Modules.AutoArmor.setting.pause.description"))
             .defaultValue(true)
             .build()
     );

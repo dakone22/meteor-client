@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.item.FireworkItem;
 import net.minecraft.item.ItemStack;
@@ -29,14 +30,16 @@ public class ElytraBoost extends Module {
 
     private final Setting<Boolean> dontConsumeFirework = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-consume")
-            .description("Doesn't consume the firework when using it.")
+            .displayName(I18n.translate("Modules.ElytraBoost.setting.dontConsumeFirework.displayName"))
+            .description(I18n.translate("Modules.ElytraBoost.setting.dontConsumeFirework.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> fireworkLevel = sgGeneral.add(new IntSetting.Builder()
             .name("firework-duration")
-            .description("The duration.")
+            .displayName(I18n.translate("Modules.ElytraBoost.setting.fireworkLevel.displayName"))
+            .description(I18n.translate("Modules.ElytraBoost.setting.fireworkLevel.description"))
             .defaultValue(0)
             .min(0)
             .max(255)
@@ -45,14 +48,16 @@ public class ElytraBoost extends Module {
 
     private final Setting<Boolean> playSound = sgGeneral.add(new BoolSetting.Builder()
             .name("play-sound")
-            .description("Plays the firework sound when a boost is triggered.")
+            .displayName(I18n.translate("Modules.ElytraBoost.setting.playSound.displayName"))
+            .description(I18n.translate("Modules.ElytraBoost.setting.playSound.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> keybind = sgGeneral.add(new KeybindSetting.Builder()
             .name("keybind")
-            .description("The keybind to boost.")
+            .displayName(I18n.translate("Modules.ElytraBoost.setting.keybind.displayName"))
+            .description(I18n.translate("Modules.ElytraBoost.setting.keybind.description"))
             .action(this::boost)
             .build()
     );
@@ -60,7 +65,7 @@ public class ElytraBoost extends Module {
     private final List<FireworkRocketEntity> fireworks = new ArrayList<>();
 
     public ElytraBoost() {
-        super(Category.Movement, "elytra-boost", "Boosts you as if you used a firework.");
+        super(Category.Movement, "elytra-boost", I18n.translate("Modules.ElytraBoost.description"));
     }
 
     @Override

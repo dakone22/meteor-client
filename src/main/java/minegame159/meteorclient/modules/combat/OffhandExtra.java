@@ -20,6 +20,7 @@ import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.*;
 
 import java.util.ArrayList;
@@ -35,11 +36,12 @@ public class OffhandExtra extends Module {
     }
     
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgExtra = settings.createGroup("Extras");
+    private final SettingGroup sgExtra = settings.createGroup(I18n.translate("Modules.OffhandExtra.group.sgExtra"));
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("Changes what item that will go into your offhand.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.mode.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.mode.description"))
             .defaultValue(Mode.EGap)
             .onChanged(mode -> currentMode = mode)
             .build()
@@ -47,21 +49,24 @@ public class OffhandExtra extends Module {
 
     private final Setting<Boolean> replace = sgGeneral.add(new BoolSetting.Builder()
             .name("replace")
-            .description("Replaces your offhand or waits until your offhand is empty.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.replace.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.replace.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> asimov = sgGeneral.add(new BoolSetting.Builder()
             .name("asimov")
-            .description("Always holds the item specified in your offhand.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.asimov.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.asimov.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .description("The health at which Offhand Extra stops working.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.health.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.health.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(20)
@@ -70,14 +75,16 @@ public class OffhandExtra extends Module {
 
     private final Setting<Boolean> selfToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("self-toggle")
-            .description("Toggles when you run out of the item you chose.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.selfToggle.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.selfToggle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> hotBar = sgGeneral.add(new BoolSetting.Builder()
             .name("search-hotbar")
-            .description("Whether to take items out of your hotbar or not.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.hotBar.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.hotBar.description"))
             .defaultValue(false)
             .build()
     );
@@ -86,27 +93,30 @@ public class OffhandExtra extends Module {
 
     private final Setting<Boolean> sword = sgExtra.add(new BoolSetting.Builder()
             .name("sword-gap")
-            .description("Changes the mode to EGap if you are holding a sword in your main hand.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.sword.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.sword.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> offhandCrystal = sgExtra.add(new BoolSetting.Builder()
             .name("offhand-crystal-on-gap")
-            .description("Changes the mode to Crystal if you are holding an enchanted golden apple in your main hand.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.offhandCrystal.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.offhandCrystal.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> offhandCA = sgExtra.add(new BoolSetting.Builder()
             .name("offhand-crystal-on-ca")
-            .description("Changes the mode to Crystal when Crystal Aura is on.")
+            .displayName(I18n.translate("Modules.OffhandExtra.setting.offhandCA.displayName"))
+            .description(I18n.translate("Modules.OffhandExtra.setting.offhandCA.description"))
             .defaultValue(false)
             .build()
     );
 
     public OffhandExtra() {
-        super(Category.Combat, "offhand-extra", "Allows you to use specified items in your offhand. REQUIRES AutoTotem to be on smart mode.");
+        super(Category.Combat, "offhand-extra", I18n.translate("Modules.OffhandExtra.description"));
     }
 
     private boolean isClicking = false;

@@ -24,6 +24,7 @@ import minegame159.meteorclient.modules.movement.NoFall;
 import minegame159.meteorclient.settings.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.ToolItem;
 import net.minecraft.network.packet.s2c.play.DisconnectS2CPacket;
 import net.minecraft.text.LiteralText;
@@ -45,26 +46,29 @@ public class InfinityMiner extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgAutoToggles = settings.createGroup("Auto Toggles");
-    private final SettingGroup sgExtras = settings.createGroup("Extras");
+    private final SettingGroup sgAutoToggles = settings.createGroup(I18n.translate("Modules.InfinityMiner.group.sgAutoToggles"));
+    private final SettingGroup sgExtras = settings.createGroup(I18n.translate("Modules.InfinityMiner.group.sgExtras"));
 
     public final Setting<Block> targetBlock = sgGeneral.add(new BlockSetting.Builder()
             .name("target-block")
-            .description("The target block to mine.")
+            .displayName(I18n.translate("Modules.InfinityMiner.setting.targetBlock.displayName"))
+            .description(I18n.translate("Modules.InfinityMiner.setting.targetBlock.description"))
             .defaultValue(Blocks.ANCIENT_DEBRIS)
             .build()
     );
 
     public final Setting<Block> repairBlock = sgGeneral.add(new BlockSetting.Builder()
             .name("repair-block")
-            .description("The block mined to repair your pickaxe.")
+            .displayName(I18n.translate("Modules.InfinityMiner.setting.repairBlock.displayName"))
+            .description(I18n.translate("Modules.InfinityMiner.setting.repairBlock.description"))
             .defaultValue(Blocks.NETHER_QUARTZ_ORE)
             .build()
     );
 
     public final Setting<Double> durabilityThreshold = sgGeneral.add(new DoubleSetting.Builder()
             .name("durability-threshold")
-            .description("The durability at which to start repairing as a percent of maximum durability.")
+            .displayName(I18n.translate("Modules.InfinityMiner.setting.durabilityThreshold.displayName"))
+            .description(I18n.translate("Modules.InfinityMiner.setting.durabilityThreshold.description"))
             .defaultValue(.15)
             .max(.95)
             .min(.05)
@@ -74,25 +78,28 @@ public class InfinityMiner extends Module {
 
     public final Setting<Boolean> smartModuleToggle = sgAutoToggles.add(new BoolSetting.Builder()
             .name("smart-module-toggle")
-            .description("Will automatically enable helpful modules.")
+            .displayName(I18n.translate("Modules.InfinityMiner.setting.smartModuleToggle.displayName"))
+            .description(I18n.translate("Modules.InfinityMiner.setting.smartModuleToggle.description"))
             .defaultValue(true)
             .build());
 
     public final Setting<Boolean> autoWalkHome = sgExtras.add(new BoolSetting.Builder()
             .name("walk-home")
-            .description("Will walk 'home' when your inventory is full.")
+            .displayName(I18n.translate("Modules.InfinityMiner.setting.autoWalkHome.displayName"))
+            .description(I18n.translate("Modules.InfinityMiner.setting.autoWalkHome.description"))
             .defaultValue(false)
             .build());
 
     public final Setting<Boolean> autoLogOut = sgExtras.add(new BoolSetting.Builder()
             .name("log-out")
-            .description("Logs out when your inventory is full. Will walk home FIRST if walk home is enabled.")
+            .displayName(I18n.translate("Modules.InfinityMiner.setting.autoLogOut.displayName"))
+            .description(I18n.translate("Modules.InfinityMiner.setting.autoLogOut.description"))
             .defaultValue(false)
             .build());
 
 
     public InfinityMiner() {
-        super(Category.Player, "infinity-miner", "Allows you to essentially mine forever.");
+        super(Category.Player, "infinity-miner", I18n.translate("Modules.InfinityMiner.description"));
     }
 
     private Mode currentMode = Mode.Still;

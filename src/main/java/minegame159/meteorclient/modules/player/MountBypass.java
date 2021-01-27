@@ -12,6 +12,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.modules.ModuleManager;
 import minegame159.meteorclient.modules.misc.AutoMountBypassDupe;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.passive.AbstractDonkeyEntity;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 
@@ -19,7 +20,7 @@ public class MountBypass extends Module {
     private boolean dontCancel;
 
     public MountBypass() {
-        super(Category.Player, "mount-bypass", "Allows you to bypass the IllegalStacks plugin and put chests on entities.");
+        super(Category.Player, "mount-bypass", I18n.translate("Modules.MountBypass.description"));
     }
 
     @EventHandler

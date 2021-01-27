@@ -16,6 +16,7 @@ import minegame159.meteorclient.rendering.ShapeMode;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.player.PlayerUtils;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.BlockItem;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -29,13 +30,14 @@ public class AirPlace extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.AirPlace.group.sgRender"));
 
     // General
 
     private final Setting<Place> placeWhen = sgGeneral.add(new EnumSetting.Builder<Place>()
             .name("place-when")
-            .description("Decides when it should place.")
+            .displayName(I18n.translate("Modules.AirPlace.setting.placeWhen.displayName"))
+            .description(I18n.translate("Modules.AirPlace.setting.placeWhen.description"))
             .defaultValue(Place.OnClick)
             .build()
     );
@@ -43,28 +45,32 @@ public class AirPlace extends Module {
     // Render
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .description("Renders a block overlay where the obsidian will be placed.")
+            .displayName(I18n.translate("Modules.AirPlace.setting.render.displayName"))
+            .description(I18n.translate("Modules.AirPlace.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.AirPlace.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.AirPlace.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The color of the sides of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.AirPlace.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.AirPlace.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The color of the lines of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.AirPlace.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.AirPlace.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );
@@ -72,7 +78,7 @@ public class AirPlace extends Module {
     private BlockPos target;
 
     public AirPlace() {
-        super(Category.Player, "air-place", "Places a block where your crosshair is pointing at.");
+        super(Category.Player, "air-place", I18n.translate("Modules.AirPlace.description"));
     }
 
     @Override

@@ -23,6 +23,7 @@ import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
 import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.client.gui.screen.ingame.HorseScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.AbstractDonkeyEntity;
 import net.minecraft.entity.passive.LlamaEntity;
@@ -43,20 +44,23 @@ public class AutoMountBypassDupe extends Module {
 
     private final Setting<Boolean> shulkersOnly = sgGeneral.add(new BoolSetting.Builder()
             .name("shulker-only")
-            .description("Only moves shulker boxes into the inventory")
+            .displayName(I18n.translate("Modules.AutoMountBypassDupe.setting.shulkersOnly.displayName"))
+            .description(I18n.translate("Modules.AutoMountBypassDupe.setting.shulkersOnly.description"))
             .defaultValue(true)
             .build());
 
     private final Setting<Boolean> faceDown = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate-down")
-            .description("Faces down when dropping items.")
+            .displayName(I18n.translate("Modules.AutoMountBypassDupe.setting.faceDown.displayName"))
+            .description(I18n.translate("Modules.AutoMountBypassDupe.setting.faceDown.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder()
             .name("delay")
-            .description("The delay in ticks between actions.")
+            .displayName(I18n.translate("Modules.AutoMountBypassDupe.setting.delay.displayName"))
+            .description(I18n.translate("Modules.AutoMountBypassDupe.setting.delay.description"))
             .defaultValue(4)
             .min(0)
             .build()
@@ -71,7 +75,7 @@ public class AutoMountBypassDupe extends Module {
     private int timer;
 
     public AutoMountBypassDupe() {
-        super(Category.Misc, "auto-mount-bypass-dupe", "Does the mount bypass dupe for you. Disable with esc.");
+        super(Category.Misc, "auto-mount-bypass-dupe", I18n.translate("Modules.AutoMountBypassDupe.description"));
     }
 
     @Override

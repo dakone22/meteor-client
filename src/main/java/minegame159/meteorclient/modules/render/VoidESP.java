@@ -19,6 +19,7 @@ import minegame159.meteorclient.utils.render.color.SettingColor;
 import minegame159.meteorclient.utils.world.Dimension;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -26,20 +27,22 @@ import java.util.List;
 
 public class VoidESP extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.VoidESP.group.sgRender"));
 
     // General
 
     private final Setting<Boolean> airOnly = sgGeneral.add(new BoolSetting.Builder()
             .name("air-only")
-            .description("Checks bedrock only for air blocks.")
+            .displayName(I18n.translate("Modules.VoidESP.setting.airOnly.displayName"))
+            .description(I18n.translate("Modules.VoidESP.setting.airOnly.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> horizontalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("horizontal-radius")
-            .description("Horizontal radius in which to search for holes.")
+            .displayName(I18n.translate("Modules.VoidESP.setting.horizontalRadius.displayName"))
+            .description(I18n.translate("Modules.VoidESP.setting.horizontalRadius.description"))
             .defaultValue(64)
             .min(0)
             .sliderMax(256)
@@ -48,7 +51,8 @@ public class VoidESP extends Module {
 
     private final Setting<Integer> holeHeight = sgGeneral.add(new IntSetting.Builder()
             .name("hole-height")
-            .description("The minimum hole height to be rendered.")
+            .displayName(I18n.translate("Modules.VoidESP.setting.holeHeight.displayName"))
+            .description(I18n.translate("Modules.VoidESP.setting.holeHeight.description"))
             .defaultValue(1)  // If we already have one hole in the bedrock layer, there is already something interesting.
             .min(1)
             .sliderMax(5)     // There is no sense to check more than 5.
@@ -59,27 +63,30 @@ public class VoidESP extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.VoidESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.VoidESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("fill-color")
-            .description("The color that fills holes in the void.")
+            .displayName(I18n.translate("Modules.VoidESP.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.VoidESP.setting.sideColor.description"))
             .defaultValue(new SettingColor(225, 25, 25))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The color to draw lines of holes to the void.")
+            .displayName(I18n.translate("Modules.VoidESP.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.VoidESP.setting.lineColor.description"))
             .defaultValue(new SettingColor(225, 25, 255))
             .build()
     );
 
     public VoidESP() {
-        super(Category.Render, "void-esp", "Renders holes in bedrock layers that lead to the void.");
+        super(Category.Render, "void-esp", I18n.translate("Modules.VoidESP.description"));
     }
 
     private final List<BlockPos> voidHoles = new ArrayList<>();

@@ -20,6 +20,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.StringSetting;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 
 public class DiscordPresence extends Module {
 
@@ -27,7 +28,7 @@ public class DiscordPresence extends Module {
 
     private final Setting<String> line1 = sgGeneral.add(new StringSetting.Builder()
             .name("line-1")
-            .description("The text it displays on line 1 of the RPC.")
+            .description(I18n.translate("Modules.DiscordPresence.setting.line1.description"))
             .defaultValue("{player} || {server}")
             .onChanged(booleanSetting -> updateDetails())
             .build()
@@ -35,14 +36,14 @@ public class DiscordPresence extends Module {
 
     private final Setting<String> line2 = sgGeneral.add(new StringSetting.Builder()
             .name("line-2")
-            .description("The text it displays on line 2 of the RPC.")
+            .description(I18n.translate("Modules.DiscordPresence.setting.line2.description"))
             .defaultValue("Meteor on Crack!")
             .onChanged(booleanSetting -> updateDetails())
             .build()
     );
 
     public DiscordPresence() {
-        super(Category.Misc, "discord-presence", "Displays a RPC for you on Discord to show that you're playing Meteor Client!");
+        super(Category.Misc, "discord-presence", I18n.translate("Modules.DiscordPresence.description"));
     }
 
     private static final DiscordRichPresence rpc = new DiscordRichPresence();

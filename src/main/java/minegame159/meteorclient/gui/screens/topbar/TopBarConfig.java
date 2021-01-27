@@ -10,6 +10,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.Settings;
 import minegame159.meteorclient.settings.StringSetting;
+import net.minecraft.client.resource.language.I18n;
 
 public class TopBarConfig extends TopBarWindowScreen {
     public TopBarConfig() {
@@ -24,7 +25,7 @@ public class TopBarConfig extends TopBarWindowScreen {
 
         sgGeneral.add(new StringSetting.Builder()
                 .name("prefix")
-                .description("Prefix.")
+                .description(I18n.translate("TopBar.TopBarConfig.prefix.description"))
                 .defaultValue(".")
                 .onChanged(Config.INSTANCE::setPrefix)
                 .onModuleActivated(stringSetting -> stringSetting.set(Config.INSTANCE.getPrefix()))
@@ -33,7 +34,7 @@ public class TopBarConfig extends TopBarWindowScreen {
 
         sgGeneral.add(new BoolSetting.Builder()
                 .name("custom-font")
-                .description("Use custom font.")
+                .description(I18n.translate("TopBar.TopBarConfig.custom-font.description"))
                 .defaultValue(true)
                 .onChanged(aBoolean -> {
                     Config.INSTANCE.customFont = aBoolean;
@@ -45,7 +46,7 @@ public class TopBarConfig extends TopBarWindowScreen {
 
         sgGeneral.add(new BoolSetting.Builder()
                 .name("chat-commands-info")
-                .description("Send chat message when you use chat comamnds (eg toggling module, changing a setting, etc).")
+                .description(I18n.translate("TopBar.TopBarConfig.chat-commands-info.description"))
                 .defaultValue(true)
                 .onChanged(aBoolean -> Config.INSTANCE.chatCommandsInfo = aBoolean)
                 .onModuleActivated(booleanSetting -> booleanSetting.set(Config.INSTANCE.chatCommandsInfo))
@@ -54,7 +55,7 @@ public class TopBarConfig extends TopBarWindowScreen {
 
         sgGeneral.add(new BoolSetting.Builder()
                 .name("delete-chat-commands-info")
-                .description("Delete previous chat messages.")
+                .description(I18n.translate("TopBar.TopBarConfig.delete-chat-commands-info.description"))
                 .defaultValue(true)
                 .onChanged(aBoolean -> Config.INSTANCE.deleteChatCommandsInfo = aBoolean)
                 .onModuleActivated(booleanSetting -> booleanSetting.set(Config.INSTANCE.deleteChatCommandsInfo))

@@ -21,6 +21,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.ChestBlock;
 import net.minecraft.block.entity.*;
 import net.minecraft.block.enums.ChestType;
+import net.minecraft.client.resource.language.I18n;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,63 +31,72 @@ public class StorageESP extends Module {
 
     private final Setting<List<BlockEntityType<?>>> storageBlocks = sgGeneral.add(new StorageBlockListSetting.Builder()
             .name("storage-blocks")
-            .description("Select the storage blocks to display.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.storageBlocks.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.storageBlocks.description"))
             .defaultValue(Arrays.asList(StorageBlockListSetting.STORAGE_BLOCKS))
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> chest = sgGeneral.add(new ColorSetting.Builder()
             .name("chest")
-            .description("The color of chests.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.chest.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.chest.description"))
             .defaultValue(new SettingColor(255, 160, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> trappedChest = sgGeneral.add(new ColorSetting.Builder()
             .name("trapped-chest")
-            .description("The color of trapped chests.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.trappedChest.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.trappedChest.description"))
             .defaultValue(new SettingColor(255, 0, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> barrel = sgGeneral.add(new ColorSetting.Builder()
             .name("barrel")
-            .description("The color of barrels.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.barrel.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.barrel.description"))
             .defaultValue(new SettingColor(255, 160, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> shulker = sgGeneral.add(new ColorSetting.Builder()
             .name("shulker")
-            .description("The color of Shulker Boxes.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.shulker.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.shulker.description"))
             .defaultValue(new SettingColor(255, 160, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> enderChest = sgGeneral.add(new ColorSetting.Builder()
             .name("ender-chest")
-            .description("The color of Ender Chests.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.enderChest.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.enderChest.description"))
             .defaultValue(new SettingColor(120, 0, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> other = sgGeneral.add(new ColorSetting.Builder()
             .name("other")
-            .description("The color of furnaces, dispenders, droppers and hoppers.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.other.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.other.description"))
             .defaultValue(new SettingColor(140, 140, 140, 255))
             .build()
     );
 
     private final Setting<Double> fadeDistance = sgGeneral.add(new DoubleSetting.Builder()
             .name("fade-distance")
-            .description("The distance at which the color will fade.")
+            .displayName(I18n.translate("Modules.StorageESP.setting.fadeDistance.displayName"))
+            .description(I18n.translate("Modules.StorageESP.setting.fadeDistance.description"))
             .defaultValue(6)
             .min(0)
             .sliderMax(12)
@@ -99,7 +109,7 @@ public class StorageESP extends Module {
     private int count;
 
     public StorageESP() {
-        super(Category.Render, "storage-esp", "Renders all specified storage blocks.");
+        super(Category.Render, "storage-esp", I18n.translate("Modules.StorageESP.description"));
     }
 
     private void getTileEntityColor(BlockEntity blockEntity) {

@@ -23,6 +23,7 @@ import minegame159.meteorclient.utils.player.DamageCalcUtils;
 import minegame159.meteorclient.utils.world.Dimension;
 import net.minecraft.block.entity.BedBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,7 +38,8 @@ public class AutoLog extends Module {
     
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .description("Automatically disconnects when health is lower or equal to this value.")
+            .displayName(I18n.translate("Modules.AutoLog.setting.health.displayName"))
+            .description(I18n.translate("Modules.AutoLog.setting.health.description"))
             .defaultValue(6)
             .min(0)
             .max(20)
@@ -47,35 +49,39 @@ public class AutoLog extends Module {
 
     private final Setting<Boolean> smart = sgGeneral.add(new BoolSetting.Builder()
             .name("smart")
-            .description("Disconnects when you're about to take enough damage to kill you.")
+            .displayName(I18n.translate("Modules.AutoLog.setting.smart.displayName"))
+            .description(I18n.translate("Modules.AutoLog.setting.smart.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> onlyTrusted = sgGeneral.add(new BoolSetting.Builder()
             .name("only-trusted")
-            .description("Disconnects when a player not on your friends list appears in render distance.")
+            .displayName(I18n.translate("Modules.AutoLog.setting.onlyTrusted.displayName"))
+            .description(I18n.translate("Modules.AutoLog.setting.onlyTrusted.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> instantDeath = sgGeneral.add(new BoolSetting.Builder()
             .name("32K")
-            .description("Disconnects when a player near you can instantly kill you.")
+            .description(I18n.translate("Modules.AutoLog.setting.instantDeath.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> crystalLog = sgGeneral.add(new BoolSetting.Builder()
             .name("crystal-nearby")
-            .description("Disconnects when a crystal appears near you.")
+            .displayName(I18n.translate("Modules.AutoLog.setting.crystalLog.displayName"))
+            .description(I18n.translate("Modules.AutoLog.setting.crystalLog.description"))
             .defaultValue(false)
             .build()
     );
     
         private final Setting<Integer> range = sgGeneral.add(new IntSetting.Builder()
             .name("range")
-            .description("How close a crystal has to be to you before you disconnect.")
+            .displayName(I18n.translate("Modules.AutoLog.setting.range.displayName"))
+            .description(I18n.translate("Modules.AutoLog.setting.range.description"))
             .defaultValue(4)
             .min(1)
             .max(10)
@@ -85,20 +91,22 @@ public class AutoLog extends Module {
 
     private final Setting<Boolean> smartToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("smart-toggle")
-            .description("Disables Auto Log after a low-health logout. WILL re-enable once you heal.")
+            .displayName(I18n.translate("Modules.AutoLog.setting.smartToggle.displayName"))
+            .description(I18n.translate("Modules.AutoLog.setting.smartToggle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> toggleOff = sgGeneral.add(new BoolSetting.Builder()
             .name("toggle-off")
-            .description("Disables Auto Log after usage.")
+            .displayName(I18n.translate("Modules.AutoLog.setting.toggleOff.displayName"))
+            .description(I18n.translate("Modules.AutoLog.setting.toggleOff.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoLog() {
-        super(Category.Combat, "auto-log", "Automatically disconnects you when certain requirements are met.");
+        super(Category.Combat, "auto-log", I18n.translate("Modules.AutoLog.description"));
     }
 
     @EventHandler

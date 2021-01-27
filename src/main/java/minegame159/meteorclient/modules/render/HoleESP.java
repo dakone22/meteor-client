@@ -24,6 +24,7 @@ import minegame159.meteorclient.utils.world.BlockIterator;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.render.VertexFormats;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -47,27 +48,30 @@ public class HoleESP extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgColors = settings.createGroup("Colors");
+    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Modules.HoleESP.group.sgColors"));
 
     // General
 
     private final Setting<Mode> renderMode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("render-mode")
-            .description("The rendering mode.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.renderMode.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.renderMode.description"))
             .defaultValue(Mode.Glow)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Lines)
             .build()
     );
 
     private final Setting<Integer> horizontalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("horizontal-radius")
-            .description("Horizontal radius in which to search for holes.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.horizontalRadius.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.horizontalRadius.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(32)
@@ -76,7 +80,8 @@ public class HoleESP extends Module {
 
     private final Setting<Integer> verticalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("vertical-radius")
-            .description("Vertical radius in which to search for holes.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.verticalRadius.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.verticalRadius.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(32)
@@ -85,7 +90,8 @@ public class HoleESP extends Module {
 
     private final Setting<Integer> holeHeight = sgGeneral.add(new IntSetting.Builder()
             .name("hole-height")
-            .description("Minimum hole height required to be rendered.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.holeHeight.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.holeHeight.description"))
             .defaultValue(3)
             .min(1)
             .build()
@@ -93,7 +99,8 @@ public class HoleESP extends Module {
 
     private final Setting<Double> glowHeight = sgGeneral.add(new DoubleSetting.Builder()
             .name("glow-height")
-            .description("The height of the glow when Glow mode is active")
+            .displayName(I18n.translate("Modules.HoleESP.setting.glowHeight.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.glowHeight.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -103,35 +110,40 @@ public class HoleESP extends Module {
 
     private final Setting<Boolean> depthTest = sgColors.add(new BoolSetting.Builder()
             .name("glow-depth-test")
-            .description("Checks if there is things rendering in front of the glow.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.depthTest.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.depthTest.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> ignoreOwn = sgColors.add(new BoolSetting.Builder()
             .name("ignore-own")
-            .description("Ignores rendering the hole you are currently standing in.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.ignoreOwn.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.ignoreOwn.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<SettingColor> allBedrock = sgColors.add(new ColorSetting.Builder()
             .name("all-bedrock")
-            .description("All blocks are bedrock.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.allBedrock.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.allBedrock.description"))
             .defaultValue(new SettingColor(25, 225, 25))
             .build()
     );
 
     private final Setting<SettingColor> someObsidian = sgColors.add(new ColorSetting.Builder()
             .name("some-obsidian")
-            .description("Some blocks are obsidian.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.someObsidian.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.someObsidian.description"))
             .defaultValue(new SettingColor(225, 145, 25))
             .build()
     );
 
     private final Setting<SettingColor> allObsidian = sgColors.add(new ColorSetting.Builder()
             .name("all-obsidian")
-            .description("All blocks are obsidian.")
+            .displayName(I18n.translate("Modules.HoleESP.setting.allObsidian.displayName"))
+            .description(I18n.translate("Modules.HoleESP.setting.allObsidian.description"))
             .defaultValue(new SettingColor(225, 25, 25))
             .build()
     );
@@ -142,7 +154,7 @@ public class HoleESP extends Module {
     private final Color transparent = new Color(0, 0, 0, 0);
 
     public HoleESP() {
-        super(Category.Render, "hole-esp", "Displays Safe holes that you will take less damage in.");
+        super(Category.Render, "hole-esp", I18n.translate("Modules.HoleESP.description"));
     }
 
     @EventHandler

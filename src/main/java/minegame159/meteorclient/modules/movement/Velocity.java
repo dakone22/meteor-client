@@ -10,13 +10,15 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class Velocity extends Module {
     private final SettingGroup sg = settings.getDefaultGroup();
 
     private final Setting<Double> horizontal = sg.add(new DoubleSetting.Builder()
             .name("horizontal-multiplier")
-            .description("How much velocity you will take horizontally.")
+            .displayName(I18n.translate("Modules.Velocity.setting.horizontal.displayName"))
+            .description(I18n.translate("Modules.Velocity.setting.horizontal.description"))
             .defaultValue(0)
             .sliderMin(0)
             .sliderMax(1)
@@ -25,7 +27,8 @@ public class Velocity extends Module {
 
     private final Setting<Double> vertical = sg.add(new DoubleSetting.Builder()
             .name("vertical-multiplier")
-            .description("How much velocity you will take vertically.")
+            .displayName(I18n.translate("Modules.Velocity.setting.vertical.displayName"))
+            .description(I18n.translate("Modules.Velocity.setting.vertical.description"))
             .defaultValue(0)
             .sliderMin(0)
             .sliderMax(1)
@@ -33,7 +36,7 @@ public class Velocity extends Module {
     );
 
     public Velocity() {
-        super(Category.Movement, "velocity", "Prevents you from being moved by external forces.");
+        super(Category.Movement, "velocity", I18n.translate("Modules.Velocity.description"));
     }
 
     public double getHorizontal() {

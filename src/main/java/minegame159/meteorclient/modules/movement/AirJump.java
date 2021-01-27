@@ -17,24 +17,27 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.misc.input.KeyAction;
+import net.minecraft.client.resource.language.I18n;
 
 public class AirJump extends Module {
     public AirJump() {
-        super(Category.Movement, "air-jump", "Lets you jump in the air.");
+        super(Category.Movement, "air-jump", I18n.translate("Modules.AirJump.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Boolean> maintainY = sgGeneral.add(new BoolSetting.Builder()
             .name("maintain-level")
-            .description("Maintains your current Y level.")
+            .displayName(I18n.translate("Modules.AirJump.setting.maintainY.displayName"))
+            .description(I18n.translate("Modules.AirJump.setting.maintainY.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> onHold = sgGeneral.add(new BoolSetting.Builder()
             .name("on-hold")
-            .description("Whether or not to air jump if you hold down the space bar.")
+            .displayName(I18n.translate("Modules.AirJump.setting.onHold.displayName"))
+            .description(I18n.translate("Modules.AirJump.setting.onHold.description"))
             .defaultValue(true)
             .build()
     );

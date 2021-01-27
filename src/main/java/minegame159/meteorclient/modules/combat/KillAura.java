@@ -18,6 +18,7 @@ import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.entity.Target;
 import minegame159.meteorclient.utils.player.PlayerUtils;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -58,13 +59,14 @@ public class KillAura extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgDelay = settings.createGroup("Delay");
+    private final SettingGroup sgDelay = settings.createGroup(I18n.translate("Modules.KillAura.group.sgDelay"));
 
     // General
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .description("The maximum range the entity can be to attack it.")
+            .displayName(I18n.translate("Modules.KillAura.setting.range.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.range.description"))
             .defaultValue(4)
             .min(0)
             .max(6)
@@ -73,7 +75,8 @@ public class KillAura extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .description("Entities to attack.")
+            .displayName(I18n.translate("Modules.KillAura.setting.entities.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.entities.description"))
             .defaultValue(new Object2BooleanOpenHashMap<>(0))
             .onlyAttackable()
             .build()
@@ -81,49 +84,56 @@ public class KillAura extends Module {
 
     private final Setting<Priority> priority = sgGeneral.add(new EnumSetting.Builder<Priority>()
             .name("priority")
-            .description("What type of entities to target.")
+            .displayName(I18n.translate("Modules.KillAura.setting.priority.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.priority.description"))
             .defaultValue(Priority.LowestHealth)
             .build()
     );
 
     private final Setting<OnlyWith> onlyWith = sgGeneral.add(new EnumSetting.Builder<OnlyWith>()
             .name("only-with")
-            .description("Only attacks an entity when a specified item is in your hand.")
+            .displayName(I18n.translate("Modules.KillAura.setting.onlyWith.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.onlyWith.description"))
             .defaultValue(OnlyWith.Any)
             .build()
     );
 
     private final Setting<Boolean> ignoreWalls = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-walls")
-            .description("Whether or not to attack the entity through a wall.")
+            .displayName(I18n.translate("Modules.KillAura.setting.ignoreWalls.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.ignoreWalls.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> friends = sgGeneral.add(new BoolSetting.Builder()
             .name("friends")
-            .description("Whether or not to attack friends. Useful if you select players selected.")
+            .displayName(I18n.translate("Modules.KillAura.setting.friends.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.friends.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> babies = sgGeneral.add(new BoolSetting.Builder()
             .name("babies")
-            .description("Whether or not to attack baby variants of the entity.")
+            .displayName(I18n.translate("Modules.KillAura.setting.babies.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.babies.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> nametagged = sgGeneral.add(new BoolSetting.Builder()
             .name("nametagged")
-            .description("Whether or not to attack mobs with a name tag.")
+            .displayName(I18n.translate("Modules.KillAura.setting.nametagged.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.nametagged.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> hitChance = sgGeneral.add(new DoubleSetting.Builder()
             .name("hit-chance")
-            .description("The probability of your hits landing.")
+            .displayName(I18n.translate("Modules.KillAura.setting.hitChance.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.hitChance.description"))
             .defaultValue(100)
             .min(0)
             .max(100)
@@ -133,21 +143,24 @@ public class KillAura extends Module {
 
     private final Setting<Boolean> pauseOnCombat = sgGeneral.add(new BoolSetting.Builder()
             .name("pause-on-combat")
-            .description("Freezes Baritone temporarily until you are finished attacking the entity.")
+            .displayName(I18n.translate("Modules.KillAura.setting.pauseOnCombat.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.pauseOnCombat.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<RotationMode> rotationMode = sgGeneral.add(new EnumSetting.Builder<RotationMode>()
             .name("rotation-mode")
-            .description("Determines when you should rotate towards the target.")
+            .displayName(I18n.translate("Modules.KillAura.setting.rotationMode.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.rotationMode.description"))
             .defaultValue(RotationMode.OnHit)
             .build()
     );
 
     private final Setting<RotationDirection> rotationDirection = sgGeneral.add(new EnumSetting.Builder<RotationDirection>()
             .name("rotation-direction")
-            .description("The direction to use for rotating towards the enemy.")
+            .displayName(I18n.translate("Modules.KillAura.setting.rotationDirection.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.rotationDirection.description"))
             .defaultValue(RotationDirection.Eyes)
             .build()
     );
@@ -156,14 +169,16 @@ public class KillAura extends Module {
 
     private final Setting<Boolean> smartDelay = sgDelay.add(new BoolSetting.Builder()
             .name("smart-delay")
-            .description("Smart delay.")
+            .displayName(I18n.translate("Modules.KillAura.setting.smartDelay.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.smartDelay.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> hitDelay = sgDelay.add(new IntSetting.Builder()
             .name("hit-delay")
-            .description("How fast you hit the entity in ticks.")
+            .displayName(I18n.translate("Modules.KillAura.setting.hitDelay.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.hitDelay.description"))
             .defaultValue(0)
             .min(0)
             .sliderMax(60)
@@ -172,14 +187,16 @@ public class KillAura extends Module {
 
     private final Setting<Boolean> randomDelayEnabled = sgDelay.add(new BoolSetting.Builder()
             .name("random-delay-enabled")
-            .description("Adds a random delay between hits to attempt to bypass anti-cheats.")
+            .displayName(I18n.translate("Modules.KillAura.setting.randomDelayEnabled.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.randomDelayEnabled.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> randomDelayMax = sgDelay.add(new IntSetting.Builder()
             .name("random-delay-max")
-            .description("The maximum value for random delay.")
+            .displayName(I18n.translate("Modules.KillAura.setting.randomDelayMax.displayName"))
+            .description(I18n.translate("Modules.KillAura.setting.randomDelayMax.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(20)
@@ -194,7 +211,7 @@ public class KillAura extends Module {
     private final List<Entity> entityList = new ArrayList<>();
 
     public KillAura() {
-        super(Category.Combat, "kill-aura", "Attacks specified entities around you.");
+        super(Category.Combat, "kill-aura", I18n.translate("Modules.KillAura.description"));
     }
 
     @Override

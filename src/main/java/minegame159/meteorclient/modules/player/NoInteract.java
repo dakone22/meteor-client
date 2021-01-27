@@ -12,11 +12,12 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.resource.language.I18n;
 
 public class NoInteract extends Module {
 
     public NoInteract() {
-        super(Category.Player, "no-interact", "Blocks interactions with certain types of inputs.");
+        super(Category.Player, "no-interact", I18n.translate("Modules.NoInteract.description"));
     }
 
     @EventHandler

@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.misc.ByteCountDataOutput;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Formatting;
@@ -28,24 +29,26 @@ public class ItemByteSize extends Module {
         True
     }
 
-    private final SettingGroup sgUseKbIfBigEnough = settings.createGroup("Use KB if big enough");
+    private final SettingGroup sgUseKbIfBigEnough = settings.createGroup(I18n.translate("Modules.ItemByteSize.group.sgUseKbIfBigEnough"));
 
     private final Setting<Boolean> useKbIfBigEnoughEnabled = sgUseKbIfBigEnough.add(new BoolSetting.Builder()
             .name("use-kb-if-big-enough-enabled")
-            .description("Uses KB instead of bytes if your item's size is larger or equal to 1KB.")
+            .displayName(I18n.translate("Modules.ItemByteSize.setting.useKbIfBigEnoughEnabled.displayName"))
+            .description(I18n.translate("Modules.ItemByteSize.setting.useKbIfBigEnoughEnabled.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Mode> mode = sgUseKbIfBigEnough.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("Uses the standard mode (1KB to 1000b) OR true mode (1KB to 1024b).")
+            .displayName(I18n.translate("Modules.ItemByteSize.setting.mode.displayName"))
+            .description(I18n.translate("Modules.ItemByteSize.setting.mode.description"))
             .defaultValue(Mode.True)
             .build()
     );
 
     public ItemByteSize() {
-        super(Category.Render, "item-byte-size", "Displays an item's size in bytes in the tooltip.");
+        super(Category.Render, "item-byte-size", I18n.translate("Modules.ItemByteSize.description"));
     }
 
     @EventHandler

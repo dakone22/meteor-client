@@ -16,6 +16,7 @@ import minegame159.meteorclient.utils.player.RotationUtils;
 import minegame159.meteorclient.utils.world.BlockIterator;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -34,7 +35,8 @@ public class Holefiller extends Module {
 
     private final Setting<Integer> horizontalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("horizontal-radius")
-            .description("Horizontal radius in which to search for holes.")
+            .displayName(I18n.translate("Modules.Holefiller.setting.horizontalRadius.displayName"))
+            .description(I18n.translate("Modules.Holefiller.setting.horizontalRadius.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(6)
@@ -43,7 +45,8 @@ public class Holefiller extends Module {
 
     private final Setting<Integer> verticalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("vertical-radius")
-            .description("Vertical radius in which to search for holes.")
+            .displayName(I18n.translate("Modules.Holefiller.setting.verticalRadius.displayName"))
+            .description(I18n.translate("Modules.Holefiller.setting.verticalRadius.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(6)
@@ -52,14 +55,16 @@ public class Holefiller extends Module {
 
     private final Setting<PlaceMode> mode = sgGeneral.add(new EnumSetting.Builder<PlaceMode>()
             .name("block")
-            .description("What kind of blocks you use to fill holes with.")
+            .displayName(I18n.translate("Modules.Holefiller.setting.mode.displayName"))
+            .description(I18n.translate("Modules.Holefiller.setting.mode.description"))
             .defaultValue(PlaceMode.Obsidian)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Automatically rotates towards the holes being filled.")
+            .displayName(I18n.translate("Modules.Holefiller.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.Holefiller.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -67,7 +72,7 @@ public class Holefiller extends Module {
     private final BlockPos.Mutable blockPos = new BlockPos.Mutable();
 
     public Holefiller() {
-        super(Category.Combat, "hole-filler", "Fills holes with specified blocks.");
+        super(Category.Combat, "hole-filler", I18n.translate("Modules.Holefiller.description"));
     }
 
     @EventHandler

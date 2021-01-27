@@ -20,6 +20,7 @@ import minegame159.meteorclient.utils.player.RotationUtils;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 
@@ -29,7 +30,7 @@ import java.util.List;
 public class SelfTrap extends Module {
 
     public SelfTrap(){
-        super(Category.Combat, "self-trap", "Places obsidian above your head.");
+        super(Category.Combat, "self-trap", I18n.translate("Modules.SelfTrap.description"));
     }
 
     public enum TopMode {
@@ -45,27 +46,30 @@ public class SelfTrap extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.SelfTrap.group.sgRender"));
 
     // General
 
     private final Setting<TopMode> topPlacement = sgGeneral.add(new EnumSetting.Builder<TopMode>()
             .name("top-mode")
-            .description("Which positions to place on your top half.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.topPlacement.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.topPlacement.description"))
             .defaultValue(TopMode.AntiFacePlace)
             .build()
     );
 
     private final Setting<BottomMode> bottomPlacement = sgGeneral.add(new EnumSetting.Builder<BottomMode>()
             .name("bottom-mode")
-            .description("Which positions to place on your bottom half.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.bottomPlacement.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.bottomPlacement.description"))
             .defaultValue(BottomMode.None)
             .build()
     );
 
     private final Setting<Integer> delaySetting = sgGeneral.add(new IntSetting.Builder()
             .name("place-delay")
-            .description("How many ticks between block placements.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.delaySetting.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.delaySetting.description"))
             .defaultValue(1)
             .sliderMin(0)
             .sliderMax(10)
@@ -74,21 +78,24 @@ public class SelfTrap extends Module {
 
     private final Setting<Boolean> center = sgGeneral.add(new BoolSetting.Builder()
             .name("center")
-            .description("Centers you on the block you are standing on before placing.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.center.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.center.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Sends rotation packets to the server when placing.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> turnOff = sgGeneral.add(new BoolSetting.Builder()
             .name("turn-off")
-            .description("Turns off after placing.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.turnOff.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.turnOff.description"))
             .defaultValue(true)
             .build()
     );
@@ -97,28 +104,32 @@ public class SelfTrap extends Module {
 
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .description("Renders a block overlay where the obsidian will be placed.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.render.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The color of the sides of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The color of the lines of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.SelfTrap.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.SelfTrap.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );

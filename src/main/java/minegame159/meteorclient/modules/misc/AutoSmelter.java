@@ -10,6 +10,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.screen.AbstractFurnaceScreenHandler;
 import net.minecraft.screen.slot.SlotActionType;
 
@@ -20,7 +21,7 @@ public class AutoSmelter extends Module {
     private boolean waitingForItemsToSmelt;
 
     public AutoSmelter() {
-        super(Category.Misc, "auto-smelter", "Automatically smelts all items in your inventory that can be smelted.");
+        super(Category.Misc, "auto-smelter", I18n.translate("Modules.AutoSmelter.description"));
     }
 
     @Override

@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.util.math.Vec3d;
@@ -30,14 +31,16 @@ public class Flight extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The mode for Flight.")
+            .displayName(I18n.translate("Modules.Flight.setting.mode.displayName"))
+            .description(I18n.translate("Modules.Flight.setting.mode.description"))
             .defaultValue(Mode.Abilities)
             .build()
     );
 
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .description("Your speed when flying.")
+            .displayName(I18n.translate("Modules.Flight.setting.speed.displayName"))
+            .description(I18n.translate("Modules.Flight.setting.speed.description"))
             .defaultValue(0.1)
             .min(0.0)
             .build()
@@ -48,7 +51,7 @@ public class Flight extends Module {
     }
 
     public Flight() {
-        super(Category.Movement, "flight", "FLYYYY! No Fall is recommended with this module.");
+        super(Category.Movement, "flight", I18n.translate("Modules.Flight.description"));
     }
 
     @Override

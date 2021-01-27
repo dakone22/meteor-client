@@ -23,6 +23,7 @@ import net.minecraft.block.AbstractPressurePlateBlock;
 import net.minecraft.block.AnvilBlock;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.screen.ingame.AnvilScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.Hand;
@@ -34,20 +35,22 @@ import net.minecraft.util.math.Direction;
 
 public class AutoAnvil extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgPlace = settings.createGroup("Place");
+    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Modules.AutoAnvil.group.sgPlace"));
 
     // General
 
     private final Setting<Boolean> toggleOnBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("toggle-on-break")
-            .description("Toggles when the target's helmet slot is empty.")
+            .displayName(I18n.translate("Modules.AutoAnvil.setting.toggleOnBreak.displayName"))
+            .description(I18n.translate("Modules.AutoAnvil.setting.toggleOnBreak.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Automatically rotates towards the position anvils/pressure plates/buttons are placed.")
+            .displayName(I18n.translate("Modules.AutoAnvil.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.AutoAnvil.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -56,7 +59,8 @@ public class AutoAnvil extends Module {
 
     private final Setting<Double> range = sgPlace.add(new DoubleSetting.Builder()
             .name("range")
-            .description("How far away the target can be to be affected.")
+            .displayName(I18n.translate("Modules.AutoAnvil.setting.range.displayName"))
+            .description(I18n.translate("Modules.AutoAnvil.setting.range.description"))
             .defaultValue(4)
             .min(0)
             .build()
@@ -64,7 +68,8 @@ public class AutoAnvil extends Module {
 
     private final Setting<Integer> delay = sgPlace.add(new IntSetting.Builder()
             .name("delay")
-            .description("The delay in between anvil placements.")
+            .displayName(I18n.translate("Modules.AutoAnvil.setting.delay.displayName"))
+            .description(I18n.translate("Modules.AutoAnvil.setting.delay.description"))
             .min(0)
             .defaultValue(0)
             .sliderMax(50)
@@ -73,7 +78,8 @@ public class AutoAnvil extends Module {
 
     private final Setting<Integer> height = sgPlace.add(new IntSetting.Builder()
             .name("height")
-            .description("The height at which to place the anvils.")
+            .displayName(I18n.translate("Modules.AutoAnvil.setting.height.displayName"))
+            .description(I18n.translate("Modules.AutoAnvil.setting.height.description"))
             .defaultValue(5)
             .min(0)
             .max(10)
@@ -84,13 +90,14 @@ public class AutoAnvil extends Module {
 
     private final Setting<Boolean> placeButton = sgPlace.add(new BoolSetting.Builder()
             .name("place-at-feet")
-            .description("Automatically places a button or pressure plate at the targets feet to break the anvils.")
+            .displayName(I18n.translate("Modules.AutoAnvil.setting.placeButton.displayName"))
+            .description(I18n.translate("Modules.AutoAnvil.setting.placeButton.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoAnvil() {
-        super(Category.Combat, "auto-anvil", "Automatically places anvils above players to destroy helmets.");
+        super(Category.Combat, "auto-anvil", I18n.translate("Modules.AutoAnvil.description"));
     }
 
     private PlayerEntity target;

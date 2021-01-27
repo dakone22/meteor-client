@@ -15,6 +15,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -32,38 +33,42 @@ public class AntiAFK extends Module {
     }
 
     public AntiAFK() {
-        super(Category.Player, "anti-afk", "Performs different actions to prevent getting kicked for AFK reasons.");
+        super(Category.Player, "anti-afk", I18n.translate("Modules.AntiAFK.description"));
     }
 
-    private final SettingGroup sgActions = settings.createGroup("Actions");
-    private final SettingGroup sgMessages = settings.createGroup("Messages");
+    private final SettingGroup sgActions = settings.createGroup(I18n.translate("Modules.AntiAFK.group.sgActions"));
+    private final SettingGroup sgMessages = settings.createGroup(I18n.translate("Modules.AntiAFK.group.sgMessages"));
 
     // Actions
 
     private final Setting<Boolean> spin = sgActions.add(new BoolSetting.Builder()
             .name("spin")
-            .description("Spins.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.spin.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.spin.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<SpinMode> spinMode = sgActions.add(new EnumSetting.Builder<SpinMode>()
             .name("spin-mode")
-            .description("The method of rotating.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.spinMode.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.spinMode.description"))
             .defaultValue(SpinMode.Server)
             .build()
     );
 
     private final Setting<Integer> spinSpeed = sgActions.add(new IntSetting.Builder()
             .name("spin-speed")
-            .description("The speed to spin you.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.spinSpeed.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.spinSpeed.description"))
             .defaultValue(7)
             .build()
     );
 
     private final Setting<Double> pitch = sgActions.add(new DoubleSetting.Builder()
             .name("pitch")
-            .description("The pitch to set in server mode.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.pitch.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.pitch.description"))
             .defaultValue(-90)
             .min(-90)
             .max(90)
@@ -74,25 +79,29 @@ public class AntiAFK extends Module {
 
     private final Setting<Boolean> jump = sgActions.add(new BoolSetting.Builder()
             .name("jump")
-            .description("Jumps.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.jump.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.jump.description"))
             .defaultValue(true)
             .build());
 
     private final Setting<Boolean> click = sgActions.add(new BoolSetting.Builder()
             .name("click")
-            .description("Clicks.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.click.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.click.description"))
             .defaultValue(false)
             .build());
 
     private final Setting<Boolean> disco = sgActions.add(new BoolSetting.Builder()
             .name("disco")
-            .description("Sneaks and unsneaks quickly.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.disco.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.disco.description"))
             .defaultValue(false)
             .build());
 
     private final Setting<Boolean> strafe = sgActions.add(new BoolSetting.Builder()
             .name("strafe")
-            .description("Strafe right and left")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.strafe.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.strafe.description"))
             .defaultValue(false)
             .onChanged(aBoolean -> {
                 strafeTimer = 0;
@@ -104,14 +113,16 @@ public class AntiAFK extends Module {
 
     private final Setting<Boolean> sendMessages = sgMessages.add(new BoolSetting.Builder()
             .name("send-messages")
-            .description("Sends messages to prevent getting kicked for AFK.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.sendMessages.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.sendMessages.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> delay = sgMessages.add(new IntSetting.Builder()
             .name("delay")
-            .description("The delay between specified messages in ticks.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.delay.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.delay.description"))
             .defaultValue(20)
             .min(0)
             .sliderMax(500)
@@ -120,7 +131,8 @@ public class AntiAFK extends Module {
 
     private final Setting<Boolean> randomMessage = sgMessages.add(new BoolSetting.Builder()
             .name("random")
-            .description("Selects a random message from your message list.")
+            .displayName(I18n.translate("Modules.AntiAFK.setting.randomMessage.displayName"))
+            .description(I18n.translate("Modules.AntiAFK.setting.randomMessage.description"))
             .defaultValue(false)
             .build()
     );

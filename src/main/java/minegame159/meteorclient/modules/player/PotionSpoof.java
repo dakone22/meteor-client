@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.StatusEffectSetting;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 
@@ -24,13 +25,14 @@ public class PotionSpoof extends Module {
 
     private final Setting<Object2IntMap<StatusEffect>> potions = sgGeneral.add(new StatusEffectSetting.Builder()
             .name("potions")
-            .description("Potions to add.")
+            .displayName(I18n.translate("Modules.PotionSpoof.setting.potions.displayName"))
+            .description(I18n.translate("Modules.PotionSpoof.setting.potions.description"))
             .defaultValue(Utils.createStatusEffectMap())
             .build()
     );
 
     public PotionSpoof() {
-        super(Category.Player, "potion-spoof", "Spoofs specified potion effects for you. SOME effects DO NOT work.");
+        super(Category.Player, "potion-spoof", I18n.translate("Modules.PotionSpoof.description"));
     }
 
     @EventHandler

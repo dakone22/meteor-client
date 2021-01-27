@@ -20,6 +20,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Items;
 
@@ -32,33 +33,37 @@ public class AutoGap extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     public AutoGap(){
-        super(Category.Player, "auto-gap", "Automatically eats Gaps or E-Gaps if its effects wear out.");
+        super(Category.Player, "auto-gap", I18n.translate("Modules.AutoGap.description"));
     }
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("Determines when you eat the Gap.")
+            .displayName(I18n.translate("Modules.AutoGap.setting.mode.displayName"))
+            .description(I18n.translate("Modules.AutoGap.setting.mode.description"))
             .defaultValue(Mode.Regeneration)
             .build()
     );
 
     private final Setting<Boolean> preferEgap = sgGeneral.add(new BoolSetting.Builder()
             .name("prefer-egap")
-            .description("Prefers to eat E-Gaps over Gaps.")
+            .displayName(I18n.translate("Modules.AutoGap.setting.preferEgap.displayName"))
+            .description(I18n.translate("Modules.AutoGap.setting.preferEgap.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> preferAutoEat = sgGeneral.add(new BoolSetting.Builder()
             .name("prefer-auto-eat")
-            .description("Whether or not to prefer Auto Eat or Auto Gap in case of a conflict.")
+            .displayName(I18n.translate("Modules.AutoGap.setting.preferAutoEat.displayName"))
+            .description(I18n.translate("Modules.AutoGap.setting.preferAutoEat.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableAuras = sgGeneral.add(new BoolSetting.Builder()
             .name("disable-auras")
-            .description("Disable all auras when using this module.")
+            .displayName(I18n.translate("Modules.AutoGap.setting.disableAuras.displayName"))
+            .description(I18n.translate("Modules.AutoGap.setting.disableAuras.description"))
             .defaultValue(false)
             .build()
     );

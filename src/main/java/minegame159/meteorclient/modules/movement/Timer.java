@@ -10,13 +10,15 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class Timer extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .description("Speed multiplier.")
+            .displayName(I18n.translate("Modules.Timer.setting.speed.displayName"))
+            .description(I18n.translate("Modules.Timer.setting.speed.description"))
             .defaultValue(1)
             .min(0.1)
             .sliderMin(0.1)
@@ -25,7 +27,7 @@ public class Timer extends Module {
     );
 
     public Timer() {
-        super(Category.Movement, "timer", "Changes the speed of everything in your game.");
+        super(Category.Movement, "timer", I18n.translate("Modules.Timer.description"));
     }
     // If you put your timer to 0.1 you're a dumbass.
     public double getMultiplier() {

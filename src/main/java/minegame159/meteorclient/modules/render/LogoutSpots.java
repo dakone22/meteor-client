@@ -24,6 +24,7 @@ import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.DiffuseLighting;
 import net.minecraft.client.render.VertexFormats;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 
@@ -39,13 +40,14 @@ public class LogoutSpots extends Module {
     private static final Color RED = new Color(225, 25, 25);
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.LogoutSpots.group.sgRender"));
 
     // General
 
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .description("The scale.")
+            .displayName(I18n.translate("Modules.LogoutSpots.setting.scale.displayName"))
+            .description(I18n.translate("Modules.LogoutSpots.setting.scale.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -53,7 +55,8 @@ public class LogoutSpots extends Module {
 
     private final Setting<Boolean> fullHeight = sgGeneral.add(new BoolSetting.Builder()
             .name("full-height")
-            .description("Displays the height as the player's full height.")
+            .displayName(I18n.translate("Modules.LogoutSpots.setting.fullHeight.displayName"))
+            .description(I18n.translate("Modules.LogoutSpots.setting.fullHeight.description"))
             .defaultValue(true)
             .build()
     );
@@ -62,35 +65,40 @@ public class LogoutSpots extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.LogoutSpots.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.LogoutSpots.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The side color.")
+            .displayName(I18n.translate("Modules.LogoutSpots.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.LogoutSpots.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 0, 255, 55))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The line color.")
+            .displayName(I18n.translate("Modules.LogoutSpots.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.LogoutSpots.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> nameColor = sgRender.add(new ColorSetting.Builder()
             .name("name-color")
-            .description("The name color.")
+            .displayName(I18n.translate("Modules.LogoutSpots.setting.nameColor.displayName"))
+            .description(I18n.translate("Modules.LogoutSpots.setting.nameColor.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> nameBackgroundColor = sgRender.add(new ColorSetting.Builder()
             .name("name-background-color")
-            .description("The name background color.")
+            .displayName(I18n.translate("Modules.LogoutSpots.setting.nameBackgroundColor.displayName"))
+            .description(I18n.translate("Modules.LogoutSpots.setting.nameBackgroundColor.description"))
             .defaultValue(new SettingColor(0, 0, 0, 75))
             .build()
     );
@@ -104,7 +112,7 @@ public class LogoutSpots extends Module {
     private Dimension lastDimension;
 
     public LogoutSpots() {
-        super(Category.Render, "logout-spots", "Displays a box where another player has logged out at.");
+        super(Category.Render, "logout-spots", I18n.translate("Modules.LogoutSpots.description"));
         lineColor.changed();
     }
 

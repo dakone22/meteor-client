@@ -15,11 +15,12 @@ import minegame159.meteorclient.friends.FriendManager;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.modules.ModuleManager;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class AntiFriendHit extends Module {
     public AntiFriendHit() {
-        super(Category.Combat, "anti-friend-hit", "Cancels out attacks that would hit friends.");
+        super(Category.Combat, "anti-friend-hit", I18n.translate("Modules.AntiFriendHit.description"));
     }
 
     @EventHandler

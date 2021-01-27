@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -35,20 +36,22 @@ public class ChestSwap extends Module {
 
     private final Setting<Chestplate> chestplate = sgGeneral.add(new EnumSetting.Builder<Chestplate>()
             .name("chestplate")
-            .description("Which type of chestplate to swap to.")
+            .displayName(I18n.translate("Modules.ChestSwap.setting.chestplate.displayName"))
+            .description(I18n.translate("Modules.ChestSwap.setting.chestplate.description"))
             .defaultValue(Chestplate.PreferNetherite)
             .build()
     );
 
     private final Setting<Boolean> stayOn = sgGeneral.add(new BoolSetting.Builder()
             .name("stay-on")
-            .description("Stays on and activates when you turn it off.")
+            .displayName(I18n.translate("Modules.ChestSwap.setting.stayOn.displayName"))
+            .description(I18n.translate("Modules.ChestSwap.setting.stayOn.description"))
             .defaultValue(false)
             .build()
     );
 
     public ChestSwap() {
-        super(Category.Player, "chest-swap", "Automatically swaps between a chestplate and an elytra.");
+        super(Category.Player, "chest-swap", I18n.translate("Modules.ChestSwap.description"));
     }
 
     @Override

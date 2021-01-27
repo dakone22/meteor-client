@@ -14,6 +14,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
@@ -25,14 +26,16 @@ public class AutoNametag extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .description("Which entities to nametag.")
+            .displayName(I18n.translate("Modules.AutoNametag.setting.entities.displayName"))
+            .description(I18n.translate("Modules.AutoNametag.setting.entities.description"))
             .defaultValue(new Object2BooleanOpenHashMap<>(0))
             .build()
     );
     
     private final Setting<Double> distance = sgGeneral.add(new DoubleSetting.Builder()
             .name("distance")
-            .description("The maximum distance a nametagged entity can be to be nametagged.")
+            .displayName(I18n.translate("Modules.AutoNametag.setting.distance.displayName"))
+            .description(I18n.translate("Modules.AutoNametag.setting.distance.description"))
             .min(0.0)
             .defaultValue(5.0)
             .build()
@@ -40,13 +43,14 @@ public class AutoNametag extends Module {
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Automatically faces towards the mob being nametagged.")
+            .displayName(I18n.translate("Modules.AutoNametag.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.AutoNametag.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoNametag() {
-        super(Category.Misc, "auto-nametag", "Automatically uses nametags on entities without a nametag. WILL nametag ALL entities in the specified distance.");
+        super(Category.Misc, "auto-nametag", I18n.translate("Modules.AutoNametag.description"));
     }
 
     @EventHandler

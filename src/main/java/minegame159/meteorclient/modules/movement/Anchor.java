@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
@@ -24,7 +25,8 @@ public class Anchor extends Module {
 
     private final Setting<Integer> maxHeight = sgGeneral.add(new IntSetting.Builder()
             .name("max-height")
-            .description("The maximum height Anchor will work at.")
+            .displayName(I18n.translate("Modules.Anchor.setting.maxHeight.displayName"))
+            .description(I18n.translate("Modules.Anchor.setting.maxHeight.description"))
             .defaultValue(10)
             .min(0)
             .max(255)
@@ -34,7 +36,8 @@ public class Anchor extends Module {
 
     private final Setting<Integer> minPitch = sgGeneral.add(new IntSetting.Builder()
             .name("min-pitch")
-            .description("Minimum pitch at which anchor will work. (90 - -90)")
+            .displayName(I18n.translate("Modules.Anchor.setting.minPitch.displayName"))
+            .description(I18n.translate("Modules.Anchor.setting.minPitch.description"))
             .defaultValue(-90)
             .min(-90)
             .max(90)
@@ -45,21 +48,24 @@ public class Anchor extends Module {
 
     private final Setting<Boolean> cancelMove = sgGeneral.add(new BoolSetting.Builder()
             .name("cancel-jump-in-hole")
-            .description("Stops you from jumping when anchor is active and min pitch is met.")
+            .displayName(I18n.translate("Modules.Anchor.setting.cancelMove.displayName"))
+            .description(I18n.translate("Modules.Anchor.setting.cancelMove.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pull = sgGeneral.add(new BoolSetting.Builder()
             .name("pull")
-            .description("Whether to pull you faster into the hole.")
+            .displayName(I18n.translate("Modules.Anchor.setting.pull.displayName"))
+            .description(I18n.translate("Modules.Anchor.setting.pull.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> pullSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("pull-speed")
-            .description("How fast to pull towards the hole in blocks per second.")
+            .displayName(I18n.translate("Modules.Anchor.setting.pullSpeed.displayName"))
+            .description(I18n.translate("Modules.Anchor.setting.pullSpeed.description"))
             .defaultValue(0.3)
             .min(0)
             .sliderMax(5)
@@ -77,7 +83,7 @@ public class Anchor extends Module {
     public double deltaX, deltaZ;
 
     public Anchor() {
-        super(Category.Movement, "anchor", "Helps you get into holes by stopping your movement completely over a hole.");
+        super(Category.Movement, "anchor", I18n.translate("Modules.Anchor.description"));
     }
 
     @Override

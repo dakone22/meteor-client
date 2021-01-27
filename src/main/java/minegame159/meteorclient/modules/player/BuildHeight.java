@@ -11,12 +11,13 @@ import minegame159.meteorclient.events.packets.PacketEvent;
 import minegame159.meteorclient.mixininterface.IBlockHitResult;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.PlayerInteractBlockC2SPacket;
 import net.minecraft.util.math.Direction;
 
 public class BuildHeight extends Module {
     public BuildHeight() {
-        super(Category.Player, "build-height", "Allows you to interact with objects at the build limit.");
+        super(Category.Player, "build-height", I18n.translate("Modules.BuildHeight.description"));
     }
 
     @EventHandler

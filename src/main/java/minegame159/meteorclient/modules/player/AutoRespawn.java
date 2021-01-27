@@ -11,10 +11,11 @@ import minegame159.meteorclient.events.game.OpenScreenEvent;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import net.minecraft.client.gui.screen.DeathScreen;
+import net.minecraft.client.resource.language.I18n;
 
 public class AutoRespawn extends Module {
     public AutoRespawn() {
-        super(Category.Player, "auto-respawn", "Automatically respawns after death.");
+        super(Category.Player, "auto-respawn", I18n.translate("Modules.AutoRespawn.description"));
     }
 
     @EventHandler

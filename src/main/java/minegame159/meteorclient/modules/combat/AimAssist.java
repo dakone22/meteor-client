@@ -17,6 +17,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -41,13 +42,14 @@ public class AimAssist extends Module {
     }
     
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgSpeed = settings.createGroup("Aim Speed");
+    private final SettingGroup sgSpeed = settings.createGroup(I18n.translate("Modules.AimAssist.group.sgSpeed"));
 
     // General
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .description("How far away the entity has to be to be targeted.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.range.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.range.description"))
             .defaultValue(5)
             .min(0)
             .build()
@@ -55,35 +57,40 @@ public class AimAssist extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .description("Entities to aim at.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.entities.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.PLAYER))
             .build()
     );
 
     private final Setting<Boolean> friends = sgGeneral.add(new BoolSetting.Builder()
             .name("friends")
-            .description("Whether or not to aim at friends. Works if you have selected players as an entity to attack.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.friends.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.friends.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> ignoreWalls = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-walls")
-            .description("Whether or not to ignore aiming through walls.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.ignoreWalls.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.ignoreWalls.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Priority> priority = sgGeneral.add(new EnumSetting.Builder<Priority>()
             .name("priority")
-            .description("What entities to target.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.priority.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.priority.description"))
             .defaultValue(Priority.LowestHealth)
             .build()
     );
 
     private final Setting<Target> target = sgGeneral.add(new EnumSetting.Builder<Target>()
             .name("target")
-            .description("Which body part to aim at.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.target.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.target.description"))
             .defaultValue(Target.Body)
             .build()
     );
@@ -92,14 +99,16 @@ public class AimAssist extends Module {
 
     private final Setting<Boolean> speedInstant = sgSpeed.add(new BoolSetting.Builder()
             .name("instant-look")
-            .description("Instantly looks at the entity.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.speedInstant.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.speedInstant.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> speed = sgSpeed.add(new DoubleSetting.Builder()
             .name("speed")
-            .description("How fast to aim at the entity.")
+            .displayName(I18n.translate("Modules.AimAssist.setting.speed.displayName"))
+            .description(I18n.translate("Modules.AimAssist.setting.speed.description"))
             .defaultValue(5)
             .min(0)
             .build()
@@ -111,7 +120,7 @@ public class AimAssist extends Module {
     private Entity entity;
 
     public AimAssist() {
-        super(Category.Combat, "aim-assist", "Automatically aims at entities.");
+        super(Category.Combat, "aim-assist", I18n.translate("Modules.AimAssist.description"));
     }
 
     @EventHandler

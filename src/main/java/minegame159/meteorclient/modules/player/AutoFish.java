@@ -14,25 +14,28 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import net.minecraft.item.FishingRodItem;
 
 public class AutoFish extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgSplashRangeDetection = settings.createGroup("Splash Range Detection");
+    private final SettingGroup sgSplashRangeDetection = settings.createGroup(I18n.translate("Modules.AutoFish.group.sgSplashRangeDetection"));
 
     // General
     private final Setting<Boolean> autoCast = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-cast")
-            .description("Automatically casts when not fishing.")
+            .displayName(I18n.translate("Modules.AutoFish.setting.autoCast.displayName"))
+            .description(I18n.translate("Modules.AutoFish.setting.autoCast.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> ticksAutoCast = sgGeneral.add(new IntSetting.Builder()
             .name("ticks-auto-cast")
-            .description("The amount of ticks to wait before recasting automatically.")
+            .displayName(I18n.translate("Modules.AutoFish.setting.ticksAutoCast.displayName"))
+            .description(I18n.translate("Modules.AutoFish.setting.ticksAutoCast.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(60)
@@ -41,7 +44,8 @@ public class AutoFish extends Module {
 
     private final Setting<Integer> ticksCatch = sgGeneral.add(new IntSetting.Builder()
             .name("ticks-catch")
-            .description("The amount of ticks to wait before catching the fish.")
+            .displayName(I18n.translate("Modules.AutoFish.setting.ticksCatch.displayName"))
+            .description(I18n.translate("Modules.AutoFish.setting.ticksCatch.description"))
             .defaultValue(6)
             .min(0)
             .sliderMax(60)
@@ -50,7 +54,8 @@ public class AutoFish extends Module {
 
     private final Setting<Integer> ticksThrow = sgGeneral.add(new IntSetting.Builder()
             .name("ticks-throw")
-            .description("The amount of ticks to wait before throwing the bobber.")
+            .displayName(I18n.translate("Modules.AutoFish.setting.ticksThrow.displayName"))
+            .description(I18n.translate("Modules.AutoFish.setting.ticksThrow.description"))
             .defaultValue(14)
             .min(0)
             .sliderMax(60)
@@ -60,14 +65,16 @@ public class AutoFish extends Module {
     // Splash range detection
     private final Setting<Boolean> splashDetectionRangeEnabled = sgSplashRangeDetection.add(new BoolSetting.Builder()
             .name("splash-detection-range-enabled")
-            .description("Allows you to use multiple accounts next to each other.")
+            .displayName(I18n.translate("Modules.AutoFish.setting.splashDetectionRangeEnabled.displayName"))
+            .description(I18n.translate("Modules.AutoFish.setting.splashDetectionRangeEnabled.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> splashDetectionRange = sgSplashRangeDetection.add(new DoubleSetting.Builder()
             .name("splash-detection-range")
-            .description("The detection range of a splash. Lower values will not work when the TPS is low.")
+            .displayName(I18n.translate("Modules.AutoFish.setting.splashDetectionRange.displayName"))
+            .description(I18n.translate("Modules.AutoFish.setting.splashDetectionRange.description"))
             .defaultValue(10)
             .min(0)
             .build()
@@ -83,7 +90,7 @@ public class AutoFish extends Module {
     private int autoCastCheckTimer;
 
     public AutoFish() {
-        super(Category.Player, "auto-fish", "Automatically fishes for you.");
+        super(Category.Player, "auto-fish", I18n.translate("Modules.AutoFish.description"));
     }
 
     @Override

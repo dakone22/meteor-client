@@ -13,19 +13,21 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class AutoSprint extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Boolean> permanent = sgGeneral.add(new BoolSetting.Builder()
             .name("permanent")
-            .description("Makes you still sprint even if you do not move.")
+            .displayName(I18n.translate("Modules.AutoSprint.setting.permanent.displayName"))
+            .description(I18n.translate("Modules.AutoSprint.setting.permanent.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoSprint() {
-        super(Category.Movement, "auto-sprint", "Automatically sprints.");
+        super(Category.Movement, "auto-sprint", I18n.translate("Modules.AutoSprint.description"));
     }
     
     @Override

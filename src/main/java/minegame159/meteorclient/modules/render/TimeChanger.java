@@ -14,6 +14,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.s2c.play.WorldTimeUpdateS2CPacket;
 
 public class TimeChanger extends Module {
@@ -22,7 +23,8 @@ public class TimeChanger extends Module {
 
     private final Setting<Double> time = sgDefault.add(new DoubleSetting.Builder()
             .name("time")
-            .description("The specified time to be set.")
+            .displayName(I18n.translate("Modules.TimeChanger.setting.time.displayName"))
+            .description(I18n.translate("Modules.TimeChanger.setting.time.description"))
             .defaultValue(0)
             .sliderMin(-20000)
             .sliderMax(20000)
@@ -30,7 +32,7 @@ public class TimeChanger extends Module {
     );
 
     public TimeChanger() {
-        super(Category.Render, "time-changer", "Makes you able to set a custom time.");
+        super(Category.Render, "time-changer", I18n.translate("Modules.TimeChanger.description"));
     }
 
     long oldTime;

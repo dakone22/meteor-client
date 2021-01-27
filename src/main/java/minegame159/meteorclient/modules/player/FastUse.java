@@ -15,6 +15,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Items;
 
@@ -29,27 +30,30 @@ public class FastUse extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("Which items to fast use.")
+            .displayName(I18n.translate("Modules.FastUse.setting.mode.displayName"))
+            .description(I18n.translate("Modules.FastUse.setting.mode.description"))
             .defaultValue(Mode.All)
             .build()
     );
 
     private final Setting<Boolean> exp = sgGeneral.add(new BoolSetting.Builder()
             .name("xp")
-            .description("Fast-throws XP bottles if the mode is \"Some\".")
+            .displayName(I18n.translate("Modules.FastUse.setting.exp.displayName"))
+            .description(I18n.translate("Modules.FastUse.setting.exp.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> blocks = sgGeneral.add(new BoolSetting.Builder()
             .name("blocks")
-            .description("Fast-places blocks if the mode is \"Some\".")
+            .displayName(I18n.translate("Modules.FastUse.setting.blocks.displayName"))
+            .description(I18n.translate("Modules.FastUse.setting.blocks.description"))
             .defaultValue(false)
             .build()
     );
 
     public FastUse() {
-        super(Category.Player, "fast-use", "Allows you to use items at very high speeds.");
+        super(Category.Player, "fast-use", I18n.translate("Modules.FastUse.description"));
     }
 
     @EventHandler

@@ -15,6 +15,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
@@ -23,14 +24,16 @@ public class AntiHunger extends Module {
 
     private final Setting<Boolean> sprint = sgGeneral.add(new BoolSetting.Builder()
             .name("sprint")
-            .description("Spoofs sprinting packets.")
+            .displayName(I18n.translate("Modules.AntiHunger.setting.sprint.displayName"))
+            .description(I18n.translate("Modules.AntiHunger.setting.sprint.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> onGround = sgGeneral.add(new BoolSetting.Builder()
             .name("on-ground")
-            .description("Spoofs the onGround flag.")
+            .displayName(I18n.translate("Modules.AntiHunger.setting.onGround.displayName"))
+            .description(I18n.translate("Modules.AntiHunger.setting.onGround.description"))
             .defaultValue(true)
             .build()
     );
@@ -40,7 +43,7 @@ public class AntiHunger extends Module {
     private boolean ignorePacket;
 
     public AntiHunger() {
-        super(Category.Player, "anti-hunger", "Reduces (does NOT remove) hunger consumption.");
+        super(Category.Player, "anti-hunger", I18n.translate("Modules.AntiHunger.description"));
     }
 
     @Override

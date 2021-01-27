@@ -20,6 +20,7 @@ import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.misc.Pool;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
@@ -35,21 +36,24 @@ public class Trajectories extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.Trajectories.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.Trajectories.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgGeneral.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The side color.")
+            .displayName(I18n.translate("Modules.Trajectories.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.Trajectories.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 150, 0, 35))
             .build()
     );
     
     private final Setting<SettingColor> lineColor = sgGeneral.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The line color.")
+            .displayName(I18n.translate("Modules.Trajectories.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.Trajectories.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 150, 0))
             .build()
     );
@@ -61,7 +65,7 @@ public class Trajectories extends Module {
     private double hitQuadX1, hitQuadY1, hitQuadZ1, hitQuadX2, hitQuadY2, hitQuadZ2;
 
     public Trajectories() {
-        super(Category.Render, "trajectories", "Predicts the trajectory of throwable items.");
+        super(Category.Render, "trajectories", I18n.translate("Modules.Trajectories.description"));
     }
 
     @EventHandler

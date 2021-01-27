@@ -10,11 +10,12 @@ import me.zero.alpine.listener.Listener;
 import minegame159.meteorclient.events.world.TickEvent;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 
 public class Fullbright extends Module {
 
     public Fullbright() {
-        super(Category.Render, "fullbright", "Lights up your world!");
+        super(Category.Render, "fullbright", I18n.translate("Modules.Fullbright.description"));
     }
 
     @Override

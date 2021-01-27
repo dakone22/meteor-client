@@ -20,47 +20,53 @@ import minegame159.meteorclient.settings.IntSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 
 public class AutoEat extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgHunger = settings.createGroup("Hunger");
+    private final SettingGroup sgHunger = settings.createGroup(I18n.translate("Modules.AutoEat.group.sgHunger"));
 
     // General
 
     private final Setting<Boolean> egaps = sgGeneral.add(new BoolSetting.Builder()
             .name("egaps")
-            .description("Eats enchanted golden apples.")
+            .displayName(I18n.translate("Modules.AutoEat.setting.egaps.displayName"))
+            .description(I18n.translate("Modules.AutoEat.setting.egaps.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> gaps = sgGeneral.add(new BoolSetting.Builder()
             .name("gaps")
-            .description("Eats golden apples.")
+            .displayName(I18n.translate("Modules.AutoEat.setting.gaps.displayName"))
+            .description(I18n.translate("Modules.AutoEat.setting.gaps.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> chorus = sgGeneral.add(new BoolSetting.Builder()
             .name("chorus")
-            .description("Eats chorus fruit.")
+            .displayName(I18n.translate("Modules.AutoEat.setting.chorus.displayName"))
+            .description(I18n.translate("Modules.AutoEat.setting.chorus.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noBad = sgGeneral.add(new BoolSetting.Builder()
             .name("filter-negative-effects")
-            .description("Filters out food items that give you negative potion effects.")
+            .displayName(I18n.translate("Modules.AutoEat.setting.noBad.displayName"))
+            .description(I18n.translate("Modules.AutoEat.setting.noBad.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableAuras = sgGeneral.add(new BoolSetting.Builder()
             .name("disable-auras")
-            .description("Disable all auras when using this module.")
+            .displayName(I18n.translate("Modules.AutoEat.setting.disableAuras.displayName"))
+            .description(I18n.translate("Modules.AutoEat.setting.disableAuras.description"))
             .defaultValue(false)
             .build()
     );
@@ -69,14 +75,16 @@ public class AutoEat extends Module {
 
     private final Setting<Boolean> autoHunger = sgHunger.add(new BoolSetting.Builder()
             .name("auto-eat")
-            .description("Automatically eats whenever it can.")
+            .displayName(I18n.translate("Modules.AutoEat.setting.autoHunger.displayName"))
+            .description(I18n.translate("Modules.AutoEat.setting.autoHunger.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> minHunger = sgHunger.add(new IntSetting.Builder()
             .name("min-hunger")
-            .description("The level of hunger you eat at.")
+            .displayName(I18n.translate("Modules.AutoEat.setting.minHunger.displayName"))
+            .description(I18n.translate("Modules.AutoEat.setting.minHunger.description"))
             .defaultValue(17)
             .min(1)
             .max(19)
@@ -92,7 +100,7 @@ public class AutoEat extends Module {
     private boolean wasThis = false;
 
     public AutoEat() {
-        super(Category.Player, "auto-eat", "Automatically eats food.");
+        super(Category.Player, "auto-eat", I18n.translate("Modules.AutoEat.description"));
     }
 
     @Override

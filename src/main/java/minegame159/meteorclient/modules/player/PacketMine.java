@@ -19,6 +19,7 @@ import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.misc.Pool;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.Block;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -28,13 +29,14 @@ import java.util.List;
 
 public class PacketMine extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.PacketMine.group.sgRender"));
 
     // General
 
     private final Setting<Boolean> oneByOne = sgGeneral.add(new BoolSetting.Builder()
             .name("one-by-one")
-            .description("Mines blocks one by one.")
+            .displayName(I18n.translate("Modules.PacketMine.setting.oneByOne.displayName"))
+            .description(I18n.translate("Modules.PacketMine.setting.oneByOne.description"))
             .defaultValue(true)
             .build()
     );
@@ -43,28 +45,32 @@ public class PacketMine extends Module {
 
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .description("Whether to render blocks being mined.")
+            .displayName(I18n.translate("Modules.PacketMine.setting.render.displayName"))
+            .description(I18n.translate("Modules.PacketMine.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.PacketMine.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.PacketMine.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The color of the sides of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.PacketMine.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.PacketMine.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The color of the lines of the blocks being rendered.")
+            .displayName(I18n.translate("Modules.PacketMine.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.PacketMine.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );
@@ -73,7 +79,7 @@ public class PacketMine extends Module {
     private final List<MyBlock> blocks = new ArrayList<>();
 
     public PacketMine() {
-        super(Category.Player, "packet-mine", "Sends packets to mine blocks without the mining animation.");
+        super(Category.Player, "packet-mine", I18n.translate("Modules.PacketMine.description"));
     }
 
     @Override

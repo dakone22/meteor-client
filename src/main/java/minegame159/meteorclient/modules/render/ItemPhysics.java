@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.render.model.json.ModelTransformation;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -23,7 +24,7 @@ import java.util.Random;
 public class ItemPhysics extends Module {
 
     public ItemPhysics() {
-        super(Category.Render, "item-physics", "Applies physics to items on the ground.");
+        super(Category.Render, "item-physics", I18n.translate("Modules.ItemPhysics.description"));
     }
 
     @EventHandler

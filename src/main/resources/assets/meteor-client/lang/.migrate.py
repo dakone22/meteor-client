@@ -125,7 +125,7 @@ def get_renamed_entries(entries, prev):
     prev_reversed = {value: key for key, value in prev.items()}
     renamed_entries = dict()  # old_key:(new_key, value)
     for key, value in entries.copy().items():
-        if key not in prev.keys() and value in prev_reversed.keys():
+        if key not in prev.keys() and value in prev_reversed.keys() and prev_reversed[value] not in entries.keys():
             print("Assuming key \"{}\" renamed to \"{}\"".format(prev_reversed[value], key))
             renamed_entries[prev_reversed[value]] = (key, entries.pop(key))
     if not renamed_entries:

@@ -15,6 +15,7 @@ import minegame159.meteorclient.rendering.Renderer;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.misc.Pool;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.world.dimension.DimensionType;
 
 import java.util.ArrayDeque;
@@ -25,14 +26,16 @@ public class Breadcrumbs extends Module {
 
     private final Setting<SettingColor> color = sgGeneral.add(new ColorSetting.Builder()
             .name("color")
-            .description("The color of the Breadcrumbs trail.")
+            .displayName(I18n.translate("Modules.Breadcrumbs.setting.color.displayName"))
+            .description(I18n.translate("Modules.Breadcrumbs.setting.color.description"))
             .defaultValue(new SettingColor(225, 25, 25))
             .build()
     );
 
     private final Setting<Integer> maxSections = sgGeneral.add(new IntSetting.Builder()
             .name("max-sections")
-            .description("The maximum number of sections.")
+            .displayName(I18n.translate("Modules.Breadcrumbs.setting.maxSections.displayName"))
+            .description(I18n.translate("Modules.Breadcrumbs.setting.maxSections.description"))
             .defaultValue(1000)
             .min(0)
             .sliderMax(5000)
@@ -41,7 +44,8 @@ public class Breadcrumbs extends Module {
 
     private final Setting<Double> sectionLength = sgGeneral.add(new DoubleSetting.Builder()
             .name("section-length")
-            .description("The section length in blocks.")
+            .displayName(I18n.translate("Modules.Breadcrumbs.setting.sectionLength.displayName"))
+            .description(I18n.translate("Modules.Breadcrumbs.setting.sectionLength.description"))
             .defaultValue(0.5)
             .min(0)
             .sliderMin(0)
@@ -57,7 +61,7 @@ public class Breadcrumbs extends Module {
     private DimensionType lastDimension;
 
     public Breadcrumbs() {
-        super(Category.Render, "breadcrumbs", "Displays a trail behind where you have walked.");
+        super(Category.Render, "breadcrumbs", I18n.translate("Modules.Breadcrumbs.description"));
     }
 
     @Override

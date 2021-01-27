@@ -34,12 +34,12 @@ public class HUD extends Module {
     private static final HudRenderer RENDERER = new HudRenderer();
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgActiveModules = settings.createGroup("Active Modules");
-    private final SettingGroup sgInvViewer = settings.createGroup("Inventory Viewer");
-    private final SettingGroup sgPlayerModel = settings.createGroup("Player Model");
-    private final SettingGroup sgArmor = settings.createGroup("Armor Info");
-    private final SettingGroup sgModuleInfo = settings.createGroup("Module Info");
-    private final SettingGroup sgCompass = settings.createGroup("Compass");
+    private final SettingGroup sgActiveModules = settings.createGroup(I18n.translate("Modules.HUD.group.sgActiveModules"));
+    private final SettingGroup sgInvViewer = settings.createGroup(I18n.translate("Modules.HUD.group.sgInvViewer"));
+    private final SettingGroup sgPlayerModel = settings.createGroup(I18n.translate("Modules.HUD.group.sgPlayerModel"));
+    private final SettingGroup sgArmor = settings.createGroup(I18n.translate("Modules.HUD.group.sgArmor"));
+    private final SettingGroup sgModuleInfo = settings.createGroup(I18n.translate("Modules.HUD.group.sgModuleInfo"));
+    private final SettingGroup sgCompass = settings.createGroup(I18n.translate("Modules.HUD.group.sgCompass"));
 
 
     private final ActiveModulesHud activeModulesHud = new ActiveModulesHud(this);
@@ -48,7 +48,8 @@ public class HUD extends Module {
     // General
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .description("Scale of the HUD.")
+            .displayName(I18n.translate("Modules.HUD.setting.scale.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.scale.description"))
             .defaultValue(1)
             .min(1)
             .max(3)
@@ -59,21 +60,24 @@ public class HUD extends Module {
 
     private final Setting<SettingColor> primaryColor = sgGeneral.add(new ColorSetting.Builder()
             .name("primary-color")
-            .description("Primary color of text.")
+            .displayName(I18n.translate("Modules.HUD.setting.primaryColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.primaryColor.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> secondaryColor = sgGeneral.add(new ColorSetting.Builder()
             .name("secondary-color")
-            .description("Secondary color of text.")
+            .displayName(I18n.translate("Modules.HUD.setting.secondaryColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.secondaryColor.description"))
             .defaultValue(new SettingColor(175, 175, 175))
             .build()
     );
 
     private final Setting<SettingColor> welcomeColor = sgGeneral.add(new ColorSetting.Builder()
             .name("welcome-color")
-            .description("Color of welcome text.")
+            .displayName(I18n.translate("Modules.HUD.setting.welcomeColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.welcomeColor.description"))
             .defaultValue(new SettingColor(120, 43, 153))
             .build()
     );
@@ -81,7 +85,10 @@ public class HUD extends Module {
     // Active Modules
     private final Setting<ActiveModulesHud.Sort> activeModulesSort = sgActiveModules.add(new EnumSetting.Builder<ActiveModulesHud.Sort>()
             .name("active-modules-sort")
-            .description("How to sort active modules.")
+            .displayName(I18n.translate("Modules.HUD.setting.activeModulesSort.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.activeModulesSort.description"))
+            .displayValues(new String[]{I18n.translate("Modules.HUD.ActiveModulesHud.Sort.Biggest"),
+                                        I18n.translate("Modules.HUD.ActiveModulesHud.Sort.Smallest")})
             .defaultValue(ActiveModulesHud.Sort.Biggest)
 //            .onChanged(sort -> activeModulesHud.recalculate())
             .build()
@@ -89,28 +96,35 @@ public class HUD extends Module {
 
     private final Setting<Boolean> activeInfo = sgActiveModules.add(new BoolSetting.Builder()
             .name("additional-info")
-            .description("Shows additional info from the module next to the name in the active modules list.")
+            .displayName(I18n.translate("Modules.HUD.setting.activeInfo.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.activeInfo.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ActiveModulesHud.ColorMode> activeModulesColorMode = sgActiveModules.add(new EnumSetting.Builder<ActiveModulesHud.ColorMode>()
             .name("active-modules-color-mode")
-            .description("What color to use for active modules.")
+            .displayName(I18n.translate("Modules.HUD.setting.activeModulesColorMode.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.activeModulesColorMode.description"))
+            .displayValues(new String[]{I18n.translate("Modules.HUD.ActiveModulesHud.ColorMode.Flat"),
+                                        I18n.translate("Modules.HUD.ActiveModulesHud.ColorMode.Random"),
+                                        I18n.translate("Modules.HUD.ActiveModulesHud.ColorMode.Rainbow")})
             .defaultValue(ActiveModulesHud.ColorMode.Rainbow)
             .build()
     );
 
     private final Setting<SettingColor> activeModulesFlatColor = sgActiveModules.add(new ColorSetting.Builder()
             .name("active-modules-flat-color")
-            .description("Color for flat color mode.")
+            .displayName(I18n.translate("Modules.HUD.setting.activeModulesFlatColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.activeModulesFlatColor.description"))
             .defaultValue(new SettingColor(225, 25, 25))
             .build()
     );
 
     private final Setting<Double> activeModulesRainbowSpeed = sgActiveModules.add(new DoubleSetting.Builder()
             .name("active-modules-rainbow-speed")
-            .description("Rainbow speed of rainbow color mode.")
+            .displayName(I18n.translate("Modules.HUD.setting.activeModulesRainbowSpeed.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.activeModulesRainbowSpeed.description"))
             .defaultValue(0.05)
             .sliderMax(0.1)
             .decimalPlaces(4)
@@ -119,7 +133,8 @@ public class HUD extends Module {
 
     private final Setting<Double> activeModulesRainbowSpread = sgActiveModules.add(new DoubleSetting.Builder()
             .name("active-modules-rainbow-spread")
-            .description("Rainbow spread of rainbow color mode.")
+            .displayName(I18n.translate("Modules.HUD.setting.activeModulesRainbowSpread.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.activeModulesRainbowSpread.description"))
             .defaultValue(0.025)
             .sliderMax(0.05)
             .decimalPlaces(4)
@@ -129,21 +144,31 @@ public class HUD extends Module {
     // Inventory Viewer
     private final Setting<InventoryViewerHud.Background> invViewerBackground = sgInvViewer.add(new EnumSetting.Builder<InventoryViewerHud.Background>()
             .name("inventory-viewer-background")
-            .description("Background of inventory viewer.")
+            .displayName(I18n.translate("Modules.HUD.setting.invViewerBackground.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.invViewerBackground.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.None"),
+                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.Light"),
+                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.LightTransparent"),
+                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.Dark"),
+                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.DarkTransparent"),
+                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.Flat")})
             .defaultValue(InventoryViewerHud.Background.Light)
             .build()
     );
 
     private final Setting<SettingColor> invViewerColor = sgInvViewer.add(new ColorSetting.Builder()
             .name("flat-mode-color")
-            .description("Color of background on Flat mode.")
+            .displayName(I18n.translate("Modules.HUD.setting.invViewerColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.invViewerColor.description"))
             .defaultValue(new SettingColor(0, 0, 0, 64))
             .build()
     );
 
     private final Setting<Double> invViewerScale = sgInvViewer.add(new DoubleSetting.Builder()
             .name("inventory-viewer-scale")
-            .description("Scale of inventory viewer.")
+            .displayName(I18n.translate("Modules.HUD.setting.invViewerScale.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.invViewerScale.description"))
             .defaultValue(2)
             .min(1)
             .max(4)
@@ -155,7 +180,8 @@ public class HUD extends Module {
     // Player Model
     private final Setting<Double> playerModelScale = sgPlayerModel.add(new DoubleSetting.Builder()
             .name("player-model-scale")
-            .description("Scale of player model.")
+            .displayName(I18n.translate("Modules.HUD.setting.playerModelScale.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.playerModelScale.description"))
             .defaultValue(2)
             .min(1)
             .sliderMin(1)
@@ -165,21 +191,24 @@ public class HUD extends Module {
 
     private final Setting<Boolean> copyYaw = sgPlayerModel.add(new BoolSetting.Builder()
             .name("copy-yaw")
-            .description("Makes the player model's yaw equal to yours.")
+            .displayName(I18n.translate("Modules.HUD.setting.copyYaw.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.copyYaw.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> copyPitch = sgPlayerModel.add(new BoolSetting.Builder()
             .name("copy-pitch")
-            .description("Makes the player model's pitch equal to yours.")
+            .displayName(I18n.translate("Modules.HUD.setting.copyPitch.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.copyPitch.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> customYaw = sgPlayerModel.add(new IntSetting.Builder()
             .name("custom-yaw")
-            .description("Custom yaw for when copy yaw is off.")
+            .displayName(I18n.translate("Modules.HUD.setting.customYaw.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.customYaw.description"))
             .defaultValue(0)
             .min(-180)
             .max(180)
@@ -190,7 +219,8 @@ public class HUD extends Module {
 
     private final Setting<Integer> customPitch = sgPlayerModel.add(new IntSetting.Builder()
             .name("custom-pitch")
-            .description("Custom pitch for when copy pitch is off.")
+            .displayName(I18n.translate("Modules.HUD.setting.customPitch.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.customPitch.description"))
             .defaultValue(0)
             .min(-180)
             .max(180)
@@ -201,14 +231,16 @@ public class HUD extends Module {
 
     private final Setting<Boolean> playerModelBackground = sgPlayerModel.add(new BoolSetting.Builder()
             .name("player-model-background")
-            .description("Displays a background behind the player model.")
+            .displayName(I18n.translate("Modules.HUD.setting.playerModelBackground.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.playerModelBackground.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<SettingColor> playerModelColor = sgPlayerModel.add(new ColorSetting.Builder()
             .name("player-model-background-color")
-            .description("Color of background.")
+            .displayName(I18n.translate("Modules.HUD.setting.playerModelColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.playerModelColor.description"))
             .defaultValue(new SettingColor(0, 0, 0, 64))
             .build()
     );
@@ -216,14 +248,18 @@ public class HUD extends Module {
     // Armor
     private final Setting<Boolean> armorFlip = sgArmor.add(new BoolSetting.Builder()
             .name("armor-flip-order")
-            .description("Flips the order of armor items.")
+            .displayName(I18n.translate("Modules.HUD.setting.armorFlip.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.armorFlip.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ArmorHud.Orientation> armorOrientation = sgArmor.add(new EnumSetting.Builder<ArmorHud.Orientation>()
             .name("orientation")
-            .description("How to display armor.")
+            .displayName(I18n.translate("Modules.HUD.setting.armorOrientation.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.armorOrientation.description"))
+            .displayValues(new String[]{I18n.translate("Modules.HUD.ArmorHud.Orientation.Horizontal"),
+                                        I18n.translate("Modules.HUD.ArmorHud.Orientation.Vertical")})
             .defaultValue(ArmorHud.Orientation.Horizontal)
             .build()
     );
@@ -231,14 +267,20 @@ public class HUD extends Module {
 
     private final Setting<ArmorHud.Durability> armorDurability = sgArmor.add(new EnumSetting.Builder<ArmorHud.Durability>()
             .name("armor-durability")
-            .description("How to display armor durability.")
+            .displayName(I18n.translate("Modules.HUD.setting.armorDurability.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.armorDurability.description"))
+            .displayValues(new String[]{I18n.translate("Modules.HUD.ArmorHud.Durability.None"),
+                                        I18n.translate("Modules.HUD.ArmorHud.Durability.Default"),
+                                        I18n.translate("Modules.HUD.ArmorHud.Durability.Numbers"),
+                                        I18n.translate("Modules.HUD.ArmorHud.Durability.Percentage")})
             .defaultValue(ArmorHud.Durability.Default)
             .build()
     );
 
     private final Setting<Double> armorScale = sgArmor.add(new DoubleSetting.Builder()
             .name("armor-scale")
-            .description("Scale of armor.")
+            .displayName(I18n.translate("Modules.HUD.setting.armorScale.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.armorScale.description"))
             .defaultValue(3.5)
             .min(2)
             .sliderMin(2)
@@ -249,7 +291,8 @@ public class HUD extends Module {
     // Module Info
     private final Setting<List<Module>> moduleInfoModules = sgModuleInfo.add(new ModuleListSetting.Builder()
             .name("module-info-modules")
-            .description("Which modules to display")
+            .displayName(I18n.translate("Modules.HUD.setting.moduleInfoModules.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.moduleInfoModules.description"))
             .defaultValue(moduleInfoModulesDefaultValue())
 //            .onChanged(toggleModules -> moduleInfoHud.recalculate())
             .build()
@@ -257,21 +300,24 @@ public class HUD extends Module {
 
     private final Setting<Boolean> moduleInfo = sgModuleInfo.add(new BoolSetting.Builder()
             .name("additional-info")
-            .description("Shows additional info from the module next to the name in the module info list.")
+            .displayName(I18n.translate("Modules.HUD.setting.moduleInfo.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.moduleInfo.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<SettingColor> moduleInfoOnColor = sgModuleInfo.add(new ColorSetting.Builder()
             .name("module-info-on-color")
-            .description("Color when module is on.")
+            .displayName(I18n.translate("Modules.HUD.setting.moduleInfoOnColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.moduleInfoOnColor.description"))
             .defaultValue(new SettingColor(25, 225, 25))
             .build()
     );
 
     private final Setting<SettingColor> moduleInfoOffColor = sgModuleInfo.add(new ColorSetting.Builder()
             .name("module-info-off-color")
-            .description("Color when module is off.")
+            .displayName(I18n.translate("Modules.HUD.setting.moduleInfoOffColor.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.moduleInfoOffColor.description"))
             .defaultValue(new SettingColor(225, 25, 25))
             .build()
     );
@@ -279,15 +325,19 @@ public class HUD extends Module {
     //Compass
 
     private final Setting<CompassHud.Mode> compassMode = sgCompass.add(new EnumSetting.Builder<CompassHud.Mode>()
-            .name("inventory-viewer-background")
-            .description("Background of inventory viewer.")
+            .name("compass-mode")
+            .displayName(I18n.translate("Modules.HUD.setting.compassMode.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.compassMode.description"))
+            .displayValues(new String[]{I18n.translate("Modules.HUD.CompassHud.Mode.Axis"),
+                                        I18n.translate("Modules.HUD.CompassHud.Mode.Pole")})
             .defaultValue(CompassHud.Mode.Pole)
             .build()
     );
 
     private final Setting<Double> compassScale = sgCompass.add(new DoubleSetting.Builder()
             .name("compass-scale")
-            .description("Scale of compass.")
+            .displayName(I18n.translate("Modules.HUD.setting.compassScale.displayName"))
+            .description(I18n.translate("Modules.HUD.setting.compassScale.description"))
             .defaultValue(1)
             .sliderMin(2)
             .sliderMax(4)
@@ -297,7 +347,7 @@ public class HUD extends Module {
     public final List<HudModule> modules = new ArrayList<>();
 
     public HUD() {
-        super(Category.Render, "HUD", I18n.translate("HUD.description"));
+        super(Category.Render, "HUD", I18n.translate("Modules.HUD.description"));
 
         init();
     }
@@ -380,14 +430,14 @@ public class HUD extends Module {
     public WWidget getWidget() {
         WTable table = new WTable();
 
-        WButton reset = table.add(new WButton("Reset")).getWidget();
+        WButton reset = table.add(new WButton(I18n.translate("Modules.HUD.buttons.Reset"))).getWidget();
         reset.action = this::init;
-        table.add(new WLabel("Resets positions (do this after changing scale)."));
+        table.add(new WLabel(I18n.translate("Modules.HUD.buttons.Reset.description")));
         table.row();
 
-        WButton editor = table.add(new WButton("Editor")).getWidget();
+        WButton editor = table.add(new WButton(I18n.translate("Modules.HUD.buttons.Editor"))).getWidget();
         editor.action = () -> mc.openScreen(new HudEditorScreen());
-        table.add(new WLabel("Right click elements to toggle."));
+        table.add(new WLabel(I18n.translate("Modules.HUD.buttons.Editor.description")));
 
         return table;
     }

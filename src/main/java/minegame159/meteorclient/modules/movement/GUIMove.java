@@ -19,6 +19,7 @@ import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.misc.input.Input;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.ingame.*;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.ItemGroup;
 import org.lwjgl.glfw.GLFW;
 
@@ -34,49 +35,55 @@ public class GUIMove extends Module {
 
     private final Setting<Screens> screens = sgGeneral.add(new EnumSetting.Builder<Screens>()
             .name("screens")
-            .description("Which screens to move in.")
+            .displayName(I18n.translate("Modules.GUIMove.setting.screens.displayName"))
+            .description(I18n.translate("Modules.GUIMove.setting.screens.description"))
             .defaultValue(Screens.Inventory)
             .build()
     );
 
     private final Setting<Boolean> sneak = sgGeneral.add(new BoolSetting.Builder()
             .name("sneak")
-            .description("Allows you to sneak while in GUIs.")
+            .displayName(I18n.translate("Modules.GUIMove.setting.sneak.displayName"))
+            .description(I18n.translate("Modules.GUIMove.setting.sneak.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> jump = sgGeneral.add(new BoolSetting.Builder()
             .name("jump")
-            .description("Allows you to jump while in GUIs.")
+            .displayName(I18n.translate("Modules.GUIMove.setting.jump.displayName"))
+            .description(I18n.translate("Modules.GUIMove.setting.jump.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> sprint = sgGeneral.add(new BoolSetting.Builder()
             .name("sprint")
-            .description("Allows you to sprint while in GUIs.")
+            .displayName(I18n.translate("Modules.GUIMove.setting.sprint.displayName"))
+            .description(I18n.translate("Modules.GUIMove.setting.sprint.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> arrowsRotate = sgGeneral.add(new BoolSetting.Builder()
             .name("arrows-rotate")
-            .description("Allows you to use arrow keys to rotate while in GUIs.")
+            .displayName(I18n.translate("Modules.GUIMove.setting.arrowsRotate.displayName"))
+            .description(I18n.translate("Modules.GUIMove.setting.arrowsRotate.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> rotateSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("rotate-speed")
-            .description("Rotation speed while in GUIs.")
+            .displayName(I18n.translate("Modules.GUIMove.setting.rotateSpeed.displayName"))
+            .description(I18n.translate("Modules.GUIMove.setting.rotateSpeed.description"))
             .defaultValue(4)
             .min(0)
             .build()
     );
 
     public GUIMove() {
-        super(Category.Movement, "gui-move", "Allows you to perform various actions while in GUIs.");
+        super(Category.Movement, "gui-move", I18n.translate("Modules.GUIMove.description"));
     }
 
     @EventHandler

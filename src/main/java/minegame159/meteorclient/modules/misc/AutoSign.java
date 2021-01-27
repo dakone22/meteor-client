@@ -14,13 +14,14 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import net.minecraft.block.entity.SignBlockEntity;
 import net.minecraft.client.gui.screen.ingame.SignEditScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.UpdateSignC2SPacket;
 
 public class AutoSign extends Module {
     private String[] text;
 
     public AutoSign() {
-        super(Category.Misc, "auto-sign", "Automatically writes signs. The first sign's text will be used.");
+        super(Category.Misc, "auto-sign", I18n.translate("Modules.AutoSign.description"));
     }
 
     @Override

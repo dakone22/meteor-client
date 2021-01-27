@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -26,13 +27,14 @@ public class ClickTP extends Module {
 
     private final Setting<Double> maxDistance = sgGeneral.add(new DoubleSetting.Builder()
             .name("max-distance")
-            .description("The maximum distance you can teleport.")
+            .displayName(I18n.translate("Modules.ClickTP.setting.maxDistance.displayName"))
+            .description(I18n.translate("Modules.ClickTP.setting.maxDistance.description"))
             .defaultValue(5)
             .build()
     );
 
     public ClickTP() {
-        super(Category.Movement, "click-tp", "Teleports you to the block you click on.");
+        super(Category.Movement, "click-tp", I18n.translate("Modules.ClickTP.description"));
     }
 
     @EventHandler

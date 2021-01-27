@@ -17,6 +17,7 @@ import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.PlayerUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.s2c.play.VehicleMoveS2CPacket;
 import net.minecraft.util.math.Vec3d;
 
@@ -25,7 +26,8 @@ public class BoatFly extends Module {
     
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .description("Horizontal speed in blocks per second.")
+            .displayName(I18n.translate("Modules.BoatFly.setting.speed.displayName"))
+            .description(I18n.translate("Modules.BoatFly.setting.speed.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(50)
@@ -34,7 +36,8 @@ public class BoatFly extends Module {
 
     private final Setting<Double> verticalSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("vertical-speed")
-            .description("Vertical speed in blocks per second.")
+            .displayName(I18n.translate("Modules.BoatFly.setting.verticalSpeed.displayName"))
+            .description(I18n.translate("Modules.BoatFly.setting.verticalSpeed.description"))
             .defaultValue(6)
             .min(0)
             .sliderMax(20)
@@ -43,7 +46,8 @@ public class BoatFly extends Module {
 
     private final Setting<Double> fallSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-speed")
-            .description("How fast you fall in blocks per second.")
+            .displayName(I18n.translate("Modules.BoatFly.setting.fallSpeed.displayName"))
+            .description(I18n.translate("Modules.BoatFly.setting.fallSpeed.description"))
             .defaultValue(0.1)
             .min(0)
             .build()
@@ -51,13 +55,14 @@ public class BoatFly extends Module {
 
     private final Setting<Boolean> cancelServerPackets = sgGeneral.add(new BoolSetting.Builder()
             .name("cancel-server-packets")
-            .description("Cancels incoming boat move packets.")
+            .displayName(I18n.translate("Modules.BoatFly.setting.cancelServerPackets.displayName"))
+            .description(I18n.translate("Modules.BoatFly.setting.cancelServerPackets.description"))
             .defaultValue(false)
             .build()
     );
 
     public BoatFly() {
-        super(Category.Movement, "boat-fly", "Transforms your boat into a plane.");
+        super(Category.Movement, "boat-fly", I18n.translate("Modules.BoatFly.description"));
     }
 
     @EventHandler

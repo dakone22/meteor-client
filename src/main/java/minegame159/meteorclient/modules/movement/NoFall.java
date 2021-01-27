@@ -12,6 +12,7 @@ import minegame159.meteorclient.mixininterface.IPlayerMoveC2SPacket;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Items;
@@ -30,28 +31,31 @@ public class NoFall extends Module {
         BeforeDamage
     }
     public NoFall() {
-        super(Category.Movement, "no-fall", "Prevents you from taking fall damage.");
+        super(Category.Movement, "no-fall", I18n.translate("Modules.NoFall.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The way you are saved from fall damage.")
+            .displayName(I18n.translate("Modules.NoFall.setting.mode.displayName"))
+            .description(I18n.translate("Modules.NoFall.setting.mode.description"))
             .defaultValue(Mode.Packet)
             .build()
     );
 
     private final Setting<Boolean> elytra = sgGeneral.add(new BoolSetting.Builder()
             .name("elytra-compatibility")
-            .description("Stops No Fall from working when using an elytra.")
+            .displayName(I18n.translate("Modules.NoFall.setting.elytra.displayName"))
+            .description(I18n.translate("Modules.NoFall.setting.elytra.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> height = sgGeneral.add(new DoubleSetting.Builder()
             .name("height")
-            .description("How high you have to be off the ground for this to toggle on.")
+            .displayName(I18n.translate("Modules.NoFall.setting.height.displayName"))
+            .description(I18n.translate("Modules.NoFall.setting.height.description"))
             .defaultValue(0.5)
             .min(0.1)
             .sliderMax(1)
@@ -60,7 +64,8 @@ public class NoFall extends Module {
 
     private final Setting<PlaceMode> placeMode = sgGeneral.add(new EnumSetting.Builder<PlaceMode>()
             .name("place-mode")
-            .description("Whether place mode places before you die or before you take damage.")
+            .displayName(I18n.translate("Modules.NoFall.setting.placeMode.displayName"))
+            .description(I18n.translate("Modules.NoFall.setting.placeMode.description"))
             .defaultValue(PlaceMode.BeforeDeath)
             .build()
     );

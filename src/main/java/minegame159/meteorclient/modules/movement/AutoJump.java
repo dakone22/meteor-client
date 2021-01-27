@@ -15,6 +15,7 @@ import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class AutoJump extends Module {
     public enum JumpWhen {
@@ -32,21 +33,24 @@ public class AutoJump extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The method of jumping.")
+            .displayName(I18n.translate("Modules.AutoJump.setting.mode.displayName"))
+            .description(I18n.translate("Modules.AutoJump.setting.mode.description"))
             .defaultValue(Mode.Jump)
             .build()
     );
 
     private final Setting<JumpWhen> jumpIf = sgGeneral.add(new EnumSetting.Builder<JumpWhen>()
             .name("jump-if")
-            .description("Jump if.")
+            .displayName(I18n.translate("Modules.AutoJump.setting.jumpIf.displayName"))
+            .description(I18n.translate("Modules.AutoJump.setting.jumpIf.description"))
             .defaultValue(JumpWhen.Always)
             .build()
     );
 
     private final Setting<Double> velocityHeight = sgGeneral.add(new DoubleSetting.Builder()
             .name("velocity-height")
-            .description("The distance that velocity mode moves you.")
+            .displayName(I18n.translate("Modules.AutoJump.setting.velocityHeight.displayName"))
+            .description(I18n.translate("Modules.AutoJump.setting.velocityHeight.description"))
             .defaultValue(0.25)
             .min(0)
             .sliderMax(2)
@@ -54,7 +58,7 @@ public class AutoJump extends Module {
     );
 
     public AutoJump() {
-        super(Category.Movement, "auto-jump", "Automatically jumps.");
+        super(Category.Movement, "auto-jump", I18n.translate("Modules.AutoJump.description"));
     }
 
     private boolean jump() {

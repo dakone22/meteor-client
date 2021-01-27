@@ -20,6 +20,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 
 public class Announcer extends Module {
@@ -35,7 +36,7 @@ public class Announcer extends Module {
     };
 
     public Announcer() {
-        super(Category.Misc, "announcer", "Announces specified actions into chat.");
+        super(Category.Misc, "announcer", I18n.translate("Modules.Announcer.description"));
     }
 
     @Override
@@ -100,14 +101,21 @@ public class Announcer extends Module {
     private class Moving extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("moving-msg")
-                .description("The chat message for moving a certain amount of blocks.")
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.msg.description"))
                 .defaultValue("I just moved {dist} blocks!")
                 .build()
         );
 
         private final Setting<Double> delay = sg.add(new DoubleSetting.Builder()
                 .name("moving-delay")
-                .description("The amount of delay between moving messages in seconds.")
+                .displayName(I18n.translate("Modules.Announcer.setting.delay.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.delay.description"))
                 .defaultValue(10)
                 .sliderMax(60)
                 .build()
@@ -115,7 +123,8 @@ public class Announcer extends Module {
 
         private final Setting<Double> minDist = sg.add(new DoubleSetting.Builder()
                 .name("moving-min-dist")
-                .description("The minimum distance for a moving message to send into chat.")
+                .displayName(I18n.translate("Modules.Announcer.setting.minDist.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.minDist.description"))
                 .defaultValue(10)
                 .sliderMax(100)
                 .build()
@@ -174,7 +183,13 @@ public class Announcer extends Module {
     private class Mining extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("mining-msg")
-                .description("The chat message for mining blocks.")
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.msg.description"))
                 .defaultValue("I just mined {count} {block}!")
                 .build()
         );
@@ -227,7 +242,13 @@ public class Announcer extends Module {
     private class Placing extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("placing-msg")
-                .description("The chat message for placing blocks.")
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.msg.description"))
                 .defaultValue("I just placed {count} {block}!")
                 .build()
         );
@@ -278,7 +299,13 @@ public class Announcer extends Module {
     private class DropItems extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("drop-items-msg")
-                .description("The chat message for dropping items.")
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.msg.description"))
                 .defaultValue("I just dropped {count} {item}!")
                 .build()
         );
@@ -329,7 +356,13 @@ public class Announcer extends Module {
     private class PickItems extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("pick-items-msg")
-                .description("The chat message for picking up items.")
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.msg.description"))
                 .defaultValue("I just picked up {count} {item}!")
                 .build()
         );
@@ -380,7 +413,13 @@ public class Announcer extends Module {
     private class OpenContainer extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("open-container-msg")
-                .description("The chat message for opening a container.")
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .displayName(I18n.translate("Modules.Announcer.setting.msg.displayName"))
+                .description(I18n.translate("Modules.Announcer.setting.msg.description"))
                 .defaultValue("I just opened {name}!")
                 .build()
         );

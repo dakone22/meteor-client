@@ -15,19 +15,21 @@ import minegame159.meteorclient.rendering.ShapeMode;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.player.CityUtils;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 public class CityESP extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.CityESP.group.sgRender"));
 
     // General
 
     private final Setting<Integer> range = sgGeneral.add(new IntSetting.Builder()
             .name("range")
-            .description("The maximum range a city-able block will render.")
+            .displayName(I18n.translate("Modules.CityESP.setting.range.displayName"))
+            .description(I18n.translate("Modules.CityESP.setting.range.description"))
             .defaultValue(5)
             .min(0)
             .sliderMax(20)
@@ -36,7 +38,8 @@ public class CityESP extends Module {
 
     private final Setting<Boolean> checkBelow = sgGeneral.add(new BoolSetting.Builder()
             .name("check-below")
-            .description("Checks if there is an obsidian or bedrock below the surrounded block for you to place crystals on.")
+            .displayName(I18n.translate("Modules.CityESP.setting.checkBelow.displayName"))
+            .description(I18n.translate("Modules.CityESP.setting.checkBelow.description"))
             .defaultValue(true)
             .build()
     );
@@ -45,27 +48,30 @@ public class CityESP extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.CityESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.CityESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("fill-color")
-            .description("The fill color the city block will render as.")
+            .displayName(I18n.translate("Modules.CityESP.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.CityESP.setting.sideColor.description"))
             .defaultValue(new SettingColor(225, 0, 0, 75))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("outline-color")
-            .description("The line color the city block will render as.")
+            .displayName(I18n.translate("Modules.CityESP.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.CityESP.setting.lineColor.description"))
             .defaultValue(new SettingColor(225, 0, 0, 255))
             .build()
     );
 
     public CityESP() {
-        super(Category.Render, "city-esp", "Displays blocks that can be broken in order to city another player.");
+        super(Category.Render, "city-esp", I18n.translate("Modules.CityESP.description"));
     }
 
     @EventHandler

@@ -15,6 +15,7 @@ import minegame159.meteorclient.utils.render.color.Color;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -22,27 +23,30 @@ import net.minecraft.entity.LivingEntity;
 
 public class Chams extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgColors = settings.createGroup("Colors");
+    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Modules.Chams.group.sgColors"));
 
     // General
     
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .description("Select entities to show through walls.")
+            .displayName(I18n.translate("Modules.Chams.setting.entities.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.PLAYER))
             .build()
     );
 
     public final Setting<Boolean> throughWalls = sgGeneral.add(new BoolSetting.Builder()
             .name("through-walls")
-            .description("Renders entities through walls.")
+            .displayName(I18n.translate("Modules.Chams.setting.throughWalls.displayName"))
+            .description(I18n.translate("Modules.Chams.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> colored = sgGeneral.add(new BoolSetting.Builder()
             .name("colored")
-            .description("Renders entity models with a custom color.")
+            .displayName(I18n.translate("Modules.Chams.setting.colored.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.colored.description"))
             .defaultValue(false)
             .build()
     );
@@ -51,55 +55,62 @@ public class Chams extends Module {
 
     public final Setting<Boolean> useNameColor = sgColors.add(new BoolSetting.Builder()
             .name("use-name-color")
-            .description("Uses players displayname color for the chams color (good for minigames).")
+            .displayName(I18n.translate("Modules.Chams.setting.useNameColor.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.useNameColor.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<SettingColor> playersColor = sgColors.add(new ColorSetting.Builder()
             .name("players-color")
-            .description("The other player's color.")
+            .displayName(I18n.translate("Modules.Chams.setting.playersColor.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.playersColor.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> animalsColor = sgColors.add(new ColorSetting.Builder()
             .name("animals-color")
-            .description("The animal's color.")
+            .displayName(I18n.translate("Modules.Chams.setting.animalsColor.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.animalsColor.description"))
             .defaultValue(new SettingColor(25, 255, 25, 255))
             .build()
     );
 
     private final Setting<SettingColor> waterAnimalsColor = sgColors.add(new ColorSetting.Builder()
             .name("water-animals-color")
-            .description("The water animal's color.")
+            .displayName(I18n.translate("Modules.Chams.setting.waterAnimalsColor.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.waterAnimalsColor.description"))
             .defaultValue(new SettingColor(25, 25, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> monstersColor = sgColors.add(new ColorSetting.Builder()
             .name("monsters-color")
-            .description("The monster's color.")
+            .displayName(I18n.translate("Modules.Chams.setting.monstersColor.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.monstersColor.description"))
             .defaultValue(new SettingColor(255, 25, 25, 255))
             .build()
     );
 
     private final Setting<SettingColor> ambientColor = sgColors.add(new ColorSetting.Builder()
             .name("ambient-color")
-            .description("The ambient's color.")
+            .displayName(I18n.translate("Modules.Chams.setting.ambientColor.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.ambientColor.description"))
             .defaultValue(new SettingColor(25, 25, 25, 255))
             .build()
     );
 
     private final Setting<SettingColor> miscColor = sgColors.add(new ColorSetting.Builder()
             .name("misc-color")
-            .description("The misc color.")
+            .displayName(I18n.translate("Modules.Chams.setting.miscColor.displayName"))
+            .description(I18n.translate("Modules.Chams.setting.miscColor.description"))
             .defaultValue(new SettingColor(175, 175, 175, 255))
             .build()
     );
 
     public Chams() {
-        super(Category.Render, "chams", "Renders entities through walls.");
+        super(Category.Render, "chams", I18n.translate("Modules.Chams.description"));
     }
 
     public boolean ignoreRender(Entity entity) {

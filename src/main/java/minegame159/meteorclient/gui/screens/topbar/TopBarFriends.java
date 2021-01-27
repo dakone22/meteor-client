@@ -17,6 +17,7 @@ import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.Settings;
 import minegame159.meteorclient.utils.entity.FriendType;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 
 public class TopBarFriends extends TopBarWindowScreen {
     public TopBarFriends() {
@@ -35,7 +36,7 @@ public class TopBarFriends extends TopBarWindowScreen {
 
         sgEnemy.add(new BoolSetting.Builder()
                 .name("show-in-tracers")
-                .description("Whether to show enemies in tracers.")
+                .description(I18n.translate("TopBar.TopBarFriends.show-in-tracers.description"))
                 .defaultValue(true)
                 .onChanged(aBoolean -> FriendManager.INSTANCE.showEnemies = aBoolean)
                 .onModuleActivated(booleanSetting -> booleanSetting.set(FriendManager.INSTANCE.showEnemies))
@@ -44,7 +45,7 @@ public class TopBarFriends extends TopBarWindowScreen {
 
         sgEnemy.add(new ColorSetting.Builder()
                 .name("color")
-                .description("The color used to show enemies in ESP and Tracers.")
+                .description(I18n.translate("TopBar.TopBarFriends.color.description"))
                 .defaultValue(new SettingColor(204, 0, 0))
                 .onChanged(FriendManager.INSTANCE.enemyColor::set)
                 .onModuleActivated(colorSetting -> colorSetting.set(FriendManager.INSTANCE.enemyColor))
@@ -55,7 +56,7 @@ public class TopBarFriends extends TopBarWindowScreen {
 
         sgNeutral.add(new BoolSetting.Builder()
                 .name("show-in-tracers")
-                .description("Whether to show neutrals in tracers.")
+                .description(I18n.translate("TopBar.TopBarFriends.show-in-tracers.description"))
                 .defaultValue(true)
                 .onChanged(aBoolean -> FriendManager.INSTANCE.showNeutral = aBoolean)
                 .onModuleActivated(booleanSetting -> booleanSetting.set(FriendManager.INSTANCE.showNeutral))
@@ -64,7 +65,7 @@ public class TopBarFriends extends TopBarWindowScreen {
 
         sgNeutral.add(new ColorSetting.Builder()
                 .name("color")
-                .description("The color used to show neutrals in ESP and Tracers.")
+                .description(I18n.translate("TopBar.TopBarFriends.color.description"))
                 .defaultValue(new SettingColor(60, 240,240))
                 .onChanged(FriendManager.INSTANCE.neutralColor::set)
                 .onModuleActivated(colorSetting -> colorSetting.set(FriendManager.INSTANCE.neutralColor))
@@ -73,7 +74,7 @@ public class TopBarFriends extends TopBarWindowScreen {
 
         sgNeutral.add(new BoolSetting.Builder()
                 .name("attack")
-                .description("Whether to attack neutrals.")
+                .description(I18n.translate("TopBar.TopBarFriends.attack.description"))
                 .defaultValue(false)
                 .onChanged(aBoolean -> FriendManager.INSTANCE.attackNeutral = aBoolean)
                 .onModuleActivated(booleanSetting -> booleanSetting.set(FriendManager.INSTANCE.attackNeutral))
@@ -84,7 +85,7 @@ public class TopBarFriends extends TopBarWindowScreen {
 
         sgTrusted.add(new BoolSetting.Builder()
                 .name("show-in-tracers")
-                .description("Whether to show trusted in tracers.")
+                .description(I18n.translate("TopBar.TopBarFriends.show-in-tracers.description"))
                 .defaultValue(true)
                 .onChanged(aBoolean -> FriendManager.INSTANCE.showTrusted = aBoolean)
                 .onModuleActivated(booleanSetting -> booleanSetting.set(FriendManager.INSTANCE.showTrusted))
@@ -93,7 +94,7 @@ public class TopBarFriends extends TopBarWindowScreen {
 
         sgTrusted.add(new ColorSetting.Builder()
                 .name("color")
-                .description("The color used to show trusted in ESP and Tracers.")
+                .description(I18n.translate("TopBar.TopBarFriends.color.description"))
                 .defaultValue(new SettingColor(57, 247, 47))
                 .onChanged(FriendManager.INSTANCE.trustedColor::set)
                 .onModuleActivated(colorSetting -> colorSetting.set(FriendManager.INSTANCE.trustedColor))

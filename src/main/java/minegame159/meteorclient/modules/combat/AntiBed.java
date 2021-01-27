@@ -20,6 +20,7 @@ import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.player.RotationUtils;
 import net.minecraft.block.*;
 import net.minecraft.client.gui.screen.ingame.SignEditScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.*;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.Hand;
@@ -34,33 +35,37 @@ public class AntiBed extends Module {
 
     private final Setting<Boolean> selfToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("self-toggle")
-            .description("Toggles AntiBed off when finished.")
+            .displayName(I18n.translate("Modules.AntiBed.setting.selfToggle.displayName"))
+            .description(I18n.translate("Modules.AntiBed.setting.selfToggle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> autoCenter = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-center")
-            .description("Teleports you to the center of the blocks.")
+            .displayName(I18n.translate("Modules.AntiBed.setting.autoCenter.displayName"))
+            .description(I18n.translate("Modules.AntiBed.setting.autoCenter.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> onlyOnGround = sgGeneral.add(new BoolSetting.Builder()
             .name("only-on-ground")
-            .description("Only toggles Anti Bed when you are standing on a block.")
+            .displayName(I18n.translate("Modules.AntiBed.setting.onlyOnGround.displayName"))
+            .description(I18n.translate("Modules.AntiBed.setting.onlyOnGround.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Automatically rotates towards where the blocks are placed.")
+            .displayName(I18n.translate("Modules.AntiBed.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.AntiBed.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
-    public AntiBed(){super(Category.Combat, "anti-bed", "Prevents people from placing beds where you are standing.");}
+    public AntiBed(){super(Category.Combat, "anti-bed", I18n.translate("Modules.AntiBed.description"));}
 
     private int place = -1;
     private boolean closeScreen = false;

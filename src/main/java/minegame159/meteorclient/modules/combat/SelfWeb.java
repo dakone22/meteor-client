@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
@@ -26,27 +27,30 @@ public class SelfWeb extends Module {
 
     private final Setting<Boolean> doubles = sgGeneral.add(new BoolSetting.Builder()
             .name("doubles")
-            .description("Places webs in your upper hitbox as well.")
+            .displayName(I18n.translate("Modules.SelfWeb.setting.doubles.displayName"))
+            .description(I18n.translate("Modules.SelfWeb.setting.doubles.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> turnOff = sgGeneral.add(new BoolSetting.Builder()
             .name("turn-off")
-            .description("Toggles off after placing the webs.")
+            .displayName(I18n.translate("Modules.SelfWeb.setting.turnOff.displayName"))
+            .description(I18n.translate("Modules.SelfWeb.setting.turnOff.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Forces you to rotate downwards when placing webs.")
+            .displayName(I18n.translate("Modules.SelfWeb.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.SelfWeb.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public SelfWeb() {
-        super(Category.Combat, "self-web", "Automatically places webs on you.");
+        super(Category.Combat, "self-web", I18n.translate("Modules.SelfWeb.description"));
     }
 
     @EventHandler

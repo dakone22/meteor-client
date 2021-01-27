@@ -23,6 +23,7 @@ import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.waypoints.Waypoint;
 import minegame159.meteorclient.waypoints.Waypoints;
+import net.minecraft.client.resource.language.I18n;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,7 +35,8 @@ public class DeathPosition extends Module {
 
     private final Setting<Boolean> createWaypoint = sgGeneral.add(new BoolSetting.Builder()
             .name("create-waypoint")
-            .description("Creates a waypoint when you die.")
+            .displayName(I18n.translate("Modules.DeathPosition.setting.createWaypoint.displayName"))
+            .description(I18n.translate("Modules.DeathPosition.setting.createWaypoint.description"))
             .defaultValue(true)
             .build()
     );
@@ -44,7 +46,7 @@ public class DeathPosition extends Module {
     private final WLabel label = new WLabel("No latest death found.");
 
     public DeathPosition() {
-        super(Category.Player, "death-position", "Sends you the coordinates to your latest death.");
+        super(Category.Player, "death-position", I18n.translate("Modules.DeathPosition.description"));
     }
 
     private final Map<String, Double> deathPos = new HashMap<>();

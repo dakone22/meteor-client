@@ -10,6 +10,7 @@ import me.zero.alpine.listener.Listener;
 import minegame159.meteorclient.events.world.TickEvent;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.shape.VoxelShape;
 
@@ -17,7 +18,7 @@ import java.util.stream.Stream;
 
 public class Parkour extends Module {
     public Parkour() {
-        super(Category.Movement, "parkour", "Automatically jumps at the edges of blocks.");
+        super(Category.Movement, "parkour", I18n.translate("Modules.Parkour.description"));
     }
 
     @EventHandler

@@ -15,6 +15,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.IntSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -24,14 +25,16 @@ public class OffhandCrash extends Module {
 
     private final Setting<Boolean> doCrash = sgGeneral.add(new BoolSetting.Builder()
             .name("do-crash")
-            .description("Sends X number of offhand swap sound packets to the server per tick.")
+            .displayName(I18n.translate("Modules.OffhandCrash.setting.doCrash.displayName"))
+            .description(I18n.translate("Modules.OffhandCrash.setting.doCrash.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> speed = sgGeneral.add(new IntSetting.Builder()
             .name("speed")
-            .description("The amount of swaps measured in ticks.")
+            .displayName(I18n.translate("Modules.OffhandCrash.setting.speed.displayName"))
+            .description(I18n.translate("Modules.OffhandCrash.setting.speed.description"))
             .defaultValue(2000)
             .min(1)
             .sliderMax(10000)
@@ -40,13 +43,14 @@ public class OffhandCrash extends Module {
 
     private final Setting<Boolean> antiCrash = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-crash")
-            .description("Attempts to prevent you from crashing yourself.")
+            .displayName(I18n.translate("Modules.OffhandCrash.setting.antiCrash.displayName"))
+            .description(I18n.translate("Modules.OffhandCrash.setting.antiCrash.description"))
             .defaultValue(true)
             .build()
     );
 
     public OffhandCrash() {
-        super(Category.Misc, "offhand-crash", "An exploit that can crash other players by swapping back and forth between your main hand and offhand..");
+        super(Category.Misc, "offhand-crash", I18n.translate("Modules.OffhandCrash.description"));
     }
 
 

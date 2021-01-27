@@ -17,6 +17,7 @@ import minegame159.meteorclient.utils.player.RotationUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FallingBlock;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
@@ -31,21 +32,24 @@ public class Scaffold extends Module {
 
     private final Setting<Boolean> safeWalk = sgGeneral.add(new BoolSetting.Builder()
             .name("safe-walk")
-            .description("Whether or not to toggle Safe Walk when using Scaffold.")
+            .displayName(I18n.translate("Modules.Scaffold.setting.safeWalk.displayName"))
+            .description(I18n.translate("Modules.Scaffold.setting.safeWalk.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> fastTower = sgGeneral.add(new BoolSetting.Builder()
             .name("fast-tower")
-            .description("Whether or not to scaffold upwards faster.")
+            .displayName(I18n.translate("Modules.Scaffold.setting.fastTower.displayName"))
+            .description(I18n.translate("Modules.Scaffold.setting.fastTower.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> radius = sgGeneral.add(new IntSetting.Builder()
             .name("radius")
-            .description("The radius of your scaffold.")
+            .displayName(I18n.translate("Modules.Scaffold.setting.radius.displayName"))
+            .description(I18n.translate("Modules.Scaffold.setting.radius.description"))
             .defaultValue(1)
             .min(1)
             .sliderMin(1)
@@ -55,28 +59,32 @@ public class Scaffold extends Module {
 
     private final Setting<List<Block>> blackList = sgGeneral.add(new BlockListSetting.Builder()
             .name("blacklist")
-            .description("Blacklists certain blocks from being used to scaffold.")
+            .displayName(I18n.translate("Modules.Scaffold.setting.blackList.displayName"))
+            .description(I18n.translate("Modules.Scaffold.setting.blackList.description"))
             .defaultValue(new ArrayList<>())
             .build()
     );
 
     private final Setting<Boolean> selfToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("self-toggle")
-            .description("Toggles Scaffold when you run out of blocks.")
+            .displayName(I18n.translate("Modules.Scaffold.setting.selfToggle.displayName"))
+            .description(I18n.translate("Modules.Scaffold.setting.selfToggle.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> renderSwing = sgGeneral.add(new BoolSetting.Builder()
             .name("swing")
-            .description("Renders your client-side swing.")
+            .displayName(I18n.translate("Modules.Scaffold.setting.renderSwing.displayName"))
+            .description(I18n.translate("Modules.Scaffold.setting.renderSwing.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Rotates towards the blocks being placed.")
+            .displayName(I18n.translate("Modules.Scaffold.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.Scaffold.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -89,7 +97,7 @@ public class Scaffold extends Module {
     private double lastSneakingY;
 
     public Scaffold() {
-        super(Category.Movement, "scaffold", "Automatically places blocks under you.");
+        super(Category.Movement, "scaffold", I18n.translate("Modules.Scaffold.description"));
     }
 
     @Override

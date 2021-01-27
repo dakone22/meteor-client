@@ -23,6 +23,7 @@ import minegame159.meteorclient.utils.misc.input.KeyAction;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.RotationUtils;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
@@ -41,7 +42,8 @@ public class Freecam extends Module {
 
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .description("Your speed while in Freecam.")
+            .displayName(I18n.translate("Modules.Freecam.setting.speed.displayName"))
+            .description(I18n.translate("Modules.Freecam.setting.speed.description"))
             .defaultValue(1.0)
             .min(0.0)
             .build()
@@ -49,35 +51,40 @@ public class Freecam extends Module {
 
     private final Setting<AutoDisableEvent> autoDisableOnDamage = sgGeneral.add(new EnumSetting.Builder<AutoDisableEvent>()
             .name("auto-disable-on-damage")
-            .description("Disables Freecam when you either take damage or die.")
+            .displayName(I18n.translate("Modules.Freecam.setting.autoDisableOnDamage.displayName"))
+            .description(I18n.translate("Modules.Freecam.setting.autoDisableOnDamage.description"))
             .defaultValue(AutoDisableEvent.OnDamage)
             .build()
     );
 
     private final Setting<Boolean> autoDisableOnLog = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-disable-on-log")
-            .description("Disables Freecam when you disconnect from a server.")
+            .displayName(I18n.translate("Modules.Freecam.setting.autoDisableOnLog.displayName"))
+            .description(I18n.translate("Modules.Freecam.setting.autoDisableOnLog.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> reloadChunks = sgGeneral.add(new BoolSetting.Builder()
             .name("reload-chunks")
-            .description("Disables cave culling.")
+            .displayName(I18n.translate("Modules.Freecam.setting.reloadChunks.displayName"))
+            .description(I18n.translate("Modules.Freecam.setting.reloadChunks.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> renderHands = sgGeneral.add(new BoolSetting.Builder()
             .name("render-hands")
-            .description("Whether or not to render your hands in Freecam.")
+            .displayName(I18n.translate("Modules.Freecam.setting.renderHands.displayName"))
+            .description(I18n.translate("Modules.Freecam.setting.renderHands.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Rotates your character to whatever block or entity you are looking at.")
+            .displayName(I18n.translate("Modules.Freecam.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.Freecam.setting.rotate.description"))
             .defaultValue(false)
             .build()
     );
@@ -91,7 +98,7 @@ public class Freecam extends Module {
     private boolean forward, backward, right, left, up, down;
 
     public Freecam() {
-        super(Category.Render, "freecam", "Makes you fly out of your body.");
+        super(Category.Render, "freecam", I18n.translate("Modules.Freecam.description"));
     }
 
     @Override

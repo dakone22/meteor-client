@@ -20,6 +20,7 @@ import minegame159.meteorclient.settings.IntSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import net.minecraft.block.Material;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.ProtectionEnchantment;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.Fluids;
@@ -37,35 +38,40 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Jesus extends Module {
-    private final SettingGroup sgWater = settings.createGroup("Water");
-    private final SettingGroup sgLava = settings.createGroup("Lava");
+    private final SettingGroup sgWater = settings.createGroup(I18n.translate("Modules.Jesus.group.sgWater"));
+    private final SettingGroup sgLava = settings.createGroup(I18n.translate("Modules.Jesus.group.sgLava"));
 
     // Water
 
     private final Setting<Boolean> walkOnWater = sgWater.add(new BoolSetting.Builder()
             .name("walk-on-water")
-            .description("Lets you walk on water.")
+            .displayName(I18n.translate("Modules.Jesus.setting.walkOnWater.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.walkOnWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableOnSneakForWater = sgWater.add(new BoolSetting.Builder()
             .name("disable-on-sneak-for-water")
-            .description("Lets you go under the water when your sneak key is held.")
+            .displayName(I18n.translate("Modules.Jesus.setting.disableOnSneakForWater.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.disableOnSneakForWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> dipIntoWater = sgWater.add(new BoolSetting.Builder()
             .name("dip-into-water")
-            .description("Lets you go under the water when you fall over a certain height.")
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWater.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.dipIntoWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> dipIntoWaterHeight = sgWater.add(new IntSetting.Builder()
             .name("dip-into-water-height")
-            .description("Maximum safe height.")
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.displayName"))
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLavaHeight.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.description"))
             .defaultValue(4)
             .min(1)
             .max(255)
@@ -76,7 +82,8 @@ public class Jesus extends Module {
 
     private final Setting<Boolean> dipIntoWaterIfBurning = sgWater.add(new BoolSetting.Builder()
             .name("dip-into-water-if-burning")
-            .description("Lets you go under the water when you are burning.")
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWaterIfBurning.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.dipIntoWaterIfBurning.description"))
             .defaultValue(true)
             .build()
     );
@@ -85,28 +92,33 @@ public class Jesus extends Module {
 
     private final Setting<Boolean> walkOnLava = sgLava.add(new BoolSetting.Builder()
             .name("walk-on-lava")
-            .description("Lets you walk on lava.")
+            .displayName(I18n.translate("Modules.Jesus.setting.walkOnLava.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.walkOnLava.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableOnSneakForLava = sgLava.add(new BoolSetting.Builder()
             .name("disable-on-sneak-for-lava")
-            .description("Lets you go under the lava when your sneak key is held.")
+            .displayName(I18n.translate("Modules.Jesus.setting.disableOnSneakForLava.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.disableOnSneakForLava.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> dipIntoLava = sgLava.add(new BoolSetting.Builder()
             .name("dip-into-lava")
-            .description("Lets you go under the lava when you fall over than certain height.")
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLava.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.dipIntoLava.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> dipIntoLavaHeight = sgLava.add(new IntSetting.Builder()
             .name("dip-into-lava-height")
-            .description("Maximum safe height.")
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.displayName"))
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLavaHeight.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.description"))
             .defaultValue(15)
             .min(1)
             .max(255)
@@ -117,14 +129,16 @@ public class Jesus extends Module {
 
     private final Setting<Boolean> dipIntoLavaIfFireResistance = sgLava.add(new BoolSetting.Builder()
             .name("dip-into-lava-if-fire-resistance")
-            .description("Lets you go under the lava if you have Fire Resistance effect to avoid fall damage.") // rofl someone put "fall damage" here
+            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLavaIfFireResistance.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.dipIntoLavaIfFireResistance.description")) // rofl someone put "fall damage" here
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> fireResistanceSafeMode = sgLava.add(new BoolSetting.Builder()
             .name("fire-resistance-safe-mode")
-            .description("Prevents being in lava when the Fire Resistance effect is nearly over.")
+            .displayName(I18n.translate("Modules.Jesus.setting.fireResistanceSafeMode.displayName"))
+            .description(I18n.translate("Modules.Jesus.setting.fireResistanceSafeMode.description"))
             .defaultValue(true)
             .build()
     );
@@ -138,7 +152,7 @@ public class Jesus extends Module {
     private boolean preBaritoneAssumeWalkOnLava;
 
     public Jesus() {
-        super(Category.Movement, "jesus", "Walk on liquids like Jesus.");
+        super(Category.Movement, "jesus", I18n.translate("Modules.Jesus.description"));
     }
 
     @Override

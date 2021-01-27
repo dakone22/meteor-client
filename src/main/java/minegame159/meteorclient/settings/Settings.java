@@ -8,6 +8,7 @@ package minegame159.meteorclient.settings;
 import minegame159.meteorclient.gui.widgets.WTable;
 import minegame159.meteorclient.utils.misc.ISerializable;
 import minegame159.meteorclient.utils.misc.NbtUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -43,7 +44,7 @@ public class Settings implements ISerializable<Settings>, Iterable<SettingGroup>
     }
 
     public SettingGroup getDefaultGroup() {
-        if (defaultGroup == null) defaultGroup = createGroup("General");
+        if (defaultGroup == null) defaultGroup = createGroup(I18n.translate("Settings.defaultGroup"));
         return defaultGroup;
     }
 

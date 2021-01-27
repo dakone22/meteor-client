@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.IntSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -29,7 +30,8 @@ public class Spam extends Module {
 
     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder()
             .name("delay")
-            .description("The delay between specified messages in ticks.")
+            .displayName(I18n.translate("Modules.Spam.setting.delay.displayName"))
+            .description(I18n.translate("Modules.Spam.setting.delay.description"))
             .defaultValue(20)
             .min(0)
             .sliderMax(100)
@@ -38,7 +40,8 @@ public class Spam extends Module {
 
     private final Setting<Boolean> random = sgGeneral.add(new BoolSetting.Builder()
             .name("random")
-            .description("Selects a random message from your spam message list.")
+            .displayName(I18n.translate("Modules.Spam.setting.random.displayName"))
+            .description(I18n.translate("Modules.Spam.setting.random.description"))
             .defaultValue(false)
             .build()
     );
@@ -48,7 +51,7 @@ public class Spam extends Module {
     private int messageI;
 
     public Spam() {
-        super(Category.Misc, "spam", "Spams specified messages in chat.");
+        super(Category.Misc, "spam", I18n.translate("Modules.Spam.description"));
     }
 
     @Override

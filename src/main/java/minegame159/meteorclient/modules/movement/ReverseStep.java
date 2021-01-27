@@ -14,6 +14,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class ReverseStep extends Module {
 
@@ -21,7 +22,8 @@ public class ReverseStep extends Module {
 
     private final Setting<Double> fallSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-speed")
-            .description("How fast to fall in blocks per second.")
+            .displayName(I18n.translate("Modules.ReverseStep.setting.fallSpeed.displayName"))
+            .description(I18n.translate("Modules.ReverseStep.setting.fallSpeed.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(10)
@@ -30,7 +32,8 @@ public class ReverseStep extends Module {
 
     private final Setting<Double> fallDistance = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-distance")
-            .description("The maximum fall distance this setting will activate at.")
+            .displayName(I18n.translate("Modules.ReverseStep.setting.fallDistance.displayName"))
+            .description(I18n.translate("Modules.ReverseStep.setting.fallDistance.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(10)
@@ -38,7 +41,7 @@ public class ReverseStep extends Module {
     );
 
     public ReverseStep() {
-        super(Category.Movement, "reverse-step", "Allows you to fall down blocks at a greater speed.");
+        super(Category.Movement, "reverse-step", I18n.translate("Modules.ReverseStep.description"));
     }
 
     @EventHandler

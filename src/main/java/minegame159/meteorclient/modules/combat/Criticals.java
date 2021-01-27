@@ -18,6 +18,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.HandSwingC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -33,13 +34,14 @@ public class Criticals extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The mode on how Criticals will function.")
+            .displayName(I18n.translate("Modules.Criticals.setting.mode.displayName"))
+            .description(I18n.translate("Modules.Criticals.setting.mode.description"))
             .defaultValue(Mode.Packet)
             .build()
     );
 
     public Criticals() {
-        super(Category.Combat, "criticals", "Performs critical attacks when you hit your target.");
+        super(Category.Combat, "criticals", I18n.translate("Modules.Criticals.description"));
     }
 
     private PlayerInteractEntityC2SPacket attackPacket;

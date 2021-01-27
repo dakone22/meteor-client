@@ -24,6 +24,7 @@ import minegame159.meteorclient.utils.render.RenderUtils;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Direction;
@@ -37,8 +38,8 @@ import java.util.List;
 
 public class Search extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
-    private final SettingGroup sgTracers = settings.createGroup("Tracers");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.Search.group.sgRender"));
+    private final SettingGroup sgTracers = settings.createGroup(I18n.translate("Modules.Search.group.sgTracers"));
 
     private final Long2ObjectArrayMap<MyChunk> chunks = new Long2ObjectArrayMap<>();
 
@@ -46,7 +47,8 @@ public class Search extends Module {
 
     private final Setting<List<Block>> blocks = sgGeneral.add(new BlockListSetting.Builder()
             .name("blocks")
-            .description("Blocks to search for.")
+            .displayName(I18n.translate("Modules.Search.setting.blocks.displayName"))
+            .description(I18n.translate("Modules.Search.setting.blocks.description"))
             .defaultValue(new ArrayList<>(0))
             .onChanged(blocks1 -> {
                 if (Utils.canUpdate() && isActive()) {
@@ -65,14 +67,16 @@ public class Search extends Module {
 
     private final Setting<SettingColor> color = sgRender.add(new ColorSetting.Builder()
             .name("color")
-            .description("The color.")
+            .displayName(I18n.translate("Modules.Search.setting.color.displayName"))
+            .description(I18n.translate("Modules.Search.setting.color.description"))
             .defaultValue(new SettingColor(0, 255, 200))
             .build()
     );
 
     private final Setting<Boolean> fullBlock = sgRender.add(new BoolSetting.Builder()
             .name("full-block")
-            .description("If outlines will be rendered as full blocks.")
+            .displayName(I18n.translate("Modules.Search.setting.fullBlock.displayName"))
+            .description(I18n.translate("Modules.Search.setting.fullBlock.description"))
             .defaultValue(false)
             .build()
     );
@@ -81,14 +85,16 @@ public class Search extends Module {
 
     private final Setting<Boolean> tracersEnabled = sgTracers.add(new BoolSetting.Builder()
             .name("tracers-enabled")
-            .description("Draws lines to the blocks.")
+            .displayName(I18n.translate("Modules.Search.setting.tracersEnabled.displayName"))
+            .description(I18n.translate("Modules.Search.setting.tracersEnabled.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<SettingColor> tracersColor = sgTracers.add(new ColorSetting.Builder()
             .name("tracers-color")
-            .description("The color of the tracers.")
+            .displayName(I18n.translate("Modules.Search.setting.tracersColor.displayName"))
+            .description(I18n.translate("Modules.Search.setting.tracersColor.description"))
             .defaultValue(new SettingColor(225, 225, 225))
             .build()
     );
@@ -103,7 +109,7 @@ public class Search extends Module {
     private DimensionType lastDimension;
 
     public Search() {
-        super(Category.Render, "search", "Searches for specified blocks.");
+        super(Category.Render, "search", I18n.translate("Modules.Search.description"));
     }
 
     @Override

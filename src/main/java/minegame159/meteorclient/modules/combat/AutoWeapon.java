@@ -13,6 +13,7 @@ import minegame159.meteorclient.events.entity.player.AttackEntityEvent;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.item.AxeItem;
@@ -25,28 +26,30 @@ public class AutoWeapon extends Module {
     }
 
     public AutoWeapon(){
-        super(Category.Combat, "auto-weapon", "Finds the best weapon to use in your hotbar.");
+        super(Category.Combat, "auto-weapon", I18n.translate("Modules.AutoWeapon.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Weapon> weapon = sgGeneral.add(new EnumSetting.Builder<Weapon>()
             .name("Weapon")
-            .description("What type of weapon to use.")
+            .description(I18n.translate("Modules.AutoWeapon.setting.weapon.description"))
             .defaultValue(Weapon.Sword)
             .build()
     );
 
     private final Setting<Integer> threshold = sgGeneral.add(new IntSetting.Builder()
             .name("threshold")
-            .description("If the non-preferred weapon produces this much damage this will favor it over your preferred weapon.")
+            .displayName(I18n.translate("Modules.AutoWeapon.setting.threshold.displayName"))
+            .description(I18n.translate("Modules.AutoWeapon.setting.threshold.description"))
             .defaultValue(4)
             .build()
     );
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-break")
-            .description("Prevents you from breaking your weapon.")
+            .displayName(I18n.translate("Modules.AutoWeapon.setting.antiBreak.displayName"))
+            .description(I18n.translate("Modules.AutoWeapon.setting.antiBreak.description"))
             .defaultValue(false)
             .build()
     );

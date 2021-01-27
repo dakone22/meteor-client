@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.misc.MyPotion;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
@@ -33,14 +34,16 @@ public class AutoBrewer extends Module {
 
     private final Setting<MyPotion> potion = sgGeneral.add(new PotionSetting.Builder()
             .name("potion")
-            .description("The type of potion to brew.")
+            .displayName(I18n.translate("Modules.AutoBrewer.setting.potion.displayName"))
+            .description(I18n.translate("Modules.AutoBrewer.setting.potion.description"))
             .defaultValue(MyPotion.Strength)
             .build()
     );
 
     private final Setting<Modifier> modifier = sgGeneral.add(new EnumSetting.Builder<Modifier>()
             .name("modifier")
-            .description("The modifier for the specified potion.")
+            .displayName(I18n.translate("Modules.AutoBrewer.setting.modifier.displayName"))
+            .description(I18n.translate("Modules.AutoBrewer.setting.modifier.description"))
             .defaultValue(Modifier.None).build()
     );
 
@@ -49,7 +52,7 @@ public class AutoBrewer extends Module {
     private int timer;
 
     public AutoBrewer() {
-        super(Category.Misc, "auto-brewer", "Automatically brews specified potions.");
+        super(Category.Misc, "auto-brewer", I18n.translate("Modules.AutoBrewer.description"));
     }
 
     @Override

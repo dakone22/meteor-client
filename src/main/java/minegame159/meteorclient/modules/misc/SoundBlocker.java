@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.SoundEventListSetting;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.sound.SoundEvent;
 
 import java.util.ArrayList;
@@ -23,13 +24,14 @@ public class SoundBlocker extends Module {
 
     private final Setting<List<SoundEvent>> sounds = sgGeneral.add(new SoundEventListSetting.Builder()
             .name("sounds")
-            .description("Sounds to block.")
+            .displayName(I18n.translate("Modules.SoundBlocker.setting.sounds.displayName"))
+            .description(I18n.translate("Modules.SoundBlocker.setting.sounds.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     public SoundBlocker() {
-        super(Category.Misc, "sound-blocker", "Cancels out selected sounds.");
+        super(Category.Misc, "sound-blocker", I18n.translate("Modules.SoundBlocker.description"));
     }
 
     @EventHandler

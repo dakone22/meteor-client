@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
@@ -25,20 +26,22 @@ public class EXPThrower extends Module {
 
     private final Setting<Boolean> lookDown = sgGeneral.add(new BoolSetting.Builder()
             .name("look-down")
-            .description("Forces you to rotate downwards when throwing bottles.")
+            .displayName(I18n.translate("Modules.EXPThrower.setting.lookDown.displayName"))
+            .description(I18n.translate("Modules.EXPThrower.setting.lookDown.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> autoToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-toggle")
-            .description("Toggles off when your armor is repaired.")
+            .displayName(I18n.translate("Modules.EXPThrower.setting.autoToggle.displayName"))
+            .description(I18n.translate("Modules.EXPThrower.setting.autoToggle.description"))
             .defaultValue(true)
             .build()
     );
 
     public EXPThrower() {
-        super(Category.Player, "exp-thrower", "Automatically throws XP bottles in your hotbar.");
+        super(Category.Player, "exp-thrower", I18n.translate("Modules.EXPThrower.description"));
     }
 
     @EventHandler

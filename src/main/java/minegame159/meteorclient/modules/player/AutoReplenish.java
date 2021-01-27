@@ -17,6 +17,7 @@ import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
 import net.minecraft.client.gui.screen.ingame.GenericContainerScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -28,14 +29,15 @@ import java.util.List;
 public class AutoReplenish extends Module {
 
     public AutoReplenish(){
-        super(Category.Player, "auto-replenish", "Automatically refills items in your hotbar, main hand, or offhand.");
+        super(Category.Player, "auto-replenish", I18n.translate("Modules.AutoReplenish.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Integer> amount = sgGeneral.add(new IntSetting.Builder()
             .name("amount")
-            .description("The amount of items left this actives at.")
+            .displayName(I18n.translate("Modules.AutoReplenish.setting.amount.displayName"))
+            .description(I18n.translate("Modules.AutoReplenish.setting.amount.description"))
             .defaultValue(8)
             .min(1)
             .sliderMax(63)
@@ -44,42 +46,48 @@ public class AutoReplenish extends Module {
 
     private final Setting<Boolean> offhand = sgGeneral.add(new BoolSetting.Builder()
             .name("offhand")
-            .description("Whether or not to refill your offhand with items.")
+            .displayName(I18n.translate("Modules.AutoReplenish.setting.offhand.displayName"))
+            .description(I18n.translate("Modules.AutoReplenish.setting.offhand.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> alert = sgGeneral.add(new BoolSetting.Builder()
             .name("alert")
-            .description("Sends a client-side alert in chat when you run out of items.")
+            .displayName(I18n.translate("Modules.AutoReplenish.setting.alert.displayName"))
+            .description(I18n.translate("Modules.AutoReplenish.setting.alert.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> unstackable = sgGeneral.add(new BoolSetting.Builder()
             .name("unstackable")
-            .description("Replenishes unstackable items.")
+            .displayName(I18n.translate("Modules.AutoReplenish.setting.unstackable.displayName"))
+            .description(I18n.translate("Modules.AutoReplenish.setting.unstackable.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> searchHotbar = sgGeneral.add(new BoolSetting.Builder()
             .name("search-hotbar")
-            .description("Uses items in your hotbar to replenish if they are the only ones left.")
+            .displayName(I18n.translate("Modules.AutoReplenish.setting.searchHotbar.displayName"))
+            .description(I18n.translate("Modules.AutoReplenish.setting.searchHotbar.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<List<Item>> excludedItems = sgGeneral.add(new ItemListSetting.Builder()
             .name("excluded-items")
-            .description("Items that WILL NOT replenish.")
+            .displayName(I18n.translate("Modules.AutoReplenish.setting.excludedItems.displayName"))
+            .description(I18n.translate("Modules.AutoReplenish.setting.excludedItems.description"))
             .defaultValue(new ArrayList<>())
             .build()
     );
 
     private final Setting<Boolean> pauseInInventory = sgGeneral.add(new BoolSetting.Builder()
             .name("pause-in-inventory")
-            .description("Stops replenishing items when you are currently in your inventory.")
+            .displayName(I18n.translate("Modules.AutoReplenish.setting.pauseInInventory.displayName"))
+            .description(I18n.translate("Modules.AutoReplenish.setting.pauseInInventory.description"))
             .defaultValue(false)
             .build()
     );

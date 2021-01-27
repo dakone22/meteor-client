@@ -10,12 +10,13 @@ import minegame159.meteorclient.gui.widgets.WWidget;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.modules.ModuleManager;
 import minegame159.meteorclient.settings.Setting;
+import net.minecraft.client.resource.language.I18n;
 
 import java.util.List;
 
 public class ModuleListSettingScreen extends LeftRightListSettingScreen<Module> {
     public ModuleListSettingScreen(Setting<List<Module>> setting) {
-        super("Select Modules", setting, ModuleManager.REGISTRY);
+        super(I18n.translate("Setting.ModuleListSetting.title"), setting, ModuleManager.REGISTRY);
     }
 
     @Override

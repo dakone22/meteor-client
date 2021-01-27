@@ -14,6 +14,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -29,7 +30,8 @@ public class AutoBreed extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .description("Entities to breed.")
+            .displayName(I18n.translate("Modules.AutoBreed.setting.entities.displayName"))
+            .description(I18n.translate("Modules.AutoBreed.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.HORSE, EntityType.DONKEY, EntityType.COW,
                     EntityType.MOOSHROOM, EntityType.SHEEP, EntityType.PIG, EntityType.CHICKEN, EntityType.WOLF,
                     EntityType.CAT, EntityType.OCELOT, EntityType.RABBIT, EntityType.LLAMA, EntityType.TURTLE,
@@ -40,7 +42,8 @@ public class AutoBreed extends Module {
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .description("How far away the animals can be to be bred.")
+            .displayName(I18n.translate("Modules.AutoBreed.setting.range.displayName"))
+            .description(I18n.translate("Modules.AutoBreed.setting.range.description"))
             .min(0)
             .defaultValue(4.5)
             .build()
@@ -48,14 +51,16 @@ public class AutoBreed extends Module {
 
     private final Setting<Hand> hand = sgGeneral.add(new EnumSetting.Builder<Hand>()
             .name("hand-for-breeding")
-            .description("The hand to use for breeding.")
+            .displayName(I18n.translate("Modules.AutoBreed.setting.hand.displayName"))
+            .description(I18n.translate("Modules.AutoBreed.setting.hand.description"))
             .defaultValue(Hand.MAIN_HAND)
             .build()
     );
 
     private final Setting<Boolean> ignoreBabies = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-babies")
-            .description("Whether or not to ignore the baby variants of the specified entity.")
+            .displayName(I18n.translate("Modules.AutoBreed.setting.ignoreBabies.displayName"))
+            .description(I18n.translate("Modules.AutoBreed.setting.ignoreBabies.description"))
             .defaultValue(true)
             .build()
     );
@@ -63,7 +68,7 @@ public class AutoBreed extends Module {
     private final List<Entity> animalsFed = new ArrayList<>();
 
     public AutoBreed() {
-        super(Category.Misc, "auto-breed", "Automatically breeds specified animals.");
+        super(Category.Misc, "auto-breed", I18n.translate("Modules.AutoBreed.description"));
     }
 
     @Override

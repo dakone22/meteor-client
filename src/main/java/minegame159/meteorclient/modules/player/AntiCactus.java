@@ -7,9 +7,10 @@ package minegame159.meteorclient.modules.player;
 
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 
 public class AntiCactus extends Module {
     public AntiCactus() {
-        super(Category.Player, "anti-cactus", "Prevents you from taking damage from cacti.");
+        super(Category.Player, "anti-cactus", I18n.translate("Modules.AntiCactus.description"));
     }
 }

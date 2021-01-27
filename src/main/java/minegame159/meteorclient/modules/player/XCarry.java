@@ -11,13 +11,14 @@ import minegame159.meteorclient.events.packets.PacketEvent;
 import minegame159.meteorclient.mixininterface.ICloseHandledScreenC2SPacket;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.CloseHandledScreenC2SPacket;
 
 public class XCarry extends Module {
     private boolean invOpened;
 
     public XCarry() {
-        super(Category.Player, "XCarry", "Allows you to store four extra items in your crafting grid.");
+        super(Category.Player, "XCarry", I18n.translate("Modules.XCarry.description"));
     }
 
     @Override

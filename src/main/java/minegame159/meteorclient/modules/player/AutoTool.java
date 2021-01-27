@@ -26,6 +26,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.*;
@@ -44,41 +45,46 @@ public class AutoTool extends Module {
 
     private final Setting<EnchantPreference> prefer = sgGeneral.add(new EnumSetting.Builder<EnchantPreference>()
             .name("prefer")
-            .description("Either to prefer Silk Touch, Fortune, or none.")
+            .displayName(I18n.translate("Modules.AutoTool.setting.prefer.displayName"))
+            .description(I18n.translate("Modules.AutoTool.setting.prefer.description"))
             .defaultValue(EnchantPreference.Fortune)
             .build()
     );
 
     private final Setting<Boolean> preferMending = sgGeneral.add(new BoolSetting.Builder()
             .name("prefer-mending")
-            .description("Whether or not to prefer the Mending enchantment.")
+            .displayName(I18n.translate("Modules.AutoTool.setting.preferMending.displayName"))
+            .description(I18n.translate("Modules.AutoTool.setting.preferMending.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> enderChestOnlyWithSilkTouch = sgGeneral.add(new BoolSetting.Builder()
             .name("silk-touch-with-ender-chest")
-            .description("Mines Ender Chests only with the Silk Touch enchantment.")
+            .displayName(I18n.translate("Modules.AutoTool.setting.enderChestOnlyWithSilkTouch.displayName"))
+            .description(I18n.translate("Modules.AutoTool.setting.enderChestOnlyWithSilkTouch.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-break")
-            .description("Stops you from breaking your tool.")
+            .displayName(I18n.translate("Modules.AutoTool.setting.antiBreak.displayName"))
+            .description(I18n.translate("Modules.AutoTool.setting.antiBreak.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> switchBack = sgGeneral.add(new BoolSetting.Builder()
             .name("switch-back")
-            .description("Switches your hand to whatever was selected when releasing your attack key.")
+            .displayName(I18n.translate("Modules.AutoTool.setting.switchBack.displayName"))
+            .description(I18n.translate("Modules.AutoTool.setting.switchBack.description"))
             .defaultValue(false)
             .build()
     );
 
     public AutoTool() {
-        super(Category.Player, "auto-tool", "Automatically switches to the most effective tool when performing an action.");
+        super(Category.Player, "auto-tool", I18n.translate("Modules.AutoTool.description"));
     }
 
     private static final Set<Material> EMPTY_MATERIALS = new HashSet<>(0);

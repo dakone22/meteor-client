@@ -10,19 +10,21 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class AntiLevitation extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
     
     private final Setting<Boolean> applyGravity = sgGeneral.add(new BoolSetting.Builder()
             .name("apply-gravity")
-            .description("Applies gravity.")
+            .displayName(I18n.translate("Modules.AntiLevitation.setting.applyGravity.displayName"))
+            .description(I18n.translate("Modules.AntiLevitation.setting.applyGravity.description"))
             .defaultValue(false)
             .build()
     );
 
     public AntiLevitation() {
-        super(Category.Movement, "anti-levitation", "Prevents the levitation effect from working.");
+        super(Category.Movement, "anti-levitation", I18n.translate("Modules.AntiLevitation.description"));
     }
 
     public boolean isApplyGravity() {

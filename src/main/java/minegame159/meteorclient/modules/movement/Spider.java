@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.Vec3d;
 
 public class Spider extends Module {
@@ -20,14 +21,15 @@ public class Spider extends Module {
     
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .description("The speed you go up blocks.")
+            .displayName(I18n.translate("Modules.Spider.setting.speed.displayName"))
+            .description(I18n.translate("Modules.Spider.setting.speed.description"))
             .defaultValue(0.2)
             .min(0.0)
             .build()
     );
 
     public Spider() {
-        super(Category.Movement, "spider", "Allows you to climb walls like a spider.");
+        super(Category.Movement, "spider", I18n.translate("Modules.Spider.description"));
     }
 
     @EventHandler

@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.PlayerUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
 
@@ -24,7 +25,8 @@ public class EntitySpeed extends Module {
 
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .description("Horizontal speed in blocks per second.")
+            .displayName(I18n.translate("Modules.EntitySpeed.setting.speed.displayName"))
+            .description(I18n.translate("Modules.EntitySpeed.setting.speed.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(50)
@@ -33,20 +35,22 @@ public class EntitySpeed extends Module {
 
     private final Setting<Boolean> onlyOnGround = sgGeneral.add(new BoolSetting.Builder()
             .name("only-on-ground")
-            .description("Use speed only when standing on a block.")
+            .displayName(I18n.translate("Modules.EntitySpeed.setting.onlyOnGround.displayName"))
+            .description(I18n.translate("Modules.EntitySpeed.setting.onlyOnGround.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> inWater = sgGeneral.add(new BoolSetting.Builder()
             .name("in-water")
-            .description("Use speed when in water.")
+            .displayName(I18n.translate("Modules.EntitySpeed.setting.inWater.displayName"))
+            .description(I18n.translate("Modules.EntitySpeed.setting.inWater.description"))
             .defaultValue(false)
             .build()
     );
 
     public EntitySpeed() {
-        super(Category.Movement, "entity-speed", "Makes you go faster when riding entities.");
+        super(Category.Movement, "entity-speed", I18n.translate("Modules.EntitySpeed.description"));
     }
 
     @EventHandler

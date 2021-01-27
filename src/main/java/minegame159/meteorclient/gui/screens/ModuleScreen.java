@@ -12,6 +12,7 @@ import minegame159.meteorclient.gui.widgets.*;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.modules.ModuleManager;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 
 public class ModuleScreen extends WindowScreen {
     private Module module;
@@ -61,7 +62,7 @@ public class ModuleScreen extends WindowScreen {
 
         // Toggle on key release
         WTable tokrTable = add(new WTable()).fillX().expandX().getWidget();
-        tokrTable.add(new WLabel("Toggle on key release:"));
+        tokrTable.add(new WLabel(I18n.translate("ModuleScreen.toggle")));
         WCheckbox toggleOnKeyRelease = tokrTable.add(new WCheckbox(module.toggleOnKeyRelease)).getWidget();
         toggleOnKeyRelease.action = () -> {
             module.toggleOnKeyRelease = toggleOnKeyRelease.checked;
@@ -75,16 +76,16 @@ public class ModuleScreen extends WindowScreen {
         WTable bottomTable = add(new WTable()).fillX().expandX().getWidget();
 
         //   Active
-        bottomTable.add(new WLabel("Active:"));
+        bottomTable.add(new WLabel(I18n.translate("ModuleScreen.active")));
         WCheckbox active = bottomTable.add(new WCheckbox(module.isActive())).getWidget();
         active.action = () -> {
             if (module.isActive() != active.checked) module.toggle(Utils.canUpdate());
         };
 
         //   Visible
-        bottomTable.add(new WLabel("Visible: ")).fillX().right().getWidget().tooltip = "Shows the module in the array list.";
+        bottomTable.add(new WLabel(I18n.translate("ModuleScreen.visible"))).fillX().right().getWidget().tooltip = I18n.translate("ModuleScreen.visible.tooltip");
         WCheckbox visibleCheckbox = bottomTable.add(new WCheckbox(module.isVisible())).getWidget();
-        visibleCheckbox.tooltip = "Shows the module in the array list.";
+        visibleCheckbox.tooltip = I18n.translate("ModuleScreen.visible.tooltip");
         visibleCheckbox.action = () -> {
             if (module.isVisible() != visibleCheckbox.checked) module.setVisible(visibleCheckbox.checked);
         };

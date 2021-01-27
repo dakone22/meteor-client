@@ -29,6 +29,7 @@ import net.minecraft.block.entity.BedBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -45,28 +46,32 @@ public class AutoTotem extends Module {
 
     private final Setting<Boolean> smart = sgGeneral.add(new BoolSetting.Builder()
             .name("smart")
-            .description("Only switches to a totem when you are close to death.")
+            .displayName(I18n.translate("Modules.AutoTotem.setting.smart.displayName"))
+            .description(I18n.translate("Modules.AutoTotem.setting.smart.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> fallback = sgGeneral.add(new BoolSetting.Builder()
             .name("fallback")
-            .description("Enables Offhand Extra when you run out of totems.")
+            .displayName(I18n.translate("Modules.AutoTotem.setting.fallback.displayName"))
+            .description(I18n.translate("Modules.AutoTotem.setting.fallback.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> inventorySwitch = sgGeneral.add(new BoolSetting.Builder()
             .name("inventory")
-            .description("Whether or not to equip totems while in your inventory.")
+            .displayName(I18n.translate("Modules.AutoTotem.setting.inventorySwitch.displayName"))
+            .description(I18n.translate("Modules.AutoTotem.setting.inventorySwitch.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .description("The health Auto Totem's smart mode activates at.")
+            .displayName(I18n.translate("Modules.AutoTotem.setting.health.displayName"))
+            .description(I18n.translate("Modules.AutoTotem.setting.health.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(20)
@@ -80,7 +85,7 @@ public class AutoTotem extends Module {
     private boolean locked = false;
 
     public AutoTotem() {
-        super(Category.Combat, "auto-totem", "Automatically equips totems in your offhand.");
+        super(Category.Combat, "auto-totem", I18n.translate("Modules.AutoTotem.description"));
     }
 
     @Override

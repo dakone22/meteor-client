@@ -20,6 +20,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.ingame.Generic3x3ContainerScreen;
 import net.minecraft.client.gui.screen.ingame.HopperScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.*;
@@ -43,20 +44,22 @@ public class Auto32K extends Module {
         Dispenser
     }
 
-    public Auto32K(){super(Category.Combat, "auto32k", "Automatically attacks other players with a 32k weapon.");}
+    public Auto32K(){super(Category.Combat, "auto32k", I18n.translate("Modules.Auto32K.description"));}
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The bypass mode used.")
+            .displayName(I18n.translate("Modules.Auto32K.setting.mode.displayName"))
+            .description(I18n.translate("Modules.Auto32K.setting.mode.description"))
             .defaultValue(Mode.Dispenser)
             .build()
     );
 
     private final Setting<Double> placeRange = sgGeneral.add(new DoubleSetting.Builder()
             .name("place-range")
-            .description("The distance in a single direction the shulker is placed.")
+            .displayName(I18n.translate("Modules.Auto32K.setting.placeRange.displayName"))
+            .description(I18n.translate("Modules.Auto32K.setting.placeRange.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(5)
@@ -65,21 +68,24 @@ public class Auto32K extends Module {
 
     private final Setting<Boolean> fillHopper = sgGeneral.add(new BoolSetting.Builder()
             .name("fill-hopper")
-            .description("Fills all slots of the hopper except one for the 32k.")
+            .displayName(I18n.translate("Modules.Auto32K.setting.fillHopper.displayName"))
+            .description(I18n.translate("Modules.Auto32K.setting.fillHopper.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<List<Block>> throwawayItems = sgGeneral.add(new BlockListSetting.Builder()
             .name("throwaway-blocks")
-            .description("Whitelisted blocks to use to fill the hopper.")
+            .displayName(I18n.translate("Modules.Auto32K.setting.throwawayItems.displayName"))
+            .description(I18n.translate("Modules.Auto32K.setting.throwawayItems.description"))
             .defaultValue(setDefaultBlocks())
             .build()
     );
 
     private final Setting<Boolean> autoMove = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-move")
-            .description("Moves the sword for you.")
+            .displayName(I18n.translate("Modules.Auto32K.setting.autoMove.displayName"))
+            .description(I18n.translate("Modules.Auto32K.setting.autoMove.description"))
             .defaultValue(true)
             .build()
     );

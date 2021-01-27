@@ -22,6 +22,7 @@ import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import net.minecraft.client.gui.hud.ChatHudLine;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.text.*;
 import net.minecraft.util.ChatUtil;
 import net.minecraft.util.Formatting;
@@ -32,22 +33,23 @@ import java.util.regex.Pattern;
 
 public class BetterChat extends Module {
 
-    private final SettingGroup sgAnnoy = settings.createGroup("Annoy");
-    private final SettingGroup sgAntiSpam = settings.createGroup("Anti Spam");
-    private final SettingGroup sgFancyChat = settings.createGroup("Fancy Chat");
-    private final SettingGroup sgIgnore = settings.createGroup("Ignore");
-    private final SettingGroup sgLongerChat = settings.createGroup("Longer Chat");
-    private final SettingGroup sgProtection = settings.createGroup("Protection");
-    private final SettingGroup sgPrefix = settings.createGroup("Prefix");
-    private final SettingGroup sgSuffix = settings.createGroup("Suffix");
-    // private final SettingGroup sgFriendColor = settings.createGroup("Friend Color");
+    private final SettingGroup sgAnnoy = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgAnnoy"));
+    private final SettingGroup sgAntiSpam = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgAntiSpam"));
+    private final SettingGroup sgFancyChat = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgFancyChat"));
+    private final SettingGroup sgIgnore = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgIgnore"));
+    private final SettingGroup sgLongerChat = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgLongerChat"));
+    private final SettingGroup sgProtection = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgProtection"));
+    private final SettingGroup sgPrefix = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgPrefix"));
+    private final SettingGroup sgSuffix = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgSuffix"));
+    // private final SettingGroup sgFriendColor = settings.createGroup(I18n.translate("Modules.BetterChat.group.sgFriendColor"));
 
 
     // Annoy
 
     private final Setting<Boolean> annoyEnabled = sgAnnoy.add(new BoolSetting.Builder()
             .name("annoy-enabled")
-            .description("Makes your messages aNnOyInG.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.annoyEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.annoyEnabled.description"))
             .defaultValue(false)
             .build()
     );
@@ -56,14 +58,16 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> antiSpamEnabled = sgAntiSpam.add(new BoolSetting.Builder()
             .name("anti-spam-enabled")
-            .description("Enables the anti-spam.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.antiSpamEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.antiSpamEnabled.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> antiSpamDepth = sgAntiSpam.add(new IntSetting.Builder()
             .name("depth")
-            .description("How many chat messages to check for duplicate messages.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.antiSpamDepth.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.antiSpamDepth.description"))
             .defaultValue(4)
             .min(1)
             .sliderMin(1)
@@ -72,7 +76,8 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> antiSpamMoveToBottom = sgAntiSpam.add(new BoolSetting.Builder()
             .name("move-to-bottom")
-            .description("Moves any duplicate messages to the bottom of the chat.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.antiSpamMoveToBottom.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.antiSpamMoveToBottom.description"))
             .defaultValue(true)
             .build()
     );
@@ -81,7 +86,8 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> fancyEnabled = sgFancyChat.add(new BoolSetting.Builder()
             .name("fancy-chat-enabled")
-            .description("Makes your messages fancy!")
+            .displayName(I18n.translate("Modules.BetterChat.setting.fancyEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.fancyEnabled.description"))
             .defaultValue(false)
             .build()
     );
@@ -91,7 +97,8 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> ignoreEnabled = sgIgnore.add(new BoolSetting.Builder()
             .name("ignore-enabled")
-            .description("Ignores player defined by the .ignore command.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.ignoreEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.ignoreEnabled.description"))
             .defaultValue(true)
             .build()
     );
@@ -100,14 +107,16 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> longerChatEnabled = sgLongerChat.add(new BoolSetting.Builder()
             .name("longer-chat-enabled")
-            .description("Extends chat length.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.longerChatEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.longerChatEnabled.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> longerChatLines = sgLongerChat.add(new IntSetting.Builder()
             .name("extra-lines")
-            .description("The amount of extra chat lines.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.longerChatLines.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.longerChatLines.description"))
             .defaultValue(1000)
             .min(100)
             .sliderMax(1000)
@@ -118,21 +127,24 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> coordsProtectionEnabled = sgProtection.add(new BoolSetting.Builder()
             .name("coords-protection-enabled")
-            .description("Prevents you from sending messages in chat that may contain coordinates.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.coordsProtectionEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.coordsProtectionEnabled.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableAllMessages = sgProtection.add(new BoolSetting.Builder()
             .name("disable-all-messages")
-            .description("Prevents you from essentially being able to send messages in chat.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.disableAllMessages.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.disableAllMessages.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> disableButton = sgProtection.add(new BoolSetting.Builder()
             .name("disable-button")
-            .description("Adds a button to the warning to send a message to the chat in any way.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.disableButton.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.disableButton.description"))
             .defaultValue(true)
             .build()
     );
@@ -141,28 +153,34 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> prefixEnabled = sgPrefix.add(new BoolSetting.Builder()
             .name("prefix-enabled")
-            .description("Enables a prefix.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.prefixEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.prefixEnabled.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<String> prefixText = sgPrefix.add(new StringSetting.Builder()
             .name("text")
-            .description("The text to add as your prefix.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.prefixText.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.prefixText.description"))
             .defaultValue("> ")
             .build()
     );
 
     private final Setting<Boolean> prefixSmallCaps = sgPrefix.add(new BoolSetting.Builder()
             .name("small-caps")
-            .description("Uses a small font.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.prefixSmallCaps.displayName"))
+            .displayName(I18n.translate("Modules.BetterChat.setting.suffixSmallCaps.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.prefixSmallCaps.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> prefixRandom = sgPrefix.add(new BoolSetting.Builder()
             .name("random-number")
-            .description("Example: <msg> (538)")
+            .displayName(I18n.translate("Modules.BetterChat.setting.prefixRandom.displayName"))
+            .displayName(I18n.translate("Modules.BetterChat.setting.suffixRandom.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.prefixRandom.description"))
             .defaultValue(false)
             .build()
     );
@@ -171,7 +189,8 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> suffixEnabled = sgSuffix.add(new BoolSetting.Builder()
             .name("suffix-enabled")
-            .description("Enables a suffix.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.suffixEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.suffixEnabled.description"))
             .defaultValue(false)
             .build()
     );
@@ -179,21 +198,26 @@ public class BetterChat extends Module {
 
     private final Setting<String> suffixText = sgSuffix.add(new StringSetting.Builder()
             .name("text")
-            .description("The text to add as your suffix.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.suffixText.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.suffixText.description"))
             .defaultValue(" | Meteor on Crack!")
             .build()
     );
 
     private final Setting<Boolean> suffixSmallCaps = sgSuffix.add(new BoolSetting.Builder()
             .name("small-caps")
-            .description("Uses a small font.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.prefixSmallCaps.displayName"))
+            .displayName(I18n.translate("Modules.BetterChat.setting.suffixSmallCaps.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.prefixSmallCaps.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> suffixRandom = sgSuffix.add(new BoolSetting.Builder()
             .name("random")
-            .description("Example: <msg> (538)")
+            .displayName(I18n.translate("Modules.BetterChat.setting.prefixRandom.displayName"))
+            .displayName(I18n.translate("Modules.BetterChat.setting.suffixRandom.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.prefixRandom.description"))
             .defaultValue(false)
             .build()
     );
@@ -203,7 +227,8 @@ public class BetterChat extends Module {
 
     private final Setting<Boolean> friendColorEnabled = sgFriendColor.add(new BoolSetting.Builder()
             .name("friend-color-enabled")
-            .description("Highlights friends with color in chat.")
+            .displayName(I18n.translate("Modules.BetterChat.setting.friendColorEnabled.displayName"))
+            .description(I18n.translate("Modules.BetterChat.setting.friendColorEnabled.description"))
             .defaultValue(true)
             .build()
     );*/
@@ -222,7 +247,7 @@ public class BetterChat extends Module {
 
 
     public BetterChat() {
-        super(Category.Misc, "better-chat", "Improves your chat experience in various ways.");
+        super(Category.Misc, "better-chat", I18n.translate("Modules.BetterChat.description"));
     }
 
     public boolean onMsg(String message, int messageId, int timestamp, List<ChatHudLine<Text>> messages, List<ChatHudLine<OrderedText>> visibleMessages) {

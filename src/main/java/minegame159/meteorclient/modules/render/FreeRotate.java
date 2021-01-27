@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.misc.input.Input;
 import net.minecraft.client.options.Perspective;
+import net.minecraft.client.resource.language.I18n;
 import org.lwjgl.glfw.GLFW;
 
 public class FreeRotate extends Module {
@@ -24,27 +25,30 @@ public class FreeRotate extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgArrows = settings.createGroup("Arrows");
+    private final SettingGroup sgArrows = settings.createGroup(I18n.translate("Modules.FreeRotate.group.sgArrows"));
 
     // General
 
     public final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("Which entity to rotate.")
+            .displayName(I18n.translate("Modules.FreeRotate.setting.mode.displayName"))
+            .description(I18n.translate("Modules.FreeRotate.setting.mode.description"))
             .defaultValue(Mode.Player)
             .build()
     );
 
     public final Setting<Boolean> togglePerpective = sgGeneral.add(new BoolSetting.Builder()
             .name("toggle-perspective")
-            .description("Changes your perspective on toggle.")
+            .displayName(I18n.translate("Modules.FreeRotate.setting.togglePerpective.displayName"))
+            .description(I18n.translate("Modules.FreeRotate.setting.togglePerpective.description"))
             .defaultValue(true)
             .build()
     );
 
     public final Setting<Double> sensitivity = sgGeneral.add(new DoubleSetting.Builder()
             .name("camera-sensitivity")
-            .description("How fast the camera moves in camera mode.")
+            .displayName(I18n.translate("Modules.FreeRotate.setting.sensitivity.displayName"))
+            .description(I18n.translate("Modules.FreeRotate.setting.sensitivity.description"))
             .defaultValue(8)
             .min(0)
             .sliderMax(10)
@@ -55,21 +59,23 @@ public class FreeRotate extends Module {
 
     public final Setting<Boolean> arrows = sgArrows.add(new BoolSetting.Builder()
             .name("arrows-control-opposite")
-            .description("Allows you to control the other entities rotation with the arrow keys.")
+            .displayName(I18n.translate("Modules.FreeRotate.setting.arrows.displayName"))
+            .description(I18n.translate("Modules.FreeRotate.setting.arrows.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> arrowSpeed = sgArrows.add(new DoubleSetting.Builder()
             .name("arrow-speed")
-            .description("Rotation speed with arrow keys.")
+            .displayName(I18n.translate("Modules.FreeRotate.setting.arrowSpeed.displayName"))
+            .description(I18n.translate("Modules.FreeRotate.setting.arrowSpeed.description"))
             .defaultValue(4)
             .min(0)
             .build()
     );
 
     public FreeRotate() {
-        super(Category.Render, "free-rotate", "Allows more rotation options in third person.");
+        super(Category.Render, "free-rotate", I18n.translate("Modules.FreeRotate.description"));
     }
 
     public float cameraYaw;

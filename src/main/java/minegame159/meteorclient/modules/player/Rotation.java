@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class Rotation extends Module {
 
@@ -24,21 +25,23 @@ public class Rotation extends Module {
     }
 
 
-    private final SettingGroup sgYaw = settings.createGroup("Yaw");
-    private final SettingGroup sgPitch = settings.createGroup("Pitch");
+    private final SettingGroup sgYaw = settings.createGroup(I18n.translate("Modules.Rotation.group.sgYaw"));
+    private final SettingGroup sgPitch = settings.createGroup(I18n.translate("Modules.Rotation.group.sgPitch"));
 
     // Yaw
 
     private final Setting<LockMode> yawLockMode = sgYaw.add(new EnumSetting.Builder<LockMode>()
             .name("yaw-lock-mode")
-            .description("The way in which your yaw is locked.")
+            .displayName(I18n.translate("Modules.Rotation.setting.yawLockMode.displayName"))
+            .description(I18n.translate("Modules.Rotation.setting.yawLockMode.description"))
             .defaultValue(LockMode.Simple)
             .build()
     );
 
     private final Setting<Double> yawAngle = sgYaw.add(new DoubleSetting.Builder()
             .name("yaw-angle")
-            .description("Yaw angle in degrees.")
+            .displayName(I18n.translate("Modules.Rotation.setting.yawAngle.displayName"))
+            .description(I18n.translate("Modules.Rotation.setting.yawAngle.description"))
             .defaultValue(0)
             .sliderMax(360)
             .max(360)
@@ -49,14 +52,16 @@ public class Rotation extends Module {
 
     private final Setting<LockMode> pitchLockMode = sgPitch.add(new EnumSetting.Builder<LockMode>()
             .name("pitch-lock-mode")
-            .description("The way in which your pitch is locked.")
+            .displayName(I18n.translate("Modules.Rotation.setting.pitchLockMode.displayName"))
+            .description(I18n.translate("Modules.Rotation.setting.pitchLockMode.description"))
             .defaultValue(LockMode.Simple)
             .build()
     );
 
     private final Setting<Double> pitchAngle = sgPitch.add(new DoubleSetting.Builder()
             .name("pitch-angle")
-            .description("Pitch angle in degrees.")
+            .displayName(I18n.translate("Modules.Rotation.setting.pitchAngle.displayName"))
+            .description(I18n.translate("Modules.Rotation.setting.pitchAngle.description"))
             .defaultValue(0)
             .min(-90)
             .max(90)
@@ -66,7 +71,7 @@ public class Rotation extends Module {
     );
 
     public Rotation() {
-        super(Category.Player, "rotation", "Changes/locks your yaw and pitch.");
+        super(Category.Player, "rotation", I18n.translate("Modules.Rotation.description"));
     }
 
     @Override

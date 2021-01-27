@@ -18,6 +18,7 @@ import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
@@ -40,7 +41,8 @@ public class Quiver extends Module {
 
     private final Setting<Integer> charge = sgGeneral.add(new IntSetting.Builder()
             .name("charge-delay")
-            .description("The amount of delay for bow charging in ticks.")
+            .displayName(I18n.translate("Modules.Quiver.setting.charge.displayName"))
+            .description(I18n.translate("Modules.Quiver.setting.charge.description"))
             .defaultValue(6)
             .min(5)
             .max(20)
@@ -51,20 +53,22 @@ public class Quiver extends Module {
 
     private final Setting<Boolean> checkEffects = sgGeneral.add(new BoolSetting.Builder()
             .name("check-effects")
-            .description("Won't shoot you with effects you already have active.")
+            .displayName(I18n.translate("Modules.Quiver.setting.checkEffects.displayName"))
+            .description(I18n.translate("Modules.Quiver.setting.checkEffects.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> chatInfo = sgGeneral.add(new BoolSetting.Builder()
             .name("chat-info")
-            .description("Sends you information about the module when toggled.")
+            .displayName(I18n.translate("Modules.Quiver.setting.chatInfo.displayName"))
+            .description(I18n.translate("Modules.Quiver.setting.chatInfo.description"))
             .defaultValue(true)
             .build()
     );
 
     public Quiver() {
-        super(Category.Combat, "quiver", "Automatically shoots positive effect arrows at you.");
+        super(Category.Combat, "quiver", I18n.translate("Modules.Quiver.description"));
     }
 
     private boolean shooting;

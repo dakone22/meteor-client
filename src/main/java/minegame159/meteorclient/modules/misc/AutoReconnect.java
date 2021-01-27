@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import net.minecraft.client.network.ServerInfo;
+import net.minecraft.client.resource.language.I18n;
 
 public class AutoReconnect extends Module {
     
@@ -21,7 +22,8 @@ public class AutoReconnect extends Module {
     
     public final Setting<Double> time = sgGeneral.add(new DoubleSetting.Builder()
             .name("delay")
-            .description("The amount of seconds to wait before reconnecting to the server.")
+            .displayName(I18n.translate("Modules.AutoReconnect.setting.time.displayName"))
+            .description(I18n.translate("Modules.AutoReconnect.setting.time.description"))
             .defaultValue(5.0)
             .min(0.0)
             .build()
@@ -30,7 +32,7 @@ public class AutoReconnect extends Module {
     public ServerInfo lastServerInfo;
 
     public AutoReconnect() {
-        super(Category.Misc, "auto-reconnect", "Automatically reconnects when disconnected from a server.");
+        super(Category.Misc, "auto-reconnect", I18n.translate("Modules.AutoReconnect.description"));
         MeteorClient.EVENT_BUS.subscribe(new Listener<ConnectToServerEvent>(event -> {
             lastServerInfo = mc.isInSingleplayer() ? null : mc.getCurrentServerEntry();
         }));

@@ -10,6 +10,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.PickaxeItem;
 
 public class NoMiningTrace extends Module {
@@ -17,13 +18,14 @@ public class NoMiningTrace extends Module {
 
     private final Setting<Boolean> onlyWhenHoldingPickaxe = sgGeneral.add(new BoolSetting.Builder()
             .name("only-when-holding-a-pickaxe")
-            .description("Whether or not to work only when holding a pickaxe.")
+            .displayName(I18n.translate("Modules.NoMiningTrace.setting.onlyWhenHoldingPickaxe.displayName"))
+            .description(I18n.translate("Modules.NoMiningTrace.setting.onlyWhenHoldingPickaxe.description"))
             .defaultValue(true)
             .build()
     );
 
     public NoMiningTrace() {
-        super(Category.Player, "no-mining-trace", "Allows you to mine blocks through entities.");
+        super(Category.Player, "no-mining-trace", I18n.translate("Modules.NoMiningTrace.description"));
     }
 
     public boolean canWork() {

@@ -10,7 +10,11 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
-import minegame159.meteorclient.utils.player.*;
+import minegame159.meteorclient.utils.player.ChatUtils;
+import minegame159.meteorclient.utils.player.CityUtils;
+import minegame159.meteorclient.utils.player.PlayerUtils;
+import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -26,34 +30,38 @@ public class AutoCity extends Module {
 
     private final Setting<Boolean> checkBelow = sgGeneral.add(new BoolSetting.Builder()
             .name("check-below")
-            .description("Checks for obsidian or bedrock below the surround block for you to place crystals on.")
+            .displayName(I18n.translate("Modules.AutoCity.setting.checkBelow.displayName"))
+            .description(I18n.translate("Modules.AutoCity.setting.checkBelow.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> support = sgGeneral.add(new BoolSetting.Builder()
             .name("support")
-            .description("If there is no block below a city block it will place one before mining.")
+            .displayName(I18n.translate("Modules.AutoCity.setting.support.displayName"))
+            .description(I18n.translate("Modules.AutoCity.setting.support.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> chatInfo = sgGeneral.add(new BoolSetting.Builder()
             .name("chat-info")
-            .description("Sends a client-side message if you city a player.")
+            .displayName(I18n.translate("Modules.AutoCity.setting.chatInfo.displayName"))
+            .description(I18n.translate("Modules.AutoCity.setting.chatInfo.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Automatically rotates you towards the city block.")
+            .displayName(I18n.translate("Modules.AutoCity.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.AutoCity.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoCity() {
-        super(Category.Combat, "auto-city", "Automatically cities a target by mining the nearest obsidian next to them.");
+        super(Category.Combat, "auto-city", I18n.translate("Modules.AutoCity.description"));
     }
 
     private PlayerEntity target;

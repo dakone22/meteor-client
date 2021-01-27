@@ -19,6 +19,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
@@ -32,27 +33,30 @@ public class AutoMend extends Module {
     
     private final Setting<Boolean> swords = sgGeneral.add(new BoolSetting.Builder()
             .name("swords")
-            .description("Moves swords.")
+            .displayName(I18n.translate("Modules.AutoMend.setting.swords.displayName"))
+            .description(I18n.translate("Modules.AutoMend.setting.swords.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> armourSlots = sgGeneral.add(new BoolSetting.Builder()
             .name("use-armour-slots")
-            .description("Whether or not to use armor slots to mend items quicker.")
+            .displayName(I18n.translate("Modules.AutoMend.setting.armourSlots.displayName"))
+            .description(I18n.translate("Modules.AutoMend.setting.armourSlots.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> removeFinished = sgGeneral.add(new BoolSetting.Builder()
             .name("remove-finished")
-            .description("The items will be moved out of active slots if there are no items to replace, but space in your inventory.")
+            .displayName(I18n.translate("Modules.AutoMend.setting.removeFinished.displayName"))
+            .description(I18n.translate("Modules.AutoMend.setting.removeFinished.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoMend() {
-        super(Category.Player, "auto-mend", "Automatically replaces equipped items and items in your offhand with Mending when fully repaired.");
+        super(Category.Player, "auto-mend", I18n.translate("Modules.AutoMend.description"));
     }
 
     private void replaceItem(boolean offhandEmpty) {

@@ -20,6 +20,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
@@ -38,21 +39,23 @@ public class MiddleClickExtra extends Module {
     }
 
     public MiddleClickExtra(){
-        super(Category.Player, "middle-click-extra", "Lets you use items when you middle click. Works the same as Middle Click Friend.");
+        super(Category.Player, "middle-click-extra", I18n.translate("Modules.MiddleClickExtra.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("Which item to use when you middle click.")
+            .displayName(I18n.translate("Modules.MiddleClickExtra.setting.mode.displayName"))
+            .description(I18n.translate("Modules.MiddleClickExtra.setting.mode.description"))
             .defaultValue(Mode.Pearl)
             .build()
     );
 
     private final Setting<Boolean> notify = sgGeneral.add(new BoolSetting.Builder()
             .name("notify")
-            .description("Notifies you when you do not have the specified item in your hotbar.")
+            .displayName(I18n.translate("Modules.MiddleClickExtra.setting.notify.displayName"))
+            .description(I18n.translate("Modules.MiddleClickExtra.setting.notify.description"))
             .defaultValue(true)
             .build()
     );

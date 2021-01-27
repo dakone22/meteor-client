@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.IntSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class CustomFOV extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
@@ -20,7 +21,7 @@ public class CustomFOV extends Module {
     private final Setting<Integer> fov = sgGeneral.add(new IntSetting.Builder()
             .name("fov")
             .displayName("FOV")
-            .description("Your custom FOV.")
+            .description(I18n.translate("Modules.CustomFOV.setting.fov.description"))
             .defaultValue(100)
             .sliderMin(1)
             .sliderMax(179)
@@ -53,7 +54,7 @@ public class CustomFOV extends Module {
     }
 
     public CustomFOV() {
-        super(Category.Render, "custom-fov", "Allows your FOV to be more customizable.");
+        super(Category.Render, "custom-fov", I18n.translate("Modules.CustomFOV.description"));
     }
 
 }

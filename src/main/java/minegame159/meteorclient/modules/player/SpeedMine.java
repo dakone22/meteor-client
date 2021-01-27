@@ -15,6 +15,7 @@ import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.effect.StatusEffectInstance;
 
 import static net.minecraft.entity.effect.StatusEffects.HASTE;
@@ -36,7 +37,8 @@ public class SpeedMine extends Module {
     );
     public final Setting<Double> modifier = sgGeneral.add(new DoubleSetting.Builder()
             .name("modifier")
-            .description("Mining speed modifier. An additional value of 0.2 is equivalent to one haste level (1.2 = haste 1).")
+            .displayName(I18n.translate("Modules.SpeedMine.setting.modifier.displayName"))
+            .description(I18n.translate("Modules.SpeedMine.setting.modifier.description"))
             .defaultValue(1.4D)
             .min(0D)
             .sliderMin(1D)
@@ -45,7 +47,7 @@ public class SpeedMine extends Module {
     );
 
     public SpeedMine() {
-        super(Category.Player, "speed-mine", "Allows you to quickly mine blocks.");
+        super(Category.Player, "speed-mine", I18n.translate("Modules.SpeedMine.description"));
     }
 
     @EventHandler

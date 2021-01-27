@@ -30,6 +30,7 @@ import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.render.model.BakedQuad;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -58,48 +59,54 @@ public class Nametags extends Module {
     private static final Color WHITE = new Color(255, 255, 255);
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgColors = settings.createGroup("Colors");
+    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Modules.Nametags.group.sgColors"));
 
     // General
 
     private final Setting<Boolean> displayArmor = sgGeneral.add(new BoolSetting.Builder()
             .name("display-armor")
-            .description("Displays armor.")
+            .displayName(I18n.translate("Modules.Nametags.setting.displayArmor.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.displayArmor.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> displayArmorEnchants = sgGeneral.add(new BoolSetting.Builder()
             .name("display-armor-enchants")
-            .description("Display armor enchantments.")
+            .displayName(I18n.translate("Modules.Nametags.setting.displayArmorEnchants.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.displayArmorEnchants.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Position> displayOnItem = sgGeneral.add(new EnumSetting.Builder<Position>()
             .name("enchantment-position")
-            .description("Where the enchantments are rendered.")
+            .displayName(I18n.translate("Modules.Nametags.setting.displayOnItem.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.displayOnItem.description"))
             .defaultValue(Position.ONTOP)
             .build()
     );
 
     private final Setting<List<Enchantment>> displayedEnchantments = sgGeneral.add(new EnchListSetting.Builder()
             .name("displayed-enchantments")
-            .description("The enchantments that are shown on nametags.")
+            .displayName(I18n.translate("Modules.Nametags.setting.displayedEnchantments.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.displayedEnchantments.description"))
             .defaultValue(setDefualtList())
             .build()
     );
 
     private final Setting<Boolean> displayPing = sgGeneral.add(new BoolSetting.Builder()
             .name("ping")
-            .description("Shows the player's ping.")
+            .displayName(I18n.translate("Modules.Nametags.setting.displayPing.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.displayPing.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .description("The scale.")
+            .displayName(I18n.translate("Modules.Nametags.setting.scale.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.scale.description"))
             .defaultValue(1)
             .min(0.1)
             .build()
@@ -107,7 +114,8 @@ public class Nametags extends Module {
 
     private final Setting<Double> enchantTextScale = sgGeneral.add(new DoubleSetting.Builder()
             .name("enchant-text-scale")
-            .description("The scale of the enchantment text.")
+            .displayName(I18n.translate("Modules.Nametags.setting.enchantTextScale.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.enchantTextScale.description"))
             .defaultValue(0.6)
             .min(0.1)
             .max(1)
@@ -118,7 +126,8 @@ public class Nametags extends Module {
 
     private final Setting<Boolean> yourself = sgGeneral.add(new BoolSetting.Builder()
             .name("yourself")
-            .description("Displays a nametag on your player if you're in Freecam.")
+            .displayName(I18n.translate("Modules.Nametags.setting.yourself.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.yourself.description"))
             .defaultValue(true)
             .build()
     );
@@ -127,48 +136,51 @@ public class Nametags extends Module {
 
     private final Setting<SettingColor> normalName = sgColors.add(new ColorSetting.Builder()
             .name("normal-color")
-            .description("The color of people not in your Friends List.")
+            .displayName(I18n.translate("Modules.Nametags.setting.normalName.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.normalName.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> pingColor = sgColors.add(new ColorSetting.Builder()
             .name("ping-color")
-            .description("The color of the ping text.")
+            .displayName(I18n.translate("Modules.Nametags.setting.pingColor.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.pingColor.description"))
             .defaultValue(new SettingColor(150, 150, 150))
             .build()
     );
 
     private final Setting<SettingColor> healthStage1 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-1")
-            .description("The color if a player is full health.")
+            .description(I18n.translate("Modules.Nametags.setting.healthStage1.description"))
             .defaultValue(new SettingColor(25, 252, 25))
             .build()
     );
 
     private final Setting<SettingColor> healthStage2 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-2")
-            .description("The color if a player is at two-thirds health.")
+            .description(I18n.translate("Modules.Nametags.setting.healthStage2.description"))
             .defaultValue(new SettingColor(255, 105, 25))
             .build()
     );
 
     private final Setting<SettingColor> healthStage3 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-3")
-            .description("The color of a player if they are at one-third health.")
+            .description(I18n.translate("Modules.Nametags.setting.healthStage3.description"))
             .defaultValue(new SettingColor(255, 25, 25))
             .build()
     );
 
     private final Setting<SettingColor> enchantmentTextColor = sgColors.add(new ColorSetting.Builder()
             .name("enchantment-text-color")
-            .description("The color of the enchantment text.")
+            .displayName(I18n.translate("Modules.Nametags.setting.enchantmentTextColor.displayName"))
+            .description(I18n.translate("Modules.Nametags.setting.enchantmentTextColor.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     public Nametags() {
-        super(Category.Render, "nametags", "Displays customizable nametags above players.");
+        super(Category.Render, "nametags", I18n.translate("Modules.Nametags.description"));
     }
 
     String name;

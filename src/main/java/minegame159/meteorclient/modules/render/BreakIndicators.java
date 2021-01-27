@@ -18,6 +18,7 @@ import minegame159.meteorclient.utils.render.color.Color;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.BlockBreakingInfo;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.shape.VoxelShape;
@@ -27,27 +28,30 @@ import java.util.Map;
 
 public class BreakIndicators extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.BreakIndicators.group.sgRender"));
 
     // General
 
     public final Setting<Boolean> multiple = sgGeneral.add(new BoolSetting.Builder()
             .name("multiple")
-            .description("Renders block breaking from other players.")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.multiple.displayName"))
+            .description(I18n.translate("Modules.BreakIndicators.setting.multiple.description"))
             .defaultValue(true)
             .build()
     );
 
     public final Setting<Boolean> hideVanillaIndicators = sgGeneral.add(new BoolSetting.Builder()
             .name("hide-vanilla-indicators")
-            .description("Hides the vanilla (or resource pack) break indicators.")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.hideVanillaIndicators.displayName"))
+            .description(I18n.translate("Modules.BreakIndicators.setting.hideVanillaIndicators.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> smoothAnim = sgGeneral.add(new BoolSetting.Builder()
             .name("smooth-animation")
-            .description("Renders a smooth animation at block you break.")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.smoothAnim.displayName"))
+            .description(I18n.translate("Modules.BreakIndicators.setting.smoothAnim.description"))
             .defaultValue(true)
             .build()
     );
@@ -56,35 +60,36 @@ public class BreakIndicators extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.BreakIndicators.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> gradientColor1Sides = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-1-sides")
-            .description("The side color for the non-broken block.")
+            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Sides.description"))
             .defaultValue(new SettingColor(25, 252, 25, 25))
             .build()
     );
 
     private final Setting<SettingColor> gradientColor1Lines = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-1-lines")
-            .description("The line color for the non-broken block.")
+            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Lines.description"))
             .defaultValue(new SettingColor(25, 252, 25, 100))
             .build()
     );
 
     private final Setting<SettingColor> gradientColor2Sides = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-2-sides")
-            .description("The side color for the fully-broken block.")
+            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Sides.description"))
             .defaultValue(new SettingColor(255, 25, 25, 100))
             .build()
     );
 
     private final Setting<SettingColor> gradientColor2Lines = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-2-lines")
-            .description("The line color for the fully-broken block.")
+            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Lines.description"))
             .defaultValue(new SettingColor(255, 25, 25, 100))
             .build()
     );
@@ -95,7 +100,7 @@ public class BreakIndicators extends Module {
     private final Color cLines = new Color();
 
     public BreakIndicators() {
-        super(Category.Render, "break-indicators", "Renders the progress of a block being broken.");
+        super(Category.Render, "break-indicators", I18n.translate("Modules.BreakIndicators.description"));
     }
 
     @Override

@@ -9,13 +9,14 @@ package minegame159.meteorclient.modules.misc;
 
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 
 public class BypassDeathScreen extends Module {
 
     public boolean shouldBypass = false;
 
     public BypassDeathScreen(){
-        super(Category.Misc, "bypass-death-screen", "Lets you spy on people after death.");
+        super(Category.Misc, "bypass-death-screen", I18n.translate("Modules.BypassDeathScreen.description"));
     }
 
     @Override

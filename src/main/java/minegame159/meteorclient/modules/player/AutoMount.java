@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
 import net.minecraft.entity.passive.*;
@@ -26,23 +27,25 @@ import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.util.Hand;
 
 public class AutoMount extends Module {
-    public AutoMount(){super(Category.Player, "auto-mount", "Automatically mounts entities.");}
+    public AutoMount(){super(Category.Player, "auto-mount", I18n.translate("Modules.AutoMount.description"));}
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgAnimals = settings.createGroup("Animals");
+    private final SettingGroup sgAnimals = settings.createGroup(I18n.translate("Modules.AutoMount.group.sgAnimals"));
 
     // General
 
     private final Setting<Boolean> checkSaddle = sgGeneral.add(new BoolSetting.Builder()
             .name("check-saddle")
-            .description("Checks if the entity contains a saddle before mounting.")
+            .displayName(I18n.translate("Modules.AutoMount.setting.checkSaddle.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.checkSaddle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Faces the entity you mount.")
+            .displayName(I18n.translate("Modules.AutoMount.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -51,56 +54,64 @@ public class AutoMount extends Module {
 
     private final Setting<Boolean> donkeys  = sgAnimals.add(new BoolSetting.Builder()
             .name("donkey")
-            .description("Donkey")
+            .displayName(I18n.translate("Modules.AutoMount.setting.donkeys.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.donkeys.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> skeletonHorse = sgAnimals.add(new BoolSetting.Builder()
             .name("skeleton-horse")
-            .description("Skeleton Horse")
+            .displayName(I18n.translate("Modules.AutoMount.setting.skeletonHorse.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.skeletonHorse.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> llamas  = sgAnimals.add(new BoolSetting.Builder()
             .name("llama")
-            .description("Llama")
+            .displayName(I18n.translate("Modules.AutoMount.setting.llamas.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.llamas.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> boats  = sgAnimals.add(new BoolSetting.Builder()
             .name("boat")
-            .description("Boat")
+            .displayName(I18n.translate("Modules.AutoMount.setting.boats.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.boats.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> minecarts  = sgAnimals.add(new BoolSetting.Builder()
             .name("minecart")
-            .description("Minecart")
+            .displayName(I18n.translate("Modules.AutoMount.setting.minecarts.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.minecarts.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> horses  = sgGeneral.add(new BoolSetting.Builder()
             .name("horse")
-            .description("Horse")
+            .displayName(I18n.translate("Modules.AutoMount.setting.horses.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.horses.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pigs  = sgAnimals.add(new BoolSetting.Builder()
             .name("pig")
-            .description("Pig")
+            .displayName(I18n.translate("Modules.AutoMount.setting.pigs.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.pigs.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> mules  = sgAnimals.add(new BoolSetting.Builder()
             .name("mule")
-            .description("Mule")
+            .displayName(I18n.translate("Modules.AutoMount.setting.mules.displayName"))
+            .description(I18n.translate("Modules.AutoMount.setting.mules.description"))
             .defaultValue(false)
             .build()
     );

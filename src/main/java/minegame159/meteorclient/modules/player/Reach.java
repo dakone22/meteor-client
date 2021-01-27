@@ -10,13 +10,15 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 
 public class Reach extends Module {
     private final SettingGroup sg = settings.getDefaultGroup();
 
     private final Setting<Double> reach = sg.add(new DoubleSetting.Builder()
             .name("reach")
-            .description("Your reach modifier.")
+            .displayName(I18n.translate("Modules.Reach.setting.reach.displayName"))
+            .description(I18n.translate("Modules.Reach.setting.reach.description"))
             .defaultValue(5)
             .min(0)
             .sliderMax(6)
@@ -24,7 +26,7 @@ public class Reach extends Module {
     );
 
     public Reach() {
-        super(Category.Player, "reach", "Gives you super long arms.");
+        super(Category.Player, "reach", I18n.translate("Modules.Reach.description"));
     }
 
     public float getReach() {

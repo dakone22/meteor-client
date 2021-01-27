@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.IntSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 
 public class AutoClicker extends Module {
 
@@ -34,21 +35,23 @@ public class AutoClicker extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The method of clicking.")
+            .displayName(I18n.translate("Modules.AutoClicker.setting.mode.displayName"))
+            .description(I18n.translate("Modules.AutoClicker.setting.mode.description"))
             .defaultValue(Mode.Press)
             .build() 
     );
 
     private final Setting<Button> button = sgGeneral.add(new EnumSetting.Builder<Button>()
             .name("Button")
-            .description("Which button to press.")
+            .description(I18n.translate("Modules.AutoClicker.setting.button.description"))
             .defaultValue(Button.Right)
             .build()
     );
 
     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder()
             .name("delay")
-            .description("The amount of delay between clicks in ticks.")
+            .displayName(I18n.translate("Modules.AutoClicker.setting.delay.displayName"))
+            .description(I18n.translate("Modules.AutoClicker.setting.delay.description"))
             .defaultValue(2)
             .min(0)
             .sliderMax(60)
@@ -58,7 +61,7 @@ public class AutoClicker extends Module {
     private int timer;
 
     public AutoClicker() {
-        super(Category.Player, "auto-clicker", "Automatically clicks.");
+        super(Category.Player, "auto-clicker", I18n.translate("Modules.AutoClicker.description"));
     }
 
     @Override

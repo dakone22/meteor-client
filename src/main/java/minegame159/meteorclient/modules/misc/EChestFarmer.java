@@ -22,6 +22,7 @@ import minegame159.meteorclient.utils.player.InvUtils;
 import minegame159.meteorclient.utils.player.PlayerUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
@@ -35,14 +36,15 @@ public class EChestFarmer extends Module {
     private static final BlockState ENDER_CHEST = Blocks.ENDER_CHEST.getDefaultState();
 
     public EChestFarmer(){
-        super(Category.Misc, "EChest-farmer", "Places and mines Ender Chests where you're looking.");
+        super(Category.Misc, "EChest-farmer", I18n.translate("Modules.EChestFarmer.description"));
     }
 
     private final SettingGroup sgGeneral  = settings.getDefaultGroup();
 
     private final Setting<Integer> amount = sgGeneral.add(new IntSetting.Builder()
             .name("target-amount")
-            .description("The amount of obsidian to farm.")
+            .displayName(I18n.translate("Modules.EChestFarmer.setting.amount.displayName"))
+            .description(I18n.translate("Modules.EChestFarmer.setting.amount.description"))
             .defaultValue(64)
             .min(8)
             .sliderMax(64)
@@ -52,7 +54,8 @@ public class EChestFarmer extends Module {
 
     private final Setting<Integer> lowerAmount = sgGeneral.add(new IntSetting.Builder()
             .name("lower-amount")
-            .description("The specified amount before this module toggles on again.")
+            .displayName(I18n.translate("Modules.EChestFarmer.setting.lowerAmount.displayName"))
+            .description(I18n.translate("Modules.EChestFarmer.setting.lowerAmount.description"))
             .defaultValue(8)
             .min(0)
             .max(64)
@@ -62,7 +65,8 @@ public class EChestFarmer extends Module {
 
     private final Setting<Boolean> disableOnAmount = sgGeneral.add(new BoolSetting.Builder()
             .name("disable-on-completion")
-            .description("Whether or not to disable when you reach your desired amount of stacks of obsidian.")
+            .displayName(I18n.translate("Modules.EChestFarmer.setting.disableOnAmount.displayName"))
+            .description(I18n.translate("Modules.EChestFarmer.setting.disableOnAmount.description"))
             .defaultValue(true)
             .build()
     );

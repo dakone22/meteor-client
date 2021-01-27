@@ -27,6 +27,7 @@ import minegame159.meteorclient.utils.player.PlayerUtils;
 import minegame159.meteorclient.utils.player.RotationUtils;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -65,18 +66,19 @@ public class CrystalAura extends Module {
         None
     }
 
-    private final SettingGroup sgPlace = settings.createGroup("Place");
-    private final SettingGroup sgBreak = settings.createGroup("Break");
-    private final SettingGroup sgTarget = settings.createGroup("Target");
-    private final SettingGroup sgPause = settings.createGroup("Pause");
-    private final SettingGroup sgMisc = settings.createGroup("Misc");
-    private final SettingGroup sgRender = settings.createGroup("Render");
+    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Modules.CrystalAura.group.sgPlace"));
+    private final SettingGroup sgBreak = settings.createGroup(I18n.translate("Modules.CrystalAura.group.sgBreak"));
+    private final SettingGroup sgTarget = settings.createGroup(I18n.translate("Modules.CrystalAura.group.sgTarget"));
+    private final SettingGroup sgPause = settings.createGroup(I18n.translate("Modules.CrystalAura.group.sgPause"));
+    private final SettingGroup sgMisc = settings.createGroup(I18n.translate("Modules.CrystalAura.group.sgMisc"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.CrystalAura.group.sgRender"));
 
     // Place
 
     private final Setting<Integer> placeDelay = sgPlace.add(new IntSetting.Builder()
             .name("place-delay")
-            .description("The amount of delay in ticks before placing.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.placeDelay.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.placeDelay.description"))
             .defaultValue(2)
             .min(0)
             .sliderMax(10)
@@ -85,14 +87,16 @@ public class CrystalAura extends Module {
 
     private final Setting<Mode> placeMode = sgPlace.add(new EnumSetting.Builder<Mode>()
             .name("place-mode")
-            .description("The placement mode for crystals.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.placeMode.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.placeMode.description"))
             .defaultValue(Mode.Safe)
             .build()
     );
 
     private final Setting<Double> placeRange = sgPlace.add(new DoubleSetting.Builder()
             .name("place-range")
-            .description("The radius in which crystals can be placed in.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.placeRange.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.placeRange.description"))
             .defaultValue(4.5)
             .min(0)
             .sliderMax(7)
@@ -101,70 +105,80 @@ public class CrystalAura extends Module {
 
     private final Setting<Boolean> place = sgPlace.add(new BoolSetting.Builder()
             .name("place")
-            .description("Allows Crystal Aura to place crystals.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.place.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.place.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> minDamage = sgPlace.add(new DoubleSetting.Builder()
             .name("min-damage")
-            .description("The minimum damage the crystal will place.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.minDamage.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.minDamage.description"))
             .defaultValue(5.5)
             .build()
     );
 
     private final Setting<Double> minHealth = sgPlace.add(new DoubleSetting.Builder()
             .name("min-health")
-            .description("The minimum health you have to be for it to place.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.minHealth.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.minHealth.description"))
             .defaultValue(15)
             .build()
     );
 
     private final Setting<Boolean> surroundBreak = sgPlace.add(new BoolSetting.Builder()
             .name("surround-break")
-            .description("Places a crystal next to a surrounded player and keeps it there so they cannot use Surround again.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.surroundBreak.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.surroundBreak.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> surroundHold = sgPlace.add(new BoolSetting.Builder()
             .name("surround-hold")
-            .description("Places a crystal next to a player so they cannot use Surround.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.surroundHold.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.surroundHold.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> strict = sgPlace.add(new BoolSetting.Builder()
             .name("strict")
-            .description("Won't place in one block holes to help compatibility with some servers.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.strict.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.strict.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> ignoreWalls = sgPlace.add(new BoolSetting.Builder()
             .name("ignore-walls")
-            .description("Whether or not to place through walls.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.ignoreWalls.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.ignoreWalls.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> facePlace = sgPlace.add(new BoolSetting.Builder()
             .name("face-place")
-            .description("Will face-place when target is below a certain health or armor durability threshold.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.facePlace.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.facePlace.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> spamFacePlace = sgPlace.add(new BoolSetting.Builder()
             .name("spam-face-place")
-            .description("Places faster when someone is below the face place health (Requires Smart Delay).")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.spamFacePlace.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.spamFacePlace.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> facePlaceHealth = sgPlace.add(new DoubleSetting.Builder()
             .name("face-place-health")
-            .description("The health required to face-place.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.facePlaceHealth.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.facePlaceHealth.description"))
             .defaultValue(8)
             .min(1)
             .max(36)
@@ -173,7 +187,8 @@ public class CrystalAura extends Module {
 
     private final Setting<Double> facePlaceDurability = sgPlace.add(new DoubleSetting.Builder()
             .name("face-place-durability")
-            .description("The durability threshold to be able to face-place.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.facePlaceDurability.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.facePlaceDurability.description"))
             .defaultValue(2)
             .min(1)
             .max(100)
@@ -183,14 +198,16 @@ public class CrystalAura extends Module {
 
     private final Setting<Boolean> support = sgPlace.add(new BoolSetting.Builder()
             .name("support")
-            .description("Places a block in the air and crystals on it. Helps with killing players that are flying.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.support.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.support.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> supportDelay = sgPlace.add(new IntSetting.Builder()
             .name("support-delay")
-            .description("The delay between support blocks being placed.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.supportDelay.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.supportDelay.description"))
             .defaultValue(5)
             .min(0)
             .sliderMax(10)
@@ -199,7 +216,8 @@ public class CrystalAura extends Module {
 
     private final Setting<Boolean> supportBackup = sgPlace.add(new BoolSetting.Builder()
             .name("support-backup")
-            .description("Makes it so support only works if there are no other options.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.supportBackup.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.supportBackup.description"))
             .defaultValue(true)
             .build()
     );
@@ -208,7 +226,8 @@ public class CrystalAura extends Module {
 
     private final Setting<Integer> breakDelay = sgBreak.add(new IntSetting.Builder()
             .name("break-delay")
-            .description("The amount of delay in ticks before breaking.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.breakDelay.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.breakDelay.description"))
             .defaultValue(1)
             .min(0)
             .sliderMax(10)
@@ -217,14 +236,16 @@ public class CrystalAura extends Module {
 
     private final Setting<Mode> breakMode = sgBreak.add(new EnumSetting.Builder<Mode>()
             .name("break-mode")
-            .description("The type of break mode for crystals.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.breakMode.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.breakMode.description"))
             .defaultValue(Mode.Safe)
             .build()
     );
 
     private final Setting<Double> breakRange = sgBreak.add(new DoubleSetting.Builder()
             .name("break-range")
-            .description("The maximum range that crystals can be to be broken.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.breakRange.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.breakRange.description"))
             .defaultValue(5)
             .min(0)
             .sliderMax(7)
@@ -235,7 +256,8 @@ public class CrystalAura extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgTarget.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .description("The entities to attack.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.entities.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.PLAYER))
             .onlyAttackable()
             .build()
@@ -243,7 +265,8 @@ public class CrystalAura extends Module {
 
     private final Setting<Double> targetRange = sgTarget.add(new DoubleSetting.Builder()
             .name("target-range")
-            .description("The maximum range the entity can be to be targeted.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.targetRange.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.targetRange.description"))
             .defaultValue(7)
             .min(0)
             .sliderMax(10)
@@ -252,14 +275,16 @@ public class CrystalAura extends Module {
 
     private final Setting<TargetMode> targetMode = sgTarget.add(new EnumSetting.Builder<TargetMode>()
             .name("target-mode")
-            .description("The way you target multiple targets.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.targetMode.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.targetMode.description"))
             .defaultValue(TargetMode.HighestXDamages)
             .build()
     );
 
     private final Setting<Integer> numberOfDamages = sgTarget.add(new IntSetting.Builder()
             .name("number-of-damages")
-            .description("The number to replace 'x' with in HighestXDamages.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.numberOfDamages.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.numberOfDamages.description"))
             .defaultValue(3)
             .min(2)
             .sliderMax(10)
@@ -268,7 +293,8 @@ public class CrystalAura extends Module {
 
     private final Setting<Boolean> multiTarget = sgTarget.add(new BoolSetting.Builder()
             .name("multi-targeting")
-            .description("Will calculate damage for all entities and pick a block based on target mode.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.multiTarget.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.multiTarget.description"))
             .defaultValue(false)
             .build()
     );
@@ -277,21 +303,24 @@ public class CrystalAura extends Module {
 
     private final Setting<Boolean> pauseOnEat = sgPause.add(new BoolSetting.Builder()
             .name("pause-on-eat")
-            .description("Pauses Crystal Aura while eating.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.pauseOnEat.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.pauseOnEat.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pauseOnDrink = sgPause.add(new BoolSetting.Builder()
             .name("pause-on-drink")
-            .description("Pauses Crystal Aura while drinking a potion.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.pauseOnDrink.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.pauseOnDrink.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pauseOnMine = sgPause.add(new BoolSetting.Builder()
             .name("pause-on-mine")
-            .description("Pauses Crystal Aura while mining blocks.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.pauseOnMine.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.pauseOnMine.description"))
             .defaultValue(false)
             .build()
     );
@@ -300,35 +329,40 @@ public class CrystalAura extends Module {
 
     private final Setting<Double> maxDamage = sgMisc.add(new DoubleSetting.Builder()
             .name("max-damage")
-            .description("The maximum self-damage allowed.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.maxDamage.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.maxDamage.description"))
             .defaultValue(3)
             .build()
     );
 
     private final Setting<RotationMode> rotationMode = sgMisc.add(new EnumSetting.Builder<RotationMode>()
             .name("rotation-mode")
-            .description("Where to rotate when using Crystal Aura.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.rotationMode.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.rotationMode.description"))
             .defaultValue(RotationMode.FaceCrystal)
             .build()
     );
 
     private final Setting<SwitchMode> switchMode = sgMisc.add(new EnumSetting.Builder<SwitchMode>()
             .name("switch-mode")
-            .description("How to switch items.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.switchMode.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.switchMode.description"))
             .defaultValue(SwitchMode.Auto)
             .build()
     );
 
     private final Setting<Boolean> smartDelay = sgMisc.add(new BoolSetting.Builder()
             .name("smart-delay")
-            .description("Reduces crystal consumption when doing large amounts of damage. (Can tank performance on lower-end PCs)")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.smartDelay.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.smartDelay.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> healthDifference = sgMisc.add(new DoubleSetting.Builder()
             .name("damage-increase")
-            .description("The damage increase for smart delay to work.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.healthDifference.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.healthDifference.description"))
             .defaultValue(5)
             .min(0)
             .max(20)
@@ -337,14 +371,16 @@ public class CrystalAura extends Module {
 
     private final Setting<Boolean> antiWeakness = sgMisc.add(new BoolSetting.Builder()
             .name("anti-weakness")
-            .description("Switches to tools to break crystals instead of your fist.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.antiWeakness.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.antiWeakness.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noSwing = sgMisc.add(new BoolSetting.Builder()
             .name("no-swing")
-            .description("Stops your hand from swinging.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.noSwing.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.noSwing.description"))
             .defaultValue(true)
             .build()
     );
@@ -353,35 +389,40 @@ public class CrystalAura extends Module {
 
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .description("Renders the block under where it is placing a crystal.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.render.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Lines)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .description("The side color.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.sideColor.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 255, 255, 75))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .description("The line color.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.lineColor.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 255, 255, 255))
             .build()
     );
 
     private final Setting<Integer> renderTimer = sgRender.add(new IntSetting.Builder()
             .name("timer")
-            .description("The amount of time between changing the block render.")
+            .displayName(I18n.translate("Modules.CrystalAura.setting.renderTimer.displayName"))
+            .description(I18n.translate("Modules.CrystalAura.setting.renderTimer.description"))
             .defaultValue(0)
             .min(0)
             .sliderMax(10)
@@ -389,7 +430,7 @@ public class CrystalAura extends Module {
     );
 
     public CrystalAura() {
-        super(Category.Combat, "crystal-aura", "Automatically places and breaks crystals to damage other players.");
+        super(Category.Combat, "crystal-aura", I18n.translate("Modules.CrystalAura.description"));
     }
 
     private int preSlot;

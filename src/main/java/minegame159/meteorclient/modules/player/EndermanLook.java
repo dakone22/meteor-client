@@ -15,6 +15,7 @@ import minegame159.meteorclient.settings.EnumSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.EndermanEntity;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -27,14 +28,15 @@ public class EndermanLook extends Module {
     }
 
     public EndermanLook() {
-        super(Category.Player, "enderman-look", "Either looks at all Endermen or prevents you from looking at Endermen.");
+        super(Category.Player, "enderman-look", I18n.translate("Modules.EndermanLook.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> lookMode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("look-mode")
-            .description("How this module behaves.")
+            .displayName(I18n.translate("Modules.EndermanLook.setting.lookMode.displayName"))
+            .description(I18n.translate("Modules.EndermanLook.setting.lookMode.description"))
             .defaultValue(Mode.LookAway)
             .build()
     );

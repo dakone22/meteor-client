@@ -25,6 +25,7 @@ import minegame159.meteorclient.utils.network.UuidNameHistoryResponseItem;
 import minegame159.meteorclient.utils.render.NametagUtils;
 import minegame159.meteorclient.utils.render.color.Color;
 import net.minecraft.client.render.VertexFormats;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.HorseBaseEntity;
 import net.minecraft.entity.passive.TameableEntity;
@@ -48,7 +49,8 @@ public class EntityOwner extends Module {
 
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .description("The scale of the text.")
+            .displayName(I18n.translate("Modules.EntityOwner.setting.scale.displayName"))
+            .description(I18n.translate("Modules.EntityOwner.setting.scale.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -56,7 +58,8 @@ public class EntityOwner extends Module {
 
     private final Setting<Boolean> projectiles = sgGeneral.add(new BoolSetting.Builder()
             .name("projectiles")
-            .description("Display owner names of projectiles.")
+            .displayName(I18n.translate("Modules.EntityOwner.setting.projectiles.displayName"))
+            .description(I18n.translate("Modules.EntityOwner.setting.projectiles.description"))
             .defaultValue(false)
             .build()
     );
@@ -64,7 +67,7 @@ public class EntityOwner extends Module {
     private final Map<UUID, String> uuidToName = new HashMap<>();
 
     public EntityOwner() {
-        super(Category.Render, "entity-owner", "Displays the name of the player who owns the entity you're looking at.");
+        super(Category.Render, "entity-owner", I18n.translate("Modules.EntityOwner.description"));
     }
 
     @Override

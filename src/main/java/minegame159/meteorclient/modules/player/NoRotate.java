@@ -13,12 +13,13 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.modules.ModuleManager;
 import minegame159.meteorclient.modules.combat.Quiver;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class NoRotate extends Module {
 
     public NoRotate() {
-        super(Category.Player, "no-rotate", "Attempts to block rotations sent from server to client.");
+        super(Category.Player, "no-rotate", I18n.translate("Modules.NoRotate.description"));
     }
 
     @EventHandler

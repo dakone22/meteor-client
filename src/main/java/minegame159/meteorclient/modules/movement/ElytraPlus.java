@@ -20,6 +20,7 @@ import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
@@ -42,34 +43,38 @@ public class ElytraPlus extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgAutopilot = settings.createGroup("Autopilot");
+    private final SettingGroup sgAutopilot = settings.createGroup(I18n.translate("Modules.ElytraPlus.group.sgAutopilot"));
 
     // General
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("The mode used to make you fly.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.mode.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.mode.description"))
             .defaultValue(Mode.Normal)
             .build()
     );
 
     private final Setting<Boolean> autoTakeOff = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-take-off")
-            .description("Automatically takes off when you hold jump without needing to double jump.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.autoTakeOff.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.autoTakeOff.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> replace = sgGeneral.add(new BoolSetting.Builder()
             .name("elytra-replace")
-            .description("Replaces broken elytra with a new elytra.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.replace.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.replace.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> replaceDurability = sgGeneral.add(new IntSetting.Builder()
             .name("replace-durability")
-            .description("The durability threshold your elytra will be replaced at.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.replaceDurability.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.replaceDurability.description"))
             .defaultValue(2)
             .min(1)
             .max(Items.ELYTRA.getMaxDamage() - 1)
@@ -79,7 +84,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> fallMultiplier = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-multiplier")
-            .description("Controls how fast will you go down naturally.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.fallMultiplier.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.fallMultiplier.description"))
             .defaultValue(0.01)
             .min(0)
             .build()
@@ -87,7 +93,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> horizontalSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("horizontal-speed")
-            .description("How fast you go forward and backward.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.horizontalSpeed.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.horizontalSpeed.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -95,7 +102,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> verticalSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("vertical-speed")
-            .description("How fast you go up and down.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.verticalSpeed.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.verticalSpeed.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -103,21 +111,24 @@ public class ElytraPlus extends Module {
 
     private final Setting<Boolean> stopInWater = sgGeneral.add(new BoolSetting.Builder()
             .name("stop-in-water")
-            .description("Stops flying in water.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.stopInWater.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.stopInWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> dontGoIntoUnloadedChunks = sgGeneral.add(new BoolSetting.Builder()
             .name("no-unloaded-chunks")
-            .description("Stops you from going into unloaded chunks.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.dontGoIntoUnloadedChunks.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.dontGoIntoUnloadedChunks.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ChestSwapMode> chestSwap = sgGeneral.add(new EnumSetting.Builder<ChestSwapMode>()
             .name("chest-swap")
-            .description("Enables ChestSwap when toggling this module.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.chestSwap.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.chestSwap.description"))
             .defaultValue(ChestSwapMode.Never)
             .build()
     );
@@ -126,7 +137,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Boolean> autopilotEnabled = sgAutopilot.add(new BoolSetting.Builder()
             .name("autopilot-enabled")
-            .description("Automatically flies forward maintaining minimum height.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.autopilotEnabled.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.autopilotEnabled.description"))
             .defaultValue(false)
             .onChanged(aBoolean -> {
                 if (isActive() && !aBoolean) ((IKeyBinding) mc.options.keyForward).setPressed(false);
@@ -136,7 +148,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> autopilotMinimumHeight = sgAutopilot.add(new DoubleSetting.Builder()
             .name("minimum-height")
-            .description("The minimum height for autopilot.")
+            .displayName(I18n.translate("Modules.ElytraPlus.setting.autopilotMinimumHeight.displayName"))
+            .description(I18n.translate("Modules.ElytraPlus.setting.autopilotMinimumHeight.description"))
             .defaultValue(160)
             .min(0)
             .sliderMax(260)
@@ -156,7 +169,7 @@ public class ElytraPlus extends Module {
     private boolean lastForwardPressed;
 
     public ElytraPlus() {
-        super(Category.Movement, "Elytra+", "Gives you more control over your elytra.");
+        super(Category.Movement, "Elytra+", I18n.translate("Modules.ElytraPlus.description"));
     }
 
     @Override

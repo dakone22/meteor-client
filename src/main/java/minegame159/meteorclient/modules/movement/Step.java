@@ -14,6 +14,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.player.DamageCalcUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 
@@ -31,7 +32,8 @@ public class Step extends Module {
     
     public final Setting<Double> height = sgGeneral.add(new DoubleSetting.Builder()
             .name("height")
-            .description("Step height.")
+            .displayName(I18n.translate("Modules.Step.setting.height.displayName"))
+            .description(I18n.translate("Modules.Step.setting.height.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -39,21 +41,24 @@ public class Step extends Module {
 
     private final Setting<ActiveWhen> activeWhen = sgGeneral.add(new EnumSetting.Builder<ActiveWhen>()
             .name("active-when")
-            .description("Step is active when you meet these requirements.")
+            .displayName(I18n.translate("Modules.Step.setting.activeWhen.displayName"))
+            .description(I18n.translate("Modules.Step.setting.activeWhen.description"))
             .defaultValue(ActiveWhen.Always)
             .build()
     );
 
     private final Setting<Boolean> safeStep = sgGeneral.add(new BoolSetting.Builder()
             .name("safe-step")
-            .description("Doesn't let you step out of a hole if you are low on health or there is a crystal nearby.")
+            .displayName(I18n.translate("Modules.Step.setting.safeStep.displayName"))
+            .description(I18n.translate("Modules.Step.setting.safeStep.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> stepHealth = sgGeneral.add(new IntSetting.Builder()
             .name("step-health")
-            .description("The health you stop being able to step at.")
+            .displayName(I18n.translate("Modules.Step.setting.stepHealth.displayName"))
+            .description(I18n.translate("Modules.Step.setting.stepHealth.description"))
             .defaultValue(5)
             .min(1)
             .max(36)
@@ -64,7 +69,7 @@ public class Step extends Module {
     private boolean prevBaritoneAssumeStep;
 
     public Step() {
-        super(Category.Movement, "step", "Allows you to walk up full blocks normally.");
+        super(Category.Movement, "step", I18n.translate("Modules.Step.description"));
     }
 
     @Override

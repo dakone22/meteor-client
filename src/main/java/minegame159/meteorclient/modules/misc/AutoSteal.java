@@ -9,6 +9,7 @@ import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.misc.ThreadUtils;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.SlotActionType;
@@ -17,31 +18,34 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class AutoSteal extends Module {
     public AutoSteal() {
-        super(Category.Player, "auto-steal", "Automatically dumps or steals from storage blocks.");
+        super(Category.Player, "auto-steal", I18n.translate("Modules.AutoSteal.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgDelays = settings.createGroup("Delay");
+    private final SettingGroup sgDelays = settings.createGroup(I18n.translate("Modules.AutoSteal.group.sgDelays"));
 
     // General
 
     private final Setting<Boolean> stealButtonEnabled = sgGeneral.add(new BoolSetting.Builder()
             .name("steal-button-enabled")
-            .description("Shows the Steal button on the container screen.")
+            .displayName(I18n.translate("Modules.AutoSteal.setting.stealButtonEnabled.displayName"))
+            .description(I18n.translate("Modules.AutoSteal.setting.stealButtonEnabled.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> dumpButtonEnabled = sgGeneral.add(new BoolSetting.Builder()
             .name("dump-button-enabled")
-            .description("Shows the Dump button on the container screen.")
+            .displayName(I18n.translate("Modules.AutoSteal.setting.dumpButtonEnabled.displayName"))
+            .description(I18n.translate("Modules.AutoSteal.setting.dumpButtonEnabled.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> autoStealEnabled = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-steal-enabled")
-            .description("Starts the auto steal when a container open.")
+            .displayName(I18n.translate("Modules.AutoSteal.setting.autoStealEnabled.displayName"))
+            .description(I18n.translate("Modules.AutoSteal.setting.autoStealEnabled.description"))
             .defaultValue(false)
             .onChanged((bool_1) -> checkAutoSettings())
             .build()
@@ -49,7 +53,8 @@ public class AutoSteal extends Module {
 
     private final Setting<Boolean> autoDumpEnabled = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-dump-enabled")
-            .description("Start auto dump when a container opens.")
+            .displayName(I18n.translate("Modules.AutoSteal.setting.autoDumpEnabled.displayName"))
+            .description(I18n.translate("Modules.AutoSteal.setting.autoDumpEnabled.description"))
             .defaultValue(false)
             .onChanged((bool_1) -> checkAutoSettings())
             .build()
@@ -59,7 +64,8 @@ public class AutoSteal extends Module {
 
     private final Setting<Integer> minimumDelay = sgDelays.add(new IntSetting.Builder()
             .name("min-delay")
-            .description("The minimum delay between stealing the next stack in milliseconds.")
+            .displayName(I18n.translate("Modules.AutoSteal.setting.minimumDelay.displayName"))
+            .description(I18n.translate("Modules.AutoSteal.setting.minimumDelay.description"))
             .sliderMax(1000)
             .defaultValue(180)
             .build()
@@ -67,7 +73,8 @@ public class AutoSteal extends Module {
 
     private final Setting<Integer> randomDelay = sgDelays.add(new IntSetting.Builder()
             .name("random-delay")
-            .description("Randomly adds a delay of up to the specified time in milliseconds. Helps avoid anti-cheats.") // Actually ms - 1, due to the RNG excluding upper bound
+            .displayName(I18n.translate("Modules.AutoSteal.setting.randomDelay.displayName"))
+            .description(I18n.translate("Modules.AutoSteal.setting.randomDelay.description")) // Actually ms - 1, due to the RNG excluding upper bound
             .min(0)
             .sliderMax(1000)
             .defaultValue(50)

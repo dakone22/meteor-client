@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.ParticleEffectListSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.particle.ParticleEffect;
 
 import java.util.ArrayList;
@@ -25,21 +26,23 @@ public class Trail extends Module {
 
     private final Setting<List<ParticleEffect>> particles = sgGeneral.add(new ParticleEffectListSetting.Builder()
             .name("particles")
-            .description("Particles to draw.")
+            .displayName(I18n.translate("Modules.Trail.setting.particles.displayName"))
+            .description(I18n.translate("Modules.Trail.setting.particles.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     private final Setting<Boolean> pause = sgGeneral.add(new BoolSetting.Builder()
             .name("pause-when-stationary")
-            .description("Whether or not to add particles when you are not moving.")
+            .displayName(I18n.translate("Modules.Trail.setting.pause.displayName"))
+            .description(I18n.translate("Modules.Trail.setting.pause.description"))
             .defaultValue(true)
             .build()
     );
 
 
     public Trail() {
-        super(Category.Render, "trail", "Renders a customizable trail behind your player.");
+        super(Category.Render, "trail", I18n.translate("Modules.Trail.description"));
     }
 
     @EventHandler

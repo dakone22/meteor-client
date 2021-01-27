@@ -20,6 +20,7 @@ import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.entity.EntityUtils;
 import minegame159.meteorclient.utils.render.color.Color;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.Box;
@@ -34,34 +35,38 @@ public class ESP extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgColors = settings.createGroup("Colors");
+    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Modules.ESP.group.sgColors"));
 
     // General
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .description("Rendering mode.")
+            .displayName(I18n.translate("Modules.ESP.setting.mode.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.mode.description"))
             .defaultValue(Mode.Outline)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("box-mode")
-            .description("How the shapes are rendered.")
+            .displayName(I18n.translate("Modules.ESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entites")
-            .description("Select specific entities.")
+            .displayName(I18n.translate("Modules.ESP.setting.entities.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.PLAYER))
             .build()
     );
 
     public final Setting<Boolean> showInvis = sgGeneral.add(new BoolSetting.Builder()
             .name("show-invisible")
-            .description("Shows invisibile entities.")
+            .displayName(I18n.translate("Modules.ESP.setting.showInvis.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.showInvis.description"))
             .defaultValue(true)
             .build()
     );
@@ -70,56 +75,64 @@ public class ESP extends Module {
 
     public final Setting<Boolean> useNameColor = sgColors.add(new BoolSetting.Builder()
             .name("use-name-color")
-            .description("Uses players displayname color for the ESP color (good for minigames).")
+            .displayName(I18n.translate("Modules.ESP.setting.useNameColor.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.useNameColor.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<SettingColor> playersColor = sgColors.add(new ColorSetting.Builder()
             .name("players-color")
-            .description("The other player's color.")
+            .displayName(I18n.translate("Modules.ESP.setting.playersColor.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.playersColor.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> animalsColor = sgColors.add(new ColorSetting.Builder()
             .name("animals-color")
-            .description("The animal's color.")
+            .displayName(I18n.translate("Modules.ESP.setting.animalsColor.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.animalsColor.description"))
             .defaultValue(new SettingColor(25, 255, 25, 255))
             .build()
     );
 
     private final Setting<SettingColor> waterAnimalsColor = sgColors.add(new ColorSetting.Builder()
             .name("water-animals-color")
-            .description("The water animal's color.")
+            .displayName(I18n.translate("Modules.ESP.setting.waterAnimalsColor.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.waterAnimalsColor.description"))
             .defaultValue(new SettingColor(25, 25, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> monstersColor = sgColors.add(new ColorSetting.Builder()
             .name("monsters-color")
-            .description("The monster's color.")
+            .displayName(I18n.translate("Modules.ESP.setting.monstersColor.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.monstersColor.description"))
             .defaultValue(new SettingColor(255, 25, 25, 255))
             .build()
     );
 
     private final Setting<SettingColor> ambientColor = sgColors.add(new ColorSetting.Builder()
             .name("ambient-color")
-            .description("The ambient's color.")
+            .displayName(I18n.translate("Modules.ESP.setting.ambientColor.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.ambientColor.description"))
             .defaultValue(new SettingColor(25, 25, 25, 255))
             .build()
     );
 
     private final Setting<SettingColor> miscColor = sgColors.add(new ColorSetting.Builder()
             .name("misc-color")
-            .description("The misc color.")
+            .displayName(I18n.translate("Modules.ESP.setting.miscColor.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.miscColor.description"))
             .defaultValue(new SettingColor(175, 175, 175, 255))
             .build()
     );
 
     private final Setting<Double> fadeDistance = sgGeneral.add(new DoubleSetting.Builder()
             .name("fade-distance")
-            .description("The distance where the color fades.")
+            .displayName(I18n.translate("Modules.ESP.setting.fadeDistance.displayName"))
+            .description(I18n.translate("Modules.ESP.setting.fadeDistance.description"))
             .defaultValue(6)
             .min(0)
             .sliderMax(12)
@@ -131,7 +144,7 @@ public class ESP extends Module {
     private int count;
 
     public ESP() {
-        super(Category.Render, "esp", "Renders entities through walls.");
+        super(Category.Render, "esp", I18n.translate("Modules.ESP.description"));
 
         MB.texture = true;
     }

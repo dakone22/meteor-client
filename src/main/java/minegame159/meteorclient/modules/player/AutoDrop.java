@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.InvUtils;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.screen.slot.SlotActionType;
 
@@ -27,20 +28,22 @@ public class AutoDrop extends Module {
     
     private final Setting<List<Item>> items = sgGeneral.add(new ItemListSetting.Builder()
             .name("items")
-            .description("Items to drop.")
+            .displayName(I18n.translate("Modules.AutoDrop.setting.items.displayName"))
+            .description(I18n.translate("Modules.AutoDrop.setting.items.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     private final Setting<Boolean> excludeHotbar = sgGeneral.add(new BoolSetting.Builder()
             .name("exclude-hotbar")
-            .description("Whether or not to drop items from your hotbar.")
+            .displayName(I18n.translate("Modules.AutoDrop.setting.excludeHotbar.displayName"))
+            .description(I18n.translate("Modules.AutoDrop.setting.excludeHotbar.description"))
             .defaultValue(false)
             .build()
     );
 
     public AutoDrop() {
-        super(Category.Player, "auto-drop", "Automatically drops specified items.");
+        super(Category.Player, "auto-drop", I18n.translate("Modules.AutoDrop.description"));
     }
 
     @EventHandler

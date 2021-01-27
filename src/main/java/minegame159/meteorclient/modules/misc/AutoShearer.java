@@ -16,6 +16,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.InvUtils;
 import minegame159.meteorclient.utils.player.RotationUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.item.Items;
@@ -27,7 +28,8 @@ public class AutoShearer extends Module {
     
     private final Setting<Double> distance = sgGeneral.add(new DoubleSetting.Builder()
             .name("distance")
-            .description("The maximum distance the sheep have to be to be sheared.")
+            .displayName(I18n.translate("Modules.AutoShearer.setting.distance.displayName"))
+            .description(I18n.translate("Modules.AutoShearer.setting.distance.description"))
             .min(0.0)
             .defaultValue(5.0)
             .build()
@@ -35,20 +37,22 @@ public class AutoShearer extends Module {
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-break")
-            .description("Prevents shears from being broken.")
+            .displayName(I18n.translate("Modules.AutoShearer.setting.antiBreak.displayName"))
+            .description(I18n.translate("Modules.AutoShearer.setting.antiBreak.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Automatically faces towards the animal being sheared.")
+            .displayName(I18n.translate("Modules.AutoShearer.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.AutoShearer.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoShearer() {
-        super(Category.Misc, "auto-shearer", "Automatically shears sheep.");
+        super(Category.Misc, "auto-shearer", I18n.translate("Modules.AutoShearer.description"));
     }
 
     @EventHandler

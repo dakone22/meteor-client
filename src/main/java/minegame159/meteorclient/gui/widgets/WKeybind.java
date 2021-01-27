@@ -1,6 +1,7 @@
 package minegame159.meteorclient.gui.widgets;
 
 import minegame159.meteorclient.utils.Utils;
+import net.minecraft.client.resource.language.I18n;
 
 public class WKeybind extends WTable {
     public Runnable action;
@@ -15,12 +16,12 @@ public class WKeybind extends WTable {
         this.key = key;
 
         label = add(new WLabel("")).getWidget();
-        WButton set = add(new WButton("Set")).getWidget();
-        WButton reset = add(new WButton("Reset")).getWidget();
+        WButton set = add(new WButton(I18n.translate("ModuleScreen.WKeybind.buttons.Set"))).getWidget();
+        WButton reset = add(new WButton(I18n.translate("ModuleScreen.WKeybind.buttons.Reset"))).getWidget();
 
         set.action = () -> {
             listening = true;
-            label.setText("Bind: press any key");
+            label.setText(I18n.translate("ModuleScreen.WKeybind.bind.setting"));
 
             if (actionOnSet != null) actionOnSet.run();
         };
@@ -54,6 +55,6 @@ public class WKeybind extends WTable {
     }
 
     private void setLabelToKey() {
-        label.setText("Bind: " + (key == -1 ? "none" :  Utils.getKeyName(key)));
+        label.setText(I18n.translate("ModuleScreen.WKeybind.bind") + (key == -1 ? I18n.translate("ModuleScreen.WKeybind.bind.none") :  Utils.getKeyName(key)));
     }
 }

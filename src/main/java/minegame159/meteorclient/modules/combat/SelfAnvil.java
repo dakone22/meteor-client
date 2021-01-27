@@ -17,6 +17,7 @@ import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.utils.player.PlayerUtils;
 import minegame159.meteorclient.utils.player.RotationUtils;
 import net.minecraft.client.gui.screen.ingame.AnvilScreen;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
@@ -27,13 +28,14 @@ public class SelfAnvil extends Module {
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .description("Forces you to rotate upwards when placing the anvil.")
+            .displayName(I18n.translate("Modules.SelfAnvil.setting.rotate.displayName"))
+            .description(I18n.translate("Modules.SelfAnvil.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public SelfAnvil() {
-        super(Category.Combat, "self-anvil", "Automatically places an anvil on you to prevent other players from going into your hole.");
+        super(Category.Combat, "self-anvil", I18n.translate("Modules.SelfAnvil.description"));
     }
 
     @EventHandler

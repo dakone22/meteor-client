@@ -18,25 +18,28 @@ import minegame159.meteorclient.settings.BoolSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
 import minegame159.meteorclient.settings.StringSetting;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class MessageAura extends Module {
     public MessageAura() {
-        super(Category.Misc, "message-aura", "Sends a specified message to any player that enters render distance.");
+        super(Category.Misc, "message-aura", I18n.translate("Modules.MessageAura.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<String> message = sgGeneral.add(new StringSetting.Builder()
             .name("message")
-            .description("The specified message sent to the player.")
+            .displayName(I18n.translate("Modules.MessageAura.setting.message.displayName"))
+            .description(I18n.translate("Modules.MessageAura.setting.message.description"))
             .defaultValue("Meteor on Crack!")
             .build()
     );
 
     private final Setting<Boolean> ignoreFriends = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-friends")
-            .description("Will not send any messages to people friended.")
+            .displayName(I18n.translate("Modules.MessageAura.setting.ignoreFriends.displayName"))
+            .description(I18n.translate("Modules.MessageAura.setting.ignoreFriends.description"))
             .defaultValue(false)
             .build()
     );

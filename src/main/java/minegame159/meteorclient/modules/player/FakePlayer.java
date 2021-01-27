@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.entity.FakePlayerEntity;
 import minegame159.meteorclient.utils.player.ChatUtils;
+import net.minecraft.client.resource.language.I18n;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,28 +24,32 @@ public class FakePlayer extends Module {
 
     private final Setting<String> name = sgGeneral.add(new StringSetting.Builder()
             .name("name")
-            .description("The name of the fake player.")
+            .displayName(I18n.translate("Modules.FakePlayer.setting.name.displayName"))
+            .description(I18n.translate("Modules.FakePlayer.setting.name.description"))
             .defaultValue("MeteorOnCrack")
             .build()
     );
 
     private final Setting<Boolean> copyInv = sgGeneral.add(new BoolSetting.Builder()
             .name("copy-inv")
-            .description("Copies your exact inventory to the fake player.")
+            .displayName(I18n.translate("Modules.FakePlayer.setting.copyInv.displayName"))
+            .description(I18n.translate("Modules.FakePlayer.setting.copyInv.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> glowing = sgGeneral.add(new BoolSetting.Builder()
             .name("glowing")
-            .description("Grants the fake player a glowing effect.")
+            .displayName(I18n.translate("Modules.FakePlayer.setting.glowing.displayName"))
+            .description(I18n.translate("Modules.FakePlayer.setting.glowing.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .description("The fake player's default health.")
+            .displayName(I18n.translate("Modules.FakePlayer.setting.health.displayName"))
+            .description(I18n.translate("Modules.FakePlayer.setting.health.description"))
             .defaultValue(20)
             .min(1)
             .sliderMax(100)
@@ -53,20 +58,22 @@ public class FakePlayer extends Module {
 
     private final Setting<Boolean> idInNametag = sgGeneral.add(new BoolSetting.Builder()
             .name("id-in-nametag")
-            .description("Displays the fake player's ID inside its nametag.")
+            .displayName(I18n.translate("Modules.FakePlayer.setting.idInNametag.displayName"))
+            .description(I18n.translate("Modules.FakePlayer.setting.idInNametag.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> chatInfo = sgGeneral.add(new BoolSetting.Builder()
             .name("chat-info")
-            .description("Informs you when a fake player has been spawned or removed.")
+            .displayName(I18n.translate("Modules.FakePlayer.setting.chatInfo.displayName"))
+            .description(I18n.translate("Modules.FakePlayer.setting.chatInfo.description"))
             .defaultValue(false)
             .build()
     );
 
     public FakePlayer() {
-        super(Category.Player, "fake-player", "Spawns a client-side fake player for testing usages.");
+        super(Category.Player, "fake-player", I18n.translate("Modules.FakePlayer.description"));
     }
 
     public static Map<FakePlayerEntity, Integer> players = new HashMap<>();

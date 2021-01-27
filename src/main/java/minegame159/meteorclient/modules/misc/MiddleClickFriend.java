@@ -12,11 +12,12 @@ import minegame159.meteorclient.friends.Friend;
 import minegame159.meteorclient.friends.FriendManager;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 
 public class MiddleClickFriend extends Module {
     public MiddleClickFriend() {
-        super(Category.Misc, "middle-click-friend", "Adds or removes a player as a friend via middle click.");
+        super(Category.Misc, "middle-click-friend", I18n.translate("Modules.MiddleClickFriend.description"));
     }
 
     @EventHandler

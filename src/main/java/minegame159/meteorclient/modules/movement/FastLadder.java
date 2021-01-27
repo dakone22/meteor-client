@@ -13,6 +13,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.DoubleSetting;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.SettingGroup;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.Vec3d;
 
 public class FastLadder extends Module {
@@ -20,14 +21,15 @@ public class FastLadder extends Module {
     
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("climb-speed")
-            .description("Your climb speed.")
+            .displayName(I18n.translate("Modules.FastLadder.setting.speed.displayName"))
+            .description(I18n.translate("Modules.FastLadder.setting.speed.description"))
             .defaultValue(0.2872)
             .min(0.0)
             .build()
     );
 
     public FastLadder() {
-        super(Category.Movement, "fast-ladder", "Makes you climb ladders faster.");
+        super(Category.Movement, "fast-ladder", I18n.translate("Modules.FastLadder.description"));
     }
 
     @EventHandler
