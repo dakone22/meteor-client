@@ -108,6 +108,11 @@ public class ParticleEffectListSetting extends Setting<List<ParticleEffect>> {
             return this;
         }
 
+        public ParticleEffectListSetting.Builder displayName(String title) {
+            this.title = title;
+            return this;
+        }
+
         public ParticleEffectListSetting.Builder description(String description) {
             this.description = description;
             return this;
