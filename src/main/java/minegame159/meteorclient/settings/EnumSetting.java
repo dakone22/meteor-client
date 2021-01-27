@@ -84,6 +84,11 @@ public class EnumSetting<T extends Enum<?>> extends Setting<T> {
             return this;
         }
 
+        public Builder<T> displayName(String title) {
+            this.title = title;
+            return this;
+        }
+
         public Builder<T> description(String description) {
             this.description = description;
             return this;
