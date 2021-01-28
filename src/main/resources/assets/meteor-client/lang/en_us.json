@@ -203,6 +203,7 @@
   "Waypoints.EditWaypointScreen.button.Save": "Save",
 
 
+
   "Modules.AimAssist.description": "Automatically aims at entities.",
   "Modules.AimAssist.group.sgSpeed": "Aim Speed",
   "Modules.AimAssist.setting.range.description": "How far away the entity has to be to be targeted.",
@@ -221,6 +222,8 @@
   "Modules.AimAssist.setting.target.displayName": "Target",
   "Modules.AimAssist.setting.speedInstant.displayName": "Instant Look",
   "Modules.AimAssist.setting.speed.displayName": "Speed",
+
+
   "Modules.AnchorAura.description": "Automatically places and breaks Respawn Anchors to harm entities.",
   "Modules.AnchorAura.group.sgPlace": "Place",
   "Modules.AnchorAura.group.sgBreak": "Break",
@@ -270,9 +273,13 @@
   "Modules.AnchorAura.setting.breakSideColor.displayName": "Break Side Color",
   "Modules.AnchorAura.setting.breakLineColor.displayName": "Break Line Color",
   "Modules.AnchorAura.setting.shapeMode.displayName": "Shape Mode",
+
+
   "Modules.AntiAutoAnvil.description": "Automatically prevents Auto Anvil by placing obsidian above you.",
   "Modules.AntiAutoAnvil.setting.rotate.description": "Forces you to rotate upwards when placing obsidian above you.",
   "Modules.AntiAutoAnvil.setting.rotate.displayName": "Rotate",
+
+
   "Modules.AntiBed.description": "Prevents people from placing beds where you are standing.",
   "Modules.AntiBed.setting.selfToggle.description": "Toggles AntiBed off when finished.",
   "Modules.AntiBed.setting.autoCenter.description": "Teleports you to the center of the blocks.",
@@ -282,7 +289,11 @@
   "Modules.AntiBed.setting.autoCenter.displayName": "Auto Center",
   "Modules.AntiBed.setting.onlyOnGround.displayName": "Only On Ground",
   "Modules.AntiBed.setting.rotate.displayName": "Rotate",
+
+
   "Modules.AntiFriendHit.description": "Cancels out attacks that would hit friends.",
+
+
   "Modules.Auto32K.description": "Automatically attacks other players with a 32k weapon.",
   "Modules.Auto32K.setting.mode.description": "The bypass mode used.",
   "Modules.Auto32K.setting.placeRange.description": "The distance in a single direction the shulker is placed.",
@@ -294,6 +305,8 @@
   "Modules.Auto32K.setting.fillHopper.displayName": "Fill Hopper",
   "Modules.Auto32K.setting.throwawayItems.displayName": "Throwaway Blocks",
   "Modules.Auto32K.setting.autoMove.displayName": "Auto Move",
+
+
   "Modules.AutoAnvil.description": "Automatically places anvils above players to destroy helmets.",
   "Modules.AutoAnvil.group.sgPlace": "Place",
   "Modules.AutoAnvil.setting.toggleOnBreak.description": "Toggles when the target's helmet slot is empty.",
@@ -308,6 +321,8 @@
   "Modules.AutoAnvil.setting.delay.displayName": "Delay",
   "Modules.AutoAnvil.setting.height.displayName": "Height",
   "Modules.AutoAnvil.setting.placeButton.displayName": "Place At Feet",
+
+
   "Modules.AutoArmor.description": "Automatically manages and equips your armor for you.",
   "Modules.AutoArmor.group.sgDelay": "Delay",
   "Modules.AutoArmor.setting.mode.description": "Which type of protection to prioritize.",
@@ -340,6 +355,8 @@
   "Modules.AutoArmor.setting.switchCooldown.displayName": "Switch Cooldown",
   "Modules.AutoArmor.setting.pauseInInventory.displayName": "Pause In Inventory",
   "Modules.AutoArmor.setting.pause.displayName": "Pause Between Pieces",
+
+
   "Modules.AutoCity.description": "Automatically cities a target by mining the nearest obsidian next to them.",
   "Modules.AutoCity.setting.checkBelow.description": "Checks for obsidian or bedrock below the surround block for you to place crystals on.",
   "Modules.AutoCity.setting.support.description": "If there is no block below a city block it will place one before mining.",
@@ -349,6 +366,8 @@
   "Modules.AutoCity.setting.support.displayName": "Support",
   "Modules.AutoCity.setting.chatInfo.displayName": "Chat Info",
   "Modules.AutoCity.setting.rotate.displayName": "Rotate",
+
+
   "Modules.AutoLog.description": "Automatically disconnects you when certain requirements are met.",
   "Modules.AutoLog.setting.health.description": "Automatically disconnects when health is lower or equal to this value.",
   "Modules.AutoLog.setting.smart.description": "Disconnects when you're about to take enough damage to kill you.",
@@ -365,6 +384,8 @@
   "Modules.AutoLog.setting.range.displayName": "Range",
   "Modules.AutoLog.setting.smartToggle.displayName": "Smart Toggle",
   "Modules.AutoLog.setting.toggleOff.displayName": "Toggle Off",
+
+
   "Modules.AutoTotem.description": "Automatically equips totems in your offhand.",
   "Modules.AutoTotem.setting.smart.description": "Only switches to a totem when you are close to death.",
   "Modules.AutoTotem.setting.fallback.description": "Enables Offhand Extra when you run out of totems.",
@@ -374,6 +395,8 @@
   "Modules.AutoTotem.setting.fallback.displayName": "Fallback",
   "Modules.AutoTotem.setting.inventorySwitch.displayName": "Inventory",
   "Modules.AutoTotem.setting.health.displayName": "Health",
+
+
   "Modules.AutoTrap.description": "Traps people in an obsidian box to prevent them from moving.",
   "Modules.AutoTrap.group.sgRender": "Render",
   "Modules.AutoTrap.setting.topPlacement.description": "Which blocks to place on the top half of the target.",
@@ -396,12 +419,16 @@
   "Modules.AutoTrap.setting.shapeMode.displayName": "Shape Mode",
   "Modules.AutoTrap.setting.sideColor.displayName": "Side Color",
   "Modules.AutoTrap.setting.lineColor.displayName": "Line Color",
+
+
   "Modules.AutoWeapon.description": "Finds the best weapon to use in your hotbar.",
   "Modules.AutoWeapon.setting.weapon.description": "What type of weapon to use.",
   "Modules.AutoWeapon.setting.threshold.description": "If the non-preferred weapon produces this much damage this will favor it over your preferred weapon.",
   "Modules.AutoWeapon.setting.antiBreak.description": "Prevents you from breaking your weapon.",
   "Modules.AutoWeapon.setting.threshold.displayName": "Threshold",
   "Modules.AutoWeapon.setting.antiBreak.displayName": "Anti Break",
+
+
   "Modules.AutoWeb.description": "Automatically places webs on other players.",
   "Modules.AutoWeb.setting.range.description": "The maximum distance to be able to place webs.",
   "Modules.AutoWeb.setting.doubles.description": "Places webs in the target's upper hitbox as well as the lower hitbox.",
@@ -409,6 +436,8 @@
   "Modules.AutoWeb.setting.range.displayName": "Range",
   "Modules.AutoWeb.setting.doubles.displayName": "Doubles",
   "Modules.AutoWeb.setting.rotate.displayName": "Rotate",
+
+
   "Modules.BedAura.description": "Automatically places and explodes beds in the Nether and End.",
   "Modules.BedAura.group.sgPlace": "Place",
   "Modules.BedAura.group.sgBreak": "Break",
@@ -450,14 +479,20 @@
   "Modules.BedAura.setting.smartDelay.displayName": "Smart Delay",
   "Modules.BedAura.setting.healthDifference.displayName": "Damage Increase",
   "Modules.BedAura.setting.maxDamage.displayName": "Max Damage",
+
+
   "Modules.BowSpam.description": "Spams arrows.",
   "Modules.BowSpam.setting.charge.description": "How long to charge the bow before releasing in ticks.",
   "Modules.BowSpam.setting.onlyWhenHoldingRightClick.description": "Works only when holding right click.",
   "Modules.BowSpam.setting.charge.displayName": "Charge",
   "Modules.BowSpam.setting.onlyWhenHoldingRightClick.displayName": "Only When Holding Right Click",
+
+
   "Modules.Criticals.description": "Performs critical attacks when you hit your target.",
   "Modules.Criticals.setting.mode.description": "The mode on how Criticals will function.",
   "Modules.Criticals.setting.mode.displayName": "Mode",
+
+
   "Modules.CrystalAura.description": "Automatically places and breaks crystals to damage other players.",
   "Modules.CrystalAura.group.sgPlace": "Place",
   "Modules.CrystalAura.group.sgBreak": "Break",
@@ -545,11 +580,15 @@
   "Modules.CrystalAura.setting.sideColor.displayName": "Side Color",
   "Modules.CrystalAura.setting.lineColor.displayName": "Line Color",
   "Modules.CrystalAura.setting.renderTimer.displayName": "Timer",
+
+
   "Modules.Hitboxes.description": "Expands an entity's hitboxes.",
   "Modules.Hitboxes.setting.entities.description": "Which entities to target.",
   "Modules.Hitboxes.setting.value.description": "How much to expand the hitbox of the entity.",
   "Modules.Hitboxes.setting.entities.displayName": "Entities",
   "Modules.Hitboxes.setting.value.displayName": "Expand",
+
+
   "Modules.Holefiller.description": "Fills holes with specified blocks.",
   "Modules.Holefiller.setting.horizontalRadius.description": "Horizontal radius in which to search for holes.",
   "Modules.Holefiller.setting.verticalRadius.description": "Vertical radius in which to search for holes.",
@@ -559,6 +598,8 @@
   "Modules.Holefiller.setting.verticalRadius.displayName": "Vertical Radius",
   "Modules.Holefiller.setting.mode.displayName": "Block",
   "Modules.Holefiller.setting.rotate.displayName": "Rotate",
+
+
   "Modules.KillAura.description": "Attacks specified entities around you.",
   "Modules.KillAura.group.sgDelay": "Delay",
   "Modules.KillAura.setting.range.description": "The maximum range the entity can be to attack it.",
@@ -593,6 +634,8 @@
   "Modules.KillAura.setting.hitDelay.displayName": "Hit Delay",
   "Modules.KillAura.setting.randomDelayEnabled.displayName": "Random Delay Enabled",
   "Modules.KillAura.setting.randomDelayMax.displayName": "Random Delay Max",
+
+
   "Modules.OffhandExtra.description": "Allows you to use specified items in your offhand. REQUIRES AutoTotem to be on smart mode.",
   "Modules.OffhandExtra.group.sgExtra": "Extras",
   "Modules.OffhandExtra.setting.mode.description": "Changes what item that will go into your offhand.",
@@ -613,6 +656,8 @@
   "Modules.OffhandExtra.setting.sword.displayName": "Sword Gap",
   "Modules.OffhandExtra.setting.offhandCrystal.displayName": "Offhand Crystal On Gap",
   "Modules.OffhandExtra.setting.offhandCA.displayName": "Offhand Crystal On Ca",
+
+
   "Modules.Quiver.description": "Automatically shoots positive effect arrows at you.",
   "Modules.Quiver.setting.charge.description": "The amount of delay for bow charging in ticks.",
   "Modules.Quiver.setting.checkEffects.description": "Won't shoot you with effects you already have active.",
@@ -620,9 +665,13 @@
   "Modules.Quiver.setting.charge.displayName": "Charge Delay",
   "Modules.Quiver.setting.checkEffects.displayName": "Check Effects",
   "Modules.Quiver.setting.chatInfo.displayName": "Chat Info",
+
+
   "Modules.SelfAnvil.description": "Automatically places an anvil on you to prevent other players from going into your hole.",
   "Modules.SelfAnvil.setting.rotate.description": "Forces you to rotate upwards when placing the anvil.",
   "Modules.SelfAnvil.setting.rotate.displayName": "Rotate",
+
+
   "Modules.SelfTrap.description": "Places obsidian above your head.",
   "Modules.SelfTrap.group.sgRender": "Render",
   "Modules.SelfTrap.setting.topPlacement.description": "Which positions to place on your top half.",
@@ -645,6 +694,8 @@
   "Modules.SelfTrap.setting.shapeMode.displayName": "Shape Mode",
   "Modules.SelfTrap.setting.sideColor.displayName": "Side Color",
   "Modules.SelfTrap.setting.lineColor.displayName": "Line Color",
+
+
   "Modules.SelfWeb.description": "Automatically places webs on you.",
   "Modules.SelfWeb.setting.doubles.description": "Places webs in your upper hitbox as well.",
   "Modules.SelfWeb.setting.turnOff.description": "Toggles off after placing the webs.",
@@ -652,6 +703,8 @@
   "Modules.SelfWeb.setting.doubles.displayName": "Doubles",
   "Modules.SelfWeb.setting.turnOff.displayName": "Turn Off",
   "Modules.SelfWeb.setting.rotate.displayName": "Rotate",
+
+
   "Modules.SmartSurround.description": "Attempts to save you from crystals automatically.",
   "Modules.SmartSurround.setting.onlyObsidian.description": "Only whitelists obsidian to be used.",
   "Modules.SmartSurround.setting.minDamage.description": "The minimum damage before this activates.",
@@ -659,6 +712,8 @@
   "Modules.SmartSurround.setting.onlyObsidian.displayName": "Only Obsidian",
   "Modules.SmartSurround.setting.minDamage.displayName": "Min Damage",
   "Modules.SmartSurround.setting.rotate.displayName": "Rotate",
+
+
   "Modules.Surround.description": "Surrounds you in blocks to prevent you from taking lots of damage.",
   "Modules.Surround.setting.doubleHeight.description": "Places obsidian on top of the original surround blocks to prevent people from face-placing you.",
   "Modules.Surround.setting.onlyOnGround.description": "Works only when you standing on blocks.",
@@ -674,10 +729,14 @@
   "Modules.Surround.setting.center.displayName": "Center",
   "Modules.Surround.setting.disableOnJump.displayName": "Disable On Jump",
   "Modules.Surround.setting.rotate.displayName": "Rotate",
+
+
   "Modules.Swarm.description": "I Am... The Swarm.",
   "Modules.Swarm.setting.ipAddress.description": "The IP address of the Queen.",
   "Modules.Swarm.setting.serverPort.description": "The port used for connections.",
   "Modules.Swarm.setting.serverPort.displayName": "Port",
+
+
   "Modules.TotemPopNotifier.description": "Sends a chat message when a player either pops a totem or dies.",
   "Modules.TotemPopNotifier.setting.announce.description": "Sends a chat message for everyone to see instead of a client-side alert.",
   "Modules.TotemPopNotifier.setting.ignoreOwn.description": "Doesn't announce your own totem pops.",
@@ -689,9 +748,13 @@
   "Modules.TotemPopNotifier.setting.ignoreFriend.displayName": "Ignore Friend",
   "Modules.TotemPopNotifier.setting.popMessage.displayName": "Pop Message",
   "Modules.TotemPopNotifier.setting.deathMessage.displayName": "Death Message",
+
+
   "Modules.Trigger.description": "Automatically swings when you look at entities.",
   "Modules.Trigger.setting.whenHoldingLeftClick.description": "Attacks only when you are holding left click.",
   "Modules.Trigger.setting.whenHoldingLeftClick.displayName": "When Holding Left Click",
+
+
   "Modules.Announcer.description": "Announces specified actions into chat.",
   "Modules.Announcer.setting.msg.description": "The chat message for opening a container.",
   "Modules.Announcer.setting.delay.description": "The amount of delay between moving messages in seconds.",
@@ -699,7 +762,11 @@
   "Modules.Announcer.setting.msg.displayName": "Open Container Msg",
   "Modules.Announcer.setting.delay.displayName": "Moving Delay",
   "Modules.Announcer.setting.minDist.displayName": "Moving Min Dist",
+
+
   "Modules.AntiPacketKick.description": "Attempts to prevent you from being disconnected by large packets.",
+
+
   "Modules.AutoBreed.description": "Automatically breeds specified animals.",
   "Modules.AutoBreed.setting.entities.description": "Entities to breed.",
   "Modules.AutoBreed.setting.range.description": "How far away the animals can be to be bred.",
@@ -709,11 +776,15 @@
   "Modules.AutoBreed.setting.range.displayName": "Range",
   "Modules.AutoBreed.setting.hand.displayName": "Hand For Breeding",
   "Modules.AutoBreed.setting.ignoreBabies.displayName": "Ignore Babies",
+
+
   "Modules.AutoBrewer.description": "Automatically brews specified potions.",
   "Modules.AutoBrewer.setting.potion.description": "The type of potion to brew.",
   "Modules.AutoBrewer.setting.modifier.description": "The modifier for the specified potion.",
   "Modules.AutoBrewer.setting.potion.displayName": "Potion",
   "Modules.AutoBrewer.setting.modifier.displayName": "Modifier",
+
+
   "Modules.AutoMountBypassDupe.description": "Does the mount bypass dupe for you. Disable with esc.",
   "Modules.AutoMountBypassDupe.setting.shulkersOnly.description": "Only moves shulker boxes into the inventory",
   "Modules.AutoMountBypassDupe.setting.faceDown.description": "Faces down when dropping items.",
@@ -721,6 +792,8 @@
   "Modules.AutoMountBypassDupe.setting.shulkersOnly.displayName": "Shulker Only",
   "Modules.AutoMountBypassDupe.setting.faceDown.displayName": "Rotate Down",
   "Modules.AutoMountBypassDupe.setting.delay.displayName": "Delay",
+
+
   "Modules.AutoNametag.description": "Automatically uses nametags on entities without a nametag. WILL nametag ALL entities in the specified distance.",
   "Modules.AutoNametag.setting.entities.description": "Which entities to nametag.",
   "Modules.AutoNametag.setting.distance.description": "The maximum distance a nametagged entity can be to be nametagged.",
@@ -728,9 +801,13 @@
   "Modules.AutoNametag.setting.entities.displayName": "Entities",
   "Modules.AutoNametag.setting.distance.displayName": "Distance",
   "Modules.AutoNametag.setting.rotate.displayName": "Rotate",
+
+
   "Modules.AutoReconnect.description": "Automatically reconnects when disconnected from a server.",
   "Modules.AutoReconnect.setting.time.description": "The amount of seconds to wait before reconnecting to the server.",
   "Modules.AutoReconnect.setting.time.displayName": "Delay",
+
+
   "Modules.AutoShearer.description": "Automatically shears sheep.",
   "Modules.AutoShearer.setting.distance.description": "The maximum distance the sheep have to be to be sheared.",
   "Modules.AutoShearer.setting.antiBreak.description": "Prevents shears from being broken.",
@@ -738,8 +815,14 @@
   "Modules.AutoShearer.setting.distance.displayName": "Distance",
   "Modules.AutoShearer.setting.antiBreak.displayName": "Anti Break",
   "Modules.AutoShearer.setting.rotate.displayName": "Rotate",
+
+
   "Modules.AutoSign.description": "Automatically writes signs. The first sign's text will be used.",
+
+
   "Modules.AutoSmelter.description": "Automatically smelts all items in your inventory that can be smelted.",
+
+
   "Modules.AutoSteal.description": "Automatically dumps or steals from storage blocks.",
   "Modules.AutoSteal.group.sgDelays": "Delay",
   "Modules.AutoSteal.setting.stealButtonEnabled.description": "Shows the Steal button on the container screen.",
@@ -754,6 +837,8 @@
   "Modules.AutoSteal.setting.autoDumpEnabled.displayName": "Auto Dump Enabled",
   "Modules.AutoSteal.setting.minimumDelay.displayName": "Min Delay",
   "Modules.AutoSteal.setting.randomDelay.displayName": "Random Delay",
+
+
   "Modules.BetterChat.description": "Improves your chat experience in various ways.",
   "Modules.BetterChat.group.sgAnnoy": "Annoy",
   "Modules.BetterChat.group.sgAntiSpam": "Anti Spam",
@@ -804,6 +889,8 @@
   "Modules.BetterChat.setting.suffixSmallCaps.displayName": "Small Caps",
   "Modules.BetterChat.setting.suffixRandom.displayName": "Random",
   "Modules.BetterChat.setting.friendColorEnabled.displayName": "Friend Color Enabled",
+
+
   "Modules.BookBot.description": "Writes an amount of books full of characters or from a file.",
   "Modules.BookBot.setting.mode.description": "The mode of the book bot.",
   "Modules.BookBot.setting.name.description": "The name you want to give your books.",
@@ -817,10 +904,16 @@
   "Modules.BookBot.setting.noOfPages.displayName": "No Of Pages",
   "Modules.BookBot.setting.noOfBooks.displayName": "No Of Books",
   "Modules.BookBot.setting.delay.displayName": "Delay",
+
+
   "Modules.BypassDeathScreen.description": "Lets you spy on people after death.",
+
+
   "Modules.DiscordPresence.description": "Displays a RPC for you on Discord to show that you're playing Meteor Client!",
   "Modules.DiscordPresence.setting.line1.description": "The text it displays on line 1 of the RPC.",
   "Modules.DiscordPresence.setting.line2.description": "The text it displays on line 2 of the RPC.",
+
+
   "Modules.EChestFarmer.description": "Places and mines Ender Chests where you're looking.",
   "Modules.EChestFarmer.setting.amount.description": "The amount of obsidian to farm.",
   "Modules.EChestFarmer.setting.lowerAmount.description": "The specified amount before this module toggles on again.",
@@ -828,6 +921,8 @@
   "Modules.EChestFarmer.setting.amount.displayName": "Target Amount",
   "Modules.EChestFarmer.setting.lowerAmount.displayName": "Lower Amount",
   "Modules.EChestFarmer.setting.disableOnAmount.displayName": "Disable On Completion",
+
+
   "Modules.EntityLogger.description": "Sends a client-side chat alert if a specified entity appears in render distance.",
   "Modules.EntityLogger.setting.entities.description": "Select specific entities.",
   "Modules.EntityLogger.setting.playerNames.description": "Shows the player's name.",
@@ -835,6 +930,8 @@
   "Modules.EntityLogger.setting.entities.displayName": "Entites",
   "Modules.EntityLogger.setting.playerNames.displayName": "Player Names",
   "Modules.EntityLogger.setting.friends.displayName": "Friends",
+
+
   "Modules.LiquidFiller.description": "Places blocks inside of liquid source blocks within range of you.",
   "Modules.LiquidFiller.setting.placeInLiquids.description": "What type of liquids to place in.",
   "Modules.LiquidFiller.setting.horizontalRadius.description": "Horizontal radius in which to search for liquids.",
@@ -846,12 +943,18 @@
   "Modules.LiquidFiller.setting.verticalRadius.displayName": "Vertical Radius",
   "Modules.LiquidFiller.setting.whitelist.displayName": "Block Whitelist",
   "Modules.LiquidFiller.setting.rotate.displayName": "Rotate",
+
+
   "Modules.MessageAura.description": "Sends a specified message to any player that enters render distance.",
   "Modules.MessageAura.setting.message.description": "The specified message sent to the player.",
   "Modules.MessageAura.setting.ignoreFriends.description": "Will not send any messages to people friended.",
   "Modules.MessageAura.setting.message.displayName": "Message",
   "Modules.MessageAura.setting.ignoreFriends.displayName": "Ignore Friends",
+
+
   "Modules.MiddleClickFriend.description": "Adds or removes a player as a friend via middle click.",
+
+
   "Modules.Nuker.description": "Breaks a large amount of specified blocks around you.",
   "Modules.Nuker.setting.mode.description": "The way the blocks are broken.",
   "Modules.Nuker.setting.packetMine.description": "Mines blocks using packet spamming.",
@@ -869,6 +972,8 @@
   "Modules.Nuker.setting.sortMode.displayName": "Sort Mode",
   "Modules.Nuker.setting.noParticles.displayName": "No Particles",
   "Modules.Nuker.setting.rotate.displayName": "Rotate",
+
+
   "Modules.OffhandCrash.description": "An exploit that can crash other players by swapping back and forth between your main hand and offhand..",
   "Modules.OffhandCrash.setting.doCrash.description": "Sends X number of offhand swap sound packets to the server per tick.",
   "Modules.OffhandCrash.setting.speed.description": "The amount of swaps measured in ticks.",
@@ -876,17 +981,25 @@
   "Modules.OffhandCrash.setting.doCrash.displayName": "Do Crash",
   "Modules.OffhandCrash.setting.speed.displayName": "Speed",
   "Modules.OffhandCrash.setting.antiCrash.displayName": "Anti Crash",
+
+
   "Modules.PacketCanceller.description": "Allows you to cancel certain packets.",
   "Modules.PacketCanceller.setting.s2cPackets.description": "Server-to-client packets to cancel.",
   "Modules.PacketCanceller.setting.c2sPackets.description": "Client-to-server packets to cancel.",
+
+
   "Modules.SoundBlocker.description": "Cancels out selected sounds.",
   "Modules.SoundBlocker.setting.sounds.description": "Sounds to block.",
   "Modules.SoundBlocker.setting.sounds.displayName": "Sounds",
+
+
   "Modules.Spam.description": "Spams specified messages in chat.",
   "Modules.Spam.setting.delay.description": "The delay between specified messages in ticks.",
   "Modules.Spam.setting.random.description": "Selects a random message from your spam message list.",
   "Modules.Spam.setting.delay.displayName": "Delay",
   "Modules.Spam.setting.random.displayName": "Random",
+
+
   "Modules.StashFinder.description": "Searches loaded chunks for storage blocks. Saves to <your minecraft folder>/meteor-client",
   "Modules.StashFinder.setting.storageBlocks.description": "Select the storage blocks to search for.",
   "Modules.StashFinder.setting.minimumStorageCount.description": "The minimum amount of storage blocks in a chunk to record the chunk.",
@@ -898,6 +1011,8 @@
   "Modules.StashFinder.setting.minimumDistance.displayName": "Minimum Distance",
   "Modules.StashFinder.setting.sendNotifications.displayName": "Send Notifications",
   "Modules.StashFinder.setting.mode.displayName": "Notification Mode",
+
+
   "Modules.VisualRange.description": "Notifies you when a player enters/leaves your visual range.",
   "Modules.VisualRange.setting.ignoreFriends.description": "Ignores friends.",
   "Modules.VisualRange.setting.ignoreFakes.description": "Ignores fake players.",
@@ -907,11 +1022,15 @@
   "Modules.VisualRange.setting.ignoreFakes.displayName": "Ignore Fakeplayers",
   "Modules.VisualRange.setting.enterMessage.displayName": "Enter Message",
   "Modules.VisualRange.setting.leaveMessage.displayName": "Leave Message",
+
+
   "Modules.AirJump.description": "Lets you jump in the air.",
   "Modules.AirJump.setting.maintainY.description": "Maintains your current Y level.",
   "Modules.AirJump.setting.onHold.description": "Whether or not to air jump if you hold down the space bar.",
   "Modules.AirJump.setting.maintainY.displayName": "Maintain Level",
   "Modules.AirJump.setting.onHold.displayName": "On Hold",
+
+
   "Modules.Anchor.description": "Helps you get into holes by stopping your movement completely over a hole.",
   "Modules.Anchor.setting.maxHeight.description": "The maximum height Anchor will work at.",
   "Modules.Anchor.setting.minPitch.description": "Minimum pitch at which anchor will work. (90 - -90)",
@@ -923,9 +1042,13 @@
   "Modules.Anchor.setting.cancelMove.displayName": "Cancel Jump In Hole",
   "Modules.Anchor.setting.pull.displayName": "Pull",
   "Modules.Anchor.setting.pullSpeed.displayName": "Pull Speed",
+
+
   "Modules.AntiLevitation.description": "Prevents the levitation effect from working.",
   "Modules.AntiLevitation.setting.applyGravity.description": "Applies gravity.",
   "Modules.AntiLevitation.setting.applyGravity.displayName": "Apply Gravity",
+
+
   "Modules.AutoJump.description": "Automatically jumps.",
   "Modules.AutoJump.setting.mode.description": "The method of jumping.",
   "Modules.AutoJump.setting.jumpIf.description": "Jump if.",
@@ -933,15 +1056,23 @@
   "Modules.AutoJump.setting.mode.displayName": "Mode",
   "Modules.AutoJump.setting.jumpIf.displayName": "Jump If",
   "Modules.AutoJump.setting.velocityHeight.displayName": "Velocity Height",
+
+
   "Modules.AutoSprint.description": "Automatically sprints.",
   "Modules.AutoSprint.setting.permanent.description": "Makes you still sprint even if you do not move.",
   "Modules.AutoSprint.setting.permanent.displayName": "Permanent",
+
+
   "Modules.AutoWalk.description": "Automatically walks forward.",
   "Modules.AutoWalk.setting.mode.description": "Walking mode.",
   "Modules.AutoWalk.setting.direction.description": "The direction to walk in simple mode.",
   "Modules.AutoWalk.setting.mode.displayName": "Mode",
   "Modules.AutoWalk.setting.direction.displayName": "Simple Direction",
+
+
   "Modules.Blink.description": "Allows you to essentially teleport while suspending motion updates.",
+
+
   "Modules.BoatFly.description": "Transforms your boat into a plane.",
   "Modules.BoatFly.setting.speed.description": "Horizontal speed in blocks per second.",
   "Modules.BoatFly.setting.verticalSpeed.description": "Vertical speed in blocks per second.",
@@ -951,9 +1082,13 @@
   "Modules.BoatFly.setting.verticalSpeed.displayName": "Vertical Speed",
   "Modules.BoatFly.setting.fallSpeed.displayName": "Fall Speed",
   "Modules.BoatFly.setting.cancelServerPackets.displayName": "Cancel Server Packets",
+
+
   "Modules.ClickTP.description": "Teleports you to the block you click on.",
   "Modules.ClickTP.setting.maxDistance.description": "The maximum distance you can teleport.",
   "Modules.ClickTP.setting.maxDistance.displayName": "Max Distance",
+
+
   "Modules.ElytraBoost.description": "Boosts you as if you used a firework.",
   "Modules.ElytraBoost.setting.dontConsumeFirework.description": "Doesn't consume the firework when using it.",
   "Modules.ElytraBoost.setting.fireworkLevel.description": "The duration.",
@@ -963,6 +1098,8 @@
   "Modules.ElytraBoost.setting.fireworkLevel.displayName": "Firework Duration",
   "Modules.ElytraBoost.setting.playSound.displayName": "Play Sound",
   "Modules.ElytraBoost.setting.keybind.displayName": "Keybind",
+
+
   "Modules.ElytraPlus.description": "Gives you more control over your elytra.",
   "Modules.ElytraPlus.group.sgAutopilot": "Autopilot",
   "Modules.ElytraPlus.setting.mode.description": "The mode used to make you fly.",
@@ -989,9 +1126,13 @@
   "Modules.ElytraPlus.setting.chestSwap.displayName": "Chest Swap",
   "Modules.ElytraPlus.setting.autopilotEnabled.displayName": "Autopilot Enabled",
   "Modules.ElytraPlus.setting.autopilotMinimumHeight.displayName": "Minimum Height",
+
+
   "Modules.EntityControl.description": "Lets you control rideable entities without a saddle.",
   "Modules.EntityControl.setting.maxJump.description": "Sets jump power to maximum.",
   "Modules.EntityControl.setting.maxJump.displayName": "Max Jump",
+
+
   "Modules.EntitySpeed.description": "Makes you go faster when riding entities.",
   "Modules.EntitySpeed.setting.speed.description": "Horizontal speed in blocks per second.",
   "Modules.EntitySpeed.setting.onlyOnGround.description": "Use speed only when standing on a block.",
@@ -999,14 +1140,20 @@
   "Modules.EntitySpeed.setting.speed.displayName": "Speed",
   "Modules.EntitySpeed.setting.onlyOnGround.displayName": "Only On Ground",
   "Modules.EntitySpeed.setting.inWater.displayName": "In Water",
+
+
   "Modules.FastLadder.description": "Makes you climb ladders faster.",
   "Modules.FastLadder.setting.speed.description": "Your climb speed.",
   "Modules.FastLadder.setting.speed.displayName": "Climb Speed",
+
+
   "Modules.Flight.description": "FLYYYY! No Fall is recommended with this module.",
   "Modules.Flight.setting.mode.description": "The mode for Flight.",
   "Modules.Flight.setting.speed.description": "Your speed when flying.",
   "Modules.Flight.setting.mode.displayName": "Mode",
   "Modules.Flight.setting.speed.displayName": "Speed",
+
+
   "Modules.GUIMove.description": "Allows you to perform various actions while in GUIs.",
   "Modules.GUIMove.setting.screens.description": "Which screens to move in.",
   "Modules.GUIMove.setting.sneak.description": "Allows you to sneak while in GUIs.",
@@ -1020,9 +1167,13 @@
   "Modules.GUIMove.setting.sprint.displayName": "Sprint",
   "Modules.GUIMove.setting.arrowsRotate.displayName": "Arrows Rotate",
   "Modules.GUIMove.setting.rotateSpeed.displayName": "Rotate Speed",
+
+
   "Modules.HighJump.description": "Makes you jump higher than normal.",
   "Modules.HighJump.setting.multiplier.description": "Jump height multiplier.",
   "Modules.HighJump.setting.multiplier.displayName": "Multiplier",
+
+
   "Modules.Jesus.description": "Walk on liquids like Jesus.",
   "Modules.Jesus.group.sgWater": "Water",
   "Modules.Jesus.group.sgLava": "Lava",
@@ -1048,6 +1199,8 @@
   "Modules.Jesus.setting.dipIntoLavaHeight.displayName": "Dip Into Lava Height",
   "Modules.Jesus.setting.dipIntoLavaIfFireResistance.displayName": "Dip Into Lava If Fire Resistance",
   "Modules.Jesus.setting.fireResistanceSafeMode.displayName": "Fire Resistance Safe Mode",
+
+
   "Modules.NoFall.description": "Prevents you from taking fall damage.",
   "Modules.NoFall.setting.mode.description": "The way you are saved from fall damage.",
   "Modules.NoFall.setting.elytra.description": "Stops No Fall from working when using an elytra.",
@@ -1057,6 +1210,8 @@
   "Modules.NoFall.setting.elytra.displayName": "Elytra Compatibility",
   "Modules.NoFall.setting.height.displayName": "Height",
   "Modules.NoFall.setting.placeMode.displayName": "Place Mode",
+
+
   "Modules.NoSlow.description": "Allows you to move normally when using objects that will slow you.",
   "Modules.NoSlow.setting.items.description": "Whether or not using items will slow you.",
   "Modules.NoSlow.setting.web.description": "Whether or not cobwebs will slow you.",
@@ -1066,13 +1221,21 @@
   "Modules.NoSlow.setting.web.displayName": "Web",
   "Modules.NoSlow.setting.soulSand.displayName": "Soul Sand",
   "Modules.NoSlow.setting.slimeBlock.displayName": "Slime Block",
+
+
   "Modules.Parkour.description": "Automatically jumps at the edges of blocks.",
+
+
   "Modules.ReverseStep.description": "Allows you to fall down blocks at a greater speed.",
   "Modules.ReverseStep.setting.fallSpeed.description": "How fast to fall in blocks per second.",
   "Modules.ReverseStep.setting.fallDistance.description": "The maximum fall distance this setting will activate at.",
   "Modules.ReverseStep.setting.fallSpeed.displayName": "Fall Speed",
   "Modules.ReverseStep.setting.fallDistance.displayName": "Fall Distance",
+
+
   "Modules.SafeWalk.description": "Prevents you from walking off blocks. Useful over a void.",
+
+
   "Modules.Scaffold.description": "Automatically places blocks under you.",
   "Modules.Scaffold.setting.safeWalk.description": "Whether or not to toggle Safe Walk when using Scaffold.",
   "Modules.Scaffold.setting.fastTower.description": "Whether or not to scaffold upwards faster.",
@@ -1088,6 +1251,8 @@
   "Modules.Scaffold.setting.selfToggle.displayName": "Self Toggle",
   "Modules.Scaffold.setting.renderSwing.displayName": "Swing",
   "Modules.Scaffold.setting.rotate.displayName": "Rotate",
+
+
   "Modules.Speed.description": "Speeeeeed.",
   "Modules.Speed.group.sgJump": "Jump",
   "Modules.Speed.setting.speed.description": "How fast you want to go in blocks per second.",
@@ -1108,9 +1273,13 @@
   "Modules.Speed.setting.jumpMode.displayName": "Mode",
   "Modules.Speed.setting.velocityHeight.displayName": "Velocity Height",
   "Modules.Speed.setting.jumpIf.displayName": "Jump If",
+
+
   "Modules.Spider.description": "Allows you to climb walls like a spider.",
   "Modules.Spider.setting.speed.description": "The speed you go up blocks.",
   "Modules.Spider.setting.speed.displayName": "Speed",
+
+
   "Modules.Step.description": "Allows you to walk up full blocks normally.",
   "Modules.Step.setting.height.description": "Step height.",
   "Modules.Step.setting.activeWhen.description": "Step is active when you meet these requirements.",
@@ -1120,14 +1289,20 @@
   "Modules.Step.setting.activeWhen.displayName": "Active When",
   "Modules.Step.setting.safeStep.displayName": "Safe Step",
   "Modules.Step.setting.stepHealth.displayName": "Step Health",
+
+
   "Modules.Timer.description": "Changes the speed of everything in your game.",
   "Modules.Timer.setting.speed.description": "Speed multiplier.",
   "Modules.Timer.setting.speed.displayName": "Speed",
+
+
   "Modules.Velocity.description": "Prevents you from being moved by external forces.",
   "Modules.Velocity.setting.horizontal.description": "How much velocity you will take horizontally.",
   "Modules.Velocity.setting.vertical.description": "How much velocity you will take vertically.",
   "Modules.Velocity.setting.horizontal.displayName": "Horizontal Multiplier",
   "Modules.Velocity.setting.vertical.displayName": "Vertical Multiplier",
+
+
   "Modules.AirPlace.description": "Places a block where your crosshair is pointing at.",
   "Modules.AirPlace.group.sgRender": "Render",
   "Modules.AirPlace.setting.placeWhen.description": "Decides when it should place.",
@@ -1140,6 +1315,8 @@
   "Modules.AirPlace.setting.shapeMode.displayName": "Shape Mode",
   "Modules.AirPlace.setting.sideColor.displayName": "Side Color",
   "Modules.AirPlace.setting.lineColor.displayName": "Line Color",
+
+
   "Modules.AntiAFK.description": "Performs different actions to prevent getting kicked for AFK reasons.",
   "Modules.AntiAFK.group.sgActions": "Actions",
   "Modules.AntiAFK.group.sgMessages": "Messages",
@@ -1165,23 +1342,33 @@
   "Modules.AntiAFK.setting.sendMessages.displayName": "Send Messages",
   "Modules.AntiAFK.setting.delay.displayName": "Delay",
   "Modules.AntiAFK.setting.randomMessage.displayName": "Random",
+
+
   "Modules.AntiCactus.description": "Prevents you from taking damage from cacti.",
+
+
   "Modules.AntiHunger.description": "Reduces (does NOT remove) hunger consumption.",
   "Modules.AntiHunger.setting.sprint.description": "Spoofs sprinting packets.",
   "Modules.AntiHunger.setting.onGround.description": "Spoofs the onGround flag.",
   "Modules.AntiHunger.setting.sprint.displayName": "Sprint",
   "Modules.AntiHunger.setting.onGround.displayName": "On Ground",
+
+
   "Modules.AutoClicker.description": "Automatically clicks.",
   "Modules.AutoClicker.setting.mode.description": "The method of clicking.",
   "Modules.AutoClicker.setting.button.description": "Which button to press.",
   "Modules.AutoClicker.setting.delay.description": "The amount of delay between clicks in ticks.",
   "Modules.AutoClicker.setting.mode.displayName": "Mode",
   "Modules.AutoClicker.setting.delay.displayName": "Delay",
+
+
   "Modules.AutoDrop.description": "Automatically drops specified items.",
   "Modules.AutoDrop.setting.items.description": "Items to drop.",
   "Modules.AutoDrop.setting.excludeHotbar.description": "Whether or not to drop items from your hotbar.",
   "Modules.AutoDrop.setting.items.displayName": "Items",
   "Modules.AutoDrop.setting.excludeHotbar.displayName": "Exclude Hotbar",
+
+
   "Modules.AutoEat.description": "Automatically eats food.",
   "Modules.AutoEat.group.sgHunger": "Hunger",
   "Modules.AutoEat.setting.egaps.description": "Eats enchanted golden apples.",
@@ -1198,6 +1385,8 @@
   "Modules.AutoEat.setting.disableAuras.displayName": "Disable Auras",
   "Modules.AutoEat.setting.autoHunger.displayName": "Auto Eat",
   "Modules.AutoEat.setting.minHunger.displayName": "Min Hunger",
+
+
   "Modules.AutoFish.description": "Automatically fishes for you.",
   "Modules.AutoFish.group.sgSplashRangeDetection": "Splash Range Detection",
   "Modules.AutoFish.setting.autoCast.description": "Automatically casts when not fishing.",
@@ -1212,6 +1401,8 @@
   "Modules.AutoFish.setting.ticksThrow.displayName": "Ticks Throw",
   "Modules.AutoFish.setting.splashDetectionRangeEnabled.displayName": "Splash Detection Range Enabled",
   "Modules.AutoFish.setting.splashDetectionRange.displayName": "Splash Detection Range",
+
+
   "Modules.AutoGap.description": "Automatically eats Gaps or E-Gaps if its effects wear out.",
   "Modules.AutoGap.setting.mode.description": "Determines when you eat the Gap.",
   "Modules.AutoGap.setting.preferEgap.description": "Prefers to eat E-Gaps over Gaps.",
@@ -1221,6 +1412,8 @@
   "Modules.AutoGap.setting.preferEgap.displayName": "Prefer Egap",
   "Modules.AutoGap.setting.preferAutoEat.displayName": "Prefer Auto Eat",
   "Modules.AutoGap.setting.disableAuras.displayName": "Disable Auras",
+
+
   "Modules.AutoMend.description": "Automatically replaces equipped items and items in your offhand with Mending when fully repaired.",
   "Modules.AutoMend.setting.swords.description": "Moves swords.",
   "Modules.AutoMend.setting.armourSlots.description": "Whether or not to use armor slots to mend items quicker.",
@@ -1228,6 +1421,8 @@
   "Modules.AutoMend.setting.swords.displayName": "Swords",
   "Modules.AutoMend.setting.armourSlots.displayName": "Use Armour Slots",
   "Modules.AutoMend.setting.removeFinished.displayName": "Remove Finished",
+
+
   "Modules.AutoMount.description": "Automatically mounts entities.",
   "Modules.AutoMount.group.sgAnimals": "Animals",
   "Modules.AutoMount.setting.checkSaddle.description": "Checks if the entity contains a saddle before mounting.",
@@ -1250,6 +1445,8 @@
   "Modules.AutoMount.setting.horses.displayName": "Horse",
   "Modules.AutoMount.setting.pigs.displayName": "Pig",
   "Modules.AutoMount.setting.mules.displayName": "Mule",
+
+
   "Modules.AutoReplenish.description": "Automatically refills items in your hotbar, main hand, or offhand.",
   "Modules.AutoReplenish.setting.amount.description": "The amount of items left this actives at.",
   "Modules.AutoReplenish.setting.offhand.description": "Whether or not to refill your offhand with items.",
@@ -1265,7 +1462,11 @@
   "Modules.AutoReplenish.setting.searchHotbar.displayName": "Search Hotbar",
   "Modules.AutoReplenish.setting.excludedItems.displayName": "Excluded Items",
   "Modules.AutoReplenish.setting.pauseInInventory.displayName": "Pause In Inventory",
+
+
   "Modules.AutoRespawn.description": "Automatically respawns after death.",
+
+
   "Modules.AutoTool.description": "Automatically switches to the most effective tool when performing an action.",
   "Modules.AutoTool.setting.prefer.description": "Either to prefer Silk Touch, Fortune, or none.",
   "Modules.AutoTool.setting.preferMending.description": "Whether or not to prefer the Mending enchantment.",
@@ -1277,23 +1478,35 @@
   "Modules.AutoTool.setting.enderChestOnlyWithSilkTouch.displayName": "Silk Touch With Ender Chest",
   "Modules.AutoTool.setting.antiBreak.displayName": "Anti Break",
   "Modules.AutoTool.setting.switchBack.displayName": "Switch Back",
+
+
   "Modules.BuildHeight.description": "Allows you to interact with objects at the build limit.",
+
+
   "Modules.ChestSwap.description": "Automatically swaps between a chestplate and an elytra.",
   "Modules.ChestSwap.setting.chestplate.description": "Which type of chestplate to swap to.",
   "Modules.ChestSwap.setting.stayOn.description": "Stays on and activates when you turn it off.",
   "Modules.ChestSwap.setting.chestplate.displayName": "Chestplate",
   "Modules.ChestSwap.setting.stayOn.displayName": "Stay On",
+
+
   "Modules.DeathPosition.description": "Sends you the coordinates to your latest death.",
   "Modules.DeathPosition.setting.createWaypoint.description": "Creates a waypoint when you die.",
   "Modules.DeathPosition.setting.createWaypoint.displayName": "Create Waypoint",
+
+
   "Modules.EndermanLook.description": "Either looks at all Endermen or prevents you from looking at Endermen.",
   "Modules.EndermanLook.setting.lookMode.description": "How this module behaves.",
   "Modules.EndermanLook.setting.lookMode.displayName": "Look Mode",
+
+
   "Modules.EXPThrower.description": "Automatically throws XP bottles in your hotbar.",
   "Modules.EXPThrower.setting.lookDown.description": "Forces you to rotate downwards when throwing bottles.",
   "Modules.EXPThrower.setting.autoToggle.description": "Toggles off when your armor is repaired.",
   "Modules.EXPThrower.setting.lookDown.displayName": "Look Down",
   "Modules.EXPThrower.setting.autoToggle.displayName": "Auto Toggle",
+
+
   "Modules.FakePlayer.description": "Spawns a client-side fake player for testing usages.",
   "Modules.FakePlayer.setting.name.description": "The name of the fake player.",
   "Modules.FakePlayer.setting.copyInv.description": "Copies your exact inventory to the fake player.",
@@ -1307,6 +1520,8 @@
   "Modules.FakePlayer.setting.health.displayName": "Health",
   "Modules.FakePlayer.setting.idInNametag.displayName": "Id In Nametag",
   "Modules.FakePlayer.setting.chatInfo.displayName": "Chat Info",
+
+
   "Modules.FastUse.description": "Allows you to use items at very high speeds.",
   "Modules.FastUse.setting.mode.description": "Which items to fast use.",
   "Modules.FastUse.setting.exp.description": "Fast-throws XP bottles if the mode is \"Some\".",
@@ -1314,6 +1529,8 @@
   "Modules.FastUse.setting.mode.displayName": "Mode",
   "Modules.FastUse.setting.exp.displayName": "Xp",
   "Modules.FastUse.setting.blocks.displayName": "Blocks",
+
+
   "Modules.InfinityMiner.description": "Allows you to essentially mine forever.",
   "Modules.InfinityMiner.group.sgAutoToggles": "Auto Toggles",
   "Modules.InfinityMiner.group.sgExtras": "Extras",
@@ -1329,22 +1546,40 @@
   "Modules.InfinityMiner.setting.smartModuleToggle.displayName": "Smart Module Toggle",
   "Modules.InfinityMiner.setting.autoWalkHome.displayName": "Walk Home",
   "Modules.InfinityMiner.setting.autoLogOut.displayName": "Log Out",
+
+
   "Modules.LiquidInteract.description": "Allows you to interact with liquids.",
+
+
   "Modules.MiddleClickExtra.description": "Lets you use items when you middle click. Works the same as Middle Click Friend.",
   "Modules.MiddleClickExtra.setting.mode.description": "Which item to use when you middle click.",
   "Modules.MiddleClickExtra.setting.notify.description": "Notifies you when you do not have the specified item in your hotbar.",
   "Modules.MiddleClickExtra.setting.mode.displayName": "Mode",
   "Modules.MiddleClickExtra.setting.notify.displayName": "Notify",
+
+
   "Modules.MountBypass.description": "Allows you to bypass the IllegalStacks plugin and put chests on entities.",
+
+
   "Modules.NameProtect.description": "Hides your name client-side.",
   "Modules.NameProtect.setting.name.description": "Name to be replaced with.",
   "Modules.NameProtect.setting.name.displayName": "Name",
+
+
   "Modules.NoBreakDelay.description": "Completely removes the delay between breaking blocks.",
+
+
   "Modules.NoInteract.description": "Blocks interactions with certain types of inputs.",
+
+
   "Modules.NoMiningTrace.description": "Allows you to mine blocks through entities.",
   "Modules.NoMiningTrace.setting.onlyWhenHoldingPickaxe.description": "Whether or not to work only when holding a pickaxe.",
   "Modules.NoMiningTrace.setting.onlyWhenHoldingPickaxe.displayName": "Only When Holding A Pickaxe",
+
+
   "Modules.NoRotate.description": "Attempts to block rotations sent from server to client.",
+
+
   "Modules.PacketMine.description": "Sends packets to mine blocks without the mining animation.",
   "Modules.PacketMine.group.sgRender": "Render",
   "Modules.PacketMine.setting.oneByOne.description": "Mines blocks one by one.",
@@ -1357,13 +1592,21 @@
   "Modules.PacketMine.setting.shapeMode.displayName": "Shape Mode",
   "Modules.PacketMine.setting.sideColor.displayName": "Side Color",
   "Modules.PacketMine.setting.lineColor.displayName": "Line Color",
+
+
   "Modules.Portals.description": "Allows you to use GUIs normally while in a Nether Portal.",
+
+
   "Modules.PotionSpoof.description": "Spoofs specified potion effects for you. SOME effects DO NOT work.",
   "Modules.PotionSpoof.setting.potions.description": "Potions to add.",
   "Modules.PotionSpoof.setting.potions.displayName": "Potions",
+
+
   "Modules.Reach.description": "Gives you super long arms.",
   "Modules.Reach.setting.reach.description": "Your reach modifier.",
   "Modules.Reach.setting.reach.displayName": "Reach",
+
+
   "Modules.Rotation.description": "Changes/locks your yaw and pitch.",
   "Modules.Rotation.group.sgYaw": "Yaw",
   "Modules.Rotation.group.sgPitch": "Pitch",
@@ -1375,10 +1618,16 @@
   "Modules.Rotation.setting.yawAngle.displayName": "Yaw Angle",
   "Modules.Rotation.setting.pitchLockMode.displayName": "Pitch Lock Mode",
   "Modules.Rotation.setting.pitchAngle.displayName": "Pitch Angle",
+
+
   "Modules.SpeedMine.description": "Allows you to quickly mine blocks.",
   "Modules.SpeedMine.setting.modifier.description": "Mining speed modifier. An additional value of 0.2 is equivalent to one haste level (1.2 = haste 1).",
   "Modules.SpeedMine.setting.modifier.displayName": "Modifier",
+
+
   "Modules.XCarry.description": "Allows you to store four extra items in your crafting grid.",
+
+
   "Modules.BlockSelection.description": "Modifies how your block selection is rendered.",
   "Modules.BlockSelection.setting.advanced.description": "Shows a more advanced outline on different types of shape blocks.",
   "Modules.BlockSelection.setting.shapeMode.description": "How the shapes are rendered.",
@@ -1388,6 +1637,8 @@
   "Modules.BlockSelection.setting.shapeMode.displayName": "Shape Mode",
   "Modules.BlockSelection.setting.sideColor.displayName": "Side Color",
   "Modules.BlockSelection.setting.lineColor.displayName": "Line Color",
+
+
   "Modules.Breadcrumbs.description": "Displays a trail behind where you have walked.",
   "Modules.Breadcrumbs.setting.color.description": "The color of the Breadcrumbs trail.",
   "Modules.Breadcrumbs.setting.maxSections.description": "The maximum number of sections.",
@@ -1395,6 +1646,8 @@
   "Modules.Breadcrumbs.setting.color.displayName": "Color",
   "Modules.Breadcrumbs.setting.maxSections.displayName": "Max Sections",
   "Modules.Breadcrumbs.setting.sectionLength.displayName": "Section Length",
+
+
   "Modules.BreakIndicators.description": "Renders the progress of a block being broken.",
   "Modules.BreakIndicators.group.sgRender": "Render",
   "Modules.BreakIndicators.setting.multiple.description": "Renders block breaking from other players.",
@@ -1409,10 +1662,15 @@
   "Modules.BreakIndicators.setting.hideVanillaIndicators.displayName": "Hide Vanilla Indicators",
   "Modules.BreakIndicators.setting.smoothAnim.displayName": "Smooth Animation",
   "Modules.BreakIndicators.setting.shapeMode.displayName": "Shape Mode",
+
+
   "Modules.CameraClip.description": "Allows your third person camera to clip through blocks.",
+
+
   "Modules.Chams.description": "Renders entities through walls.",
   "Modules.Chams.group.sgColors": "Colors",
   "Modules.Chams.setting.entities.description": "Select entities to show through walls.",
+  "Modules.Chams.setting.throughWalls.description": "Renders entities through walls.",
   "Modules.Chams.setting.colored.description": "Renders entity models with a custom color.",
   "Modules.Chams.setting.useNameColor.description": "Uses players displayname color for the chams color (good for minigames).",
   "Modules.Chams.setting.playersColor.description": "The other player's color.",
@@ -1431,6 +1689,8 @@
   "Modules.Chams.setting.monstersColor.displayName": "Monsters Color",
   "Modules.Chams.setting.ambientColor.displayName": "Ambient Color",
   "Modules.Chams.setting.miscColor.displayName": "Misc Color",
+
+
   "Modules.CityESP.description": "Displays blocks that can be broken in order to city another player.",
   "Modules.CityESP.group.sgRender": "Render",
   "Modules.CityESP.setting.range.description": "The maximum range a city-able block will render.",
@@ -1443,14 +1703,22 @@
   "Modules.CityESP.setting.shapeMode.displayName": "Shape Mode",
   "Modules.CityESP.setting.sideColor.displayName": "Fill Color",
   "Modules.CityESP.setting.lineColor.displayName": "Outline Color",
+
+
   "Modules.CustomFOV.description": "Allows your FOV to be more customizable.",
   "Modules.CustomFOV.setting.fov.description": "Your custom FOV.",
+
+
   "Modules.EChestPreview.description": "Stores what's inside your Ender Chest and displays when you hover over it.",
+
+
   "Modules.EntityOwner.description": "Displays the name of the player who owns the entity you're looking at.",
   "Modules.EntityOwner.setting.scale.description": "The scale of the text.",
   "Modules.EntityOwner.setting.projectiles.description": "Display owner names of projectiles.",
   "Modules.EntityOwner.setting.scale.displayName": "Scale",
   "Modules.EntityOwner.setting.projectiles.displayName": "Projectiles",
+
+
   "Modules.ESP.description": "Renders entities through walls.",
   "Modules.ESP.group.sgColors": "Colors",
   "Modules.ESP.setting.mode.description": "Rendering mode.",
@@ -1477,6 +1745,8 @@
   "Modules.ESP.setting.ambientColor.displayName": "Ambient Color",
   "Modules.ESP.setting.miscColor.displayName": "Misc Color",
   "Modules.ESP.setting.fadeDistance.displayName": "Fade Distance",
+
+
   "Modules.Freecam.description": "Makes you fly out of your body.",
   "Modules.Freecam.setting.speed.description": "Your speed while in Freecam.",
   "Modules.Freecam.setting.autoDisableOnDamage.description": "Disables Freecam when you either take damage or die.",
@@ -1490,6 +1760,8 @@
   "Modules.Freecam.setting.reloadChunks.displayName": "Reload Chunks",
   "Modules.Freecam.setting.renderHands.displayName": "Render Hands",
   "Modules.Freecam.setting.rotate.displayName": "Rotate",
+
+
   "Modules.FreeRotate.description": "Allows more rotation options in third person.",
   "Modules.FreeRotate.group.sgArrows": "Arrows",
   "Modules.FreeRotate.setting.mode.description": "Which entity to rotate.",
@@ -1502,7 +1774,11 @@
   "Modules.FreeRotate.setting.sensitivity.displayName": "Camera Sensitivity",
   "Modules.FreeRotate.setting.arrows.displayName": "Arrows Control Opposite",
   "Modules.FreeRotate.setting.arrowSpeed.displayName": "Arrow Speed",
+
+
   "Modules.Fullbright.description": "Lights up your world!",
+
+
   "Modules.HandView.description": "Alters the way items are rendered in your hands.",
   "Modules.HandView.setting.rotationX.description": "The X rotation of your hands.",
   "Modules.HandView.setting.rotationY.description": "The Y rotation of your hands.",
@@ -1522,6 +1798,8 @@
   "Modules.HandView.setting.PosX.displayName": "Pos X",
   "Modules.HandView.setting.PosY.displayName": "Pos Y",
   "Modules.HandView.setting.PosZ.displayName": "Pos Z",
+
+
   "Modules.HoleESP.description": "Displays Safe holes that you will take less damage in.",
   "Modules.HoleESP.group.sgColors": "Colors",
   "Modules.HoleESP.setting.renderMode.description": "The rendering mode.",
@@ -1546,13 +1824,19 @@
   "Modules.HoleESP.setting.allBedrock.displayName": "All Bedrock",
   "Modules.HoleESP.setting.someObsidian.displayName": "Some Obsidian",
   "Modules.HoleESP.setting.allObsidian.displayName": "All Obsidian",
+
+
   "Modules.ItemByteSize.description": "Displays an item's size in bytes in the tooltip.",
   "Modules.ItemByteSize.group.sgUseKbIfBigEnough": "Use KB if big enough",
   "Modules.ItemByteSize.setting.useKbIfBigEnoughEnabled.description": "Uses KB instead of bytes if your item's size is larger or equal to 1KB.",
   "Modules.ItemByteSize.setting.mode.description": "Uses the standard mode (1KB to 1000b) OR true mode (1KB to 1024b).",
   "Modules.ItemByteSize.setting.useKbIfBigEnoughEnabled.displayName": "Use Kb If Big Enough Enabled",
   "Modules.ItemByteSize.setting.mode.displayName": "Mode",
+
+
   "Modules.ItemPhysics.description": "Applies physics to items on the ground.",
+
+
   "Modules.LogoutSpots.description": "Displays a box where another player has logged out at.",
   "Modules.LogoutSpots.group.sgRender": "Render",
   "Modules.LogoutSpots.setting.scale.description": "The scale.",
@@ -1569,6 +1853,8 @@
   "Modules.LogoutSpots.setting.lineColor.displayName": "Line Color",
   "Modules.LogoutSpots.setting.nameColor.displayName": "Name Color",
   "Modules.LogoutSpots.setting.nameBackgroundColor.displayName": "Name Background Color",
+
+
   "Modules.Nametags.description": "Displays customizable nametags above players.",
   "Modules.Nametags.group.sgColors": "Colors",
   "Modules.Nametags.setting.displayArmor.description": "Displays armor.",
@@ -1596,6 +1882,8 @@
   "Modules.Nametags.setting.normalName.displayName": "Normal Color",
   "Modules.Nametags.setting.pingColor.displayName": "Ping Color",
   "Modules.Nametags.setting.enchantmentTextColor.displayName": "Enchantment Text Color",
+
+
   "Modules.NoRender.description": "Disables certain animations or overlays from rendering.",
   "Modules.NoRender.setting.noHurtCam.description": "Disables the hurt camera effect.",
   "Modules.NoRender.setting.noWeather.description": "Disables the weather.",
@@ -1647,9 +1935,13 @@
   "Modules.NoRender.setting.noEatParticles.displayName": "No Eating Particles",
   "Modules.NoRender.setting.noSkylightUpdates.displayName": "No Skylight Updates",
   "Modules.NoRender.setting.noCrosshair.displayName": "No Crosshair",
+
+
   "Modules.ParticleBlocker.description": "Stops specified particles from rendering.",
   "Modules.ParticleBlocker.setting.particles.description": "Particles to block.",
   "Modules.ParticleBlocker.setting.particles.displayName": "Particles",
+
+
   "Modules.Search.description": "Searches for specified blocks.",
   "Modules.Search.group.sgRender": "Render",
   "Modules.Search.group.sgTracers": "Tracers",
@@ -1663,6 +1955,8 @@
   "Modules.Search.setting.fullBlock.displayName": "Full Block",
   "Modules.Search.setting.tracersEnabled.displayName": "Tracers Enabled",
   "Modules.Search.setting.tracersColor.displayName": "Tracers Color",
+
+
   "Modules.ShulkerPeek.description": "Allows you to see what is inside Shulker Boxes without placing them.",
   "Modules.ShulkerPeek.setting.mode.description": "The way to display the shulker info.",
   "Modules.ShulkerPeek.setting.bgMode.description": "The background of the tooltip.",
@@ -1670,6 +1964,8 @@
   "Modules.ShulkerPeek.setting.mode.displayName": "Mode",
   "Modules.ShulkerPeek.setting.bgMode.displayName": "Background Mode",
   "Modules.ShulkerPeek.setting.lines.displayName": "Lines",
+
+
   "Modules.StorageESP.description": "Renders all specified storage blocks.",
   "Modules.StorageESP.setting.storageBlocks.description": "Select the storage blocks to display.",
   "Modules.StorageESP.setting.shapeMode.description": "How the shapes are rendered.",
@@ -1689,9 +1985,13 @@
   "Modules.StorageESP.setting.enderChest.displayName": "Ender Chest",
   "Modules.StorageESP.setting.other.displayName": "Other",
   "Modules.StorageESP.setting.fadeDistance.displayName": "Fade Distance",
+
+
   "Modules.TimeChanger.description": "Makes you able to set a custom time.",
   "Modules.TimeChanger.setting.time.description": "The specified time to be set.",
   "Modules.TimeChanger.setting.time.displayName": "Time",
+
+
   "Modules.Tracers.description": "Displays tracer lines to specified entities.",
   "Modules.Tracers.group.sgAppearance": "Appearance",
   "Modules.Tracers.group.sgColors": "Colors",
@@ -1721,11 +2021,15 @@
   "Modules.Tracers.setting.ambientColor.displayName": "Ambient Color",
   "Modules.Tracers.setting.miscColor.displayName": "Misc Color",
   "Modules.Tracers.setting.storageColor.displayName": "Storage Color",
+
+
   "Modules.Trail.description": "Renders a customizable trail behind your player.",
   "Modules.Trail.setting.particles.description": "Particles to draw.",
   "Modules.Trail.setting.pause.description": "Whether or not to add particles when you are not moving.",
   "Modules.Trail.setting.particles.displayName": "Particles",
   "Modules.Trail.setting.pause.displayName": "Pause When Stationary",
+
+
   "Modules.Trajectories.description": "Predicts the trajectory of throwable items.",
   "Modules.Trajectories.setting.shapeMode.description": "How the shapes are rendered.",
   "Modules.Trajectories.setting.sideColor.description": "The side color.",
@@ -1733,7 +2037,11 @@
   "Modules.Trajectories.setting.shapeMode.displayName": "Shape Mode",
   "Modules.Trajectories.setting.sideColor.displayName": "Side Color",
   "Modules.Trajectories.setting.lineColor.displayName": "Line Color",
+
+
   "Modules.UnfocusedCPU.description": "Will not render anything when your Minecraft window is not focused.",
+
+
   "Modules.VoidESP.description": "Renders holes in bedrock layers that lead to the void.",
   "Modules.VoidESP.group.sgRender": "Render",
   "Modules.VoidESP.setting.airOnly.description": "Checks bedrock only for air blocks.",
@@ -1748,6 +2056,8 @@
   "Modules.VoidESP.setting.shapeMode.displayName": "Shape Mode",
   "Modules.VoidESP.setting.sideColor.displayName": "Fill Color",
   "Modules.VoidESP.setting.lineColor.displayName": "Line Color",
+
+
   "Modules.Xray.description": "Only renders specified blocks. Good for mining.",
   "Modules.Xray.setting.blocks.description": "Blocks.",
   "Modules.Xray.setting.blocks.displayName": "Blocks",

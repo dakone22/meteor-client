@@ -38,7 +38,7 @@ public class Chams extends Module {
     public final Setting<Boolean> throughWalls = sgGeneral.add(new BoolSetting.Builder()
             .name("through-walls")
             .displayName(I18n.translate("Modules.Chams.setting.throughWalls.displayName"))
-            .description(I18n.translate("Modules.Chams.description"))
+            .description(I18n.translate("Modules.Chams.setting.throughWalls.description"))
             .defaultValue(true)
             .build()
     );
