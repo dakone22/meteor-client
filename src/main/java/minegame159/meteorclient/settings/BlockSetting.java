@@ -11,6 +11,7 @@ import minegame159.meteorclient.gui.widgets.WItem;
 import minegame159.meteorclient.gui.widgets.WTable;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -25,7 +26,7 @@ public class BlockSetting extends Setting<Block> {
 
         WTable table = new WTable();
         itemWidget = table.add(new WItem(get().asItem().getDefaultStack())).getWidget();
-        table.add(new WButton("Select")).getWidget().action = () -> MinecraftClient.getInstance().openScreen(new BlockSettingScreen(this));
+        table.add(new WButton(I18n.translate("WButton.select"))).getWidget().action = () -> MinecraftClient.getInstance().openScreen(new BlockSettingScreen(this));
 
         widget = table;
     }

@@ -8,6 +8,7 @@ package minegame159.meteorclient.gui.screens.settings;
 import minegame159.meteorclient.gui.widgets.WLabel;
 import minegame159.meteorclient.gui.widgets.WWidget;
 import minegame159.meteorclient.settings.Setting;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.registry.Registry;
 
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class EnchListSettingScreen extends LeftRightListSettingScreen<Enchantment> {
     public EnchListSettingScreen(Setting<List<Enchantment>> setting) {
-        super("Select items", setting, Registry.ENCHANTMENT);
+        super(I18n.translate("Setting.EnchListSettingScreen.title"), setting, Registry.ENCHANTMENT);
     }
 
     @Override

@@ -11,6 +11,7 @@ import minegame159.meteorclient.gui.screens.settings.StatusEffectSettingScreen;
 import minegame159.meteorclient.gui.widgets.WButton;
 import minegame159.meteorclient.utils.Utils;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Identifier;
@@ -22,7 +23,7 @@ public class StatusEffectSetting extends Setting<Object2IntMap<StatusEffect>> {
     public StatusEffectSetting(String name, String title, String description, Object2IntMap<StatusEffect> defaultValue, Consumer<Object2IntMap<StatusEffect>> onChanged, Consumer<Setting<Object2IntMap<StatusEffect>>> onModuleActivated) {
         super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
-        widget = new WButton("Select");
+        widget = new WButton(I18n.translate("WButton.select"));
         ((WButton) widget).action = () -> MinecraftClient.getInstance().openScreen(new StatusEffectSettingScreen(this));
     }
 

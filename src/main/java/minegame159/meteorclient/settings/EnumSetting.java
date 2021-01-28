@@ -6,6 +6,7 @@
 package minegame159.meteorclient.settings;
 
 import minegame159.meteorclient.gui.widgets.WDropbox;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 
 import java.lang.reflect.InvocationTargetException;
@@ -14,16 +15,27 @@ import java.util.function.Consumer;
 public class EnumSetting<T extends Enum<?>> extends Setting<T> {
     private T[] values;
 
-    public EnumSetting(String name, String title, String description, String[] displayTexts, T defaultValue, Consumer<T> onChanged, Consumer<Setting<T>> onModuleActivated) {
+    public EnumSetting(String name, String title, String description, String[] displayNames, T defaultValue, Consumer<T> onChanged, Consumer<Setting<T>> onModuleActivated) {
         super(name, title, description, defaultValue, onChanged, onModuleActivated);
 
+        String[] names = {};
         try {
             values = (T[]) defaultValue.getClass().getMethod("values").invoke(null);
+
+            names = new String[values.length];
+            for (int i = 0; i < values.length; ++i) {
+                if (displayNames != null && i < displayNames.length && displayNames[i] != null && !displayNames[i].isEmpty()) {
+                    names[i] = displayNames[i];
+                } else {
+                    String key = String.format("Enums.%s.%s", defaultValue.getClass().getSimpleName(), values[i].toString());
+                    names[i] = (I18n.hasTranslation(key) ? I18n.translate(key) : values[i].toString());
+                }
+            }
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             e.printStackTrace();
         }
 
-        widget = new WDropbox<>(get(), displayTexts);
+        widget = new WDropbox<>(get(), names);
         ((WDropbox<T>) widget).action = () -> set(((WDropbox<T>) widget).getValue());
     }
 

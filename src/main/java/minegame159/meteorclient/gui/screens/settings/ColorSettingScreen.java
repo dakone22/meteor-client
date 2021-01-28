@@ -14,6 +14,7 @@ import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.render.color.Color;
 import minegame159.meteorclient.utils.render.color.SettingColor;
+import net.minecraft.client.resource.language.I18n;
 
 public class ColorSettingScreen extends WindowScreen {
     private static final Color[] HUE_COLORS = { new Color(255, 0, 0), new Color(255, 255, 0), new Color(0, 255, 0), new Color(0, 255, 255), new Color(0, 0, 255), new Color(255, 0, 255), new Color(255, 0, 0) };
@@ -33,7 +34,7 @@ public class ColorSettingScreen extends WindowScreen {
     private final WDoubleEdit rainbowSpeed;
 
     public ColorSettingScreen(Setting<SettingColor> setting) {
-        super("Select Color", true);
+        super(I18n.translate("Setting.ColorSettingScreen.title"), true);
         this.setting = setting;
 
         displayQuad = add(new WQuad(setting.get())).fillX().expandX().getWidget();

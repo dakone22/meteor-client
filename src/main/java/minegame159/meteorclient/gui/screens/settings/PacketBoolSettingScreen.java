@@ -9,6 +9,7 @@ import minegame159.meteorclient.gui.screens.WindowScreen;
 import minegame159.meteorclient.gui.widgets.*;
 import minegame159.meteorclient.settings.PacketBoolSetting;
 import minegame159.meteorclient.utils.network.PacketUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.Packet;
 import org.apache.commons.lang3.StringUtils;
 
@@ -23,7 +24,7 @@ public class PacketBoolSettingScreen extends WindowScreen {
     private String filterText = "";
 
     public PacketBoolSettingScreen(PacketBoolSetting setting) {
-        super("Select Packets", true);
+        super(I18n.translate("Setting.PacketBoolSettingScreen.title"), true);
 
         this.setting = setting;
 

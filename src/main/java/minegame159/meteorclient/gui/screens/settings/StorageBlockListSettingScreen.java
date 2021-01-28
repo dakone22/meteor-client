@@ -11,12 +11,13 @@ import minegame159.meteorclient.gui.widgets.WLabel;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.StorageBlockListSetting;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.resource.language.I18n;
 
 import java.util.List;
 
 public class StorageBlockListSettingScreen extends WindowScreen {
     public StorageBlockListSettingScreen(Setting<List<BlockEntityType<?>>> setting) {
-        super("Select storage blocks", true);
+        super(I18n.translate("Setting.StorageBlockListSettingScreen.title"), true);
 
         for (int i = 0; i < StorageBlockListSetting.STORAGE_BLOCKS.length; i++) {
             BlockEntityType<?> type = StorageBlockListSetting.STORAGE_BLOCKS[i];

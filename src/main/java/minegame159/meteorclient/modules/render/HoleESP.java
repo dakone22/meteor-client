@@ -56,6 +56,12 @@ public class HoleESP extends Module {
             .name("render-mode")
             .displayName(I18n.translate("Modules.HoleESP.setting.renderMode.displayName"))
             .description(I18n.translate("Modules.HoleESP.setting.renderMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.HoleESP.Mode.Flat"),
+                    I18n.translate("Modules.HoleESP.Mode.Box"),
+                    I18n.translate("Modules.HoleESP.Mode.BoxBelow"),
+                    I18n.translate("Modules.HoleESP.Mode.Glow"),
+                    I18n.translate("Modules.HoleESP.Mode.ReverseGlow")})
             .defaultValue(Mode.Glow)
             .build()
     );

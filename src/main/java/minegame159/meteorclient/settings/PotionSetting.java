@@ -10,6 +10,7 @@ import minegame159.meteorclient.gui.widgets.WButton;
 import minegame159.meteorclient.gui.widgets.WItemWithLabel;
 import minegame159.meteorclient.utils.misc.MyPotion;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 
 import java.util.function.Consumer;
 
@@ -18,7 +19,7 @@ public class PotionSetting extends EnumSetting<MyPotion> {
         super(name, title, description, null, defaultValue, onChanged, onModuleActivated);
 
         widget = new WItemWithLabel(get().potion);
-        widget.add(new WButton("Select")).getWidget().action = () -> MinecraftClient.getInstance().openScreen(new PotionSettingScreen(this));
+        widget.add(new WButton(I18n.translate("WButton.select"))).getWidget().action = () -> MinecraftClient.getInstance().openScreen(new PotionSettingScreen(this));
     }
 
     @Override

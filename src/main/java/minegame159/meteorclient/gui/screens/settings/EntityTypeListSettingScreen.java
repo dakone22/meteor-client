@@ -14,6 +14,7 @@ import minegame159.meteorclient.gui.widgets.WTextBox;
 import minegame159.meteorclient.settings.EntityTypeListSetting;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.entity.EntityUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Pair;
 import net.minecraft.util.registry.Registry;
@@ -33,7 +34,7 @@ public class EntityTypeListSettingScreen extends WindowScreen {
     int hasAnimal = 0, hasWaterAnimal = 0, hasMonster = 0, hasAmbient = 0, hasMisc = 0;
 
     public EntityTypeListSettingScreen(EntityTypeListSetting setting) {
-        super("Select entities", true);
+        super(I18n.translate("Setting.EntityTypeListSettingScreen.title"), true);
         this.setting = setting;
 
         // Filter
@@ -71,7 +72,7 @@ public class EntityTypeListSettingScreen extends WindowScreen {
         List<EntityType<?>> animalsE = new ArrayList<>();
         boolean expanded = animals != null && animals.isExpanded();
         WCheckbox animalsC = new WCheckbox(hasAnimal > 0);
-        animals = new WSection("Animals", false, animalsC);
+        animals = new WSection(I18n.translate("Setting.EntityTypeListSettingScreen.section.Animals"), false, animalsC);
         if (animals.isExpanded() != expanded) animals.setExpanded(expanded, false);
         animalsC.action = () -> tableChecked(animalsE, animalsC.checked);
         row();
@@ -79,7 +80,7 @@ public class EntityTypeListSettingScreen extends WindowScreen {
         List<EntityType<?>> waterAnimalsE = new ArrayList<>();
         expanded = waterAnimals != null && waterAnimals.isExpanded();
         WCheckbox waterAnimalsC = new WCheckbox(hasWaterAnimal > 0);
-        waterAnimals = new WSection("Water Animals", false, waterAnimalsC);
+        waterAnimals = new WSection(I18n.translate("Setting.EntityTypeListSettingScreen.section.WaterAnimals"), false, waterAnimalsC);
         if (waterAnimals.isExpanded() != expanded) waterAnimals.setExpanded(expanded, false);
         waterAnimalsC.action = () -> tableChecked(waterAnimalsE, waterAnimalsC.checked);
         row();
@@ -87,7 +88,7 @@ public class EntityTypeListSettingScreen extends WindowScreen {
         List<EntityType<?>> monstersE = new ArrayList<>();
         expanded = monsters != null && monsters.isExpanded();
         WCheckbox monstersC = new WCheckbox(hasMonster > 0);
-        monsters = new WSection("Monsters", false, monstersC);
+        monsters = new WSection(I18n.translate("Setting.EntityTypeListSettingScreen.section.Monsters"), false, monstersC);
         if (monsters.isExpanded() != expanded) monsters.setExpanded(expanded, false);
         monstersC.action = () -> tableChecked(monstersE, monstersC.checked);
         row();
@@ -95,7 +96,7 @@ public class EntityTypeListSettingScreen extends WindowScreen {
         List<EntityType<?>> ambientE = new ArrayList<>();
         expanded = ambient != null && ambient.isExpanded();
         WCheckbox ambientC = new WCheckbox(hasAmbient > 0);
-        ambient = new WSection("Ambient", false, ambientC);
+        ambient = new WSection(I18n.translate("Setting.EntityTypeListSettingScreen.section.Ambient"), false, ambientC);
         if (ambient.isExpanded() != expanded) ambient.setExpanded(expanded, false);
         ambientC.action = () -> tableChecked(ambientE, ambientC.checked);
         row();
@@ -103,7 +104,7 @@ public class EntityTypeListSettingScreen extends WindowScreen {
         List<EntityType<?>> miscE = new ArrayList<>();
         expanded = misc != null && misc.isExpanded();
         WCheckbox miscC = new WCheckbox(hasMisc > 0);
-        misc = new WSection("Misc", false, miscC);
+        misc = new WSection(I18n.translate("Setting.EntityTypeListSettingScreen.section.Misc"), false, miscC);
         if (misc.isExpanded() != expanded) misc.setExpanded(expanded, false);
         miscC.action = () -> tableChecked(miscE, miscC.checked);
         row();

@@ -5,6 +5,7 @@ import minegame159.meteorclient.gui.widgets.WCheckbox;
 import minegame159.meteorclient.gui.widgets.WLabel;
 import minegame159.meteorclient.gui.widgets.WTextBox;
 import minegame159.meteorclient.settings.Setting;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleType;
 import net.minecraft.util.registry.Registry;
@@ -20,7 +21,7 @@ public class ParticleEffectListSettingScreen extends WindowScreen {
     private String filterText = "";
 
     public ParticleEffectListSettingScreen(Setting<List<ParticleEffect>> setting) {
-        super("Particle Effects", true);
+        super(I18n.translate("Setting.ParticleEffectListSettingScreen.title"), true);
         this.setting = setting;
 
         filter = new WTextBox("", 400);

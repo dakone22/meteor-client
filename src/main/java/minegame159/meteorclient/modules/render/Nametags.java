@@ -83,6 +83,9 @@ public class Nametags extends Module {
             .name("enchantment-position")
             .displayName(I18n.translate("Modules.Nametags.setting.displayOnItem.displayName"))
             .description(I18n.translate("Modules.Nametags.setting.displayOnItem.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.Nametags.Position.ABOVE"),
+                    I18n.translate("Modules.Nametags.Position.ONTOP"),})
             .defaultValue(Position.ONTOP)
             .build()
     );

@@ -10,6 +10,7 @@ package minegame159.meteorclient.settings;
 import minegame159.meteorclient.gui.screens.settings.EnchListSettingScreen;
 import minegame159.meteorclient.gui.widgets.WButton;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -28,7 +29,7 @@ public class EnchListSetting extends Setting<List<Enchantment>>{
 
         value = new ArrayList<>(defaultValue);
 
-        widget = new WButton("Select");
+        widget = new WButton(I18n.translate("WButton.select"));
         ((WButton) widget).action = () -> MinecraftClient.getInstance().openScreen(new EnchListSettingScreen(this));
     }
 

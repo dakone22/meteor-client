@@ -87,8 +87,6 @@ public class HUD extends Module {
             .name("active-modules-sort")
             .displayName(I18n.translate("Modules.HUD.setting.activeModulesSort.displayName"))
             .description(I18n.translate("Modules.HUD.setting.activeModulesSort.description"))
-            .displayValues(new String[]{I18n.translate("Modules.HUD.ActiveModulesHud.Sort.Biggest"),
-                                        I18n.translate("Modules.HUD.ActiveModulesHud.Sort.Smallest")})
             .defaultValue(ActiveModulesHud.Sort.Biggest)
 //            .onChanged(sort -> activeModulesHud.recalculate())
             .build()
@@ -106,9 +104,6 @@ public class HUD extends Module {
             .name("active-modules-color-mode")
             .displayName(I18n.translate("Modules.HUD.setting.activeModulesColorMode.displayName"))
             .description(I18n.translate("Modules.HUD.setting.activeModulesColorMode.description"))
-            .displayValues(new String[]{I18n.translate("Modules.HUD.ActiveModulesHud.ColorMode.Flat"),
-                                        I18n.translate("Modules.HUD.ActiveModulesHud.ColorMode.Random"),
-                                        I18n.translate("Modules.HUD.ActiveModulesHud.ColorMode.Rainbow")})
             .defaultValue(ActiveModulesHud.ColorMode.Rainbow)
             .build()
     );
@@ -146,13 +141,6 @@ public class HUD extends Module {
             .name("inventory-viewer-background")
             .displayName(I18n.translate("Modules.HUD.setting.invViewerBackground.displayName"))
             .description(I18n.translate("Modules.HUD.setting.invViewerBackground.description"))
-            .displayValues(new String[]{
-                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.None"),
-                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.Light"),
-                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.LightTransparent"),
-                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.Dark"),
-                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.DarkTransparent"),
-                    I18n.translate("Modules.HUD.InventoryViewerHud.Background.Flat")})
             .defaultValue(InventoryViewerHud.Background.Light)
             .build()
     );
@@ -258,8 +246,6 @@ public class HUD extends Module {
             .name("orientation")
             .displayName(I18n.translate("Modules.HUD.setting.armorOrientation.displayName"))
             .description(I18n.translate("Modules.HUD.setting.armorOrientation.description"))
-            .displayValues(new String[]{I18n.translate("Modules.HUD.ArmorHud.Orientation.Horizontal"),
-                                        I18n.translate("Modules.HUD.ArmorHud.Orientation.Vertical")})
             .defaultValue(ArmorHud.Orientation.Horizontal)
             .build()
     );
@@ -269,10 +255,6 @@ public class HUD extends Module {
             .name("armor-durability")
             .displayName(I18n.translate("Modules.HUD.setting.armorDurability.displayName"))
             .description(I18n.translate("Modules.HUD.setting.armorDurability.description"))
-            .displayValues(new String[]{I18n.translate("Modules.HUD.ArmorHud.Durability.None"),
-                                        I18n.translate("Modules.HUD.ArmorHud.Durability.Default"),
-                                        I18n.translate("Modules.HUD.ArmorHud.Durability.Numbers"),
-                                        I18n.translate("Modules.HUD.ArmorHud.Durability.Percentage")})
             .defaultValue(ArmorHud.Durability.Default)
             .build()
     );

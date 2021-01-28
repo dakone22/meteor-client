@@ -9,6 +9,7 @@ import minegame159.meteorclient.gui.screens.WindowScreen;
 import minegame159.meteorclient.gui.widgets.*;
 import minegame159.meteorclient.settings.PotionSetting;
 import minegame159.meteorclient.utils.misc.MyPotion;
+import net.minecraft.client.resource.language.I18n;
 import org.apache.commons.lang3.StringUtils;
 
 public class PotionSettingScreen extends WindowScreen {
@@ -18,7 +19,7 @@ public class PotionSettingScreen extends WindowScreen {
     private String filterText = "";
 
     public PotionSettingScreen(PotionSetting setting) {
-        super("Select Potion", true);
+        super(I18n.translate("Setting.PotionSettingScreen.title"), true);
 
         this.setting = setting;
 
@@ -48,7 +49,7 @@ public class PotionSettingScreen extends WindowScreen {
             }
             table.add(item);
 
-            WButton select = table.add(new WButton("Select")).getWidget();
+            WButton select = table.add(new WButton(I18n.translate("WButton.select"))).getWidget();
             select.action = () -> {
                 setting.set(potion);
                 onClose();

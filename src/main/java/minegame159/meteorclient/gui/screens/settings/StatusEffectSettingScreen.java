@@ -12,6 +12,7 @@ import minegame159.meteorclient.gui.widgets.WLabel;
 import minegame159.meteorclient.gui.widgets.WTable;
 import minegame159.meteorclient.gui.widgets.WTextBox;
 import minegame159.meteorclient.settings.Setting;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.effect.StatusEffect;
 import org.apache.commons.lang3.StringUtils;
 
@@ -26,7 +27,7 @@ public class StatusEffectSettingScreen extends WindowScreen {
     private String filterText = "";
 
     public StatusEffectSettingScreen(Setting<Object2IntMap<StatusEffect>> setting) {
-        super("Select Potions", true);
+        super(I18n.translate("Setting.StatusEffectSettingScreen.title"), true);
 
         this.setting = setting;
 

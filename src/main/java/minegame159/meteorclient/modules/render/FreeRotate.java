@@ -33,6 +33,9 @@ public class FreeRotate extends Module {
             .name("mode")
             .displayName(I18n.translate("Modules.FreeRotate.setting.mode.displayName"))
             .description(I18n.translate("Modules.FreeRotate.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.FreeRotate.Mode.Player"),
+                    I18n.translate("Modules.FreeRotate.Mode.Camera")})
             .defaultValue(Mode.Player)
             .build()
     );

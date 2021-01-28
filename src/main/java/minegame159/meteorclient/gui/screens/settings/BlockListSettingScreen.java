@@ -11,6 +11,7 @@ import minegame159.meteorclient.mixin.IdentifierAccessor;
 import minegame159.meteorclient.settings.Setting;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -20,7 +21,7 @@ public class BlockListSettingScreen extends LeftRightListSettingScreen<Block> {
     private static final Identifier ID = new Identifier("minecraft", "");
 
     public BlockListSettingScreen(Setting<List<Block>> setting) {
-        super("Select blocks", setting, Registry.BLOCK);
+        super(I18n.translate("Setting.BlockListSettingScreen.title"), setting, Registry.BLOCK);
     }
 
     @Override

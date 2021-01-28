@@ -17,8 +17,79 @@
   "ModuleScreen.WKeybind.bind.setting": "Горячая клавиша: нажмите любую кнопку",
   "ModuleScreen.WKeybind.bind.none": "нет",
   "Settings.defaultGroup": "Главное",
+
   "WButton.select": "Выбрать",
+
+
+  "Setting.BlockListSettingScreen.title": "Выберите блоки",
+  "Setting.BlockSettingScreen.title": "Выберите блок",
+  "Setting.ColorSettingScreen.title": "Выберите цвет",
+  "Setting.EnchListSettingScreen.title": "Выберите предметы",
+  "Setting.EntityTypeListSettingScreen.title": "Выберите сущности",
+  "Setting.EntityTypeListSettingScreen.section.Animals": "Животные",
+  "Setting.EntityTypeListSettingScreen.section.WaterAnimals": "Водные животные",
+  "Setting.EntityTypeListSettingScreen.section.Monsters": "Монстры",
+  "Setting.EntityTypeListSettingScreen.section.Ambient": "Амбиент",
+  "Setting.EntityTypeListSettingScreen.section.Misc": "Остальное",
+  "Setting.ItemListSettingScreen.title": "Выберите предметы",
   "Setting.ModuleListSetting.title": "Выберите модули",
+  "Setting.PacketBoolSettingScreen.title": "Веберите пакеты",
+  "Setting.ParticleEffectListSettingScreen.title": "Эффекты частиц",
+  "Setting.PotionSettingScreen.title": "Выберите зелья",
+  "Setting.SoundEventListSettingScreen.title": "Выберите звуки",
+  "Setting.StatusEffectSettingScreen.title": "Выберите зелья",
+  "Setting.StorageBlockListSettingScreen.title": "Выберите блоки-хранилища",
+
+
+  "Enums.ShapeMode.Lines": "Контуры",
+  "Enums.ShapeMode.Sides": "Стороны",
+  "Enums.ShapeMode.Both": "И то и другое",
+
+  "Enums.Target.Head": "Голова",
+  "Enums.Target.Body": "Тело",
+  "Enums.Target.Feet": "Ноги",
+
+  "Enums.FriendType.Enemy": "Враг",
+  "Enums.FriendType.Neutral": "Нейтральный",
+  "Enums.FriendType.Trusted": "Доверенный",
+
+  "Enums.CursorStyle.Default": "По умолчанию",
+  "Enums.CursorStyle.Click": "Click",
+  "Enums.CursorStyle.Type": "Type",
+
+  "Enums.Dimension.Overworld": "Верхний мир",
+  "Enums.Dimension.Nether": "Ад",
+  "Enums.Dimension.End": "Край",
+
+  "Enums.AlignmentX.Left": "Лево",
+  "Enums.AlignmentX.Center": "Центр",
+  "Enums.AlignmentX.Right": "Вправо",
+
+  "Enums.AlignmentY.Top": "Верх",
+  "Enums.AlignmentY.Center": "Центр",
+  "Enums.AlignmentY.Bottom": "Низ",
+
+  "Enums.Sort.Biggest": "По убыванию",
+  "Enums.Sort.Smallest": "По возрастанию",
+
+  "Enums.ColorMode.Flat": "Однотонный",
+  "Enums.ColorMode.Random": "Случайный",
+  "Enums.ColorMode.Rainbow": "Радуга",
+
+  "Enums.Background.None": "Нет",
+  "Enums.Background.Light": "Светлый",
+  "Enums.Background.LightTransparent": "Светлый прозрачный",
+  "Enums.Background.Dark": "Тёмный",
+  "Enums.Background.DarkTransparent": "Тёмный прозрачный",
+  "Enums.Background.Flat": "Однотонный",
+
+  "Enums.Durability.None": "Нет",
+  "Enums.Durability.Default": "По умолчанию",
+  "Enums.Durability.Numbers": "Числа",
+  "Enums.Durability.Percentage": "Процент",
+
+  "Enums.Orientation.Horizontal": "Горизонтальный",
+  "Enums.Orientation.Vertical": "Вертикальный",
 
 
   // ----------------------------------
@@ -63,7 +134,7 @@
   "Commands.Bind.message.BindMessage": "Press a key you want this module to be bound to.",
 
   // -- ClearChat
-  "Commands.ClearChat.description": "Lets you clip through blocks horizontally.",
+  "Commands.ClearChat.description": "Clears your chat.",
 
   // -- Dismount
   "Commands.Dismount.description": "Dismounts you from entity you are riding.",
@@ -140,10 +211,8 @@
   "Commands.Toggle.description": "Toggles a module.",
 
   // -- VClip
-  "Commands.ClearChat.description": "Lets you clip through blocks horizontally.",
+  "Commands.VClip.description": "Lets you clip through blocks horizontally.",
 
-  // -- Dismount
-  "Commands.Dismount.description": "Dismounts you from entity you are riding.",
 
   // ----------------------------------
   //              Macros
@@ -1682,7 +1751,7 @@
   "Modules.Chams.setting.entities.displayName": "Сущности",
   "Modules.Chams.setting.throughWalls.displayName": "Через стены",
   "Modules.Chams.setting.colored.displayName": "Цветной",
-  "Modules.Chams.setting.useNameColor.displayName": "Use Name Color",
+  "Modules.Chams.setting.useNameColor.displayName": "Использовать цвет имени",
   "Modules.Chams.setting.playersColor.displayName": "Цвет игроков",
   "Modules.Chams.setting.animalsColor.displayName": "Цвет животных",
   "Modules.Chams.setting.waterAnimalsColor.displayName": "Цвет водных животных",
@@ -1690,7 +1759,7 @@
   "Modules.Chams.setting.ambientColor.displayName": "Цвет амбиента",
   "Modules.Chams.setting.miscColor.displayName": "Цвет остального",
 
-  // ?
+
   "Modules.CityESP.description": "Displays blocks that can be broken in order to city another player.",
   "Modules.CityESP.group.sgRender": "Отрисовка",
   "Modules.CityESP.setting.range.description": "The maximum range a city-able block will render.",
@@ -1746,6 +1815,9 @@
   "Modules.ESP.setting.miscColor.displayName": "Цвет остального",
   "Modules.ESP.setting.fadeDistance.displayName": "Дистанция затухания",
 
+  "Modules.ESP.Mode.Box": "Коробка",
+  "Modules.ESP.Mode.Outline": "Контур",
+
 
   "Modules.Freecam.description": "Позволяет Вам покинуть своё тело.",
   "Modules.Freecam.setting.speed.description": "Ваша скорость в режиме свободной камеры.",
@@ -1761,6 +1833,10 @@
   "Modules.Freecam.setting.renderHands.displayName": "Отрисовывать руки",
   "Modules.Freecam.setting.rotate.displayName": "Поворот",
 
+  "Modules.Freecam.AutoDisableEvent.None": "Нет",
+  "Modules.Freecam.AutoDisableEvent.OnDamage": "При уроне",
+  "Modules.Freecam.AutoDisableEvent.OnDeath": "При смерти",
+
 
   "Modules.FreeRotate.description": "Позволяет больше вариантов поворота в виде от третьего лица.",
   "Modules.FreeRotate.group.sgArrows": "Стрелки",
@@ -1774,6 +1850,9 @@
   "Modules.FreeRotate.setting.sensitivity.displayName": "Чувствительность камеры",
   "Modules.FreeRotate.setting.arrows.displayName": "Контроль стрелками противоположного",
   "Modules.FreeRotate.setting.arrowSpeed.displayName": "Скорость стрелок",
+
+  "Modules.FreeRotate.Mode.Player": "Игрок",
+  "Modules.FreeRotate.Mode.Camera": "Камера",
 
 
   "Modules.Fullbright.description": "Освети свой мир!",
@@ -1810,9 +1889,9 @@
   "Modules.HoleESP.setting.glowHeight.description": "Высота свечения при активном режиме Свечения.",
   "Modules.HoleESP.setting.depthTest.description": "Checks if there is things rendering in front of the glow.",
   "Modules.HoleESP.setting.ignoreOwn.description": "Не отрисовывать отверстия, в которой вы сейчас находитесь.",
-  "Modules.HoleESP.setting.allBedrock.description": "Все блоки — бедрок.",
-  "Modules.HoleESP.setting.someObsidian.description": "Некоторые блоки — обсидиан.",
-  "Modules.HoleESP.setting.allObsidian.description": "Все блоки — обсидиан.",
+  "Modules.HoleESP.setting.allBedrock.description": "Цвет, когда все блоки — бедрок.",
+  "Modules.HoleESP.setting.someObsidian.description": "Цвет, когда есть некоторые блоки обсидиана.",
+  "Modules.HoleESP.setting.allObsidian.description": "Цвет, когда все блоки — обсидиан.",
   "Modules.HoleESP.setting.renderMode.displayName": "Режим отрисовки",
   "Modules.HoleESP.setting.shapeMode.displayName": "Режим формы",
   "Modules.HoleESP.setting.horizontalRadius.displayName": "Горизонтальный радиус",
@@ -1821,9 +1900,15 @@
   "Modules.HoleESP.setting.glowHeight.displayName": "Высота свечения",
   "Modules.HoleESP.setting.depthTest.displayName": "Проверка глубины свечения",
   "Modules.HoleESP.setting.ignoreOwn.displayName": "Игнорировать собственные",
-  "Modules.HoleESP.setting.allBedrock.displayName": "Все бедрок",
+  "Modules.HoleESP.setting.allBedrock.displayName": "Весь бедрок",
   "Modules.HoleESP.setting.someObsidian.displayName": "Некоторые обсидиан",
-  "Modules.HoleESP.setting.allObsidian.displayName": "Все обсидиан",
+  "Modules.HoleESP.setting.allObsidian.displayName": "Весь обсидиан",
+
+  "Modules.HoleESP.Mode.Flat": "Плоский",
+  "Modules.HoleESP.Mode.Box": "Блок",
+  "Modules.HoleESP.Mode.BoxBelow": "Блок снизу",
+  "Modules.HoleESP.Mode.Glow": "Подсветка",
+  "Modules.HoleESP.Mode.ReverseGlow": "Обратная подсветка",
 
 
   "Modules.ItemByteSize.description": "Отображает размер предмета в байтах во всплывающей подсказке.",
@@ -1882,6 +1967,9 @@
   "Modules.Nametags.setting.normalName.displayName": "Обычный цвет",
   "Modules.Nametags.setting.pingColor.displayName": "Цвет пинга",
   "Modules.Nametags.setting.enchantmentTextColor.displayName": "Цвет текста чар",
+
+  "Modules.Nametags.Position.ABOVE": "Над",
+  "Modules.Nametags.Position.ONTOP": "Поверх",
 
 
   "Modules.NoRender.description": "Отключает отрисовку определенных анимаций или наложений.",
@@ -1964,6 +2052,11 @@
   "Modules.ShulkerPeek.setting.mode.displayName": "Режим",
   "Modules.ShulkerPeek.setting.bgMode.displayName": "Режим фона",
   "Modules.ShulkerPeek.setting.lines.displayName": "Строки",
+
+  "Modules.ShulkerPeek.Mode.Tooltip": "По подсказке",
+  "Modules.ShulkerPeek.Mode.Always": "Всегда",
+  "Modules.ShulkerPeek.BackgroundMode.Light": "Светлый",
+  "Modules.ShulkerPeek.BackgroundMode.Dark": "Тёмный",
 
 
   "Modules.StorageESP.description": "Отрисовывает все указанные блоки хранилища.",
@@ -2063,23 +2156,6 @@
   "Modules.Xray.setting.blocks.displayName": "Блоки",
 
 
-  "Modules.HUD.ActiveModulesHud.Sort.Biggest": "По убыванию",
-  "Modules.HUD.ActiveModulesHud.Sort.Smallest": "По возрастанию",
-  "Modules.HUD.ActiveModulesHud.ColorMode.Flat": "Однотонный",
-  "Modules.HUD.ActiveModulesHud.ColorMode.Random": "Случайный",
-  "Modules.HUD.ActiveModulesHud.ColorMode.Rainbow": "Радуга",
-  "Modules.HUD.InventoryViewerHud.Background.None": "Нет",
-  "Modules.HUD.InventoryViewerHud.Background.Light": "Светлый",
-  "Modules.HUD.InventoryViewerHud.Background.LightTransparent": "Светлый прозрачный",
-  "Modules.HUD.InventoryViewerHud.Background.Dark": "Тёмный",
-  "Modules.HUD.InventoryViewerHud.Background.DarkTransparent": "Тёмный прозрачный",
-  "Modules.HUD.InventoryViewerHud.Background.Flat": "Однотонный",
-  "Modules.HUD.ArmorHud.Durability.None": "Нет",
-  "Modules.HUD.ArmorHud.Durability.Default": "По умолчанию",
-  "Modules.HUD.ArmorHud.Durability.Numbers": "Числа",
-  "Modules.HUD.ArmorHud.Durability.Percentage": "Процент",
-  "Modules.HUD.ArmorHud.Orientation.Horizontal": "Горизонтальный",
-  "Modules.HUD.ArmorHud.Orientation.Vertical": "Вертикальный",
   "Modules.HUD.CompassHud.Mode.Axis": "Оси",
   "Modules.HUD.CompassHud.Mode.Pole": "Полюс",
 

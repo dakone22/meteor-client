@@ -9,6 +9,7 @@ import minegame159.meteorclient.gui.widgets.WLabel;
 import minegame159.meteorclient.gui.widgets.WWidget;
 import minegame159.meteorclient.settings.Setting;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.sound.WeightedSoundSet;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class SoundEventListSettingScreen extends LeftRightListSettingScreen<SoundEvent> {
     public SoundEventListSettingScreen(Setting<List<SoundEvent>> setting) {
-        super("Select sounds", setting, Registry.SOUND_EVENT);
+        super(I18n.translate("Setting.SoundEventListSettingScreen.title"), setting, Registry.SOUND_EVENT);
     }
 
     @Override

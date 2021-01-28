@@ -11,6 +11,7 @@ import minegame159.meteorclient.gui.screens.settings.PacketBoolSettingScreen;
 import minegame159.meteorclient.gui.widgets.WButton;
 import minegame159.meteorclient.utils.network.PacketUtils;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Packet;
 
@@ -22,7 +23,7 @@ public class PacketBoolSetting extends Setting<Object2BooleanMap<Class<? extends
 
         value = new Object2BooleanArrayMap<>(defaultValue);
 
-        widget = new WButton("Select");
+        widget = new WButton(I18n.translate("WButton.select"));
         ((WButton) widget).action = () -> MinecraftClient.getInstance().openScreen(new PacketBoolSettingScreen(this));
     }
 

@@ -9,6 +9,7 @@ import minegame159.meteorclient.gui.screens.settings.BlockListSettingScreen;
 import minegame159.meteorclient.gui.widgets.WButton;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -26,7 +27,7 @@ public class BlockListSetting extends Setting<List<Block>> {
 
         value = new ArrayList<>(defaultValue);
 
-        widget = new WButton("Select");
+        widget = new WButton(I18n.translate("WButton.select"));
         ((WButton) widget).action = () -> MinecraftClient.getInstance().openScreen(new BlockListSettingScreen(this));
     }
 

@@ -11,6 +11,7 @@ import minegame159.meteorclient.gui.screens.settings.EntityTypeListSettingScreen
 import minegame159.meteorclient.gui.widgets.WButton;
 import minegame159.meteorclient.utils.entity.EntityUtils;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -30,7 +31,7 @@ public class EntityTypeListSetting extends Setting<Object2BooleanMap<EntityType<
         this.onlyAttackable = onlyAttackable;
         value = new Object2BooleanOpenHashMap<>(defaultValue);
         
-        widget = new WButton("Select");
+        widget = new WButton(I18n.translate("WButton.select"));
         ((WButton) widget).action = () -> MinecraftClient.getInstance().openScreen(new EntityTypeListSettingScreen(this));
     }
 

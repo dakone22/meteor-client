@@ -8,6 +8,7 @@ package minegame159.meteorclient.settings;
 import minegame159.meteorclient.gui.screens.settings.SoundEventListSettingScreen;
 import minegame159.meteorclient.gui.widgets.WButton;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -26,7 +27,7 @@ public class SoundEventListSetting extends Setting<List<SoundEvent>> {
 
         value = new ArrayList<>(defaultValue);
 
-        widget = new WButton("Select");
+        widget = new WButton(I18n.translate("WButton.select"));
         ((WButton) widget).action = () -> MinecraftClient.getInstance().openScreen(new SoundEventListSettingScreen(this));
     }
 

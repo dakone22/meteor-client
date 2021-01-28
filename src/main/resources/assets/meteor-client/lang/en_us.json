@@ -17,8 +17,79 @@
   "ModuleScreen.WKeybind.bind.setting": "Bind: press any key",
   "ModuleScreen.WKeybind.bind.none": "none",
   "Settings.defaultGroup": "General",
+
   "WButton.select": "Select",
+
+
+  "Setting.BlockListSettingScreen.title": "Select Blocks",
+  "Setting.BlockSettingScreen.title": "Select Block",
+  "Setting.ColorSettingScreen.title": "Select Color",
+  "Setting.EnchListSettingScreen.title": "Select items",
+  "Setting.EntityTypeListSettingScreen.title": "Select entities",
+  "Setting.EntityTypeListSettingScreen.section.Animals": "Animals",
+  "Setting.EntityTypeListSettingScreen.section.WaterAnimals": "Water Animals",
+  "Setting.EntityTypeListSettingScreen.section.Monsters": "Monsters",
+  "Setting.EntityTypeListSettingScreen.section.Ambient": "Ambient",
+  "Setting.EntityTypeListSettingScreen.section.Misc": "Misc",
+  "Setting.ItemListSettingScreen.title": "Select items",
   "Setting.ModuleListSetting.title": "Select Modules",
+  "Setting.PacketBoolSettingScreen.title": "Select Packets",
+  "Setting.ParticleEffectListSettingScreen.title": "Particle Effects",
+  "Setting.PotionSettingScreen.title": "Select Potion",
+  "Setting.SoundEventListSettingScreen.title": "Select sounds",
+  "Setting.StatusEffectSettingScreen.title": "Select Potions",
+  "Setting.StorageBlockListSettingScreen.title": "Select storage blocks",
+
+
+  "Enums.ShapeMode.Lines": "Lines",
+  "Enums.ShapeMode.Sides": "Sides",
+  "Enums.ShapeMode.Both": "Both",
+
+  "Enums.Target.Head": "Head",
+  "Enums.Target.Body": "Body",
+  "Enums.Target.Feet": "Feet",
+
+  "Enums.FriendType.Enemy": "Enemy",
+  "Enums.FriendType.Neutral": "Neutral",
+  "Enums.FriendType.Trusted": "Trusted",
+
+  "Enums.CursorStyle.Default": "Default",
+  "Enums.CursorStyle.Click": "Click",
+  "Enums.CursorStyle.Type": "Type",
+
+  "Enums.Dimension.Overworld": "Overworld",
+  "Enums.Dimension.Nether": "Nether",
+  "Enums.Dimension.End": "End",
+
+  "Enums.AlignmentX.Left": "Left",
+  "Enums.AlignmentX.Center": "Center",
+  "Enums.AlignmentX.Right": "Right",
+
+  "Enums.AlignmentY.Top": "Top",
+  "Enums.AlignmentY.Center": "Center",
+  "Enums.AlignmentY.Bottom": "Bottom",
+
+  "Enums.Sort.Biggest": "Biggest",
+  "Enums.Sort.Smallest": "Smallest",
+
+  "Enums.ColorMode.Flat": "Flat",
+  "Enums.ColorMode.Random": "Random",
+  "Enums.ColorMode.Rainbow": "Rainbow",
+
+  "Enums.Background.None": "None",
+  "Enums.Background.Light": "Light",
+  "Enums.Background.LightTransparent": "LightTransparent",
+  "Enums.Background.Dark": "Dark",
+  "Enums.Background.DarkTransparent": "DarkTransparent",
+  "Enums.Background.Flat": "Flat",
+
+  "Enums.Durability.None": "None",
+  "Enums.Durability.Default": "Default",
+  "Enums.Durability.Numbers": "Numbers",
+  "Enums.Durability.Percentage": "Percentage",
+
+  "Enums.Orientation.Horizontal": "Horizontal",
+  "Enums.Orientation.Vertical": "Vertical",
 
 
   // ----------------------------------
@@ -140,10 +211,8 @@
   "Commands.Toggle.description": "Toggles a module.",
 
   // -- VClip
-  "Commands.ClearChat.description": "Lets you clip through blocks horizontally.",
+  "Commands.VClip.description": "Lets you clip through blocks horizontally.",
 
-  // -- Dismount
-  "Commands.Dismount.description": "Dismounts you from entity you are riding.",
 
   // ----------------------------------
   //              Macros
@@ -1746,6 +1815,9 @@
   "Modules.ESP.setting.miscColor.displayName": "Misc Color",
   "Modules.ESP.setting.fadeDistance.displayName": "Fade Distance",
 
+  "Modules.ESP.Mode.Box": "Box",
+  "Modules.ESP.Mode.Outline": "Outline",
+
 
   "Modules.Freecam.description": "Makes you fly out of your body.",
   "Modules.Freecam.setting.speed.description": "Your speed while in Freecam.",
@@ -1761,6 +1833,10 @@
   "Modules.Freecam.setting.renderHands.displayName": "Render Hands",
   "Modules.Freecam.setting.rotate.displayName": "Rotate",
 
+  "Modules.Freecam.AutoDisableEvent.None": "None",
+  "Modules.Freecam.AutoDisableEvent.OnDamage": "OnDamage",
+  "Modules.Freecam.AutoDisableEvent.OnDeath": "OnDeath",
+
 
   "Modules.FreeRotate.description": "Allows more rotation options in third person.",
   "Modules.FreeRotate.group.sgArrows": "Arrows",
@@ -1774,6 +1850,9 @@
   "Modules.FreeRotate.setting.sensitivity.displayName": "Camera Sensitivity",
   "Modules.FreeRotate.setting.arrows.displayName": "Arrows Control Opposite",
   "Modules.FreeRotate.setting.arrowSpeed.displayName": "Arrow Speed",
+
+  "Modules.FreeRotate.Mode.Player": "Player",
+  "Modules.FreeRotate.Mode.Camera": "Camera",
 
 
   "Modules.Fullbright.description": "Lights up your world!",
@@ -1824,6 +1903,12 @@
   "Modules.HoleESP.setting.allBedrock.displayName": "All Bedrock",
   "Modules.HoleESP.setting.someObsidian.displayName": "Some Obsidian",
   "Modules.HoleESP.setting.allObsidian.displayName": "All Obsidian",
+
+  "Modules.HoleESP.Mode.Flat": "Flat",
+  "Modules.HoleESP.Mode.Box": "Box",
+  "Modules.HoleESP.Mode.BoxBelow": "BoxBelow",
+  "Modules.HoleESP.Mode.Glow": "Glow",
+  "Modules.HoleESP.Mode.ReverseGlow": "ReverseGlow",
 
 
   "Modules.ItemByteSize.description": "Displays an item's size in bytes in the tooltip.",
@@ -1882,6 +1967,9 @@
   "Modules.Nametags.setting.normalName.displayName": "Normal Color",
   "Modules.Nametags.setting.pingColor.displayName": "Ping Color",
   "Modules.Nametags.setting.enchantmentTextColor.displayName": "Enchantment Text Color",
+
+  "Modules.Nametags.Position.ABOVE": "ABOVE",
+  "Modules.Nametags.Position.ONTOP": "ONTOP",
 
 
   "Modules.NoRender.description": "Disables certain animations or overlays from rendering.",
@@ -1964,6 +2052,11 @@
   "Modules.ShulkerPeek.setting.mode.displayName": "Mode",
   "Modules.ShulkerPeek.setting.bgMode.displayName": "Background Mode",
   "Modules.ShulkerPeek.setting.lines.displayName": "Lines",
+
+  "Modules.ShulkerPeek.Mode.Tooltip": "Tooltip",
+  "Modules.ShulkerPeek.Mode.Always": "Always",
+  "Modules.ShulkerPeek.BackgroundMode.Light": "Light",
+  "Modules.ShulkerPeek.BackgroundMode.Dark": "Dark",
 
 
   "Modules.StorageESP.description": "Renders all specified storage blocks.",
@@ -2063,23 +2156,6 @@
   "Modules.Xray.setting.blocks.displayName": "Blocks",
 
 
-  "Modules.HUD.ActiveModulesHud.Sort.Biggest": "Biggest",
-  "Modules.HUD.ActiveModulesHud.Sort.Smallest": "Smallest",
-  "Modules.HUD.ActiveModulesHud.ColorMode.Flat": "Flat",
-  "Modules.HUD.ActiveModulesHud.ColorMode.Random": "Random",
-  "Modules.HUD.ActiveModulesHud.ColorMode.Rainbow": "Rainbow",
-  "Modules.HUD.InventoryViewerHud.Background.None": "None",
-  "Modules.HUD.InventoryViewerHud.Background.Light": "Light",
-  "Modules.HUD.InventoryViewerHud.Background.LightTransparent": "LightTransparent",
-  "Modules.HUD.InventoryViewerHud.Background.Dark": "Dark",
-  "Modules.HUD.InventoryViewerHud.Background.DarkTransparent": "DarkTransparent",
-  "Modules.HUD.InventoryViewerHud.Background.Flat": "Flat",
-  "Modules.HUD.ArmorHud.Durability.None": "None",
-  "Modules.HUD.ArmorHud.Durability.Default": "Default",
-  "Modules.HUD.ArmorHud.Durability.Numbers": "Numbers",
-  "Modules.HUD.ArmorHud.Durability.Percentage": "Percentage",
-  "Modules.HUD.ArmorHud.Orientation.Horizontal": "Horizontal",
-  "Modules.HUD.ArmorHud.Orientation.Vertical": "Vertical",
   "Modules.HUD.CompassHud.Mode.Axis": "Axis",
   "Modules.HUD.CompassHud.Mode.Pole": "Pole",
 
