@@ -16,10 +16,11 @@
   "ModuleScreen.WKeybind.bind": "Bind: ",
   "ModuleScreen.WKeybind.bind.setting": "Bind: press any key",
   "ModuleScreen.WKeybind.bind.none": "none",
-  "Settings.defaultGroup": "General",
 
   "WButton.select": "Select",
 
+
+  "Settings.defaultGroup": "General",
 
   "Setting.BlockListSettingScreen.title": "Select Blocks",
   "Setting.BlockSettingScreen.title": "Select Block",
@@ -90,6 +91,19 @@
 
   "Enums.Orientation.Horizontal": "Horizontal",
   "Enums.Orientation.Vertical": "Vertical",
+
+
+  "TopBar.TopBarModules.left_click": "Left click - activate/deactivate module",
+  "TopBar.TopBarModules.right_click": "Right click - open module settings",
+  "TopBar.TopBarModules.WProfiles.title": "Profiles",
+  "TopBar.TopBarModules.WProfiles.buttons.Save": "Save",
+  "TopBar.TopBarModules.WProfiles.buttons.Load": "Load",
+  "TopBar.TopBarModules.WModuleSearch.title": "Search",
+  "TopBar.TopBarModules.WModuleCategory.Combat.title": "Combat",
+  "TopBar.TopBarModules.WModuleCategory.Player.title": "Player",
+  "TopBar.TopBarModules.WModuleCategory.Movement.title": "Movement",
+  "TopBar.TopBarModules.WModuleCategory.Render.title": "Render",
+  "TopBar.TopBarModules.WModuleCategory.Misc.title": "Misc",
 
 
   // ----------------------------------

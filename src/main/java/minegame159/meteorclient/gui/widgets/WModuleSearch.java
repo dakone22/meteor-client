@@ -8,6 +8,7 @@ package minegame159.meteorclient.gui.widgets;
 import minegame159.meteorclient.gui.GuiConfig;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.modules.ModuleManager;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.Pair;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class WModuleSearch extends WWindow {
     private WTextBox filter;
 
     public WModuleSearch() {
-        super("Search", GuiConfig.INSTANCE.getWindowConfig(GuiConfig.WindowType.Search).isExpanded(), true);
+        super(I18n.translate("TopBar.TopBarModules.WModuleSearch.title"), GuiConfig.INSTANCE.getWindowConfig(GuiConfig.WindowType.Search).isExpanded(), true);
         type = GuiConfig.WindowType.Search;
 
         action = () -> GuiConfig.INSTANCE.getWindowConfig(type).setPos(x, y);

@@ -9,10 +9,11 @@ import minegame159.meteorclient.gui.GuiConfig;
 import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.modules.ModuleManager;
+import net.minecraft.client.resource.language.I18n;
 
 public class WModuleCategory extends WWindow {
     public WModuleCategory(Category category) {
-        super(category.toString(), GuiConfig.INSTANCE.getWindowConfig(get(category)).isExpanded(), true);
+        super(getName(category), GuiConfig.INSTANCE.getWindowConfig(get(category)).isExpanded(), true);
         type = get(category);
 
         action = () -> GuiConfig.INSTANCE.getWindowConfig(type).setPos(x, y);
@@ -36,5 +37,17 @@ public class WModuleCategory extends WWindow {
         }
 
         return null;
+    }
+
+    private static String getName(Category category) {
+        switch (category) {
+            case Combat:   return I18n.translate("TopBar.TopBarModules.WModuleCategory.Combat.title");
+            case Player:   return I18n.translate("TopBar.TopBarModules.WModuleCategory.Player.title");
+            case Movement: return I18n.translate("TopBar.TopBarModules.WModuleCategory.Movement.title");
+            case Render:   return I18n.translate("TopBar.TopBarModules.WModuleCategory.Render.title");
+            case Misc:     return I18n.translate("TopBar.TopBarModules.WModuleCategory.Misc.title");
+        }
+
+        return category.toString();
     }
 }

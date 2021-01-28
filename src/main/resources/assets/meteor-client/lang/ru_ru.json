@@ -16,10 +16,11 @@
   "ModuleScreen.WKeybind.bind": "Горячая клавиша: ",
   "ModuleScreen.WKeybind.bind.setting": "Горячая клавиша: нажмите любую кнопку",
   "ModuleScreen.WKeybind.bind.none": "нет",
-  "Settings.defaultGroup": "Главное",
 
   "WButton.select": "Выбрать",
 
+
+  "Settings.defaultGroup": "Главное",
 
   "Setting.BlockListSettingScreen.title": "Выберите блоки",
   "Setting.BlockSettingScreen.title": "Выберите блок",
@@ -90,6 +91,19 @@
 
   "Enums.Orientation.Horizontal": "Горизонтальный",
   "Enums.Orientation.Vertical": "Вертикальный",
+
+
+  "TopBar.TopBarModules.left_click": "Левый клик — включить/отключить модуль",
+  "TopBar.TopBarModules.right_click": "Правый клик — открыть настройки модуля",
+  "TopBar.TopBarModules.WProfiles.title": "Профили",
+  "TopBar.TopBarModules.WProfiles.buttons.Save": "Сохранить",
+  "TopBar.TopBarModules.WProfiles.buttons.Load": "Загрузить",
+  "TopBar.TopBarModules.WModuleSearch.title": "Поиск",
+  "TopBar.TopBarModules.WModuleCategory.Combat.title": "Бой",
+  "TopBar.TopBarModules.WModuleCategory.Player.title": "Игрок",
+  "TopBar.TopBarModules.WModuleCategory.Movement.title": "Движение",
+  "TopBar.TopBarModules.WModuleCategory.Render.title": "Отрисовка",
+  "TopBar.TopBarModules.WModuleCategory.Misc.title": "Разное",
 
 
   // ----------------------------------
@@ -1778,7 +1792,7 @@
   "Modules.CustomFOV.setting.fov.description": "Ваше пользовательское поле зрения.",
 
 
-  "Modules.EChestPreview.description": "Запоминает содержимое вашего Сундука Края и отображает это при наведении на него курсора.",
+  "Modules.EChestPreview.description": "Запоминает содержимое вашего Сундука Края и отображает его при наведении на него курсора.",
 
 
   "Modules.EntityOwner.description": "Отображает имя игрока, которому принадлежит сущность, на который вы смотрите.",

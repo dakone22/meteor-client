@@ -7,10 +7,11 @@ package minegame159.meteorclient.gui.widgets;
 
 import minegame159.meteorclient.gui.GuiConfig;
 import minegame159.meteorclient.utils.files.ProfileUtils;
+import net.minecraft.client.resource.language.I18n;
 
 public class WProfiles extends WWindow {
     public WProfiles() {
-        super("Profiles", GuiConfig.INSTANCE.getWindowConfig(GuiConfig.WindowType.Profiles).isExpanded(), true);
+        super(I18n.translate("TopBar.TopBarModules.WProfiles.title"), GuiConfig.INSTANCE.getWindowConfig(GuiConfig.WindowType.Profiles).isExpanded(), true);
         type = GuiConfig.WindowType.Profiles;
 
         action = () -> {
@@ -26,10 +27,10 @@ public class WProfiles extends WWindow {
         for (String profile : ProfileUtils.getProfiles()) {
             profiles.add(new WLabel(profile));
 
-            WButton save = profiles.add(new WButton("Save")).getWidget();
+            WButton save = profiles.add(new WButton(I18n.translate("TopBar.TopBarModules.WProfiles.buttons.Save"))).getWidget();
             save.action = () -> ProfileUtils.save(profile);
 
-            WButton load = profiles.add(new WButton("Load")).getWidget();
+            WButton load = profiles.add(new WButton(I18n.translate("TopBar.TopBarModules.WProfiles.buttons.Load"))).getWidget();
             load.action = () -> ProfileUtils.load(profile);
 
             WMinus delete = profiles.add(new WMinus()).getWidget();
