@@ -224,7 +224,7 @@ public class AntiAFK extends Module {
     }
 
     private void fillTable(WTable table) {
-        table.add(new WHorizontalSeparator("Message List"));
+        table.add(new WHorizontalSeparator(I18n.translate("Modules.AntiAFK.MessageList.title")));
 
         // Messages
         for (int i = 0; i < messages.size(); i++) {

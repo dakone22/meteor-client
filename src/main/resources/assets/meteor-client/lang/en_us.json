@@ -1409,6 +1409,9 @@
   "Modules.AntiAFK.setting.sendMessages.displayName": "Send Messages",
   "Modules.AntiAFK.setting.delay.displayName": "Delay",
   "Modules.AntiAFK.setting.randomMessage.displayName": "Random",
+  "Modules.AntiAFK.MessageList.title": "Message List",
+  "Modules.AntiAFK.SpinMode.Server": "Server",
+  "Modules.AntiAFK.SpinMode.Client": "Client",
 
 
   "Modules.AntiCactus.description": "Prevents you from taking damage from cacti.",

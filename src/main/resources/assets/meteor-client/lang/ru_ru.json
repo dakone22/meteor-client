@@ -1409,6 +1409,9 @@
   "Modules.AntiAFK.setting.sendMessages.displayName": "Отправлять сообщения",
   "Modules.AntiAFK.setting.delay.displayName": "Задержка",
   "Modules.AntiAFK.setting.randomMessage.displayName": "Случайные",
+  "Modules.AntiAFK.MessageList.title": "Список сообщений",
+  "Modules.AntiAFK.SpinMode.Server": "Сервер",
+  "Modules.AntiAFK.SpinMode.Client": "Клиент",
 
 
   "Modules.AntiCactus.description": "Не дает вам получить урон от кактусов.",
