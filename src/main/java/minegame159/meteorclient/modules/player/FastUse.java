@@ -32,6 +32,10 @@ public class FastUse extends Module {
             .name("mode")
             .displayName(I18n.translate("Modules.FastUse.setting.mode.displayName"))
             .description(I18n.translate("Modules.FastUse.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.FastUse.Mode.All"),
+                    I18n.translate("Modules.FastUse.Mode.Some"),
+            })
             .defaultValue(Mode.All)
             .build()
     );

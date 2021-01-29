@@ -32,6 +32,12 @@ public class SpeedMine extends Module {
 
     public final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
+            .displayName(I18n.translate("Modules.SpeedMine.setting.mode.displayName"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.SpeedMine.Mode.Normal"),
+                    I18n.translate("Modules.SpeedMine.Mode.Haste1"),
+                    I18n.translate("Modules.SpeedMine.Mode.Haste2"),
+            })
             .defaultValue(Mode.Normal)
             .build()
     );

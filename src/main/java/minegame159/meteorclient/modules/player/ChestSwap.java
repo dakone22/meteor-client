@@ -38,6 +38,12 @@ public class ChestSwap extends Module {
             .name("chestplate")
             .displayName(I18n.translate("Modules.ChestSwap.setting.chestplate.displayName"))
             .description(I18n.translate("Modules.ChestSwap.setting.chestplate.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.ChestSwap.Chestplate.Diamond"),
+                    I18n.translate("Modules.ChestSwap.Chestplate.Netherite"),
+                    I18n.translate("Modules.ChestSwap.Chestplate.PreferDiamond"),
+                    I18n.translate("Modules.ChestSwap.Chestplate.PreferNetherite"),
+            })
             .defaultValue(Chestplate.PreferNetherite)
             .build()
     );

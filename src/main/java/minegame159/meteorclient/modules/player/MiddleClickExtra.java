@@ -48,6 +48,13 @@ public class MiddleClickExtra extends Module {
             .name("mode")
             .displayName(I18n.translate("Modules.MiddleClickExtra.setting.mode.displayName"))
             .description(I18n.translate("Modules.MiddleClickExtra.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.MiddleClickExtra.Mode.Pearl"),
+                    I18n.translate("Modules.MiddleClickExtra.Mode.Bow"),
+                    I18n.translate("Modules.MiddleClickExtra.Mode.Gap"),
+                    I18n.translate("Modules.MiddleClickExtra.Mode.EGap"),
+                    I18n.translate("Modules.MiddleClickExtra.Mode.Rod"),
+            })
             .defaultValue(Mode.Pearl)
             .build()
     );

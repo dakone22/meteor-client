@@ -906,22 +906,6 @@
   "Modules.AutoSmelter.description": "Automatically smelts all items in your inventory that can be smelted.",
 
 
-  "Modules.AutoSteal.description": "Automatically dumps or steals from storage blocks.",
-  "Modules.AutoSteal.group.sgDelays": "Delay",
-  "Modules.AutoSteal.setting.stealButtonEnabled.description": "Shows the Steal button on the container screen.",
-  "Modules.AutoSteal.setting.dumpButtonEnabled.description": "Shows the Dump button on the container screen.",
-  "Modules.AutoSteal.setting.autoStealEnabled.description": "Starts the auto steal when a container open.",
-  "Modules.AutoSteal.setting.autoDumpEnabled.description": "Start auto dump when a container opens.",
-  "Modules.AutoSteal.setting.minimumDelay.description": "The minimum delay between stealing the next stack in milliseconds.",
-  "Modules.AutoSteal.setting.randomDelay.description": "Randomly adds a delay of up to the specified time in milliseconds. Helps avoid anti-cheats.",
-  "Modules.AutoSteal.setting.stealButtonEnabled.displayName": "Steal Button Enabled",
-  "Modules.AutoSteal.setting.dumpButtonEnabled.displayName": "Dump Button Enabled",
-  "Modules.AutoSteal.setting.autoStealEnabled.displayName": "Auto Steal Enabled",
-  "Modules.AutoSteal.setting.autoDumpEnabled.displayName": "Auto Dump Enabled",
-  "Modules.AutoSteal.setting.minimumDelay.displayName": "Min Delay",
-  "Modules.AutoSteal.setting.randomDelay.displayName": "Random Delay",
-
-
   "Modules.BetterChat.description": "Improves your chat experience in various ways.",
   "Modules.BetterChat.group.sgAnnoy": "Annoy",
   "Modules.BetterChat.group.sgAntiSpam": "Anti Spam",
@@ -1389,7 +1373,7 @@
   "Modules.AirPlace.description": "Places a block where your crosshair is pointing at.",
   "Modules.AirPlace.group.sgRender": "Render",
   "Modules.AirPlace.setting.placeWhen.description": "Decides when it should place.",
-  "Modules.AirPlace.setting.render.description": "Renders a block overlay where the obsidian will be placed.",
+  "Modules.AirPlace.setting.render.description": "Renders a block overlay where the block will be placed.",
   "Modules.AirPlace.setting.shapeMode.description": "How the shapes are rendered.",
   "Modules.AirPlace.setting.sideColor.description": "The color of the sides of the blocks being rendered.",
   "Modules.AirPlace.setting.lineColor.description": "The color of the lines of the blocks being rendered.",
@@ -1442,7 +1426,12 @@
   "Modules.AutoClicker.setting.button.description": "Which button to press.",
   "Modules.AutoClicker.setting.delay.description": "The amount of delay between clicks in ticks.",
   "Modules.AutoClicker.setting.mode.displayName": "Mode",
+  "Modules.AutoClicker.setting.button.displayName": "Button",
   "Modules.AutoClicker.setting.delay.displayName": "Delay",
+  "Modules.AutoClicker.Mode.Hold": "Hold",
+  "Modules.AutoClicker.Mode.Press": "Press",
+  "Modules.AutoClicker.Button.Right": "Right",
+  "Modules.AutoClicker.Button.Left": "Left",
 
 
   "Modules.AutoDrop.description": "Automatically drops specified items.",
@@ -1550,6 +1539,24 @@
   "Modules.AutoRespawn.description": "Automatically respawns after death.",
 
 
+  "Modules.AutoSteal.description": "Automatically dumps or steals from storage blocks.",
+  "Modules.AutoSteal.group.sgDelays": "Delay",
+  "Modules.AutoSteal.setting.stealButtonEnabled.description": "Shows the Steal button on the container screen.",
+  "Modules.AutoSteal.setting.dumpButtonEnabled.description": "Shows the Dump button on the container screen.",
+  "Modules.AutoSteal.setting.autoStealEnabled.description": "Starts the auto steal when a container open.",
+  "Modules.AutoSteal.setting.autoDumpEnabled.description": "Start auto dump when a container opens.",
+  "Modules.AutoSteal.setting.minimumDelay.description": "The minimum delay between stealing the next stack in milliseconds.",
+  "Modules.AutoSteal.setting.randomDelay.description": "Randomly adds a delay of up to the specified time in milliseconds. Helps avoid anti-cheats.",
+  "Modules.AutoSteal.setting.stealButtonEnabled.displayName": "Steal Button Enabled",
+  "Modules.AutoSteal.setting.dumpButtonEnabled.displayName": "Dump Button Enabled",
+  "Modules.AutoSteal.setting.autoStealEnabled.displayName": "Auto Steal Enabled",
+  "Modules.AutoSteal.setting.autoDumpEnabled.displayName": "Auto Dump Enabled",
+  "Modules.AutoSteal.setting.minimumDelay.displayName": "Min Delay",
+  "Modules.AutoSteal.setting.randomDelay.displayName": "Random Delay",
+  "Modules.AutoSteal.buttons.Steal": "Steal",
+  "Modules.AutoSteal.buttons.Dump": "Dump",
+
+
   "Modules.AutoTool.description": "Automatically switches to the most effective tool when performing an action.",
   "Modules.AutoTool.setting.prefer.description": "Either to prefer Silk Touch, Fortune, or none.",
   "Modules.AutoTool.setting.preferMending.description": "Whether or not to prefer the Mending enchantment.",
@@ -1561,6 +1568,9 @@
   "Modules.AutoTool.setting.enderChestOnlyWithSilkTouch.displayName": "Silk Touch With Ender Chest",
   "Modules.AutoTool.setting.antiBreak.displayName": "Anti Break",
   "Modules.AutoTool.setting.switchBack.displayName": "Switch Back",
+  "Modules.AutoTool.EnchantPreference.None": "None",
+  "Modules.AutoTool.EnchantPreference.Fortune": "Fortune",
+  "Modules.AutoTool.EnchantPreference.SilkTouch": "Silk Touch",
 
 
   "Modules.BuildHeight.description": "Allows you to interact with objects at the build limit.",
@@ -1570,7 +1580,10 @@
   "Modules.ChestSwap.setting.chestplate.description": "Which type of chestplate to swap to.",
   "Modules.ChestSwap.setting.stayOn.description": "Stays on and activates when you turn it off.",
   "Modules.ChestSwap.setting.chestplate.displayName": "Chestplate",
-  "Modules.ChestSwap.setting.stayOn.displayName": "Stay On",
+  "Modules.ChestSwap.Chestplate.Diamond": "Diamond",
+  "Modules.ChestSwap.Chestplate.Netherite": "Netherite",
+  "Modules.ChestSwap.Chestplate.PreferDiamond": "Prefer Diamond",
+  "Modules.ChestSwap.Chestplate.PreferNetherite": "Prefer Netherite",
 
 
   "Modules.DeathPosition.description": "Sends you the coordinates to your latest death.",
@@ -1581,6 +1594,8 @@
   "Modules.EndermanLook.description": "Either looks at all Endermen or prevents you from looking at Endermen.",
   "Modules.EndermanLook.setting.lookMode.description": "How this module behaves.",
   "Modules.EndermanLook.setting.lookMode.displayName": "Look Mode",
+  "Modules.EndermanLook.Mode.LookAt": "LookAt",
+  "Modules.EndermanLook.Mode.LookAway": "LookAway",
 
 
   "Modules.EXPThrower.description": "Automatically throws XP bottles in your hotbar.",
@@ -1607,11 +1622,13 @@
 
   "Modules.FastUse.description": "Allows you to use items at very high speeds.",
   "Modules.FastUse.setting.mode.description": "Which items to fast use.",
-  "Modules.FastUse.setting.exp.description": "Fast-throws XP bottles if the mode is \"Some\".",
-  "Modules.FastUse.setting.blocks.description": "Fast-places blocks if the mode is \"Some\".",
+  "Modules.FastUse.setting.exp.description": "Fast-throws XP bottles if the mode is Some.",
+  "Modules.FastUse.setting.blocks.description": "Fast-places blocks if the mode is Some.",
   "Modules.FastUse.setting.mode.displayName": "Mode",
   "Modules.FastUse.setting.exp.displayName": "Xp",
   "Modules.FastUse.setting.blocks.displayName": "Blocks",
+  "Modules.FastUse.Mode.All": "All",
+  "Modules.FastUse.Mode.Some": "Some",
 
 
   "Modules.InfinityMiner.description": "Allows you to essentially mine forever.",
@@ -1619,7 +1636,7 @@
   "Modules.InfinityMiner.group.sgExtras": "Extras",
   "Modules.InfinityMiner.setting.targetBlock.description": "The target block to mine.",
   "Modules.InfinityMiner.setting.repairBlock.description": "The block mined to repair your pickaxe.",
-  "Modules.InfinityMiner.setting.durabilityThreshold.description": "The durability at which to start repairing as a percent of maximum durability.",
+  "Modules.InfinityMiner.setting.durabilityThreshold.description": "The durability at which to start repairing as a decimal of maximum durability.",
   "Modules.InfinityMiner.setting.smartModuleToggle.description": "Will automatically enable helpful modules.",
   "Modules.InfinityMiner.setting.autoWalkHome.description": "Will walk 'home' when your inventory is full.",
   "Modules.InfinityMiner.setting.autoLogOut.description": "Logs out when your inventory is full. Will walk home FIRST if walk home is enabled.",
@@ -1639,6 +1656,11 @@
   "Modules.MiddleClickExtra.setting.notify.description": "Notifies you when you do not have the specified item in your hotbar.",
   "Modules.MiddleClickExtra.setting.mode.displayName": "Mode",
   "Modules.MiddleClickExtra.setting.notify.displayName": "Notify",
+  "Modules.MiddleClickExtra.Mode.Pearl": "Pearl",
+  "Modules.MiddleClickExtra.Mode.Bow": "Bow",
+  "Modules.MiddleClickExtra.Mode.Gap": "Gap",
+  "Modules.MiddleClickExtra.Mode.EGap": "EGap",
+  "Modules.MiddleClickExtra.Mode.Rod": "Rod",
 
 
   "Modules.MountBypass.description": "Allows you to bypass the IllegalStacks plugin and put chests on entities.",
@@ -1701,11 +1723,18 @@
   "Modules.Rotation.setting.yawAngle.displayName": "Yaw Angle",
   "Modules.Rotation.setting.pitchLockMode.displayName": "Pitch Lock Mode",
   "Modules.Rotation.setting.pitchAngle.displayName": "Pitch Angle",
+  "Modules.Rotation.LockMode.Smart": "Smart",
+  "Modules.Rotation.LockMode.Simple": "Simple",
+  "Modules.Rotation.LockMode.None": "None",
 
 
   "Modules.SpeedMine.description": "Allows you to quickly mine blocks.",
+  "Modules.SpeedMine.setting.mode.displayName": "Mode",
   "Modules.SpeedMine.setting.modifier.description": "Mining speed modifier. An additional value of 0.2 is equivalent to one haste level (1.2 = haste 1).",
   "Modules.SpeedMine.setting.modifier.displayName": "Modifier",
+  "Modules.SpeedMine.Mode.Normal": "Normal",
+  "Modules.SpeedMine.Mode.Haste1": "Haste 1",
+  "Modules.SpeedMine.Mode.Haste2": "Haste 2",
 
 
   "Modules.XCarry.description": "Allows you to store four extra items in your crafting grid.",

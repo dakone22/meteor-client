@@ -37,13 +37,22 @@ public class AutoClicker extends Module {
             .name("mode")
             .displayName(I18n.translate("Modules.AutoClicker.setting.mode.displayName"))
             .description(I18n.translate("Modules.AutoClicker.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.AutoClicker.Mode.Hold"),
+                    I18n.translate("Modules.AutoClicker.Mode.Press"),
+            })
             .defaultValue(Mode.Press)
             .build() 
     );
 
     private final Setting<Button> button = sgGeneral.add(new EnumSetting.Builder<Button>()
-            .name("Button")
+            .name("button")
+            .displayName(I18n.translate("Modules.AutoClicker.setting.button.displayName"))
             .description(I18n.translate("Modules.AutoClicker.setting.button.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.AutoClicker.Button.Right"),
+                    I18n.translate("Modules.AutoClicker.Button.Left"),
+            })
             .defaultValue(Button.Right)
             .build()
     );

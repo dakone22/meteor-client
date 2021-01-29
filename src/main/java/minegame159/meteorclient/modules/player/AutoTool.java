@@ -47,6 +47,11 @@ public class AutoTool extends Module {
             .name("prefer")
             .displayName(I18n.translate("Modules.AutoTool.setting.prefer.displayName"))
             .description(I18n.translate("Modules.AutoTool.setting.prefer.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Modules.AutoTool.EnchantPreference.None"),
+                    I18n.translate("Modules.AutoTool.EnchantPreference.Fortune"),
+                    I18n.translate("Modules.AutoTool.EnchantPreference.SilkTouch"),
+            })
             .defaultValue(EnchantPreference.Fortune)
             .build()
     );
