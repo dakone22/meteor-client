@@ -954,7 +954,7 @@
   "Modules.BetterChat.setting.suffixEnabled.displayName": "Suffix Enabled",
   "Modules.BetterChat.setting.suffixText.displayName": "Text",
   "Modules.BetterChat.setting.suffixSmallCaps.displayName": "Small Caps",
-  "Modules.BetterChat.setting.suffixRandom.displayName": "Random",
+  "Modules.BetterChat.setting.suffixRandom.displayName": "Random Number",
   "Modules.BetterChat.setting.friendColorEnabled.displayName": "Friend Color Enabled",
 
 
@@ -1041,7 +1041,7 @@
   "Modules.Nuker.setting.rotate.displayName": "Rotate",
 
 
-  "Modules.OffhandCrash.description": "An exploit that can crash other players by swapping back and forth between your main hand and offhand..",
+  "Modules.OffhandCrash.description": "An exploit that can crash other players by swapping back and forth between your main hand and offhand.",
   "Modules.OffhandCrash.setting.doCrash.description": "Sends X number of offhand swap sound packets to the server per tick.",
   "Modules.OffhandCrash.setting.speed.description": "The amount of swaps measured in ticks.",
   "Modules.OffhandCrash.setting.antiCrash.description": "Attempts to prevent you from crashing yourself.",
