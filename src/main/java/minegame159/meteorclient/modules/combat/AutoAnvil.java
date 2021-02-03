@@ -35,22 +35,22 @@ import net.minecraft.util.math.Direction;
 
 public class AutoAnvil extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Modules.AutoAnvil.group.sgPlace"));
+    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Module.AutoAnvil.group.sgPlace"));
 
     // General
 
     private final Setting<Boolean> toggleOnBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("toggle-on-break")
-            .displayName(I18n.translate("Modules.AutoAnvil.setting.toggleOnBreak.displayName"))
-            .description(I18n.translate("Modules.AutoAnvil.setting.toggleOnBreak.description"))
+            .displayName(I18n.translate("Module.AutoAnvil.setting.toggleOnBreak.displayName"))
+            .description(I18n.translate("Module.AutoAnvil.setting.toggleOnBreak.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AutoAnvil.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AutoAnvil.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AutoAnvil.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AutoAnvil.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -59,8 +59,8 @@ public class AutoAnvil extends Module {
 
     private final Setting<Double> range = sgPlace.add(new DoubleSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.AutoAnvil.setting.range.displayName"))
-            .description(I18n.translate("Modules.AutoAnvil.setting.range.description"))
+            .displayName(I18n.translate("Module.AutoAnvil.setting.range.displayName"))
+            .description(I18n.translate("Module.AutoAnvil.setting.range.description"))
             .defaultValue(4)
             .min(0)
             .build()
@@ -68,8 +68,8 @@ public class AutoAnvil extends Module {
 
     private final Setting<Integer> delay = sgPlace.add(new IntSetting.Builder()
             .name("delay")
-            .displayName(I18n.translate("Modules.AutoAnvil.setting.delay.displayName"))
-            .description(I18n.translate("Modules.AutoAnvil.setting.delay.description"))
+            .displayName(I18n.translate("Module.AutoAnvil.setting.delay.displayName"))
+            .description(I18n.translate("Module.AutoAnvil.setting.delay.description"))
             .min(0)
             .defaultValue(0)
             .sliderMax(50)
@@ -78,8 +78,8 @@ public class AutoAnvil extends Module {
 
     private final Setting<Integer> height = sgPlace.add(new IntSetting.Builder()
             .name("height")
-            .displayName(I18n.translate("Modules.AutoAnvil.setting.height.displayName"))
-            .description(I18n.translate("Modules.AutoAnvil.setting.height.description"))
+            .displayName(I18n.translate("Module.AutoAnvil.setting.height.displayName"))
+            .description(I18n.translate("Module.AutoAnvil.setting.height.description"))
             .defaultValue(5)
             .min(0)
             .max(10)
@@ -90,14 +90,14 @@ public class AutoAnvil extends Module {
 
     private final Setting<Boolean> placeButton = sgPlace.add(new BoolSetting.Builder()
             .name("place-at-feet")
-            .displayName(I18n.translate("Modules.AutoAnvil.setting.placeButton.displayName"))
-            .description(I18n.translate("Modules.AutoAnvil.setting.placeButton.description"))
+            .displayName(I18n.translate("Module.AutoAnvil.setting.placeButton.displayName"))
+            .description(I18n.translate("Module.AutoAnvil.setting.placeButton.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoAnvil() {
-        super(Category.Combat, "auto-anvil", I18n.translate("Modules.AutoAnvil.description"));
+        super(Category.Combat, "auto-anvil", I18n.translate("Module.AutoAnvil.description"));
     }
 
     private PlayerEntity target;

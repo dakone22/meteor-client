@@ -41,8 +41,8 @@ public class Quiver extends Module {
 
     private final Setting<Integer> charge = sgGeneral.add(new IntSetting.Builder()
             .name("charge-delay")
-            .displayName(I18n.translate("Modules.Quiver.setting.charge.displayName"))
-            .description(I18n.translate("Modules.Quiver.setting.charge.description"))
+            .displayName(I18n.translate("Module.Quiver.setting.charge.displayName"))
+            .description(I18n.translate("Module.Quiver.setting.charge.description"))
             .defaultValue(6)
             .min(5)
             .max(20)
@@ -53,22 +53,22 @@ public class Quiver extends Module {
 
     private final Setting<Boolean> checkEffects = sgGeneral.add(new BoolSetting.Builder()
             .name("check-effects")
-            .displayName(I18n.translate("Modules.Quiver.setting.checkEffects.displayName"))
-            .description(I18n.translate("Modules.Quiver.setting.checkEffects.description"))
+            .displayName(I18n.translate("Module.Quiver.setting.checkEffects.displayName"))
+            .description(I18n.translate("Module.Quiver.setting.checkEffects.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> chatInfo = sgGeneral.add(new BoolSetting.Builder()
             .name("chat-info")
-            .displayName(I18n.translate("Modules.Quiver.setting.chatInfo.displayName"))
-            .description(I18n.translate("Modules.Quiver.setting.chatInfo.description"))
+            .displayName(I18n.translate("Module.Quiver.setting.chatInfo.displayName"))
+            .description(I18n.translate("Module.Quiver.setting.chatInfo.description"))
             .defaultValue(true)
             .build()
     );
 
     public Quiver() {
-        super(Category.Combat, "quiver", I18n.translate("Modules.Quiver.description"));
+        super(Category.Combat, "quiver", I18n.translate("Module.Quiver.description"));
     }
 
     private boolean shooting;

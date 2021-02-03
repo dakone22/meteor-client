@@ -11,6 +11,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class AntiCactus extends Module {
     public AntiCactus() {
-        super(Category.Player, "anti-cactus", I18n.translate("Modules.AntiCactus.description"));
+        super(Category.Player, "anti-cactus", I18n.translate("Module.AntiCactus.description"));
     }
 }

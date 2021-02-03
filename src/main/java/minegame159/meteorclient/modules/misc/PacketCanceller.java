@@ -33,22 +33,22 @@ public class PacketCanceller extends Module {
     
     private final Setting<Object2BooleanMap<Class<? extends Packet<?>>>> s2cPackets = sgGeneral.add(new PacketBoolSetting.Builder()
             .name("s2c-packets")
-            .displayName(I18n.translate("Modules.PacketCanceller.setting.s2cPackets.displayName"))
-            .description(I18n.translate("Modules.PacketCanceller.setting.s2cPackets.description"))
+            .displayName(I18n.translate("Module.PacketCanceller.setting.s2cPackets.displayName"))
+            .description(I18n.translate("Module.PacketCanceller.setting.s2cPackets.description"))
             .defaultValue(S2C_PACKETS)
             .build()
     );
 
     private final Setting<Object2BooleanMap<Class<? extends Packet<?>>>> c2sPackets = sgGeneral.add(new PacketBoolSetting.Builder()
             .name("c2s-packets")
-            .displayName(I18n.translate("Modules.PacketCanceller.setting.c2sPackets.displayName"))
-            .description(I18n.translate("Modules.PacketCanceller.setting.c2sPackets.description"))
+            .displayName(I18n.translate("Module.PacketCanceller.setting.c2sPackets.displayName"))
+            .description(I18n.translate("Module.PacketCanceller.setting.c2sPackets.description"))
             .defaultValue(C2S_PACKETS)
             .build()
     );
 
     public PacketCanceller() {
-        super(Category.Misc, "packet-canceller", I18n.translate("Modules.PacketCanceller.description"));
+        super(Category.Misc, "packet-canceller", I18n.translate("Module.PacketCanceller.description"));
     }
 
     @EventHandler

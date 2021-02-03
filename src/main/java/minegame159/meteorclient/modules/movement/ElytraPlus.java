@@ -43,38 +43,38 @@ public class ElytraPlus extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgAutopilot = settings.createGroup(I18n.translate("Modules.ElytraPlus.group.sgAutopilot"));
+    private final SettingGroup sgAutopilot = settings.createGroup(I18n.translate("Module.ElytraPlus.group.sgAutopilot"));
 
     // General
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.mode.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.mode.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.mode.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.mode.description"))
             .defaultValue(Mode.Normal)
             .build()
     );
 
     private final Setting<Boolean> autoTakeOff = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-take-off")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.autoTakeOff.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.autoTakeOff.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.autoTakeOff.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.autoTakeOff.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> replace = sgGeneral.add(new BoolSetting.Builder()
             .name("elytra-replace")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.replace.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.replace.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.replace.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.replace.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> replaceDurability = sgGeneral.add(new IntSetting.Builder()
             .name("replace-durability")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.replaceDurability.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.replaceDurability.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.replaceDurability.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.replaceDurability.description"))
             .defaultValue(2)
             .min(1)
             .max(Items.ELYTRA.getMaxDamage() - 1)
@@ -84,8 +84,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> fallMultiplier = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-multiplier")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.fallMultiplier.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.fallMultiplier.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.fallMultiplier.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.fallMultiplier.description"))
             .defaultValue(0.01)
             .min(0)
             .build()
@@ -93,8 +93,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> horizontalSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("horizontal-speed")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.horizontalSpeed.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.horizontalSpeed.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.horizontalSpeed.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.horizontalSpeed.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -102,8 +102,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> verticalSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("vertical-speed")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.verticalSpeed.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.verticalSpeed.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.verticalSpeed.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.verticalSpeed.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -111,24 +111,24 @@ public class ElytraPlus extends Module {
 
     private final Setting<Boolean> stopInWater = sgGeneral.add(new BoolSetting.Builder()
             .name("stop-in-water")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.stopInWater.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.stopInWater.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.stopInWater.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.stopInWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> dontGoIntoUnloadedChunks = sgGeneral.add(new BoolSetting.Builder()
             .name("no-unloaded-chunks")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.dontGoIntoUnloadedChunks.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.dontGoIntoUnloadedChunks.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.dontGoIntoUnloadedChunks.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.dontGoIntoUnloadedChunks.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ChestSwapMode> chestSwap = sgGeneral.add(new EnumSetting.Builder<ChestSwapMode>()
             .name("chest-swap")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.chestSwap.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.chestSwap.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.chestSwap.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.chestSwap.description"))
             .defaultValue(ChestSwapMode.Never)
             .build()
     );
@@ -137,8 +137,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Boolean> autopilotEnabled = sgAutopilot.add(new BoolSetting.Builder()
             .name("autopilot-enabled")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.autopilotEnabled.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.autopilotEnabled.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.autopilotEnabled.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.autopilotEnabled.description"))
             .defaultValue(false)
             .onChanged(aBoolean -> {
                 if (isActive() && !aBoolean) ((IKeyBinding) mc.options.keyForward).setPressed(false);
@@ -148,8 +148,8 @@ public class ElytraPlus extends Module {
 
     private final Setting<Double> autopilotMinimumHeight = sgAutopilot.add(new DoubleSetting.Builder()
             .name("minimum-height")
-            .displayName(I18n.translate("Modules.ElytraPlus.setting.autopilotMinimumHeight.displayName"))
-            .description(I18n.translate("Modules.ElytraPlus.setting.autopilotMinimumHeight.description"))
+            .displayName(I18n.translate("Module.ElytraPlus.setting.autopilotMinimumHeight.displayName"))
+            .description(I18n.translate("Module.ElytraPlus.setting.autopilotMinimumHeight.description"))
             .defaultValue(160)
             .min(0)
             .sliderMax(260)
@@ -169,7 +169,7 @@ public class ElytraPlus extends Module {
     private boolean lastForwardPressed;
 
     public ElytraPlus() {
-        super(Category.Movement, "Elytra+", I18n.translate("Modules.ElytraPlus.description"));
+        super(Category.Movement, "Elytra+", I18n.translate("Module.ElytraPlus.description"));
     }
 
     @Override

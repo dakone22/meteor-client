@@ -24,8 +24,8 @@ public class BowSpam extends Module {
 
     private final Setting<Integer> charge = sgGeneral.add(new IntSetting.Builder()
             .name("charge")
-            .displayName(I18n.translate("Modules.BowSpam.setting.charge.displayName"))
-            .description(I18n.translate("Modules.BowSpam.setting.charge.description"))
+            .displayName(I18n.translate("Module.BowSpam.setting.charge.displayName"))
+            .description(I18n.translate("Module.BowSpam.setting.charge.description"))
             .defaultValue(5)
             .min(5)
             .max(20)
@@ -36,8 +36,8 @@ public class BowSpam extends Module {
 
     private final Setting<Boolean> onlyWhenHoldingRightClick = sgGeneral.add(new BoolSetting.Builder()
             .name("only-when-holding-right-click")
-            .displayName(I18n.translate("Modules.BowSpam.setting.onlyWhenHoldingRightClick.displayName"))
-            .description(I18n.translate("Modules.BowSpam.setting.onlyWhenHoldingRightClick.description"))
+            .displayName(I18n.translate("Module.BowSpam.setting.onlyWhenHoldingRightClick.displayName"))
+            .description(I18n.translate("Module.BowSpam.setting.onlyWhenHoldingRightClick.description"))
             .defaultValue(false)
             .build()
     );
@@ -46,7 +46,7 @@ public class BowSpam extends Module {
     private boolean wasHoldingRightClick = false;
 
     public BowSpam() {
-        super(Category.Combat, "bow-spam", I18n.translate("Modules.BowSpam.description"));
+        super(Category.Combat, "bow-spam", I18n.translate("Module.BowSpam.description"));
     }
 
     @Override

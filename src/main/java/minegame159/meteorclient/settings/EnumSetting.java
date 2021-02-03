@@ -27,7 +27,7 @@ public class EnumSetting<T extends Enum<?>> extends Setting<T> {
                 if (displayNames != null && i < displayNames.length && displayNames[i] != null && !displayNames[i].isEmpty()) {
                     names[i] = displayNames[i];
                 } else {
-                    String key = String.format("Enums.%s.%s", defaultValue.getClass().getSimpleName(), values[i].toString());
+                    String key = String.format("enum.%s.%s", defaultValue.getClass().getSimpleName(), values[i].toString());
                     names[i] = (I18n.hasTranslation(key) ? I18n.translate(key) : values[i].toString());
                 }
             }

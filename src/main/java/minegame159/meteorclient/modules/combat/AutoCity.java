@@ -30,38 +30,38 @@ public class AutoCity extends Module {
 
     private final Setting<Boolean> checkBelow = sgGeneral.add(new BoolSetting.Builder()
             .name("check-below")
-            .displayName(I18n.translate("Modules.AutoCity.setting.checkBelow.displayName"))
-            .description(I18n.translate("Modules.AutoCity.setting.checkBelow.description"))
+            .displayName(I18n.translate("Module.AutoCity.setting.checkBelow.displayName"))
+            .description(I18n.translate("Module.AutoCity.setting.checkBelow.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> support = sgGeneral.add(new BoolSetting.Builder()
             .name("support")
-            .displayName(I18n.translate("Modules.AutoCity.setting.support.displayName"))
-            .description(I18n.translate("Modules.AutoCity.setting.support.description"))
+            .displayName(I18n.translate("Module.AutoCity.setting.support.displayName"))
+            .description(I18n.translate("Module.AutoCity.setting.support.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> chatInfo = sgGeneral.add(new BoolSetting.Builder()
             .name("chat-info")
-            .displayName(I18n.translate("Modules.AutoCity.setting.chatInfo.displayName"))
-            .description(I18n.translate("Modules.AutoCity.setting.chatInfo.description"))
+            .displayName(I18n.translate("Module.AutoCity.setting.chatInfo.displayName"))
+            .description(I18n.translate("Module.AutoCity.setting.chatInfo.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AutoCity.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AutoCity.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AutoCity.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AutoCity.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoCity() {
-        super(Category.Combat, "auto-city", I18n.translate("Modules.AutoCity.description"));
+        super(Category.Combat, "auto-city", I18n.translate("Module.AutoCity.description"));
     }
 
     private PlayerEntity target;

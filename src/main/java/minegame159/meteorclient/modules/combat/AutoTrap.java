@@ -46,30 +46,30 @@ public class AutoTrap extends Module {
 
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.AutoTrap.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.AutoTrap.group.sgRender"));
 
     // General
 
     private final Setting<TopMode> topPlacement = sgGeneral.add(new EnumSetting.Builder<TopMode>()
             .name("top-mode")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.topPlacement.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.topPlacement.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.topPlacement.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.topPlacement.description"))
             .defaultValue(TopMode.Full)
             .build()
     );
 
     private final Setting<BottomMode> bottomPlacement = sgGeneral.add(new EnumSetting.Builder<BottomMode>()
             .name("bottom-mode")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.bottomPlacement.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.bottomPlacement.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.bottomPlacement.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.bottomPlacement.description"))
             .defaultValue(BottomMode.Platform)
             .build()
     );
 
     private final Setting<Integer> range = sgGeneral.add(new IntSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.range.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.range.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.range.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.range.description"))
             .defaultValue(5)
             .sliderMin(0)
             .sliderMax(10)
@@ -78,8 +78,8 @@ public class AutoTrap extends Module {
 
     private final Setting<Integer> delaySetting = sgGeneral.add(new IntSetting.Builder()
             .name("place-delay")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.delaySetting.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.delaySetting.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.delaySetting.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.delaySetting.description"))
             .defaultValue(1)
             .sliderMin(0)
             .sliderMax(10)
@@ -88,16 +88,16 @@ public class AutoTrap extends Module {
 
     private final Setting<Boolean> turnOff = sgGeneral.add(new BoolSetting.Builder()
             .name("turn-off")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.turnOff.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.turnOff.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.turnOff.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.turnOff.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -106,32 +106,32 @@ public class AutoTrap extends Module {
 
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.render.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.render.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.render.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.AutoTrap.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.AutoTrap.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.AutoTrap.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.AutoTrap.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );
@@ -142,7 +142,7 @@ public class AutoTrap extends Module {
     private int delay;
 
     public AutoTrap(){
-        super(Category.Combat, "auto-trap", I18n.translate("Modules.AutoTrap.description"));
+        super(Category.Combat, "auto-trap", I18n.translate("Module.AutoTrap.description"));
     }
 
     @Override

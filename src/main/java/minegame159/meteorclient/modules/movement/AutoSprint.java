@@ -20,14 +20,14 @@ public class AutoSprint extends Module {
 
     private final Setting<Boolean> permanent = sgGeneral.add(new BoolSetting.Builder()
             .name("permanent")
-            .displayName(I18n.translate("Modules.AutoSprint.setting.permanent.displayName"))
-            .description(I18n.translate("Modules.AutoSprint.setting.permanent.description"))
+            .displayName(I18n.translate("Module.AutoSprint.setting.permanent.displayName"))
+            .description(I18n.translate("Module.AutoSprint.setting.permanent.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoSprint() {
-        super(Category.Movement, "auto-sprint", I18n.translate("Modules.AutoSprint.description"));
+        super(Category.Movement, "auto-sprint", I18n.translate("Module.AutoSprint.description"));
     }
     
     @Override

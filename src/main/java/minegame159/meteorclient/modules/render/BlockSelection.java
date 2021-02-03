@@ -26,38 +26,38 @@ public class BlockSelection extends Module {
 
     private final Setting<Boolean> advanced = sgGeneral.add(new BoolSetting.Builder()
             .name("advanced")
-            .displayName(I18n.translate("Modules.BlockSelection.setting.advanced.displayName"))
-            .description(I18n.translate("Modules.BlockSelection.setting.advanced.description"))
+            .displayName(I18n.translate("Module.BlockSelection.setting.advanced.displayName"))
+            .description(I18n.translate("Module.BlockSelection.setting.advanced.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.BlockSelection.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.BlockSelection.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.BlockSelection.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.BlockSelection.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Lines)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgGeneral.add(new ColorSetting.Builder()
             .name("side-color")
-            .displayName(I18n.translate("Modules.BlockSelection.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.BlockSelection.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.BlockSelection.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.BlockSelection.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 255, 255, 50))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgGeneral.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.BlockSelection.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.BlockSelection.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.BlockSelection.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.BlockSelection.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 255, 255, 255))
             .build()
     );
 
     public BlockSelection() {
-        super(Category.Render, "block-selection", I18n.translate("Modules.BlockSelection.description"));
+        super(Category.Render, "block-selection", I18n.translate("Module.BlockSelection.description"));
     }
 
     @EventHandler

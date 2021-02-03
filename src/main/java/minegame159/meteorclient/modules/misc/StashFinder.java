@@ -46,16 +46,16 @@ public class StashFinder extends Module {
 
     private final Setting<List<BlockEntityType<?>>> storageBlocks = sgGeneral.add(new StorageBlockListSetting.Builder()
             .name("storage-blocks")
-            .displayName(I18n.translate("Modules.StashFinder.setting.storageBlocks.displayName"))
-            .description(I18n.translate("Modules.StashFinder.setting.storageBlocks.description"))
+            .displayName(I18n.translate("Module.StashFinder.setting.storageBlocks.displayName"))
+            .description(I18n.translate("Module.StashFinder.setting.storageBlocks.description"))
             .defaultValue(Arrays.asList(StorageBlockListSetting.STORAGE_BLOCKS))
             .build()
     );
 
     private final Setting<Integer> minimumStorageCount = sgGeneral.add(new IntSetting.Builder()
             .name("minimum-storage-cont")
-            .displayName(I18n.translate("Modules.StashFinder.setting.minimumStorageCount.displayName"))
-            .description(I18n.translate("Modules.StashFinder.setting.minimumStorageCount.description"))
+            .displayName(I18n.translate("Module.StashFinder.setting.minimumStorageCount.displayName"))
+            .description(I18n.translate("Module.StashFinder.setting.minimumStorageCount.description"))
             .defaultValue(4)
             .min(1)
             .build()
@@ -63,8 +63,8 @@ public class StashFinder extends Module {
     
     private final Setting<Integer> minimumDistance = sgGeneral.add(new IntSetting.Builder()
             .name("minimum-distance")
-            .displayName(I18n.translate("Modules.StashFinder.setting.minimumDistance.displayName"))
-            .description(I18n.translate("Modules.StashFinder.setting.minimumDistance.description"))
+            .displayName(I18n.translate("Module.StashFinder.setting.minimumDistance.displayName"))
+            .description(I18n.translate("Module.StashFinder.setting.minimumDistance.description"))
             .defaultValue(0)
             .min(0)
             .sliderMax(10000)
@@ -73,16 +73,16 @@ public class StashFinder extends Module {
 
     private final Setting<Boolean> sendNotifications = sgGeneral.add(new BoolSetting.Builder()
             .name("send-notifications")
-            .displayName(I18n.translate("Modules.StashFinder.setting.sendNotifications.displayName"))
-            .description(I18n.translate("Modules.StashFinder.setting.sendNotifications.description"))
+            .displayName(I18n.translate("Module.StashFinder.setting.sendNotifications.displayName"))
+            .description(I18n.translate("Module.StashFinder.setting.sendNotifications.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<StashFinder.Mode> mode = sgGeneral.add(new EnumSetting.Builder<StashFinder.Mode>()
             .name("notification-mode")
-            .displayName(I18n.translate("Modules.StashFinder.setting.mode.displayName"))
-            .description(I18n.translate("Modules.StashFinder.setting.mode.description"))
+            .displayName(I18n.translate("Module.StashFinder.setting.mode.displayName"))
+            .description(I18n.translate("Module.StashFinder.setting.mode.description"))
             .defaultValue(Mode.Toast)
             .build()
     );
@@ -90,7 +90,7 @@ public class StashFinder extends Module {
     public List<Chunk> chunks = new ArrayList<>();
 
     public StashFinder() {
-        super(Category.Misc, "stash-finder", I18n.translate("Modules.StashFinder.description"));
+        super(Category.Misc, "stash-finder", I18n.translate("Module.StashFinder.description"));
     }
 
     @Override

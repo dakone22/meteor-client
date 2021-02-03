@@ -38,40 +38,40 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Jesus extends Module {
-    private final SettingGroup sgWater = settings.createGroup(I18n.translate("Modules.Jesus.group.sgWater"));
-    private final SettingGroup sgLava = settings.createGroup(I18n.translate("Modules.Jesus.group.sgLava"));
+    private final SettingGroup sgWater = settings.createGroup(I18n.translate("Module.Jesus.group.sgWater"));
+    private final SettingGroup sgLava = settings.createGroup(I18n.translate("Module.Jesus.group.sgLava"));
 
     // Water
 
     private final Setting<Boolean> walkOnWater = sgWater.add(new BoolSetting.Builder()
             .name("walk-on-water")
-            .displayName(I18n.translate("Modules.Jesus.setting.walkOnWater.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.walkOnWater.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.walkOnWater.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.walkOnWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableOnSneakForWater = sgWater.add(new BoolSetting.Builder()
             .name("disable-on-sneak-for-water")
-            .displayName(I18n.translate("Modules.Jesus.setting.disableOnSneakForWater.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.disableOnSneakForWater.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.disableOnSneakForWater.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.disableOnSneakForWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> dipIntoWater = sgWater.add(new BoolSetting.Builder()
             .name("dip-into-water")
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWater.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.dipIntoWater.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoWater.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.dipIntoWater.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> dipIntoWaterHeight = sgWater.add(new IntSetting.Builder()
             .name("dip-into-water-height")
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.displayName"))
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLavaHeight.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoWaterHeight.displayName"))
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoLavaHeight.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.dipIntoWaterHeight.description"))
             .defaultValue(4)
             .min(1)
             .max(255)
@@ -82,8 +82,8 @@ public class Jesus extends Module {
 
     private final Setting<Boolean> dipIntoWaterIfBurning = sgWater.add(new BoolSetting.Builder()
             .name("dip-into-water-if-burning")
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWaterIfBurning.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.dipIntoWaterIfBurning.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoWaterIfBurning.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.dipIntoWaterIfBurning.description"))
             .defaultValue(true)
             .build()
     );
@@ -92,33 +92,33 @@ public class Jesus extends Module {
 
     private final Setting<Boolean> walkOnLava = sgLava.add(new BoolSetting.Builder()
             .name("walk-on-lava")
-            .displayName(I18n.translate("Modules.Jesus.setting.walkOnLava.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.walkOnLava.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.walkOnLava.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.walkOnLava.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableOnSneakForLava = sgLava.add(new BoolSetting.Builder()
             .name("disable-on-sneak-for-lava")
-            .displayName(I18n.translate("Modules.Jesus.setting.disableOnSneakForLava.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.disableOnSneakForLava.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.disableOnSneakForLava.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.disableOnSneakForLava.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> dipIntoLava = sgLava.add(new BoolSetting.Builder()
             .name("dip-into-lava")
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLava.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.dipIntoLava.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoLava.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.dipIntoLava.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> dipIntoLavaHeight = sgLava.add(new IntSetting.Builder()
             .name("dip-into-lava-height")
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.displayName"))
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLavaHeight.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.dipIntoWaterHeight.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoWaterHeight.displayName"))
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoLavaHeight.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.dipIntoWaterHeight.description"))
             .defaultValue(15)
             .min(1)
             .max(255)
@@ -129,16 +129,16 @@ public class Jesus extends Module {
 
     private final Setting<Boolean> dipIntoLavaIfFireResistance = sgLava.add(new BoolSetting.Builder()
             .name("dip-into-lava-if-fire-resistance")
-            .displayName(I18n.translate("Modules.Jesus.setting.dipIntoLavaIfFireResistance.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.dipIntoLavaIfFireResistance.description")) // rofl someone put "fall damage" here
+            .displayName(I18n.translate("Module.Jesus.setting.dipIntoLavaIfFireResistance.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.dipIntoLavaIfFireResistance.description")) // rofl someone put "fall damage" here
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> fireResistanceSafeMode = sgLava.add(new BoolSetting.Builder()
             .name("fire-resistance-safe-mode")
-            .displayName(I18n.translate("Modules.Jesus.setting.fireResistanceSafeMode.displayName"))
-            .description(I18n.translate("Modules.Jesus.setting.fireResistanceSafeMode.description"))
+            .displayName(I18n.translate("Module.Jesus.setting.fireResistanceSafeMode.displayName"))
+            .description(I18n.translate("Module.Jesus.setting.fireResistanceSafeMode.description"))
             .defaultValue(true)
             .build()
     );
@@ -152,7 +152,7 @@ public class Jesus extends Module {
     private boolean preBaritoneAssumeWalkOnLava;
 
     public Jesus() {
-        super(Category.Movement, "jesus", I18n.translate("Modules.Jesus.description"));
+        super(Category.Movement, "jesus", I18n.translate("Module.Jesus.description"));
     }
 
     @Override

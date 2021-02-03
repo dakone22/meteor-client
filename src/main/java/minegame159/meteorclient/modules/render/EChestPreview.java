@@ -10,6 +10,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class EChestPreview extends Module {
     public EChestPreview() {
-        super(Category.Render, "EChest-preview", I18n.translate("Modules.EChestPreview.description"));
+        super(Category.Render, "EChest-preview", I18n.translate("Module.EChestPreview.description"));
     }
 }

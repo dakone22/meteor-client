@@ -11,6 +11,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class CameraClip extends Module {
     public CameraClip() {
-        super(Category.Render, "camera-clip", I18n.translate("Modules.CameraClip.description"));
+        super(Category.Render, "camera-clip", I18n.translate("Module.CameraClip.description"));
     }
 }

@@ -18,7 +18,7 @@ public class XCarry extends Module {
     private boolean invOpened;
 
     public XCarry() {
-        super(Category.Player, "XCarry", I18n.translate("Modules.XCarry.description"));
+        super(Category.Player, "XCarry", I18n.translate("Module.XCarry.description"));
     }
 
     @Override

@@ -18,14 +18,14 @@ public class NoMiningTrace extends Module {
 
     private final Setting<Boolean> onlyWhenHoldingPickaxe = sgGeneral.add(new BoolSetting.Builder()
             .name("only-when-holding-a-pickaxe")
-            .displayName(I18n.translate("Modules.NoMiningTrace.setting.onlyWhenHoldingPickaxe.displayName"))
-            .description(I18n.translate("Modules.NoMiningTrace.setting.onlyWhenHoldingPickaxe.description"))
+            .displayName(I18n.translate("Module.NoMiningTrace.setting.onlyWhenHoldingPickaxe.displayName"))
+            .description(I18n.translate("Module.NoMiningTrace.setting.onlyWhenHoldingPickaxe.description"))
             .defaultValue(true)
             .build()
     );
 
     public NoMiningTrace() {
-        super(Category.Player, "no-mining-trace", I18n.translate("Modules.NoMiningTrace.description"));
+        super(Category.Player, "no-mining-trace", I18n.translate("Module.NoMiningTrace.description"));
     }
 
     public boolean canWork() {

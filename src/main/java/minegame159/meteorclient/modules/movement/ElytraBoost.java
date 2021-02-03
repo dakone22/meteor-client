@@ -30,16 +30,16 @@ public class ElytraBoost extends Module {
 
     private final Setting<Boolean> dontConsumeFirework = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-consume")
-            .displayName(I18n.translate("Modules.ElytraBoost.setting.dontConsumeFirework.displayName"))
-            .description(I18n.translate("Modules.ElytraBoost.setting.dontConsumeFirework.description"))
+            .displayName(I18n.translate("Module.ElytraBoost.setting.dontConsumeFirework.displayName"))
+            .description(I18n.translate("Module.ElytraBoost.setting.dontConsumeFirework.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> fireworkLevel = sgGeneral.add(new IntSetting.Builder()
             .name("firework-duration")
-            .displayName(I18n.translate("Modules.ElytraBoost.setting.fireworkLevel.displayName"))
-            .description(I18n.translate("Modules.ElytraBoost.setting.fireworkLevel.description"))
+            .displayName(I18n.translate("Module.ElytraBoost.setting.fireworkLevel.displayName"))
+            .description(I18n.translate("Module.ElytraBoost.setting.fireworkLevel.description"))
             .defaultValue(0)
             .min(0)
             .max(255)
@@ -48,16 +48,16 @@ public class ElytraBoost extends Module {
 
     private final Setting<Boolean> playSound = sgGeneral.add(new BoolSetting.Builder()
             .name("play-sound")
-            .displayName(I18n.translate("Modules.ElytraBoost.setting.playSound.displayName"))
-            .description(I18n.translate("Modules.ElytraBoost.setting.playSound.description"))
+            .displayName(I18n.translate("Module.ElytraBoost.setting.playSound.displayName"))
+            .description(I18n.translate("Module.ElytraBoost.setting.playSound.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> keybind = sgGeneral.add(new KeybindSetting.Builder()
             .name("keybind")
-            .displayName(I18n.translate("Modules.ElytraBoost.setting.keybind.displayName"))
-            .description(I18n.translate("Modules.ElytraBoost.setting.keybind.description"))
+            .displayName(I18n.translate("Module.ElytraBoost.setting.keybind.displayName"))
+            .description(I18n.translate("Module.ElytraBoost.setting.keybind.description"))
             .action(this::boost)
             .build()
     );
@@ -65,7 +65,7 @@ public class ElytraBoost extends Module {
     private final List<FireworkRocketEntity> fireworks = new ArrayList<>();
 
     public ElytraBoost() {
-        super(Category.Movement, "elytra-boost", I18n.translate("Modules.ElytraBoost.description"));
+        super(Category.Movement, "elytra-boost", I18n.translate("Module.ElytraBoost.description"));
     }
 
     @Override

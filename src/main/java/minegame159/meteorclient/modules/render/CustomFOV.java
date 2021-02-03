@@ -20,8 +20,8 @@ public class CustomFOV extends Module {
 
     private final Setting<Integer> fov = sgGeneral.add(new IntSetting.Builder()
             .name("fov")
-            .displayName(I18n.translate("Modules.CustomFOV.setting.fov.displayName"))
-            .description(I18n.translate("Modules.CustomFOV.setting.fov.description"))
+            .displayName(I18n.translate("Module.CustomFOV.setting.fov.displayName"))
+            .description(I18n.translate("Module.CustomFOV.setting.fov.description"))
             .defaultValue(100)
             .sliderMin(1)
             .sliderMax(179)
@@ -54,7 +54,7 @@ public class CustomFOV extends Module {
     }
 
     public CustomFOV() {
-        super(Category.Render, "custom-fov", I18n.translate("Modules.CustomFOV.description"));
+        super(Category.Render, "custom-fov", I18n.translate("Module.CustomFOV.description"));
     }
 
 }

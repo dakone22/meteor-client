@@ -24,14 +24,14 @@ public class Trigger extends Module {
     
     private final Setting<Boolean> whenHoldingLeftClick = sgGeneral.add(new BoolSetting.Builder()
             .name("when-holding-left-click")
-            .displayName(I18n.translate("Modules.Trigger.setting.whenHoldingLeftClick.displayName"))
-            .description(I18n.translate("Modules.Trigger.setting.whenHoldingLeftClick.description"))
+            .displayName(I18n.translate("Module.Trigger.setting.whenHoldingLeftClick.displayName"))
+            .description(I18n.translate("Module.Trigger.setting.whenHoldingLeftClick.description"))
             .defaultValue(false)
             .build()
     );
 
     public Trigger() {
-        super(Category.Combat, "trigger", I18n.translate("Modules.Trigger.description"));
+        super(Category.Combat, "trigger", I18n.translate("Module.Trigger.description"));
     }
 
     private Entity target;

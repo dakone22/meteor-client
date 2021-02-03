@@ -48,39 +48,39 @@ public class BookBot extends Module {
     }
     //Didn't add it to the module list cuz I didn't know if it was gonna work.
     public BookBot(){
-        super(Category.Misc, "book-bot", I18n.translate("Modules.BookBot.description")); //Grammar who? / too ez.
+        super(Category.Misc, "book-bot", I18n.translate("Module.BookBot.description")); //Grammar who? / too ez.
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();//Obligatory comment.
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>() //WEEEEEEEEEEEEEEEEEEEE (Wanted to add a comment on everything but nothing to say so fuck you.)
             .name("mode")
-            .displayName(I18n.translate("Modules.BookBot.setting.mode.displayName"))
-            .description(I18n.translate("Modules.BookBot.setting.mode.description"))
+            .displayName(I18n.translate("Module.BookBot.setting.mode.displayName"))
+            .description(I18n.translate("Module.BookBot.setting.mode.description"))
             .defaultValue(Mode.Ascii)
             .build()
     );
     //Idk how to add the name into the book so you're gonna have to do it or tell me.
     private final Setting<String> name = sgGeneral.add(new StringSetting.Builder()
             .name("name")
-            .displayName(I18n.translate("Modules.BookBot.setting.name.displayName"))
-            .description(I18n.translate("Modules.BookBot.setting.name.description"))
+            .displayName(I18n.translate("Module.BookBot.setting.name.displayName"))
+            .description(I18n.translate("Module.BookBot.setting.name.description"))
             .defaultValue("Meteor on Crack!") //METEOR ON CRACK!!! / based.
             .build()
     );
 
     private final Setting<String> fileName = sgGeneral.add(new StringSetting.Builder()
             .name("file-name")
-            .displayName(I18n.translate("Modules.BookBot.setting.fileName.displayName"))
-            .description(I18n.translate("Modules.BookBot.setting.fileName.description")) //Some retard will do it without and complain like a tard.
+            .displayName(I18n.translate("Module.BookBot.setting.fileName.displayName"))
+            .description(I18n.translate("Module.BookBot.setting.fileName.description")) //Some retard will do it without and complain like a tard.
             .defaultValue("book.txt")
             .build()
     );
 
     private final Setting<Integer> noOfPages = sgGeneral.add(new IntSetting.Builder()
             .name("no-of-pages")
-            .displayName(I18n.translate("Modules.BookBot.setting.noOfPages.displayName"))
-            .description(I18n.translate("Modules.BookBot.setting.noOfPages.description")) //Fuck making it individual per book.
+            .displayName(I18n.translate("Module.BookBot.setting.noOfPages.displayName"))
+            .description(I18n.translate("Module.BookBot.setting.noOfPages.description")) //Fuck making it individual per book.
             .defaultValue(100)
             .min(1)
             .max(100)
@@ -90,16 +90,16 @@ public class BookBot extends Module {
 
     private final Setting<Integer> noOfBooks = sgGeneral.add(new IntSetting.Builder()
             .name("no-of-books")
-            .displayName(I18n.translate("Modules.BookBot.setting.noOfBooks.displayName"))
-            .description(I18n.translate("Modules.BookBot.setting.noOfBooks.description"))
+            .displayName(I18n.translate("Module.BookBot.setting.noOfBooks.displayName"))
+            .description(I18n.translate("Module.BookBot.setting.noOfBooks.description"))
             .defaultValue(1)
             .build()
     );
 
     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder()
             .name("delay")
-            .displayName(I18n.translate("Modules.BookBot.setting.delay.displayName"))
-            .description(I18n.translate("Modules.BookBot.setting.delay.description"))
+            .displayName(I18n.translate("Module.BookBot.setting.delay.displayName"))
+            .description(I18n.translate("Module.BookBot.setting.delay.description"))
             .defaultValue(300)
             .min(75)
             .sliderMin(75)

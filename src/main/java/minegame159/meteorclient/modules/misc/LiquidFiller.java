@@ -35,16 +35,16 @@ public class LiquidFiller extends Module {
 
     private final Setting<PlaceIn> placeInLiquids = sgGeneral.add(new EnumSetting.Builder<PlaceIn>()
             .name("place-in")
-            .displayName(I18n.translate("Modules.LiquidFiller.setting.placeInLiquids.displayName"))
-            .description(I18n.translate("Modules.LiquidFiller.setting.placeInLiquids.description"))
+            .displayName(I18n.translate("Module.LiquidFiller.setting.placeInLiquids.displayName"))
+            .description(I18n.translate("Module.LiquidFiller.setting.placeInLiquids.description"))
             .defaultValue(PlaceIn.Lava)
             .build()
     );
 
     private final Setting<Integer> horizontalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("horizontal-radius")
-            .displayName(I18n.translate("Modules.LiquidFiller.setting.horizontalRadius.displayName"))
-            .description(I18n.translate("Modules.LiquidFiller.setting.horizontalRadius.description"))
+            .displayName(I18n.translate("Module.LiquidFiller.setting.horizontalRadius.displayName"))
+            .description(I18n.translate("Module.LiquidFiller.setting.horizontalRadius.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(6)
@@ -53,8 +53,8 @@ public class LiquidFiller extends Module {
 
     private final Setting<Integer> verticalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("vertical-radius")
-            .displayName(I18n.translate("Modules.LiquidFiller.setting.verticalRadius.displayName"))
-            .description(I18n.translate("Modules.LiquidFiller.setting.verticalRadius.description"))
+            .displayName(I18n.translate("Module.LiquidFiller.setting.verticalRadius.displayName"))
+            .description(I18n.translate("Module.LiquidFiller.setting.verticalRadius.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(6)
@@ -63,22 +63,22 @@ public class LiquidFiller extends Module {
 
     private final Setting<List<Block>> whitelist = sgGeneral.add(new BlockListSetting.Builder()
             .name("block-whitelist")
-            .displayName(I18n.translate("Modules.LiquidFiller.setting.whitelist.displayName"))
-            .description(I18n.translate("Modules.LiquidFiller.setting.whitelist.description"))
+            .displayName(I18n.translate("Module.LiquidFiller.setting.whitelist.displayName"))
+            .description(I18n.translate("Module.LiquidFiller.setting.whitelist.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.LiquidFiller.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.LiquidFiller.setting.rotate.description"))
+            .displayName(I18n.translate("Module.LiquidFiller.setting.rotate.displayName"))
+            .description(I18n.translate("Module.LiquidFiller.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public LiquidFiller(){
-        super(Category.Misc, "liquid-filler", I18n.translate("Modules.LiquidFiller.description"));
+        super(Category.Misc, "liquid-filler", I18n.translate("Module.LiquidFiller.description"));
     }
 
     @EventHandler

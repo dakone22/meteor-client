@@ -27,14 +27,14 @@ public class ClickTP extends Module {
 
     private final Setting<Double> maxDistance = sgGeneral.add(new DoubleSetting.Builder()
             .name("max-distance")
-            .displayName(I18n.translate("Modules.ClickTP.setting.maxDistance.displayName"))
-            .description(I18n.translate("Modules.ClickTP.setting.maxDistance.description"))
+            .displayName(I18n.translate("Module.ClickTP.setting.maxDistance.displayName"))
+            .description(I18n.translate("Module.ClickTP.setting.maxDistance.description"))
             .defaultValue(5)
             .build()
     );
 
     public ClickTP() {
-        super(Category.Movement, "click-tp", I18n.translate("Modules.ClickTP.description"));
+        super(Category.Movement, "click-tp", I18n.translate("Module.ClickTP.description"));
     }
 
     @EventHandler

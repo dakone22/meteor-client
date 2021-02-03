@@ -21,23 +21,23 @@ import net.minecraft.client.resource.language.I18n;
 
 public class AirJump extends Module {
     public AirJump() {
-        super(Category.Movement, "air-jump", I18n.translate("Modules.AirJump.description"));
+        super(Category.Movement, "air-jump", I18n.translate("Module.AirJump.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Boolean> maintainY = sgGeneral.add(new BoolSetting.Builder()
             .name("maintain-level")
-            .displayName(I18n.translate("Modules.AirJump.setting.maintainY.displayName"))
-            .description(I18n.translate("Modules.AirJump.setting.maintainY.description"))
+            .displayName(I18n.translate("Module.AirJump.setting.maintainY.displayName"))
+            .description(I18n.translate("Module.AirJump.setting.maintainY.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> onHold = sgGeneral.add(new BoolSetting.Builder()
             .name("on-hold")
-            .displayName(I18n.translate("Modules.AirJump.setting.onHold.displayName"))
-            .description(I18n.translate("Modules.AirJump.setting.onHold.description"))
+            .displayName(I18n.translate("Module.AirJump.setting.onHold.displayName"))
+            .description(I18n.translate("Module.AirJump.setting.onHold.description"))
             .defaultValue(true)
             .build()
     );

@@ -21,7 +21,7 @@ public class AutoSign extends Module {
     private String[] text;
 
     public AutoSign() {
-        super(Category.Misc, "auto-sign", I18n.translate("Modules.AutoSign.description"));
+        super(Category.Misc, "auto-sign", I18n.translate("Module.AutoSign.description"));
     }
 
     @Override

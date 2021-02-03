@@ -28,8 +28,8 @@ public class AutoShearer extends Module {
     
     private final Setting<Double> distance = sgGeneral.add(new DoubleSetting.Builder()
             .name("distance")
-            .displayName(I18n.translate("Modules.AutoShearer.setting.distance.displayName"))
-            .description(I18n.translate("Modules.AutoShearer.setting.distance.description"))
+            .displayName(I18n.translate("Module.AutoShearer.setting.distance.displayName"))
+            .description(I18n.translate("Module.AutoShearer.setting.distance.description"))
             .min(0.0)
             .defaultValue(5.0)
             .build()
@@ -37,22 +37,22 @@ public class AutoShearer extends Module {
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-break")
-            .displayName(I18n.translate("Modules.AutoShearer.setting.antiBreak.displayName"))
-            .description(I18n.translate("Modules.AutoShearer.setting.antiBreak.description"))
+            .displayName(I18n.translate("Module.AutoShearer.setting.antiBreak.displayName"))
+            .description(I18n.translate("Module.AutoShearer.setting.antiBreak.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AutoShearer.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AutoShearer.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AutoShearer.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AutoShearer.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoShearer() {
-        super(Category.Misc, "auto-shearer", I18n.translate("Modules.AutoShearer.description"));
+        super(Category.Misc, "auto-shearer", I18n.translate("Module.AutoShearer.description"));
     }
 
     @EventHandler

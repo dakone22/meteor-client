@@ -15,7 +15,7 @@ import net.minecraft.client.resource.language.I18n;
 
 public class AutoRespawn extends Module {
     public AutoRespawn() {
-        super(Category.Player, "auto-respawn", I18n.translate("Modules.AutoRespawn.description"));
+        super(Category.Player, "auto-respawn", I18n.translate("Module.AutoRespawn.description"));
     }
 
     @EventHandler

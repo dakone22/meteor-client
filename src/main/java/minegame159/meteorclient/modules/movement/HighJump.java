@@ -20,15 +20,15 @@ public class HighJump extends Module {
     
     private final Setting<Double> multiplier = sgGeneral.add(new DoubleSetting.Builder()
             .name("multiplier")
-            .displayName(I18n.translate("Modules.HighJump.setting.multiplier.displayName"))
-            .description(I18n.translate("Modules.HighJump.setting.multiplier.description"))
+            .displayName(I18n.translate("Module.HighJump.setting.multiplier.displayName"))
+            .description(I18n.translate("Module.HighJump.setting.multiplier.description"))
             .defaultValue(1)
             .min(0)
             .build()
     );
 
     public HighJump() {
-        super(Category.Movement, "high-jump", I18n.translate("Modules.HighJump.description"));
+        super(Category.Movement, "high-jump", I18n.translate("Module.HighJump.description"));
     }
 
     @EventHandler

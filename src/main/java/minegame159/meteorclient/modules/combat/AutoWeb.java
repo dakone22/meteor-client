@@ -32,8 +32,8 @@ public class AutoWeb extends Module {
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.AutoWeb.setting.range.displayName"))
-            .description(I18n.translate("Modules.AutoWeb.setting.range.description"))
+            .displayName(I18n.translate("Module.AutoWeb.setting.range.displayName"))
+            .description(I18n.translate("Module.AutoWeb.setting.range.description"))
             .defaultValue(4)
             .min(0)
             .build()
@@ -41,22 +41,22 @@ public class AutoWeb extends Module {
 
     private final Setting<Boolean> doubles = sgGeneral.add(new BoolSetting.Builder()
             .name("doubles")
-            .displayName(I18n.translate("Modules.AutoWeb.setting.doubles.displayName"))
-            .description(I18n.translate("Modules.AutoWeb.setting.doubles.description"))
+            .displayName(I18n.translate("Module.AutoWeb.setting.doubles.displayName"))
+            .description(I18n.translate("Module.AutoWeb.setting.doubles.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AutoWeb.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AutoWeb.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AutoWeb.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AutoWeb.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoWeb() {
-        super(Category.Combat, "auto-web", I18n.translate("Modules.AutoWeb.description"));
+        super(Category.Combat, "auto-web", I18n.translate("Module.AutoWeb.description"));
     }
 
     private PlayerEntity target = null;

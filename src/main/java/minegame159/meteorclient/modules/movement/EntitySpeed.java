@@ -25,8 +25,8 @@ public class EntitySpeed extends Module {
 
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.EntitySpeed.setting.speed.displayName"))
-            .description(I18n.translate("Modules.EntitySpeed.setting.speed.description"))
+            .displayName(I18n.translate("Module.EntitySpeed.setting.speed.displayName"))
+            .description(I18n.translate("Module.EntitySpeed.setting.speed.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(50)
@@ -35,22 +35,22 @@ public class EntitySpeed extends Module {
 
     private final Setting<Boolean> onlyOnGround = sgGeneral.add(new BoolSetting.Builder()
             .name("only-on-ground")
-            .displayName(I18n.translate("Modules.EntitySpeed.setting.onlyOnGround.displayName"))
-            .description(I18n.translate("Modules.EntitySpeed.setting.onlyOnGround.description"))
+            .displayName(I18n.translate("Module.EntitySpeed.setting.onlyOnGround.displayName"))
+            .description(I18n.translate("Module.EntitySpeed.setting.onlyOnGround.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> inWater = sgGeneral.add(new BoolSetting.Builder()
             .name("in-water")
-            .displayName(I18n.translate("Modules.EntitySpeed.setting.inWater.displayName"))
-            .description(I18n.translate("Modules.EntitySpeed.setting.inWater.description"))
+            .displayName(I18n.translate("Module.EntitySpeed.setting.inWater.displayName"))
+            .description(I18n.translate("Module.EntitySpeed.setting.inWater.description"))
             .defaultValue(false)
             .build()
     );
 
     public EntitySpeed() {
-        super(Category.Movement, "entity-speed", I18n.translate("Modules.EntitySpeed.description"));
+        super(Category.Movement, "entity-speed", I18n.translate("Module.EntitySpeed.description"));
     }
 
     @EventHandler

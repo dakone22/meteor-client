@@ -11,6 +11,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class UnfocusedCPU extends Module {
     public UnfocusedCPU() {
-        super(Category.Render, "unfocused-cpu", I18n.translate("Modules.UnfocusedCPU.description"));
+        super(Category.Render, "unfocused-cpu", I18n.translate("Module.UnfocusedCPU.description"));
     }
 }

@@ -35,37 +35,37 @@ public class AntiBed extends Module {
 
     private final Setting<Boolean> selfToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("self-toggle")
-            .displayName(I18n.translate("Modules.AntiBed.setting.selfToggle.displayName"))
-            .description(I18n.translate("Modules.AntiBed.setting.selfToggle.description"))
+            .displayName(I18n.translate("Module.AntiBed.setting.selfToggle.displayName"))
+            .description(I18n.translate("Module.AntiBed.setting.selfToggle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> autoCenter = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-center")
-            .displayName(I18n.translate("Modules.AntiBed.setting.autoCenter.displayName"))
-            .description(I18n.translate("Modules.AntiBed.setting.autoCenter.description"))
+            .displayName(I18n.translate("Module.AntiBed.setting.autoCenter.displayName"))
+            .description(I18n.translate("Module.AntiBed.setting.autoCenter.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> onlyOnGround = sgGeneral.add(new BoolSetting.Builder()
             .name("only-on-ground")
-            .displayName(I18n.translate("Modules.AntiBed.setting.onlyOnGround.displayName"))
-            .description(I18n.translate("Modules.AntiBed.setting.onlyOnGround.description"))
+            .displayName(I18n.translate("Module.AntiBed.setting.onlyOnGround.displayName"))
+            .description(I18n.translate("Module.AntiBed.setting.onlyOnGround.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AntiBed.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AntiBed.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AntiBed.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AntiBed.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
-    public AntiBed(){super(Category.Combat, "anti-bed", I18n.translate("Modules.AntiBed.description"));}
+    public AntiBed(){super(Category.Combat, "anti-bed", I18n.translate("Module.AntiBed.description"));}
 
     private int place = -1;
     private boolean closeScreen = false;

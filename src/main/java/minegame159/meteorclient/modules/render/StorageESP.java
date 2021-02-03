@@ -31,72 +31,72 @@ public class StorageESP extends Module {
 
     private final Setting<List<BlockEntityType<?>>> storageBlocks = sgGeneral.add(new StorageBlockListSetting.Builder()
             .name("storage-blocks")
-            .displayName(I18n.translate("Modules.StorageESP.setting.storageBlocks.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.storageBlocks.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.storageBlocks.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.storageBlocks.description"))
             .defaultValue(Arrays.asList(StorageBlockListSetting.STORAGE_BLOCKS))
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.StorageESP.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> chest = sgGeneral.add(new ColorSetting.Builder()
             .name("chest")
-            .displayName(I18n.translate("Modules.StorageESP.setting.chest.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.chest.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.chest.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.chest.description"))
             .defaultValue(new SettingColor(255, 160, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> trappedChest = sgGeneral.add(new ColorSetting.Builder()
             .name("trapped-chest")
-            .displayName(I18n.translate("Modules.StorageESP.setting.trappedChest.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.trappedChest.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.trappedChest.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.trappedChest.description"))
             .defaultValue(new SettingColor(255, 0, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> barrel = sgGeneral.add(new ColorSetting.Builder()
             .name("barrel")
-            .displayName(I18n.translate("Modules.StorageESP.setting.barrel.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.barrel.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.barrel.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.barrel.description"))
             .defaultValue(new SettingColor(255, 160, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> shulker = sgGeneral.add(new ColorSetting.Builder()
             .name("shulker")
-            .displayName(I18n.translate("Modules.StorageESP.setting.shulker.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.shulker.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.shulker.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.shulker.description"))
             .defaultValue(new SettingColor(255, 160, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> enderChest = sgGeneral.add(new ColorSetting.Builder()
             .name("ender-chest")
-            .displayName(I18n.translate("Modules.StorageESP.setting.enderChest.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.enderChest.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.enderChest.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.enderChest.description"))
             .defaultValue(new SettingColor(120, 0, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> other = sgGeneral.add(new ColorSetting.Builder()
             .name("other")
-            .displayName(I18n.translate("Modules.StorageESP.setting.other.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.other.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.other.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.other.description"))
             .defaultValue(new SettingColor(140, 140, 140, 255))
             .build()
     );
 
     private final Setting<Double> fadeDistance = sgGeneral.add(new DoubleSetting.Builder()
             .name("fade-distance")
-            .displayName(I18n.translate("Modules.StorageESP.setting.fadeDistance.displayName"))
-            .description(I18n.translate("Modules.StorageESP.setting.fadeDistance.description"))
+            .displayName(I18n.translate("Module.StorageESP.setting.fadeDistance.displayName"))
+            .description(I18n.translate("Module.StorageESP.setting.fadeDistance.description"))
             .defaultValue(6)
             .min(0)
             .sliderMax(12)
@@ -109,7 +109,7 @@ public class StorageESP extends Module {
     private int count;
 
     public StorageESP() {
-        super(Category.Render, "storage-esp", I18n.translate("Modules.StorageESP.description"));
+        super(Category.Render, "storage-esp", I18n.translate("Module.StorageESP.description"));
     }
 
     private void getTileEntityColor(BlockEntity blockEntity) {

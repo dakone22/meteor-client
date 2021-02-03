@@ -11,6 +11,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class AntiPacketKick extends Module {
     public AntiPacketKick() {
-        super(Category.Misc, "anti-packet-kick", I18n.translate("Modules.AntiPacketKick.description"));
+        super(Category.Misc, "anti-packet-kick", I18n.translate("Module.AntiPacketKick.description"));
     }
 }

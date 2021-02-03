@@ -21,7 +21,7 @@ public class AutoSmelter extends Module {
     private boolean waitingForItemsToSmelt;
 
     public AutoSmelter() {
-        super(Category.Misc, "auto-smelter", I18n.translate("Modules.AutoSmelter.description"));
+        super(Category.Misc, "auto-smelter", I18n.translate("Module.AutoSmelter.description"));
     }
 
     @Override

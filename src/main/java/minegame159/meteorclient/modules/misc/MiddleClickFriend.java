@@ -17,7 +17,7 @@ import net.minecraft.entity.player.PlayerEntity;
 
 public class MiddleClickFriend extends Module {
     public MiddleClickFriend() {
-        super(Category.Misc, "middle-click-friend", I18n.translate("Modules.MiddleClickFriend.description"));
+        super(Category.Misc, "middle-click-friend", I18n.translate("Module.MiddleClickFriend.description"));
     }
 
     @EventHandler

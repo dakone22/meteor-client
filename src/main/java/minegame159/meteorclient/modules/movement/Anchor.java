@@ -25,8 +25,8 @@ public class Anchor extends Module {
 
     private final Setting<Integer> maxHeight = sgGeneral.add(new IntSetting.Builder()
             .name("max-height")
-            .displayName(I18n.translate("Modules.Anchor.setting.maxHeight.displayName"))
-            .description(I18n.translate("Modules.Anchor.setting.maxHeight.description"))
+            .displayName(I18n.translate("Module.Anchor.setting.maxHeight.displayName"))
+            .description(I18n.translate("Module.Anchor.setting.maxHeight.description"))
             .defaultValue(10)
             .min(0)
             .max(255)
@@ -36,8 +36,8 @@ public class Anchor extends Module {
 
     private final Setting<Integer> minPitch = sgGeneral.add(new IntSetting.Builder()
             .name("min-pitch")
-            .displayName(I18n.translate("Modules.Anchor.setting.minPitch.displayName"))
-            .description(I18n.translate("Modules.Anchor.setting.minPitch.description"))
+            .displayName(I18n.translate("Module.Anchor.setting.minPitch.displayName"))
+            .description(I18n.translate("Module.Anchor.setting.minPitch.description"))
             .defaultValue(-90)
             .min(-90)
             .max(90)
@@ -48,24 +48,24 @@ public class Anchor extends Module {
 
     private final Setting<Boolean> cancelMove = sgGeneral.add(new BoolSetting.Builder()
             .name("cancel-jump-in-hole")
-            .displayName(I18n.translate("Modules.Anchor.setting.cancelMove.displayName"))
-            .description(I18n.translate("Modules.Anchor.setting.cancelMove.description"))
+            .displayName(I18n.translate("Module.Anchor.setting.cancelMove.displayName"))
+            .description(I18n.translate("Module.Anchor.setting.cancelMove.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pull = sgGeneral.add(new BoolSetting.Builder()
             .name("pull")
-            .displayName(I18n.translate("Modules.Anchor.setting.pull.displayName"))
-            .description(I18n.translate("Modules.Anchor.setting.pull.description"))
+            .displayName(I18n.translate("Module.Anchor.setting.pull.displayName"))
+            .description(I18n.translate("Module.Anchor.setting.pull.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> pullSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("pull-speed")
-            .displayName(I18n.translate("Modules.Anchor.setting.pullSpeed.displayName"))
-            .description(I18n.translate("Modules.Anchor.setting.pullSpeed.description"))
+            .displayName(I18n.translate("Module.Anchor.setting.pullSpeed.displayName"))
+            .description(I18n.translate("Module.Anchor.setting.pullSpeed.description"))
             .defaultValue(0.3)
             .min(0)
             .sliderMax(5)
@@ -83,7 +83,7 @@ public class Anchor extends Module {
     public double deltaX, deltaZ;
 
     public Anchor() {
-        super(Category.Movement, "anchor", I18n.translate("Modules.Anchor.description"));
+        super(Category.Movement, "anchor", I18n.translate("Module.Anchor.description"));
     }
 
     @Override

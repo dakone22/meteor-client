@@ -40,14 +40,14 @@ public class LogoutSpots extends Module {
     private static final Color RED = new Color(225, 25, 25);
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.LogoutSpots.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.LogoutSpots.group.sgRender"));
 
     // General
 
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .displayName(I18n.translate("Modules.LogoutSpots.setting.scale.displayName"))
-            .description(I18n.translate("Modules.LogoutSpots.setting.scale.description"))
+            .displayName(I18n.translate("Module.LogoutSpots.setting.scale.displayName"))
+            .description(I18n.translate("Module.LogoutSpots.setting.scale.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -55,8 +55,8 @@ public class LogoutSpots extends Module {
 
     private final Setting<Boolean> fullHeight = sgGeneral.add(new BoolSetting.Builder()
             .name("full-height")
-            .displayName(I18n.translate("Modules.LogoutSpots.setting.fullHeight.displayName"))
-            .description(I18n.translate("Modules.LogoutSpots.setting.fullHeight.description"))
+            .displayName(I18n.translate("Module.LogoutSpots.setting.fullHeight.displayName"))
+            .description(I18n.translate("Module.LogoutSpots.setting.fullHeight.description"))
             .defaultValue(true)
             .build()
     );
@@ -65,40 +65,40 @@ public class LogoutSpots extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.LogoutSpots.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.LogoutSpots.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.LogoutSpots.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.LogoutSpots.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .displayName(I18n.translate("Modules.LogoutSpots.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.LogoutSpots.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.LogoutSpots.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.LogoutSpots.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 0, 255, 55))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.LogoutSpots.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.LogoutSpots.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.LogoutSpots.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.LogoutSpots.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 0, 255))
             .build()
     );
 
     private final Setting<SettingColor> nameColor = sgRender.add(new ColorSetting.Builder()
             .name("name-color")
-            .displayName(I18n.translate("Modules.LogoutSpots.setting.nameColor.displayName"))
-            .description(I18n.translate("Modules.LogoutSpots.setting.nameColor.description"))
+            .displayName(I18n.translate("Module.LogoutSpots.setting.nameColor.displayName"))
+            .description(I18n.translate("Module.LogoutSpots.setting.nameColor.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> nameBackgroundColor = sgRender.add(new ColorSetting.Builder()
             .name("name-background-color")
-            .displayName(I18n.translate("Modules.LogoutSpots.setting.nameBackgroundColor.displayName"))
-            .description(I18n.translate("Modules.LogoutSpots.setting.nameBackgroundColor.description"))
+            .displayName(I18n.translate("Module.LogoutSpots.setting.nameBackgroundColor.displayName"))
+            .description(I18n.translate("Module.LogoutSpots.setting.nameBackgroundColor.description"))
             .defaultValue(new SettingColor(0, 0, 0, 75))
             .build()
     );
@@ -112,7 +112,7 @@ public class LogoutSpots extends Module {
     private Dimension lastDimension;
 
     public LogoutSpots() {
-        super(Category.Render, "logout-spots", I18n.translate("Modules.LogoutSpots.description"));
+        super(Category.Render, "logout-spots", I18n.translate("Module.LogoutSpots.description"));
         lineColor.changed();
     }
 

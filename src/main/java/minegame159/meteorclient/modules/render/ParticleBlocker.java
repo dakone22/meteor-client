@@ -25,14 +25,14 @@ public class ParticleBlocker extends Module {
 
     private final Setting<List<ParticleEffect>> particles = sgGeneral.add(new ParticleEffectListSetting.Builder()
             .name("particles")
-            .displayName(I18n.translate("Modules.ParticleBlocker.setting.particles.displayName"))
-            .description(I18n.translate("Modules.ParticleBlocker.setting.particles.description"))
+            .displayName(I18n.translate("Module.ParticleBlocker.setting.particles.displayName"))
+            .description(I18n.translate("Module.ParticleBlocker.setting.particles.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     public ParticleBlocker() {
-        super(Category.Render, "particle-blocker", I18n.translate("Modules.ParticleBlocker.description"));
+        super(Category.Render, "particle-blocker", I18n.translate("Module.ParticleBlocker.description"));
     }
 
     @EventHandler

@@ -17,8 +17,8 @@ public class Timer extends Module {
 
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.Timer.setting.speed.displayName"))
-            .description(I18n.translate("Modules.Timer.setting.speed.description"))
+            .displayName(I18n.translate("Module.Timer.setting.speed.displayName"))
+            .description(I18n.translate("Module.Timer.setting.speed.description"))
             .defaultValue(1)
             .min(0.1)
             .sliderMin(0.1)
@@ -27,7 +27,7 @@ public class Timer extends Module {
     );
 
     public Timer() {
-        super(Category.Movement, "timer", I18n.translate("Modules.Timer.description"));
+        super(Category.Movement, "timer", I18n.translate("Module.Timer.description"));
     }
     // If you put your timer to 0.1 you're a dumbass.
     public double getMultiplier() {

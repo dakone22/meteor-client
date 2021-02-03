@@ -24,14 +24,14 @@ public class SoundBlocker extends Module {
 
     private final Setting<List<SoundEvent>> sounds = sgGeneral.add(new SoundEventListSetting.Builder()
             .name("sounds")
-            .displayName(I18n.translate("Modules.SoundBlocker.setting.sounds.displayName"))
-            .description(I18n.translate("Modules.SoundBlocker.setting.sounds.description"))
+            .displayName(I18n.translate("Module.SoundBlocker.setting.sounds.displayName"))
+            .description(I18n.translate("Module.SoundBlocker.setting.sounds.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     public SoundBlocker() {
-        super(Category.Misc, "sound-blocker", I18n.translate("Modules.SoundBlocker.description"));
+        super(Category.Misc, "sound-blocker", I18n.translate("Module.SoundBlocker.description"));
     }
 
     @EventHandler

@@ -34,14 +34,14 @@ public class Criticals extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.Criticals.setting.mode.displayName"))
-            .description(I18n.translate("Modules.Criticals.setting.mode.description"))
+            .displayName(I18n.translate("Module.Criticals.setting.mode.displayName"))
+            .description(I18n.translate("Module.Criticals.setting.mode.description"))
             .defaultValue(Mode.Packet)
             .build()
     );
 
     public Criticals() {
-        super(Category.Combat, "criticals", I18n.translate("Modules.Criticals.description"));
+        super(Category.Combat, "criticals", I18n.translate("Module.Criticals.description"));
     }
 
     private PlayerInteractEntityC2SPacket attackPacket;

@@ -22,8 +22,8 @@ public class AutoReconnect extends Module {
     
     public final Setting<Double> time = sgGeneral.add(new DoubleSetting.Builder()
             .name("delay")
-            .displayName(I18n.translate("Modules.AutoReconnect.setting.time.displayName"))
-            .description(I18n.translate("Modules.AutoReconnect.setting.time.description"))
+            .displayName(I18n.translate("Module.AutoReconnect.setting.time.displayName"))
+            .description(I18n.translate("Module.AutoReconnect.setting.time.description"))
             .defaultValue(5.0)
             .min(0.0)
             .build()
@@ -32,7 +32,7 @@ public class AutoReconnect extends Module {
     public ServerInfo lastServerInfo;
 
     public AutoReconnect() {
-        super(Category.Misc, "auto-reconnect", I18n.translate("Modules.AutoReconnect.description"));
+        super(Category.Misc, "auto-reconnect", I18n.translate("Module.AutoReconnect.description"));
         MeteorClient.EVENT_BUS.subscribe(new Listener<ConnectToServerEvent>(event -> {
             lastServerInfo = mc.isInSingleplayer() ? null : mc.getCurrentServerEntry();
         }));

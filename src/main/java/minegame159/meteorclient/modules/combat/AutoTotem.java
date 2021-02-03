@@ -46,32 +46,32 @@ public class AutoTotem extends Module {
 
     private final Setting<Boolean> smart = sgGeneral.add(new BoolSetting.Builder()
             .name("smart")
-            .displayName(I18n.translate("Modules.AutoTotem.setting.smart.displayName"))
-            .description(I18n.translate("Modules.AutoTotem.setting.smart.description"))
+            .displayName(I18n.translate("Module.AutoTotem.setting.smart.displayName"))
+            .description(I18n.translate("Module.AutoTotem.setting.smart.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> fallback = sgGeneral.add(new BoolSetting.Builder()
             .name("fallback")
-            .displayName(I18n.translate("Modules.AutoTotem.setting.fallback.displayName"))
-            .description(I18n.translate("Modules.AutoTotem.setting.fallback.description"))
+            .displayName(I18n.translate("Module.AutoTotem.setting.fallback.displayName"))
+            .description(I18n.translate("Module.AutoTotem.setting.fallback.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> inventorySwitch = sgGeneral.add(new BoolSetting.Builder()
             .name("inventory")
-            .displayName(I18n.translate("Modules.AutoTotem.setting.inventorySwitch.displayName"))
-            .description(I18n.translate("Modules.AutoTotem.setting.inventorySwitch.description"))
+            .displayName(I18n.translate("Module.AutoTotem.setting.inventorySwitch.displayName"))
+            .description(I18n.translate("Module.AutoTotem.setting.inventorySwitch.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .displayName(I18n.translate("Modules.AutoTotem.setting.health.displayName"))
-            .description(I18n.translate("Modules.AutoTotem.setting.health.description"))
+            .displayName(I18n.translate("Module.AutoTotem.setting.health.displayName"))
+            .description(I18n.translate("Module.AutoTotem.setting.health.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(20)
@@ -85,7 +85,7 @@ public class AutoTotem extends Module {
     private boolean locked = false;
 
     public AutoTotem() {
-        super(Category.Combat, "auto-totem", I18n.translate("Modules.AutoTotem.description"));
+        super(Category.Combat, "auto-totem", I18n.translate("Module.AutoTotem.description"));
     }
 
     @Override

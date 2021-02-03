@@ -17,7 +17,7 @@ import net.minecraft.client.resource.language.I18n;
 public class NoInteract extends Module {
 
     public NoInteract() {
-        super(Category.Player, "no-interact", I18n.translate("Modules.NoInteract.description"));
+        super(Category.Player, "no-interact", I18n.translate("Module.NoInteract.description"));
     }
 
     @EventHandler

@@ -24,16 +24,16 @@ public class AntiHunger extends Module {
 
     private final Setting<Boolean> sprint = sgGeneral.add(new BoolSetting.Builder()
             .name("sprint")
-            .displayName(I18n.translate("Modules.AntiHunger.setting.sprint.displayName"))
-            .description(I18n.translate("Modules.AntiHunger.setting.sprint.description"))
+            .displayName(I18n.translate("Module.AntiHunger.setting.sprint.displayName"))
+            .description(I18n.translate("Module.AntiHunger.setting.sprint.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> onGround = sgGeneral.add(new BoolSetting.Builder()
             .name("on-ground")
-            .displayName(I18n.translate("Modules.AntiHunger.setting.onGround.displayName"))
-            .description(I18n.translate("Modules.AntiHunger.setting.onGround.description"))
+            .displayName(I18n.translate("Module.AntiHunger.setting.onGround.displayName"))
+            .description(I18n.translate("Module.AntiHunger.setting.onGround.description"))
             .defaultValue(true)
             .build()
     );
@@ -43,7 +43,7 @@ public class AntiHunger extends Module {
     private boolean ignorePacket;
 
     public AntiHunger() {
-        super(Category.Player, "anti-hunger", I18n.translate("Modules.AntiHunger.description"));
+        super(Category.Player, "anti-hunger", I18n.translate("Module.AntiHunger.description"));
     }
 
     @Override

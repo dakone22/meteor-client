@@ -24,14 +24,14 @@ public class AntiAutoAnvil extends Module {
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AntiAutoAnvil.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AntiAutoAnvil.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AntiAutoAnvil.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AntiAutoAnvil.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AntiAutoAnvil(){
-        super(Category.Combat, "anti-auto-anvil", I18n.translate("Modules.AntiAutoAnvil.description"));
+        super(Category.Combat, "anti-auto-anvil", I18n.translate("Module.AntiAutoAnvil.description"));
     }
 
     @EventHandler

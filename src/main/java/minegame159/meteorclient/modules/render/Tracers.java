@@ -30,23 +30,23 @@ import net.minecraft.entity.EntityType;
 public class Tracers extends Module {
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgAppearance = settings.createGroup(I18n.translate("Modules.Tracers.group.sgAppearance"));
-    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Modules.Tracers.group.sgColors"));
+    private final SettingGroup sgAppearance = settings.createGroup(I18n.translate("Module.Tracers.group.sgAppearance"));
+    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Module.Tracers.group.sgColors"));
 
     // General
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entites")
-            .displayName(I18n.translate("Modules.Tracers.setting.entities.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.entities.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.entities.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.PLAYER))
             .build()
     );
 
     private final Setting<Boolean> storage = sgGeneral.add(new BoolSetting.Builder()
             .name("storage")
-            .displayName(I18n.translate("Modules.Tracers.setting.storage.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.storage.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.storage.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.storage.description"))
             .defaultValue(false)
             .build()
     );
@@ -55,24 +55,24 @@ public class Tracers extends Module {
 
     private final Setting<Target> target = sgAppearance.add(new EnumSetting.Builder<Target>()
             .name("target")
-            .displayName(I18n.translate("Modules.Tracers.setting.target.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.target.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.target.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.target.description"))
             .defaultValue(Target.Body)
             .build()
     );
 
     private final Setting<Boolean> stem = sgAppearance.add(new BoolSetting.Builder()
             .name("stem")
-            .displayName(I18n.translate("Modules.Tracers.setting.stem.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.stem.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.stem.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.stem.description"))
             .defaultValue(true)
             .build()
     );
 
     public final Setting<Boolean> showInvis = sgGeneral.add(new BoolSetting.Builder()
             .name("show-invisible")
-            .displayName(I18n.translate("Modules.Tracers.setting.showInvis.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.showInvis.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.showInvis.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.showInvis.description"))
             .defaultValue(true)
             .build()
     );
@@ -81,64 +81,64 @@ public class Tracers extends Module {
 
     public final Setting<Boolean> useNameColor = sgColors.add(new BoolSetting.Builder()
             .name("use-name-color")
-            .displayName(I18n.translate("Modules.Tracers.setting.useNameColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.useNameColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.useNameColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.useNameColor.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<SettingColor> playersColor = sgColors.add(new ColorSetting.Builder()
             .name("players-colors")
-            .displayName(I18n.translate("Modules.Tracers.setting.playersColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.playersColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.playersColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.playersColor.description"))
             .defaultValue(new SettingColor(205, 205, 205, 127))
             .build()
     );
 
     private final Setting<SettingColor> animalsColor = sgColors.add(new ColorSetting.Builder()
             .name("animals-color")
-            .displayName(I18n.translate("Modules.Tracers.setting.animalsColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.animalsColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.animalsColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.animalsColor.description"))
             .defaultValue(new SettingColor(145, 255, 145, 127))
             .build()
     );
 
     private final Setting<SettingColor> waterAnimalsColor = sgColors.add(new ColorSetting.Builder()
             .name("water-animals-color")
-            .displayName(I18n.translate("Modules.Tracers.setting.waterAnimalsColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.waterAnimalsColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.waterAnimalsColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.waterAnimalsColor.description"))
             .defaultValue(new SettingColor(145, 145, 255, 127))
             .build()
     );
 
     private final Setting<SettingColor> monstersColor = sgColors.add(new ColorSetting.Builder()
             .name("monsters-color")
-            .displayName(I18n.translate("Modules.Tracers.setting.monstersColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.monstersColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.monstersColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.monstersColor.description"))
             .defaultValue(new SettingColor(255, 145, 145, 127))
             .build()
     );
 
     private final Setting<SettingColor> ambientColor = sgColors.add(new ColorSetting.Builder()
             .name("ambient-color")
-            .displayName(I18n.translate("Modules.Tracers.setting.ambientColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.ambientColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.ambientColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.ambientColor.description"))
             .defaultValue(new SettingColor(75, 75, 75, 127))
             .build()
     );
 
     private final Setting<SettingColor> miscColor = sgColors.add(new ColorSetting.Builder()
             .name("misc-color")
-            .displayName(I18n.translate("Modules.Tracers.setting.miscColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.miscColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.miscColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.miscColor.description"))
             .defaultValue(new SettingColor(145, 145, 145, 127))
             .build()
     );
 
     private final Setting<SettingColor> storageColor = sgColors.add(new ColorSetting.Builder()
             .name("storage-color")
-            .displayName(I18n.translate("Modules.Tracers.setting.storageColor.displayName"))
-            .description(I18n.translate("Modules.Tracers.setting.storageColor.description"))
+            .displayName(I18n.translate("Module.Tracers.setting.storageColor.displayName"))
+            .description(I18n.translate("Module.Tracers.setting.storageColor.description"))
             .defaultValue(new SettingColor(255, 160, 0, 127))
             .build()
     );
@@ -146,7 +146,7 @@ public class Tracers extends Module {
     private int count;
 
     public Tracers() {
-        super(Category.Render, "tracers", I18n.translate("Modules.Tracers.description"));
+        super(Category.Render, "tracers", I18n.translate("Module.Tracers.description"));
     }
 
     @EventHandler

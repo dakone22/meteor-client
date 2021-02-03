@@ -29,56 +29,56 @@ public class Surround extends Module {
 
     private final Setting<Boolean> doubleHeight = sgGeneral.add(new BoolSetting.Builder()
             .name("double-height")
-            .displayName(I18n.translate("Modules.Surround.setting.doubleHeight.displayName"))
-            .description(I18n.translate("Modules.Surround.setting.doubleHeight.description"))
+            .displayName(I18n.translate("Module.Surround.setting.doubleHeight.displayName"))
+            .description(I18n.translate("Module.Surround.setting.doubleHeight.description"))
             .defaultValue(false)
             .build()
     );
     
     private final Setting<Boolean> onlyOnGround = sgGeneral.add(new BoolSetting.Builder()
             .name("only-on-ground")
-            .displayName(I18n.translate("Modules.Surround.setting.onlyOnGround.displayName"))
-            .description(I18n.translate("Modules.Surround.setting.onlyOnGround.description"))
+            .displayName(I18n.translate("Module.Surround.setting.onlyOnGround.displayName"))
+            .description(I18n.translate("Module.Surround.setting.onlyOnGround.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> onlyWhenSneaking = sgGeneral.add(new BoolSetting.Builder()
             .name("only-when-sneaking")
-            .displayName(I18n.translate("Modules.Surround.setting.onlyWhenSneaking.displayName"))
-            .description(I18n.translate("Modules.Surround.setting.onlyWhenSneaking.description"))
+            .displayName(I18n.translate("Module.Surround.setting.onlyWhenSneaking.displayName"))
+            .description(I18n.translate("Module.Surround.setting.onlyWhenSneaking.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> turnOff = sgGeneral.add(new BoolSetting.Builder()
             .name("turn-off")
-            .displayName(I18n.translate("Modules.Surround.setting.turnOff.displayName"))
-            .description(I18n.translate("Modules.Surround.setting.turnOff.description"))
+            .displayName(I18n.translate("Module.Surround.setting.turnOff.displayName"))
+            .description(I18n.translate("Module.Surround.setting.turnOff.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> center = sgGeneral.add(new BoolSetting.Builder()
             .name("center")
-            .displayName(I18n.translate("Modules.Surround.setting.center.displayName"))
-            .description(I18n.translate("Modules.Surround.setting.center.description"))
+            .displayName(I18n.translate("Module.Surround.setting.center.displayName"))
+            .description(I18n.translate("Module.Surround.setting.center.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableOnJump = sgGeneral.add(new BoolSetting.Builder()
             .name("disable-on-jump")
-            .displayName(I18n.translate("Modules.Surround.setting.disableOnJump.displayName"))
-            .description(I18n.translate("Modules.Surround.setting.disableOnJump.description"))
+            .displayName(I18n.translate("Module.Surround.setting.disableOnJump.displayName"))
+            .description(I18n.translate("Module.Surround.setting.disableOnJump.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.Surround.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.Surround.setting.rotate.description"))
+            .displayName(I18n.translate("Module.Surround.setting.rotate.displayName"))
+            .description(I18n.translate("Module.Surround.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -89,7 +89,7 @@ public class Surround extends Module {
     private boolean return_;
 
     public Surround() {
-        super(Category.Combat, "surround", I18n.translate("Modules.Surround.description"));
+        super(Category.Combat, "surround", I18n.translate("Module.Surround.description"));
     }
 
     @Override

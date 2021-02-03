@@ -36,24 +36,24 @@ public class SmartSurround extends Module {
 
     private final Setting<Boolean> onlyObsidian = sgGeneral.add(new BoolSetting.Builder()
             .name("only-obsidian")
-            .displayName(I18n.translate("Modules.SmartSurround.setting.onlyObsidian.displayName"))
-            .description(I18n.translate("Modules.SmartSurround.setting.onlyObsidian.description"))
+            .displayName(I18n.translate("Module.SmartSurround.setting.onlyObsidian.displayName"))
+            .description(I18n.translate("Module.SmartSurround.setting.onlyObsidian.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> minDamage = sgGeneral.add(new DoubleSetting.Builder()
             .name("min-damage")
-            .displayName(I18n.translate("Modules.SmartSurround.setting.minDamage.displayName"))
-            .description(I18n.translate("Modules.SmartSurround.setting.minDamage.description"))
+            .displayName(I18n.translate("Module.SmartSurround.setting.minDamage.displayName"))
+            .description(I18n.translate("Module.SmartSurround.setting.minDamage.description"))
             .defaultValue(5.5)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.SmartSurround.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.SmartSurround.setting.rotate.description"))
+            .displayName(I18n.translate("Module.SmartSurround.setting.rotate.displayName"))
+            .description(I18n.translate("Module.SmartSurround.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -69,7 +69,7 @@ public class SmartSurround extends Module {
     private Entity crystal;
 
     public SmartSurround(){
-        super(Category.Combat, "smart-surround", I18n.translate("Modules.SmartSurround.description"));
+        super(Category.Combat, "smart-surround", I18n.translate("Module.SmartSurround.description"));
     }
 
     @EventHandler

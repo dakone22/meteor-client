@@ -21,21 +21,21 @@ import net.minecraft.item.FishingRodItem;
 
 public class AutoFish extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgSplashRangeDetection = settings.createGroup(I18n.translate("Modules.AutoFish.group.sgSplashRangeDetection"));
+    private final SettingGroup sgSplashRangeDetection = settings.createGroup(I18n.translate("Module.AutoFish.group.sgSplashRangeDetection"));
 
     // General
     private final Setting<Boolean> autoCast = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-cast")
-            .displayName(I18n.translate("Modules.AutoFish.setting.autoCast.displayName"))
-            .description(I18n.translate("Modules.AutoFish.setting.autoCast.description"))
+            .displayName(I18n.translate("Module.AutoFish.setting.autoCast.displayName"))
+            .description(I18n.translate("Module.AutoFish.setting.autoCast.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> ticksAutoCast = sgGeneral.add(new IntSetting.Builder()
             .name("ticks-auto-cast")
-            .displayName(I18n.translate("Modules.AutoFish.setting.ticksAutoCast.displayName"))
-            .description(I18n.translate("Modules.AutoFish.setting.ticksAutoCast.description"))
+            .displayName(I18n.translate("Module.AutoFish.setting.ticksAutoCast.displayName"))
+            .description(I18n.translate("Module.AutoFish.setting.ticksAutoCast.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(60)
@@ -44,8 +44,8 @@ public class AutoFish extends Module {
 
     private final Setting<Integer> ticksCatch = sgGeneral.add(new IntSetting.Builder()
             .name("ticks-catch")
-            .displayName(I18n.translate("Modules.AutoFish.setting.ticksCatch.displayName"))
-            .description(I18n.translate("Modules.AutoFish.setting.ticksCatch.description"))
+            .displayName(I18n.translate("Module.AutoFish.setting.ticksCatch.displayName"))
+            .description(I18n.translate("Module.AutoFish.setting.ticksCatch.description"))
             .defaultValue(6)
             .min(0)
             .sliderMax(60)
@@ -54,8 +54,8 @@ public class AutoFish extends Module {
 
     private final Setting<Integer> ticksThrow = sgGeneral.add(new IntSetting.Builder()
             .name("ticks-throw")
-            .displayName(I18n.translate("Modules.AutoFish.setting.ticksThrow.displayName"))
-            .description(I18n.translate("Modules.AutoFish.setting.ticksThrow.description"))
+            .displayName(I18n.translate("Module.AutoFish.setting.ticksThrow.displayName"))
+            .description(I18n.translate("Module.AutoFish.setting.ticksThrow.description"))
             .defaultValue(14)
             .min(0)
             .sliderMax(60)
@@ -65,16 +65,16 @@ public class AutoFish extends Module {
     // Splash range detection
     private final Setting<Boolean> splashDetectionRangeEnabled = sgSplashRangeDetection.add(new BoolSetting.Builder()
             .name("splash-detection-range-enabled")
-            .displayName(I18n.translate("Modules.AutoFish.setting.splashDetectionRangeEnabled.displayName"))
-            .description(I18n.translate("Modules.AutoFish.setting.splashDetectionRangeEnabled.description"))
+            .displayName(I18n.translate("Module.AutoFish.setting.splashDetectionRangeEnabled.displayName"))
+            .description(I18n.translate("Module.AutoFish.setting.splashDetectionRangeEnabled.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> splashDetectionRange = sgSplashRangeDetection.add(new DoubleSetting.Builder()
             .name("splash-detection-range")
-            .displayName(I18n.translate("Modules.AutoFish.setting.splashDetectionRange.displayName"))
-            .description(I18n.translate("Modules.AutoFish.setting.splashDetectionRange.description"))
+            .displayName(I18n.translate("Module.AutoFish.setting.splashDetectionRange.displayName"))
+            .description(I18n.translate("Module.AutoFish.setting.splashDetectionRange.description"))
             .defaultValue(10)
             .min(0)
             .build()
@@ -90,7 +90,7 @@ public class AutoFish extends Module {
     private int autoCastCheckTimer;
 
     public AutoFish() {
-        super(Category.Player, "auto-fish", I18n.translate("Modules.AutoFish.description"));
+        super(Category.Player, "auto-fish", I18n.translate("Module.AutoFish.description"));
     }
 
     @Override

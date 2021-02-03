@@ -30,14 +30,14 @@ public class AirPlace extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.AirPlace.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.AirPlace.group.sgRender"));
 
     // General
 
     private final Setting<Place> placeWhen = sgGeneral.add(new EnumSetting.Builder<Place>()
             .name("place-when")
-            .displayName(I18n.translate("Modules.AirPlace.setting.placeWhen.displayName"))
-            .description(I18n.translate("Modules.AirPlace.setting.placeWhen.description"))
+            .displayName(I18n.translate("Module.AirPlace.setting.placeWhen.displayName"))
+            .description(I18n.translate("Module.AirPlace.setting.placeWhen.description"))
             .defaultValue(Place.OnClick)
             .build()
     );
@@ -45,32 +45,32 @@ public class AirPlace extends Module {
     // Render
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .displayName(I18n.translate("Modules.AirPlace.setting.render.displayName"))
-            .description(I18n.translate("Modules.AirPlace.setting.render.description"))
+            .displayName(I18n.translate("Module.AirPlace.setting.render.displayName"))
+            .description(I18n.translate("Module.AirPlace.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.AirPlace.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.AirPlace.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.AirPlace.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.AirPlace.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .displayName(I18n.translate("Modules.AirPlace.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.AirPlace.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.AirPlace.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.AirPlace.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.AirPlace.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.AirPlace.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.AirPlace.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.AirPlace.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );
@@ -78,7 +78,7 @@ public class AirPlace extends Module {
     private BlockPos target;
 
     public AirPlace() {
-        super(Category.Player, "air-place", I18n.translate("Modules.AirPlace.description"));
+        super(Category.Player, "air-place", I18n.translate("Module.AirPlace.description"));
     }
 
     @Override

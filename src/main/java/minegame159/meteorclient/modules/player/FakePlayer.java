@@ -24,32 +24,32 @@ public class FakePlayer extends Module {
 
     private final Setting<String> name = sgGeneral.add(new StringSetting.Builder()
             .name("name")
-            .displayName(I18n.translate("Modules.FakePlayer.setting.name.displayName"))
-            .description(I18n.translate("Modules.FakePlayer.setting.name.description"))
+            .displayName(I18n.translate("Module.FakePlayer.setting.name.displayName"))
+            .description(I18n.translate("Module.FakePlayer.setting.name.description"))
             .defaultValue("MeteorOnCrack")
             .build()
     );
 
     private final Setting<Boolean> copyInv = sgGeneral.add(new BoolSetting.Builder()
             .name("copy-inv")
-            .displayName(I18n.translate("Modules.FakePlayer.setting.copyInv.displayName"))
-            .description(I18n.translate("Modules.FakePlayer.setting.copyInv.description"))
+            .displayName(I18n.translate("Module.FakePlayer.setting.copyInv.displayName"))
+            .description(I18n.translate("Module.FakePlayer.setting.copyInv.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> glowing = sgGeneral.add(new BoolSetting.Builder()
             .name("glowing")
-            .displayName(I18n.translate("Modules.FakePlayer.setting.glowing.displayName"))
-            .description(I18n.translate("Modules.FakePlayer.setting.glowing.description"))
+            .displayName(I18n.translate("Module.FakePlayer.setting.glowing.displayName"))
+            .description(I18n.translate("Module.FakePlayer.setting.glowing.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .displayName(I18n.translate("Modules.FakePlayer.setting.health.displayName"))
-            .description(I18n.translate("Modules.FakePlayer.setting.health.description"))
+            .displayName(I18n.translate("Module.FakePlayer.setting.health.displayName"))
+            .description(I18n.translate("Module.FakePlayer.setting.health.description"))
             .defaultValue(20)
             .min(1)
             .sliderMax(100)
@@ -58,22 +58,22 @@ public class FakePlayer extends Module {
 
     private final Setting<Boolean> idInNametag = sgGeneral.add(new BoolSetting.Builder()
             .name("id-in-nametag")
-            .displayName(I18n.translate("Modules.FakePlayer.setting.idInNametag.displayName"))
-            .description(I18n.translate("Modules.FakePlayer.setting.idInNametag.description"))
+            .displayName(I18n.translate("Module.FakePlayer.setting.idInNametag.displayName"))
+            .description(I18n.translate("Module.FakePlayer.setting.idInNametag.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> chatInfo = sgGeneral.add(new BoolSetting.Builder()
             .name("chat-info")
-            .displayName(I18n.translate("Modules.FakePlayer.setting.chatInfo.displayName"))
-            .description(I18n.translate("Modules.FakePlayer.setting.chatInfo.description"))
+            .displayName(I18n.translate("Module.FakePlayer.setting.chatInfo.displayName"))
+            .description(I18n.translate("Module.FakePlayer.setting.chatInfo.description"))
             .defaultValue(false)
             .build()
     );
 
     public FakePlayer() {
-        super(Category.Player, "fake-player", I18n.translate("Modules.FakePlayer.description"));
+        super(Category.Player, "fake-player", I18n.translate("Module.FakePlayer.description"));
     }
 
     public static Map<FakePlayerEntity, Integer> players = new HashMap<>();

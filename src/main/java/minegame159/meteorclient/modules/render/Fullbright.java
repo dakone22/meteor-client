@@ -15,7 +15,7 @@ import net.minecraft.client.resource.language.I18n;
 public class Fullbright extends Module {
 
     public Fullbright() {
-        super(Category.Render, "fullbright", I18n.translate("Modules.Fullbright.description"));
+        super(Category.Render, "fullbright", I18n.translate("Module.Fullbright.description"));
     }
 
     @Override

@@ -26,31 +26,31 @@ public class AutoWeapon extends Module {
     }
 
     public AutoWeapon(){
-        super(Category.Combat, "auto-weapon", I18n.translate("Modules.AutoWeapon.description"));
+        super(Category.Combat, "auto-weapon", I18n.translate("Module.AutoWeapon.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Weapon> weapon = sgGeneral.add(new EnumSetting.Builder<Weapon>()
             .name("weapon")
-            .displayName(I18n.translate("Modules.AutoWeapon.setting.weapon.displayName"))
-            .description(I18n.translate("Modules.AutoWeapon.setting.weapon.description"))
+            .displayName(I18n.translate("Module.AutoWeapon.setting.weapon.displayName"))
+            .description(I18n.translate("Module.AutoWeapon.setting.weapon.description"))
             .defaultValue(Weapon.Sword)
             .build()
     );
 
     private final Setting<Integer> threshold = sgGeneral.add(new IntSetting.Builder()
             .name("threshold")
-            .displayName(I18n.translate("Modules.AutoWeapon.setting.threshold.displayName"))
-            .description(I18n.translate("Modules.AutoWeapon.setting.threshold.description"))
+            .displayName(I18n.translate("Module.AutoWeapon.setting.threshold.displayName"))
+            .description(I18n.translate("Module.AutoWeapon.setting.threshold.description"))
             .defaultValue(4)
             .build()
     );
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-break")
-            .displayName(I18n.translate("Modules.AutoWeapon.setting.antiBreak.displayName"))
-            .description(I18n.translate("Modules.AutoWeapon.setting.antiBreak.description"))
+            .displayName(I18n.translate("Module.AutoWeapon.setting.antiBreak.displayName"))
+            .description(I18n.translate("Module.AutoWeapon.setting.antiBreak.description"))
             .defaultValue(false)
             .build()
     );

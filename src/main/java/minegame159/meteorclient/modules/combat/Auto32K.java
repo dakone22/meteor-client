@@ -44,22 +44,22 @@ public class Auto32K extends Module {
         Dispenser
     }
 
-    public Auto32K(){super(Category.Combat, "auto32k", I18n.translate("Modules.Auto32K.description"));}
+    public Auto32K(){super(Category.Combat, "auto32k", I18n.translate("Module.Auto32K.description"));}
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.Auto32K.setting.mode.displayName"))
-            .description(I18n.translate("Modules.Auto32K.setting.mode.description"))
+            .displayName(I18n.translate("Module.Auto32K.setting.mode.displayName"))
+            .description(I18n.translate("Module.Auto32K.setting.mode.description"))
             .defaultValue(Mode.Dispenser)
             .build()
     );
 
     private final Setting<Double> placeRange = sgGeneral.add(new DoubleSetting.Builder()
             .name("place-range")
-            .displayName(I18n.translate("Modules.Auto32K.setting.placeRange.displayName"))
-            .description(I18n.translate("Modules.Auto32K.setting.placeRange.description"))
+            .displayName(I18n.translate("Module.Auto32K.setting.placeRange.displayName"))
+            .description(I18n.translate("Module.Auto32K.setting.placeRange.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(5)
@@ -68,24 +68,24 @@ public class Auto32K extends Module {
 
     private final Setting<Boolean> fillHopper = sgGeneral.add(new BoolSetting.Builder()
             .name("fill-hopper")
-            .displayName(I18n.translate("Modules.Auto32K.setting.fillHopper.displayName"))
-            .description(I18n.translate("Modules.Auto32K.setting.fillHopper.description"))
+            .displayName(I18n.translate("Module.Auto32K.setting.fillHopper.displayName"))
+            .description(I18n.translate("Module.Auto32K.setting.fillHopper.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<List<Block>> throwawayItems = sgGeneral.add(new BlockListSetting.Builder()
             .name("throwaway-blocks")
-            .displayName(I18n.translate("Modules.Auto32K.setting.throwawayItems.displayName"))
-            .description(I18n.translate("Modules.Auto32K.setting.throwawayItems.description"))
+            .displayName(I18n.translate("Module.Auto32K.setting.throwawayItems.displayName"))
+            .description(I18n.translate("Module.Auto32K.setting.throwawayItems.description"))
             .defaultValue(setDefaultBlocks())
             .build()
     );
 
     private final Setting<Boolean> autoMove = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-move")
-            .displayName(I18n.translate("Modules.Auto32K.setting.autoMove.displayName"))
-            .description(I18n.translate("Modules.Auto32K.setting.autoMove.description"))
+            .displayName(I18n.translate("Module.Auto32K.setting.autoMove.displayName"))
+            .description(I18n.translate("Module.Auto32K.setting.autoMove.description"))
             .defaultValue(true)
             .build()
     );

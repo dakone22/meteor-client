@@ -56,17 +56,17 @@ public class AnchorAura extends Module {
         None
     }
 
-    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Modules.AnchorAura.group.sgPlace"));
-    private final SettingGroup sgBreak = settings.createGroup(I18n.translate("Modules.AnchorAura.group.sgBreak"));
-    private final SettingGroup sgMisc = settings.createGroup(I18n.translate("Modules.AnchorAura.group.sgMisc"));
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.AnchorAura.group.sgRender"));
+    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Module.AnchorAura.group.sgPlace"));
+    private final SettingGroup sgBreak = settings.createGroup(I18n.translate("Module.AnchorAura.group.sgBreak"));
+    private final SettingGroup sgMisc = settings.createGroup(I18n.translate("Module.AnchorAura.group.sgMisc"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.AnchorAura.group.sgRender"));
 
     // Place
 
     private final Setting<Integer> placeDelay = sgPlace.add(new IntSetting.Builder()
             .name("place-delay")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.placeDelay.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.placeDelay.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.placeDelay.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.placeDelay.description"))
             .defaultValue(2)
             .min(0)
             .max(20)
@@ -75,16 +75,16 @@ public class AnchorAura extends Module {
 
     private final Setting<Mode> placeMode = sgPlace.add(new EnumSetting.Builder<Mode>()
             .name("place-mode")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.placeMode.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.placeMode.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.placeMode.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.placeMode.description"))
             .defaultValue(Mode.Safe)
             .build()
     );
 
     private final Setting<Double> placeRange = sgPlace.add(new DoubleSetting.Builder()
             .name("place-range")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.placeRange.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.placeRange.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.placeRange.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.placeRange.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(5)
@@ -93,16 +93,16 @@ public class AnchorAura extends Module {
 
     private final Setting<PlaceMode> placePositions = sgPlace.add(new EnumSetting.Builder<PlaceMode>()
             .name("placement-positions")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.placePositions.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.placePositions.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.placePositions.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.placePositions.description"))
             .defaultValue(PlaceMode.AboveAndBelow)
             .build()
     );
 
     private final Setting<Boolean> place = sgPlace.add(new BoolSetting.Builder()
             .name("place")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.place.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.place.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.place.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.place.description"))
             .defaultValue(true)
             .build()
     );
@@ -111,8 +111,8 @@ public class AnchorAura extends Module {
 
     private final Setting<Integer> breakDelay = sgBreak.add(new IntSetting.Builder()
             .name("break-delay")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.breakDelay.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.breakDelay.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.breakDelay.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.breakDelay.description"))
             .defaultValue(10)
             .min(0)
             .max(10)
@@ -121,16 +121,16 @@ public class AnchorAura extends Module {
 
     private final Setting<Mode> breakMode = sgBreak.add(new EnumSetting.Builder<Mode>()
             .name("break-mode")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.breakMode.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.breakMode.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.breakMode.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.breakMode.description"))
             .defaultValue(Mode.Safe)
             .build()
     );
 
     private final Setting<Double> breakRange = sgBreak.add(new DoubleSetting.Builder()
             .name("break-range")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.breakRange.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.breakRange.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.breakRange.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.breakRange.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(5)
@@ -141,16 +141,16 @@ public class AnchorAura extends Module {
 
     private final Setting<RotationMode> rotationMode = sgMisc.add(new EnumSetting.Builder<RotationMode>()
             .name("rotation-mode")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.rotationMode.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.rotationMode.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.rotationMode.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.rotationMode.description"))
             .defaultValue(RotationMode.Both)
             .build()
     );
 
     private final Setting<Double> targetRange = sgMisc.add(new DoubleSetting.Builder()
             .name("target-range")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.targetRange.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.targetRange.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.targetRange.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.targetRange.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(5)
@@ -159,40 +159,40 @@ public class AnchorAura extends Module {
 
     private final Setting<Double> maxDamage = sgMisc.add(new DoubleSetting.Builder()
             .name("max-self-damage")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.maxDamage.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.maxDamage.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.maxDamage.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.maxDamage.description"))
             .defaultValue(8)
             .build()
     );
 
     private final Setting<Double> minHealth = sgMisc.add(new DoubleSetting.Builder()
             .name("min-health")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.minHealth.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.minHealth.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.minHealth.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.minHealth.description"))
             .defaultValue(15)
             .build()
     );
 
     private final Setting<Boolean> pauseOnEat = sgMisc.add(new BoolSetting.Builder()
             .name("pause-on-eat")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.pauseOnEat.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.pauseOnEat.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.pauseOnEat.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.pauseOnEat.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pauseOnDrink = sgMisc.add(new BoolSetting.Builder()
             .name("pause-on-drink")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.pauseOnDrink.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.pauseOnDrink.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.pauseOnDrink.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.pauseOnDrink.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> pauseOnMine = sgMisc.add(new BoolSetting.Builder()
             .name("pause-on-mine")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.pauseOnMine.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.pauseOnMine.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.pauseOnMine.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.pauseOnMine.description"))
             .defaultValue(false)
             .build()
     );
@@ -201,61 +201,61 @@ public class AnchorAura extends Module {
 
     private final Setting<Boolean> renderPlace = sgRender.add(new BoolSetting.Builder()
             .name("render-place")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.renderPlace.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.renderPlace.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.renderPlace.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.renderPlace.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("place-side-color")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 0, 0, 75))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("place-line-color")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 0, 0, 255))
             .build()
     );
 
     private final Setting<Boolean> renderBreak = sgRender.add(new BoolSetting.Builder()
             .name("render-break")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.renderBreak.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.renderBreak.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.renderBreak.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.renderBreak.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<SettingColor> breakSideColor = sgRender.add(new ColorSetting.Builder()
             .name("break-side-color")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.breakSideColor.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.breakSideColor.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.breakSideColor.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.breakSideColor.description"))
             .defaultValue(new SettingColor(255, 0, 0, 75))
             .build()
     );
 
     private final Setting<SettingColor> breakLineColor = sgRender.add(new ColorSetting.Builder()
             .name("break-line-color")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.breakLineColor.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.breakLineColor.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.breakLineColor.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.breakLineColor.description"))
             .defaultValue(new SettingColor(255, 0, 0, 255))
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.AnchorAura.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.AnchorAura.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.AnchorAura.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.AnchorAura.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
-    public AnchorAura() {super(Category.Combat, "anchor-aura", I18n.translate("Modules.AnchorAura.description"));}
+    public AnchorAura() {super(Category.Combat, "anchor-aura", I18n.translate("Module.AnchorAura.description"));}
 
     private int placeDelayLeft;
     private int breakDelayLeft;

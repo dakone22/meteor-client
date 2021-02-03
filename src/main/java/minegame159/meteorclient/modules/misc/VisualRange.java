@@ -27,39 +27,39 @@ public class VisualRange extends Module {
 
     private final Setting<Boolean> ignoreFriends = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-friends")
-            .displayName(I18n.translate("Modules.VisualRange.setting.ignoreFriends.displayName"))
-            .description(I18n.translate("Modules.VisualRange.setting.ignoreFriends.description"))
+            .displayName(I18n.translate("Module.VisualRange.setting.ignoreFriends.displayName"))
+            .description(I18n.translate("Module.VisualRange.setting.ignoreFriends.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> ignoreFakes = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-fakeplayers")
-            .displayName(I18n.translate("Modules.VisualRange.setting.ignoreFakes.displayName"))
-            .description(I18n.translate("Modules.VisualRange.setting.ignoreFakes.description"))
+            .displayName(I18n.translate("Module.VisualRange.setting.ignoreFakes.displayName"))
+            .description(I18n.translate("Module.VisualRange.setting.ignoreFakes.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<String> enterMessage = sgGeneral.add(new StringSetting.Builder()
             .name("enter-message")
-            .displayName(I18n.translate("Modules.VisualRange.setting.enterMessage.displayName"))
-            .description(I18n.translate("Modules.VisualRange.setting.enterMessage.description"))
+            .displayName(I18n.translate("Module.VisualRange.setting.enterMessage.displayName"))
+            .description(I18n.translate("Module.VisualRange.setting.enterMessage.description"))
             .defaultValue("{player} has entered your visual range.")
             .build()
     );
 
     private final Setting<String> leaveMessage = sgGeneral.add(new StringSetting.Builder()
             .name("leave-message")
-            .displayName(I18n.translate("Modules.VisualRange.setting.leaveMessage.displayName"))
-            .description(I18n.translate("Modules.VisualRange.setting.leaveMessage.description"))
+            .displayName(I18n.translate("Module.VisualRange.setting.leaveMessage.displayName"))
+            .description(I18n.translate("Module.VisualRange.setting.leaveMessage.description"))
             .defaultValue("{player} has left your visual range.")
             .build()
     );
 
 
     public VisualRange() {
-        super(Category.Misc, "visual-range", I18n.translate("Modules.VisualRange.description"));
+        super(Category.Misc, "visual-range", I18n.translate("Module.VisualRange.description"));
     }
 
     @EventHandler

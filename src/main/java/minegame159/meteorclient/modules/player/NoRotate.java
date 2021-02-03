@@ -19,7 +19,7 @@ import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 public class NoRotate extends Module {
 
     public NoRotate() {
-        super(Category.Player, "no-rotate", I18n.translate("Modules.NoRotate.description"));
+        super(Category.Player, "no-rotate", I18n.translate("Module.NoRotate.description"));
     }
 
     @EventHandler

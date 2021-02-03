@@ -27,14 +27,14 @@ public class EntityControl extends Module {
 
     private final Setting<Boolean> maxJump = sgGeneral.add(new BoolSetting.Builder()
             .name("max-jump")
-            .displayName(I18n.translate("Modules.EntityControl.setting.maxJump.displayName"))
-            .description(I18n.translate("Modules.EntityControl.setting.maxJump.description"))
+            .displayName(I18n.translate("Module.EntityControl.setting.maxJump.displayName"))
+            .description(I18n.translate("Module.EntityControl.setting.maxJump.description"))
             .defaultValue(true)
             .build()
     );
 
     public EntityControl() {
-        super(Category.Movement, "entity-control", I18n.translate("Modules.EntityControl.description"));
+        super(Category.Movement, "entity-control", I18n.translate("Module.EntityControl.description"));
     }
 
     @Override

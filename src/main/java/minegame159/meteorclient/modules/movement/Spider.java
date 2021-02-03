@@ -21,15 +21,15 @@ public class Spider extends Module {
     
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.Spider.setting.speed.displayName"))
-            .description(I18n.translate("Modules.Spider.setting.speed.description"))
+            .displayName(I18n.translate("Module.Spider.setting.speed.displayName"))
+            .description(I18n.translate("Module.Spider.setting.speed.description"))
             .defaultValue(0.2)
             .min(0.0)
             .build()
     );
 
     public Spider() {
-        super(Category.Movement, "spider", I18n.translate("Modules.Spider.description"));
+        super(Category.Movement, "spider", I18n.translate("Module.Spider.description"));
     }
 
     @EventHandler

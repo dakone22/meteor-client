@@ -23,8 +23,8 @@ public class TimeChanger extends Module {
 
     private final Setting<Double> time = sgDefault.add(new DoubleSetting.Builder()
             .name("time")
-            .displayName(I18n.translate("Modules.TimeChanger.setting.time.displayName"))
-            .description(I18n.translate("Modules.TimeChanger.setting.time.description"))
+            .displayName(I18n.translate("Module.TimeChanger.setting.time.displayName"))
+            .description(I18n.translate("Module.TimeChanger.setting.time.description"))
             .defaultValue(0)
             .sliderMin(-20000)
             .sliderMax(20000)
@@ -32,7 +32,7 @@ public class TimeChanger extends Module {
     );
 
     public TimeChanger() {
-        super(Category.Render, "time-changer", I18n.translate("Modules.TimeChanger.description"));
+        super(Category.Render, "time-changer", I18n.translate("Module.TimeChanger.description"));
     }
 
     long oldTime;

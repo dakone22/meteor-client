@@ -26,22 +26,22 @@ public class EXPThrower extends Module {
 
     private final Setting<Boolean> lookDown = sgGeneral.add(new BoolSetting.Builder()
             .name("look-down")
-            .displayName(I18n.translate("Modules.EXPThrower.setting.lookDown.displayName"))
-            .description(I18n.translate("Modules.EXPThrower.setting.lookDown.description"))
+            .displayName(I18n.translate("Module.EXPThrower.setting.lookDown.displayName"))
+            .description(I18n.translate("Module.EXPThrower.setting.lookDown.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> autoToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-toggle")
-            .displayName(I18n.translate("Modules.EXPThrower.setting.autoToggle.displayName"))
-            .description(I18n.translate("Modules.EXPThrower.setting.autoToggle.description"))
+            .displayName(I18n.translate("Module.EXPThrower.setting.autoToggle.displayName"))
+            .description(I18n.translate("Module.EXPThrower.setting.autoToggle.description"))
             .defaultValue(true)
             .build()
     );
 
     public EXPThrower() {
-        super(Category.Player, "exp-thrower", I18n.translate("Modules.EXPThrower.description"));
+        super(Category.Player, "exp-thrower", I18n.translate("Module.EXPThrower.description"));
     }
 
     @EventHandler

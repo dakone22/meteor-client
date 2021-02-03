@@ -32,8 +32,8 @@ public class Xray extends Module {
     
     private final Setting<List<Block>> blocks = sgGeneral.add(new BlockListSetting.Builder()
             .name("blocks")
-            .displayName(I18n.translate("Modules.Xray.setting.blocks.displayName"))
-            .description(I18n.translate("Modules.Xray.setting.blocks.description"))
+            .displayName(I18n.translate("Module.Xray.setting.blocks.displayName"))
+            .description(I18n.translate("Module.Xray.setting.blocks.description"))
             .defaultValue(Arrays.asList(Blocks.COAL_ORE, Blocks.IRON_ORE, Blocks.GOLD_ORE, Blocks.LAPIS_ORE,
                     Blocks.REDSTONE_ORE, Blocks.DIAMOND_ORE, Blocks.EMERALD_ORE,
                     Blocks.NETHER_GOLD_ORE, Blocks.NETHER_QUARTZ_ORE, Blocks.ANCIENT_DEBRIS))
@@ -46,7 +46,7 @@ public class Xray extends Module {
     private boolean fullBrightWasActive = false;
 
     public Xray() {
-        super(Category.Render, "xray", I18n.translate("Modules.Xray.description"));
+        super(Category.Render, "xray", I18n.translate("Module.Xray.description"));
     }
 
     @Override

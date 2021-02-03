@@ -20,7 +20,7 @@ public class MountBypass extends Module {
     private boolean dontCancel;
 
     public MountBypass() {
-        super(Category.Player, "mount-bypass", I18n.translate("Modules.MountBypass.description"));
+        super(Category.Player, "mount-bypass", I18n.translate("Module.MountBypass.description"));
     }
 
     @EventHandler

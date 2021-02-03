@@ -31,31 +31,31 @@ public class NoFall extends Module {
         BeforeDamage
     }
     public NoFall() {
-        super(Category.Movement, "no-fall", I18n.translate("Modules.NoFall.description"));
+        super(Category.Movement, "no-fall", I18n.translate("Module.NoFall.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.NoFall.setting.mode.displayName"))
-            .description(I18n.translate("Modules.NoFall.setting.mode.description"))
+            .displayName(I18n.translate("Module.NoFall.setting.mode.displayName"))
+            .description(I18n.translate("Module.NoFall.setting.mode.description"))
             .defaultValue(Mode.Packet)
             .build()
     );
 
     private final Setting<Boolean> elytra = sgGeneral.add(new BoolSetting.Builder()
             .name("elytra-compatibility")
-            .displayName(I18n.translate("Modules.NoFall.setting.elytra.displayName"))
-            .description(I18n.translate("Modules.NoFall.setting.elytra.description"))
+            .displayName(I18n.translate("Module.NoFall.setting.elytra.displayName"))
+            .description(I18n.translate("Module.NoFall.setting.elytra.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> height = sgGeneral.add(new DoubleSetting.Builder()
             .name("height")
-            .displayName(I18n.translate("Modules.NoFall.setting.height.displayName"))
-            .description(I18n.translate("Modules.NoFall.setting.height.description"))
+            .displayName(I18n.translate("Module.NoFall.setting.height.displayName"))
+            .description(I18n.translate("Module.NoFall.setting.height.description"))
             .defaultValue(0.5)
             .min(0.1)
             .sliderMax(1)
@@ -64,8 +64,8 @@ public class NoFall extends Module {
 
     private final Setting<PlaceMode> placeMode = sgGeneral.add(new EnumSetting.Builder<PlaceMode>()
             .name("place-mode")
-            .displayName(I18n.translate("Modules.NoFall.setting.placeMode.displayName"))
-            .description(I18n.translate("Modules.NoFall.setting.placeMode.description"))
+            .displayName(I18n.translate("Module.NoFall.setting.placeMode.displayName"))
+            .description(I18n.translate("Module.NoFall.setting.placeMode.description"))
             .defaultValue(PlaceMode.BeforeDeath)
             .build()
     );

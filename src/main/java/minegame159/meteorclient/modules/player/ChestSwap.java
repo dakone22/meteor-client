@@ -36,13 +36,13 @@ public class ChestSwap extends Module {
 
     private final Setting<Chestplate> chestplate = sgGeneral.add(new EnumSetting.Builder<Chestplate>()
             .name("chestplate")
-            .displayName(I18n.translate("Modules.ChestSwap.setting.chestplate.displayName"))
-            .description(I18n.translate("Modules.ChestSwap.setting.chestplate.description"))
+            .displayName(I18n.translate("Module.ChestSwap.setting.chestplate.displayName"))
+            .description(I18n.translate("Module.ChestSwap.setting.chestplate.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.ChestSwap.enum.Chestplate.Diamond"),
-                    I18n.translate("Modules.ChestSwap.enum.Chestplate.Netherite"),
-                    I18n.translate("Modules.ChestSwap.enum.Chestplate.PreferDiamond"),
-                    I18n.translate("Modules.ChestSwap.enum.Chestplate.PreferNetherite"),
+                    I18n.translate("Module.ChestSwap.enum.Chestplate.Diamond"),
+                    I18n.translate("Module.ChestSwap.enum.Chestplate.Netherite"),
+                    I18n.translate("Module.ChestSwap.enum.Chestplate.PreferDiamond"),
+                    I18n.translate("Module.ChestSwap.enum.Chestplate.PreferNetherite"),
             })
             .defaultValue(Chestplate.PreferNetherite)
             .build()
@@ -50,14 +50,14 @@ public class ChestSwap extends Module {
 
     private final Setting<Boolean> stayOn = sgGeneral.add(new BoolSetting.Builder()
             .name("stay-on")
-            .displayName(I18n.translate("Modules.ChestSwap.setting.stayOn.displayName"))
-            .description(I18n.translate("Modules.ChestSwap.setting.stayOn.description"))
+            .displayName(I18n.translate("Module.ChestSwap.setting.stayOn.displayName"))
+            .description(I18n.translate("Module.ChestSwap.setting.stayOn.description"))
             .defaultValue(false)
             .build()
     );
 
     public ChestSwap() {
-        super(Category.Player, "chest-swap", I18n.translate("Modules.ChestSwap.description"));
+        super(Category.Player, "chest-swap", I18n.translate("Module.ChestSwap.description"));
     }
 
     @Override

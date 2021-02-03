@@ -49,8 +49,8 @@ public class EntityOwner extends Module {
 
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .displayName(I18n.translate("Modules.EntityOwner.setting.scale.displayName"))
-            .description(I18n.translate("Modules.EntityOwner.setting.scale.description"))
+            .displayName(I18n.translate("Module.EntityOwner.setting.scale.displayName"))
+            .description(I18n.translate("Module.EntityOwner.setting.scale.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -58,8 +58,8 @@ public class EntityOwner extends Module {
 
     private final Setting<Boolean> projectiles = sgGeneral.add(new BoolSetting.Builder()
             .name("projectiles")
-            .displayName(I18n.translate("Modules.EntityOwner.setting.projectiles.displayName"))
-            .description(I18n.translate("Modules.EntityOwner.setting.projectiles.description"))
+            .displayName(I18n.translate("Module.EntityOwner.setting.projectiles.displayName"))
+            .description(I18n.translate("Module.EntityOwner.setting.projectiles.description"))
             .defaultValue(false)
             .build()
     );
@@ -67,7 +67,7 @@ public class EntityOwner extends Module {
     private final Map<UUID, String> uuidToName = new HashMap<>();
 
     public EntityOwner() {
-        super(Category.Render, "entity-owner", I18n.translate("Modules.EntityOwner.description"));
+        super(Category.Render, "entity-owner", I18n.translate("Module.EntityOwner.description"));
     }
 
     @Override

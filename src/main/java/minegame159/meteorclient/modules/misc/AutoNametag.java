@@ -26,16 +26,16 @@ public class AutoNametag extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .displayName(I18n.translate("Modules.AutoNametag.setting.entities.displayName"))
-            .description(I18n.translate("Modules.AutoNametag.setting.entities.description"))
+            .displayName(I18n.translate("Module.AutoNametag.setting.entities.displayName"))
+            .description(I18n.translate("Module.AutoNametag.setting.entities.description"))
             .defaultValue(new Object2BooleanOpenHashMap<>(0))
             .build()
     );
     
     private final Setting<Double> distance = sgGeneral.add(new DoubleSetting.Builder()
             .name("distance")
-            .displayName(I18n.translate("Modules.AutoNametag.setting.distance.displayName"))
-            .description(I18n.translate("Modules.AutoNametag.setting.distance.description"))
+            .displayName(I18n.translate("Module.AutoNametag.setting.distance.displayName"))
+            .description(I18n.translate("Module.AutoNametag.setting.distance.description"))
             .min(0.0)
             .defaultValue(5.0)
             .build()
@@ -43,14 +43,14 @@ public class AutoNametag extends Module {
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.AutoNametag.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.AutoNametag.setting.rotate.description"))
+            .displayName(I18n.translate("Module.AutoNametag.setting.rotate.displayName"))
+            .description(I18n.translate("Module.AutoNametag.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoNametag() {
-        super(Category.Misc, "auto-nametag", I18n.translate("Modules.AutoNametag.description"));
+        super(Category.Misc, "auto-nametag", I18n.translate("Module.AutoNametag.description"));
     }
 
     @EventHandler

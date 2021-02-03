@@ -29,26 +29,26 @@ public class ItemByteSize extends Module {
         True
     }
 
-    private final SettingGroup sgUseKbIfBigEnough = settings.createGroup(I18n.translate("Modules.ItemByteSize.group.sgUseKbIfBigEnough"));
+    private final SettingGroup sgUseKbIfBigEnough = settings.createGroup(I18n.translate("Module.ItemByteSize.group.sgUseKbIfBigEnough"));
 
     private final Setting<Boolean> useKbIfBigEnoughEnabled = sgUseKbIfBigEnough.add(new BoolSetting.Builder()
             .name("use-kb-if-big-enough-enabled")
-            .displayName(I18n.translate("Modules.ItemByteSize.setting.useKbIfBigEnoughEnabled.displayName"))
-            .description(I18n.translate("Modules.ItemByteSize.setting.useKbIfBigEnoughEnabled.description"))
+            .displayName(I18n.translate("Module.ItemByteSize.setting.useKbIfBigEnoughEnabled.displayName"))
+            .description(I18n.translate("Module.ItemByteSize.setting.useKbIfBigEnoughEnabled.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Mode> mode = sgUseKbIfBigEnough.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.ItemByteSize.setting.mode.displayName"))
-            .description(I18n.translate("Modules.ItemByteSize.setting.mode.description"))
+            .displayName(I18n.translate("Module.ItemByteSize.setting.mode.displayName"))
+            .description(I18n.translate("Module.ItemByteSize.setting.mode.description"))
             .defaultValue(Mode.True)
             .build()
     );
 
     public ItemByteSize() {
-        super(Category.Render, "item-byte-size", I18n.translate("Modules.ItemByteSize.description"));
+        super(Category.Render, "item-byte-size", I18n.translate("Module.ItemByteSize.description"));
     }
 
     @EventHandler

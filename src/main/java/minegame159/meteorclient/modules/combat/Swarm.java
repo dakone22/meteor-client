@@ -49,7 +49,7 @@ import java.util.List;
 
 public class Swarm extends Module {
     public Swarm() {
-        super(Category.Combat, "Swarm", I18n.translate("Modules.Swarm.description"));
+        super(Category.Combat, "Swarm", I18n.translate("Module.Swarm.description"));
     }
 
     public enum Mode {
@@ -62,15 +62,15 @@ public class Swarm extends Module {
 
     private final Setting<String> ipAddress = sgGeneral.add(new StringSetting.Builder()
             .name("ip-address")
-            .displayName(I18n.translate("Modules.Swarm.setting.ipAddress.displayName"))
-            .description(I18n.translate("Modules.Swarm.setting.ipAddress.description"))
+            .displayName(I18n.translate("Module.Swarm.setting.ipAddress.displayName"))
+            .description(I18n.translate("Module.Swarm.setting.ipAddress.description"))
             .defaultValue("localhost")
             .build());
 
     private final Setting<Integer> serverPort = sgGeneral.add(new IntSetting.Builder()
             .name("port")
-            .displayName(I18n.translate("Modules.Swarm.setting.serverPort.displayName"))
-            .description(I18n.translate("Modules.Swarm.setting.serverPort.description"))
+            .displayName(I18n.translate("Module.Swarm.setting.serverPort.displayName"))
+            .description(I18n.translate("Module.Swarm.setting.serverPort.description"))
             .defaultValue(7777)
             .sliderMin(1)
             .sliderMax(65535)

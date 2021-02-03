@@ -35,8 +35,8 @@ public class Holefiller extends Module {
 
     private final Setting<Integer> horizontalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("horizontal-radius")
-            .displayName(I18n.translate("Modules.Holefiller.setting.horizontalRadius.displayName"))
-            .description(I18n.translate("Modules.Holefiller.setting.horizontalRadius.description"))
+            .displayName(I18n.translate("Module.Holefiller.setting.horizontalRadius.displayName"))
+            .description(I18n.translate("Module.Holefiller.setting.horizontalRadius.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(6)
@@ -45,8 +45,8 @@ public class Holefiller extends Module {
 
     private final Setting<Integer> verticalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("vertical-radius")
-            .displayName(I18n.translate("Modules.Holefiller.setting.verticalRadius.displayName"))
-            .description(I18n.translate("Modules.Holefiller.setting.verticalRadius.description"))
+            .displayName(I18n.translate("Module.Holefiller.setting.verticalRadius.displayName"))
+            .description(I18n.translate("Module.Holefiller.setting.verticalRadius.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(6)
@@ -55,16 +55,16 @@ public class Holefiller extends Module {
 
     private final Setting<PlaceMode> mode = sgGeneral.add(new EnumSetting.Builder<PlaceMode>()
             .name("block")
-            .displayName(I18n.translate("Modules.Holefiller.setting.mode.displayName"))
-            .description(I18n.translate("Modules.Holefiller.setting.mode.description"))
+            .displayName(I18n.translate("Module.Holefiller.setting.mode.displayName"))
+            .description(I18n.translate("Module.Holefiller.setting.mode.description"))
             .defaultValue(PlaceMode.Obsidian)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.Holefiller.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.Holefiller.setting.rotate.description"))
+            .displayName(I18n.translate("Module.Holefiller.setting.rotate.displayName"))
+            .description(I18n.translate("Module.Holefiller.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -72,7 +72,7 @@ public class Holefiller extends Module {
     private final BlockPos.Mutable blockPos = new BlockPos.Mutable();
 
     public Holefiller() {
-        super(Category.Combat, "hole-filler", I18n.translate("Modules.Holefiller.description"));
+        super(Category.Combat, "hole-filler", I18n.translate("Module.Holefiller.description"));
     }
 
     @EventHandler

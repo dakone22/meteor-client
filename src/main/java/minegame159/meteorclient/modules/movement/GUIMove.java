@@ -35,55 +35,55 @@ public class GUIMove extends Module {
 
     private final Setting<Screens> screens = sgGeneral.add(new EnumSetting.Builder<Screens>()
             .name("screens")
-            .displayName(I18n.translate("Modules.GUIMove.setting.screens.displayName"))
-            .description(I18n.translate("Modules.GUIMove.setting.screens.description"))
+            .displayName(I18n.translate("Module.GUIMove.setting.screens.displayName"))
+            .description(I18n.translate("Module.GUIMove.setting.screens.description"))
             .defaultValue(Screens.Inventory)
             .build()
     );
 
     private final Setting<Boolean> sneak = sgGeneral.add(new BoolSetting.Builder()
             .name("sneak")
-            .displayName(I18n.translate("Modules.GUIMove.setting.sneak.displayName"))
-            .description(I18n.translate("Modules.GUIMove.setting.sneak.description"))
+            .displayName(I18n.translate("Module.GUIMove.setting.sneak.displayName"))
+            .description(I18n.translate("Module.GUIMove.setting.sneak.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> jump = sgGeneral.add(new BoolSetting.Builder()
             .name("jump")
-            .displayName(I18n.translate("Modules.GUIMove.setting.jump.displayName"))
-            .description(I18n.translate("Modules.GUIMove.setting.jump.description"))
+            .displayName(I18n.translate("Module.GUIMove.setting.jump.displayName"))
+            .description(I18n.translate("Module.GUIMove.setting.jump.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> sprint = sgGeneral.add(new BoolSetting.Builder()
             .name("sprint")
-            .displayName(I18n.translate("Modules.GUIMove.setting.sprint.displayName"))
-            .description(I18n.translate("Modules.GUIMove.setting.sprint.description"))
+            .displayName(I18n.translate("Module.GUIMove.setting.sprint.displayName"))
+            .description(I18n.translate("Module.GUIMove.setting.sprint.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> arrowsRotate = sgGeneral.add(new BoolSetting.Builder()
             .name("arrows-rotate")
-            .displayName(I18n.translate("Modules.GUIMove.setting.arrowsRotate.displayName"))
-            .description(I18n.translate("Modules.GUIMove.setting.arrowsRotate.description"))
+            .displayName(I18n.translate("Module.GUIMove.setting.arrowsRotate.displayName"))
+            .description(I18n.translate("Module.GUIMove.setting.arrowsRotate.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> rotateSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("rotate-speed")
-            .displayName(I18n.translate("Modules.GUIMove.setting.rotateSpeed.displayName"))
-            .description(I18n.translate("Modules.GUIMove.setting.rotateSpeed.description"))
+            .displayName(I18n.translate("Module.GUIMove.setting.rotateSpeed.displayName"))
+            .description(I18n.translate("Module.GUIMove.setting.rotateSpeed.description"))
             .defaultValue(4)
             .min(0)
             .build()
     );
 
     public GUIMove() {
-        super(Category.Movement, "gui-move", I18n.translate("Modules.GUIMove.description"));
+        super(Category.Movement, "gui-move", I18n.translate("Module.GUIMove.description"));
     }
 
     @EventHandler

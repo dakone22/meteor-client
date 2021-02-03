@@ -26,8 +26,8 @@ public class BoatFly extends Module {
     
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.BoatFly.setting.speed.displayName"))
-            .description(I18n.translate("Modules.BoatFly.setting.speed.description"))
+            .displayName(I18n.translate("Module.BoatFly.setting.speed.displayName"))
+            .description(I18n.translate("Module.BoatFly.setting.speed.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(50)
@@ -36,8 +36,8 @@ public class BoatFly extends Module {
 
     private final Setting<Double> verticalSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("vertical-speed")
-            .displayName(I18n.translate("Modules.BoatFly.setting.verticalSpeed.displayName"))
-            .description(I18n.translate("Modules.BoatFly.setting.verticalSpeed.description"))
+            .displayName(I18n.translate("Module.BoatFly.setting.verticalSpeed.displayName"))
+            .description(I18n.translate("Module.BoatFly.setting.verticalSpeed.description"))
             .defaultValue(6)
             .min(0)
             .sliderMax(20)
@@ -46,8 +46,8 @@ public class BoatFly extends Module {
 
     private final Setting<Double> fallSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-speed")
-            .displayName(I18n.translate("Modules.BoatFly.setting.fallSpeed.displayName"))
-            .description(I18n.translate("Modules.BoatFly.setting.fallSpeed.description"))
+            .displayName(I18n.translate("Module.BoatFly.setting.fallSpeed.displayName"))
+            .description(I18n.translate("Module.BoatFly.setting.fallSpeed.description"))
             .defaultValue(0.1)
             .min(0)
             .build()
@@ -55,14 +55,14 @@ public class BoatFly extends Module {
 
     private final Setting<Boolean> cancelServerPackets = sgGeneral.add(new BoolSetting.Builder()
             .name("cancel-server-packets")
-            .displayName(I18n.translate("Modules.BoatFly.setting.cancelServerPackets.displayName"))
-            .description(I18n.translate("Modules.BoatFly.setting.cancelServerPackets.description"))
+            .displayName(I18n.translate("Module.BoatFly.setting.cancelServerPackets.displayName"))
+            .description(I18n.translate("Module.BoatFly.setting.cancelServerPackets.description"))
             .defaultValue(false)
             .build()
     );
 
     public BoatFly() {
-        super(Category.Movement, "boat-fly", I18n.translate("Modules.BoatFly.description"));
+        super(Category.Movement, "boat-fly", I18n.translate("Module.BoatFly.description"));
     }
 
     @EventHandler

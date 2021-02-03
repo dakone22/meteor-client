@@ -23,23 +23,23 @@ import net.minecraft.entity.player.PlayerEntity;
 
 public class MessageAura extends Module {
     public MessageAura() {
-        super(Category.Misc, "message-aura", I18n.translate("Modules.MessageAura.description"));
+        super(Category.Misc, "message-aura", I18n.translate("Module.MessageAura.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<String> message = sgGeneral.add(new StringSetting.Builder()
             .name("message")
-            .displayName(I18n.translate("Modules.MessageAura.setting.message.displayName"))
-            .description(I18n.translate("Modules.MessageAura.setting.message.description"))
+            .displayName(I18n.translate("Module.MessageAura.setting.message.displayName"))
+            .description(I18n.translate("Module.MessageAura.setting.message.description"))
             .defaultValue("Meteor on Crack!")
             .build()
     );
 
     private final Setting<Boolean> ignoreFriends = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-friends")
-            .displayName(I18n.translate("Modules.MessageAura.setting.ignoreFriends.displayName"))
-            .description(I18n.translate("Modules.MessageAura.setting.ignoreFriends.description"))
+            .displayName(I18n.translate("Module.MessageAura.setting.ignoreFriends.displayName"))
+            .description(I18n.translate("Module.MessageAura.setting.ignoreFriends.description"))
             .defaultValue(false)
             .build()
     );

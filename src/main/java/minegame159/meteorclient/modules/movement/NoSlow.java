@@ -17,38 +17,38 @@ public class NoSlow extends Module {
 
     private final Setting<Boolean> items = sgGeneral.add(new BoolSetting.Builder()
             .name("items")
-            .displayName(I18n.translate("Modules.NoSlow.setting.items.displayName"))
-            .description(I18n.translate("Modules.NoSlow.setting.items.description"))
+            .displayName(I18n.translate("Module.NoSlow.setting.items.displayName"))
+            .description(I18n.translate("Module.NoSlow.setting.items.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> web = sgGeneral.add(new BoolSetting.Builder()
             .name("web")
-            .displayName(I18n.translate("Modules.NoSlow.setting.web.displayName"))
-            .description(I18n.translate("Modules.NoSlow.setting.web.description"))
+            .displayName(I18n.translate("Module.NoSlow.setting.web.displayName"))
+            .description(I18n.translate("Module.NoSlow.setting.web.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> soulSand = sgGeneral.add(new BoolSetting.Builder()
             .name("soul-sand")
-            .displayName(I18n.translate("Modules.NoSlow.setting.soulSand.displayName"))
-            .description(I18n.translate("Modules.NoSlow.setting.soulSand.description"))
+            .displayName(I18n.translate("Module.NoSlow.setting.soulSand.displayName"))
+            .description(I18n.translate("Module.NoSlow.setting.soulSand.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> slimeBlock = sgGeneral.add(new BoolSetting.Builder()
             .name("slime-block")
-            .displayName(I18n.translate("Modules.NoSlow.setting.slimeBlock.displayName"))
-            .description(I18n.translate("Modules.NoSlow.setting.slimeBlock.description"))
+            .displayName(I18n.translate("Module.NoSlow.setting.slimeBlock.displayName"))
+            .description(I18n.translate("Module.NoSlow.setting.slimeBlock.description"))
             .defaultValue(true)
             .build()
     );
 
     public NoSlow() {
-        super(Category.Movement, "no-slow", I18n.translate("Modules.NoSlow.description"));
+        super(Category.Movement, "no-slow", I18n.translate("Module.NoSlow.description"));
     }
 
     public boolean items() {

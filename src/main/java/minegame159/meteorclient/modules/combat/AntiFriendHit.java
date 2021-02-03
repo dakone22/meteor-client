@@ -20,7 +20,7 @@ import net.minecraft.entity.player.PlayerEntity;
 
 public class AntiFriendHit extends Module {
     public AntiFriendHit() {
-        super(Category.Combat, "anti-friend-hit", I18n.translate("Modules.AntiFriendHit.description"));
+        super(Category.Combat, "anti-friend-hit", I18n.translate("Module.AntiFriendHit.description"));
     }
 
     @EventHandler

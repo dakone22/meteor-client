@@ -34,12 +34,12 @@ public class Speed extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgJump = settings.createGroup(I18n.translate("Modules.Speed.group.sgJump"));
+    private final SettingGroup sgJump = settings.createGroup(I18n.translate("Module.Speed.group.sgJump"));
     
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.Speed.setting.speed.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.speed.description"))
+            .displayName(I18n.translate("Module.Speed.setting.speed.displayName"))
+            .description(I18n.translate("Module.Speed.setting.speed.description"))
             .defaultValue(5.6)
             .min(0)
             .sliderMax(50)
@@ -48,32 +48,32 @@ public class Speed extends Module {
 
     private final Setting<Boolean> onlyOnGround = sgGeneral.add(new BoolSetting.Builder()
             .name("only-on-ground")
-            .displayName(I18n.translate("Modules.Speed.setting.onlyOnGround.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.onlyOnGround.description"))
+            .displayName(I18n.translate("Module.Speed.setting.onlyOnGround.displayName"))
+            .description(I18n.translate("Module.Speed.setting.onlyOnGround.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> inWater = sgGeneral.add(new BoolSetting.Builder()
             .name("in-water")
-            .displayName(I18n.translate("Modules.Speed.setting.inWater.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.inWater.description"))
+            .displayName(I18n.translate("Module.Speed.setting.inWater.displayName"))
+            .description(I18n.translate("Module.Speed.setting.inWater.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> whenSneaking = sgGeneral.add(new BoolSetting.Builder()
             .name("when-sneaking")
-            .displayName(I18n.translate("Modules.Speed.setting.whenSneaking.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.whenSneaking.description"))
+            .displayName(I18n.translate("Module.Speed.setting.whenSneaking.displayName"))
+            .description(I18n.translate("Module.Speed.setting.whenSneaking.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> applySpeedPotions = sgGeneral.add(new BoolSetting.Builder()
             .name("apply-speed-potions")
-            .displayName(I18n.translate("Modules.Speed.setting.applySpeedPotions.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.applySpeedPotions.description"))
+            .displayName(I18n.translate("Module.Speed.setting.applySpeedPotions.displayName"))
+            .description(I18n.translate("Module.Speed.setting.applySpeedPotions.description"))
             .defaultValue(true)
             .build()
     );
@@ -82,24 +82,24 @@ public class Speed extends Module {
 
     private final Setting<Boolean> jump = sgJump.add(new BoolSetting.Builder()
             .name("jump")
-            .displayName(I18n.translate("Modules.Speed.setting.jump.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.jump.description"))
+            .displayName(I18n.translate("Module.Speed.setting.jump.displayName"))
+            .description(I18n.translate("Module.Speed.setting.jump.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Mode> jumpMode = sgJump.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.Speed.setting.jumpMode.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.jumpMode.description"))
+            .displayName(I18n.translate("Module.Speed.setting.jumpMode.displayName"))
+            .description(I18n.translate("Module.Speed.setting.jumpMode.description"))
             .defaultValue(Mode.Jump)
             .build()
     );
 
     private final Setting<Double> velocityHeight = sgJump.add(new DoubleSetting.Builder()
             .name("velocity-height")
-            .displayName(I18n.translate("Modules.Speed.setting.velocityHeight.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.velocityHeight.description"))
+            .displayName(I18n.translate("Module.Speed.setting.velocityHeight.displayName"))
+            .description(I18n.translate("Module.Speed.setting.velocityHeight.description"))
             .defaultValue(0.25)
             .min(0)
             .sliderMax(2)
@@ -108,15 +108,15 @@ public class Speed extends Module {
 
     private final Setting<JumpIf> jumpIf = sgJump.add(new EnumSetting.Builder<JumpIf>()
             .name("jump-if")
-            .displayName(I18n.translate("Modules.Speed.setting.jumpIf.displayName"))
-            .description(I18n.translate("Modules.Speed.setting.jumpIf.description"))
+            .displayName(I18n.translate("Module.Speed.setting.jumpIf.displayName"))
+            .description(I18n.translate("Module.Speed.setting.jumpIf.description"))
             .defaultValue(JumpIf.Walking)
             .build()
     );
 
 
     public Speed() {
-        super(Category.Movement, "speed", I18n.translate("Modules.Speed.description"));
+        super(Category.Movement, "speed", I18n.translate("Module.Speed.description"));
     }
 
     @EventHandler

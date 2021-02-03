@@ -11,6 +11,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class LiquidInteract extends Module {
     public LiquidInteract() {
-        super(Category.Player, "liquid-interact", I18n.translate("Modules.LiquidInteract.description"));
+        super(Category.Player, "liquid-interact", I18n.translate("Module.LiquidInteract.description"));
     }
 }

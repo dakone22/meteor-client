@@ -26,23 +26,23 @@ public class Trail extends Module {
 
     private final Setting<List<ParticleEffect>> particles = sgGeneral.add(new ParticleEffectListSetting.Builder()
             .name("particles")
-            .displayName(I18n.translate("Modules.Trail.setting.particles.displayName"))
-            .description(I18n.translate("Modules.Trail.setting.particles.description"))
+            .displayName(I18n.translate("Module.Trail.setting.particles.displayName"))
+            .description(I18n.translate("Module.Trail.setting.particles.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     private final Setting<Boolean> pause = sgGeneral.add(new BoolSetting.Builder()
             .name("pause-when-stationary")
-            .displayName(I18n.translate("Modules.Trail.setting.pause.displayName"))
-            .description(I18n.translate("Modules.Trail.setting.pause.description"))
+            .displayName(I18n.translate("Module.Trail.setting.pause.displayName"))
+            .description(I18n.translate("Module.Trail.setting.pause.description"))
             .defaultValue(true)
             .build()
     );
 
 
     public Trail() {
-        super(Category.Render, "trail", I18n.translate("Modules.Trail.description"));
+        super(Category.Render, "trail", I18n.translate("Module.Trail.description"));
     }
 
     @EventHandler

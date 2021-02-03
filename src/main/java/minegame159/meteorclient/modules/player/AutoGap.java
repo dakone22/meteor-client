@@ -33,37 +33,37 @@ public class AutoGap extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     public AutoGap(){
-        super(Category.Player, "auto-gap", I18n.translate("Modules.AutoGap.description"));
+        super(Category.Player, "auto-gap", I18n.translate("Module.AutoGap.description"));
     }
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.AutoGap.setting.mode.displayName"))
-            .description(I18n.translate("Modules.AutoGap.setting.mode.description"))
+            .displayName(I18n.translate("Module.AutoGap.setting.mode.displayName"))
+            .description(I18n.translate("Module.AutoGap.setting.mode.description"))
             .defaultValue(Mode.Regeneration)
             .build()
     );
 
     private final Setting<Boolean> preferEgap = sgGeneral.add(new BoolSetting.Builder()
             .name("prefer-egap")
-            .displayName(I18n.translate("Modules.AutoGap.setting.preferEgap.displayName"))
-            .description(I18n.translate("Modules.AutoGap.setting.preferEgap.description"))
+            .displayName(I18n.translate("Module.AutoGap.setting.preferEgap.displayName"))
+            .description(I18n.translate("Module.AutoGap.setting.preferEgap.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> preferAutoEat = sgGeneral.add(new BoolSetting.Builder()
             .name("prefer-auto-eat")
-            .displayName(I18n.translate("Modules.AutoGap.setting.preferAutoEat.displayName"))
-            .description(I18n.translate("Modules.AutoGap.setting.preferAutoEat.description"))
+            .displayName(I18n.translate("Module.AutoGap.setting.preferAutoEat.displayName"))
+            .description(I18n.translate("Module.AutoGap.setting.preferAutoEat.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableAuras = sgGeneral.add(new BoolSetting.Builder()
             .name("disable-auras")
-            .displayName(I18n.translate("Modules.AutoGap.setting.disableAuras.displayName"))
-            .description(I18n.translate("Modules.AutoGap.setting.disableAuras.description"))
+            .displayName(I18n.translate("Module.AutoGap.setting.disableAuras.displayName"))
+            .description(I18n.translate("Module.AutoGap.setting.disableAuras.description"))
             .defaultValue(false)
             .build()
     );

@@ -33,30 +33,30 @@ public class AutoMend extends Module {
     
     private final Setting<Boolean> swords = sgGeneral.add(new BoolSetting.Builder()
             .name("swords")
-            .displayName(I18n.translate("Modules.AutoMend.setting.swords.displayName"))
-            .description(I18n.translate("Modules.AutoMend.setting.swords.description"))
+            .displayName(I18n.translate("Module.AutoMend.setting.swords.displayName"))
+            .description(I18n.translate("Module.AutoMend.setting.swords.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> armourSlots = sgGeneral.add(new BoolSetting.Builder()
             .name("use-armour-slots")
-            .displayName(I18n.translate("Modules.AutoMend.setting.armourSlots.displayName"))
-            .description(I18n.translate("Modules.AutoMend.setting.armourSlots.description"))
+            .displayName(I18n.translate("Module.AutoMend.setting.armourSlots.displayName"))
+            .description(I18n.translate("Module.AutoMend.setting.armourSlots.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> removeFinished = sgGeneral.add(new BoolSetting.Builder()
             .name("remove-finished")
-            .displayName(I18n.translate("Modules.AutoMend.setting.removeFinished.displayName"))
-            .description(I18n.translate("Modules.AutoMend.setting.removeFinished.description"))
+            .displayName(I18n.translate("Module.AutoMend.setting.removeFinished.displayName"))
+            .description(I18n.translate("Module.AutoMend.setting.removeFinished.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoMend() {
-        super(Category.Player, "auto-mend", I18n.translate("Modules.AutoMend.description"));
+        super(Category.Player, "auto-mend", I18n.translate("Module.AutoMend.description"));
     }
 
     private void replaceItem(boolean offhandEmpty) {

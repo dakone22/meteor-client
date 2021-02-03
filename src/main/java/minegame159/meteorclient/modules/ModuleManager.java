@@ -62,7 +62,7 @@ public class ModuleManager extends Savable<ModuleManager> implements Listenable 
     public boolean onKeyOnlyBinding = false;
 
     public ModuleManager() {
-        super(new File(MeteorClient.FOLDER, "modules.nbt"));
+        super(new File(MeteorClient.FOLDER, "Module.nbt"));
 
         INSTANCE = this;
 

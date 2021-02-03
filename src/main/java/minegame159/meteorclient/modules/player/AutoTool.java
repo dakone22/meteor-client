@@ -45,12 +45,12 @@ public class AutoTool extends Module {
 
     private final Setting<EnchantPreference> prefer = sgGeneral.add(new EnumSetting.Builder<EnchantPreference>()
             .name("prefer")
-            .displayName(I18n.translate("Modules.AutoTool.setting.prefer.displayName"))
-            .description(I18n.translate("Modules.AutoTool.setting.prefer.description"))
+            .displayName(I18n.translate("Module.AutoTool.setting.prefer.displayName"))
+            .description(I18n.translate("Module.AutoTool.setting.prefer.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.AutoTool.enum.EnchantPreference.None"),
-                    I18n.translate("Modules.AutoTool.enum.EnchantPreference.Fortune"),
-                    I18n.translate("Modules.AutoTool.enum.EnchantPreference.SilkTouch"),
+                    I18n.translate("Module.AutoTool.enum.EnchantPreference.None"),
+                    I18n.translate("Module.AutoTool.enum.EnchantPreference.Fortune"),
+                    I18n.translate("Module.AutoTool.enum.EnchantPreference.SilkTouch"),
             })
             .defaultValue(EnchantPreference.Fortune)
             .build()
@@ -58,38 +58,38 @@ public class AutoTool extends Module {
 
     private final Setting<Boolean> preferMending = sgGeneral.add(new BoolSetting.Builder()
             .name("prefer-mending")
-            .displayName(I18n.translate("Modules.AutoTool.setting.preferMending.displayName"))
-            .description(I18n.translate("Modules.AutoTool.setting.preferMending.description"))
+            .displayName(I18n.translate("Module.AutoTool.setting.preferMending.displayName"))
+            .description(I18n.translate("Module.AutoTool.setting.preferMending.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> enderChestOnlyWithSilkTouch = sgGeneral.add(new BoolSetting.Builder()
             .name("silk-touch-with-ender-chest")
-            .displayName(I18n.translate("Modules.AutoTool.setting.enderChestOnlyWithSilkTouch.displayName"))
-            .description(I18n.translate("Modules.AutoTool.setting.enderChestOnlyWithSilkTouch.description"))
+            .displayName(I18n.translate("Module.AutoTool.setting.enderChestOnlyWithSilkTouch.displayName"))
+            .description(I18n.translate("Module.AutoTool.setting.enderChestOnlyWithSilkTouch.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> antiBreak = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-break")
-            .displayName(I18n.translate("Modules.AutoTool.setting.antiBreak.displayName"))
-            .description(I18n.translate("Modules.AutoTool.setting.antiBreak.description"))
+            .displayName(I18n.translate("Module.AutoTool.setting.antiBreak.displayName"))
+            .description(I18n.translate("Module.AutoTool.setting.antiBreak.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> switchBack = sgGeneral.add(new BoolSetting.Builder()
             .name("switch-back")
-            .displayName(I18n.translate("Modules.AutoTool.setting.switchBack.displayName"))
-            .description(I18n.translate("Modules.AutoTool.setting.switchBack.description"))
+            .displayName(I18n.translate("Module.AutoTool.setting.switchBack.displayName"))
+            .description(I18n.translate("Module.AutoTool.setting.switchBack.description"))
             .defaultValue(false)
             .build()
     );
 
     public AutoTool() {
-        super(Category.Player, "auto-tool", I18n.translate("Modules.AutoTool.description"));
+        super(Category.Player, "auto-tool", I18n.translate("Module.AutoTool.description"));
     }
 
     private static final Set<Material> EMPTY_MATERIALS = new HashSet<>(0);

@@ -34,16 +34,16 @@ public class AutoBrewer extends Module {
 
     private final Setting<MyPotion> potion = sgGeneral.add(new PotionSetting.Builder()
             .name("potion")
-            .displayName(I18n.translate("Modules.AutoBrewer.setting.potion.displayName"))
-            .description(I18n.translate("Modules.AutoBrewer.setting.potion.description"))
+            .displayName(I18n.translate("Module.AutoBrewer.setting.potion.displayName"))
+            .description(I18n.translate("Module.AutoBrewer.setting.potion.description"))
             .defaultValue(MyPotion.Strength)
             .build()
     );
 
     private final Setting<Modifier> modifier = sgGeneral.add(new EnumSetting.Builder<Modifier>()
             .name("modifier")
-            .displayName(I18n.translate("Modules.AutoBrewer.setting.modifier.displayName"))
-            .description(I18n.translate("Modules.AutoBrewer.setting.modifier.description"))
+            .displayName(I18n.translate("Module.AutoBrewer.setting.modifier.displayName"))
+            .description(I18n.translate("Module.AutoBrewer.setting.modifier.description"))
             .defaultValue(Modifier.None).build()
     );
 
@@ -52,7 +52,7 @@ public class AutoBrewer extends Module {
     private int timer;
 
     public AutoBrewer() {
-        super(Category.Misc, "auto-brewer", I18n.translate("Modules.AutoBrewer.description"));
+        super(Category.Misc, "auto-brewer", I18n.translate("Module.AutoBrewer.description"));
     }
 
     @Override

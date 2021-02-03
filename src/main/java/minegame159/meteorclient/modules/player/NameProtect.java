@@ -18,14 +18,14 @@ public class NameProtect extends Module {
 
     private final Setting<String> name = sgGeneral.add(new StringSetting.Builder()
             .name("name")
-            .displayName(I18n.translate("Modules.NameProtect.setting.name.displayName"))
-            .description(I18n.translate("Modules.NameProtect.setting.name.description"))
+            .displayName(I18n.translate("Module.NameProtect.setting.name.displayName"))
+            .description(I18n.translate("Module.NameProtect.setting.name.description"))
             .defaultValue("squidoodly")
             .build()
     );
 
     public NameProtect() {
-        super(Category.Player, "name-protect", I18n.translate("Modules.NameProtect.description"));
+        super(Category.Player, "name-protect", I18n.translate("Module.NameProtect.description"));
     }
 
     private String username = "If you see this, something is wrong.";

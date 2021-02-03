@@ -21,15 +21,15 @@ public class FastLadder extends Module {
     
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("climb-speed")
-            .displayName(I18n.translate("Modules.FastLadder.setting.speed.displayName"))
-            .description(I18n.translate("Modules.FastLadder.setting.speed.description"))
+            .displayName(I18n.translate("Module.FastLadder.setting.speed.displayName"))
+            .description(I18n.translate("Module.FastLadder.setting.speed.description"))
             .defaultValue(0.2872)
             .min(0.0)
             .build()
     );
 
     public FastLadder() {
-        super(Category.Movement, "fast-ladder", I18n.translate("Modules.FastLadder.description"));
+        super(Category.Movement, "fast-ladder", I18n.translate("Module.FastLadder.description"));
     }
 
     @EventHandler

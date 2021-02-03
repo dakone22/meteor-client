@@ -25,19 +25,19 @@ public class Rotation extends Module {
     }
 
 
-    private final SettingGroup sgYaw = settings.createGroup(I18n.translate("Modules.Rotation.group.sgYaw"));
-    private final SettingGroup sgPitch = settings.createGroup(I18n.translate("Modules.Rotation.group.sgPitch"));
+    private final SettingGroup sgYaw = settings.createGroup(I18n.translate("Module.Rotation.group.sgYaw"));
+    private final SettingGroup sgPitch = settings.createGroup(I18n.translate("Module.Rotation.group.sgPitch"));
 
     // Yaw
 
     private final Setting<LockMode> yawLockMode = sgYaw.add(new EnumSetting.Builder<LockMode>()
             .name("yaw-lock-mode")
-            .displayName(I18n.translate("Modules.Rotation.setting.yawLockMode.displayName"))
-            .description(I18n.translate("Modules.Rotation.setting.yawLockMode.description"))
+            .displayName(I18n.translate("Module.Rotation.setting.yawLockMode.displayName"))
+            .description(I18n.translate("Module.Rotation.setting.yawLockMode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.Rotation.enum.LockMode.Smart"),
-                    I18n.translate("Modules.Rotation.enum.LockMode.Simple"),
-                    I18n.translate("Modules.Rotation.enum.LockMode.None"),
+                    I18n.translate("Module.Rotation.enum.LockMode.Smart"),
+                    I18n.translate("Module.Rotation.enum.LockMode.Simple"),
+                    I18n.translate("Module.Rotation.enum.LockMode.None"),
             })
             .defaultValue(LockMode.Simple)
             .build()
@@ -45,8 +45,8 @@ public class Rotation extends Module {
 
     private final Setting<Double> yawAngle = sgYaw.add(new DoubleSetting.Builder()
             .name("yaw-angle")
-            .displayName(I18n.translate("Modules.Rotation.setting.yawAngle.displayName"))
-            .description(I18n.translate("Modules.Rotation.setting.yawAngle.description"))
+            .displayName(I18n.translate("Module.Rotation.setting.yawAngle.displayName"))
+            .description(I18n.translate("Module.Rotation.setting.yawAngle.description"))
             .defaultValue(0)
             .sliderMax(360)
             .max(360)
@@ -57,16 +57,16 @@ public class Rotation extends Module {
 
     private final Setting<LockMode> pitchLockMode = sgPitch.add(new EnumSetting.Builder<LockMode>()
             .name("pitch-lock-mode")
-            .displayName(I18n.translate("Modules.Rotation.setting.pitchLockMode.displayName"))
-            .description(I18n.translate("Modules.Rotation.setting.pitchLockMode.description"))
+            .displayName(I18n.translate("Module.Rotation.setting.pitchLockMode.displayName"))
+            .description(I18n.translate("Module.Rotation.setting.pitchLockMode.description"))
             .defaultValue(LockMode.Simple)
             .build()
     );
 
     private final Setting<Double> pitchAngle = sgPitch.add(new DoubleSetting.Builder()
             .name("pitch-angle")
-            .displayName(I18n.translate("Modules.Rotation.setting.pitchAngle.displayName"))
-            .description(I18n.translate("Modules.Rotation.setting.pitchAngle.description"))
+            .displayName(I18n.translate("Module.Rotation.setting.pitchAngle.displayName"))
+            .description(I18n.translate("Module.Rotation.setting.pitchAngle.description"))
             .defaultValue(0)
             .min(-90)
             .max(90)
@@ -76,7 +76,7 @@ public class Rotation extends Module {
     );
 
     public Rotation() {
-        super(Category.Player, "rotation", I18n.translate("Modules.Rotation.description"));
+        super(Category.Player, "rotation", I18n.translate("Module.Rotation.description"));
     }
 
     @Override

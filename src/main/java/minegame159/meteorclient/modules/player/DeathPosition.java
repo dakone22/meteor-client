@@ -35,8 +35,8 @@ public class DeathPosition extends Module {
 
     private final Setting<Boolean> createWaypoint = sgGeneral.add(new BoolSetting.Builder()
             .name("create-waypoint")
-            .displayName(I18n.translate("Modules.DeathPosition.setting.createWaypoint.displayName"))
-            .description(I18n.translate("Modules.DeathPosition.setting.createWaypoint.description"))
+            .displayName(I18n.translate("Module.DeathPosition.setting.createWaypoint.displayName"))
+            .description(I18n.translate("Module.DeathPosition.setting.createWaypoint.description"))
             .defaultValue(true)
             .build()
     );
@@ -46,7 +46,7 @@ public class DeathPosition extends Module {
     private final WLabel label = new WLabel("No latest death found.");
 
     public DeathPosition() {
-        super(Category.Player, "death-position", I18n.translate("Modules.DeathPosition.description"));
+        super(Category.Player, "death-position", I18n.translate("Module.DeathPosition.description"));
     }
 
     private final Map<String, Double> deathPos = new HashMap<>();

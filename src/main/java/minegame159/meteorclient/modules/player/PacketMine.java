@@ -29,14 +29,14 @@ import java.util.List;
 
 public class PacketMine extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.PacketMine.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.PacketMine.group.sgRender"));
 
     // General
 
     private final Setting<Boolean> oneByOne = sgGeneral.add(new BoolSetting.Builder()
             .name("one-by-one")
-            .displayName(I18n.translate("Modules.PacketMine.setting.oneByOne.displayName"))
-            .description(I18n.translate("Modules.PacketMine.setting.oneByOne.description"))
+            .displayName(I18n.translate("Module.PacketMine.setting.oneByOne.displayName"))
+            .description(I18n.translate("Module.PacketMine.setting.oneByOne.description"))
             .defaultValue(true)
             .build()
     );
@@ -45,32 +45,32 @@ public class PacketMine extends Module {
 
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .displayName(I18n.translate("Modules.PacketMine.setting.render.displayName"))
-            .description(I18n.translate("Modules.PacketMine.setting.render.description"))
+            .displayName(I18n.translate("Module.PacketMine.setting.render.displayName"))
+            .description(I18n.translate("Module.PacketMine.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.PacketMine.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.PacketMine.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.PacketMine.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.PacketMine.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .displayName(I18n.translate("Modules.PacketMine.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.PacketMine.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.PacketMine.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.PacketMine.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.PacketMine.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.PacketMine.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.PacketMine.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.PacketMine.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );
@@ -79,7 +79,7 @@ public class PacketMine extends Module {
     private final List<MyBlock> blocks = new ArrayList<>();
 
     public PacketMine() {
-        super(Category.Player, "packet-mine", I18n.translate("Modules.PacketMine.description"));
+        super(Category.Player, "packet-mine", I18n.translate("Module.PacketMine.description"));
     }
 
     @Override

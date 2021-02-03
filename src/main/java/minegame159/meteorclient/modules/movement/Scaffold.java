@@ -32,24 +32,24 @@ public class Scaffold extends Module {
 
     private final Setting<Boolean> safeWalk = sgGeneral.add(new BoolSetting.Builder()
             .name("safe-walk")
-            .displayName(I18n.translate("Modules.Scaffold.setting.safeWalk.displayName"))
-            .description(I18n.translate("Modules.Scaffold.setting.safeWalk.description"))
+            .displayName(I18n.translate("Module.Scaffold.setting.safeWalk.displayName"))
+            .description(I18n.translate("Module.Scaffold.setting.safeWalk.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> fastTower = sgGeneral.add(new BoolSetting.Builder()
             .name("fast-tower")
-            .displayName(I18n.translate("Modules.Scaffold.setting.fastTower.displayName"))
-            .description(I18n.translate("Modules.Scaffold.setting.fastTower.description"))
+            .displayName(I18n.translate("Module.Scaffold.setting.fastTower.displayName"))
+            .description(I18n.translate("Module.Scaffold.setting.fastTower.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> radius = sgGeneral.add(new IntSetting.Builder()
             .name("radius")
-            .displayName(I18n.translate("Modules.Scaffold.setting.radius.displayName"))
-            .description(I18n.translate("Modules.Scaffold.setting.radius.description"))
+            .displayName(I18n.translate("Module.Scaffold.setting.radius.displayName"))
+            .description(I18n.translate("Module.Scaffold.setting.radius.description"))
             .defaultValue(1)
             .min(1)
             .sliderMin(1)
@@ -59,32 +59,32 @@ public class Scaffold extends Module {
 
     private final Setting<List<Block>> blackList = sgGeneral.add(new BlockListSetting.Builder()
             .name("blacklist")
-            .displayName(I18n.translate("Modules.Scaffold.setting.blackList.displayName"))
-            .description(I18n.translate("Modules.Scaffold.setting.blackList.description"))
+            .displayName(I18n.translate("Module.Scaffold.setting.blackList.displayName"))
+            .description(I18n.translate("Module.Scaffold.setting.blackList.description"))
             .defaultValue(new ArrayList<>())
             .build()
     );
 
     private final Setting<Boolean> selfToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("self-toggle")
-            .displayName(I18n.translate("Modules.Scaffold.setting.selfToggle.displayName"))
-            .description(I18n.translate("Modules.Scaffold.setting.selfToggle.description"))
+            .displayName(I18n.translate("Module.Scaffold.setting.selfToggle.displayName"))
+            .description(I18n.translate("Module.Scaffold.setting.selfToggle.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> renderSwing = sgGeneral.add(new BoolSetting.Builder()
             .name("swing")
-            .displayName(I18n.translate("Modules.Scaffold.setting.renderSwing.displayName"))
-            .description(I18n.translate("Modules.Scaffold.setting.renderSwing.description"))
+            .displayName(I18n.translate("Module.Scaffold.setting.renderSwing.displayName"))
+            .description(I18n.translate("Module.Scaffold.setting.renderSwing.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.Scaffold.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.Scaffold.setting.rotate.description"))
+            .displayName(I18n.translate("Module.Scaffold.setting.rotate.displayName"))
+            .description(I18n.translate("Module.Scaffold.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -97,7 +97,7 @@ public class Scaffold extends Module {
     private double lastSneakingY;
 
     public Scaffold() {
-        super(Category.Movement, "scaffold", I18n.translate("Modules.Scaffold.description"));
+        super(Category.Movement, "scaffold", I18n.translate("Module.Scaffold.description"));
     }
 
     @Override

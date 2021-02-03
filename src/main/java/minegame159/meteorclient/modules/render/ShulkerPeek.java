@@ -49,37 +49,37 @@ public class ShulkerPeek extends Module {
     }
 
     public ShulkerPeek(){
-        super(Category.Render, "shulker-peek", I18n.translate("Modules.ShulkerPeek.description"));
+        super(Category.Render, "shulker-peek", I18n.translate("Module.ShulkerPeek.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     public final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.ShulkerPeek.setting.mode.displayName"))
-            .description(I18n.translate("Modules.ShulkerPeek.setting.mode.description"))
+            .displayName(I18n.translate("Module.ShulkerPeek.setting.mode.displayName"))
+            .description(I18n.translate("Module.ShulkerPeek.setting.mode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.ShulkerPeek.enum.Mode.Tooltip"),
-                    I18n.translate("Modules.ShulkerPeek.enum.Mode.Always")})
+                    I18n.translate("Module.ShulkerPeek.enum.Mode.Tooltip"),
+                    I18n.translate("Module.ShulkerPeek.enum.Mode.Always")})
             .defaultValue(Mode.Always)
             .build()
     );
 
     public final Setting<BackgroundMode> bgMode = sgGeneral.add(new EnumSetting.Builder<BackgroundMode>()
             .name("background-mode")
-            .displayName(I18n.translate("Modules.ShulkerPeek.setting.bgMode.displayName"))
-            .description(I18n.translate("Modules.ShulkerPeek.setting.bgMode.description"))
+            .displayName(I18n.translate("Module.ShulkerPeek.setting.bgMode.displayName"))
+            .description(I18n.translate("Module.ShulkerPeek.setting.bgMode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.ShulkerPeek.enum.BackgroundMode.Light"),
-                    I18n.translate("Modules.ShulkerPeek.enum.BackgroundMode.Dark")})
+                    I18n.translate("Module.ShulkerPeek.enum.BackgroundMode.Light"),
+                    I18n.translate("Module.ShulkerPeek.enum.BackgroundMode.Dark")})
             .defaultValue(BackgroundMode.Light)
             .build()
     );
 
     private final Setting<Integer> lines = sgGeneral.add(new IntSetting.Builder()
             .name("lines")
-            .displayName(I18n.translate("Modules.ShulkerPeek.setting.lines.displayName"))
-            .description(I18n.translate("Modules.ShulkerPeek.setting.lines.description"))
+            .displayName(I18n.translate("Module.ShulkerPeek.setting.lines.displayName"))
+            .description(I18n.translate("Module.ShulkerPeek.setting.lines.description"))
             .defaultValue(8)
             .min(0)
             .build()

@@ -42,8 +42,8 @@ public class Freecam extends Module {
 
     private final Setting<Double> speed = sgGeneral.add(new DoubleSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.Freecam.setting.speed.displayName"))
-            .description(I18n.translate("Modules.Freecam.setting.speed.description"))
+            .displayName(I18n.translate("Module.Freecam.setting.speed.displayName"))
+            .description(I18n.translate("Module.Freecam.setting.speed.description"))
             .defaultValue(1.0)
             .min(0.0)
             .build()
@@ -51,44 +51,44 @@ public class Freecam extends Module {
 
     private final Setting<AutoDisableEvent> autoDisableOnDamage = sgGeneral.add(new EnumSetting.Builder<AutoDisableEvent>()
             .name("auto-disable-on-damage")
-            .displayName(I18n.translate("Modules.Freecam.setting.autoDisableOnDamage.displayName"))
-            .description(I18n.translate("Modules.Freecam.setting.autoDisableOnDamage.description"))
+            .displayName(I18n.translate("Module.Freecam.setting.autoDisableOnDamage.displayName"))
+            .description(I18n.translate("Module.Freecam.setting.autoDisableOnDamage.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.Freecam.enum.AutoDisableEvent.None"),
-                    I18n.translate("Modules.Freecam.enum.AutoDisableEvent.OnDamage"),
-                    I18n.translate("Modules.Freecam.enum.AutoDisableEvent.OnDeath")})
+                    I18n.translate("Module.Freecam.enum.AutoDisableEvent.None"),
+                    I18n.translate("Module.Freecam.enum.AutoDisableEvent.OnDamage"),
+                    I18n.translate("Module.Freecam.enum.AutoDisableEvent.OnDeath")})
             .defaultValue(AutoDisableEvent.OnDamage)
             .build()
     );
 
     private final Setting<Boolean> autoDisableOnLog = sgGeneral.add(new BoolSetting.Builder()
             .name("auto-disable-on-log")
-            .displayName(I18n.translate("Modules.Freecam.setting.autoDisableOnLog.displayName"))
-            .description(I18n.translate("Modules.Freecam.setting.autoDisableOnLog.description"))
+            .displayName(I18n.translate("Module.Freecam.setting.autoDisableOnLog.displayName"))
+            .description(I18n.translate("Module.Freecam.setting.autoDisableOnLog.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> reloadChunks = sgGeneral.add(new BoolSetting.Builder()
             .name("reload-chunks")
-            .displayName(I18n.translate("Modules.Freecam.setting.reloadChunks.displayName"))
-            .description(I18n.translate("Modules.Freecam.setting.reloadChunks.description"))
+            .displayName(I18n.translate("Module.Freecam.setting.reloadChunks.displayName"))
+            .description(I18n.translate("Module.Freecam.setting.reloadChunks.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> renderHands = sgGeneral.add(new BoolSetting.Builder()
             .name("render-hands")
-            .displayName(I18n.translate("Modules.Freecam.setting.renderHands.displayName"))
-            .description(I18n.translate("Modules.Freecam.setting.renderHands.description"))
+            .displayName(I18n.translate("Module.Freecam.setting.renderHands.displayName"))
+            .description(I18n.translate("Module.Freecam.setting.renderHands.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.Freecam.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.Freecam.setting.rotate.description"))
+            .displayName(I18n.translate("Module.Freecam.setting.rotate.displayName"))
+            .description(I18n.translate("Module.Freecam.setting.rotate.description"))
             .defaultValue(false)
             .build()
     );
@@ -102,7 +102,7 @@ public class Freecam extends Module {
     private boolean forward, backward, right, left, up, down;
 
     public Freecam() {
-        super(Category.Render, "freecam", I18n.translate("Modules.Freecam.description"));
+        super(Category.Render, "freecam", I18n.translate("Module.Freecam.description"));
     }
 
     @Override

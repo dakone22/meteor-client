@@ -28,14 +28,14 @@ public class SelfAnvil extends Module {
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.SelfAnvil.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.SelfAnvil.setting.rotate.description"))
+            .displayName(I18n.translate("Module.SelfAnvil.setting.rotate.displayName"))
+            .description(I18n.translate("Module.SelfAnvil.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public SelfAnvil() {
-        super(Category.Combat, "self-anvil", I18n.translate("Modules.SelfAnvil.description"));
+        super(Category.Combat, "self-anvil", I18n.translate("Module.SelfAnvil.description"));
     }
 
     @EventHandler

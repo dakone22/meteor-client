@@ -36,15 +36,15 @@ public class EChestFarmer extends Module {
     private static final BlockState ENDER_CHEST = Blocks.ENDER_CHEST.getDefaultState();
 
     public EChestFarmer(){
-        super(Category.Misc, "EChest-farmer", I18n.translate("Modules.EChestFarmer.description"));
+        super(Category.Misc, "EChest-farmer", I18n.translate("Module.EChestFarmer.description"));
     }
 
     private final SettingGroup sgGeneral  = settings.getDefaultGroup();
 
     private final Setting<Integer> amount = sgGeneral.add(new IntSetting.Builder()
             .name("target-amount")
-            .displayName(I18n.translate("Modules.EChestFarmer.setting.amount.displayName"))
-            .description(I18n.translate("Modules.EChestFarmer.setting.amount.description"))
+            .displayName(I18n.translate("Module.EChestFarmer.setting.amount.displayName"))
+            .description(I18n.translate("Module.EChestFarmer.setting.amount.description"))
             .defaultValue(64)
             .min(8)
             .sliderMax(64)
@@ -54,8 +54,8 @@ public class EChestFarmer extends Module {
 
     private final Setting<Integer> lowerAmount = sgGeneral.add(new IntSetting.Builder()
             .name("lower-amount")
-            .displayName(I18n.translate("Modules.EChestFarmer.setting.lowerAmount.displayName"))
-            .description(I18n.translate("Modules.EChestFarmer.setting.lowerAmount.description"))
+            .displayName(I18n.translate("Module.EChestFarmer.setting.lowerAmount.displayName"))
+            .description(I18n.translate("Module.EChestFarmer.setting.lowerAmount.description"))
             .defaultValue(8)
             .min(0)
             .max(64)
@@ -65,8 +65,8 @@ public class EChestFarmer extends Module {
 
     private final Setting<Boolean> disableOnAmount = sgGeneral.add(new BoolSetting.Builder()
             .name("disable-on-completion")
-            .displayName(I18n.translate("Modules.EChestFarmer.setting.disableOnAmount.displayName"))
-            .description(I18n.translate("Modules.EChestFarmer.setting.disableOnAmount.description"))
+            .displayName(I18n.translate("Module.EChestFarmer.setting.disableOnAmount.displayName"))
+            .description(I18n.translate("Module.EChestFarmer.setting.disableOnAmount.description"))
             .defaultValue(true)
             .build()
     );

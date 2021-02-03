@@ -17,14 +17,14 @@ public class AntiLevitation extends Module {
     
     private final Setting<Boolean> applyGravity = sgGeneral.add(new BoolSetting.Builder()
             .name("apply-gravity")
-            .displayName(I18n.translate("Modules.AntiLevitation.setting.applyGravity.displayName"))
-            .description(I18n.translate("Modules.AntiLevitation.setting.applyGravity.description"))
+            .displayName(I18n.translate("Module.AntiLevitation.setting.applyGravity.displayName"))
+            .description(I18n.translate("Module.AntiLevitation.setting.applyGravity.description"))
             .defaultValue(false)
             .build()
     );
 
     public AntiLevitation() {
-        super(Category.Movement, "anti-levitation", I18n.translate("Modules.AntiLevitation.description"));
+        super(Category.Movement, "anti-levitation", I18n.translate("Module.AntiLevitation.description"));
     }
 
     public boolean isApplyGravity() {

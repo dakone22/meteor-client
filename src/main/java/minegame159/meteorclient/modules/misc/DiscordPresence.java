@@ -28,8 +28,8 @@ public class DiscordPresence extends Module {
 
     private final Setting<String> line1 = sgGeneral.add(new StringSetting.Builder()
             .name("line-1")
-            .displayName(I18n.translate("Modules.DiscordPresence.setting.line1.displayName"))
-            .description(I18n.translate("Modules.DiscordPresence.setting.line1.description"))
+            .displayName(I18n.translate("Module.DiscordPresence.setting.line1.displayName"))
+            .description(I18n.translate("Module.DiscordPresence.setting.line1.description"))
             .defaultValue("{player} || {server}")
             .onChanged(booleanSetting -> updateDetails())
             .build()
@@ -37,15 +37,15 @@ public class DiscordPresence extends Module {
 
     private final Setting<String> line2 = sgGeneral.add(new StringSetting.Builder()
             .name("line-2")
-            .displayName(I18n.translate("Modules.DiscordPresence.setting.line2.displayName"))
-            .description(I18n.translate("Modules.DiscordPresence.setting.line2.description"))
+            .displayName(I18n.translate("Module.DiscordPresence.setting.line2.displayName"))
+            .description(I18n.translate("Module.DiscordPresence.setting.line2.description"))
             .defaultValue("Meteor on Crack!")
             .onChanged(booleanSetting -> updateDetails())
             .build()
     );
 
     public DiscordPresence() {
-        super(Category.Misc, "discord-presence", I18n.translate("Modules.DiscordPresence.description"));
+        super(Category.Misc, "discord-presence", I18n.translate("Module.DiscordPresence.description"));
     }
 
     private static final DiscordRichPresence rpc = new DiscordRichPresence();

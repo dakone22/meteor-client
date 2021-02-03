@@ -33,40 +33,40 @@ public class TotemPopNotifier extends Module {
 
     private final Setting<Boolean> announce = sgGeneral.add(new BoolSetting.Builder()
             .name("announce-in-chat")
-            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.announce.displayName"))
-            .description(I18n.translate("Modules.TotemPopNotifier.setting.announce.description"))
+            .displayName(I18n.translate("Module.TotemPopNotifier.setting.announce.displayName"))
+            .description(I18n.translate("Module.TotemPopNotifier.setting.announce.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> ignoreOwn = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-own")
-            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.ignoreOwn.displayName"))
-            .description(I18n.translate("Modules.TotemPopNotifier.setting.ignoreOwn.description"))
+            .displayName(I18n.translate("Module.TotemPopNotifier.setting.ignoreOwn.displayName"))
+            .description(I18n.translate("Module.TotemPopNotifier.setting.ignoreOwn.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> ignoreFriend = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-friend")
-            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.ignoreFriend.displayName"))
-            .description(I18n.translate("Modules.TotemPopNotifier.setting.ignoreFriend.description"))
+            .displayName(I18n.translate("Module.TotemPopNotifier.setting.ignoreFriend.displayName"))
+            .description(I18n.translate("Module.TotemPopNotifier.setting.ignoreFriend.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<String> popMessage = sgGeneral.add(new StringSetting.Builder()
             .name("pop-message")
-            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.popMessage.displayName"))
-            .description(I18n.translate("Modules.TotemPopNotifier.setting.popMessage.description"))
+            .displayName(I18n.translate("Module.TotemPopNotifier.setting.popMessage.displayName"))
+            .description(I18n.translate("Module.TotemPopNotifier.setting.popMessage.description"))
             .defaultValue("EZ pops. {player} just popped {pops} {totems}. Meteor on Crack!")
             .build()
     );
 
     private final Setting<String> deathMessage = sgGeneral.add(new StringSetting.Builder()
             .name("death-message")
-            .displayName(I18n.translate("Modules.TotemPopNotifier.setting.deathMessage.displayName"))
-            .description(I18n.translate("Modules.TotemPopNotifier.setting.deathMessage.description"))
+            .displayName(I18n.translate("Module.TotemPopNotifier.setting.deathMessage.displayName"))
+            .description(I18n.translate("Module.TotemPopNotifier.setting.deathMessage.description"))
             .defaultValue("EZZZ. {player} just died after popping {pops} {totems}. Meteor on Crack!")
             .build()
     );
@@ -77,7 +77,7 @@ public class TotemPopNotifier extends Module {
     private final Random random = new Random();
 
     public TotemPopNotifier() {
-        super(Category.Combat, "totem-pop-notifier", I18n.translate("Modules.TotemPopNotifier.description"));
+        super(Category.Combat, "totem-pop-notifier", I18n.translate("Module.TotemPopNotifier.description"));
     }
 
     @Override

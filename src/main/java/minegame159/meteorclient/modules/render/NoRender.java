@@ -17,206 +17,206 @@ public class NoRender extends Module {
 
     private final Setting<Boolean> noHurtCam = sgGeneral.add(new BoolSetting.Builder()
             .name("no-hurt-cam")
-            .displayName(I18n.translate("Modules.NoRender.setting.noHurtCam.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noHurtCam.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noHurtCam.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noHurtCam.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noWeather = sgGeneral.add(new BoolSetting.Builder()
             .name("no-weather")
-            .displayName(I18n.translate("Modules.NoRender.setting.noWeather.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noWeather.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noWeather.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noWeather.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noPortalOverlay = sgGeneral.add(new BoolSetting.Builder()
             .name("no-portal-overlay")
-            .displayName(I18n.translate("Modules.NoRender.setting.noPortalOverlay.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noPortalOverlay.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noPortalOverlay.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noPortalOverlay.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noPumpkinOverlay = sgGeneral.add(new BoolSetting.Builder()
             .name("no-pumpkin-overlay")
-            .displayName(I18n.translate("Modules.NoRender.setting.noPumpkinOverlay.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noPumpkinOverlay.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noPumpkinOverlay.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noPumpkinOverlay.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noFireOverlay = sgGeneral.add(new BoolSetting.Builder()
             .name("no-fire-overlay")
-            .displayName(I18n.translate("Modules.NoRender.setting.noFireOverlay.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noFireOverlay.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noFireOverlay.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noFireOverlay.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noWaterOverlay = sgGeneral.add(new BoolSetting.Builder()
             .name("no-water-overlay")
-            .displayName(I18n.translate("Modules.NoRender.setting.noWaterOverlay.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noWaterOverlay.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noWaterOverlay.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noWaterOverlay.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noVignette = sgGeneral.add(new BoolSetting.Builder()
             .name("no-vignette")
-            .displayName(I18n.translate("Modules.NoRender.setting.noVignette.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noVignette.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noVignette.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noVignette.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noBossBar = sgGeneral.add(new BoolSetting.Builder()
             .name("no-boss-bar")
-            .displayName(I18n.translate("Modules.NoRender.setting.noBossBar.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noBossBar.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noBossBar.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noBossBar.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noScoreboard = sgGeneral.add(new BoolSetting.Builder()
             .name("no-scoreboard")
-            .displayName(I18n.translate("Modules.NoRender.setting.noScoreboard.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noScoreboard.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noScoreboard.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noScoreboard.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noFog = sgGeneral.add(new BoolSetting.Builder()
             .name("no-fog")
-            .displayName(I18n.translate("Modules.NoRender.setting.noFog.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noFog.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noFog.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noFog.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noTotemAnimation = sgGeneral.add(new BoolSetting.Builder()
             .name("no-totem-animation")
-            .displayName(I18n.translate("Modules.NoRender.setting.noTotemAnimation.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noTotemAnimation.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noTotemAnimation.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noTotemAnimation.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noArmor = sgGeneral.add(new BoolSetting.Builder()
             .name("no-armor")
-            .displayName(I18n.translate("Modules.NoRender.setting.noArmor.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noArmor.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noArmor.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noArmor.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noNausea = sgGeneral.add(new BoolSetting.Builder()
             .name("no-nausea")
-            .displayName(I18n.translate("Modules.NoRender.setting.noNausea.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noNausea.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noNausea.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noNausea.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> noItems = sgGeneral.add(new BoolSetting.Builder()
             .name("no-item")
-            .displayName(I18n.translate("Modules.NoRender.setting.noItems.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noItems.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noItems.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noItems.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noEnchTableBook = sgGeneral.add(new BoolSetting.Builder()
             .name("no-ench-table-book")
-            .displayName(I18n.translate("Modules.NoRender.setting.noEnchTableBook.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noEnchTableBook.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noEnchTableBook.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noEnchTableBook.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noSignText = sgGeneral.add(new BoolSetting.Builder()
             .name("no-sign-text")
-            .displayName(I18n.translate("Modules.NoRender.setting.noSignText.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noSignText.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noSignText.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noSignText.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noBlockBreakParticles = sgGeneral.add(new BoolSetting.Builder()
             .name("no-block-break-particles")
-            .displayName(I18n.translate("Modules.NoRender.setting.noBlockBreakParticles.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noBlockBreakParticles.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noBlockBreakParticles.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noBlockBreakParticles.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noFallingBlocks = sgGeneral.add(new BoolSetting.Builder()
             .name("no-falling-blocks")
-            .displayName(I18n.translate("Modules.NoRender.setting.noFallingBlocks.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noFallingBlocks.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noFallingBlocks.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noFallingBlocks.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noPotionIcons = sgGeneral.add(new BoolSetting.Builder()
             .name("no-potion-icons")
-            .displayName(I18n.translate("Modules.NoRender.setting.noPotionIcons.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noPotionIcons.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noPotionIcons.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noPotionIcons.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noArmorStands = sgGeneral.add(new BoolSetting.Builder()
             .name("no-armor-stands")
-            .displayName(I18n.translate("Modules.NoRender.setting.noArmorStands.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noArmorStands.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noArmorStands.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noArmorStands.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noGuiBackground = sgGeneral.add(new BoolSetting.Builder()
             .name("no-gui-background")
-            .displayName(I18n.translate("Modules.NoRender.setting.noGuiBackground.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noGuiBackground.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noGuiBackground.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noGuiBackground.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noXpOrbs = sgGeneral.add(new BoolSetting.Builder()
             .name("no-xp-orbs")
-            .displayName(I18n.translate("Modules.NoRender.setting.noXpOrbs.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noXpOrbs.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noXpOrbs.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noXpOrbs.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noEatParticles = sgGeneral.add(new BoolSetting.Builder()
             .name("no-eating-particles")
-            .displayName(I18n.translate("Modules.NoRender.setting.noEatParticles.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noEatParticles.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noEatParticles.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noEatParticles.description"))
             .defaultValue(false)
             .build()
     );
     
     private final Setting<Boolean> noSkylightUpdates = sgGeneral.add(new BoolSetting.Builder()
             .name("no-skylight-updates")
-            .displayName(I18n.translate("Modules.NoRender.setting.noSkylightUpdates.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noSkylightUpdates.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noSkylightUpdates.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noSkylightUpdates.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noCrosshair = sgGeneral.add(new BoolSetting.Builder()
             .name("no-crosshair")
-            .displayName(I18n.translate("Modules.NoRender.setting.noCrosshair.displayName"))
-            .description(I18n.translate("Modules.NoRender.setting.noCrosshair.description"))
+            .displayName(I18n.translate("Module.NoRender.setting.noCrosshair.displayName"))
+            .description(I18n.translate("Module.NoRender.setting.noCrosshair.description"))
             .defaultValue(false)
             .build()
     );
 
     public NoRender() {
-        super(Category.Render, "no-render", I18n.translate("Modules.NoRender.description"));
+        super(Category.Render, "no-render", I18n.translate("Module.NoRender.description"));
     }
 
     public boolean noHurtCam() {

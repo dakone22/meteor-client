@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Blink extends Module {
     public Blink() {
-        super(Category.Movement, "blink", I18n.translate("Modules.Blink.description"));
+        super(Category.Movement, "blink", I18n.translate("Module.Blink.description"));
     }
 
     private final List<PlayerMoveC2SPacket> packets = new ArrayList<>();

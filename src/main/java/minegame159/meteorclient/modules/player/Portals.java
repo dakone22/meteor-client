@@ -11,6 +11,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class Portals extends Module {
     public Portals() {
-        super(Category.Player, "portals", I18n.translate("Modules.Portals.description"));
+        super(Category.Player, "portals", I18n.translate("Module.Portals.description"));
     }
 }

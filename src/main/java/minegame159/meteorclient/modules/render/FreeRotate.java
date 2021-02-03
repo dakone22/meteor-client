@@ -25,33 +25,33 @@ public class FreeRotate extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgArrows = settings.createGroup(I18n.translate("Modules.FreeRotate.group.sgArrows"));
+    private final SettingGroup sgArrows = settings.createGroup(I18n.translate("Module.FreeRotate.group.sgArrows"));
 
     // General
 
     public final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.FreeRotate.setting.mode.displayName"))
-            .description(I18n.translate("Modules.FreeRotate.setting.mode.description"))
+            .displayName(I18n.translate("Module.FreeRotate.setting.mode.displayName"))
+            .description(I18n.translate("Module.FreeRotate.setting.mode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.FreeRotate.enum.Mode.Player"),
-                    I18n.translate("Modules.FreeRotate.enum.Mode.Camera")})
+                    I18n.translate("Module.FreeRotate.enum.Mode.Player"),
+                    I18n.translate("Module.FreeRotate.enum.Mode.Camera")})
             .defaultValue(Mode.Player)
             .build()
     );
 
     public final Setting<Boolean> togglePerpective = sgGeneral.add(new BoolSetting.Builder()
             .name("toggle-perspective")
-            .displayName(I18n.translate("Modules.FreeRotate.setting.togglePerpective.displayName"))
-            .description(I18n.translate("Modules.FreeRotate.setting.togglePerpective.description"))
+            .displayName(I18n.translate("Module.FreeRotate.setting.togglePerpective.displayName"))
+            .description(I18n.translate("Module.FreeRotate.setting.togglePerpective.description"))
             .defaultValue(true)
             .build()
     );
 
     public final Setting<Double> sensitivity = sgGeneral.add(new DoubleSetting.Builder()
             .name("camera-sensitivity")
-            .displayName(I18n.translate("Modules.FreeRotate.setting.sensitivity.displayName"))
-            .description(I18n.translate("Modules.FreeRotate.setting.sensitivity.description"))
+            .displayName(I18n.translate("Module.FreeRotate.setting.sensitivity.displayName"))
+            .description(I18n.translate("Module.FreeRotate.setting.sensitivity.description"))
             .defaultValue(8)
             .min(0)
             .sliderMax(10)
@@ -62,23 +62,23 @@ public class FreeRotate extends Module {
 
     public final Setting<Boolean> arrows = sgArrows.add(new BoolSetting.Builder()
             .name("arrows-control-opposite")
-            .displayName(I18n.translate("Modules.FreeRotate.setting.arrows.displayName"))
-            .description(I18n.translate("Modules.FreeRotate.setting.arrows.description"))
+            .displayName(I18n.translate("Module.FreeRotate.setting.arrows.displayName"))
+            .description(I18n.translate("Module.FreeRotate.setting.arrows.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> arrowSpeed = sgArrows.add(new DoubleSetting.Builder()
             .name("arrow-speed")
-            .displayName(I18n.translate("Modules.FreeRotate.setting.arrowSpeed.displayName"))
-            .description(I18n.translate("Modules.FreeRotate.setting.arrowSpeed.description"))
+            .displayName(I18n.translate("Module.FreeRotate.setting.arrowSpeed.displayName"))
+            .description(I18n.translate("Module.FreeRotate.setting.arrowSpeed.description"))
             .defaultValue(4)
             .min(0)
             .build()
     );
 
     public FreeRotate() {
-        super(Category.Render, "free-rotate", I18n.translate("Modules.FreeRotate.description"));
+        super(Category.Render, "free-rotate", I18n.translate("Module.FreeRotate.description"));
     }
 
     public float cameraYaw;

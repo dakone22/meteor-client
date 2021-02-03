@@ -27,30 +27,30 @@ public class SelfWeb extends Module {
 
     private final Setting<Boolean> doubles = sgGeneral.add(new BoolSetting.Builder()
             .name("doubles")
-            .displayName(I18n.translate("Modules.SelfWeb.setting.doubles.displayName"))
-            .description(I18n.translate("Modules.SelfWeb.setting.doubles.description"))
+            .displayName(I18n.translate("Module.SelfWeb.setting.doubles.displayName"))
+            .description(I18n.translate("Module.SelfWeb.setting.doubles.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> turnOff = sgGeneral.add(new BoolSetting.Builder()
             .name("turn-off")
-            .displayName(I18n.translate("Modules.SelfWeb.setting.turnOff.displayName"))
-            .description(I18n.translate("Modules.SelfWeb.setting.turnOff.description"))
+            .displayName(I18n.translate("Module.SelfWeb.setting.turnOff.displayName"))
+            .description(I18n.translate("Module.SelfWeb.setting.turnOff.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.SelfWeb.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.SelfWeb.setting.rotate.description"))
+            .displayName(I18n.translate("Module.SelfWeb.setting.rotate.displayName"))
+            .description(I18n.translate("Module.SelfWeb.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     public SelfWeb() {
-        super(Category.Combat, "self-web", I18n.translate("Modules.SelfWeb.description"));
+        super(Category.Combat, "self-web", I18n.translate("Module.SelfWeb.description"));
     }
 
     @EventHandler

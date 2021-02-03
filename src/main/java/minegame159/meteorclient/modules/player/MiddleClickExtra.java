@@ -39,21 +39,21 @@ public class MiddleClickExtra extends Module {
     }
 
     public MiddleClickExtra(){
-        super(Category.Player, "middle-click-extra", I18n.translate("Modules.MiddleClickExtra.description"));
+        super(Category.Player, "middle-click-extra", I18n.translate("Module.MiddleClickExtra.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.MiddleClickExtra.setting.mode.displayName"))
-            .description(I18n.translate("Modules.MiddleClickExtra.setting.mode.description"))
+            .displayName(I18n.translate("Module.MiddleClickExtra.setting.mode.displayName"))
+            .description(I18n.translate("Module.MiddleClickExtra.setting.mode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.MiddleClickExtra.Mode.Pearl"),
-                    I18n.translate("Modules.MiddleClickExtra.Mode.Bow"),
-                    I18n.translate("Modules.MiddleClickExtra.Mode.Gap"),
-                    I18n.translate("Modules.MiddleClickExtra.Mode.EGap"),
-                    I18n.translate("Modules.MiddleClickExtra.Mode.Rod"),
+                    I18n.translate("Module.MiddleClickExtra.Mode.Pearl"),
+                    I18n.translate("Module.MiddleClickExtra.Mode.Bow"),
+                    I18n.translate("Module.MiddleClickExtra.Mode.Gap"),
+                    I18n.translate("Module.MiddleClickExtra.Mode.EGap"),
+                    I18n.translate("Module.MiddleClickExtra.Mode.Rod"),
             })
             .defaultValue(Mode.Pearl)
             .build()
@@ -61,8 +61,8 @@ public class MiddleClickExtra extends Module {
 
     private final Setting<Boolean> notify = sgGeneral.add(new BoolSetting.Builder()
             .name("notify")
-            .displayName(I18n.translate("Modules.MiddleClickExtra.setting.notify.displayName"))
-            .description(I18n.translate("Modules.MiddleClickExtra.setting.notify.description"))
+            .displayName(I18n.translate("Module.MiddleClickExtra.setting.notify.displayName"))
+            .description(I18n.translate("Module.MiddleClickExtra.setting.notify.description"))
             .defaultValue(true)
             .build()
     );

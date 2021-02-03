@@ -29,15 +29,15 @@ import java.util.List;
 public class AutoReplenish extends Module {
 
     public AutoReplenish(){
-        super(Category.Player, "auto-replenish", I18n.translate("Modules.AutoReplenish.description"));
+        super(Category.Player, "auto-replenish", I18n.translate("Module.AutoReplenish.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Integer> amount = sgGeneral.add(new IntSetting.Builder()
             .name("amount")
-            .displayName(I18n.translate("Modules.AutoReplenish.setting.amount.displayName"))
-            .description(I18n.translate("Modules.AutoReplenish.setting.amount.description"))
+            .displayName(I18n.translate("Module.AutoReplenish.setting.amount.displayName"))
+            .description(I18n.translate("Module.AutoReplenish.setting.amount.description"))
             .defaultValue(8)
             .min(1)
             .sliderMax(63)
@@ -46,48 +46,48 @@ public class AutoReplenish extends Module {
 
     private final Setting<Boolean> offhand = sgGeneral.add(new BoolSetting.Builder()
             .name("offhand")
-            .displayName(I18n.translate("Modules.AutoReplenish.setting.offhand.displayName"))
-            .description(I18n.translate("Modules.AutoReplenish.setting.offhand.description"))
+            .displayName(I18n.translate("Module.AutoReplenish.setting.offhand.displayName"))
+            .description(I18n.translate("Module.AutoReplenish.setting.offhand.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> alert = sgGeneral.add(new BoolSetting.Builder()
             .name("alert")
-            .displayName(I18n.translate("Modules.AutoReplenish.setting.alert.displayName"))
-            .description(I18n.translate("Modules.AutoReplenish.setting.alert.description"))
+            .displayName(I18n.translate("Module.AutoReplenish.setting.alert.displayName"))
+            .description(I18n.translate("Module.AutoReplenish.setting.alert.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> unstackable = sgGeneral.add(new BoolSetting.Builder()
             .name("unstackable")
-            .displayName(I18n.translate("Modules.AutoReplenish.setting.unstackable.displayName"))
-            .description(I18n.translate("Modules.AutoReplenish.setting.unstackable.description"))
+            .displayName(I18n.translate("Module.AutoReplenish.setting.unstackable.displayName"))
+            .description(I18n.translate("Module.AutoReplenish.setting.unstackable.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> searchHotbar = sgGeneral.add(new BoolSetting.Builder()
             .name("search-hotbar")
-            .displayName(I18n.translate("Modules.AutoReplenish.setting.searchHotbar.displayName"))
-            .description(I18n.translate("Modules.AutoReplenish.setting.searchHotbar.description"))
+            .displayName(I18n.translate("Module.AutoReplenish.setting.searchHotbar.displayName"))
+            .description(I18n.translate("Module.AutoReplenish.setting.searchHotbar.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<List<Item>> excludedItems = sgGeneral.add(new ItemListSetting.Builder()
             .name("excluded-items")
-            .displayName(I18n.translate("Modules.AutoReplenish.setting.excludedItems.displayName"))
-            .description(I18n.translate("Modules.AutoReplenish.setting.excludedItems.description"))
+            .displayName(I18n.translate("Module.AutoReplenish.setting.excludedItems.displayName"))
+            .description(I18n.translate("Module.AutoReplenish.setting.excludedItems.description"))
             .defaultValue(new ArrayList<>())
             .build()
     );
 
     private final Setting<Boolean> pauseInInventory = sgGeneral.add(new BoolSetting.Builder()
             .name("pause-in-inventory")
-            .displayName(I18n.translate("Modules.AutoReplenish.setting.pauseInInventory.displayName"))
-            .description(I18n.translate("Modules.AutoReplenish.setting.pauseInInventory.description"))
+            .displayName(I18n.translate("Module.AutoReplenish.setting.pauseInInventory.displayName"))
+            .description(I18n.translate("Module.AutoReplenish.setting.pauseInInventory.description"))
             .defaultValue(false)
             .build()
     );

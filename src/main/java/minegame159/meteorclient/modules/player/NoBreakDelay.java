@@ -11,6 +11,6 @@ import net.minecraft.client.resource.language.I18n;
 
 public class NoBreakDelay extends Module {
     public NoBreakDelay() {
-        super(Category.Player, "no-break-delay", I18n.translate("Modules.NoBreakDelay.description"));
+        super(Category.Player, "no-break-delay", I18n.translate("Module.NoBreakDelay.description"));
     }
 }

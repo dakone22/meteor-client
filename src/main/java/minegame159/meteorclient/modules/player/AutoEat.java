@@ -27,46 +27,46 @@ import net.minecraft.util.Hand;
 
 public class AutoEat extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgHunger = settings.createGroup(I18n.translate("Modules.AutoEat.group.sgHunger"));
+    private final SettingGroup sgHunger = settings.createGroup(I18n.translate("Module.AutoEat.group.sgHunger"));
 
     // General
 
     private final Setting<Boolean> egaps = sgGeneral.add(new BoolSetting.Builder()
             .name("egaps")
-            .displayName(I18n.translate("Modules.AutoEat.setting.egaps.displayName"))
-            .description(I18n.translate("Modules.AutoEat.setting.egaps.description"))
+            .displayName(I18n.translate("Module.AutoEat.setting.egaps.displayName"))
+            .description(I18n.translate("Module.AutoEat.setting.egaps.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> gaps = sgGeneral.add(new BoolSetting.Builder()
             .name("gaps")
-            .displayName(I18n.translate("Modules.AutoEat.setting.gaps.displayName"))
-            .description(I18n.translate("Modules.AutoEat.setting.gaps.description"))
+            .displayName(I18n.translate("Module.AutoEat.setting.gaps.displayName"))
+            .description(I18n.translate("Module.AutoEat.setting.gaps.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> chorus = sgGeneral.add(new BoolSetting.Builder()
             .name("chorus")
-            .displayName(I18n.translate("Modules.AutoEat.setting.chorus.displayName"))
-            .description(I18n.translate("Modules.AutoEat.setting.chorus.description"))
+            .displayName(I18n.translate("Module.AutoEat.setting.chorus.displayName"))
+            .description(I18n.translate("Module.AutoEat.setting.chorus.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> noBad = sgGeneral.add(new BoolSetting.Builder()
             .name("filter-negative-effects")
-            .displayName(I18n.translate("Modules.AutoEat.setting.noBad.displayName"))
-            .description(I18n.translate("Modules.AutoEat.setting.noBad.description"))
+            .displayName(I18n.translate("Module.AutoEat.setting.noBad.displayName"))
+            .description(I18n.translate("Module.AutoEat.setting.noBad.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> disableAuras = sgGeneral.add(new BoolSetting.Builder()
             .name("disable-auras")
-            .displayName(I18n.translate("Modules.AutoEat.setting.disableAuras.displayName"))
-            .description(I18n.translate("Modules.AutoEat.setting.disableAuras.description"))
+            .displayName(I18n.translate("Module.AutoEat.setting.disableAuras.displayName"))
+            .description(I18n.translate("Module.AutoEat.setting.disableAuras.description"))
             .defaultValue(false)
             .build()
     );
@@ -75,16 +75,16 @@ public class AutoEat extends Module {
 
     private final Setting<Boolean> autoHunger = sgHunger.add(new BoolSetting.Builder()
             .name("auto-eat")
-            .displayName(I18n.translate("Modules.AutoEat.setting.autoHunger.displayName"))
-            .description(I18n.translate("Modules.AutoEat.setting.autoHunger.description"))
+            .displayName(I18n.translate("Module.AutoEat.setting.autoHunger.displayName"))
+            .description(I18n.translate("Module.AutoEat.setting.autoHunger.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> minHunger = sgHunger.add(new IntSetting.Builder()
             .name("min-hunger")
-            .displayName(I18n.translate("Modules.AutoEat.setting.minHunger.displayName"))
-            .description(I18n.translate("Modules.AutoEat.setting.minHunger.description"))
+            .displayName(I18n.translate("Module.AutoEat.setting.minHunger.displayName"))
+            .description(I18n.translate("Module.AutoEat.setting.minHunger.description"))
             .defaultValue(17)
             .min(1)
             .max(19)
@@ -100,7 +100,7 @@ public class AutoEat extends Module {
     private boolean wasThis = false;
 
     public AutoEat() {
-        super(Category.Player, "auto-eat", I18n.translate("Modules.AutoEat.description"));
+        super(Category.Player, "auto-eat", I18n.translate("Module.AutoEat.description"));
     }
 
     @Override

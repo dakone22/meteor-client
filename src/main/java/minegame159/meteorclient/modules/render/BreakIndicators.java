@@ -28,30 +28,30 @@ import java.util.Map;
 
 public class BreakIndicators extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.BreakIndicators.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.BreakIndicators.group.sgRender"));
 
     // General
 
     public final Setting<Boolean> multiple = sgGeneral.add(new BoolSetting.Builder()
             .name("multiple")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.multiple.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.multiple.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.multiple.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.multiple.description"))
             .defaultValue(true)
             .build()
     );
 
     public final Setting<Boolean> hideVanillaIndicators = sgGeneral.add(new BoolSetting.Builder()
             .name("hide-vanilla-indicators")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.hideVanillaIndicators.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.hideVanillaIndicators.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.hideVanillaIndicators.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.hideVanillaIndicators.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> smoothAnim = sgGeneral.add(new BoolSetting.Builder()
             .name("smooth-animation")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.smoothAnim.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.smoothAnim.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.smoothAnim.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.smoothAnim.description"))
             .defaultValue(true)
             .build()
     );
@@ -60,40 +60,40 @@ public class BreakIndicators extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> gradientColor1Sides = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-1-sides")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Sides.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Sides.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.gradientColor1Sides.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.gradientColor1Sides.description"))
             .defaultValue(new SettingColor(25, 252, 25, 25))
             .build()
     );
 
     private final Setting<SettingColor> gradientColor1Lines = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-1-lines")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Lines.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Lines.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.gradientColor1Lines.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.gradientColor1Lines.description"))
             .defaultValue(new SettingColor(25, 252, 25, 100))
             .build()
     );
 
     private final Setting<SettingColor> gradientColor2Sides = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-2-sides")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Sides.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Sides.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.gradientColor2Sides.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.gradientColor2Sides.description"))
             .defaultValue(new SettingColor(255, 25, 25, 100))
             .build()
     );
 
     private final Setting<SettingColor> gradientColor2Lines = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-2-lines")
-            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Lines.displayName"))
-            .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Lines.description"))
+            .displayName(I18n.translate("Module.BreakIndicators.setting.gradientColor2Lines.displayName"))
+            .description(I18n.translate("Module.BreakIndicators.setting.gradientColor2Lines.description"))
             .defaultValue(new SettingColor(255, 25, 25, 100))
             .build()
     );
@@ -104,7 +104,7 @@ public class BreakIndicators extends Module {
     private final Color cLines = new Color();
 
     public BreakIndicators() {
-        super(Category.Render, "break-indicators", I18n.translate("Modules.BreakIndicators.description"));
+        super(Category.Render, "break-indicators", I18n.translate("Module.BreakIndicators.description"));
     }
 
     @Override

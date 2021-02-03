@@ -48,20 +48,20 @@ public class BedAura extends Module {
     }
 
     public BedAura(){
-        super(Category.Combat, "bed-aura", I18n.translate("Modules.BedAura.description"));
+        super(Category.Combat, "bed-aura", I18n.translate("Module.BedAura.description"));
     }
 
-    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Modules.BedAura.group.sgPlace"));
-    private final SettingGroup sgBreak = settings.createGroup(I18n.translate("Modules.BedAura.group.sgBreak"));
-    private final SettingGroup sgSwitch = settings.createGroup(I18n.translate("Modules.BedAura.group.sgSwitch"));
-    private final SettingGroup sgMisc = settings.createGroup(I18n.translate("Modules.BedAura.group.sgMisc"));
+    private final SettingGroup sgPlace = settings.createGroup(I18n.translate("Module.BedAura.group.sgPlace"));
+    private final SettingGroup sgBreak = settings.createGroup(I18n.translate("Module.BedAura.group.sgBreak"));
+    private final SettingGroup sgSwitch = settings.createGroup(I18n.translate("Module.BedAura.group.sgSwitch"));
+    private final SettingGroup sgMisc = settings.createGroup(I18n.translate("Module.BedAura.group.sgMisc"));
 
     // Place
 
     private final Setting<Integer> placeDelay = sgPlace.add(new IntSetting.Builder()
             .name("place-delay")
-            .displayName(I18n.translate("Modules.BedAura.setting.placeDelay.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.placeDelay.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.placeDelay.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.placeDelay.description"))
             .defaultValue(2)
             .min(0)
             .sliderMax(10)
@@ -70,16 +70,16 @@ public class BedAura extends Module {
 
     private final Setting<Mode> placeMode = sgPlace.add(new EnumSetting.Builder<Mode>()
             .name("place-mode")
-            .displayName(I18n.translate("Modules.BedAura.setting.placeMode.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.placeMode.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.placeMode.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.placeMode.description"))
             .defaultValue(Mode.Safe)
             .build()
     );
 
     private final Setting<Double> placeRange = sgPlace.add(new DoubleSetting.Builder()
             .name("place-range")
-            .displayName(I18n.translate("Modules.BedAura.setting.placeRange.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.placeRange.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.placeRange.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.placeRange.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(5)
@@ -88,40 +88,40 @@ public class BedAura extends Module {
 
     private final Setting<Boolean> airPlace = sgPlace.add(new BoolSetting.Builder()
             .name("air-place")
-            .displayName(I18n.translate("Modules.BedAura.setting.airPlace.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.airPlace.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.airPlace.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.airPlace.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> place = sgPlace.add(new BoolSetting.Builder()
             .name("place")
-            .displayName(I18n.translate("Modules.BedAura.setting.place.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.place.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.place.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.place.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> minHealth = sgPlace.add(new DoubleSetting.Builder()
             .name("min-health")
-            .displayName(I18n.translate("Modules.BedAura.setting.minHealth.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.minHealth.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.minHealth.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.minHealth.description"))
             .defaultValue(15)
             .build()
     );
 
     private final Setting<Double> minDamage = sgPlace.add(new DoubleSetting.Builder()
             .name("min-damage")
-            .displayName(I18n.translate("Modules.BedAura.setting.minDamage.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.minDamage.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.minDamage.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.minDamage.description"))
             .defaultValue(5.5)
             .build()
     );
 
     private final Setting<Boolean> calcDamage = sgPlace.add(new BoolSetting.Builder()
             .name("damage-calc")
-            .displayName(I18n.translate("Modules.BedAura.setting.calcDamage.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.calcDamage.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.calcDamage.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.calcDamage.description"))
             .defaultValue(false)
             .build()
     );
@@ -130,16 +130,16 @@ public class BedAura extends Module {
 
     private final Setting<Mode> breakMode = sgBreak.add(new EnumSetting.Builder<Mode>()
             .name("break-mode")
-            .displayName(I18n.translate("Modules.BedAura.setting.breakMode.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.breakMode.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.breakMode.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.breakMode.description"))
             .defaultValue(Mode.Safe)
             .build()
     );
 
     private final Setting<Double> breakRange = sgBreak.add(new DoubleSetting.Builder()
             .name("break-range")
-            .displayName(I18n.translate("Modules.BedAura.setting.breakRange.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.breakRange.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.breakRange.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.breakRange.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(5)
@@ -150,32 +150,32 @@ public class BedAura extends Module {
 
     private final Setting<Boolean> autoSwitch = sgSwitch.add(new BoolSetting.Builder()
             .name("auto-switch")
-            .displayName(I18n.translate("Modules.BedAura.setting.autoSwitch.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.autoSwitch.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.autoSwitch.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.autoSwitch.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> switchBack = sgSwitch.add(new BoolSetting.Builder()
             .name("switch-back")
-            .displayName(I18n.translate("Modules.BedAura.setting.switchBack.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.switchBack.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.switchBack.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.switchBack.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> autoMove = sgSwitch.add(new BoolSetting.Builder()
             .name("auto-move")
-            .displayName(I18n.translate("Modules.BedAura.setting.autoMove.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.autoMove.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.autoMove.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.autoMove.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> autoMoveSlot = sgSwitch.add(new IntSetting.Builder()
             .name("auto-move-slot")
-            .displayName(I18n.translate("Modules.BedAura.setting.autoMoveSlot.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.autoMoveSlot.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.autoMoveSlot.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.autoMoveSlot.description"))
             .defaultValue(8)
             .min(0)
             .max(8)
@@ -186,24 +186,24 @@ public class BedAura extends Module {
 
     private final Setting<Boolean> selfToggle = sgMisc.add(new BoolSetting.Builder()
             .name("self-toggle")
-            .displayName(I18n.translate("Modules.BedAura.setting.selfToggle.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.selfToggle.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.selfToggle.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.selfToggle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> smartDelay = sgMisc.add(new BoolSetting.Builder()
             .name("smart-delay")
-            .displayName(I18n.translate("Modules.BedAura.setting.smartDelay.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.smartDelay.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.smartDelay.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.smartDelay.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> healthDifference = sgPlace.add(new DoubleSetting.Builder()
             .name("damage-increase")
-            .displayName(I18n.translate("Modules.BedAura.setting.healthDifference.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.healthDifference.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.healthDifference.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.healthDifference.description"))
             .defaultValue(5)
             .min(0)
             .max(20)
@@ -212,8 +212,8 @@ public class BedAura extends Module {
 
     private final Setting<Double> maxDamage = sgPlace.add(new DoubleSetting.Builder()
             .name("max-damage")
-            .displayName(I18n.translate("Modules.BedAura.setting.maxDamage.displayName"))
-            .description(I18n.translate("Modules.BedAura.setting.maxDamage.description"))
+            .displayName(I18n.translate("Module.BedAura.setting.maxDamage.displayName"))
+            .description(I18n.translate("Module.BedAura.setting.maxDamage.description"))
             .defaultValue(3)
             .build()
     );

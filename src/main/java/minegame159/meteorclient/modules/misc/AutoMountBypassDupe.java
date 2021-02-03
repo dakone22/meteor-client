@@ -44,23 +44,23 @@ public class AutoMountBypassDupe extends Module {
 
     private final Setting<Boolean> shulkersOnly = sgGeneral.add(new BoolSetting.Builder()
             .name("shulker-only")
-            .displayName(I18n.translate("Modules.AutoMountBypassDupe.setting.shulkersOnly.displayName"))
-            .description(I18n.translate("Modules.AutoMountBypassDupe.setting.shulkersOnly.description"))
+            .displayName(I18n.translate("Module.AutoMountBypassDupe.setting.shulkersOnly.displayName"))
+            .description(I18n.translate("Module.AutoMountBypassDupe.setting.shulkersOnly.description"))
             .defaultValue(true)
             .build());
 
     private final Setting<Boolean> faceDown = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate-down")
-            .displayName(I18n.translate("Modules.AutoMountBypassDupe.setting.faceDown.displayName"))
-            .description(I18n.translate("Modules.AutoMountBypassDupe.setting.faceDown.description"))
+            .displayName(I18n.translate("Module.AutoMountBypassDupe.setting.faceDown.displayName"))
+            .description(I18n.translate("Module.AutoMountBypassDupe.setting.faceDown.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder()
             .name("delay")
-            .displayName(I18n.translate("Modules.AutoMountBypassDupe.setting.delay.displayName"))
-            .description(I18n.translate("Modules.AutoMountBypassDupe.setting.delay.description"))
+            .displayName(I18n.translate("Module.AutoMountBypassDupe.setting.delay.displayName"))
+            .description(I18n.translate("Module.AutoMountBypassDupe.setting.delay.description"))
             .defaultValue(4)
             .min(0)
             .build()
@@ -75,7 +75,7 @@ public class AutoMountBypassDupe extends Module {
     private int timer;
 
     public AutoMountBypassDupe() {
-        super(Category.Misc, "auto-mount-bypass-dupe", I18n.translate("Modules.AutoMountBypassDupe.description"));
+        super(Category.Misc, "auto-mount-bypass-dupe", I18n.translate("Module.AutoMountBypassDupe.description"));
     }
 
     @Override

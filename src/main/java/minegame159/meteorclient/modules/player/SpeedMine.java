@@ -32,19 +32,19 @@ public class SpeedMine extends Module {
 
     public final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.SpeedMine.setting.mode.displayName"))
+            .displayName(I18n.translate("Module.SpeedMine.setting.mode.displayName"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.SpeedMine.enum.Mode.Normal"),
-                    I18n.translate("Modules.SpeedMine.enum.Mode.Haste1"),
-                    I18n.translate("Modules.SpeedMine.enum.Mode.Haste2"),
+                    I18n.translate("Module.SpeedMine.enum.Mode.Normal"),
+                    I18n.translate("Module.SpeedMine.enum.Mode.Haste1"),
+                    I18n.translate("Module.SpeedMine.enum.Mode.Haste2"),
             })
             .defaultValue(Mode.Normal)
             .build()
     );
     public final Setting<Double> modifier = sgGeneral.add(new DoubleSetting.Builder()
             .name("modifier")
-            .displayName(I18n.translate("Modules.SpeedMine.setting.modifier.displayName"))
-            .description(I18n.translate("Modules.SpeedMine.setting.modifier.description"))
+            .displayName(I18n.translate("Module.SpeedMine.setting.modifier.displayName"))
+            .description(I18n.translate("Module.SpeedMine.setting.modifier.description"))
             .defaultValue(1.4D)
             .min(0D)
             .sliderMin(1D)
@@ -53,7 +53,7 @@ public class SpeedMine extends Module {
     );
 
     public SpeedMine() {
-        super(Category.Player, "speed-mine", I18n.translate("Modules.SpeedMine.description"));
+        super(Category.Player, "speed-mine", I18n.translate("Module.SpeedMine.description"));
     }
 
     @EventHandler

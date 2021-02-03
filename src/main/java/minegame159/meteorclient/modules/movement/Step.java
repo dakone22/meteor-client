@@ -32,8 +32,8 @@ public class Step extends Module {
     
     public final Setting<Double> height = sgGeneral.add(new DoubleSetting.Builder()
             .name("height")
-            .displayName(I18n.translate("Modules.Step.setting.height.displayName"))
-            .description(I18n.translate("Modules.Step.setting.height.description"))
+            .displayName(I18n.translate("Module.Step.setting.height.displayName"))
+            .description(I18n.translate("Module.Step.setting.height.description"))
             .defaultValue(1)
             .min(0)
             .build()
@@ -41,24 +41,24 @@ public class Step extends Module {
 
     private final Setting<ActiveWhen> activeWhen = sgGeneral.add(new EnumSetting.Builder<ActiveWhen>()
             .name("active-when")
-            .displayName(I18n.translate("Modules.Step.setting.activeWhen.displayName"))
-            .description(I18n.translate("Modules.Step.setting.activeWhen.description"))
+            .displayName(I18n.translate("Module.Step.setting.activeWhen.displayName"))
+            .description(I18n.translate("Module.Step.setting.activeWhen.description"))
             .defaultValue(ActiveWhen.Always)
             .build()
     );
 
     private final Setting<Boolean> safeStep = sgGeneral.add(new BoolSetting.Builder()
             .name("safe-step")
-            .displayName(I18n.translate("Modules.Step.setting.safeStep.displayName"))
-            .description(I18n.translate("Modules.Step.setting.safeStep.description"))
+            .displayName(I18n.translate("Module.Step.setting.safeStep.displayName"))
+            .description(I18n.translate("Module.Step.setting.safeStep.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> stepHealth = sgGeneral.add(new IntSetting.Builder()
             .name("step-health")
-            .displayName(I18n.translate("Modules.Step.setting.stepHealth.displayName"))
-            .description(I18n.translate("Modules.Step.setting.stepHealth.description"))
+            .displayName(I18n.translate("Module.Step.setting.stepHealth.displayName"))
+            .description(I18n.translate("Module.Step.setting.stepHealth.description"))
             .defaultValue(5)
             .min(1)
             .max(36)
@@ -69,7 +69,7 @@ public class Step extends Module {
     private boolean prevBaritoneAssumeStep;
 
     public Step() {
-        super(Category.Movement, "step", I18n.translate("Modules.Step.description"));
+        super(Category.Movement, "step", I18n.translate("Module.Step.description"));
     }
 
     @Override

@@ -59,14 +59,14 @@ public class KillAura extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgDelay = settings.createGroup(I18n.translate("Modules.KillAura.group.sgDelay"));
+    private final SettingGroup sgDelay = settings.createGroup(I18n.translate("Module.KillAura.group.sgDelay"));
 
     // General
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.KillAura.setting.range.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.range.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.range.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.range.description"))
             .defaultValue(4)
             .min(0)
             .max(6)
@@ -75,8 +75,8 @@ public class KillAura extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .displayName(I18n.translate("Modules.KillAura.setting.entities.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.entities.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.entities.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.entities.description"))
             .defaultValue(new Object2BooleanOpenHashMap<>(0))
             .onlyAttackable()
             .build()
@@ -84,56 +84,56 @@ public class KillAura extends Module {
 
     private final Setting<Priority> priority = sgGeneral.add(new EnumSetting.Builder<Priority>()
             .name("priority")
-            .displayName(I18n.translate("Modules.KillAura.setting.priority.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.priority.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.priority.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.priority.description"))
             .defaultValue(Priority.LowestHealth)
             .build()
     );
 
     private final Setting<OnlyWith> onlyWith = sgGeneral.add(new EnumSetting.Builder<OnlyWith>()
             .name("only-with")
-            .displayName(I18n.translate("Modules.KillAura.setting.onlyWith.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.onlyWith.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.onlyWith.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.onlyWith.description"))
             .defaultValue(OnlyWith.Any)
             .build()
     );
 
     private final Setting<Boolean> ignoreWalls = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-walls")
-            .displayName(I18n.translate("Modules.KillAura.setting.ignoreWalls.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.ignoreWalls.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.ignoreWalls.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.ignoreWalls.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> friends = sgGeneral.add(new BoolSetting.Builder()
             .name("friends")
-            .displayName(I18n.translate("Modules.KillAura.setting.friends.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.friends.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.friends.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.friends.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> babies = sgGeneral.add(new BoolSetting.Builder()
             .name("babies")
-            .displayName(I18n.translate("Modules.KillAura.setting.babies.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.babies.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.babies.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.babies.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> nametagged = sgGeneral.add(new BoolSetting.Builder()
             .name("nametagged")
-            .displayName(I18n.translate("Modules.KillAura.setting.nametagged.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.nametagged.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.nametagged.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.nametagged.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> hitChance = sgGeneral.add(new DoubleSetting.Builder()
             .name("hit-chance")
-            .displayName(I18n.translate("Modules.KillAura.setting.hitChance.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.hitChance.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.hitChance.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.hitChance.description"))
             .defaultValue(100)
             .min(0)
             .max(100)
@@ -143,24 +143,24 @@ public class KillAura extends Module {
 
     private final Setting<Boolean> pauseOnCombat = sgGeneral.add(new BoolSetting.Builder()
             .name("pause-on-combat")
-            .displayName(I18n.translate("Modules.KillAura.setting.pauseOnCombat.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.pauseOnCombat.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.pauseOnCombat.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.pauseOnCombat.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<RotationMode> rotationMode = sgGeneral.add(new EnumSetting.Builder<RotationMode>()
             .name("rotation-mode")
-            .displayName(I18n.translate("Modules.KillAura.setting.rotationMode.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.rotationMode.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.rotationMode.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.rotationMode.description"))
             .defaultValue(RotationMode.OnHit)
             .build()
     );
 
     private final Setting<RotationDirection> rotationDirection = sgGeneral.add(new EnumSetting.Builder<RotationDirection>()
             .name("rotation-direction")
-            .displayName(I18n.translate("Modules.KillAura.setting.rotationDirection.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.rotationDirection.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.rotationDirection.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.rotationDirection.description"))
             .defaultValue(RotationDirection.Eyes)
             .build()
     );
@@ -169,16 +169,16 @@ public class KillAura extends Module {
 
     private final Setting<Boolean> smartDelay = sgDelay.add(new BoolSetting.Builder()
             .name("smart-delay")
-            .displayName(I18n.translate("Modules.KillAura.setting.smartDelay.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.smartDelay.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.smartDelay.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.smartDelay.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> hitDelay = sgDelay.add(new IntSetting.Builder()
             .name("hit-delay")
-            .displayName(I18n.translate("Modules.KillAura.setting.hitDelay.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.hitDelay.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.hitDelay.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.hitDelay.description"))
             .defaultValue(0)
             .min(0)
             .sliderMax(60)
@@ -187,16 +187,16 @@ public class KillAura extends Module {
 
     private final Setting<Boolean> randomDelayEnabled = sgDelay.add(new BoolSetting.Builder()
             .name("random-delay-enabled")
-            .displayName(I18n.translate("Modules.KillAura.setting.randomDelayEnabled.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.randomDelayEnabled.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.randomDelayEnabled.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.randomDelayEnabled.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> randomDelayMax = sgDelay.add(new IntSetting.Builder()
             .name("random-delay-max")
-            .displayName(I18n.translate("Modules.KillAura.setting.randomDelayMax.displayName"))
-            .description(I18n.translate("Modules.KillAura.setting.randomDelayMax.description"))
+            .displayName(I18n.translate("Module.KillAura.setting.randomDelayMax.displayName"))
+            .description(I18n.translate("Module.KillAura.setting.randomDelayMax.description"))
             .defaultValue(4)
             .min(0)
             .sliderMax(20)
@@ -211,7 +211,7 @@ public class KillAura extends Module {
     private final List<Entity> entityList = new ArrayList<>();
 
     public KillAura() {
-        super(Category.Combat, "kill-aura", I18n.translate("Modules.KillAura.description"));
+        super(Category.Combat, "kill-aura", I18n.translate("Module.KillAura.description"));
     }
 
     @Override

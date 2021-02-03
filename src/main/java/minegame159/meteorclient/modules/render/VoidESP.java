@@ -27,22 +27,22 @@ import java.util.List;
 
 public class VoidESP extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.VoidESP.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.VoidESP.group.sgRender"));
 
     // General
 
     private final Setting<Boolean> airOnly = sgGeneral.add(new BoolSetting.Builder()
             .name("air-only")
-            .displayName(I18n.translate("Modules.VoidESP.setting.airOnly.displayName"))
-            .description(I18n.translate("Modules.VoidESP.setting.airOnly.description"))
+            .displayName(I18n.translate("Module.VoidESP.setting.airOnly.displayName"))
+            .description(I18n.translate("Module.VoidESP.setting.airOnly.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> horizontalRadius = sgGeneral.add(new IntSetting.Builder()
             .name("horizontal-radius")
-            .displayName(I18n.translate("Modules.VoidESP.setting.horizontalRadius.displayName"))
-            .description(I18n.translate("Modules.VoidESP.setting.horizontalRadius.description"))
+            .displayName(I18n.translate("Module.VoidESP.setting.horizontalRadius.displayName"))
+            .description(I18n.translate("Module.VoidESP.setting.horizontalRadius.description"))
             .defaultValue(64)
             .min(0)
             .sliderMax(256)
@@ -51,8 +51,8 @@ public class VoidESP extends Module {
 
     private final Setting<Integer> holeHeight = sgGeneral.add(new IntSetting.Builder()
             .name("hole-height")
-            .displayName(I18n.translate("Modules.VoidESP.setting.holeHeight.displayName"))
-            .description(I18n.translate("Modules.VoidESP.setting.holeHeight.description"))
+            .displayName(I18n.translate("Module.VoidESP.setting.holeHeight.displayName"))
+            .description(I18n.translate("Module.VoidESP.setting.holeHeight.description"))
             .defaultValue(1)  // If we already have one hole in the bedrock layer, there is already something interesting.
             .min(1)
             .sliderMax(5)     // There is no sense to check more than 5.
@@ -63,30 +63,30 @@ public class VoidESP extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.VoidESP.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.VoidESP.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.VoidESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.VoidESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("fill-color")
-            .displayName(I18n.translate("Modules.VoidESP.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.VoidESP.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.VoidESP.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.VoidESP.setting.sideColor.description"))
             .defaultValue(new SettingColor(225, 25, 25))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.VoidESP.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.VoidESP.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.VoidESP.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.VoidESP.setting.lineColor.description"))
             .defaultValue(new SettingColor(225, 25, 255))
             .build()
     );
 
     public VoidESP() {
-        super(Category.Render, "void-esp", I18n.translate("Modules.VoidESP.description"));
+        super(Category.Render, "void-esp", I18n.translate("Module.VoidESP.description"));
     }
 
     private final List<BlockPos> voidHoles = new ArrayList<>();

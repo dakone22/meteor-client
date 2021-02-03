@@ -28,22 +28,22 @@ public class AutoDrop extends Module {
     
     private final Setting<List<Item>> items = sgGeneral.add(new ItemListSetting.Builder()
             .name("items")
-            .displayName(I18n.translate("Modules.AutoDrop.setting.items.displayName"))
-            .description(I18n.translate("Modules.AutoDrop.setting.items.description"))
+            .displayName(I18n.translate("Module.AutoDrop.setting.items.displayName"))
+            .description(I18n.translate("Module.AutoDrop.setting.items.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     private final Setting<Boolean> excludeHotbar = sgGeneral.add(new BoolSetting.Builder()
             .name("exclude-hotbar")
-            .displayName(I18n.translate("Modules.AutoDrop.setting.excludeHotbar.displayName"))
-            .description(I18n.translate("Modules.AutoDrop.setting.excludeHotbar.description"))
+            .displayName(I18n.translate("Module.AutoDrop.setting.excludeHotbar.displayName"))
+            .description(I18n.translate("Module.AutoDrop.setting.excludeHotbar.description"))
             .defaultValue(false)
             .build()
     );
 
     public AutoDrop() {
-        super(Category.Player, "auto-drop", I18n.translate("Modules.AutoDrop.description"));
+        super(Category.Player, "auto-drop", I18n.translate("Module.AutoDrop.description"));
     }
 
     @EventHandler

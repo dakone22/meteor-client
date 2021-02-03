@@ -28,18 +28,18 @@ public class EndermanLook extends Module {
     }
 
     public EndermanLook() {
-        super(Category.Player, "enderman-look", I18n.translate("Modules.EndermanLook.description"));
+        super(Category.Player, "enderman-look", I18n.translate("Module.EndermanLook.description"));
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> lookMode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("look-mode")
-            .displayName(I18n.translate("Modules.EndermanLook.setting.lookMode.displayName"))
-            .description(I18n.translate("Modules.EndermanLook.setting.lookMode.description"))
+            .displayName(I18n.translate("Module.EndermanLook.setting.lookMode.displayName"))
+            .description(I18n.translate("Module.EndermanLook.setting.lookMode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.EndermanLook.enum.Mode.LookAt"),
-                    I18n.translate("Modules.EndermanLook.enum.Mode.LookAway"),
+                    I18n.translate("Module.EndermanLook.enum.Mode.LookAt"),
+                    I18n.translate("Module.EndermanLook.enum.Mode.LookAway"),
             })
             .defaultValue(Mode.LookAway)
             .build()

@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 
 public class Parkour extends Module {
     public Parkour() {
-        super(Category.Movement, "parkour", I18n.translate("Modules.Parkour.description"));
+        super(Category.Movement, "parkour", I18n.translate("Module.Parkour.description"));
     }
 
     @EventHandler

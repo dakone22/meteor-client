@@ -42,14 +42,14 @@ public class AimAssist extends Module {
     }
     
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgSpeed = settings.createGroup(I18n.translate("Modules.AimAssist.group.sgSpeed"));
+    private final SettingGroup sgSpeed = settings.createGroup(I18n.translate("Module.AimAssist.group.sgSpeed"));
 
     // General
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.AimAssist.setting.range.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.range.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.range.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.range.description"))
             .defaultValue(5)
             .min(0)
             .build()
@@ -57,40 +57,40 @@ public class AimAssist extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .displayName(I18n.translate("Modules.AimAssist.setting.entities.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.entities.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.entities.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.PLAYER))
             .build()
     );
 
     private final Setting<Boolean> friends = sgGeneral.add(new BoolSetting.Builder()
             .name("friends")
-            .displayName(I18n.translate("Modules.AimAssist.setting.friends.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.friends.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.friends.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.friends.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> ignoreWalls = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-walls")
-            .displayName(I18n.translate("Modules.AimAssist.setting.ignoreWalls.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.ignoreWalls.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.ignoreWalls.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.ignoreWalls.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Priority> priority = sgGeneral.add(new EnumSetting.Builder<Priority>()
             .name("priority")
-            .displayName(I18n.translate("Modules.AimAssist.setting.priority.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.priority.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.priority.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.priority.description"))
             .defaultValue(Priority.LowestHealth)
             .build()
     );
 
     private final Setting<Target> target = sgGeneral.add(new EnumSetting.Builder<Target>()
             .name("target")
-            .displayName(I18n.translate("Modules.AimAssist.setting.target.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.target.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.target.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.target.description"))
             .defaultValue(Target.Body)
             .build()
     );
@@ -99,16 +99,16 @@ public class AimAssist extends Module {
 
     private final Setting<Boolean> speedInstant = sgSpeed.add(new BoolSetting.Builder()
             .name("instant-look")
-            .displayName(I18n.translate("Modules.AimAssist.setting.speedInstant.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.speedInstant.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.speedInstant.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.speedInstant.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> speed = sgSpeed.add(new DoubleSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.AimAssist.setting.speed.displayName"))
-            .description(I18n.translate("Modules.AimAssist.setting.speed.description"))
+            .displayName(I18n.translate("Module.AimAssist.setting.speed.displayName"))
+            .description(I18n.translate("Module.AimAssist.setting.speed.description"))
             .defaultValue(5)
             .min(0)
             .build()
@@ -120,7 +120,7 @@ public class AimAssist extends Module {
     private Entity entity;
 
     public AimAssist() {
-        super(Category.Combat, "aim-assist", I18n.translate("Modules.AimAssist.description"));
+        super(Category.Combat, "aim-assist", I18n.translate("Module.AimAssist.description"));
     }
 
     @EventHandler

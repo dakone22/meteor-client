@@ -26,16 +26,16 @@ public class Breadcrumbs extends Module {
 
     private final Setting<SettingColor> color = sgGeneral.add(new ColorSetting.Builder()
             .name("color")
-            .displayName(I18n.translate("Modules.Breadcrumbs.setting.color.displayName"))
-            .description(I18n.translate("Modules.Breadcrumbs.setting.color.description"))
+            .displayName(I18n.translate("Module.Breadcrumbs.setting.color.displayName"))
+            .description(I18n.translate("Module.Breadcrumbs.setting.color.description"))
             .defaultValue(new SettingColor(225, 25, 25))
             .build()
     );
 
     private final Setting<Integer> maxSections = sgGeneral.add(new IntSetting.Builder()
             .name("max-sections")
-            .displayName(I18n.translate("Modules.Breadcrumbs.setting.maxSections.displayName"))
-            .description(I18n.translate("Modules.Breadcrumbs.setting.maxSections.description"))
+            .displayName(I18n.translate("Module.Breadcrumbs.setting.maxSections.displayName"))
+            .description(I18n.translate("Module.Breadcrumbs.setting.maxSections.description"))
             .defaultValue(1000)
             .min(0)
             .sliderMax(5000)
@@ -44,8 +44,8 @@ public class Breadcrumbs extends Module {
 
     private final Setting<Double> sectionLength = sgGeneral.add(new DoubleSetting.Builder()
             .name("section-length")
-            .displayName(I18n.translate("Modules.Breadcrumbs.setting.sectionLength.displayName"))
-            .description(I18n.translate("Modules.Breadcrumbs.setting.sectionLength.description"))
+            .displayName(I18n.translate("Module.Breadcrumbs.setting.sectionLength.displayName"))
+            .description(I18n.translate("Module.Breadcrumbs.setting.sectionLength.description"))
             .defaultValue(0.5)
             .min(0)
             .sliderMin(0)
@@ -61,7 +61,7 @@ public class Breadcrumbs extends Module {
     private DimensionType lastDimension;
 
     public Breadcrumbs() {
-        super(Category.Render, "breadcrumbs", I18n.translate("Modules.Breadcrumbs.description"));
+        super(Category.Render, "breadcrumbs", I18n.translate("Module.Breadcrumbs.description"));
     }
 
     @Override

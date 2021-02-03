@@ -46,29 +46,29 @@ public class InfinityMiner extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgAutoToggles = settings.createGroup(I18n.translate("Modules.InfinityMiner.group.sgAutoToggles"));
-    private final SettingGroup sgExtras = settings.createGroup(I18n.translate("Modules.InfinityMiner.group.sgExtras"));
+    private final SettingGroup sgAutoToggles = settings.createGroup(I18n.translate("Module.InfinityMiner.group.sgAutoToggles"));
+    private final SettingGroup sgExtras = settings.createGroup(I18n.translate("Module.InfinityMiner.group.sgExtras"));
 
     public final Setting<Block> targetBlock = sgGeneral.add(new BlockSetting.Builder()
             .name("target-block")
-            .displayName(I18n.translate("Modules.InfinityMiner.setting.targetBlock.displayName"))
-            .description(I18n.translate("Modules.InfinityMiner.setting.targetBlock.description"))
+            .displayName(I18n.translate("Module.InfinityMiner.setting.targetBlock.displayName"))
+            .description(I18n.translate("Module.InfinityMiner.setting.targetBlock.description"))
             .defaultValue(Blocks.ANCIENT_DEBRIS)
             .build()
     );
 
     public final Setting<Block> repairBlock = sgGeneral.add(new BlockSetting.Builder()
             .name("repair-block")
-            .displayName(I18n.translate("Modules.InfinityMiner.setting.repairBlock.displayName"))
-            .description(I18n.translate("Modules.InfinityMiner.setting.repairBlock.description"))
+            .displayName(I18n.translate("Module.InfinityMiner.setting.repairBlock.displayName"))
+            .description(I18n.translate("Module.InfinityMiner.setting.repairBlock.description"))
             .defaultValue(Blocks.NETHER_QUARTZ_ORE)
             .build()
     );
 
     public final Setting<Double> durabilityThreshold = sgGeneral.add(new DoubleSetting.Builder()
             .name("durability-threshold")
-            .displayName(I18n.translate("Modules.InfinityMiner.setting.durabilityThreshold.displayName"))
-            .description(I18n.translate("Modules.InfinityMiner.setting.durabilityThreshold.description"))
+            .displayName(I18n.translate("Module.InfinityMiner.setting.durabilityThreshold.displayName"))
+            .description(I18n.translate("Module.InfinityMiner.setting.durabilityThreshold.description"))
             .defaultValue(.15)
             .max(.95)
             .min(.05)
@@ -78,28 +78,28 @@ public class InfinityMiner extends Module {
 
     public final Setting<Boolean> smartModuleToggle = sgAutoToggles.add(new BoolSetting.Builder()
             .name("smart-module-toggle")
-            .displayName(I18n.translate("Modules.InfinityMiner.setting.smartModuleToggle.displayName"))
-            .description(I18n.translate("Modules.InfinityMiner.setting.smartModuleToggle.description"))
+            .displayName(I18n.translate("Module.InfinityMiner.setting.smartModuleToggle.displayName"))
+            .description(I18n.translate("Module.InfinityMiner.setting.smartModuleToggle.description"))
             .defaultValue(true)
             .build());
 
     public final Setting<Boolean> autoWalkHome = sgExtras.add(new BoolSetting.Builder()
             .name("walk-home")
-            .displayName(I18n.translate("Modules.InfinityMiner.setting.autoWalkHome.displayName"))
-            .description(I18n.translate("Modules.InfinityMiner.setting.autoWalkHome.description"))
+            .displayName(I18n.translate("Module.InfinityMiner.setting.autoWalkHome.displayName"))
+            .description(I18n.translate("Module.InfinityMiner.setting.autoWalkHome.description"))
             .defaultValue(false)
             .build());
 
     public final Setting<Boolean> autoLogOut = sgExtras.add(new BoolSetting.Builder()
             .name("log-out")
-            .displayName(I18n.translate("Modules.InfinityMiner.setting.autoLogOut.displayName"))
-            .description(I18n.translate("Modules.InfinityMiner.setting.autoLogOut.description"))
+            .displayName(I18n.translate("Module.InfinityMiner.setting.autoLogOut.displayName"))
+            .description(I18n.translate("Module.InfinityMiner.setting.autoLogOut.description"))
             .defaultValue(false)
             .build());
 
 
     public InfinityMiner() {
-        super(Category.Player, "infinity-miner", I18n.translate("Modules.InfinityMiner.description"));
+        super(Category.Player, "infinity-miner", I18n.translate("Module.InfinityMiner.description"));
     }
 
     private Mode currentMode = Mode.Still;

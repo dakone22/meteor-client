@@ -25,14 +25,14 @@ public class PotionSpoof extends Module {
 
     private final Setting<Object2IntMap<StatusEffect>> potions = sgGeneral.add(new StatusEffectSetting.Builder()
             .name("potions")
-            .displayName(I18n.translate("Modules.PotionSpoof.setting.potions.displayName"))
-            .description(I18n.translate("Modules.PotionSpoof.setting.potions.description"))
+            .displayName(I18n.translate("Module.PotionSpoof.setting.potions.displayName"))
+            .description(I18n.translate("Module.PotionSpoof.setting.potions.description"))
             .defaultValue(Utils.createStatusEffectMap())
             .build()
     );
 
     public PotionSpoof() {
-        super(Category.Player, "potion-spoof", I18n.translate("Modules.PotionSpoof.description"));
+        super(Category.Player, "potion-spoof", I18n.translate("Module.PotionSpoof.description"));
     }
 
     @EventHandler

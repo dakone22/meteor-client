@@ -36,12 +36,12 @@ public class OffhandExtra extends Module {
     }
     
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgExtra = settings.createGroup(I18n.translate("Modules.OffhandExtra.group.sgExtra"));
+    private final SettingGroup sgExtra = settings.createGroup(I18n.translate("Module.OffhandExtra.group.sgExtra"));
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.mode.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.mode.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.mode.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.mode.description"))
             .defaultValue(Mode.EGap)
             .onChanged(mode -> currentMode = mode)
             .build()
@@ -49,24 +49,24 @@ public class OffhandExtra extends Module {
 
     private final Setting<Boolean> replace = sgGeneral.add(new BoolSetting.Builder()
             .name("replace")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.replace.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.replace.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.replace.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.replace.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> asimov = sgGeneral.add(new BoolSetting.Builder()
             .name("asimov")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.asimov.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.asimov.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.asimov.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.asimov.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.health.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.health.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.health.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.health.description"))
             .defaultValue(10)
             .min(0)
             .sliderMax(20)
@@ -75,16 +75,16 @@ public class OffhandExtra extends Module {
 
     private final Setting<Boolean> selfToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("self-toggle")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.selfToggle.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.selfToggle.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.selfToggle.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.selfToggle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> hotBar = sgGeneral.add(new BoolSetting.Builder()
             .name("search-hotbar")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.hotBar.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.hotBar.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.hotBar.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.hotBar.description"))
             .defaultValue(false)
             .build()
     );
@@ -93,30 +93,30 @@ public class OffhandExtra extends Module {
 
     private final Setting<Boolean> sword = sgExtra.add(new BoolSetting.Builder()
             .name("sword-gap")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.sword.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.sword.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.sword.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.sword.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> offhandCrystal = sgExtra.add(new BoolSetting.Builder()
             .name("offhand-crystal-on-gap")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.offhandCrystal.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.offhandCrystal.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.offhandCrystal.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.offhandCrystal.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> offhandCA = sgExtra.add(new BoolSetting.Builder()
             .name("offhand-crystal-on-ca")
-            .displayName(I18n.translate("Modules.OffhandExtra.setting.offhandCA.displayName"))
-            .description(I18n.translate("Modules.OffhandExtra.setting.offhandCA.description"))
+            .displayName(I18n.translate("Module.OffhandExtra.setting.offhandCA.displayName"))
+            .description(I18n.translate("Module.OffhandExtra.setting.offhandCA.description"))
             .defaultValue(false)
             .build()
     );
 
     public OffhandExtra() {
-        super(Category.Combat, "offhand-extra", I18n.translate("Modules.OffhandExtra.description"));
+        super(Category.Combat, "offhand-extra", I18n.translate("Module.OffhandExtra.description"));
     }
 
     private boolean isClicking = false;

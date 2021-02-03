@@ -30,8 +30,8 @@ public class AutoBreed extends Module {
 
     private final Setting<Object2BooleanMap<EntityType<?>>> entities = sgGeneral.add(new EntityTypeListSetting.Builder()
             .name("entities")
-            .displayName(I18n.translate("Modules.AutoBreed.setting.entities.displayName"))
-            .description(I18n.translate("Modules.AutoBreed.setting.entities.description"))
+            .displayName(I18n.translate("Module.AutoBreed.setting.entities.displayName"))
+            .description(I18n.translate("Module.AutoBreed.setting.entities.description"))
             .defaultValue(Utils.asObject2BooleanOpenHashMap(EntityType.HORSE, EntityType.DONKEY, EntityType.COW,
                     EntityType.MOOSHROOM, EntityType.SHEEP, EntityType.PIG, EntityType.CHICKEN, EntityType.WOLF,
                     EntityType.CAT, EntityType.OCELOT, EntityType.RABBIT, EntityType.LLAMA, EntityType.TURTLE,
@@ -42,8 +42,8 @@ public class AutoBreed extends Module {
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.AutoBreed.setting.range.displayName"))
-            .description(I18n.translate("Modules.AutoBreed.setting.range.description"))
+            .displayName(I18n.translate("Module.AutoBreed.setting.range.displayName"))
+            .description(I18n.translate("Module.AutoBreed.setting.range.description"))
             .min(0)
             .defaultValue(4.5)
             .build()
@@ -51,16 +51,16 @@ public class AutoBreed extends Module {
 
     private final Setting<Hand> hand = sgGeneral.add(new EnumSetting.Builder<Hand>()
             .name("hand-for-breeding")
-            .displayName(I18n.translate("Modules.AutoBreed.setting.hand.displayName"))
-            .description(I18n.translate("Modules.AutoBreed.setting.hand.description"))
+            .displayName(I18n.translate("Module.AutoBreed.setting.hand.displayName"))
+            .description(I18n.translate("Module.AutoBreed.setting.hand.description"))
             .defaultValue(Hand.MAIN_HAND)
             .build()
     );
 
     private final Setting<Boolean> ignoreBabies = sgGeneral.add(new BoolSetting.Builder()
             .name("ignore-babies")
-            .displayName(I18n.translate("Modules.AutoBreed.setting.ignoreBabies.displayName"))
-            .description(I18n.translate("Modules.AutoBreed.setting.ignoreBabies.description"))
+            .displayName(I18n.translate("Module.AutoBreed.setting.ignoreBabies.displayName"))
+            .description(I18n.translate("Module.AutoBreed.setting.ignoreBabies.description"))
             .defaultValue(true)
             .build()
     );
@@ -68,7 +68,7 @@ public class AutoBreed extends Module {
     private final List<Entity> animalsFed = new ArrayList<>();
 
     public AutoBreed() {
-        super(Category.Misc, "auto-breed", I18n.translate("Modules.AutoBreed.description"));
+        super(Category.Misc, "auto-breed", I18n.translate("Module.AutoBreed.description"));
     }
 
     @Override

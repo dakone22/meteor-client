@@ -25,16 +25,16 @@ public class OffhandCrash extends Module {
 
     private final Setting<Boolean> doCrash = sgGeneral.add(new BoolSetting.Builder()
             .name("do-crash")
-            .displayName(I18n.translate("Modules.OffhandCrash.setting.doCrash.displayName"))
-            .description(I18n.translate("Modules.OffhandCrash.setting.doCrash.description"))
+            .displayName(I18n.translate("Module.OffhandCrash.setting.doCrash.displayName"))
+            .description(I18n.translate("Module.OffhandCrash.setting.doCrash.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Integer> speed = sgGeneral.add(new IntSetting.Builder()
             .name("speed")
-            .displayName(I18n.translate("Modules.OffhandCrash.setting.speed.displayName"))
-            .description(I18n.translate("Modules.OffhandCrash.setting.speed.description"))
+            .displayName(I18n.translate("Module.OffhandCrash.setting.speed.displayName"))
+            .description(I18n.translate("Module.OffhandCrash.setting.speed.description"))
             .defaultValue(2000)
             .min(1)
             .sliderMax(10000)
@@ -43,14 +43,14 @@ public class OffhandCrash extends Module {
 
     private final Setting<Boolean> antiCrash = sgGeneral.add(new BoolSetting.Builder()
             .name("anti-crash")
-            .displayName(I18n.translate("Modules.OffhandCrash.setting.antiCrash.displayName"))
-            .description(I18n.translate("Modules.OffhandCrash.setting.antiCrash.description"))
+            .displayName(I18n.translate("Module.OffhandCrash.setting.antiCrash.displayName"))
+            .description(I18n.translate("Module.OffhandCrash.setting.antiCrash.description"))
             .defaultValue(true)
             .build()
     );
 
     public OffhandCrash() {
-        super(Category.Misc, "offhand-crash", I18n.translate("Modules.OffhandCrash.description"));
+        super(Category.Misc, "offhand-crash", I18n.translate("Module.OffhandCrash.description"));
     }
 
 

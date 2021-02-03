@@ -14,7 +14,7 @@ import net.minecraft.client.resource.language.I18n;
 
 public class SafeWalk extends Module {
     public SafeWalk() {
-        super(Category.Movement, "safe-walk", I18n.translate("Modules.SafeWalk.description"));
+        super(Category.Movement, "safe-walk", I18n.translate("Module.SafeWalk.description"));
     }
 
     @EventHandler

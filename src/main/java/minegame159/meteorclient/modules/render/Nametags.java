@@ -59,57 +59,57 @@ public class Nametags extends Module {
     private static final Color WHITE = new Color(255, 255, 255);
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Modules.Nametags.group.sgColors"));
+    private final SettingGroup sgColors = settings.createGroup(I18n.translate("Module.Nametags.group.sgColors"));
 
     // General
 
     private final Setting<Boolean> displayArmor = sgGeneral.add(new BoolSetting.Builder()
             .name("display-armor")
-            .displayName(I18n.translate("Modules.Nametags.setting.displayArmor.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.displayArmor.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.displayArmor.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.displayArmor.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> displayArmorEnchants = sgGeneral.add(new BoolSetting.Builder()
             .name("display-armor-enchants")
-            .displayName(I18n.translate("Modules.Nametags.setting.displayArmorEnchants.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.displayArmorEnchants.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.displayArmorEnchants.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.displayArmorEnchants.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Position> displayOnItem = sgGeneral.add(new EnumSetting.Builder<Position>()
             .name("enchantment-position")
-            .displayName(I18n.translate("Modules.Nametags.setting.displayOnItem.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.displayOnItem.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.displayOnItem.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.displayOnItem.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.Nametags.enum.Position.ABOVE"),
-                    I18n.translate("Modules.Nametags.enum.Position.ONTOP"),})
+                    I18n.translate("Module.Nametags.enum.Position.ABOVE"),
+                    I18n.translate("Module.Nametags.enum.Position.ONTOP"),})
             .defaultValue(Position.ONTOP)
             .build()
     );
 
     private final Setting<List<Enchantment>> displayedEnchantments = sgGeneral.add(new EnchListSetting.Builder()
             .name("displayed-enchantments")
-            .displayName(I18n.translate("Modules.Nametags.setting.displayedEnchantments.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.displayedEnchantments.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.displayedEnchantments.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.displayedEnchantments.description"))
             .defaultValue(setDefualtList())
             .build()
     );
 
     private final Setting<Boolean> displayPing = sgGeneral.add(new BoolSetting.Builder()
             .name("ping")
-            .displayName(I18n.translate("Modules.Nametags.setting.displayPing.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.displayPing.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.displayPing.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.displayPing.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Double> scale = sgGeneral.add(new DoubleSetting.Builder()
             .name("scale")
-            .displayName(I18n.translate("Modules.Nametags.setting.scale.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.scale.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.scale.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.scale.description"))
             .defaultValue(1)
             .min(0.1)
             .build()
@@ -117,8 +117,8 @@ public class Nametags extends Module {
 
     private final Setting<Double> enchantTextScale = sgGeneral.add(new DoubleSetting.Builder()
             .name("enchant-text-scale")
-            .displayName(I18n.translate("Modules.Nametags.setting.enchantTextScale.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.enchantTextScale.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.enchantTextScale.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.enchantTextScale.description"))
             .defaultValue(0.6)
             .min(0.1)
             .max(1)
@@ -129,8 +129,8 @@ public class Nametags extends Module {
 
     private final Setting<Boolean> yourself = sgGeneral.add(new BoolSetting.Builder()
             .name("yourself")
-            .displayName(I18n.translate("Modules.Nametags.setting.yourself.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.yourself.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.yourself.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.yourself.description"))
             .defaultValue(true)
             .build()
     );
@@ -139,54 +139,54 @@ public class Nametags extends Module {
 
     private final Setting<SettingColor> normalName = sgColors.add(new ColorSetting.Builder()
             .name("normal-color")
-            .displayName(I18n.translate("Modules.Nametags.setting.normalName.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.normalName.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.normalName.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.normalName.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     private final Setting<SettingColor> pingColor = sgColors.add(new ColorSetting.Builder()
             .name("ping-color")
-            .displayName(I18n.translate("Modules.Nametags.setting.pingColor.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.pingColor.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.pingColor.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.pingColor.description"))
             .defaultValue(new SettingColor(150, 150, 150))
             .build()
     );
 
     private final Setting<SettingColor> healthStage1 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-1")
-            .displayName(I18n.translate("Modules.Nametags.setting.healthStage1.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.healthStage1.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.healthStage1.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.healthStage1.description"))
             .defaultValue(new SettingColor(25, 252, 25))
             .build()
     );
 
     private final Setting<SettingColor> healthStage2 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-2")
-            .displayName(I18n.translate("Modules.Nametags.setting.healthStage2.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.healthStage2.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.healthStage2.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.healthStage2.description"))
             .defaultValue(new SettingColor(255, 105, 25))
             .build()
     );
 
     private final Setting<SettingColor> healthStage3 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-3")
-            .displayName(I18n.translate("Modules.Nametags.setting.healthStage3.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.healthStage3.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.healthStage3.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.healthStage3.description"))
             .defaultValue(new SettingColor(255, 25, 25))
             .build()
     );
 
     private final Setting<SettingColor> enchantmentTextColor = sgColors.add(new ColorSetting.Builder()
             .name("enchantment-text-color")
-            .displayName(I18n.translate("Modules.Nametags.setting.enchantmentTextColor.displayName"))
-            .description(I18n.translate("Modules.Nametags.setting.enchantmentTextColor.description"))
+            .displayName(I18n.translate("Module.Nametags.setting.enchantmentTextColor.displayName"))
+            .description(I18n.translate("Module.Nametags.setting.enchantmentTextColor.description"))
             .defaultValue(new SettingColor(255, 255, 255))
             .build()
     );
 
     public Nametags() {
-        super(Category.Render, "nametags", I18n.translate("Modules.Nametags.description"));
+        super(Category.Render, "nametags", I18n.translate("Module.Nametags.description"));
     }
 
     String name;

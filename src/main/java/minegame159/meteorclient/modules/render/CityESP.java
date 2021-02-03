@@ -22,14 +22,14 @@ import net.minecraft.util.math.MathHelper;
 
 public class CityESP extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.CityESP.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.CityESP.group.sgRender"));
 
     // General
 
     private final Setting<Integer> range = sgGeneral.add(new IntSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.CityESP.setting.range.displayName"))
-            .description(I18n.translate("Modules.CityESP.setting.range.description"))
+            .displayName(I18n.translate("Module.CityESP.setting.range.displayName"))
+            .description(I18n.translate("Module.CityESP.setting.range.description"))
             .defaultValue(5)
             .min(0)
             .sliderMax(20)
@@ -38,8 +38,8 @@ public class CityESP extends Module {
 
     private final Setting<Boolean> checkBelow = sgGeneral.add(new BoolSetting.Builder()
             .name("check-below")
-            .displayName(I18n.translate("Modules.CityESP.setting.checkBelow.displayName"))
-            .description(I18n.translate("Modules.CityESP.setting.checkBelow.description"))
+            .displayName(I18n.translate("Module.CityESP.setting.checkBelow.displayName"))
+            .description(I18n.translate("Module.CityESP.setting.checkBelow.description"))
             .defaultValue(true)
             .build()
     );
@@ -48,30 +48,30 @@ public class CityESP extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.CityESP.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.CityESP.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.CityESP.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.CityESP.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("fill-color")
-            .displayName(I18n.translate("Modules.CityESP.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.CityESP.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.CityESP.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.CityESP.setting.sideColor.description"))
             .defaultValue(new SettingColor(225, 0, 0, 75))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("outline-color")
-            .displayName(I18n.translate("Modules.CityESP.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.CityESP.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.CityESP.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.CityESP.setting.lineColor.description"))
             .defaultValue(new SettingColor(225, 0, 0, 255))
             .build()
     );
 
     public CityESP() {
-        super(Category.Render, "city-esp", I18n.translate("Modules.CityESP.description"));
+        super(Category.Render, "city-esp", I18n.translate("Module.CityESP.description"));
     }
 
     @EventHandler

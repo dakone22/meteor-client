@@ -22,8 +22,8 @@ public class ReverseStep extends Module {
 
     private final Setting<Double> fallSpeed = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-speed")
-            .displayName(I18n.translate("Modules.ReverseStep.setting.fallSpeed.displayName"))
-            .description(I18n.translate("Modules.ReverseStep.setting.fallSpeed.description"))
+            .displayName(I18n.translate("Module.ReverseStep.setting.fallSpeed.displayName"))
+            .description(I18n.translate("Module.ReverseStep.setting.fallSpeed.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(10)
@@ -32,8 +32,8 @@ public class ReverseStep extends Module {
 
     private final Setting<Double> fallDistance = sgGeneral.add(new DoubleSetting.Builder()
             .name("fall-distance")
-            .displayName(I18n.translate("Modules.ReverseStep.setting.fallDistance.displayName"))
-            .description(I18n.translate("Modules.ReverseStep.setting.fallDistance.description"))
+            .displayName(I18n.translate("Module.ReverseStep.setting.fallDistance.displayName"))
+            .description(I18n.translate("Module.ReverseStep.setting.fallDistance.description"))
             .defaultValue(3)
             .min(0)
             .sliderMax(10)
@@ -41,7 +41,7 @@ public class ReverseStep extends Module {
     );
 
     public ReverseStep() {
-        super(Category.Movement, "reverse-step", I18n.translate("Modules.ReverseStep.description"));
+        super(Category.Movement, "reverse-step", I18n.translate("Module.ReverseStep.description"));
     }
 
     @EventHandler

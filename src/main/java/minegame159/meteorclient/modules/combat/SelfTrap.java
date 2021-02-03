@@ -30,7 +30,7 @@ import java.util.List;
 public class SelfTrap extends Module {
 
     public SelfTrap(){
-        super(Category.Combat, "self-trap", I18n.translate("Modules.SelfTrap.description"));
+        super(Category.Combat, "self-trap", I18n.translate("Module.SelfTrap.description"));
     }
 
     public enum TopMode {
@@ -46,30 +46,30 @@ public class SelfTrap extends Module {
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
-    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Modules.SelfTrap.group.sgRender"));
+    private final SettingGroup sgRender = settings.createGroup(I18n.translate("Module.SelfTrap.group.sgRender"));
 
     // General
 
     private final Setting<TopMode> topPlacement = sgGeneral.add(new EnumSetting.Builder<TopMode>()
             .name("top-mode")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.topPlacement.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.topPlacement.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.topPlacement.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.topPlacement.description"))
             .defaultValue(TopMode.AntiFacePlace)
             .build()
     );
 
     private final Setting<BottomMode> bottomPlacement = sgGeneral.add(new EnumSetting.Builder<BottomMode>()
             .name("bottom-mode")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.bottomPlacement.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.bottomPlacement.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.bottomPlacement.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.bottomPlacement.description"))
             .defaultValue(BottomMode.None)
             .build()
     );
 
     private final Setting<Integer> delaySetting = sgGeneral.add(new IntSetting.Builder()
             .name("place-delay")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.delaySetting.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.delaySetting.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.delaySetting.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.delaySetting.description"))
             .defaultValue(1)
             .sliderMin(0)
             .sliderMax(10)
@@ -78,24 +78,24 @@ public class SelfTrap extends Module {
 
     private final Setting<Boolean> center = sgGeneral.add(new BoolSetting.Builder()
             .name("center")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.center.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.center.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.center.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.center.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.rotate.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.rotate.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> turnOff = sgGeneral.add(new BoolSetting.Builder()
             .name("turn-off")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.turnOff.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.turnOff.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.turnOff.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.turnOff.description"))
             .defaultValue(true)
             .build()
     );
@@ -104,32 +104,32 @@ public class SelfTrap extends Module {
 
     private final Setting<Boolean> render = sgRender.add(new BoolSetting.Builder()
             .name("render")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.render.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.render.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.render.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.render.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<ShapeMode> shapeMode = sgRender.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgRender.add(new ColorSetting.Builder()
             .name("side-color")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.sideColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 10))
             .build()
     );
 
     private final Setting<SettingColor> lineColor = sgRender.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.SelfTrap.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.SelfTrap.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.SelfTrap.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.SelfTrap.setting.lineColor.description"))
             .defaultValue(new SettingColor(204, 0, 0, 255))
             .build()
     );

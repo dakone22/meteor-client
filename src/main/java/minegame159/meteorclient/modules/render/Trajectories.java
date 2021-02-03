@@ -36,24 +36,24 @@ public class Trajectories extends Module {
 
     private final Setting<ShapeMode> shapeMode = sgGeneral.add(new EnumSetting.Builder<ShapeMode>()
             .name("shape-mode")
-            .displayName(I18n.translate("Modules.Trajectories.setting.shapeMode.displayName"))
-            .description(I18n.translate("Modules.Trajectories.setting.shapeMode.description"))
+            .displayName(I18n.translate("Module.Trajectories.setting.shapeMode.displayName"))
+            .description(I18n.translate("Module.Trajectories.setting.shapeMode.description"))
             .defaultValue(ShapeMode.Both)
             .build()
     );
 
     private final Setting<SettingColor> sideColor = sgGeneral.add(new ColorSetting.Builder()
             .name("side-color")
-            .displayName(I18n.translate("Modules.Trajectories.setting.sideColor.displayName"))
-            .description(I18n.translate("Modules.Trajectories.setting.sideColor.description"))
+            .displayName(I18n.translate("Module.Trajectories.setting.sideColor.displayName"))
+            .description(I18n.translate("Module.Trajectories.setting.sideColor.description"))
             .defaultValue(new SettingColor(255, 150, 0, 35))
             .build()
     );
     
     private final Setting<SettingColor> lineColor = sgGeneral.add(new ColorSetting.Builder()
             .name("line-color")
-            .displayName(I18n.translate("Modules.Trajectories.setting.lineColor.displayName"))
-            .description(I18n.translate("Modules.Trajectories.setting.lineColor.description"))
+            .displayName(I18n.translate("Module.Trajectories.setting.lineColor.displayName"))
+            .description(I18n.translate("Module.Trajectories.setting.lineColor.description"))
             .defaultValue(new SettingColor(255, 150, 0))
             .build()
     );
@@ -65,7 +65,7 @@ public class Trajectories extends Module {
     private double hitQuadX1, hitQuadY1, hitQuadZ1, hitQuadX2, hitQuadY2, hitQuadZ2;
 
     public Trajectories() {
-        super(Category.Render, "trajectories", I18n.translate("Modules.Trajectories.description"));
+        super(Category.Render, "trajectories", I18n.translate("Module.Trajectories.description"));
     }
 
     @EventHandler

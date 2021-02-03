@@ -35,11 +35,11 @@ public class AutoClicker extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.AutoClicker.setting.mode.displayName"))
-            .description(I18n.translate("Modules.AutoClicker.setting.mode.description"))
+            .displayName(I18n.translate("Module.AutoClicker.setting.mode.displayName"))
+            .description(I18n.translate("Module.AutoClicker.setting.mode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.AutoClicker.enum.Mode.Hold"),
-                    I18n.translate("Modules.AutoClicker.enum.Mode.Press"),
+                    I18n.translate("Module.AutoClicker.enum.Mode.Hold"),
+                    I18n.translate("Module.AutoClicker.enum.Mode.Press"),
             })
             .defaultValue(Mode.Press)
             .build() 
@@ -47,11 +47,11 @@ public class AutoClicker extends Module {
 
     private final Setting<Button> button = sgGeneral.add(new EnumSetting.Builder<Button>()
             .name("button")
-            .displayName(I18n.translate("Modules.AutoClicker.setting.button.displayName"))
-            .description(I18n.translate("Modules.AutoClicker.setting.button.description"))
+            .displayName(I18n.translate("Module.AutoClicker.setting.button.displayName"))
+            .description(I18n.translate("Module.AutoClicker.setting.button.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.AutoClicker.enum.Button.Right"),
-                    I18n.translate("Modules.AutoClicker.enum.Button.Left"),
+                    I18n.translate("Module.AutoClicker.enum.Button.Right"),
+                    I18n.translate("Module.AutoClicker.enum.Button.Left"),
             })
             .defaultValue(Button.Right)
             .build()
@@ -59,8 +59,8 @@ public class AutoClicker extends Module {
 
     private final Setting<Integer> delay = sgGeneral.add(new IntSetting.Builder()
             .name("delay")
-            .displayName(I18n.translate("Modules.AutoClicker.setting.delay.displayName"))
-            .description(I18n.translate("Modules.AutoClicker.setting.delay.description"))
+            .displayName(I18n.translate("Module.AutoClicker.setting.delay.displayName"))
+            .description(I18n.translate("Module.AutoClicker.setting.delay.description"))
             .defaultValue(2)
             .min(0)
             .sliderMax(60)
@@ -70,7 +70,7 @@ public class AutoClicker extends Module {
     private int timer;
 
     public AutoClicker() {
-        super(Category.Player, "auto-clicker", I18n.translate("Modules.AutoClicker.description"));
+        super(Category.Player, "auto-clicker", I18n.translate("Module.AutoClicker.description"));
     }
 
     @Override

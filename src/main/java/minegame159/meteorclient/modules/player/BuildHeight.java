@@ -17,7 +17,7 @@ import net.minecraft.util.math.Direction;
 
 public class BuildHeight extends Module {
     public BuildHeight() {
-        super(Category.Player, "build-height", I18n.translate("Modules.BuildHeight.description"));
+        super(Category.Player, "build-height", I18n.translate("Module.BuildHeight.description"));
     }
 
     @EventHandler

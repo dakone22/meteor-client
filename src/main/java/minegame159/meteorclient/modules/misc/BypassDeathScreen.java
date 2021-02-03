@@ -16,7 +16,7 @@ public class BypassDeathScreen extends Module {
     public boolean shouldBypass = false;
 
     public BypassDeathScreen(){
-        super(Category.Misc, "bypass-death-screen", I18n.translate("Modules.BypassDeathScreen.description"));
+        super(Category.Misc, "bypass-death-screen", I18n.translate("Module.BypassDeathScreen.description"));
     }
 
     @Override

@@ -35,8 +35,8 @@ public class AutoWalk extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.AutoWalk.setting.mode.displayName"))
-            .description(I18n.translate("Modules.AutoWalk.setting.mode.description"))
+            .displayName(I18n.translate("Module.AutoWalk.setting.mode.displayName"))
+            .description(I18n.translate("Module.AutoWalk.setting.mode.description"))
             .defaultValue(Mode.Smart)
             .onChanged(mode1 -> {
                 if (isActive()) {
@@ -54,8 +54,8 @@ public class AutoWalk extends Module {
 
     private final Setting<Direction> direction = sgGeneral.add(new EnumSetting.Builder<Direction>()
             .name("simple-direction")
-            .displayName(I18n.translate("Modules.AutoWalk.setting.direction.displayName"))
-            .description(I18n.translate("Modules.AutoWalk.setting.direction.description"))
+            .displayName(I18n.translate("Module.AutoWalk.setting.direction.displayName"))
+            .description(I18n.translate("Module.AutoWalk.setting.direction.description"))
             .defaultValue(Direction.Forwards)
             .build()
     );
@@ -64,7 +64,7 @@ public class AutoWalk extends Module {
     private GoalDirection goal;
 
     public AutoWalk() {
-        super(Category.Movement, "auto-walk", I18n.translate("Modules.AutoWalk.description"));
+        super(Category.Movement, "auto-walk", I18n.translate("Module.AutoWalk.description"));
     }
 
     @Override

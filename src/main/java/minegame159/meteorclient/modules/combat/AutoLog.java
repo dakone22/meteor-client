@@ -38,8 +38,8 @@ public class AutoLog extends Module {
     
     private final Setting<Integer> health = sgGeneral.add(new IntSetting.Builder()
             .name("health")
-            .displayName(I18n.translate("Modules.AutoLog.setting.health.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.health.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.health.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.health.description"))
             .defaultValue(6)
             .min(0)
             .max(20)
@@ -49,40 +49,40 @@ public class AutoLog extends Module {
 
     private final Setting<Boolean> smart = sgGeneral.add(new BoolSetting.Builder()
             .name("smart")
-            .displayName(I18n.translate("Modules.AutoLog.setting.smart.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.smart.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.smart.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.smart.description"))
             .defaultValue(true)
             .build()
     );
 
     private final Setting<Boolean> onlyTrusted = sgGeneral.add(new BoolSetting.Builder()
             .name("only-trusted")
-            .displayName(I18n.translate("Modules.AutoLog.setting.onlyTrusted.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.onlyTrusted.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.onlyTrusted.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.onlyTrusted.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> instantDeath = sgGeneral.add(new BoolSetting.Builder()
             .name("32k")
-            .displayName(I18n.translate("Modules.AutoLog.setting.instantDeath.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.instantDeath.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.instantDeath.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.instantDeath.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> crystalLog = sgGeneral.add(new BoolSetting.Builder()
             .name("crystal-nearby")
-            .displayName(I18n.translate("Modules.AutoLog.setting.crystalLog.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.crystalLog.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.crystalLog.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.crystalLog.description"))
             .defaultValue(false)
             .build()
     );
     
         private final Setting<Integer> range = sgGeneral.add(new IntSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.AutoLog.setting.range.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.range.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.range.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.range.description"))
             .defaultValue(4)
             .min(1)
             .max(10)
@@ -92,22 +92,22 @@ public class AutoLog extends Module {
 
     private final Setting<Boolean> smartToggle = sgGeneral.add(new BoolSetting.Builder()
             .name("smart-toggle")
-            .displayName(I18n.translate("Modules.AutoLog.setting.smartToggle.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.smartToggle.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.smartToggle.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.smartToggle.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> toggleOff = sgGeneral.add(new BoolSetting.Builder()
             .name("toggle-off")
-            .displayName(I18n.translate("Modules.AutoLog.setting.toggleOff.displayName"))
-            .description(I18n.translate("Modules.AutoLog.setting.toggleOff.description"))
+            .displayName(I18n.translate("Module.AutoLog.setting.toggleOff.displayName"))
+            .description(I18n.translate("Module.AutoLog.setting.toggleOff.description"))
             .defaultValue(true)
             .build()
     );
 
     public AutoLog() {
-        super(Category.Combat, "auto-log", I18n.translate("Modules.AutoLog.description"));
+        super(Category.Combat, "auto-log", I18n.translate("Module.AutoLog.description"));
     }
 
     @EventHandler

@@ -24,7 +24,7 @@ import java.util.Random;
 public class ItemPhysics extends Module {
 
     public ItemPhysics() {
-        super(Category.Render, "item-physics", I18n.translate("Modules.ItemPhysics.description"));
+        super(Category.Render, "item-physics", I18n.translate("Module.ItemPhysics.description"));
     }
 
     @EventHandler

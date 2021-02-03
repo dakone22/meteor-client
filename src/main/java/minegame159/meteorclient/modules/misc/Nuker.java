@@ -45,40 +45,40 @@ public class Nuker extends Module {
 
     private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("mode")
-            .displayName(I18n.translate("Modules.Nuker.setting.mode.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.mode.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.mode.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.mode.description"))
             .defaultValue(Mode.All)
             .build()
     );
 
     private final Setting<Boolean> packetMine = sgGeneral.add(new BoolSetting.Builder()
             .name("packet-mine")
-            .displayName(I18n.translate("Modules.Nuker.setting.packetMine.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.packetMine.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.packetMine.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.packetMine.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<List<Block>> selectedBlocks = sgGeneral.add(new BlockListSetting.Builder()
             .name("selected-blocks")
-            .displayName(I18n.translate("Modules.Nuker.setting.selectedBlocks.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.selectedBlocks.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.selectedBlocks.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.selectedBlocks.description"))
             .defaultValue(new ArrayList<>(0))
             .build()
     );
 
     private final Setting<Boolean> onlySelected = sgGeneral.add(new BoolSetting.Builder()
             .name("only-selected")
-            .displayName(I18n.translate("Modules.Nuker.setting.onlySelected.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.onlySelected.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.onlySelected.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.onlySelected.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Double> range = sgGeneral.add(new DoubleSetting.Builder()
             .name("range")
-            .displayName(I18n.translate("Modules.Nuker.setting.range.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.range.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.range.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.range.description"))
             .defaultValue(5)
             .min(0)
             .build()
@@ -86,24 +86,24 @@ public class Nuker extends Module {
 
     private final Setting<SortMode> sortMode = sgGeneral.add(new EnumSetting.Builder<SortMode>()
             .name("sort-mode")
-            .displayName(I18n.translate("Modules.Nuker.setting.sortMode.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.sortMode.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.sortMode.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.sortMode.description"))
             .defaultValue(SortMode.Closest)
             .build()
     );
 
     private final Setting<Boolean> noParticles = sgGeneral.add(new BoolSetting.Builder()
             .name("no-particles")
-            .displayName(I18n.translate("Modules.Nuker.setting.noParticles.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.noParticles.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.noParticles.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.noParticles.description"))
             .defaultValue(false)
             .build()
     );
 
     private final Setting<Boolean> rotate = sgGeneral.add(new BoolSetting.Builder()
             .name("rotate")
-            .displayName(I18n.translate("Modules.Nuker.setting.rotate.displayName"))
-            .description(I18n.translate("Modules.Nuker.setting.rotate.description"))
+            .displayName(I18n.translate("Module.Nuker.setting.rotate.displayName"))
+            .description(I18n.translate("Module.Nuker.setting.rotate.description"))
             .defaultValue(true)
             .build()
     );
@@ -115,7 +115,7 @@ public class Nuker extends Module {
     private boolean hasLastBlockPos;
 
     public Nuker() {
-        super(Category.Misc, "nuker", I18n.translate("Modules.Nuker.description"));
+        super(Category.Misc, "nuker", I18n.translate("Module.Nuker.description"));
     }
 
     @Override
