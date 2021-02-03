@@ -28,6 +28,7 @@ public class DiscordPresence extends Module {
 
     private final Setting<String> line1 = sgGeneral.add(new StringSetting.Builder()
             .name("line-1")
+            .displayName(I18n.translate("Modules.DiscordPresence.setting.line1.displayName"))
             .description(I18n.translate("Modules.DiscordPresence.setting.line1.description"))
             .defaultValue("{player} || {server}")
             .onChanged(booleanSetting -> updateDetails())
@@ -36,6 +37,7 @@ public class DiscordPresence extends Module {
 
     private final Setting<String> line2 = sgGeneral.add(new StringSetting.Builder()
             .name("line-2")
+            .displayName(I18n.translate("Modules.DiscordPresence.setting.line2.displayName"))
             .description(I18n.translate("Modules.DiscordPresence.setting.line2.description"))
             .defaultValue("Meteor on Crack!")
             .onChanged(booleanSetting -> updateDetails())

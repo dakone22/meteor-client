@@ -38,8 +38,8 @@ public class AutoClicker extends Module {
             .displayName(I18n.translate("Modules.AutoClicker.setting.mode.displayName"))
             .description(I18n.translate("Modules.AutoClicker.setting.mode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.AutoClicker.Mode.Hold"),
-                    I18n.translate("Modules.AutoClicker.Mode.Press"),
+                    I18n.translate("Modules.AutoClicker.enum.Mode.Hold"),
+                    I18n.translate("Modules.AutoClicker.enum.Mode.Press"),
             })
             .defaultValue(Mode.Press)
             .build() 
@@ -50,8 +50,8 @@ public class AutoClicker extends Module {
             .displayName(I18n.translate("Modules.AutoClicker.setting.button.displayName"))
             .description(I18n.translate("Modules.AutoClicker.setting.button.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.AutoClicker.Button.Right"),
-                    I18n.translate("Modules.AutoClicker.Button.Left"),
+                    I18n.translate("Modules.AutoClicker.enum.Button.Right"),
+                    I18n.translate("Modules.AutoClicker.enum.Button.Left"),
             })
             .defaultValue(Button.Right)
             .build()

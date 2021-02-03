@@ -34,9 +34,9 @@ public class SpeedMine extends Module {
             .name("mode")
             .displayName(I18n.translate("Modules.SpeedMine.setting.mode.displayName"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.SpeedMine.Mode.Normal"),
-                    I18n.translate("Modules.SpeedMine.Mode.Haste1"),
-                    I18n.translate("Modules.SpeedMine.Mode.Haste2"),
+                    I18n.translate("Modules.SpeedMine.enum.Mode.Normal"),
+                    I18n.translate("Modules.SpeedMine.enum.Mode.Haste1"),
+                    I18n.translate("Modules.SpeedMine.enum.Mode.Haste2"),
             })
             .defaultValue(Mode.Normal)
             .build()

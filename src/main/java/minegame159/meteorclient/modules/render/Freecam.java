@@ -54,9 +54,9 @@ public class Freecam extends Module {
             .displayName(I18n.translate("Modules.Freecam.setting.autoDisableOnDamage.displayName"))
             .description(I18n.translate("Modules.Freecam.setting.autoDisableOnDamage.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.Freecam.AutoDisableEvent.None"),
-                    I18n.translate("Modules.Freecam.AutoDisableEvent.OnDamage"),
-                    I18n.translate("Modules.Freecam.AutoDisableEvent.OnDeath")})
+                    I18n.translate("Modules.Freecam.enum.AutoDisableEvent.None"),
+                    I18n.translate("Modules.Freecam.enum.AutoDisableEvent.OnDamage"),
+                    I18n.translate("Modules.Freecam.enum.AutoDisableEvent.OnDeath")})
             .defaultValue(AutoDisableEvent.OnDamage)
             .build()
     );

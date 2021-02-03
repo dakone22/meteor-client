@@ -59,8 +59,8 @@ public class ShulkerPeek extends Module {
             .displayName(I18n.translate("Modules.ShulkerPeek.setting.mode.displayName"))
             .description(I18n.translate("Modules.ShulkerPeek.setting.mode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.ShulkerPeek.Mode.Tooltip"),
-                    I18n.translate("Modules.ShulkerPeek.Mode.Always")})
+                    I18n.translate("Modules.ShulkerPeek.enum.Mode.Tooltip"),
+                    I18n.translate("Modules.ShulkerPeek.enum.Mode.Always")})
             .defaultValue(Mode.Always)
             .build()
     );
@@ -70,8 +70,8 @@ public class ShulkerPeek extends Module {
             .displayName(I18n.translate("Modules.ShulkerPeek.setting.bgMode.displayName"))
             .description(I18n.translate("Modules.ShulkerPeek.setting.bgMode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.ShulkerPeek.BackgroundMode.Light"),
-                    I18n.translate("Modules.ShulkerPeek.BackgroundMode.Dark")})
+                    I18n.translate("Modules.ShulkerPeek.enum.BackgroundMode.Light"),
+                    I18n.translate("Modules.ShulkerPeek.enum.BackgroundMode.Dark")})
             .defaultValue(BackgroundMode.Light)
             .build()
     );

@@ -62,7 +62,7 @@ public class Swarm extends Module {
 
     private final Setting<String> ipAddress = sgGeneral.add(new StringSetting.Builder()
             .name("ip-address")
-            .displayName("IP-address")
+            .displayName(I18n.translate("Modules.Swarm.setting.ipAddress.displayName"))
             .description(I18n.translate("Modules.Swarm.setting.ipAddress.description"))
             .defaultValue("localhost")
             .build());

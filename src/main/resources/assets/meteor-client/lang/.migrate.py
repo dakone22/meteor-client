@@ -48,7 +48,6 @@ def prepare():
             original_data = file.read()
     except IOError as e:
         print("No default language file {}!".format(DEFAULT_LANG + ".json"))
-        e.with_traceback()
         exit(1)
 
     try:
@@ -97,9 +96,14 @@ def update_translation(file, original_data, edited_entries, renamed_entries):
         new_data = re.sub(ENTRY_REGEX_FSTRING.format(new_key), ENTRY_FSTRING.format(new_key, entries.pop(old_key)),
                           new_data)
 
-    print("Migrating {} old translation keys".format(len(entries)))
+    k = 0
+    print("Migrating {} other keys...".format(len(entries)))
     for key, value in entries.items():
-        new_data = re.sub(ENTRY_REGEX_FSTRING.format(key), ENTRY_FSTRING.format(key, value), new_data)
+        to_replace = ENTRY_FSTRING.format(key, value)
+        if to_replace not in new_data:
+            new_data = re.sub(ENTRY_REGEX_FSTRING.format(key), to_replace, new_data)
+            k += 1
+    print("Migrated [{} / {}] {:.1f}% old translation keys".format(k, len(entries), k / len(entries) * 100))
 
     with open(file, 'w', encoding="utf-8") as f:
         f.write(new_data)

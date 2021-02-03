@@ -35,9 +35,9 @@ public class Rotation extends Module {
             .displayName(I18n.translate("Modules.Rotation.setting.yawLockMode.displayName"))
             .description(I18n.translate("Modules.Rotation.setting.yawLockMode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.Rotation.LockMode.Smart"),
-                    I18n.translate("Modules.Rotation.LockMode.Simple"),
-                    I18n.translate("Modules.Rotation.LockMode.None"),
+                    I18n.translate("Modules.Rotation.enum.LockMode.Smart"),
+                    I18n.translate("Modules.Rotation.enum.LockMode.Simple"),
+                    I18n.translate("Modules.Rotation.enum.LockMode.None"),
             })
             .defaultValue(LockMode.Simple)
             .build()

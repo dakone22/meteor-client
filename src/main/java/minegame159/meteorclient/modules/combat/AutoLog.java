@@ -64,7 +64,8 @@ public class AutoLog extends Module {
     );
 
     private final Setting<Boolean> instantDeath = sgGeneral.add(new BoolSetting.Builder()
-            .name("32K")
+            .name("32k")
+            .displayName(I18n.translate("Modules.AutoLog.setting.instantDeath.displayName"))
             .description(I18n.translate("Modules.AutoLog.setting.instantDeath.description"))
             .defaultValue(false)
             .build()

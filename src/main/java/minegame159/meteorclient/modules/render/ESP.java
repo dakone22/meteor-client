@@ -44,8 +44,8 @@ public class ESP extends Module {
             .displayName(I18n.translate("Modules.ESP.setting.mode.displayName"))
             .description(I18n.translate("Modules.ESP.setting.mode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.ESP.Mode.Box"),
-                    I18n.translate("Modules.ESP.Mode.Outline")})
+                    I18n.translate("Modules.ESP.enum.Mode.Box"),
+                    I18n.translate("Modules.ESP.enum.Mode.Outline")})
             .defaultValue(Mode.Outline)
             .build()
     );

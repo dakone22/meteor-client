@@ -310,8 +310,8 @@ public class HUD extends Module {
             .name("compass-mode")
             .displayName(I18n.translate("Modules.HUD.setting.compassMode.displayName"))
             .description(I18n.translate("Modules.HUD.setting.compassMode.description"))
-            .displayValues(new String[]{I18n.translate("Modules.HUD.CompassHud.Mode.Axis"),
-                                        I18n.translate("Modules.HUD.CompassHud.Mode.Pole")})
+            .displayValues(new String[]{I18n.translate("Modules.HUD.CompassHud.enum.Mode.Axis"),
+                                        I18n.translate("Modules.HUD.CompassHud.enum.Mode.Pole")})
             .defaultValue(CompassHud.Mode.Pole)
             .build()
     );

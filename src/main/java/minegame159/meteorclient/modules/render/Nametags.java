@@ -84,8 +84,8 @@ public class Nametags extends Module {
             .displayName(I18n.translate("Modules.Nametags.setting.displayOnItem.displayName"))
             .description(I18n.translate("Modules.Nametags.setting.displayOnItem.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.Nametags.Position.ABOVE"),
-                    I18n.translate("Modules.Nametags.Position.ONTOP"),})
+                    I18n.translate("Modules.Nametags.enum.Position.ABOVE"),
+                    I18n.translate("Modules.Nametags.enum.Position.ONTOP"),})
             .defaultValue(Position.ONTOP)
             .build()
     );
@@ -155,6 +155,7 @@ public class Nametags extends Module {
 
     private final Setting<SettingColor> healthStage1 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-1")
+            .displayName(I18n.translate("Modules.Nametags.setting.healthStage1.displayName"))
             .description(I18n.translate("Modules.Nametags.setting.healthStage1.description"))
             .defaultValue(new SettingColor(25, 252, 25))
             .build()
@@ -162,6 +163,7 @@ public class Nametags extends Module {
 
     private final Setting<SettingColor> healthStage2 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-2")
+            .displayName(I18n.translate("Modules.Nametags.setting.healthStage2.displayName"))
             .description(I18n.translate("Modules.Nametags.setting.healthStage2.description"))
             .defaultValue(new SettingColor(255, 105, 25))
             .build()
@@ -169,6 +171,7 @@ public class Nametags extends Module {
 
     private final Setting<SettingColor> healthStage3 = sgColors.add(new ColorSetting.Builder()
             .name("health-stage-3")
+            .displayName(I18n.translate("Modules.Nametags.setting.healthStage3.displayName"))
             .description(I18n.translate("Modules.Nametags.setting.healthStage3.description"))
             .defaultValue(new SettingColor(255, 25, 25))
             .build()

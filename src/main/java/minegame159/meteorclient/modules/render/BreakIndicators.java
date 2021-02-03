@@ -68,6 +68,7 @@ public class BreakIndicators extends Module {
 
     private final Setting<SettingColor> gradientColor1Sides = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-1-sides")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Sides.displayName"))
             .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Sides.description"))
             .defaultValue(new SettingColor(25, 252, 25, 25))
             .build()
@@ -75,6 +76,7 @@ public class BreakIndicators extends Module {
 
     private final Setting<SettingColor> gradientColor1Lines = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-1-lines")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Lines.displayName"))
             .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor1Lines.description"))
             .defaultValue(new SettingColor(25, 252, 25, 100))
             .build()
@@ -82,6 +84,7 @@ public class BreakIndicators extends Module {
 
     private final Setting<SettingColor> gradientColor2Sides = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-2-sides")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Sides.displayName"))
             .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Sides.description"))
             .defaultValue(new SettingColor(255, 25, 25, 100))
             .build()
@@ -89,6 +92,7 @@ public class BreakIndicators extends Module {
 
     private final Setting<SettingColor> gradientColor2Lines = sgRender.add(new ColorSetting.Builder()
             .name("gradient-color-2-lines")
+            .displayName(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Lines.displayName"))
             .description(I18n.translate("Modules.BreakIndicators.setting.gradientColor2Lines.description"))
             .defaultValue(new SettingColor(255, 25, 25, 100))
             .build()

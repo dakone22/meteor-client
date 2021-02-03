@@ -38,8 +38,8 @@ public class EndermanLook extends Module {
             .displayName(I18n.translate("Modules.EndermanLook.setting.lookMode.displayName"))
             .description(I18n.translate("Modules.EndermanLook.setting.lookMode.description"))
             .displayValues(new String[]{
-                    I18n.translate("Modules.EndermanLook.Mode.LookAt"),
-                    I18n.translate("Modules.EndermanLook.Mode.LookAway"),
+                    I18n.translate("Modules.EndermanLook.enum.Mode.LookAt"),
+                    I18n.translate("Modules.EndermanLook.enum.Mode.LookAway"),
             })
             .defaultValue(Mode.LookAway)
             .build()
