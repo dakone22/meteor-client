@@ -527,7 +527,6 @@
   "Module.AutoWeapon.setting.antiBreak.description": "Prevents you from breaking your weapon.",
 
 
-
   "Module.AutoWeb.description": "Automatically places webs on other players.",
   "Module.AutoWeb.setting.range.displayName": "Range",
   "Module.AutoWeb.setting.range.description": "The maximum distance to be able to place webs.",
@@ -566,7 +565,7 @@
       "Module.BedAura.setting.switchBack.displayName": "Switch Back",
       "Module.BedAura.setting.switchBack.description": "Switches back to the previous slot after auto switching.",
       "Module.BedAura.setting.autoMove.displayName": "Auto Move",
-      "Module.BedAura.setting.autoMove.description": "Moves beds into your last hotbar slot.",
+      "Module.BedAura.setting.autoMove.description": "Moves beds into your specific hotbar slot.",
       "Module.BedAura.setting.autoMoveSlot.displayName": "Auto Move Slot",
       "Module.BedAura.setting.autoMoveSlot.description": "The slot Auto Move moves beds to.",
     "Module.BedAura.group.sgMisc": "Misc",
@@ -1791,7 +1790,7 @@
       "Module.BreakIndicators.setting.gradientColor1Sides.description": "The side color for the non-broken block.",
       "Module.BreakIndicators.setting.gradientColor1Lines.displayName": "Gradient Color 1 Lines",
       "Module.BreakIndicators.setting.gradientColor1Lines.description": "The line color for the non-broken block.",
-      "Module.BreakIndicators.setting.gradientColor2Sides.displayName": "Gradient Color 2 Sides.",
+      "Module.BreakIndicators.setting.gradientColor2Sides.displayName": "Gradient Color 2 Sides",
       "Module.BreakIndicators.setting.gradientColor2Sides.description": "The side color for the fully-broken block.",
       "Module.BreakIndicators.setting.gradientColor2Lines.displayName": "Gradient Color 2 Lines",
       "Module.BreakIndicators.setting.gradientColor2Lines.description": "The line color for the fully-broken block.",
