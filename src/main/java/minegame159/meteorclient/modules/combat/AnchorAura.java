@@ -19,6 +19,7 @@ import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.rendering.Renderer;
 import minegame159.meteorclient.rendering.ShapeMode;
 import minegame159.meteorclient.settings.*;
+import minegame159.meteorclient.utils.misc.SafetyMode;
 import minegame159.meteorclient.utils.player.*;
 import minegame159.meteorclient.utils.render.color.SettingColor;
 import net.minecraft.block.Blocks;
@@ -37,12 +38,6 @@ import java.util.Comparator;
 import java.util.Optional;
 
 public class AnchorAura extends Module {
-
-    public enum Mode {
-        Safe,
-        Suicide
-    }
-
     public enum PlaceMode {
         Above,
         AboveAndBelow,
@@ -73,11 +68,11 @@ public class AnchorAura extends Module {
             .build()
     );
 
-    private final Setting<Mode> placeMode = sgPlace.add(new EnumSetting.Builder<Mode>()
+    private final Setting<SafetyMode> placeMode = sgPlace.add(new EnumSetting.Builder<SafetyMode>()
             .name("place-mode")
             .displayName(I18n.translate("Module.AnchorAura.setting.placeMode.displayName"))
             .description(I18n.translate("Module.AnchorAura.setting.placeMode.description"))
-            .defaultValue(Mode.Safe)
+            .defaultValue(SafetyMode.Safe)
             .build()
     );
 
@@ -95,6 +90,11 @@ public class AnchorAura extends Module {
             .name("placement-positions")
             .displayName(I18n.translate("Module.AnchorAura.setting.placePositions.displayName"))
             .description(I18n.translate("Module.AnchorAura.setting.placePositions.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AnchorAura.enum.PlaceMode.Above"),
+                    I18n.translate("Module.AnchorAura.enum.PlaceMode.AboveAndBelow"),
+                    I18n.translate("Module.AnchorAura.enum.PlaceMode.All"),
+            })
             .defaultValue(PlaceMode.AboveAndBelow)
             .build()
     );
@@ -119,11 +119,11 @@ public class AnchorAura extends Module {
             .build()
     );
 
-    private final Setting<Mode> breakMode = sgBreak.add(new EnumSetting.Builder<Mode>()
+    private final Setting<SafetyMode> breakMode = sgBreak.add(new EnumSetting.Builder<SafetyMode>()
             .name("break-mode")
             .displayName(I18n.translate("Module.AnchorAura.setting.breakMode.displayName"))
             .description(I18n.translate("Module.AnchorAura.setting.breakMode.description"))
-            .defaultValue(Mode.Safe)
+            .defaultValue(SafetyMode.Safe)
             .build()
     );
 
@@ -143,6 +143,12 @@ public class AnchorAura extends Module {
             .name("rotation-mode")
             .displayName(I18n.translate("Module.AnchorAura.setting.rotationMode.displayName"))
             .description(I18n.translate("Module.AnchorAura.setting.rotationMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AnchorAura.enum.RotationMode.Place"),
+                    I18n.translate("Module.AnchorAura.enum.RotationMode.Break"),
+                    I18n.translate("Module.AnchorAura.enum.RotationMode.Both"),
+                    I18n.translate("Module.AnchorAura.enum.RotationMode.None"),
+            })
             .defaultValue(RotationMode.Both)
             .build()
     );
@@ -286,7 +292,7 @@ public class AnchorAura extends Module {
             return;
         }
 
-        if (getTotalHealth(mc.player) <= minHealth.get() && placeMode.get() != Mode.Suicide && breakMode.get() != Mode.Suicide) return;
+        if (getTotalHealth(mc.player) <= minHealth.get() && placeMode.get() != SafetyMode.Suicide && breakMode.get() != SafetyMode.Suicide) return;
 
         if (target == null || mc.player.distanceTo(target) > targetRange.get() || !target.isAlive()) target = findTarget();
         if (target == null) return;
@@ -391,12 +397,12 @@ public class AnchorAura extends Module {
 
     private boolean getDamagePlace(BlockPos pos){
         assert mc.player != null;
-        return placeMode.get() == Mode.Suicide || DamageCalcUtils.bedDamage(mc.player, new Vec3d(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5)) <= maxDamage.get();
+        return placeMode.get() == SafetyMode.Suicide || DamageCalcUtils.bedDamage(mc.player, new Vec3d(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5)) <= maxDamage.get();
     }
 
     private boolean getDamageBreak(BlockPos pos){
         assert mc.player != null;
-        return breakMode.get() == Mode.Suicide || DamageCalcUtils.anchorDamage(mc.player, new Vec3d(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5)) <= maxDamage.get();
+        return breakMode.get() == SafetyMode.Suicide || DamageCalcUtils.anchorDamage(mc.player, new Vec3d(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5)) <= maxDamage.get();
     }
 
     private boolean isValidPlace(BlockPos pos) {

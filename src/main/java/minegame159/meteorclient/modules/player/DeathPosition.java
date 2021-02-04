@@ -43,7 +43,7 @@ public class DeathPosition extends Module {
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    private final WLabel label = new WLabel("No latest death found.");
+    private final WLabel label = new WLabel(I18n.translate("Module.DeathPosition.no_last_death_found"));
 
     public DeathPosition() {
         super(Category.Player, "death-position", I18n.translate("Module.DeathPosition.description"));
@@ -59,15 +59,15 @@ public class DeathPosition extends Module {
         if (event.entity.getUuid() != null && event.entity.getUuid().equals(mc.player.getUuid()) && event.entity.getHealth() <= 0) {
             deathPos.put("x", mc.player.getX());
             deathPos.put("z", mc.player.getZ());
-            label.setText(String.format("Latest death: %.1f, %.1f, %.1f", mc.player.getX(), mc.player.getY(), mc.player.getZ()));
+            label.setText(I18n.translate("Module.DeathPosition.latest_death", mc.player.getX(), mc.player.getY(), mc.player.getZ()));
 
             String time = dateFormat.format(new Date());
-            ChatUtils.moduleInfo(this, "Died at (highlight)%.0f(default), (highlight)%.0f(default), (highlight)%.0f (default)on (highlight)%s(default).", mc.player.getX(), mc.player.getY(), mc.player.getZ(), time);
+            ChatUtils.moduleInfo(this, I18n.translate("Module.DeathPosition.message.died_at"), mc.player.getX(), mc.player.getY(), mc.player.getZ(), time);
 
             // Create waypoint
             if (createWaypoint.get()) {
                 waypoint = new Waypoint();
-                waypoint.name = "Death " + time;
+                waypoint.name = I18n.translate("Module.DeathPosition.waypoint_text", time);
 
                 waypoint.x = (int) mc.player.getX();
                 waypoint.y = (int) mc.player.getY() + 2;
@@ -96,10 +96,10 @@ public class DeathPosition extends Module {
     public WWidget getWidget() {
         WTable table = new WTable();
         table.add(label);
-        WButton path = new WButton("Path");
+        WButton path = new WButton(I18n.translate("Module.DeathPosition.button.Path"));
         table.add(path);
         path.action = this::path;
-        WButton clear = new WButton("Clear");
+        WButton clear = new WButton(I18n.translate("Module.DeathPosition.button.Clear"));
         table.add(clear);
         clear.action = this::clear;
         return table;
@@ -107,7 +107,7 @@ public class DeathPosition extends Module {
 
     private void path() {
         if (deathPos.isEmpty() && mc.player != null) {
-            ChatUtils.moduleWarning(this,"No latest death found.");
+            ChatUtils.moduleWarning(this,I18n.translate("Module.DeathPosition.message.no_last_death_found"));
         } else {
             if (mc.world != null) {
                 double x = deathPos.get("x"), z = deathPos.get("z");
@@ -120,6 +120,6 @@ public class DeathPosition extends Module {
 
     private void clear() {
         Waypoints.INSTANCE.remove(waypoint);
-        label.setText("No latest death.");
+        label.setText(I18n.translate("Module.DeathPosition.no_last_death"));
     }
 }

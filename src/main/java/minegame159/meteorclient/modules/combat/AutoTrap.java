@@ -54,6 +54,11 @@ public class AutoTrap extends Module {
             .name("top-mode")
             .displayName(I18n.translate("Module.AutoTrap.setting.topPlacement.displayName"))
             .description(I18n.translate("Module.AutoTrap.setting.topPlacement.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoTrap.enum.TopMode.Full"),
+                    I18n.translate("Module.AutoTrap.enum.TopMode.Top"),
+                    I18n.translate("Module.AutoTrap.enum.TopMode.None"),
+            })
             .defaultValue(TopMode.Full)
             .build()
     );
@@ -62,6 +67,11 @@ public class AutoTrap extends Module {
             .name("bottom-mode")
             .displayName(I18n.translate("Module.AutoTrap.setting.bottomPlacement.displayName"))
             .description(I18n.translate("Module.AutoTrap.setting.bottomPlacement.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoTrap.enum.BottomMode.Single"),
+                    I18n.translate("Module.AutoTrap.enum.BottomMode.Platform"),
+                    I18n.translate("Module.AutoTrap.enum.BottomMode.None"),
+            })
             .defaultValue(BottomMode.Platform)
             .build()
     );

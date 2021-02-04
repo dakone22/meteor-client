@@ -37,6 +37,10 @@ public class AutoWalk extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.AutoWalk.setting.mode.displayName"))
             .description(I18n.translate("Module.AutoWalk.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoWalk.enum.Mode.Simple"),
+                    I18n.translate("Module.AutoWalk.enum.Mode.Smart"),
+            })
             .defaultValue(Mode.Smart)
             .onChanged(mode1 -> {
                 if (isActive()) {
@@ -56,6 +60,12 @@ public class AutoWalk extends Module {
             .name("simple-direction")
             .displayName(I18n.translate("Module.AutoWalk.setting.direction.displayName"))
             .description(I18n.translate("Module.AutoWalk.setting.direction.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoWalk.enum.Direction.Forwards"),
+                    I18n.translate("Module.AutoWalk.enum.Direction.Backwards"),
+                    I18n.translate("Module.AutoWalk.enum.Direction.Left"),
+                    I18n.translate("Module.AutoWalk.enum.Direction.Right"),
+            })
             .defaultValue(Direction.Forwards)
             .build()
     );

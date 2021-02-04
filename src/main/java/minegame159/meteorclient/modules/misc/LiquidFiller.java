@@ -37,6 +37,11 @@ public class LiquidFiller extends Module {
             .name("place-in")
             .displayName(I18n.translate("Module.LiquidFiller.setting.placeInLiquids.displayName"))
             .description(I18n.translate("Module.LiquidFiller.setting.placeInLiquids.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.LiquidFiller.enum.PlaceIn.Lava"),
+                    I18n.translate("Module.LiquidFiller.enum.PlaceIn.Water"),
+                    I18n.translate("Module.LiquidFiller.enum.PlaceIn.Both"),
+            })
             .defaultValue(PlaceIn.Lava)
             .build()
     );

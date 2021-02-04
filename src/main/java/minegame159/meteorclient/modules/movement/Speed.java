@@ -92,6 +92,10 @@ public class Speed extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.Speed.setting.jumpMode.displayName"))
             .description(I18n.translate("Module.Speed.setting.jumpMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Speed.enum.Mode.Jump"),
+                    I18n.translate("Module.Speed.enum.Mode.Velocity"),
+            })
             .defaultValue(Mode.Jump)
             .build()
     );
@@ -110,6 +114,11 @@ public class Speed extends Module {
             .name("jump-if")
             .displayName(I18n.translate("Module.Speed.setting.jumpIf.displayName"))
             .description(I18n.translate("Module.Speed.setting.jumpIf.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Speed.enum.JumpIf.Sprinting"),
+                    I18n.translate("Module.Speed.enum.JumpIf.Walking"),
+                    I18n.translate("Module.Speed.enum.JumpIf.Always"),
+            })
             .defaultValue(JumpIf.Walking)
             .build()
     );

@@ -30,6 +30,7 @@ public class AutoGap extends Module {
         Regeneration,
         Constant
     }
+
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     public AutoGap(){
@@ -40,6 +41,11 @@ public class AutoGap extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.AutoGap.setting.mode.displayName"))
             .description(I18n.translate("Module.AutoGap.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoGap.enum.Mode.FireResistance"),
+                    I18n.translate("Module.AutoGap.enum.Mode.Regeneration"),
+                    I18n.translate("Module.AutoGap.enum.Mode.Constant"),
+            })
             .defaultValue(Mode.Regeneration)
             .build()
     );

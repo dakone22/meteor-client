@@ -16,8 +16,8 @@ public class WKeybind extends WTable {
         this.key = key;
 
         label = add(new WLabel("")).getWidget();
-        WButton set = add(new WButton(I18n.translate("ModuleScreen.WKeybind.buttons.Set"))).getWidget();
-        WButton reset = add(new WButton(I18n.translate("ModuleScreen.WKeybind.buttons.Reset"))).getWidget();
+        WButton set = add(new WButton(I18n.translate("ModuleScreen.WKeybind.button.Set"))).getWidget();
+        WButton reset = add(new WButton(I18n.translate("ModuleScreen.WKeybind.button.Reset"))).getWidget();
 
         set.action = () -> {
             listening = true;

@@ -42,6 +42,12 @@ public class OffhandExtra extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.OffhandExtra.setting.mode.displayName"))
             .description(I18n.translate("Module.OffhandExtra.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.OffhandExtra.enum.Mode.EGap"),
+                    I18n.translate("Module.OffhandExtra.enum.Mode.Gap"),
+                    I18n.translate("Module.OffhandExtra.enum.Mode.EXP"),
+                    I18n.translate("Module.OffhandExtra.enum.Mode.Crystal"),
+            })
             .defaultValue(Mode.EGap)
             .onChanged(mode -> currentMode = mode)
             .build()

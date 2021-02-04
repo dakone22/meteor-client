@@ -53,6 +53,10 @@ public class AntiAFK extends Module {
             .name("spin-mode")
             .displayName(I18n.translate("Module.AntiAFK.setting.spinMode.displayName"))
             .description(I18n.translate("Module.AntiAFK.setting.spinMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AntiAFK.enum.SpinMode.Server"),
+                    I18n.translate("Module.AntiAFK.enum.SpinMode.Client"),
+            })
             .defaultValue(SpinMode.Server)
             .build()
     );

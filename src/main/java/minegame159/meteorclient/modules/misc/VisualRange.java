@@ -45,7 +45,7 @@ public class VisualRange extends Module {
             .name("enter-message")
             .displayName(I18n.translate("Module.VisualRange.setting.enterMessage.displayName"))
             .description(I18n.translate("Module.VisualRange.setting.enterMessage.description"))
-            .defaultValue("{player} has entered your visual range.")
+            .defaultValue(I18n.translate("Module.VisualRange.setting.enterMessage.defaultValue"))
             .build()
     );
 
@@ -53,7 +53,7 @@ public class VisualRange extends Module {
             .name("leave-message")
             .displayName(I18n.translate("Module.VisualRange.setting.leaveMessage.displayName"))
             .description(I18n.translate("Module.VisualRange.setting.leaveMessage.description"))
-            .defaultValue("{player} has left your visual range.")
+            .defaultValue(I18n.translate("Module.VisualRange.setting.leaveMessage.defaultValue"))
             .build()
     );
 

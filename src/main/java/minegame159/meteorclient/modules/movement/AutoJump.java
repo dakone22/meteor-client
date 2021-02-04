@@ -35,6 +35,10 @@ public class AutoJump extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.AutoJump.setting.mode.displayName"))
             .description(I18n.translate("Module.AutoJump.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoJump.enum.Mode.Jump"),
+                    I18n.translate("Module.AutoJump.enum.Mode.Velocity"),
+            })
             .defaultValue(Mode.Jump)
             .build()
     );
@@ -43,6 +47,11 @@ public class AutoJump extends Module {
             .name("jump-if")
             .displayName(I18n.translate("Module.AutoJump.setting.jumpIf.displayName"))
             .description(I18n.translate("Module.AutoJump.setting.jumpIf.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoJump.enum.JumpWhen.Sprinting"),
+                    I18n.translate("Module.AutoJump.enum.JumpWhen.Walking"),
+                    I18n.translate("Module.AutoJump.enum.JumpWhen.Always"),
+            })
             .defaultValue(JumpWhen.Always)
             .build()
     );

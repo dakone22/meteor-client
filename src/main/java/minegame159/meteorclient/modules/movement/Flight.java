@@ -33,6 +33,10 @@ public class Flight extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.Flight.setting.mode.displayName"))
             .description(I18n.translate("Module.Flight.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Flight.enum.Mode.Abilities"),
+                    I18n.translate("Module.Flight.enum.Mode.Velocity"),
+            })
             .defaultValue(Mode.Abilities)
             .build()
     );

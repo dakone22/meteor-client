@@ -100,10 +100,10 @@ public class FakePlayer extends Module {
     public WWidget getWidget() {
         WTable table = new WTable();
 
-        WButton spawn = table.add(new WButton("Spawn")).getWidget();
+        WButton spawn = table.add(new WButton(I18n.translate("Module.FakePlayer.button.Spawn"))).getWidget();
         spawn.action = () -> spawnFakePlayer(name.get(), copyInv.get(), glowing.get(), health.get().floatValue());
 
-        WButton clear = table.add(new WButton("Clear")).getWidget();
+        WButton clear = table.add(new WButton(I18n.translate("Module.FakePlayer.button.Clear"))).getWidget();
         clear.action = () -> clearFakePlayers(true);
 
         return table;
@@ -113,7 +113,7 @@ public class FakePlayer extends Module {
         if (isActive()) {
             if (mc.world == null) return;
             FakePlayerEntity fakePlayer = new FakePlayerEntity(name, copyInv, glowing, health);
-            if (chatInfo.get()) ChatUtils.moduleInfo(this, "Spawned a fakeplayer");
+            if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.FakePlayer.message.spawned"));
             players.put(fakePlayer, ID);
             ID++;
         }
@@ -122,13 +122,13 @@ public class FakePlayer extends Module {
     public void removeFakePlayer(int id) {
         if (isActive()) {
             if (players.isEmpty()) {
-                if (chatInfo.get()) ChatUtils.moduleError(this, "There are no active fake players to remove!");
+                if (chatInfo.get()) ChatUtils.moduleError(this, I18n.translate("Module.FakePlayer.message.no_to_remove"));
                 return;
             }
             for (Map.Entry<FakePlayerEntity, Integer> player : players.entrySet()) {
                 if (player.getValue() == id) {
                     player.getKey().despawn();
-                    if (chatInfo.get()) ChatUtils.moduleInfo(this, "Removed fake player with ID (highlight)" + id);
+                    if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.FakePlayer.message.removed", id));
                 }
             }
         }
@@ -137,20 +137,20 @@ public class FakePlayer extends Module {
     public void clearFakePlayers( boolean shouldCheckActive) {
         if (shouldCheckActive && isActive()) {
             if (players.isEmpty()) {
-                if (chatInfo.get()) ChatUtils.moduleInfo(this, "There are no active fake players to remove!");
+                if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.FakePlayer.message.no_to_remove"));
                 return;
             } else {
                 for (Map.Entry<FakePlayerEntity, Integer> player : players.entrySet()) {
                     player.getKey().despawn();
                 }
-                if (chatInfo.get()) ChatUtils.moduleInfo(this, "Removed all fake players.");
+                if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.FakePlayer.message.removed_all"));
 
             }
         } else if (!shouldCheckActive) {
             for (Map.Entry<FakePlayerEntity, Integer> player : players.entrySet()) {
                 player.getKey().despawn();
             }
-            if (chatInfo.get()) ChatUtils.moduleInfo(this, "Removed all fake players.");
+            if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.FakePlayer.message.removed_all"));
         }
         players.clear();
     }

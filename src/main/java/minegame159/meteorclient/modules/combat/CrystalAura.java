@@ -21,6 +21,7 @@ import minegame159.meteorclient.rendering.ShapeMode;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.misc.Pool;
+import minegame159.meteorclient.utils.misc.SafetyMode;
 import minegame159.meteorclient.utils.player.DamageCalcUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
 import minegame159.meteorclient.utils.player.PlayerUtils;
@@ -44,11 +45,6 @@ import net.minecraft.world.RaycastContext;
 import java.util.*;
 
 public class CrystalAura extends Module {
-    public enum Mode {
-        Safe,
-        Suicide
-    }
-
     public enum TargetMode {
         MostDamage,
         HighestXDamages
@@ -85,11 +81,11 @@ public class CrystalAura extends Module {
             .build()
     );
 
-    private final Setting<Mode> placeMode = sgPlace.add(new EnumSetting.Builder<Mode>()
+    private final Setting<SafetyMode> placeMode = sgPlace.add(new EnumSetting.Builder<SafetyMode>()
             .name("place-mode")
             .displayName(I18n.translate("Module.CrystalAura.setting.placeMode.displayName"))
             .description(I18n.translate("Module.CrystalAura.setting.placeMode.description"))
-            .defaultValue(Mode.Safe)
+            .defaultValue(SafetyMode.Safe)
             .build()
     );
 
@@ -234,11 +230,11 @@ public class CrystalAura extends Module {
             .build()
     );
 
-    private final Setting<Mode> breakMode = sgBreak.add(new EnumSetting.Builder<Mode>()
+    private final Setting<SafetyMode> breakMode = sgBreak.add(new EnumSetting.Builder<SafetyMode>()
             .name("break-mode")
             .displayName(I18n.translate("Module.CrystalAura.setting.breakMode.displayName"))
             .description(I18n.translate("Module.CrystalAura.setting.breakMode.description"))
-            .defaultValue(Mode.Safe)
+            .defaultValue(SafetyMode.Safe)
             .build()
     );
 
@@ -277,6 +273,10 @@ public class CrystalAura extends Module {
             .name("target-mode")
             .displayName(I18n.translate("Module.CrystalAura.setting.targetMode.displayName"))
             .description(I18n.translate("Module.CrystalAura.setting.targetMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.CrystalAura.enum.TargetMode.MostDamage"),
+                    I18n.translate("Module.CrystalAura.enum.TargetMode.HighestXDamages"),
+            })
             .defaultValue(TargetMode.HighestXDamages)
             .build()
     );
@@ -339,6 +339,11 @@ public class CrystalAura extends Module {
             .name("rotation-mode")
             .displayName(I18n.translate("Module.CrystalAura.setting.rotationMode.displayName"))
             .description(I18n.translate("Module.CrystalAura.setting.rotationMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.CrystalAura.enum.RotationMode.None"),
+                    I18n.translate("Module.CrystalAura.enum.RotationMode.FaceCrystal"),
+                    I18n.translate("Module.CrystalAura.enum.RotationMode.Return"),
+            })
             .defaultValue(RotationMode.FaceCrystal)
             .build()
     );
@@ -347,6 +352,11 @@ public class CrystalAura extends Module {
             .name("switch-mode")
             .displayName(I18n.translate("Module.CrystalAura.setting.switchMode.displayName"))
             .description(I18n.translate("Module.CrystalAura.setting.switchMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.CrystalAura.enum.SwitchMode.Auto"),
+                    I18n.translate("Module.CrystalAura.enum.SwitchMode.Spoof"),
+                    I18n.translate("Module.CrystalAura.enum.SwitchMode.None"),
+            })
             .defaultValue(SwitchMode.Auto)
             .build()
     );
@@ -532,7 +542,7 @@ public class CrystalAura extends Module {
             }
         }
         boolean shouldFacePlace = false;
-        if (getTotalHealth(mc.player) <= minHealth.get() && placeMode.get() != Mode.Suicide) return;
+        if (getTotalHealth(mc.player) <= minHealth.get() && placeMode.get() != SafetyMode.Suicide) return;
         if (target != null && heldCrystal != null && placeDelayLeft <= 0 && mc.world.raycast(new RaycastContext(target.getPos(), heldCrystal.getPos(), RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, target)).getType()
                 == HitResult.Type.MISS) locked = false;
         if (heldCrystal == null) locked = false;
@@ -878,7 +888,7 @@ public class CrystalAura extends Module {
 
     private boolean getDamagePlace(BlockPos pos){
         assert mc.player != null;
-        return placeMode.get() == Mode.Suicide || DamageCalcUtils.crystalDamage(mc.player, new Vec3d(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5)) <= maxDamage.get();
+        return placeMode.get() == SafetyMode.Suicide || DamageCalcUtils.crystalDamage(mc.player, new Vec3d(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5)) <= maxDamage.get();
     }
 
     private Vec3d findOpen(LivingEntity target){
@@ -945,7 +955,7 @@ public class CrystalAura extends Module {
 
     private boolean isSafe(Vec3d crystalPos){
         assert mc.player != null;
-        return (!(breakMode.get() == Mode.Safe) || (getTotalHealth(mc.player) - DamageCalcUtils.crystalDamage(mc.player, crystalPos) > minHealth.get()
+        return (!(breakMode.get() == SafetyMode.Safe) || (getTotalHealth(mc.player) - DamageCalcUtils.crystalDamage(mc.player, crystalPos) > minHealth.get()
                 && DamageCalcUtils.crystalDamage(mc.player, crystalPos) < maxDamage.get()));
     }
 

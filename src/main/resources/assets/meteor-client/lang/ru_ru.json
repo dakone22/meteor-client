@@ -11,8 +11,8 @@
   "ModuleScreen.active": "Активный:",
   "ModuleScreen.visible": "Видимый:",
   "ModuleScreen.visible.tooltip": "Показывает модуль в списке.",
-  "ModuleScreen.WKeybind.buttons.Set": "Установить",
-  "ModuleScreen.WKeybind.buttons.Reset": "Сброс",
+  "ModuleScreen.WKeybind.button.Set": "Установить",
+  "ModuleScreen.WKeybind.button.Reset": "Сброс",
   "ModuleScreen.WKeybind.bind": "Горячая клавиша: ",
   "ModuleScreen.WKeybind.bind.setting": "Горячая клавиша: нажмите любую кнопку",
   "ModuleScreen.WKeybind.bind.none": "нет",
@@ -46,9 +46,12 @@
   //              Enums
   // ----------------------------------
 
+  "enum.Hand.MAIN_HAND": "Главная рука",
+  "enum.Hand.OFF_HAND": "Доп. рука",
+
   "enum.ShapeMode.Lines": "Линии",
   "enum.ShapeMode.Sides": "Стороны",
-  "enum.ShapeMode.Both": "И то и другое",
+  "enum.ShapeMode.Both": "И то, и другое",
 
   "enum.Target.Head": "Голова",
   "enum.Target.Body": "Тело",
@@ -95,6 +98,14 @@
 
   "enum.Orientation.Horizontal": "Горизонтальный",
   "enum.Orientation.Vertical": "Вертикальный",
+
+  "enum.SafetyMode.Safe": "Безопасный",
+  "enum.SafetyMode.Suicide": "Суицидальный",
+
+  "enum.TargetPriority.LowestDistance": "Наименьшее расстояние",
+  "enum.TargetPriority.HighestDistance": "Наибольшее расстояние",
+  "enum.TargetPriority.LowestHealth": "Наименьшее здоровье",
+  "enum.TargetPriority.HighestHealth": "Наибольшее здоровье",
 
   // ----------------------------------
   //              TopBar
@@ -318,6 +329,9 @@
       "Module.AimAssist.setting.speedInstant.description": "Мгновенный взгляд на сущность.",
       "Module.AimAssist.setting.speed.displayName": "Скорость",
       "Module.AimAssist.setting.speed.description": "Как быстро целиться в сущность.",
+  "Module.AimAssist.enum.Target.Head": "Голова",
+  "Module.AimAssist.enum.Target.Body": "Тело",
+  "Module.AimAssist.enum.Target.Feet": "Ноги",
 
 
   "Module.AnchorAura.description": "Автоматически ставит и разрушает Якоря Возрождения, чтобы наносить урон сущностям.",
@@ -369,6 +383,13 @@
       "Module.AnchorAura.setting.breakLineColor.description": "Цвет линии разрушающегося Якоря.",
       "Module.AnchorAura.setting.shapeMode.displayName": "Режим формы",
       "Module.AnchorAura.setting.shapeMode.description": "Как отрисовывать формы.",
+  "Module.AnchorAura.enum.PlaceMode.Above": "Над",
+  "Module.AnchorAura.enum.PlaceMode.AboveAndBelow": "Над и под",
+  "Module.AnchorAura.enum.PlaceMode.All": "Везде",
+  "Module.AnchorAura.enum.RotationMode.Place": "Размещение",
+  "Module.AnchorAura.enum.RotationMode.Break": "Разрушение",
+  "Module.AnchorAura.enum.RotationMode.Both": "И то, и другое",
+  "Module.AnchorAura.enum.RotationMode.None": "Нет",
 
 
   "Module.AntiAutoAnvil.description": "Автоматически защищает Вас от Auto Anvil, размещая обсидиан над вами.",
@@ -401,6 +422,8 @@
   "Module.Auto32K.setting.throwawayItems.description": "Разрешённые блоки для заполнения воронки.",
   "Module.Auto32K.setting.autoMove.displayName": "Автоперемещение",
   "Module.Auto32K.setting.autoMove.description": "Перемещает меч за Вас.",
+  "Module.Auto32K.enum.Mode.Hopper": "Воронка",
+  "Module.Auto32K.enum.Mode.Dispenser": "Раздатчик",
 
 
   "Module.AutoAnvil.description": "Автоматически размещает наковальни над игроками, чтобы разрушать шлемы.",
@@ -451,6 +474,10 @@
       "Module.AutoArmor.setting.pauseInInventory.description": "Прекращает управление броней, когда Вы находитесь в инвентаре.",
       "Module.AutoArmor.setting.pause.displayName": "Пауза между частями",
       "Module.AutoArmor.setting.pause.description": "Пауза между экипировкой частей брони для предотвращения рассинхронизации.",
+  "Module.AutoArmor.enum.Prot.Protection": "Защита",
+  "Module.AutoArmor.enum.Prot.Blast_Protection": "Взрывоустойчивость",
+  "Module.AutoArmor.enum.Prot.Fire_Protection": "Огнеупорность",
+  "Module.AutoArmor.enum.Prot.Projectile_Protection": "Защита от снарядов",
 
 
   "Module.AutoCity.description": "Automatically cities a target by mining the nearest obsidian next to them.",
@@ -492,6 +519,12 @@
   "Module.AutoTotem.setting.inventorySwitch.description": "Экипировать ли тотемы, когда вы находитесь в инвентаре.",
   "Module.AutoTotem.setting.health.displayName": "Здоровье",
   "Module.AutoTotem.setting.health.description": "Здоровье, при котором активируется Умный режим Auto Totem'а.",
+  "Module.AutoTrap.enum.TopMode.Full": "Полный",
+  "Module.AutoTrap.enum.TopMode.Top": "Верх",
+  "Module.AutoTrap.enum.TopMode.None": "Нет",
+  "Module.AutoTrap.enum.BottomMode.Single": "Один",
+  "Module.AutoTrap.enum.BottomMode.Platform": "Платформа",
+  "Module.AutoTrap.enum.BottomMode.None": "Нет",
 
 
   "Module.AutoTrap.description": "Запирает людей в обсидиановую коробку, чтобы они не могли двигаться.",
@@ -525,6 +558,8 @@
   "Module.AutoWeapon.setting.threshold.description": "Если неприоритетное оружие будет производить столь много урона, то оно будет предпочтительнее приоритетного.",
   "Module.AutoWeapon.setting.antiBreak.displayName": "Анти-поломка",
   "Module.AutoWeapon.setting.antiBreak.description": "Не дает вам сломать оружие.",
+  "Module.AutoWeapon.enum.Weapon.Sword": "Меч",
+  "Module.AutoWeapon.enum.Weapon.Axe": "Топор",
 
 
   "Module.AutoWeb.description": "Автоматически размещает паутину под другими игроками.",
@@ -589,6 +624,9 @@
   "Module.Criticals.description": "Совершает критические атаки, когда вы попадаете в цель.",
   "Module.Criticals.setting.mode.displayName": "Режим",
   "Module.Criticals.setting.mode.description": "Режим работы Criticals.",
+  "Module.Criticals.enum.Mode.Packet": "Пакет",
+  "Module.Criticals.enum.Mode.Jump": "Прыжок",
+  "Module.Criticals.enum.Mode.MiniJump": "Мини-прыжок",
 
 
   "Module.CrystalAura.description": "Автоматически размещает и разбивает Кристаллы Энда, чтобы нанести урон другим игрокам.",
@@ -678,6 +716,14 @@
       "Module.CrystalAura.setting.lineColor.description": "Цвет линии.",
       "Module.CrystalAura.setting.renderTimer.displayName": "Таймер",
       "Module.CrystalAura.setting.renderTimer.description": "Время между изменением отрисовки блока.",
+  "Module.CrystalAura.enum.TargetMode.MostDamage": "Наибольший урон",
+  "Module.CrystalAura.enum.TargetMode.HighestXDamages": "Highest X Damages",
+  "Module.CrystalAura.enum.RotationMode.None": "Нет",
+  "Module.CrystalAura.enum.RotationMode.FaceCrystal": "Лицом к кристаллу",
+  "Module.CrystalAura.enum.RotationMode.Return": "Return",
+  "Module.CrystalAura.enum.SwitchMode.Auto": "Авто",
+  "Module.CrystalAura.enum.SwitchMode.Spoof": "Spoof",
+  "Module.CrystalAura.enum.SwitchMode.None": "Нет",
 
 
   "Module.Hitboxes.description": "Расширяет хитбоксы сущности.",
@@ -692,10 +738,13 @@
   "Module.Holefiller.setting.horizontalRadius.description": "Горизонтальный радиус поиска отверстий.",
   "Module.Holefiller.setting.verticalRadius.displayName": "Вертикальный радиус",
   "Module.Holefiller.setting.verticalRadius.description": "Вертикальный радиус поиска отверстия.",
-  "Module.Holefiller.setting.mode.displayName": "Блокировать",
+  "Module.Holefiller.setting.mode.displayName": "Блок",
   "Module.Holefiller.setting.mode.description": "Какие блоки использовать для заполнения дыр.",
   "Module.Holefiller.setting.rotate.displayName": "Поворот",
   "Module.Holefiller.setting.rotate.description": "Автоматически поворачиваться в сторону заполняемых отверстий.",
+  "Module.Holefiller.enum.PlaceMode.Obsidian": "Обсидиан",
+  "Module.Holefiller.enum.PlaceMode.Cobweb": "Паутина",
+  "Module.Holefiller.enum.PlaceMode.Any": "Любой",
 
 
   "Module.KillAura.description": "Атакует указанные сущности вокруг вас.",
@@ -732,9 +781,19 @@
       "Module.KillAura.setting.randomDelayEnabled.description": "Добавляет случайную задержку между ударами, чтобы попытаться обойти античиты.",
       "Module.KillAura.setting.randomDelayMax.displayName": "Макс. случайная задержка",
       "Module.KillAura.setting.randomDelayMax.description": "Максимальное значение случайной задержки.",
+  "Module.KillAura.enum.OnlyWith.Sword": "Меч",
+  "Module.KillAura.enum.OnlyWith.Axe": "Топор",
+  "Module.KillAura.enum.OnlyWith.SwordOrAxe": "Меч или топор",
+  "Module.KillAura.enum.OnlyWith.Any": "Любой",
+  "Module.KillAura.enum.RotationMode.Always": "Всегда",
+  "Module.KillAura.enum.RotationMode.OnHit": "При ударе",
+  "Module.KillAura.enum.RotationMode.None": "Никогда",
+  "Module.KillAura.enum.RotationDirection.Eyes": "Глаза",
+  "Module.KillAura.enum.RotationDirection.Chest": "Грудь",
+  "Module.KillAura.enum.RotationDirection.Feet": "Ноги",
 
 
-  "Module.OffhandExtra.description": "Позволяет использовать указанные предметы на второй руке. ТРЕБУЕТСЯ, чтобы AutoTotem находился в «Умном» режиме.",
+  "Module.OffhandExtra.description": "Позволяет использовать указанные предметы в доп. руке. ТРЕБУЕТСЯ, чтобы AutoTotem находился в «Умном» режиме.",
       "Module.OffhandExtra.setting.mode.displayName": "Режим",
       "Module.OffhandExtra.setting.mode.description": "Изменяет, какой предмет будет в вашей левой руке.",
       "Module.OffhandExtra.setting.replace.displayName": "Заменять",
@@ -754,6 +813,10 @@
       "Module.OffhandExtra.setting.offhandCrystal.description": "Изменяет режим на «Кристалл», если вы держите в основной руке зачарованное золотое яблоко.",
       "Module.OffhandExtra.setting.offhandCA.displayName": "Offhand Кристалл при CA",
       "Module.OffhandExtra.setting.offhandCA.description": "Изменяет режим на «Кристалл», когда CrystalAura включена.",
+  "Module.OffhandExtra.enum.Mode.EGap": "Зачарованное золотое яблоко (EGap)",
+  "Module.OffhandExtra.enum.Mode.Gap": "Золотое яблоко (Gap)",
+  "Module.OffhandExtra.enum.Mode.EXP": "Пузырёк опыта",
+  "Module.OffhandExtra.enum.Mode.Crystal": "Кристалл",
 
 
   "Module.Quiver.description": "Автоматически стреляет в вас стрелами положительного эффекта.",
@@ -792,6 +855,12 @@
       "Module.SelfTrap.setting.sideColor.description": "Цвет сторон отрисовываемых блоков.",
       "Module.SelfTrap.setting.lineColor.displayName": "Цвет линии",
       "Module.SelfTrap.setting.lineColor.description": "Цвет линий отрисовываемых блоков.",
+  "Module.SelfTrap.enum.TopMode.AntiFacePlace": "Кроме лица",
+  "Module.SelfTrap.enum.TopMode.Full": "Полный",
+  "Module.SelfTrap.enum.TopMode.Top": "Верх",
+  "Module.SelfTrap.enum.TopMode.None": "Нет",
+  "Module.SelfTrap.enum.BottomMode.Single": "Одиночный",
+  "Module.SelfTrap.enum.BottomMode.None": "Нет",
 
 
   "Module.SelfWeb.description": "Автоматически размещает на вас паутину.",
@@ -830,10 +899,51 @@
 
 
   "Module.Swarm.description": "Я — это рой.",
-  "Module.Swarm.setting.ipAddress.displayName": "IP-address",
+  "Module.Swarm.setting.ipAddress.displayName": "IP-адрес",
   "Module.Swarm.setting.ipAddress.description": "IP-адрес Королевы.",
   "Module.Swarm.setting.serverPort.displayName": "Порт",
   "Module.Swarm.setting.serverPort.description": "Порт для подключения.",
+  "Module.Swarm.button.run": "Запустить сервер (Q)",
+  "Module.Swarm.button.connect": "Подключиться (S)",
+  "Module.Swarm.button.reset": "Сброс",
+  "Module.Swarm.button.guide": "Руководство",
+  "Module.Swarm.label.current_mode": "Текущий режим: %s",
+  "Module.Swarm.label.current_mode.Queen": "Королева",
+  "Module.Swarm.label.current_mode.Slave": "Раб",
+  "Module.Swarm.label.current_mode.Idle": "В ожидании",
+  "Module.Swarm.message.closing_all": "Закрытие всех подключений.",
+  "Module.Swarm.message.mine_start": "Начало работы добывания.",
+  "Module.Swarm.message.not_found": "Сервер не найден. Попытка переподключиться через 5 секунд.",
+  "Module.Swarm.message.new_socket": "Новый сокет",
+  "Module.Swarm.message.new_command": "Новая команда: %s",
+  "Module.Swarm.message.error_in_connection": "Ошибка подключения к серверу.",
+  "Module.Swarm.message.new_server": "Новый сервер открыт по порту %d",
+  "Module.Swarm.message.listening": "Прослушивание входящих соединений.",
+  "Module.Swarm.message.new_slave": "Подключен новый Раб.",
+  "Module.Swarm.message.server_closed": "Сервер закрыт.",
+  "Module.Swarm.message.error": "Ошибка в подсистеме.",
+  "Module.Swarm.guide.title": "Помощь по Swarm",
+  "Module.Swarm.guide.button.introduction": "(1) Введение",
+  "Module.Swarm.guide.button.configuration": "(2) Конфигурация",
+  "Module.Swarm.guide.button.queen": "(3) Королева",
+  "Module.Swarm.guide.button.slave": "(4) Раб",
+  "Module.Swarm.guide.introduction.line1": "Добро пожаловать в Swarm (Рой)!",
+  "Module.Swarm.guide.introduction.line2": "По своей сути Swarm — это командный туннель, который позволяет управляющей учетной записи, называемой Королевой, управлять другими учетными записями с помощью фонового сервера.",
+  "Module.Swarm.guide.introduction.line3": "По умолчанию Swarm настроен для работы с несколькими экземплярами Minecraft, запущенными на одном компьютере, однако с некоторой дополнительной конфигурацией он будет работать в вашей локальной сети или даже в Интернете.",
+  "Module.Swarm.guide.introduction.line4": "Префикс всех команд Swarm: «%s»",
+  "Module.Swarm.guide.configuration.line1": "Подключения на одном устройстве:",
+  "Module.Swarm.guide.configuration.line2": " Если все учетные записи Королевы и Рабов работают на одном компьютере, нет необходимости что-либо менять здесь, если настроенный порт не используется ни для чего другого.",
+  "Module.Swarm.guide.configuration.line3": "Подключения в локальной сети:",
+  "Module.Swarm.guide.configuration.line4": " Если учетные записи Королевы и Рабов находятся не на одном компьютере, но в одной сети WiFi/Ethernet, вам нужно будет изменить IP-адрес на каждом Раб-клиенте на IPv4/6-адрес компьютера, на котором запущен экземпляр Королевы. Чтобы узнать свой IPv4-адрес в Windows, откройте CMD и введите команду «ipconfig».",
+  "Module.Swarm.guide.configuration.line5": "Подключения по Интернету:",
+  "Module.Swarm.guide.configuration.line6": " Если вы пытаетесь установить соединение через Интернет, то на учетной записи Королевы потребуется переадресация порта. Я не буду рассказывать о том, как делать проброс портов, поищите сами. Вам потребуется доступ администратора к вашему роутеру. Направляйте весь трафик через настроенный порт на IPv4-адрес компьютера, на котором размещена учетная запись Королевы. После того, как вы успешно перенаправили порт на экземпляре Королевы, измените IP-адрес учетных записей Рабов на общедоступный IP-адрес учетной записи королевы. Чтобы узнать свой публичный IP-адрес, просто погуглите «какой у меня IP». НИКОГДА НЕ ДЕЛИТЕСЬ ВАШИМ ПУБЛИЧНЫМ IP С ТЕМИ, КОМУ НЕ ДОВЕРЯЕТЕ. Предполагая, что вы все настроили правильно, вы можете продолжить как обычно.",
+  "Module.Swarm.guide.queen.line1": "Настройка Королевы:",
+  "Module.Swarm.guide.queen.line2": " Выберите экземпляр Minecraft, который станет вашей учетной записью Королевы.",
+  "Module.Swarm.guide.queen.line3": " Убедитесь, что модуль Swarm включен.",
+  "Module.Swarm.guide.queen.line4": " Затем нажмите кнопку «Запустить сервер (Q)» в меню конфигурации Swarm.",
+  "Module.Swarm.guide.queen.line5": " Вы также можете ввести команду `%s`.",
+  "Module.Swarm.guide.slave.line1": "Подключение ваших Рабов:",
+  "Module.Swarm.guide.slave.line2": " Для учетной записи Рабов, если вы правильно настроили IP-адрес и порт на шаге 1, просто нажмите кнопку с надписью «Подключить (S)» или введите команду «%s»",
 
 
   "Module.TotemPopNotifier.description": "Отправляет сообщение в чат, когда игрок либо выскакивает тотем, либо умирает.",
@@ -845,7 +955,10 @@
   "Module.TotemPopNotifier.setting.ignoreFriend.description": "Не реагирует на тотемы у вашего друга.",
   "Module.TotemPopNotifier.setting.popMessage.displayName": "Сообщение вытаскивания",
   "Module.TotemPopNotifier.setting.popMessage.description": "Уведомление в чат, когда игрок вытаскивает тотем.",
-  "Module.TotemPopNotifier.setting.deathMessage.displayName": "Сообщение смерти","Module.TotemPopNotifier.setting.deathMessage.description": "Уведомление в чат, когда игрок умирает.",
+  "Module.TotemPopNotifier.setting.popMessage.defaultValue": "EZ pops. {player} только что достал {pops} {totems}. Meteor on Crack!",
+  "Module.TotemPopNotifier.setting.deathMessage.displayName": "Сообщение смерти",
+  "Module.TotemPopNotifier.setting.deathMessage.description": "Уведомление в чат, когда игрок умирает.",
+  "Module.TotemPopNotifier.setting.deathMessage.defaultValue": "EZZZ. {player} только что умер после вытаскивания {pops} {totems}. Meteor on Crack!",
 
 
   "Module.Trigger.description": "Автоматически атакует, когда вы смотрите на сущности.",
@@ -854,12 +967,46 @@
 
 
   "Module.Announcer.description": "Объявляет указанные действия прямо в чат.",
-  "Module.Announcer.setting.msg.displayName": "Сообщение о открытии контейнера",
-  "Module.Announcer.setting.msg.description": "Отправляет сообщение в чат при открытии контейнеров.",
-  "Module.Announcer.setting.delay.displayName": "Задержка для движения",
-  "Module.Announcer.setting.delay.description": "Величина задержки между сообщениями о передвежении в секундах.",
-  "Module.Announcer.setting.minDist.displayName": "Мин. расстояние движения",
-  "Module.Announcer.setting.minDist.description": "Минимальное расстояние, на котором сообщение о движении может быть отправлено в чат.",
+    "Module.Announcer.group.Moving": "Перемещение",
+      "Module.Announcer.setting.moving-enabled.displayName": "Перемещение включено",
+      "Module.Announcer.setting.moving-enabled.description": "Отправляет сообщение о том, насколько вы переместились.",
+      "Module.Announcer.setting.moving-msg.displayName": "Сообщение перемещения",
+      "Module.Announcer.setting.moving-msg.description": "Текст сообщения о перемещении на определенное количество блоков.",
+      "Module.Announcer.setting.moving-msg.defaultValue": "Я только что прошёл {dist} блоков!",
+      "Module.Announcer.setting.moving-delay.displayName": "Задержка для движения",
+      "Module.Announcer.setting.moving-delay.description": "Величина задержки между сообщениями о передвежении в секундах.",
+      "Module.Announcer.setting.moving-min-dist.displayName": "Мин. расстояние движения",
+      "Module.Announcer.setting.moving-min-dist.description": "Минимальное расстояние, на котором сообщение о движении может быть отправлено в чат.",
+    "Module.Announcer.group.Mining": "Копание",
+      "Module.Announcer.setting.mining-enabled.displayName": "Копание включено",
+      "Module.Announcer.setting.mining-enabled.description": "Отправляет сообщение о том, сколько блоков вы добыли.",
+      "Module.Announcer.setting.mining-msg.displayName": "Сообщение копания",
+      "Module.Announcer.setting.mining-msg.description": "Текст сообщения о добычи блоков.",
+      "Module.Announcer.setting.mining-msg.defaultValue": "Я только что добыл {count} {block}!",
+    "Module.Announcer.group.Placing": "Размещение",
+      "Module.Announcer.setting.placing-enabled.displayName": "Размещение включено",
+      "Module.Announcer.setting.placing-enabled.description": "Отправляет сообщение о том, сколько блоков вы разместили.",
+      "Module.Announcer.setting.placing-msg.displayName": "Сообщение размещения",
+      "Module.Announcer.setting.placing-msg.description": "Текст сообщения о размещении блоков.",
+      "Module.Announcer.setting.placing-msg.defaultValue": "Я только что разместил {count} {block}!",
+    "Module.Announcer.group.DropItems": "Выброс предметов",
+      "Module.Announcer.setting.drop-items-enabled.displayName": "Выброс предметов включено",
+      "Module.Announcer.setting.drop-items-enabled.description": "Отправляет сообщение о том, сколько предметов вы выбросили.",
+      "Module.Announcer.setting.drop-items-msg.displayName": "Сообщение выброса",
+      "Module.Announcer.setting.drop-items-msg.description": "Текст сообщения о выбросе предметов.",
+      "Module.Announcer.setting.drop-items-msg.defaultValue": "Я только что выбросил {count} {item}!",
+    "Module.Announcer.group.PickItems": "Поднятие предметов",
+      "Module.Announcer.setting.pick-items-enabled.displayName": "Поднятие предметов включено",
+      "Module.Announcer.setting.pick-items-enabled.description": "Отправляет сообщение о том, сколько предметов вы подняли с земли.",
+      "Module.Announcer.setting.pick-items-msg.displayName": "Сообщение поднятия",
+      "Module.Announcer.setting.pick-items-msg.description": "Текст сообщения о поднятии предметов с земли.",
+      "Module.Announcer.setting.pick-items-msg.defaultValue": "Я только что поднял {count} {item}!",
+    "Module.Announcer.group.OpenContainer": "Открытие контейнера",
+      "Module.Announcer.setting.open-container-enabled.displayName": "Открытие контейнера включено",
+      "Module.Announcer.setting.open-container-enabled.description": "Отправляет сообщение о том, что вы открываете контейнер.",
+      "Module.Announcer.setting.open-container-msg.displayName": "Сообщение о открытии контейнера",
+      "Module.Announcer.setting.open-container-msg.description": "Отправляет сообщение в чат при открытии контейнеров.",
+      "Module.Announcer.setting.open-container-msg.defaultValue": "Я только что открыл {name}!",
 
 
   "Module.AntiPacketKick.description": "Пытается защитить вас от кика по причине больших пакетов.",
@@ -881,8 +1028,12 @@
   "Module.AutoBrewer.setting.potion.description": "Тип зелья для варки.",
   "Module.AutoBrewer.setting.modifier.displayName": "Модификатор",
   "Module.AutoBrewer.setting.modifier.description": "Модификатор указанного зелья.",
+  "Module.AutoBrewer.enum.Modifier.None": "Нет",
+  "Module.AutoBrewer.enum.Modifier.Splash": "Взрывное",
+  "Module.AutoBrewer.enum.Modifier.Lingering": "Туманное",
 
 
+  // not used
   "Module.AutoMountBypassDupe.description": "Does the mount bypass dupe for you. Disable with esc.",
   "Module.AutoMountBypassDupe.setting.shulkersOnly.displayName": "Shulker Only",
   "Module.AutoMountBypassDupe.setting.shulkersOnly.description": "Only moves shulker boxes into the inventory",
@@ -984,9 +1135,11 @@
   "Module.BookBot.setting.noOfPages.description": "Количество страниц, которое нужно написать в книгу.",
   "Module.BookBot.setting.noOfBooks.displayName": "Количество книг",
   "Module.BookBot.setting.noOfBooks.description": "Количество книг, которые нужно сделать (или до тех пор, пока файл не закончится).",
-  "Module.BookBot.setting.delay.displayName": "Задержка","Module.BookBot.setting.delay.description": "Величина задержки между написанием книг в миллисекундах.",
+  "Module.BookBot.setting.delay.displayName": "Задержка",
+  "Module.BookBot.setting.delay.description": "Величина задержки между написанием книг в миллисекундах.",
 
 
+  // not used
   "Module.BypassDeathScreen.description": "Позволяет шпионить за людьми после смерти.",
 
 
@@ -1006,7 +1159,7 @@
   "Module.EChestFarmer.setting.disableOnAmount.description": "Следует ли отключать модуль, когда вы наберете желаемое количество обсидиана.",
 
 
-  "Module.EntityLogger.description": "Отправляет уведомление в чат на стороне клиента, если выбранные сущности появляются в вашем диапазоне отрисовки.",
+  "Module.EntityLogger.description": "Отправляет уведомление в чат на стороне клиента, если выбранные сущности появляются в вашем радиусе отрисовки.",
   "Module.EntityLogger.setting.entities.displayName": "Сущности",
   "Module.EntityLogger.setting.entities.description": "Выбранные сущности для поиска.",
   "Module.EntityLogger.setting.playerNames.displayName": "Имена игроков",
@@ -1026,6 +1179,9 @@
   "Module.LiquidFiller.setting.whitelist.description": "Блоки, которые можно будет использовать для заполнения жидкостей.",
   "Module.LiquidFiller.setting.rotate.displayName": "Поворот",
   "Module.LiquidFiller.setting.rotate.description": "Автоматически поворачивается лицом к блоку для заполнения.",
+  "Module.LiquidFiller.enum.PlaceIn.Lava": "Лава",
+  "Module.LiquidFiller.enum.PlaceIn.Water": "Вода",
+  "Module.LiquidFiller.enum.PlaceIn.Both": "И то, и другое",
 
 
   "Module.MessageAura.description": "Отправляет указанное сообщение любому игроку, который входит в диапазон вашей отрисовки.",
@@ -1055,6 +1211,12 @@
   "Module.Nuker.setting.noParticles.description": "Отключает все частицы разрушения блоков.",
   "Module.Nuker.setting.rotate.displayName": "Поворот",
   "Module.Nuker.setting.rotate.description": "Автоматически поворачивается к добываемым блокам.",
+  "Module.Nuker.enum.Mode.All": "Все",
+  "Module.Nuker.enum.Mode.Flatten": "Выравнивание",
+  "Module.Nuker.enum.Mode.Smash": "Smash",
+  "Module.Nuker.enum.SortMode.None": "Нет",
+  "Module.Nuker.enum.SortMode.Closest": "Ближайший",
+  "Module.Nuker.enum.SortMode.Furthest": "Самый дальний",
 
 
   "Module.OffhandCrash.description": "Эксплойт, который может крашнуть других игроков, переключаясь между основной и доп. рукой.",
@@ -1067,9 +1229,9 @@
 
 
   "Module.PacketCanceller.description": "Позволяет отменить определенные пакеты.",
-  "Module.PacketCanceller.setting.s2cPackets.displayName": "S2C Packets",
+  "Module.PacketCanceller.setting.s2cPackets.displayName": "S2C пакеты",
   "Module.PacketCanceller.setting.s2cPackets.description": "Пакеты от сервера к клиенту для отмены.",
-  "Module.PacketCanceller.setting.c2sPackets.displayName": "C2S Packets",
+  "Module.PacketCanceller.setting.c2sPackets.displayName": "C2S пакеты",
   "Module.PacketCanceller.setting.c2sPackets.description": "Пакеты от клиента к серверу для отмены.",
 
 
@@ -1096,6 +1258,9 @@
   "Module.StashFinder.setting.sendNotifications.description": "Отправляет уведомление Minecraft при обнаружении новых тайников.",
   "Module.StashFinder.setting.mode.displayName": "Режим уведомления",
   "Module.StashFinder.setting.mode.description": "Режим, используемый для уведомлений.",
+  "Module.StashFinder.enum.Mode.Chat": "Чат",
+  "Module.StashFinder.enum.Mode.Toast": "Тост",
+  "Module.StashFinder.button.Clear": "Очистить",
 
 
   "Module.VisualRange.description": "Уведомляет вас, когда игрок входит/выходит из вашего диапазона отрисовки.",
@@ -1105,8 +1270,10 @@
   "Module.VisualRange.setting.ignoreFakes.description": "Игнорирует фальшивих игроков.",
   "Module.VisualRange.setting.enterMessage.displayName": "Сообщение входа",
   "Module.VisualRange.setting.enterMessage.description": "Сообщение, когда игрок входит в вашу зону видимости.",
+  "Module.VisualRange.setting.enterMessage.defaultValue": "{player} вошел в ваш радиус отрисовки.",
   "Module.VisualRange.setting.leaveMessage.displayName": "Сообщение выхода",
   "Module.VisualRange.setting.leaveMessage.description": "Сообщение, когда игрок покидает вашу зону видимости.",
+  "Module.VisualRange.setting.leaveMessage.defaultValue": "{player} покинул ваш радиус отрисовки.",
 
 
   "Module.AirJump.description": "Позволяет Вам прыгать в воздухе.",
@@ -1141,6 +1308,11 @@
   "Module.AutoJump.setting.jumpIf.description": "Условие прыжков.",
   "Module.AutoJump.setting.velocityHeight.displayName": "Высота скоростного",
   "Module.AutoJump.setting.velocityHeight.description": "Расстояние, на которое вас перемещает скоростной режим.",
+  "Module.AutoJump.enum.Mode.Jump": "Прыжок",
+  "Module.AutoJump.enum.Mode.Velocity": "Ускорение",
+  "Module.AutoJump.enum.JumpWhen.Sprinting": "Спринт",
+  "Module.AutoJump.enum.JumpWhen.Walking": "Ходьба",
+  "Module.AutoJump.enum.JumpWhen.Always": "Всегда",
 
 
   "Module.AutoSprint.description": "Автоматический спринт.",
@@ -1152,7 +1324,12 @@
   "Module.AutoWalk.setting.mode.displayName": "Режим",
   "Module.AutoWalk.setting.mode.description": "Режим ходьбы.",
   "Module.AutoWalk.setting.direction.displayName": "Направление простого",
-  "Module.AutoWalk.setting.direction.description": "Направление ходьбы в простом режиме.",
+  "Module.AutoWalk.enum.Mode.Simple": "Простой",
+  "Module.AutoWalk.enum.Mode.Smart": "Умный",
+  "Module.AutoWalk.enum.Direction.Forwards": "Вперёд",
+  "Module.AutoWalk.enum.Direction.Backwards": "Назад",
+  "Module.AutoWalk.enum.Direction.Left": "Влево",
+  "Module.AutoWalk.enum.Direction.Right": "Вправо",
 
 
   "Module.Blink.description": "Позволяет вам будто телепортироваться благодаря откладыванию обновлений движения.",
@@ -1211,6 +1388,11 @@
       "Module.ElytraPlus.setting.autopilotEnabled.description": "Автоматически летит вперед, сохраняя минимальную высоту.",
       "Module.ElytraPlus.setting.autopilotMinimumHeight.displayName": "Минимальная высота",
       "Module.ElytraPlus.setting.autopilotMinimumHeight.description": "Минимальная высота для автопилота.",
+  "Module.ElytraPlus.enum.Mode.Normal": "Нормальный",
+  "Module.ElytraPlus.enum.Mode.Packet": "Пакетный",
+  "Module.ElytraPlus.enum.ChestSwapMode.Always": "Всегда",
+  "Module.ElytraPlus.enum.ChestSwapMode.Never": "Никогда",
+  "Module.ElytraPlus.enum.ChestSwapMode.WaitForGround": "Wait For Ground",
 
 
   "Module.EntityControl.description": "Позволяет управлять управляемыми сущностями без наличия седла.",
@@ -1237,6 +1419,8 @@
   "Module.Flight.setting.mode.description": "Режим для Flight.",
   "Module.Flight.setting.speed.displayName": "Скорость",
   "Module.Flight.setting.speed.description": "Ваша скорость при полете.",
+  "Module.Flight.enum.Mode.Abilities": "Способность",
+  "Module.Flight.enum.Mode.Velocity": "Ускорение",
 
 
   "Module.GUIMove.description": "Позволяет выполнять различные действия при нахождении в графическом интерфейсе пользователя.",
@@ -1252,6 +1436,9 @@
   "Module.GUIMove.setting.arrowsRotate.description": "Позволяет использовать клавиши стрелок для вращения в графическом интерфейсе.",
   "Module.GUIMove.setting.rotateSpeed.displayName": "Скорость вращения",
   "Module.GUIMove.setting.rotateSpeed.description": "Скорость вращения в графическом интерфейсе с помощью стрелок.",
+  "Module.GUIMove.enum.Screens.GUI": "GUI",
+  "Module.GUIMove.enum.Screens.Inventory": "Инвентарь",
+  "Module.GUIMove.enum.Screens.Both": "И то, и другое",
 
 
   "Module.HighJump.description": "Позволяет Вам прыгать выше обычного.",
@@ -1295,6 +1482,10 @@
   "Module.NoFall.setting.height.description": "Насколько высоко вы должны быть от земли, чтобы модуль сработал.",
   "Module.NoFall.setting.placeMode.displayName": "Режим размещения",
   "Module.NoFall.setting.placeMode.description": "Если Вы в Режиме размещения, размешать блок перед тем, как вы получите смертельный урон или любой.",
+  "Module.NoFall.enum.Mode.Packet": "Пакетный",
+  "Module.NoFall.enum.Mode.AirPlace": "Размещение в воздухе",
+  "Module.NoFall.enum.PlaceMode.BeforeDeath": "Перед смертью",
+  "Module.NoFall.enum.PlaceMode.BeforeDamage": "Перед уроном",
 
 
   "Module.NoSlow.description": "Позволяет нормально двигаться при использовании вещей, которые замедляют вас.",
@@ -1322,7 +1513,7 @@
 
 
   "Module.Scaffold.description": "Автоматически размещает блоки под вами.",
-  "Module.Scaffold.setting.safeWalk.displayName": "Safe Walk",
+  "Module.Scaffold.setting.safeWalk.displayName": "Безопасная ходьба",
   "Module.Scaffold.setting.safeWalk.description": "Следует ли включать Safe walk при использовании лесов.",
   "Module.Scaffold.setting.fastTower.displayName": "Быстрая башня",
   "Module.Scaffold.setting.fastTower.description": "Использовать ли Scaffold для быстрого создания башни вверх.",
@@ -1358,6 +1549,11 @@
       "Module.Speed.setting.velocityHeight.description": "Расстояние, на которое вас перемещает скоростной режим.",
       "Module.Speed.setting.jumpIf.displayName": "Условия прыжка",
       "Module.Speed.setting.jumpIf.description": "Прыгать если.",
+  "Module.Speed.enum.Mode.Jump": "Прыжок",
+  "Module.Speed.enum.Mode.Velocity": "Ускорение",
+  "Module.Speed.enum.JumpIf.Sprinting": "Спринт",
+  "Module.Speed.enum.JumpIf.Walking": "Ходьба",
+  "Module.Speed.enum.JumpIf.Always": "Всегда",
 
 
   "Module.Spider.description": "Позволяет лазать по стенам как паук.",
@@ -1368,12 +1564,15 @@
   "Module.Step.description": "Позволяет нормально подниматься по полным блокам.",
   "Module.Step.setting.height.displayName": "Высота",
   "Module.Step.setting.height.description": "Высота шага.",
-  "Module.Step.setting.activeWhen.displayName": "Условия",
-  "Module.Step.setting.activeWhen.description": "Step активен, если вы соответствуете этим требованиям.",
+  "Module.Step.setting.activeWhen.displayName": "Условие",
+  "Module.Step.setting.activeWhen.description": "Step активен, если вы соответствуете этому требованию.",
   "Module.Step.setting.safeStep.displayName": "Безопасный шаг",
   "Module.Step.setting.safeStep.description": "Не позволяет вам выйти из ямы, если у вас мало здоровья или поблизости есть кристалл.",
   "Module.Step.setting.stepHealth.displayName": "Мин. здоровье",
   "Module.Step.setting.stepHealth.description": "Здоровье, при котором вы перестаете подниматься.",
+  "Module.Step.enum.ActiveWhen.Always": "Всегда",
+  "Module.Step.enum.ActiveWhen.Sneaking": "Крадётесь",
+  "Module.Step.enum.ActiveWhen.NotSneaking": "Не крадётесь",
 
 
   "Module.Timer.description": "Изменяет скорость всего в вашей игре.",
@@ -1400,6 +1599,8 @@
       "Module.AirPlace.setting.sideColor.description": "Цвет сторон отрисовываемых блоков.",
       "Module.AirPlace.setting.lineColor.displayName": "Цвет линии",
       "Module.AirPlace.setting.lineColor.description": "Цвет линий отрисовываемых блоков.",
+  "Module.AirPlace.enum.Place.OnClick": "По клику",
+  "Module.AirPlace.enum.Place.Always": "Всегда",
 
 
   "Module.AntiAFK.description": "Выполняет различные действия, чтобы Вас не кикнули по причинам AFK.",
@@ -1427,6 +1628,9 @@
       "Module.AntiAFK.setting.delay.description": "Задержка между указанными сообщениями в тиках.",
       "Module.AntiAFK.setting.randomMessage.displayName": "Случайные",
       "Module.AntiAFK.setting.randomMessage.description": "Выбирает случайное сообщение из вашего списка сообщений.",
+  "Module.AntiAFK.MessageList.title": "Message List",
+  "Module.AntiAFK.enum.SpinMode.Server": "Сервер",
+  "Module.AntiAFK.enum.SpinMode.Client": "Клиент",
 
 
   "Module.AntiCactus.description": "Не дает вам получить урон от кактусов.",
@@ -1502,6 +1706,9 @@
   "Module.AutoGap.setting.preferAutoEat.description": "В случае конфликта следует ли предпочесть Auto Eat или Auto Gap.",
   "Module.AutoGap.setting.disableAuras.displayName": "Отключить ауры",
   "Module.AutoGap.setting.disableAuras.description": "Приостановить все -Aura модули при использовании этого модуля.",
+  "Module.AutoGap.enum.Mode.FireResistance": "Огнестойкость",
+  "Module.AutoGap.enum.Mode.Regeneration": "Регенерация",
+  "Module.AutoGap.enum.Mode.Constant": "Постоянный",
 
 
   "Module.AutoMend.description": "Автоматически заменяет экипированные предметы и предметы в Вашей доп. руке на другие с Починкой, когда те полностью отремонтированы.",
@@ -1606,6 +1813,14 @@
   "Module.DeathPosition.description": "Отправляет Вам координаты Вашей последней смерти.",
   "Module.DeathPosition.setting.createWaypoint.displayName": "Создать точку",
   "Module.DeathPosition.setting.createWaypoint.description": "Создает путевую точку, когда вы умираете.",
+  "Module.DeathPosition.latest_death": "Latest death: %.1f, %.1f, %.1f",
+  "Module.DeathPosition.no_last_death_found": "No latest death found.",
+  "Module.DeathPosition.no_last_death": "No latest death.",
+  "Module.DeathPosition.message.died_at": "Died at (highlight)%.0f(default), (highlight)%.0f(default), (highlight)%.0f (default)on (highlight)%s(default).",
+  "Module.DeathPosition.message.no_last_death_found": "No latest death found.",
+  "Module.DeathPosition.waypoint_text": "Death %s",
+  "Module.DeathPosition.button.Path": "Path",
+  "Module.DeathPosition.button.Clear": "Clear",
 
 
   "Module.EndermanLook.description": "Либо помогает смотреть на всех эндерменов, либо препятствует Вам смотреть на них.",
@@ -1615,7 +1830,7 @@
   "Module.EndermanLook.enum.Mode.LookAway": "Избегать",
 
 
-  "Module.EXPThrower.description": "Автоматически бросает бутылки с опытом в Вашей панели быстрого доступа.",
+  "Module.EXPThrower.description": "Автоматически бросает пузырьки опыта в Вашей панели быстрого доступа.",
   "Module.EXPThrower.setting.lookDown.displayName": "Смотреть вниз",
   "Module.EXPThrower.setting.lookDown.description": "Заставляет Вас поворачиваться вниз при бросании бутылок.",
   "Module.EXPThrower.setting.autoToggle.displayName": "Автовыключение",
@@ -1635,13 +1850,19 @@
   "Module.FakePlayer.setting.idInNametag.description": "Отображать ID фальшивого игрока в его имени.",
   "Module.FakePlayer.setting.chatInfo.displayName": "Инфо в чате",
   "Module.FakePlayer.setting.chatInfo.description": "Сообщает Вам, когда фальшивый игрок был создан или удален.",
+  "Module.FakePlayer.button.Spawn": "Создать",
+  "Module.FakePlayer.button.Clear": "Очистить",
+  "Module.FakePlayer.message.spawned": "Создан фальшивый игрок",
+  "Module.FakePlayer.message.no_to_remove": "Нет активных фальшивый игроков для удаления!",
+  "Module.FakePlayer.message.removed": "Удален фальшивий игроков с ID (highlight)%d",
+  "Module.FakePlayer.message.removed_all": "Удалены все фальшивые игроки.",
 
 
   "Module.FastUse.description": "Позволяет использовать предметы очень быстро.",
   "Module.FastUse.setting.mode.displayName": "Режим",
   "Module.FastUse.setting.mode.description": "Какие предметы использовать быстро.",
   "Module.FastUse.setting.exp.displayName": "Опыт",
-  "Module.FastUse.setting.exp.description": "Быстро бросает бутылки опыта, если установлен режим Некоторые.",
+  "Module.FastUse.setting.exp.description": "Быстро бросает пузырьки опыта, если установлен режим Некоторые.",
   "Module.FastUse.setting.blocks.displayName": "Блоки",
   "Module.FastUse.setting.blocks.description": "Быстро ставит блоки, если установлен режим Некоторые.",
   "Module.FastUse.enum.Mode.All": "Все",
@@ -1669,14 +1890,15 @@
 
 
   "Module.MiddleClickExtra.description": "Позволяет использовать предметы при нажатии средней кнопки мыши. Работает так же, как и Middle Click Friend.",
-  "Module.MiddleClickExtra.Mode.Pearl": "Эндер-жемчуг",
-  "Module.MiddleClickExtra.setting.mode.description": "Какой элемент использовать при нажатии средней кнопкой мыши.",
-  "Module.MiddleClickExtra.Mode.Bow": "Лук",
-  "Module.MiddleClickExtra.setting.notify.description": "Уведомляет Вас, когда у Вас нет указанного элемента на панели быстрого доступа.",
-  "Module.MiddleClickExtra.Mode.Gap": "Золотое яблоко",
   "Module.MiddleClickExtra.setting.mode.displayName": "Режим",
-  "Module.MiddleClickExtra.Mode.EGap": "Зачарованное золотое яблоко",
+  "Module.MiddleClickExtra.setting.mode.description": "Какой элемент использовать при нажатии средней кнопкой мыши.",
   "Module.MiddleClickExtra.setting.notify.displayName": "Уведомлять",
+  "Module.MiddleClickExtra.setting.notify.description": "Уведомляет Вас, когда у Вас нет указанного элемента на панели быстрого доступа.",
+  "Module.MiddleClickExtra.Mode.Pearl": "Эндер-жемчуг",
+  "Module.MiddleClickExtra.Mode.Bow": "Лук",
+  "Module.MiddleClickExtra.Mode.Gap": "Золотое яблоко",
+  "Module.MiddleClickExtra.Mode.EGap": "Зачарованное золотое яблоко",
+  "Module.MiddleClickExtra.Mode.Rod": "Удочка",
 
 
   "Module.MountBypass.description": "Позволяет обходить плагин IllegalStacks и ставить сундуки на сущности.",
@@ -1977,6 +2199,8 @@
   "Module.ItemByteSize.setting.useKbIfBigEnoughEnabled.description": "Использовать КБайты вместо байтов, если размер вашего элемента больше или равен 1 КБ.",
   "Module.ItemByteSize.setting.mode.displayName": "Режим",
   "Module.ItemByteSize.setting.mode.description": "Использует стандартный режим (1 КБ = 1000 байт) ИЛИ правильный режим (1 Кбайт = 1024 байт).",
+  "Module.ItemByteSize.enum.Mode.Standard": "Стандартный",
+  "Module.ItemByteSize.enum.Mode.True": "Истинный",
 
 
   "Module.ItemPhysics.description": "Применяет физику к предметам на земле.",
@@ -2220,7 +2444,7 @@
   // -- HUD
   "Module.HUD.description": "Внутреигровой интерфейс",
       "Module.HUD.setting.scale.displayName": "Масштаб",
-      "Module.HUD.setting.scale.description": "Масштаб HUD.",
+      "Module.HUD.setting.scale.description": "Масштаб HUD'а (внутреигрового интерфейса).",
       "Module.HUD.setting.primaryColor.displayName": "Основной цвет",
       "Module.HUD.setting.primaryColor.description": "Основной цвет текста.",
       "Module.HUD.setting.secondaryColor.displayName": "Дополнительный цвет",
@@ -2232,13 +2456,13 @@
       "Module.HUD.setting.activeModulesSort.description": "Как сортировать активные модули.",
       "Module.HUD.setting.activeInfo.displayName": "Дополнительная информация",
       "Module.HUD.setting.activeInfo.description": "Показывает дополнительную информацию о модуле рядом с именем в списке активных модулей.",
-      "Module.HUD.setting.activeModulesColorMode.displayName": "Цветовой режим активных модулей",
+      "Module.HUD.setting.activeModulesColorMode.displayName": "Цветовой режим",
       "Module.HUD.setting.activeModulesColorMode.description": "Какой цвет использовать для активных модулей.",
-      "Module.HUD.setting.activeModulesFlatColor.displayName": "Однотонный цвет активных модулей",
+      "Module.HUD.setting.activeModulesFlatColor.displayName": "Однотонный цвет",
       "Module.HUD.setting.activeModulesFlatColor.description": "Цвет при цветовом режиме Однотонный цвет.",
-      "Module.HUD.setting.activeModulesRainbowSpeed.displayName": "Активные модули - Скорость радуги",
+      "Module.HUD.setting.activeModulesRainbowSpeed.displayName": "Скорость радуги",
       "Module.HUD.setting.activeModulesRainbowSpeed.description": "Скорость радуги при цветовом режиме Радуга.",
-      "Module.HUD.setting.activeModulesRainbowSpread.displayName": "Активные модули - Частота радуги",
+      "Module.HUD.setting.activeModulesRainbowSpread.displayName": "Частота радуги",
       "Module.HUD.setting.activeModulesRainbowSpread.description": "Частота радуги при цветовом режиме Радуга.",
     "Module.HUD.group.sgInvViewer": "Просмотрщик инвентаря",
       "Module.HUD.setting.invViewerBackground.displayName": "Фон просмотрщика инвентаря",
@@ -2273,7 +2497,7 @@
       "Module.HUD.setting.armorScale.description": "Масштаб брони.",
     "Module.HUD.group.sgModuleInfo": "Информация о модулях",
       "Module.HUD.setting.moduleInfoModules.displayName": "Модуль информации о модулях",
-      "Module.HUD.setting.moduleInfoModules.description": "Which modules to display.",
+      "Module.HUD.setting.moduleInfoModules.description": "Какие модули отображать.",
       "Module.HUD.setting.moduleInfo.displayName": "Дополнительная информация",
       "Module.HUD.setting.moduleInfo.description": "Показывает дополнительную информацию о модуле рядом с именем в списке информации о модуле.",
       "Module.HUD.setting.moduleInfoOnColor.displayName": "Модуль информации - Цвет вкл.",
@@ -2285,12 +2509,12 @@
       "Module.HUD.setting.compassMode.description": "Режим компаса.",
       "Module.HUD.setting.compassScale.displayName": "Масштаб компаса",
       "Module.HUD.setting.compassScale.description": "Масштаб компаса.",
-  "Module.HUD.buttons.Reset": "Сброс",
-  "Module.HUD.buttons.Reset.description": "Сбрасывает позиции (используйте это после изменения масштаба).",
-  "Module.HUD.buttons.Editor": "Редактор",
-  "Module.HUD.buttons.Editor.description": "Щелкните элементы Правой Кнопкой Мыши для переключения.",
+  "Module.HUD.button.Reset": "Сброс",
+  "Module.HUD.button.Reset.description": "Сбрасывает позиции (используйте это после изменения масштаба).",
+  "Module.HUD.button.Editor": "Редактор",
+  "Module.HUD.button.Editor.description": "Щелкните элементы Правой Кнопкой Мыши для переключения.",
   "Module.HUD.CompassHud.enum.Mode.Axis": "Оси",
-  "Module.HUD.CompassHud.enum.Mode.Pole": "Полюс",
+  "Module.HUD.CompassHud.enum.Mode.Pole": "Полюса",
 
 
   "_": "just last entry because comma"

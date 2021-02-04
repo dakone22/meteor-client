@@ -51,6 +51,10 @@ public class ElytraPlus extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.ElytraPlus.setting.mode.displayName"))
             .description(I18n.translate("Module.ElytraPlus.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.ElytraPlus.enum.Mode.Normal"),
+                    I18n.translate("Module.ElytraPlus.enum.Mode.Packet"),
+            })
             .defaultValue(Mode.Normal)
             .build()
     );
@@ -129,6 +133,11 @@ public class ElytraPlus extends Module {
             .name("chest-swap")
             .displayName(I18n.translate("Module.ElytraPlus.setting.chestSwap.displayName"))
             .description(I18n.translate("Module.ElytraPlus.setting.chestSwap.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.ElytraPlus.enum.ChestSwapMode.Always"),
+                    I18n.translate("Module.ElytraPlus.enum.ChestSwapMode.Never"),
+                    I18n.translate("Module.ElytraPlus.enum.ChestSwapMode.WaitForGround"),
+            })
             .defaultValue(ChestSwapMode.Never)
             .build()
     );

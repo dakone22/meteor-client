@@ -52,6 +52,10 @@ public class Auto32K extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.Auto32K.setting.mode.displayName"))
             .description(I18n.translate("Module.Auto32K.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Auto32K.enum.Mode.Hopper"),
+                    I18n.translate("Module.Auto32K.enum.Mode.Dispenser"),
+            })
             .defaultValue(Mode.Dispenser)
             .build()
     );

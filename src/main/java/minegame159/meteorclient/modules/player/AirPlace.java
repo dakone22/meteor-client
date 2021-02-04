@@ -38,6 +38,10 @@ public class AirPlace extends Module {
             .name("place-when")
             .displayName(I18n.translate("Module.AirPlace.setting.placeWhen.displayName"))
             .description(I18n.translate("Module.AirPlace.setting.placeWhen.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AirPlace.enum.Place.OnClick"),
+                    I18n.translate("Module.AirPlace.enum.Place.Always"),
+            })
             .defaultValue(Place.OnClick)
             .build()
     );

@@ -40,6 +40,10 @@ public class NoFall extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.NoFall.setting.mode.displayName"))
             .description(I18n.translate("Module.NoFall.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.NoFall.enum.Mode.Packet"),
+                    I18n.translate("Module.NoFall.enum.Mode.AirPlace"),
+            })
             .defaultValue(Mode.Packet)
             .build()
     );
@@ -66,6 +70,10 @@ public class NoFall extends Module {
             .name("place-mode")
             .displayName(I18n.translate("Module.NoFall.setting.placeMode.displayName"))
             .description(I18n.translate("Module.NoFall.setting.placeMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.NoFall.enum.PlaceMode.BeforeDeath"),
+                    I18n.translate("Module.NoFall.enum.PlaceMode.BeforeDamage"),
+            })
             .defaultValue(PlaceMode.BeforeDeath)
             .build()
     );

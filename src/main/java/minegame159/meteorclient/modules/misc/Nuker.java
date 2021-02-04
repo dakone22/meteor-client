@@ -47,6 +47,11 @@ public class Nuker extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.Nuker.setting.mode.displayName"))
             .description(I18n.translate("Module.Nuker.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Nuker.enum.Mode.All"),
+                    I18n.translate("Module.Nuker.enum.Mode.Flatten"),
+                    I18n.translate("Module.Nuker.enum.Mode.Smash"),
+            })
             .defaultValue(Mode.All)
             .build()
     );
@@ -88,6 +93,11 @@ public class Nuker extends Module {
             .name("sort-mode")
             .displayName(I18n.translate("Module.Nuker.setting.sortMode.displayName"))
             .description(I18n.translate("Module.Nuker.setting.sortMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Nuker.enum.SortMode.None"),
+                    I18n.translate("Module.Nuker.enum.SortMode.Closest"),
+                    I18n.translate("Module.Nuker.enum.SortMode.Furthest"),
+            })
             .defaultValue(SortMode.Closest)
             .build()
     );

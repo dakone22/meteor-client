@@ -57,6 +57,11 @@ public class Holefiller extends Module {
             .name("block")
             .displayName(I18n.translate("Module.Holefiller.setting.mode.displayName"))
             .description(I18n.translate("Module.Holefiller.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Holefiller.enum.PlaceMode.Obsidian"),
+                    I18n.translate("Module.Holefiller.enum.PlaceMode.Cobweb"),
+                    I18n.translate("Module.Holefiller.enum.PlaceMode.Any"),
+            })
             .defaultValue(PlaceMode.Obsidian)
             .build()
     );

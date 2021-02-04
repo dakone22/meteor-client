@@ -37,6 +37,11 @@ public class GUIMove extends Module {
             .name("screens")
             .displayName(I18n.translate("Module.GUIMove.setting.screens.displayName"))
             .description(I18n.translate("Module.GUIMove.setting.screens.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.GUIMove.enum.Screens.GUI"),
+                    I18n.translate("Module.GUIMove.enum.Screens.Inventory"),
+                    I18n.translate("Module.GUIMove.enum.Screens.Both"),
+            })
             .defaultValue(Screens.Inventory)
             .build()
     );

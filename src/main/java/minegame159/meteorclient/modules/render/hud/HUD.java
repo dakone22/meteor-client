@@ -412,14 +412,14 @@ public class HUD extends Module {
     public WWidget getWidget() {
         WTable table = new WTable();
 
-        WButton reset = table.add(new WButton(I18n.translate("Module.HUD.buttons.Reset"))).getWidget();
+        WButton reset = table.add(new WButton(I18n.translate("Module.HUD.button.Reset"))).getWidget();
         reset.action = this::init;
-        table.add(new WLabel(I18n.translate("Module.HUD.buttons.Reset.description")));
+        table.add(new WLabel(I18n.translate("Module.HUD.button.Reset.description")));
         table.row();
 
-        WButton editor = table.add(new WButton(I18n.translate("Module.HUD.buttons.Editor"))).getWidget();
+        WButton editor = table.add(new WButton(I18n.translate("Module.HUD.button.Editor"))).getWidget();
         editor.action = () -> mc.openScreen(new HudEditorScreen());
-        table.add(new WLabel(I18n.translate("Module.HUD.buttons.Editor.description")));
+        table.add(new WLabel(I18n.translate("Module.HUD.button.Editor.description")));
 
         return table;
     }

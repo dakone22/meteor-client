@@ -36,6 +36,11 @@ public class Criticals extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.Criticals.setting.mode.displayName"))
             .description(I18n.translate("Module.Criticals.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Criticals.enum.Mode.Packet"),
+                    I18n.translate("Module.Criticals.enum.Mode.Jump"),
+                    I18n.translate("Module.Criticals.enum.Mode.MiniJump"),
+            })
             .defaultValue(Mode.Packet)
             .build()
     );

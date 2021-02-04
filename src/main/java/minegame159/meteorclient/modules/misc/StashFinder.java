@@ -79,10 +79,14 @@ public class StashFinder extends Module {
             .build()
     );
 
-    private final Setting<StashFinder.Mode> mode = sgGeneral.add(new EnumSetting.Builder<StashFinder.Mode>()
+    private final Setting<Mode> mode = sgGeneral.add(new EnumSetting.Builder<Mode>()
             .name("notification-mode")
             .displayName(I18n.translate("Module.StashFinder.setting.mode.displayName"))
             .description(I18n.translate("Module.StashFinder.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.StashFinder.enum.Mode.Chat"),
+                    I18n.translate("Module.StashFinder.enum.Mode.Toast"),
+            })
             .defaultValue(Mode.Toast)
             .build()
     );
@@ -163,7 +167,7 @@ public class StashFinder extends Module {
         WTable list = new WTable();
 
         // Clear
-        WButton clear = list.add(new WButton("Clear")).getWidget();
+        WButton clear = list.add(new WButton(I18n.translate("Module.StashFinder.button.Clear"))).getWidget();
         list.row();
 
         WTable table = new WTable();

@@ -18,6 +18,7 @@ import minegame159.meteorclient.modules.player.FakePlayer;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
 import minegame159.meteorclient.utils.entity.FakePlayerEntity;
+import minegame159.meteorclient.utils.misc.SafetyMode;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.player.DamageCalcUtils;
 import minegame159.meteorclient.utils.player.InvUtils;
@@ -42,10 +43,6 @@ import java.util.stream.Collectors;
 
 @InvUtils.Priority(priority = 0)
 public class BedAura extends Module {
-    public enum Mode{
-        Safe,
-        Suicide
-    }
 
     public BedAura(){
         super(Category.Combat, "bed-aura", I18n.translate("Module.BedAura.description"));
@@ -68,11 +65,11 @@ public class BedAura extends Module {
             .build()
     );
 
-    private final Setting<Mode> placeMode = sgPlace.add(new EnumSetting.Builder<Mode>()
+    private final Setting<SafetyMode> placeMode = sgPlace.add(new EnumSetting.Builder<SafetyMode>()
             .name("place-mode")
             .displayName(I18n.translate("Module.BedAura.setting.placeMode.displayName"))
             .description(I18n.translate("Module.BedAura.setting.placeMode.description"))
-            .defaultValue(Mode.Safe)
+            .defaultValue(SafetyMode.Safe)
             .build()
     );
 
@@ -128,11 +125,11 @@ public class BedAura extends Module {
 
     // Break
 
-    private final Setting<Mode> breakMode = sgBreak.add(new EnumSetting.Builder<Mode>()
+    private final Setting<SafetyMode> breakMode = sgBreak.add(new EnumSetting.Builder<SafetyMode>()
             .name("break-mode")
             .displayName(I18n.translate("Module.BedAura.setting.breakMode.displayName"))
             .description(I18n.translate("Module.BedAura.setting.breakMode.description"))
-            .defaultValue(Mode.Safe)
+            .defaultValue(SafetyMode.Safe)
             .build()
     );
 
@@ -237,7 +234,7 @@ public class BedAura extends Module {
         assert mc.interactionManager != null;
         delayLeft --;
         preSlot = -1;
-        if (mc.player.getHealth() + mc.player.getAbsorptionAmount() <= minHealth.get() && placeMode.get() != Mode.Suicide) return;
+        if (mc.player.getHealth() + mc.player.getAbsorptionAmount() <= minHealth.get() && placeMode.get() != SafetyMode.Suicide) return;
         if (selfToggle.get() && mc.world.getDimension().isBedWorking()) {
             ChatUtils.moduleError(this, "You are in the Overworld... (highlight)disabling(default)!");
             this.toggle();
@@ -248,7 +245,7 @@ public class BedAura extends Module {
                 if (entity instanceof BedBlockEntity && Utils.distance(entity.getPos().getX(), entity.getPos().getY(), entity.getPos().getZ(), mc.player.getX(), mc.player.getY(), mc.player.getZ()) <= breakRange.get()) {
                     double currentDamage = DamageCalcUtils.bedDamage(mc.player, Utils.vec3d(entity.getPos()));
                     if (currentDamage < maxDamage.get()
-                            || (mc.player.getHealth() + mc.player.getAbsorptionAmount() - currentDamage) < minHealth.get() || breakMode.get().equals(Mode.Suicide)) {
+                            || (mc.player.getHealth() + mc.player.getAbsorptionAmount() - currentDamage) < minHealth.get() || breakMode.get().equals(SafetyMode.Suicide)) {
                         mc.player.setSneaking(false);
                         mc.interactionManager.interactBlock(mc.player, mc.world, Hand.MAIN_HAND, new BlockHitResult(mc.player.getPos(), Direction.UP, entity.getPos(), false));
                     }
@@ -390,7 +387,7 @@ public class BedAura extends Module {
                     if (isValid(pos.up())) {
                         if (airPlace.get() || !mc.world.getBlockState(pos).getMaterial().isReplaceable()) {
                             if (bestDamage < getBestDamage(target, vecPos.add(0.5, 1.5, 0.5))
-                                    && (DamageCalcUtils.bedDamage(mc.player, vecPos.add(0.5, 1.5, 0.5)) < minDamage.get() || placeMode.get() == Mode.Suicide)) {
+                                    && (DamageCalcUtils.bedDamage(mc.player, vecPos.add(0.5, 1.5, 0.5)) < minDamage.get() || placeMode.get() == SafetyMode.Suicide)) {
                                 bestBlock = vecPos;
                                 bestDamage = getBestDamage(target, bestBlock.add(0.5, 1.5, 0.5));
                             }

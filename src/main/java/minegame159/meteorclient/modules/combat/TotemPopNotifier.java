@@ -59,7 +59,7 @@ public class TotemPopNotifier extends Module {
             .name("pop-message")
             .displayName(I18n.translate("Module.TotemPopNotifier.setting.popMessage.displayName"))
             .description(I18n.translate("Module.TotemPopNotifier.setting.popMessage.description"))
-            .defaultValue("EZ pops. {player} just popped {pops} {totems}. Meteor on Crack!")
+            .defaultValue(I18n.translate("Module.TotemPopNotifier.setting.popMessage.defaultValue"))
             .build()
     );
 
@@ -67,7 +67,7 @@ public class TotemPopNotifier extends Module {
             .name("death-message")
             .displayName(I18n.translate("Module.TotemPopNotifier.setting.deathMessage.displayName"))
             .description(I18n.translate("Module.TotemPopNotifier.setting.deathMessage.description"))
-            .defaultValue("EZZZ. {player} just died after popping {pops} {totems}. Meteor on Crack!")
+            .defaultValue(I18n.translate("Module.TotemPopNotifier.setting.deathMessage.defaultValue"))
             .build()
     );
 

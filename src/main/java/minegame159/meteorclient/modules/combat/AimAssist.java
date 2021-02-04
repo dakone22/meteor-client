@@ -17,6 +17,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.Utils;
+import minegame159.meteorclient.utils.misc.TargetPriority;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -28,13 +29,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 
 public class AimAssist extends Module {
-    public enum Priority {
-        LowestDistance,
-        HighestDistance,
-        LowestHealth,
-        HighestHealth
-    }
-
     public enum Target {
         Head,
         Body,
@@ -79,11 +73,11 @@ public class AimAssist extends Module {
             .build()
     );
 
-    private final Setting<Priority> priority = sgGeneral.add(new EnumSetting.Builder<Priority>()
+    private final Setting<TargetPriority> priority = sgGeneral.add(new EnumSetting.Builder<TargetPriority>()
             .name("priority")
             .displayName(I18n.translate("Module.AimAssist.setting.priority.displayName"))
             .description(I18n.translate("Module.AimAssist.setting.priority.description"))
-            .defaultValue(Priority.LowestHealth)
+            .defaultValue(TargetPriority.LowestHealth)
             .build()
     );
 
@@ -91,6 +85,11 @@ public class AimAssist extends Module {
             .name("target")
             .displayName(I18n.translate("Module.AimAssist.setting.target.displayName"))
             .description(I18n.translate("Module.AimAssist.setting.target.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AimAssist.enum.Target.Head"),
+                    I18n.translate("Module.AimAssist.enum.Target.Body"),
+                    I18n.translate("Module.AimAssist.enum.Target.Feet"),
+            })
             .defaultValue(Target.Body)
             .build()
     );

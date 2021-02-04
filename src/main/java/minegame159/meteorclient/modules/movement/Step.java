@@ -43,6 +43,11 @@ public class Step extends Module {
             .name("active-when")
             .displayName(I18n.translate("Module.Step.setting.activeWhen.displayName"))
             .description(I18n.translate("Module.Step.setting.activeWhen.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.Step.enum.ActiveWhen.Always"),
+                    I18n.translate("Module.Step.enum.ActiveWhen.Sneaking"),
+                    I18n.translate("Module.Step.enum.ActiveWhen.NotSneaking"),
+            })
             .defaultValue(ActiveWhen.Always)
             .build()
     );

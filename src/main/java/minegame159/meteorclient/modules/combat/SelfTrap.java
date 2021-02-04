@@ -54,6 +54,12 @@ public class SelfTrap extends Module {
             .name("top-mode")
             .displayName(I18n.translate("Module.SelfTrap.setting.topPlacement.displayName"))
             .description(I18n.translate("Module.SelfTrap.setting.topPlacement.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.SelfTrap.enum.TopMode.AntiFacePlace"),
+                    I18n.translate("Module.SelfTrap.enum.TopMode.Full"),
+                    I18n.translate("Module.SelfTrap.enum.TopMode.Top"),
+                    I18n.translate("Module.SelfTrap.enum.TopMode.None"),
+            })
             .defaultValue(TopMode.AntiFacePlace)
             .build()
     );
@@ -62,6 +68,10 @@ public class SelfTrap extends Module {
             .name("bottom-mode")
             .displayName(I18n.translate("Module.SelfTrap.setting.bottomPlacement.displayName"))
             .description(I18n.translate("Module.SelfTrap.setting.bottomPlacement.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.SelfTrap.enum.BottomMode.Single"),
+                    I18n.translate("Module.SelfTrap.enum.BottomMode.None"),
+            })
             .defaultValue(BottomMode.None)
             .build()
     );

@@ -70,11 +70,12 @@ public class Announcer extends Module {
 
         private final Setting<Boolean> enabled;
 
-        protected Feature(String name, String enabledName, String enabledDescription) {
+        protected Feature(String name, String enabledName, String displayName, String enabledDescription) {
             this.sg = settings.createGroup(name);
 
             enabled = sg.add(new BoolSetting.Builder()
                     .name(enabledName)
+                    .name(displayName)
                     .description(enabledDescription)
                     .defaultValue(true)
                     .onChanged(aBoolean -> {
@@ -101,21 +102,16 @@ public class Announcer extends Module {
     private class Moving extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("moving-msg")
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.msg.description"))
-                .defaultValue("I just moved {dist} blocks!")
+                .displayName(I18n.translate("Module.Announcer.setting.moving-msg.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.moving-msg.description"))
+                .defaultValue(I18n.translate("Module.Announcer.setting.moving-msg.defaultValue"))
                 .build()
         );
 
         private final Setting<Double> delay = sg.add(new DoubleSetting.Builder()
                 .name("moving-delay")
-                .displayName(I18n.translate("Module.Announcer.setting.delay.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.delay.description"))
+                .displayName(I18n.translate("Module.Announcer.setting.moving-delay.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.moving-delay.description"))
                 .defaultValue(10)
                 .sliderMax(60)
                 .build()
@@ -123,8 +119,8 @@ public class Announcer extends Module {
 
         private final Setting<Double> minDist = sg.add(new DoubleSetting.Builder()
                 .name("moving-min-dist")
-                .displayName(I18n.translate("Module.Announcer.setting.minDist.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.minDist.description"))
+                .displayName(I18n.translate("Module.Announcer.setting.moving-min-dist.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.moving-min-dist.description"))
                 .defaultValue(10)
                 .sliderMax(100)
                 .build()
@@ -135,7 +131,10 @@ public class Announcer extends Module {
         private boolean first;
 
         Moving() {
-            super("Moving", "moving-enabled", "Send msg how much you moved.");
+            super(I18n.translate("Module.Announcer.group.Moving"),
+                "moving-enabled",
+                I18n.translate("Module.Announcer.setting.moving-enabled.displayName"),
+                I18n.translate("Module.Announcer.setting.moving-enabled.description"));
         }
 
         @Override
@@ -183,14 +182,9 @@ public class Announcer extends Module {
     private class Mining extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("mining-msg")
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.msg.description"))
-                .defaultValue("I just mined {count} {block}!")
+                .displayName(I18n.translate("Module.Announcer.setting.mining-msg.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.mining-msg.description"))
+                .defaultValue(I18n.translate("Module.Announcer.setting.mining-msg.defaultValue"))
                 .build()
         );
 
@@ -199,7 +193,10 @@ public class Announcer extends Module {
         private double notBrokenTimer;
 
         Mining() {
-            super("Mining", "mining-enabled", "Send msg how much blocks you mined.");
+            super(I18n.translate("Module.Announcer.group.Mining"),
+                    "mining-enabled",
+                    I18n.translate("Module.Announcer.setting.mining-enabled.displayName"),
+                    I18n.translate("Module.Announcer.setting.mining-enabled.description"));
         }
 
         @Override
@@ -242,14 +239,9 @@ public class Announcer extends Module {
     private class Placing extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("placing-msg")
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.msg.description"))
-                .defaultValue("I just placed {count} {block}!")
+                .displayName(I18n.translate("Module.Announcer.setting.placing-msg.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.placing-msg.description"))
+                .defaultValue(I18n.translate("Module.Announcer.setting.placing-msg.defaultValue"))
                 .build()
         );
 
@@ -258,7 +250,10 @@ public class Announcer extends Module {
         private double notPlacedTimer;
 
         Placing() {
-            super("Placing", "placing-enabled", "Send msg how much blocks you placed.");
+            super(I18n.translate("Module.Announcer.group.Placing"),
+                    "placing-enabled",
+                    I18n.translate("Module.Announcer.setting.placing-enabled.displayName"),
+                    I18n.translate("Module.Announcer.setting.placing-enabled.description"));
         }
 
         @Override
@@ -299,14 +294,9 @@ public class Announcer extends Module {
     private class DropItems extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("drop-items-msg")
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.msg.description"))
-                .defaultValue("I just dropped {count} {item}!")
+                .displayName(I18n.translate("Module.Announcer.setting.drop-items-msg.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.drop-items-msg.description"))
+                .defaultValue(I18n.translate("Module.Announcer.setting.drop-items-msg.defaultValue"))
                 .build()
         );
 
@@ -315,7 +305,10 @@ public class Announcer extends Module {
         private double notDroppedTimer;
 
         DropItems() {
-            super("Drop Items", "drop-items-enabled", "Send msg how much items you dropped.");
+            super(I18n.translate("Module.Announcer.group.DropItems"),
+                    "drop-items-enabled",
+                    I18n.translate("Module.Announcer.setting.drop-items-enabled.displayName"),
+                    I18n.translate("Module.Announcer.setting.drop-items-enabled.description"));
         }
 
         @Override
@@ -356,14 +349,9 @@ public class Announcer extends Module {
     private class PickItems extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("pick-items-msg")
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.msg.description"))
-                .defaultValue("I just picked up {count} {item}!")
+                .displayName(I18n.translate("Module.Announcer.setting.pick-items-msg.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.pick-items-msg.description"))
+                .defaultValue(I18n.translate("Module.Announcer.setting.pick-items-msg.defaultValue"))
                 .build()
         );
 
@@ -372,7 +360,10 @@ public class Announcer extends Module {
         private double notPickedUpTimer;
 
         PickItems() {
-            super("Pick Items", "pick-items-enabled", "Send msg how much items you pick up.");
+            super(I18n.translate("Module.Announcer.group.PickItems"),
+                    "pick-items-enabled",
+                    I18n.translate("Module.Announcer.setting.pick-items-enabled.displayName"),
+                    I18n.translate("Module.Announcer.setting.pick-items-enabled.description"));
         }
 
         @Override
@@ -413,19 +404,17 @@ public class Announcer extends Module {
     private class OpenContainer extends Feature {
         private final Setting<String> msg = sg.add(new StringSetting.Builder()
                 .name("open-container-msg")
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .displayName(I18n.translate("Module.Announcer.setting.msg.displayName"))
-                .description(I18n.translate("Module.Announcer.setting.msg.description"))
-                .defaultValue("I just opened {name}!")
+                .displayName(I18n.translate("Module.Announcer.setting.open-container-msg.displayName"))
+                .description(I18n.translate("Module.Announcer.setting.open-container-msg.description"))
+                .defaultValue(I18n.translate("Module.Announcer.setting.open-container-msg.defaultValue"))
                 .build()
         );
 
         public OpenContainer() {
-            super("Open Container", "open-container-enabled", "Sends msg when you oopen containers.");
+            super(I18n.translate("Module.Announcer.group.OpenContainer"),
+                    "open-container-enabled",
+                    I18n.translate("Module.Announcer.setting.open-container-enabled.displayName"),
+                    I18n.translate("Module.Announcer.setting.open-container-enabled.description"));
         }
 
         @Override

@@ -16,6 +16,7 @@ import minegame159.meteorclient.modules.Category;
 import minegame159.meteorclient.modules.Module;
 import minegame159.meteorclient.settings.*;
 import minegame159.meteorclient.utils.entity.Target;
+import minegame159.meteorclient.utils.misc.TargetPriority;
 import minegame159.meteorclient.utils.player.PlayerUtils;
 import minegame159.meteorclient.utils.player.RotationUtils;
 import net.minecraft.client.resource.language.I18n;
@@ -32,13 +33,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KillAura extends Module {
-    public enum Priority {
-        LowestDistance,
-        HighestDistance,
-        LowestHealth,
-        HighestHealth
-    }
-
     public enum OnlyWith {
         Sword,
         Axe,
@@ -82,11 +76,11 @@ public class KillAura extends Module {
             .build()
     );
 
-    private final Setting<Priority> priority = sgGeneral.add(new EnumSetting.Builder<Priority>()
+    private final Setting<TargetPriority> priority = sgGeneral.add(new EnumSetting.Builder<TargetPriority>()
             .name("priority")
             .displayName(I18n.translate("Module.KillAura.setting.priority.displayName"))
             .description(I18n.translate("Module.KillAura.setting.priority.description"))
-            .defaultValue(Priority.LowestHealth)
+            .defaultValue(TargetPriority.LowestHealth)
             .build()
     );
 
@@ -94,6 +88,12 @@ public class KillAura extends Module {
             .name("only-with")
             .displayName(I18n.translate("Module.KillAura.setting.onlyWith.displayName"))
             .description(I18n.translate("Module.KillAura.setting.onlyWith.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.KillAura.enum.OnlyWith.Sword"),
+                    I18n.translate("Module.KillAura.enum.OnlyWith.Axe"),
+                    I18n.translate("Module.KillAura.enum.OnlyWith.SwordOrAxe"),
+                    I18n.translate("Module.KillAura.enum.OnlyWith.Any"),
+            })
             .defaultValue(OnlyWith.Any)
             .build()
     );
@@ -153,6 +153,11 @@ public class KillAura extends Module {
             .name("rotation-mode")
             .displayName(I18n.translate("Module.KillAura.setting.rotationMode.displayName"))
             .description(I18n.translate("Module.KillAura.setting.rotationMode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.KillAura.enum.RotationMode.Always"),
+                    I18n.translate("Module.KillAura.enum.RotationMode.OnHit"),
+                    I18n.translate("Module.KillAura.enum.RotationMode.None"),
+            })
             .defaultValue(RotationMode.OnHit)
             .build()
     );
@@ -161,6 +166,11 @@ public class KillAura extends Module {
             .name("rotation-direction")
             .displayName(I18n.translate("Module.KillAura.setting.rotationDirection.displayName"))
             .description(I18n.translate("Module.KillAura.setting.rotationDirection.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.KillAura.enum.RotationDirection.Eyes"),
+                    I18n.translate("Module.KillAura.enum.RotationDirection.Chest"),
+                    I18n.translate("Module.KillAura.enum.RotationDirection.Feet"),
+            })
             .defaultValue(RotationDirection.Eyes)
             .build()
     );

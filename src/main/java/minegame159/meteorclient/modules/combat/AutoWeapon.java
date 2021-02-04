@@ -35,6 +35,10 @@ public class AutoWeapon extends Module {
             .name("weapon")
             .displayName(I18n.translate("Module.AutoWeapon.setting.weapon.displayName"))
             .description(I18n.translate("Module.AutoWeapon.setting.weapon.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoWeapon.enum.Weapon.Sword"),
+                    I18n.translate("Module.AutoWeapon.enum.Weapon.Axe"),
+            })
             .defaultValue(Weapon.Sword)
             .build()
     );

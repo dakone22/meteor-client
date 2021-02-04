@@ -62,6 +62,12 @@ public class AutoArmor extends Module {
             .name("prioritize")
             .displayName(I18n.translate("Module.AutoArmor.setting.mode.displayName"))
             .description(I18n.translate("Module.AutoArmor.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoArmor.enum.Prot.Protection"),
+                    I18n.translate("Module.AutoArmor.enum.Prot.Blast_Protection"),
+                    I18n.translate("Module.AutoArmor.enum.Prot.Fire_Protection"),
+                    I18n.translate("Module.AutoArmor.enum.Prot.Projectile_Protection"),
+            })
             .defaultValue(Prot.Protection)
             .build()
     );

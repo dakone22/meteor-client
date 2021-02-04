@@ -44,6 +44,11 @@ public class AutoBrewer extends Module {
             .name("modifier")
             .displayName(I18n.translate("Module.AutoBrewer.setting.modifier.displayName"))
             .description(I18n.translate("Module.AutoBrewer.setting.modifier.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.AutoBrewer.enum.Modifier.None"),
+                    I18n.translate("Module.AutoBrewer.enum.Modifier.Splash"),
+                    I18n.translate("Module.AutoBrewer.enum.Modifier.Lingering"),
+            })
             .defaultValue(Modifier.None).build()
     );
 

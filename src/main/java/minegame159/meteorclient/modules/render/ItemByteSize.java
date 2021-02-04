@@ -43,6 +43,10 @@ public class ItemByteSize extends Module {
             .name("mode")
             .displayName(I18n.translate("Module.ItemByteSize.setting.mode.displayName"))
             .description(I18n.translate("Module.ItemByteSize.setting.mode.description"))
+            .displayValues(new String[]{
+                    I18n.translate("Module.ItemByteSize.enum.Mode.Standard"),
+                    I18n.translate("Module.ItemByteSize.enum.Mode.True"),
+            })
             .defaultValue(Mode.True)
             .build()
     );
