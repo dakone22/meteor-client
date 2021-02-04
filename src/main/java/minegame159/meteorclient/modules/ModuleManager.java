@@ -58,6 +58,7 @@ public class ModuleManager extends Savable<ModuleManager> implements Listenable 
 
     private final List<Module> active = new ArrayList<>();
     private Module moduleToBind;
+    private boolean wasLoaded = false;
 
     public boolean onKeyOnlyBinding = false;
 
@@ -72,7 +73,7 @@ public class ModuleManager extends Savable<ModuleManager> implements Listenable 
     }
 
     public void reset() {
-        if (!modules.isEmpty()) save();
+        if (wasLoaded) save();
         modules.clear();
         groups.clear();
 
@@ -85,6 +86,7 @@ public class ModuleManager extends Savable<ModuleManager> implements Listenable 
         for (List<Module> modules : groups.values()) {
             modules.sort(Comparator.comparing(o -> o.title));
         }
+        if (wasLoaded) load();
     }
 
     public <T extends Module> T get(Class<T> klass) {
@@ -257,6 +259,7 @@ public class ModuleManager extends Savable<ModuleManager> implements Listenable 
             Module module = get(moduleTag.getString("name"));
             if (module != null) module.fromTag(moduleTag);
         }
+        wasLoaded = true;
 
         return this;
     }

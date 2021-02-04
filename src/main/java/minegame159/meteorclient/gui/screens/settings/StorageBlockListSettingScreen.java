@@ -8,6 +8,7 @@ package minegame159.meteorclient.gui.screens.settings;
 import minegame159.meteorclient.gui.screens.WindowScreen;
 import minegame159.meteorclient.gui.widgets.WCheckbox;
 import minegame159.meteorclient.gui.widgets.WLabel;
+import minegame159.meteorclient.mixin.BlockEntityTypeAccessor;
 import minegame159.meteorclient.settings.Setting;
 import minegame159.meteorclient.settings.StorageBlockListSetting;
 import net.minecraft.block.entity.BlockEntityType;
@@ -21,7 +22,12 @@ public class StorageBlockListSettingScreen extends WindowScreen {
 
         for (int i = 0; i < StorageBlockListSetting.STORAGE_BLOCKS.length; i++) {
             BlockEntityType<?> type = StorageBlockListSetting.STORAGE_BLOCKS[i];
-            String name = StorageBlockListSetting.STORAGE_BLOCK_NAMES[i];
+            String name;
+            try {  // trying to get translated in-game name
+                name = ((BlockEntityTypeAccessor) StorageBlockListSetting.STORAGE_BLOCKS[i]).getBlocks().iterator().next().getName().getString();
+            } catch (Exception e) {
+                name = StorageBlockListSetting.STORAGE_BLOCK_NAMES[i];
+            };
 
             add(new WLabel(name));
             WCheckbox checkbox = add(new WCheckbox(setting.get().contains(type))).fillX().right().getWidget();
