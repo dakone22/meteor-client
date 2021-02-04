@@ -63,10 +63,10 @@ public class EntityLogger extends Module {
             }
 
             String name;
-            if (playerNames.get() && event.entity instanceof PlayerEntity) name = ((PlayerEntity) event.entity).getGameProfile().getName() + " (Player)";
+            if (playerNames.get() && event.entity instanceof PlayerEntity) name = ((PlayerEntity) event.entity).getGameProfile().getName() + I18n.translate("Module.EntityLogger.misc.player_suffix");
             else name = event.entity.getType().getName().getString();
 
-            ChatUtils.moduleInfo(this, "(highlight)%s (default)has spawned at (highlight)%.0f(default), (highlight)%.0f(default), (highlight)%.0f(default).", name, event.entity.getX(), event.entity.getY(), event.entity.getZ());
+            ChatUtils.moduleInfo(this, I18n.translate("Module.EntityLogger.message.spawned"), name, event.entity.getX(), event.entity.getY(), event.entity.getZ());
         }
     });
 }

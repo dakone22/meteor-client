@@ -116,7 +116,7 @@ public class AutoMend extends Module {
 
         if(armourSlots.get()) {
             if(ModuleManager.INSTANCE.get(AutoArmor.class).isActive()) {
-                ChatUtils.moduleWarning(this, "Cannot use armor slots while AutoArmor is active. Please disable AutoArmor and try again. Disabling Use Armor Slots.");
+                ChatUtils.moduleWarning(this, I18n.translate("Module.AutoMend.message.AutoArmor_collision"));
                 armourSlots.set(false);
             }
             for (int i = 5; i < 9; i++) {

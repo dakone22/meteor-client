@@ -89,7 +89,7 @@ public class AutoSmelter extends Module {
         }
 
         if (slot == -1) {
-            ChatUtils.moduleError(this, "You do not have any items in your inventory that can be smelted... disabling.");
+            ChatUtils.moduleError(this, I18n.translate("Module.AutoSmelter.message.no_items"));
             toggle();
             return true;
         }
@@ -106,7 +106,7 @@ public class AutoSmelter extends Module {
                 InvUtils.clickSlot(1, 0, SlotActionType.QUICK_MOVE);
 
                 if (!c.slots.get(1).getStack().isEmpty()) {
-                    ChatUtils.moduleError(this, "Your inventory is currently full... disabling.");
+                    ChatUtils.moduleError(this, I18n.translate("Module.AutoSmelter.message.no_space"));
                     toggle();
                     return true;
                 }
@@ -121,7 +121,7 @@ public class AutoSmelter extends Module {
             }
 
             if (slot == -1) {
-                ChatUtils.moduleError(this, "You do not have any fuel in your inventory... disabling.");
+                ChatUtils.moduleError(this, I18n.translate("Module.AutoSmelter.message.no_fuel"));
                 toggle();
                 return true;
             }
@@ -137,7 +137,7 @@ public class AutoSmelter extends Module {
         InvUtils.clickSlot(2, 0, SlotActionType.QUICK_MOVE);
 
         if (!c.slots.get(2).getStack().isEmpty()) {
-            ChatUtils.moduleError(this, "Your inventory is full... disabling.");
+            ChatUtils.moduleError(this, I18n.translate("Module.AutoSmelter.message.no_space"));
             toggle();
             return true;
         }

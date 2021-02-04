@@ -106,10 +106,10 @@ public class TotemPopNotifier extends Module {
             int pops = totemPops.getOrDefault(entity.getUuid(), 0);
             totemPops.put(entity.getUuid(), ++pops);
 
-            String msg = popMessage.get().replace("{player}", entity.getName().getString()).replace("{pops}", String.valueOf(pops)).replace("{totems}", (pops == 1 ? "totem" : "totems"));
+            String msg = popMessage.get().replace("{player}", entity.getName().getString()).replace("{pops}", String.valueOf(pops)).replace("{totems}", getTotemStr(pops));
 
             if (announce.get()) mc.player.sendChatMessage(msg);
-            else ChatUtils.info(getChatId(entity), "(highlight)%s (default)popped (highlight)%d (default)%s.", entity.getName().getString(), pops, pops == 1 ? "totem" : "totems");
+            else ChatUtils.info(getChatId(entity), I18n.translate("Module.TotemPopNotifier.message.pop"), entity.getName().getString(), pops, getTotemStr(pops));
         }
     });
 
@@ -122,10 +122,10 @@ public class TotemPopNotifier extends Module {
                 if (player.deathTime > 0 || player.getHealth() <= 0) {
                     int pops = totemPops.removeInt(player.getUuid());
 
-                    String msg = deathMessage.get().replace("{player}", player.getName().getString()).replace("{pops}", String.valueOf(pops)).replace("{totems}", (pops == 1 ? "totem" : "totems"));
+                    String msg = deathMessage.get().replace("{player}", player.getName().getString()).replace("{pops}", String.valueOf(pops)).replace("{totems}", getTotemStr(pops));
 
                     if (announce.get()) mc.player.sendChatMessage(msg);
-                    else ChatUtils.info(getChatId(player), "(highlight)%s (default)died after popping (highlight)%d (default)%s.", player.getName().getString(), pops, pops == 1 ? "totem" : "totems");
+                    else ChatUtils.info(getChatId(player), I18n.translate("Module.TotemPopNotifier.message.death"), player.getName().getString(), pops, getTotemStr(pops));
 
                     chatIds.removeInt(player.getUuid());
                 }
@@ -135,5 +135,9 @@ public class TotemPopNotifier extends Module {
 
     private int getChatId(Entity entity) {
         return chatIds.computeIntIfAbsent(entity.getUuid(), value -> random.nextInt());
+    }
+    
+    private String getTotemStr(int pops) {
+        return I18n.translate("Module.TotemPopNotifier.misc.totem" + (pops == 1 ? "" : "s"));
     }
 }

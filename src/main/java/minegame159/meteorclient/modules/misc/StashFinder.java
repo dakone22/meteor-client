@@ -148,13 +148,13 @@ public class StashFinder extends Module {
                             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 255.0F);
                             manager.drawTexture(matrices, 0, 0, 0, 32, 160, 32);
 
-                            manager.getGame().textRenderer.draw(matrices, "StashRecorder found stash.", 12.0F, 12.0F, -11534256);
+                            manager.getGame().textRenderer.draw(matrices, I18n.translate("Module.StashFinder.misc.toast_message"), 12.0F, 12.0F, -11534256);
 
                             return timer >= 32000 ? Visibility.HIDE : Visibility.SHOW;
                         }
                     });
                 } else
-                    ChatUtils.moduleInfo(this,"(highlight)Found stash.");
+                    ChatUtils.moduleInfo(this,I18n.translate("Module.StashFinder.message.found"));
             }
         }
     });
@@ -186,13 +186,13 @@ public class StashFinder extends Module {
 
     private void fillTable(WTable table) {
         for (Chunk chunk : chunks) {
-            table.add(new WLabel("Pos: " + chunk.x + ", " + chunk.z));
-            table.add(new WLabel("Total: " + chunk.getTotal()));
+            table.add(new WLabel(I18n.translate("Module.StashFinder.label.Pos", chunk.x, chunk.z)));
+            table.add(new WLabel(I18n.translate("Module.StashFinder.label.Total", chunk.getTotal())));
 
-            WButton open = table.add(new WButton("Open")).getWidget();
+            WButton open = table.add(new WButton(I18n.translate("Module.StashFinder.button.Open"))).getWidget();
             open.action = () -> mc.openScreen(new StashFinderChunkScreen(chunk));
 
-            WButton gotoBtn = table.add(new WButton("Goto")).getWidget();
+            WButton gotoBtn = table.add(new WButton(I18n.translate("Module.StashFinder.button.Goto"))).getWidget();
             gotoBtn.action = () -> BaritoneAPI.getProvider().getPrimaryBaritone().getCustomGoalProcess().setGoalAndPath(new GoalXZ(chunk.x, chunk.z));
 
             WMinus remove = table.add(new WMinus()).getWidget();

@@ -186,7 +186,7 @@ public class BookBot extends Module {
 
                 // Check to see if the file exists.
                 if (!file.exists()) {
-                    ChatUtils.moduleError(this, "The file you specified doesn't exist in the meteor folder."); // You dumb bitch.
+                    ChatUtils.moduleError(this, I18n.translate("Module.BookBot.message.no_file")); // You dumb bitch.
                     return;
                 }
 
@@ -209,7 +209,7 @@ public class BookBot extends Module {
                     writeBook();
                 } catch (IOException ignored) { //EZ ignore. > 1 blocked message.
                     // If it fails then send a message.
-                    ChatUtils.moduleError(this, "Failed to read the file.");
+                    ChatUtils.moduleError(this, I18n.translate("Module.BookBot.message.reading_error"));
                     //When you try your best but you don't succeed.
                 }
             } else {

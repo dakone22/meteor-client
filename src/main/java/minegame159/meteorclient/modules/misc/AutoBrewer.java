@@ -127,7 +127,7 @@ public class AutoBrewer extends Module {
             }
 
             if (slot == -1) {
-                ChatUtils.moduleError(this, "You do not have any %s left in your inventory... disabling.", item.getName().getString());
+                ChatUtils.moduleError(this, I18n.translate("Module.AutoBrewer.message.no_item"), item.getName().getString());
                 toggle();
                 return true;
             }
@@ -149,7 +149,7 @@ public class AutoBrewer extends Module {
         }
 
         if (slot == -1) {
-            ChatUtils.moduleError(this, "You do not have any %s left in your inventory... disabling.", ingredient.getName().getString());
+            ChatUtils.moduleError(this, I18n.translate("Module.AutoBrewer.message.no_item"), ingredient.getName().getString());
             toggle();
             return true;
         }
@@ -171,7 +171,7 @@ public class AutoBrewer extends Module {
             }
 
             if (slot == -1) {
-                ChatUtils.moduleError(this, "You do not have a sufficient amount of blaze powder to use as fuel for the brew... disabling.");
+                ChatUtils.moduleError(this, I18n.translate("Module.AutoBrewer.message.no_fuel"));
                 toggle();
                 return true;
             }
@@ -203,7 +203,7 @@ public class AutoBrewer extends Module {
             }
 
             if (slot == -1) {
-                ChatUtils.moduleError(this, "You do not have a sufficient amount of water bottles to complete this brew... disabling.");
+                ChatUtils.moduleError(this, I18n.translate("Module.AutoBrewer.message.no_bottles"));
                 toggle();
                 return true;
             }
@@ -220,7 +220,7 @@ public class AutoBrewer extends Module {
             InvUtils.clickSlot(i, 0, SlotActionType.QUICK_MOVE);
 
             if (!c.slots.get(i).getStack().isEmpty()) {
-                ChatUtils.moduleError(this, "You do not have a sufficient amount of inventory space... disabling.");
+                ChatUtils.moduleError(this, I18n.translate("Module.AutoBrewer.message.no_space"));
                 toggle();
                 return true;
             }

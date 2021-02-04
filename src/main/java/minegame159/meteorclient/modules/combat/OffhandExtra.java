@@ -173,7 +173,7 @@ public class OffhandExtra extends Module {
                     }
                 }
                 if (!sentMessage) {
-                    ChatUtils.moduleWarning(this, "None of the chosen item found.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.OffhandExtra.message.no_item"));
                     sentMessage = true;
                 }
                 if (selfToggle.get()) this.toggle();
@@ -208,7 +208,7 @@ public class OffhandExtra extends Module {
             int result = findSlot(item);
             if (result == -1 && mc.player.getOffHandStack().getItem() != getItem()) {
                 if (!sentMessage) {
-                    ChatUtils.moduleWarning(this, "None of the chosen item found.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.OffhandExtra.message.no_item"));
                     sentMessage = true;
                 }
                 if (selfToggle.get()) this.toggle();

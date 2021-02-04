@@ -108,7 +108,7 @@ public class Quiver extends Module {
         int bowSlot = findBow();
 
         if (bowSlot == -1) {
-            if (chatInfo.get()) ChatUtils.moduleError(this, "No bow found... disabling.");
+            if (chatInfo.get()) ChatUtils.moduleError(this, I18n.translate("Module.Quiver.message.no_bow"));
             toggle();
             return;
         } else mc.player.inventory.selectedSlot = bowSlot;
@@ -128,7 +128,7 @@ public class Quiver extends Module {
         if (speedSlot != -1) arrowsToShoot++;
 
         if (arrowsToShoot == 0) {
-            if (chatInfo.get()) ChatUtils.moduleError(this, "No appropriate arrows found... disabling.");
+            if (chatInfo.get()) ChatUtils.moduleError(this, I18n.translate("Module.Quiver.message.no_arrows"));
             toggle();
             return;
         }
@@ -158,7 +158,7 @@ public class Quiver extends Module {
         }
 
         if (shotStrength && shotSpeed && canStop) {
-            if (chatInfo.get()) ChatUtils.moduleInfo(this, "Quiver complete... disabling.");
+            if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.Quiver.message.complete"));
             toggle();
             return;
         }
@@ -167,14 +167,14 @@ public class Quiver extends Module {
             if (!shooting && !shotStrength && foundStrength) {
                 shoot(strengthSlot);
                 shootingArrow = ArrowType.Strength;
-                if (chatInfo.get()) ChatUtils.moduleInfo(this, "Quivering a strength arrow.");
+                if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.Quiver.message.strength_arrow"));
                 shotStrength = true;
             }
 
             if (!shooting && !shotSpeed && foundSpeed && shotStrength) {
                 shoot(speedSlot);
                 shootingArrow = ArrowType.Speed;
-                if (chatInfo.get()) ChatUtils.moduleInfo(this, "Quivering a speed arrow.");
+                if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.Quiver.message.speed_arrow"));
                 shotSpeed = true;
             }
 

@@ -66,7 +66,7 @@
   "enum.CursorStyle.Type": "Type",
 
   "enum.Dimension.Overworld": "Верхний мир",
-  "enum.Dimension.Nether": "Ад",
+  "enum.Dimension.Nether": "Нижний мир",
   "enum.Dimension.End": "Край",
 
   "enum.AlignmentX.Left": "Лево",
@@ -311,6 +311,11 @@
   //            Modules
   // ----------------------------------
 
+  "Module.message.toggled": "(highlight)%s(default) %s(default).",
+  "Module.message.toggled.on": "включён",
+  "Module.message.toggled.off": "выключен",
+
+
   "Module.AimAssist.description": "Автоматически нацеливается на сущности.",
       "Module.AimAssist.setting.range.displayName": "Дальность",
       "Module.AimAssist.setting.range.description": "Как далеко должен быть объект, чтобы быть целью.",
@@ -390,6 +395,7 @@
   "Module.AnchorAura.enum.RotationMode.Break": "Разрушение",
   "Module.AnchorAura.enum.RotationMode.Both": "И то, и другое",
   "Module.AnchorAura.enum.RotationMode.None": "Нет",
+  "Module.AnchorAura.message.in_nether": "Вы в Нижнем мире... выключение.",
 
 
   "Module.AntiAutoAnvil.description": "Автоматически защищает Вас от Auto Anvil, размещая обсидиан над вами.",
@@ -440,6 +446,7 @@
       "Module.AutoAnvil.setting.height.description": "Высота, на которой нужно разместить наковальни.",
       "Module.AutoAnvil.setting.placeButton.displayName": "Ставить у ног",
       "Module.AutoAnvil.setting.placeButton.description": "Автоматически размещает кнопку или нажимную пластину у ног цели, чтобы сломать наковальни.",
+  "Module.AutoAnvil.message.head_slot_empty": "Target head slot is empty... disabling.",
 
 
   "Module.AutoArmor.description": "Автоматически управляет Вашей бронёй и экипировывает её за Вас.",
@@ -489,6 +496,11 @@
   "Module.AutoCity.setting.chatInfo.description": "Sends a client-side message if you city a player.",
   "Module.AutoCity.setting.rotate.displayName": "Поворот",
   "Module.AutoCity.setting.rotate.description": "Automatically rotates you towards the city block.",
+  "Module.AutoCity.message.no_target_block": "No target block found... disabling.",
+  "Module.AutoCity.message.attempt": "Attempting to city %s",
+  "Module.AutoCity.message.out_of_reach": "Target block out of reach... disabling.",
+  "Module.AutoCity.message.no_pick": "No pick found... disabling.",
+  "Module.AutoCity.message.no_obsidian_for_support": "No obsidian found for support, mining anyway.",
 
 
   "Module.AutoLog.description": "Автоматически отключает вас от сервера при выполнении определенных требований.",
@@ -612,6 +624,7 @@
       "Module.BedAura.setting.healthDifference.description": "Увеличение урона для работы умной задержки.",
       "Module.BedAura.setting.maxDamage.displayName": "Макс. урон",
       "Module.BedAura.setting.maxDamage.description": "Максимально допустимый урон по себе.",
+  "Module.BedAura.message.in_overworld": "You are in the Overworld... (highlight)disabling(default)!",
 
 
   "Module.BowSpam.description": "Спамит стрелами.",
@@ -817,6 +830,7 @@
   "Module.OffhandExtra.enum.Mode.Gap": "Золотое яблоко (Gap)",
   "Module.OffhandExtra.enum.Mode.EXP": "Пузырёк опыта",
   "Module.OffhandExtra.enum.Mode.Crystal": "Кристалл",
+  "Module.OffhandExtra.message.no_item": "Ни один из выбранных предметов не найден.",
 
 
   "Module.Quiver.description": "Автоматически стреляет в вас стрелами положительного эффекта.",
@@ -826,6 +840,11 @@
   "Module.Quiver.setting.checkEffects.description": "Не стрелять в вас эффектами, которые у вас уже есть.",
   "Module.Quiver.setting.chatInfo.displayName": "Чат инфо",
   "Module.Quiver.setting.chatInfo.description": "Отправляет вам информацию о модуле при включении.",
+  "Module.Quiver.message.no_bow": "No bow found... disabling.",
+  "Module.Quiver.message.no_arrows": "No appropriate arrows found... disabling.",
+  "Module.Quiver.message.complete": "Quiver complete... disabling.",
+  "Module.Quiver.message.strength_arrow": "Quivering a strength arrow.",
+  "Module.Quiver.message.speed_arrow": "Quivering a speed arrow.",
 
 
   "Module.SelfAnvil.description": "Автоматически помещает над вами наковальню, чтобы другие игроки не могли войти в яму, в которой вы находитесь.",
@@ -879,6 +898,7 @@
   "Module.SmartSurround.setting.minDamage.description": "Минимальный урон до активации.",
   "Module.SmartSurround.setting.rotate.displayName": "Поворот",
   "Module.SmartSurround.setting.rotate.description": "Поворачивает вас к размещаемому блоку.",
+  "Module.SmartSurround.message.no_obsidian": "Нет обсидиана на панели быстрого доступа... выключение.",
 
 
   "Module.Surround.description": "Окружает вас блоками, чтобы уменьшить получаемый урон.",
@@ -959,6 +979,10 @@
   "Module.TotemPopNotifier.setting.deathMessage.displayName": "Сообщение смерти",
   "Module.TotemPopNotifier.setting.deathMessage.description": "Уведомление в чат, когда игрок умирает.",
   "Module.TotemPopNotifier.setting.deathMessage.defaultValue": "EZZZ. {player} только что умер после вытаскивания {pops} {totems}. Meteor on Crack!",
+  "Module.TotemPopNotifier.misc.totem": "тотем",    // totem count is 1
+  "Module.TotemPopNotifier.misc.totems": "тотема(-ов)",  // totem count is not 1
+  "Module.TotemPopNotifier.message.pop": "(highlight)%s(default) достал (highlight)%d(default) %s.",
+  "Module.TotemPopNotifier.message.death": "(highlight)%s(default) умер после доставания (highlight)%d(default) %s.",
 
 
   "Module.Trigger.description": "Автоматически атакует, когда вы смотрите на сущности.",
@@ -1031,6 +1055,10 @@
   "Module.AutoBrewer.enum.Modifier.None": "Нет",
   "Module.AutoBrewer.enum.Modifier.Splash": "Взрывное",
   "Module.AutoBrewer.enum.Modifier.Lingering": "Туманное",
+  "Module.AutoBrewer.message.no_item": "В вашем инвентаре недостаточно %s... выключение.",
+  "Module.AutoBrewer.message.no_fuel": "У вас недостаточно огненного порошка, чтобы использовать его в качестве топлива для варки.... выключение.",
+  "Module.AutoBrewer.message.no_bottles": "У вас нет достаточного количества бутылок с водой для приготовления этого напитка.... выключение.",
+  "Module.AutoBrewer.message.no_space": "У вас недостаточно места для инвентаря... выключение.",
 
 
   // not used
@@ -1070,6 +1098,9 @@
 
 
   "Module.AutoSmelter.description": "Автоматически переплавляет все предметы в вашем инвентаре, которые можно переплавить.",
+  "Module.AutoSmelter.message.no_items": "В вашем инвентаре нет предметов, которые можно переплавить... выключение.",
+  "Module.AutoSmelter.message.no_space": "Ваш инвентарь в настоящее время заполнен... выключение.",
+  "Module.AutoSmelter.message.no_fuel": "У вас нет топлива в вашем инвентаре... выключение.",
 
 
   "Module.BetterChat.description": "Улучшает ваше общение в чате различными способами.",
@@ -1122,6 +1153,11 @@
       "Module.BetterChat.setting.suffixRandom.description": "Пример: `<msg> (538)`",
       "Module.BetterChat.setting.friendColorEnabled.displayName": "Цвет друга включен",
       "Module.BetterChat.setting.friendColorEnabled.description": "Подсвечивает друзей особым цветом в чате.",
+  "Module.BetterChat.message.prefix_warning": "Предупреждение",
+  "Module.BetterChat.message.message_block": "Вы пытаетесь отправить сообщение в глобальный чат! ",
+  "Module.BetterChat.message.message_block.warning_text": "Отправить сообщение в глобальный чат:",
+  "Module.BetterChat.message.coords_block": "Похоже, в вашем сообщении есть координаты! ",
+  "Module.BetterChat.message.coords_block.warning_text": "Отправить сообщение в глобальный чат, даже если там есть координаты:",
 
 
   "Module.BookBot.description": "Записывает определённое количество книг, полных символов или из файла.",
@@ -1137,6 +1173,8 @@
   "Module.BookBot.setting.noOfBooks.description": "Количество книг, которые нужно сделать (или до тех пор, пока файл не закончится).",
   "Module.BookBot.setting.delay.displayName": "Задержка",
   "Module.BookBot.setting.delay.description": "Величина задержки между написанием книг в миллисекундах.",
+  "Module.BookBot.message.no_file": "Указанный вами файл не существует в папке meteor-клиента.",
+  "Module.BookBot.message.reading_error": "Не удалось прочитать файл.",
 
 
   // not used
@@ -1166,6 +1204,8 @@
   "Module.EntityLogger.setting.playerNames.description": "Показывает имена игроков.",
   "Module.EntityLogger.setting.friends.displayName": "Друзья",
   "Module.EntityLogger.setting.friends.description": "Обращать внимание на друзей.",
+  "Module.EntityLogger.misc.player_suffix": " (Игрок)",  // e.g. `Steve (Player) has spawned at 0 0 0`
+  "Module.EntityLogger.message.spawned": "Сущность (highlight)%s(default) появилась на (highlight)%.0f(default), (highlight)%.0f(default), (highlight)%.0f(default).",
 
 
   "Module.LiquidFiller.description": "Заполняет блоки источников жидкостей твёрдыми блоками в пределах досягаемости.",
@@ -1247,7 +1287,7 @@
   "Module.Spam.setting.random.description": "Выбирает случайное сообщение из вашего списка спам-сообщений.",
 
 
-  "Module.StashFinder.description": "Ищет в загруженных чанках хранилища. Сохраняет данные в <your minecraft folder>/meteor-client",
+  "Module.StashFinder.description": "Ищет в загруженных чанках хранилища. Сохраняет данные в <ваша папка minecraft>/meteor-client",
   "Module.StashFinder.setting.storageBlocks.displayName": "Блоки хранения",
   "Module.StashFinder.setting.storageBlocks.description": "Выберите блоки-хранилища для поиска.",
   "Module.StashFinder.setting.minimumStorageCount.displayName": "Минимальное количество хранилищ",
@@ -1260,7 +1300,13 @@
   "Module.StashFinder.setting.mode.description": "Режим, используемый для уведомлений.",
   "Module.StashFinder.enum.Mode.Chat": "Чат",
   "Module.StashFinder.enum.Mode.Toast": "Тост",
+  "Module.StashFinder.misc.toast_message": "StashRecorder нашел тайник.",
+  "Module.StashFinder.message.found": "(highlight)Найден тайник.",
   "Module.StashFinder.button.Clear": "Очистить",
+  "Module.StashFinder.button.Open": "Открыть",
+  "Module.StashFinder.button.Goto": "Перейти к",
+  "Module.StashFinder.label.Pos": "Позиция: %d, %d",
+  "Module.StashFinder.label.Total": "Всего: %d",
 
 
   "Module.VisualRange.description": "Уведомляет вас, когда игрок входит/выходит из вашего диапазона отрисовки.",
@@ -1392,7 +1438,8 @@
   "Module.ElytraPlus.enum.Mode.Packet": "Пакетный",
   "Module.ElytraPlus.enum.ChestSwapMode.Always": "Всегда",
   "Module.ElytraPlus.enum.ChestSwapMode.Never": "Никогда",
-  "Module.ElytraPlus.enum.ChestSwapMode.WaitForGround": "Wait For Ground",
+  "Module.ElytraPlus.enum.ChestSwapMode.WaitForGround": "Ждать земли",
+  "Module.ElytraPlus.message.no_fireworks": "Автопилот отключен, потому что на панели быстрого доступа не осталось фейерверков.",
 
 
   "Module.EntityControl.description": "Позволяет управлять управляемыми сущностями без наличия седла.",
@@ -1718,6 +1765,7 @@
   "Module.AutoMend.setting.armourSlots.description": "Использовать ли слоты для брони, чтобы быстрее чинить предметы.",
   "Module.AutoMend.setting.removeFinished.displayName": "Убрать по окончании",
   "Module.AutoMend.setting.removeFinished.description": "Предметы будут перемещены из активных слотов, если больше нет предметов на починку, но есть место в Вашем инвентаре.",
+  "Module.AutoMend.message.AutoArmor_collision": "Нельзя использовать слоты для брони, пока активна AutoArmor. Пожалуйста, отключите AutoArmor и попробуйте еще раз. Выключение использования слотов для брони.",
 
 
   "Module.AutoMount.description": "Автоматически садится на сущности.",
@@ -1759,6 +1807,7 @@
   "Module.AutoReplenish.setting.excludedItems.description": "Предметы, которые НЕ БУДУТ пополняться.",
   "Module.AutoReplenish.setting.pauseInInventory.displayName": "Пауза в инвентаре",
   "Module.AutoReplenish.setting.pauseInInventory.description": "Останавливает пополнение предметов, пока Вы находитесь в инвентаре.",
+  "Module.AutoReplenish.message.no_items": "Items not found. Cannot refill.",
 
 
   "Module.AutoRespawn.description": "Автоматически возрождает Вас после смерти.",
@@ -1778,6 +1827,7 @@
   "Module.AutoSteal.setting.minimumDelay.description": "Минимальная задержка между кражей следующего стека в миллисекундах.",
   "Module.AutoSteal.setting.randomDelay.displayName": "Случайная задержка",
   "Module.AutoSteal.setting.randomDelay.description": "Случайным образом добавляет задержку до указанного времени в миллисекундах. Помогает избежать античитов.",
+  "Module.AutoSteal.message.no_both_auto_enabled": "You can't enable Auto Steal and Auto Dump at the same time!",
 
 
   "Module.AutoTool.description": "Автоматически переключается на наиболее эффективный инструмент при выполнении действия.",
@@ -1899,6 +1949,7 @@
   "Module.MiddleClickExtra.Mode.Gap": "Золотое яблоко",
   "Module.MiddleClickExtra.Mode.EGap": "Зачарованное золотое яблоко",
   "Module.MiddleClickExtra.Mode.Rod": "Удочка",
+  "Module.MiddleClickExtra.message.no_item": "Unable to find specified item.",
 
 
   "Module.MountBypass.description": "Позволяет обходить плагин IllegalStacks и ставить сундуки на сущности.",
@@ -2120,6 +2171,7 @@
   "Module.Freecam.enum.AutoDisableEvent.None": "Нет",
   "Module.Freecam.enum.AutoDisableEvent.OnDamage": "При уроне",
   "Module.Freecam.enum.AutoDisableEvent.OnDeath": "При смерти",
+  "Module.Freecam.message.auto_disabled": "Freecam был автоматически отключён!",
 
 
   "Module.FreeRotate.description": "Позволяет больше вариантов поворота в виде от третьего лица.",

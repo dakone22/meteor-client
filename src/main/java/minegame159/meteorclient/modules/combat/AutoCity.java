@@ -72,12 +72,12 @@ public class AutoCity extends Module {
         BlockPos mineTarget = CityUtils.getTargetBlock(checkBelow.get());
 
         if (target == null || mineTarget == null) {
-            if (chatInfo.get()) ChatUtils.moduleError(this, "No target block found... disabling.");
+            if (chatInfo.get()) ChatUtils.moduleError(this, I18n.translate("Module.AutoCity.message.no_target_block"));
         } else {
-            if (chatInfo.get()) ChatUtils.moduleInfo(this, "Attempting to city " + target.getGameProfile().getName());
+            if (chatInfo.get()) ChatUtils.moduleInfo(this, I18n.translate("Module.AutoCity.message.attempt", target.getGameProfile().getName()));
 
             if (MathHelper.sqrt(mc.player.squaredDistanceTo(mineTarget.getX(), mineTarget.getY(), mineTarget.getZ())) > mc.interactionManager.getReachDistance()) {
-                if (chatInfo.get()) ChatUtils.moduleError(this, "Target block out of reach... disabling.");
+                if (chatInfo.get()) ChatUtils.moduleError(this, I18n.translate("Module.AutoCity.message.out_of_reach"));
                 toggle();
                 return;
             }
@@ -93,7 +93,7 @@ public class AutoCity extends Module {
             }
 
             if (pickSlot == -1) {
-                if (chatInfo.get()) ChatUtils.moduleError(this, "No pick found... disabling.");
+                if (chatInfo.get()) ChatUtils.moduleError(this, I18n.translate("Module.AutoCity.message.no_pick"));
                 toggle();
                 return;
             }
@@ -110,7 +110,7 @@ public class AutoCity extends Module {
 
             if (support.get() && obbySlot != -1 && mc.world.getBlockState(mineTarget.down(1)).isAir()) {
                 PlayerUtils.placeBlock(mineTarget.down(1), obbySlot, Hand.MAIN_HAND);
-            } else if (support.get() && obbySlot == -1) if (chatInfo.get()) ChatUtils.moduleWarning(this, "No obsidian found for support, mining anyway.");
+            } else if (support.get() && obbySlot == -1) if (chatInfo.get()) ChatUtils.moduleWarning(this, I18n.translate("Module.AutoCity.message.no_obsidian_for_support"));
 
             mc.player.inventory.selectedSlot = pickSlot;
 

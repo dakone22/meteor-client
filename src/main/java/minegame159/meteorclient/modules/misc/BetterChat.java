@@ -272,16 +272,16 @@ public class BetterChat extends Module {
 
         if (disableAllMessages.get()) {
             sendWarningMessage(message,
-                    "You are trying to send a message to the global chat! ",
-                    "Send your message to the global chat:");
+                    I18n.translate("Module.BetterChat.message.message_block"),
+                    I18n.translate("Module.BetterChat.message.message_block.warning_text"));
             event.cancel();
             return;
         }
 
         if (coordsProtectionEnabled.get() && containsCoordinates(message)) {
             sendWarningMessage(message,
-                    "It looks like there are coordinates in your message! ",
-                    "Send your message to the global chat even if there are coordinates:");
+                    I18n.translate("Module.BetterChat.message.coords_block"),
+                    I18n.translate("Module.BetterChat.message.coords_block.warning_text"));
             event.cancel();
             return;
         }
@@ -495,6 +495,6 @@ public class BetterChat extends Module {
             warningMessage.append(sendButton);
         }
 
-        ChatUtils.info("Warning", warningMessage);
+        ChatUtils.info(I18n.translate("Module.BetterChat.message.prefix_warning"), warningMessage);
     }
 }

@@ -311,6 +311,11 @@
   //            Modules
   // ----------------------------------
 
+  "Module.message.toggled": "Toggled (highlight)%s(default) %s(default).",
+  "Module.message.toggled.on": "on",
+  "Module.message.toggled.off": "off",
+
+
   "Module.AimAssist.description": "Automatically aims at entities.",
       "Module.AimAssist.setting.range.displayName": "Range",
       "Module.AimAssist.setting.range.description": "How far away the entity has to be to be targeted.",
@@ -390,6 +395,7 @@
   "Module.AnchorAura.enum.RotationMode.Break": "Break",
   "Module.AnchorAura.enum.RotationMode.Both": "Both",
   "Module.AnchorAura.enum.RotationMode.None": "None",
+  "Module.AnchorAura.message.in_nether": "You are in the Nether... disabling.",
 
 
   "Module.AntiAutoAnvil.description": "Automatically prevents Auto Anvil by placing obsidian above you.",
@@ -440,6 +446,7 @@
       "Module.AutoAnvil.setting.height.description": "The height at which to place the anvils.",
       "Module.AutoAnvil.setting.placeButton.displayName": "Place At Feet",
       "Module.AutoAnvil.setting.placeButton.description": "Automatically places a button or pressure plate at the targets feet to break the anvils.",
+  "Module.AutoAnvil.message.head_slot_empty": "Target head slot is empty... disabling.",
 
 
   "Module.AutoArmor.description": "Automatically manages and equips your armor for you.",
@@ -489,6 +496,11 @@
   "Module.AutoCity.setting.chatInfo.description": "Sends a client-side message if you city a player.",
   "Module.AutoCity.setting.rotate.displayName": "Rotate",
   "Module.AutoCity.setting.rotate.description": "Automatically rotates you towards the city block.",
+  "Module.AutoCity.message.no_target_block": "No target block found... disabling.",
+  "Module.AutoCity.message.attempt": "Attempting to city %s",
+  "Module.AutoCity.message.out_of_reach": "Target block out of reach... disabling.",
+  "Module.AutoCity.message.no_pick": "No pick found... disabling.",
+  "Module.AutoCity.message.no_obsidian_for_support": "No obsidian found for support, mining anyway.",
 
 
   "Module.AutoLog.description": "Automatically disconnects you when certain requirements are met.",
@@ -612,6 +624,7 @@
       "Module.BedAura.setting.healthDifference.description": "The damage increase for smart delay to work.",
       "Module.BedAura.setting.maxDamage.displayName": "Max Damage",
       "Module.BedAura.setting.maxDamage.description": "The maximum self-damage allowed.",
+  "Module.BedAura.message.in_overworld": "You are in the Overworld... (highlight)disabling(default)!",
 
 
   "Module.BowSpam.description": "Spams arrows.",
@@ -817,6 +830,7 @@
   "Module.OffhandExtra.enum.Mode.Gap": "Gap",
   "Module.OffhandExtra.enum.Mode.EXP": "EXP",
   "Module.OffhandExtra.enum.Mode.Crystal": "Crystal",
+  "Module.OffhandExtra.message.no_item": "None of the chosen item found.",
 
 
   "Module.Quiver.description": "Automatically shoots positive effect arrows at you.",
@@ -826,6 +840,11 @@
   "Module.Quiver.setting.checkEffects.description": "Won't shoot you with effects you already have active.",
   "Module.Quiver.setting.chatInfo.displayName": "Chat Info",
   "Module.Quiver.setting.chatInfo.description": "Sends you information about the module when toggled.",
+  "Module.Quiver.message.no_bow": "No bow found... disabling.",
+  "Module.Quiver.message.no_arrows": "No appropriate arrows found... disabling.",
+  "Module.Quiver.message.complete": "Quiver complete... disabling.",
+  "Module.Quiver.message.strength_arrow": "Quivering a strength arrow.",
+  "Module.Quiver.message.speed_arrow": "Quivering a speed arrow.",
 
 
   "Module.SelfAnvil.description": "Automatically places an anvil on you to prevent other players from going into your hole.",
@@ -879,6 +898,7 @@
   "Module.SmartSurround.setting.minDamage.description": "The minimum damage before this activates.",
   "Module.SmartSurround.setting.rotate.displayName": "Rotate",
   "Module.SmartSurround.setting.rotate.description": "Forces you to rotate towards the block being placed.",
+  "Module.SmartSurround.message.no_obsidian": "No obsidian in hotbar... disabling.",
 
 
   "Module.Surround.description": "Surrounds you in blocks to prevent you from taking lots of damage.",
@@ -959,6 +979,10 @@
   "Module.TotemPopNotifier.setting.deathMessage.displayName": "Death Message",
   "Module.TotemPopNotifier.setting.deathMessage.description": "Chat alert to send on a player's death.",
   "Module.TotemPopNotifier.setting.deathMessage.defaultValue": "EZZZ. {player} just died after popping {pops} {totems}. Meteor on Crack!",
+  "Module.TotemPopNotifier.misc.totem": "totem",    // totem count is 1
+  "Module.TotemPopNotifier.misc.totems": "totems",  // totem count is not 1
+  "Module.TotemPopNotifier.message.pop": "(highlight)%s(default) popped (highlight)%d(default) %s.",
+  "Module.TotemPopNotifier.message.death": "(highlight)%s(default) died after popping (highlight)%d(default) %s.",
 
 
   "Module.Trigger.description": "Automatically swings when you look at entities.",
@@ -1031,6 +1055,10 @@
   "Module.AutoBrewer.enum.Modifier.None": "None",
   "Module.AutoBrewer.enum.Modifier.Splash": "Splash",
   "Module.AutoBrewer.enum.Modifier.Lingering": "Lingering",
+  "Module.AutoBrewer.message.no_item": "You do not have any %s left in your inventory... disabling.",
+  "Module.AutoBrewer.message.no_fuel": "You do not have a sufficient amount of blaze powder to use as fuel for the brew... disabling.",
+  "Module.AutoBrewer.message.no_bottles": "You do not have a sufficient amount of water bottles to complete this brew... disabling.",
+  "Module.AutoBrewer.message.no_space": "You do not have a sufficient amount of inventory space... disabling.",
 
 
   // not used
@@ -1070,6 +1098,9 @@
 
 
   "Module.AutoSmelter.description": "Automatically smelts all items in your inventory that can be smelted.",
+  "Module.AutoSmelter.message.no_items": "You do not have any items in your inventory that can be smelted... disabling.",
+  "Module.AutoSmelter.message.no_space": "Your inventory is currently full... disabling.",
+  "Module.AutoSmelter.message.no_fuel": "You do not have any fuel in your inventory... disabling.",
 
 
   "Module.BetterChat.description": "Improves your chat experience in various ways.",
@@ -1122,6 +1153,11 @@
       "Module.BetterChat.setting.suffixRandom.description": "Example: `<msg> (538)`",
       "Module.BetterChat.setting.friendColorEnabled.displayName": "Friend Color Enabled",
       "Module.BetterChat.setting.friendColorEnabled.description": "Highlights friends with color in chat.",
+  "Module.BetterChat.message.prefix_warning": "Warning",
+  "Module.BetterChat.message.message_block": "You are trying to send a message to the global chat! ",
+  "Module.BetterChat.message.message_block.warning_text": "Send your message to the global chat:",
+  "Module.BetterChat.message.coords_block": "It looks like there are coordinates in your message! ",
+  "Module.BetterChat.message.coords_block.warning_text": "Send your message to the global chat even if there are coordinates:",
 
 
   "Module.BookBot.description": "Writes an amount of books full of characters or from a file.",
@@ -1137,6 +1173,8 @@
   "Module.BookBot.setting.noOfBooks.description": "The number of books to make (or until the file runs out).",
   "Module.BookBot.setting.delay.displayName": "Delay",
   "Module.BookBot.setting.delay.description": "The amount of delay between writing books in milliseconds.",
+  "Module.BookBot.message.no_file": "The file you specified doesn't exist in the meteor folder.",
+  "Module.BookBot.message.reading_error": "Failed to read the file.",
 
 
   // not used
@@ -1166,6 +1204,8 @@
   "Module.EntityLogger.setting.playerNames.description": "Shows the player's name.",
   "Module.EntityLogger.setting.friends.displayName": "Friends",
   "Module.EntityLogger.setting.friends.description": "Logs friends.",
+  "Module.EntityLogger.misc.player_suffix": " (Player)",  // e.g. `Steve (Player) has spawned at 0 0 0`
+  "Module.EntityLogger.message.spawned": "(highlight)%s(default) has spawned at (highlight)%.0f(default), (highlight)%.0f(default), (highlight)%.0f(default).",
 
 
   "Module.LiquidFiller.description": "Places blocks inside of liquid source blocks within range of you.",
@@ -1260,7 +1300,13 @@
   "Module.StashFinder.setting.mode.description": "The mode to use for notifications.",
   "Module.StashFinder.enum.Mode.Chat": "Chat",
   "Module.StashFinder.enum.Mode.Toast": "Toast",
+  "Module.StashFinder.misc.toast_message": "StashRecorder found stash.",
+  "Module.StashFinder.message.found": "(highlight)Found stash.",
   "Module.StashFinder.button.Clear": "Clear",
+  "Module.StashFinder.button.Open": "Open",
+  "Module.StashFinder.button.Goto": "Goto",
+  "Module.StashFinder.label.Pos": "Pos: %d, %d",
+  "Module.StashFinder.label.Total": "Total: %d",
 
 
   "Module.VisualRange.description": "Notifies you when a player enters/leaves your visual range.",
@@ -1393,6 +1439,7 @@
   "Module.ElytraPlus.enum.ChestSwapMode.Always": "Always",
   "Module.ElytraPlus.enum.ChestSwapMode.Never": "Never",
   "Module.ElytraPlus.enum.ChestSwapMode.WaitForGround": "Wait For Ground",
+  "Module.ElytraPlus.message.no_fireworks": "Disabled autopilot because you don't have any fireworks left in your hotbar.",
 
 
   "Module.EntityControl.description": "Lets you control rideable entities without a saddle.",
@@ -1718,6 +1765,7 @@
   "Module.AutoMend.setting.armourSlots.description": "Whether or not to use armor slots to mend items quicker.",
   "Module.AutoMend.setting.removeFinished.displayName": "Remove Finished",
   "Module.AutoMend.setting.removeFinished.description": "The items will be moved out of active slots if there are no items to replace, but space in your inventory.",
+  "Module.AutoMend.message.AutoArmor_collision": "Cannot use armor slots while AutoArmor is active. Please disable AutoArmor and try again. Disabling Use Armor Slots.",
 
 
   "Module.AutoMount.description": "Automatically mounts entities.",
@@ -1759,6 +1807,7 @@
   "Module.AutoReplenish.setting.excludedItems.description": "Items that WILL NOT replenish.",
   "Module.AutoReplenish.setting.pauseInInventory.displayName": "Pause In Inventory",
   "Module.AutoReplenish.setting.pauseInInventory.description": "Stops replenishing items when you are currently in your inventory.",
+  "Module.AutoReplenish.message.no_items": "Items not found. Cannot refill.",
 
 
   "Module.AutoRespawn.description": "Automatically respawns after death.",
@@ -1778,6 +1827,7 @@
   "Module.AutoSteal.setting.minimumDelay.description": "The minimum delay between stealing the next stack in milliseconds.",
   "Module.AutoSteal.setting.randomDelay.displayName": "Random Delay",
   "Module.AutoSteal.setting.randomDelay.description": "Randomly adds a delay of up to the specified time in milliseconds. Helps avoid anti-cheats.",
+  "Module.AutoSteal.message.no_both_auto_enabled": "You can't enable Auto Steal and Auto Dump at the same time!",
 
 
   "Module.AutoTool.description": "Automatically switches to the most effective tool when performing an action.",
@@ -1899,6 +1949,7 @@
   "Module.MiddleClickExtra.Mode.Gap": "Gap",
   "Module.MiddleClickExtra.Mode.EGap": "EGap",
   "Module.MiddleClickExtra.Mode.Rod": "Rod",
+  "Module.MiddleClickExtra.message.no_item": "Unable to find specified item.",
 
 
   "Module.MountBypass.description": "Allows you to bypass the IllegalStacks plugin and put chests on entities.",
@@ -2118,8 +2169,9 @@
   "Module.Freecam.setting.rotate.displayName": "Rotate",
   "Module.Freecam.setting.rotate.description": "Rotates your character to whatever block or entity you are looking at.",
   "Module.Freecam.enum.AutoDisableEvent.None": "None",
-  "Module.Freecam.enum.AutoDisableEvent.OnDamage": "OnDamage",
-  "Module.Freecam.enum.AutoDisableEvent.OnDeath": "OnDeath",
+  "Module.Freecam.enum.AutoDisableEvent.OnDamage": "On Damage",
+  "Module.Freecam.enum.AutoDisableEvent.OnDeath": "On Death",
+  "Module.Freecam.message.auto_disabled": "Freecam auto-disabled!",
 
 
   "Module.FreeRotate.description": "Allows more rotation options in third person.",

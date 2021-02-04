@@ -303,7 +303,7 @@ public class ElytraPlus extends Module {
                     decrementFireworkTimer = true;
                     fireworkTimer = 20;
                 } else {
-                    ChatUtils.moduleWarning(this, "Disabled autopilot because you don't have any fireworks left in your hotbar.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.ElytraPlus.message.no_fireworks"));
                     autopilotEnabled.set(false);
                 }
             }

@@ -85,7 +85,7 @@ public class MiddleClickExtra extends Module {
                     mc.interactionManager.interactItem(mc.player, mc.world, Hand.MAIN_HAND);
                     mc.player.inventory.selectedSlot = preSlot;
                 } else if (notify.get()) {
-                    ChatUtils.moduleWarning(this, "Unable to find specified item.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.MiddleClickExtra.message.no_item"));
                 }
                 break;
             }case Gap: {
@@ -97,7 +97,7 @@ public class MiddleClickExtra extends Module {
                     ((IKeyBinding) mc.options.keyUse).setPressed(true);
                     wasUsing = true;
                 } else if(notify.get()) {
-                    ChatUtils.moduleWarning(this, "Unable to find specified item.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.MiddleClickExtra.message.no_item"));
                 }
                 break;
             }case EGap:{
@@ -109,7 +109,7 @@ public class MiddleClickExtra extends Module {
                     ((IKeyBinding) mc.options.keyUse).setPressed(true);
                     wasUsing = true;
                 } else if(notify.get()) {
-                    ChatUtils.moduleWarning(this, "Unable to find selected item.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.MiddleClickExtra.message.no_item"));
                 }
                 break;
             }case Bow:{
@@ -121,7 +121,7 @@ public class MiddleClickExtra extends Module {
                     preCount = result.count;
                     wasUsing = true;
                 } else if(notify.get()) {
-                    ChatUtils.moduleWarning(this, "Unable to find specified item.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.MiddleClickExtra.message.no_item"));
                 }
                 break;
             }case Rod: {
@@ -131,7 +131,7 @@ public class MiddleClickExtra extends Module {
                     mc.player.inventory.selectedSlot = result.slot;
                     mc.interactionManager.interactItem(mc.player, mc.world, Hand.MAIN_HAND);
                 } else if (notify.get()) {
-                    ChatUtils.moduleWarning(this, "Unable to find specified item.");
+                    ChatUtils.moduleWarning(this, I18n.translate("Module.MiddleClickExtra.message.no_item"));
                 }
                 break;
             }

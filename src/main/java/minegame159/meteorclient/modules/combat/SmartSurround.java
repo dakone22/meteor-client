@@ -81,7 +81,7 @@ public class SmartSurround extends Module {
                 slot = findObiInHotbar();
 
                 if (slot == -1 && onlyObsidian.get()) {
-                    ChatUtils.moduleError(this, "No obsidian in hotbar... disabling.");
+                    ChatUtils.moduleError(this, I18n.translate("Module.SmartSurround.message.no_obsidian"));
                     return;
                 }
 
@@ -96,7 +96,7 @@ public class SmartSurround extends Module {
                 }
 
                 if (slot == -1) {
-                    ChatUtils.moduleError(this, "No blocks in hotbar... disabling.");
+                    ChatUtils.moduleError(this, I18n.translate("Module.SmartSurround.message.no_obsidian"));
                     return;
                 }
 

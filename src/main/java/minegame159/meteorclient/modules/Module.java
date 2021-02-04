@@ -21,6 +21,7 @@ import minegame159.meteorclient.utils.misc.ISerializable;
 import minegame159.meteorclient.utils.player.ChatUtils;
 import minegame159.meteorclient.utils.render.color.Color;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.util.Formatting;
@@ -158,7 +159,8 @@ public abstract class Module implements Listenable, ISerializable<Module> {
     }
 
     public void sendToggledMsg() {
-        if (Config.INSTANCE.chatCommandsInfo) ChatUtils.info(42069, "Toggled (highlight)%s(default) %s(default).", title, isActive() ? Formatting.GREEN + "on" : Formatting.RED + "off");
+        if (Config.INSTANCE.chatCommandsInfo)
+            ChatUtils.info(42069, I18n.translate("Module.message.toggled", title, isActive() ? Formatting.GREEN + I18n.translate("Module.message.toggled.on") : Formatting.RED + I18n.translate("Module.message.toggled.off")));
     }
 
     public void setKey(int key, boolean postEvent) {

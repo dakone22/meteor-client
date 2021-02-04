@@ -83,7 +83,7 @@ public class AutoSteal extends Module {
 
     private void checkAutoSettings() {
         if (autoStealEnabled.get() && autoDumpEnabled.get()) {
-            ChatUtils.error("You can't enable Auto Steal and Auto Dump at the same time!");
+            ChatUtils.error(I18n.translate("Module.AutoSteal.message.no_both_auto_enabled"));
             autoDumpEnabled.set(false);
         }
     }

@@ -152,7 +152,7 @@ public class AutoReplenish extends Module {
             return;
         } else if (from == -1){
             if (alert.get() && !sent) {
-                ChatUtils.moduleWarning(this, "Items not found. Cannot refill.");
+                ChatUtils.moduleWarning(this, I18n.translate("Module.AutoReplenish.message.no_items"));
                 sent = true;
             }
             return;
